@@ -1,0 +1,38 @@
+# Jupyter checkpoints
+.ipynb_checkpoints/
+
+# Conda environment directory
+/env/
+
+# Python cache
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Virtualenv / venv (if you ever use them)
+.venv/
+venv/
+
+# OS cruft
+.DS_Store
+
+# Model weights or large binary artifacts
+*.h5
+*.ckpt
+*.pth
+*.pt
+*.joblib
+*.pkl
+
+# HuggingFace / Transformers cache
+.huggingface/
+transformers_cache/
+~/.cache/
+
+# Torch / TensorFlow cache
+~/.torch/
+~/.keras/
+
+# Logs
+*.log
+logs/

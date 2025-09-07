@@ -1,0 +1,11 @@
+name: /Users/aidan/Documents/School/LLM-INT/env
+channels:
+  - default
+  - matsci
+  - abinit
+  - conda-forge
+dependencies:
+  - python=3.10
+  - jupyter
+  - ipykernel
+prefix: /Users/aidan/Documents/School/LLM-INT/env
