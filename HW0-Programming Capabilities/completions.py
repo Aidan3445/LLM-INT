@@ -1,43 +1,36 @@
 from datasets import load_dataset
 from transformers import AutoModelForCausalLM, AutoTokenizer
 import json
+import random
 
 ds = load_dataset("nuprl/engineering-llm-systems", "humaneval", split = "test")
 model = AutoModelForCausalLM.from_pretrained("Qwen/Qwen3-0.6B-Base").to("mps")
 tokenizer = AutoTokenizer.from_pretrained("Qwen/Qwen3-0.6B-Base")
 
-def clip_completions(completion, clip_at = ["\ndef", "\nclass", "\nif", "\nprint", "<|endoftext|>", "```\n\n"]):
+def clip_completions(completion, clip_at = ["\n```", "<|endoftext|>", "\ndef", "\nclass", "\nif __name__"]):
     result = completion
-    for clip in clip_at:
-        result = result.split(clip)[0]
-    return result    
+    # Clip at the first occurrence of any of the clip_at strings AFTER the first def
+    first_def_index = result.find("def")
+    if first_def_index != -1:
+        clip_indexes = []
+        for clip_str in clip_at:
+            clip_index = result.find(clip_str, first_def_index + 3)
+            if clip_index != -1:
+                clip_indexes.append(clip_index)
+        if clip_indexes:
+            first_clip_index = min(clip_indexes)
+            result = result[:first_clip_index]
+    return result
 
-prompt_examples = '''Instruction:
-Write a function defintion based on the specification, any `import` lines from the input should be included in the output
-
-Input:
-```
-def strlen(string: str) -> int:
+prompt_examples = '''def strlen(string: str) -> int:
     """ Return length of given string
     >>> strlen('')
     0
     >>> strlen('abc')
     3
     """
-```
-    
-Output:
-```
-def strlen(string: str) -> int:
     return len(string)
-```
 
-
-Instruction:
-Write a function defintion based on the specification, any `import` lines from the input should be included in the output
-
-Input:
-```
 def add(x: int, y: int) -> int:
     """Add two numbers x and y
     >>> add(2, 3)
@@ -45,20 +38,8 @@ def add(x: int, y: int) -> int:
     >>> add(5, 7)
     12
     """
-```
-
-Output:
-```
-def add(x: int, y: int) -> int:
     return x + y
-```
 
-
-Instruction:
-Write a function defintion based on the specification, any `import` lines from the input should be included in the output
-
-Input:
-```
 def fibfib(n: int) -> int:
     """The FibFib number sequence is a sequence similar to the Fibbonacci sequnece that's defined as follows:
     fibfib(0) == 0
@@ -73,11 +54,6 @@ def fibfib(n: int) -> int:
     >>> fibfib(8)
     24
     """
-```
-
-Output:
-```
-def fibfib(n: int) -> int:
     if n == 0:
         return 0
     elif n == 1:
@@ -86,14 +62,7 @@ def fibfib(n: int) -> int:
         return 1
     else:
         return fibfib(n - 1) + fibfib(n - 2) + fibfib(n - 3)
-```
 
-
-Instruction:
-Write a function defintion based on the specification, any `import` lines from the input should be included in the output
-
-Input:
-```
 def count_distinct_characters(string: str) -> int:
     """ Given a string, find out how many distinct characters (regardless of case) does it consist of
     >>> count_distinct_characters('xyzXYZ')
@@ -101,30 +70,12 @@ def count_distinct_characters(string: str) -> int:
     >>> count_distinct_characters('Jerry')
     4
     """
-```
-
-Output:
-```
-def count_distinct_characters(string: str) -> int:
     return len(set(string.lower()))
-```
+
 '''
 
 def make_prompt(sample):
-    return f"""{prompt_examples}
-
-
-Instruction:
-Write a function defintion based on the specification, any `import` lines from the input should be included in the output
-
-Input:
-```
-{sample["prompt"]}
-```
-
-Output:
-```
-"""
+    return f"{prompt_examples}{sample['prompt']}"
 
 def generate_completions(sample, count = 5):
     prompt_with_examples = make_prompt(sample)
@@ -147,6 +98,13 @@ def generate_completions(sample, count = 5):
 
 results = []
 for index, sample in enumerate(ds):
+    ''' Debugging: randomly skip some samples and limit to 10 completions
+    if random.random() < 0.75:
+        print(f"Skipping sample {index + 1}")
+        continue
+    if len(results) == 10:
+        break
+    '''
     completions = generate_completions(sample)
     results.append((completions, sample["tests"], sample["prompt"]))
     print(f"Sample {index + 1} complete")
