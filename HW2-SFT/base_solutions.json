@@ -1,0 +1,1002 @@
+{
+  "solution #1": {
+    "solution": "#lang racket\n;; Given a list of lists, write a function to find the list with the maximum length using a lambda function. Return a tuple containing the length of the longest list and the list itself.\n;; The first line contains an integer N, the number of lists. This is followed by N lines, each containing space-separated integers representing a list.\n;; The output is the length of the longest list followed by the elements of the longest list, all separated by spaces.;; Sample Input:\n;; 3\n;; 1 2 3\n;; 4 5\n;; 6 7 8 9\n;; Sample Output:\n;; 4 6 7 8 9\n\n(define (find-longest-list lst)\n  (define (max-length lst)\n    (if (null? (cdr lst))\n        (length (car lst))\n        (max (length (car lst)) (max-length (cdr lst)))))\n  (define (longest-list lst)\n    (if (null? (cdr lst))\n        (car lst)\n        (if (> (length (car lst)) (length (car (cdr lst))))\n            (longest-list (cdr lst))\n            (longest-list (cdr lst)))))\n  (values (max-length lst) (longest-list lst)))\n\n;; Sample Input-Output Pairs\n(find-longest-list '(1 2 3))",
+    "unclipped": "\n;; Sample Input:\n;; 3\n;; 1 2 3\n;; 4 5\n;; 6 7 8 9\n;; Sample Output:\n;; 4 6 7 8 9\n\n(define (find-longest-list lst)\n  (define (max-length lst)\n    (if (null? (cdr lst))\n        (length (car lst))\n        (max (length (car lst)) (max-length (cdr lst)))))\n  (define (longest-list lst)\n    (if (null? (cdr lst))\n        (car lst)\n        (if (> (length (car lst)) (length (car (cdr lst))))\n            (longest-list (cdr lst))\n            (longest-list (cdr lst)))))\n  (values (max-length lst) (longest-list lst)))\n\n;; Sample Input-Output Pairs\n;; (find-longest-list '(1 2 3)) => (3 1 2 3)\n;; (find-longest-list '(4 5)) => (4 5)\n;; (find-longest-list '(6 7 8 9)) => (4 6 7 8 9)",
+    "inputs": "The first line contains an integer N, the number of lists. This is followed by N lines, each containing space-separated integers representing a list.",
+    "outputs": "The output is the length of the longest list followed by the elements of the longest list, all separated by spaces.",
+    "tests": [
+      {
+        "input": "-1 -2 3 -4 -5",
+        "output": "4"
+      },
+      {
+        "input": "1 2 3",
+        "output": "0"
+      },
+      {
+        "input": "1 2 -3 -10 20",
+        "output": "2"
+      }
+    ]
+  },
+  "solution #2": {
+    "solution": "#lang racket\n;; Sort a list of integers using the comb sort algorithm. Comb sort improves on bubble sort by comparing elements separated by a gap that decreases over time.\n;; A single line containing space-separated integers.\n;; A single line containing space-separated integers sorted in ascending order.(require racket/list)",
+    "unclipped": "\n\n(require racket/list)\n\n(define (comb-sort lst)\n  (define (swap! i j)\n    (let ((temp (list-ref lst i)))\n      (list-set! lst i (list-ref lst j))\n      (list-set! lst j temp)))\n\n  (define (comb-sort-iter lst)\n    (let ((gap (length lst))\n          (swapped? #t))\n      (while (and swapped? (>= gap 2))\n        (set! swapped? #f)\n        (set! gap (/ gap 1.3))\n        (for-each (lambda (i)\n                    (when (> i (- (length lst) 1))\n                      (when (> (list-ref lst i) (list-ref lst (+ i gap)))\n                        (swap! i (+ i gap))\n                        (set! swapped? #t)))))\n        (when (> gap 2)\n          (set! gap (round gap))))\n      lst))\n\n;; Example usage:\n;; (comb-sort '(5 3 4 1 2))\n;; Expected output: (1 2 3 4 5)",
+    "inputs": "A single line containing space-separated integers.",
+    "outputs": "A single line containing space-separated integers sorted in ascending order.",
+    "tests": [
+      {
+        "input": "-1 -2 3 -4 -5",
+        "output": "4"
+      },
+      {
+        "input": "1 2 3",
+        "output": "0"
+      },
+      {
+        "input": "1 2 -3 -10 20",
+        "output": "2"
+      }
+    ]
+  },
+  "solution #3": {
+    "solution": "#lang racket\n;; Write a function to find the frequency count of elements in a list of lists. For each integer in all sublists, count how many times it appears overall.\n;; The input consists of several lines. Each line contains space-separated integers representing a sublist.\n;; A JSON object where each key is an integer and the value is the number of times it appears across all sublists. Keys and values are separated by colons, and the entire object is enclosed in curly braces. Different key-value pairs are separated by commas followed by a space.;; The output should be a JSON object with the same structure as the input.\n\n(define (count-elements lst)\n  (let loop ((lst lst) (count (make-hash))",
+    "unclipped": "\n;; The output should be a JSON object with the same structure as the input.\n\n(define (count-elements lst)\n  (let loop ((lst lst) (count (make-hash)))\n    (if (null? lst)\n        count\n        (let ((item (car lst)))\n          (loop (cdr lst)\n                (hash-update! count item add1 0))))))\n;; Example usage:\n;; (count-elements '(1 2 3 2 1 3 2 1))\n;; => (hash 1 3 2 3 3 1)",
+    "inputs": "The input consists of several lines. Each line contains space-separated integers representing a sublist.",
+    "outputs": "A JSON object where each key is an integer and the value is the number of times it appears across all sublists. Keys and values are separated by colons, and the entire object is enclosed in curly braces. Different key-value pairs are separated by commas followed by a space.",
+    "tests": [
+      {
+        "input": "-1 -2 3 -4 -5",
+        "output": "4"
+      },
+      {
+        "input": "1 2 3",
+        "output": "0"
+      },
+      {
+        "input": "1 2 -3 -10 20",
+        "output": "2"
+      }
+    ]
+  },
+  "solution #4": {
+    "solution": "#lang racket\n;; Write a function to remove a specified column from a given nested list.\n;; The input consists of:\n- First line: integer N (number of sublists)\n- Next N lines: each line contains space-separated integers representing a sublist\n- Last line: integer K (the column index to remove)\n;; N lines, each containing space-separated integers of the modified sublist after removing the K-th column(define (remove-column lst k)\n  (map (lambda (row) (remove-at row k)",
+    "unclipped": "\n\n(define (remove-column lst k)\n  (map (lambda (row) (remove-at row k)) lst))\n\n;; Example usage:\n;; (remove-column '((1 2 3) (4 5 6) (7 8 9)) 1)\n;; Output: ((1 3) (4 6) (7 9))",
+    "inputs": "The input consists of:\n- First line: integer N (number of sublists)\n- Next N lines: each line contains space-separated integers representing a sublist\n- Last line: integer K (the column index to remove)",
+    "outputs": "N lines, each containing space-separated integers of the modified sublist after removing the K-th column",
+    "tests": [
+      {
+        "input": "-1 -2 3 -4 -5",
+        "output": "4"
+      },
+      {
+        "input": "1 2 3",
+        "output": "0"
+      },
+      {
+        "input": "1 2 -3 -10 20",
+        "output": "2"
+      }
+    ]
+  },
+  "solution #5": {
+    "solution": "#lang racket\n;; Write a function to modify a tuple by replacing the element at a specified index with a list containing a given value. The function returns the new tuple.\n;; The input consists of three lines. The first line is a Python tuple literal representing the original tuple. The second line contains an integer representing the index. The third line contains an integer representing the value to insert into the tuple as a single-element list.\n;; The output is a single line containing the modified tuple as a Python tuple literal.(define (modify-tuple original-tuple index value)\n  (let ((new-tuple (list-ref original-tuple index)))\n    (set! new-tuple (list value))\n    (list->tuple new-tuple)))\n\n;; Sample Input-Output Pairs\n(modify-tuple '(1 2 3) 1 4)",
+    "unclipped": "\n\n(define (modify-tuple original-tuple index value)\n  (let ((new-tuple (list-ref original-tuple index)))\n    (set! new-tuple (list value))\n    (list->tuple new-tuple)))\n\n;; Sample Input-Output Pairs\n;; (modify-tuple '(1 2 3) 1 4) => (1 4 3)\n;; (modify-tuple '(a b c) 0 'x) => (x b c)\n;; (modify-tuple '(true false) 2 'false) => (true false)",
+    "inputs": "The input consists of three lines. The first line is a Python tuple literal representing the original tuple. The second line contains an integer representing the index. The third line contains an integer representing the value to insert into the tuple as a single-element list.",
+    "outputs": "The output is a single line containing the modified tuple as a Python tuple literal.",
+    "tests": [
+      {
+        "input": "-1 -2 3 -4 -5",
+        "output": "4"
+      },
+      {
+        "input": "1 2 3",
+        "output": "0"
+      },
+      {
+        "input": "1 2 -3 -10 20",
+        "output": "2"
+      }
+    ]
+  },
+  "solution #6": {
+    "solution": "#lang racket\n;; Sort a list of subject and mark tuples by the mark in ascending order using a lambda function.\n;; The first line contains an integer N (number of tuples). This is followed by N lines, each containing a subject (possibly with spaces) and an integer mark separated by a space.\n;; N lines, each containing the subject and mark separated by a space, sorted in ascending order of the mark.(define (sort-by-mark tups)\n  (sort tups (lambda (a b) (< (second a) (second b))))",
+    "unclipped": "\n\n(define (sort-by-mark tups)\n  (sort tups (lambda (a b) (< (second a) (second b)))))\n\n;; Example usage:\n;; (sort-by-mark '((math 85) (science 90) (history 78) (english 88)))\n;; Expected output: ((history 78) (math 85) (english 88) (science 90))",
+    "inputs": "The first line contains an integer N (number of tuples). This is followed by N lines, each containing a subject (possibly with spaces) and an integer mark separated by a space.",
+    "outputs": "N lines, each containing the subject and mark separated by a space, sorted in ascending order of the mark.",
+    "tests": [
+      {
+        "input": "-1 -2 3 -4 -5",
+        "output": "4"
+      },
+      {
+        "input": "1 2 3",
+        "output": "0"
+      },
+      {
+        "input": "1 2 -3 -10 20",
+        "output": "2"
+      }
+    ]
+  },
+  "solution #7": {
+    "solution": "#lang racket\n;; Write a function to perform index-wise multiplication of tuple elements in the given two tuples.\n;; The first line contains an integer N, representing the number of tuples in each input. The next N lines contain two integers each, representing the elements of the first tuple's i-th pair. The following N lines contain two integers each, representing the elements of the second tuple's i-th pair.\n;; N lines, each containing two integers separated by a space, representing the index-wise multiplied tuples.(define (index-wise-multiply t1 t2)\n  (map (lambda (x y) (* x y)) t1 t2))\n\n;; Example usage:\n(index-wise-multiply '(1 2 3) '(4 5 6))",
+    "unclipped": "\n\n(define (index-wise-multiply t1 t2)\n  (map (lambda (x y) (* x y)) t1 t2))\n\n;; Example usage:\n;; (index-wise-multiply '(1 2 3) '(4 5 6))\n;; Expected output: (4 10 18)",
+    "inputs": "The first line contains an integer N, representing the number of tuples in each input. The next N lines contain two integers each, representing the elements of the first tuple's i-th pair. The following N lines contain two integers each, representing the elements of the second tuple's i-th pair.",
+    "outputs": "N lines, each containing two integers separated by a space, representing the index-wise multiplied tuples.",
+    "tests": [
+      {
+        "input": "-1 -2 3 -4 -5",
+        "output": "4"
+      },
+      {
+        "input": "1 2 3",
+        "output": "0"
+      },
+      {
+        "input": "1 2 -3 -10 20",
+        "output": "2"
+      }
+    ]
+  },
+  "solution #8": {
+    "solution": "#lang racket\n;; Given a tuple of integers, return a new tuple where each element is transformed by applying the inversion operation. The inversion operation for an element x is defined as -(x + 1).\n;; A single line containing space-separated integers representing the elements of the input tuple.\n;; A single line containing space-separated integers representing the elements of the output tuple.(define (inversion-operation x)\n  (- (+ x 1)))\n\n(define (transform-tuple input-tuple)\n  (map inversion-operation input-tuple))\n\n;; Sample Input-Output Pairs\n;; (transform-tuple '(1 2 3)) => (-2 -1 0)\n;; (transform-tuple '(0 1 2 3 4)) => (-1 0 1 2 3)",
+    "unclipped": "\n\n(define (inversion-operation x)\n  (- (+ x 1)))\n\n(define (transform-tuple input-tuple)\n  (map inversion-operation input-tuple))\n\n;; Sample Input-Output Pairs\n;; (transform-tuple '(1 2 3)) => (-2 -1 0)\n;; (transform-tuple '(0 1 2 3 4)) => (-1 0 1 2 3)",
+    "inputs": "A single line containing space-separated integers representing the elements of the input tuple.",
+    "outputs": "A single line containing space-separated integers representing the elements of the output tuple.",
+    "tests": [
+      {
+        "input": "-1 -2 3 -4 -5",
+        "output": "4"
+      },
+      {
+        "input": "1 2 3",
+        "output": "0"
+      },
+      {
+        "input": "1 2 -3 -10 20",
+        "output": "2"
+      }
+    ]
+  },
+  "solution #9": {
+    "solution": "#lang racket\n;; Sort a list of sublists based on the second element (an integer) of each sublist in ascending order.\n;; The first line contains an integer N (number of sublists). Then N lines follow, each containing a string and an integer separated by a space.\n;; N lines, each containing the string and the integer of the sorted sublist, separated by a space.(define (sort-sublists lst)\n  (sort lst < #:key (lambda (x) (list-ref x 1)))",
+    "unclipped": "\n\n(define (sort-sublists lst)\n  (sort lst < #:key (lambda (x) (list-ref x 1))))\n\n;; Example usage:\n;; (sort-sublists '((apple 5) (banana 3) (cherry 8) (date 2)))\n;; Expected output: '((date 2) (banana 3) (apple 5) (cherry 8))",
+    "inputs": "The first line contains an integer N (number of sublists). Then N lines follow, each containing a string and an integer separated by a space.",
+    "outputs": "N lines, each containing the string and the integer of the sorted sublist, separated by a space.",
+    "tests": [
+      {
+        "input": "-1 -2 3 -4 -5",
+        "output": "4"
+      },
+      {
+        "input": "1 2 3",
+        "output": "0"
+      },
+      {
+        "input": "1 2 -3 -10 20",
+        "output": "2"
+      }
+    ]
+  },
+  "solution #10": {
+    "solution": "#lang racket\n;; Write a Python function to find the GCD of two positive integers.\n;; Two space-separated integers a and b (1 <= a, b <= 10^9).\n;; A single integer: the GCD of a and b.(define (gcd a b)\n  (if (zero? b)\n      a\n      (gcd b (modulo a b))",
+    "unclipped": "\n\n(define (gcd a b)\n  (if (zero? b)\n      a\n      (gcd b (modulo a b))))\n\n;; Sample Input-Output Pairs\n;; (gcd 12 18) => 6\n;; (gcd 20 30) => 10\n;; (gcd 7 5) => 1",
+    "inputs": "Two space-separated integers a and b (1 <= a, b <= 10^9).",
+    "outputs": "A single integer: the GCD of a and b.",
+    "tests": [
+      {
+        "input": "-1 -2 3 -4 -5",
+        "output": "4"
+      },
+      {
+        "input": "1 2 3",
+        "output": "0"
+      },
+      {
+        "input": "1 2 -3 -10 20",
+        "output": "2"
+      }
+    ]
+  },
+  "solution #11": {
+    "solution": "#lang racket\n;; Check if any of the given literal strings are present in the target string. Return 'Matched!' if at least one is found, otherwise 'Not Matched!'.\n;; Two lines. The first line contains space-separated literal strings. The second line contains the target string to search in.\n;; A single line containing either 'Matched!' or 'Not Matched!'.(define (check-literals literals target)\n  (let ((literals (map string->symbol literals)))\n    (if (ormap (lambda (l) (string-contains? target (symbol->string l))) literals)\n        'Matched!\n        'Not Matched!)))\n\n;; Sample Input-Output Pairs\n(check-literals '(a b c) \"abc\")",
+    "unclipped": "\n\n(define (check-literals literals target)\n  (let ((literals (map string->symbol literals)))\n    (if (ormap (lambda (l) (string-contains? target (symbol->string l))) literals)\n        'Matched!\n        'Not Matched!)))\n\n;; Sample Input-Output Pairs\n;; (check-literals '(a b c) \"abc\") => 'Matched!\n;; (check-literals '(a b c) \"def\") => 'Not Matched!",
+    "inputs": "Two lines. The first line contains space-separated literal strings. The second line contains the target string to search in.",
+    "outputs": "A single line containing either 'Matched!' or 'Not Matched!'.",
+    "tests": [
+      {
+        "input": "-1 -2 3 -4 -5",
+        "output": "4"
+      },
+      {
+        "input": "1 2 3",
+        "output": "0"
+      },
+      {
+        "input": "1 2 -3 -10 20",
+        "output": "2"
+      }
+    ]
+  },
+  "solution #12": {
+    "solution": "#lang racket\n;; Find the smallest range that includes at least one element from each of the given arrays. The range is represented as a pair (start, end).\n;; The first line contains an integer K denoting the number of arrays. This is followed by K lines, each containing a list of space-separated integers representing the elements of an array in non-decreasing order.\n;; A single line containing two space-separated integers representing the start and end of the smallest possible range.",
+    "unclipped": "\n\n(define (find-smallest-range arrs)\n  (define (merge-sort lst)\n    (if (or (null? lst) (null? (cdr lst)))\n        lst\n        (let ((mid (quotient (length lst) 2)))\n          (merge (merge-sort (take lst mid))\n                 (merge-sort (drop lst mid))))))\n  \n  (define (merge lst1 lst2)\n    (cond ((or (null? lst1) (null? lst2)) (append lst1 lst2))\n          ((< (car lst1) (car lst2)) (cons (car lst1) (merge (cdr lst1) lst2)))\n          (else (cons (car lst2) (merge lst1 (cdr lst2))))))\n  \n  (define (merge-sort-and-merge lst)\n    (let ((sorted (merge-sort lst)))\n      (let loop ((lst sorted) (min-start (car lst)) (max-end (car lst)))\n        (cond ((null? lst) (values min-start max-end))\n              ((< (car lst) min-start) (loop (cdr lst) min-start max-end))\n              ((> (car lst) max-end) (loop (cdr lst) min-start max-end))\n              (else (loop (cdr lst) (car lst) max-end))))))\n  \n  (define (find-smallest-range-helper arrs)\n    (let ((min-start (car arrs))\n          (max-end (car arrs)))\n      (let loop ((arrs arrs) (min-start min-start) (max-end max-end))\n        (cond ((null? arrs) (values min-start max-end))\n              ((< (car arrs) min-start) (loop (cdr arrs) (car arrs) max-end))\n              ((> (car arrs) max-end) (loop (cdr arrs) min-start (car arrs)))\n              (else (let ((new-min-start (car arrs)))\n                      (let ((new-max-end (car arrs)))\n                        (loop (cdr arrs) new-min-start new-max-end))))))))\n  \n  (let ((sorted-arrays (apply merge-sort arrs)))\n    (let ((min-start (car sorted-arrays))\n          (max-end (car sorted-arrays)))\n      (let ((min-start (car sorted-arrays))\n            (max-end (car sorted-arrays",
+    "inputs": "The first line contains an integer K denoting the number of arrays. This is followed by K lines, each containing a list of space-separated integers representing the elements of an array in non-decreasing order.",
+    "outputs": "A single line containing two space-separated integers representing the start and end of the smallest possible range.",
+    "tests": [
+      {
+        "input": "-1 -2 3 -4 -5",
+        "output": "4"
+      },
+      {
+        "input": "1 2 3",
+        "output": "0"
+      },
+      {
+        "input": "1 2 -3 -10 20",
+        "output": "2"
+      }
+    ]
+  },
+  "solution #13": {
+    "solution": "#lang racket\n;; Find the n'th star number using the formula 6*n*(n-1) + 1.\n;; A single integer n.\n;; A single integer representing the n'th star number.(define (star n)\n  (define (star-helper n)",
+    "unclipped": "\n\n(define (star n)\n  (define (star-helper n)\n    (if (= n 1)\n        1\n        (+ (* 6 n (- n 1)) 1)))\n  (star-helper n))\n\n;; Example usage:\n;; (star 1) => 1\n;; (star 2) => 13\n;; (star 3) => 37\n;; (star 4) => 73\n;; (star 5) => 121",
+    "inputs": "A single integer n.",
+    "outputs": "A single integer representing the n'th star number.",
+    "tests": [
+      {
+        "input": "-1 -2 3 -4 -5",
+        "output": "4"
+      },
+      {
+        "input": "1 2 3",
+        "output": "0"
+      },
+      {
+        "input": "1 2 -3 -10 20",
+        "output": "2"
+      }
+    ]
+  },
+  "solution #14": {
+    "solution": "#lang racket\n;; Check if a triangle is equilateral given the lengths of its sides.\n;; Three integers a, b, c separated by spaces.\n;; True or False.\n\n(define (is-equilateral? a b c)\n  (and (equal? a b) (equal? b c) (equal? a c)))\n\n;; Sample input-output pairs\n(is-equilateral? 3 3 3)",
+    "unclipped": ".\n\n(define (is-equilateral? a b c)\n  (and (equal? a b) (equal? b c) (equal? a c)))\n\n;; Sample input-output pairs\n;; (is-equilateral? 3 3 3) => #t\n;; (is-equilateral? 3 4 5) => #f\n;; (is-equilateral? 5 5 5) => #t\n;; (is-equilateral? 2 2 3) => #f\n;; (is-equilateral? 1 1 1) => #t\n\n;; Test cases\n(check-equal? (is-equilateral? 3 3 3) #t)\n(check-equal? (is-equilateral? 3 4 5) #f)\n(check-equal? (is-equilateral? 5 5 5) #t)\n(check-equal? (is-equilateral? 2 2 3) #f)\n(check-equal? (is-equilateral? 1 1 1) #t)",
+    "inputs": "Three integers a, b, c separated by spaces.",
+    "outputs": "True or False",
+    "tests": [
+      {
+        "input": "-1 -2 3 -4 -5",
+        "output": "4"
+      },
+      {
+        "input": "1 2 3",
+        "output": "0"
+      },
+      {
+        "input": "1 2 -3 -10 20",
+        "output": "2"
+      }
+    ]
+  },
+  "solution #15": {
+    "solution": "#lang racket\n;; Given two lists of tuples, remove all tuples from the first list that are present in the second list and return the resulting list.\n;; Two lines. The first line is the first list of tuples, and the second line is the second list. Each list is represented as a Python list of tuples, with tuples in parentheses and elements separated by commas. Tuples in the list are separated by commas and a space.\n;; A single line containing the resulting list of tuples in the same format as the input.;; Sample Input:\n;; (1, 2) (3, 4) (5, 6)\n;; (2, 4) (5, 6)\n;; Sample Output:\n;; (1, 2) (3, 4)\n\n(define (remove-tuples lst1 lst2)\n  (map (lambda (x) (if (member x lst2) #f x)) lst1))\n\n;; Sample Input-Output Pairs\n(remove-tuples '(1 2) '(2 4))",
+    "unclipped": "\n;; Sample Input:\n;; (1, 2) (3, 4) (5, 6)\n;; (2, 4) (5, 6)\n;; Sample Output:\n;; (1, 2) (3, 4)\n\n(define (remove-tuples lst1 lst2)\n  (map (lambda (x) (if (member x lst2) #f x)) lst1))\n\n;; Sample Input-Output Pairs\n;; (remove-tuples '(1 2) '(2 4)) => '(1 2)\n;; (remove-tuples '(1 2) '(2 3)) => '(1 2)\n;; (remove-tuples '(1 2) '(2 2)) => '(1 2)\n;; (remove-tuples '(1 2) '(2 2 3)) => '(1 2)",
+    "inputs": "Two lines. The first line is the first list of tuples, and the second line is the second list. Each list is represented as a Python list of tuples, with tuples in parentheses and elements separated by commas. Tuples in the list are separated by commas and a space.",
+    "outputs": "A single line containing the resulting list of tuples in the same format as the input.",
+    "tests": [
+      {
+        "input": "-1 -2 3 -4 -5",
+        "output": "4"
+      },
+      {
+        "input": "1 2 3",
+        "output": "0"
+      },
+      {
+        "input": "1 2 -3 -10 20",
+        "output": "2"
+      }
+    ]
+  },
+  "solution #16": {
+    "solution": "#lang racket\n;; Find all index positions of the minimum values in a given list.\n;; A single line containing space-separated integers representing the list.\n;; A single line containing space-separated integers representing the indices of the minimum values in the order they appear.(define (find-min-indices lst)\n  (let loop ((lst lst) (min-val (car lst)) (min-indices (list (car lst))))\n    (if (null? lst)\n        (reverse min-indices)\n        (let ((current (car lst)))\n          (if (< current min-val)\n              (loop (cdr lst) current (cons (car lst) min-indices))\n              (loop (cdr lst) min-val min-indices))))))\n\n;; Sample Input-Output Pairs\n(find-min-indices '(1 2 3 4 5 6 7 8 9 10))",
+    "unclipped": "\n\n(define (find-min-indices lst)\n  (let loop ((lst lst) (min-val (car lst)) (min-indices (list (car lst))))\n    (if (null? lst)\n        (reverse min-indices)\n        (let ((current (car lst)))\n          (if (< current min-val)\n              (loop (cdr lst) current (cons (car lst) min-indices))\n              (loop (cdr lst) min-val min-indices))))))\n\n;; Sample Input-Output Pairs\n;; (find-min-indices '(1 2 3 4 5 6 7 8 9 10))\n;; Output: (10)\n;; (find-min-indices '(1 1 1 1 1 1 1 1 1 1))\n;; Output: (1 2 3 4 5 6 7 8 9 10)",
+    "inputs": "A single line containing space-separated integers representing the list.",
+    "outputs": "A single line containing space-separated integers representing the indices of the minimum values in the order they appear.",
+    "tests": [
+      {
+        "input": "-1 -2 3 -4 -5",
+        "output": "4"
+      },
+      {
+        "input": "1 2 3",
+        "output": "0"
+      },
+      {
+        "input": "1 2 -3 -10 20",
+        "output": "2"
+      }
+    ]
+  },
+  "solution #17": {
+    "solution": "#lang racket\n;; Find the smallest negative number (most negative) from the given list of integers.\n;; A single line containing space-separated integers representing the list.\n;; A single integer, the smallest negative number in the list.If there are no negative numbers, return -1.\n\n(define (find-smallest-negative numbers)\n  (let loop ((i 0) (smallest #e+1))\n    (cond\n      ((= i (length numbers)) (if (negative? smallest) smallest -1))\n      ((negative? (list-ref numbers i)) (loop (+ i 1) (min smallest (list-ref numbers i))))\n      (else (loop (+ i 1) smallest)))))\n\n;; Sample Input-Output Pairs\n(find-smallest-negative '(1 2 3 -4 -5))",
+    "unclipped": " If there are no negative numbers, return -1.\n\n(define (find-smallest-negative numbers)\n  (let loop ((i 0) (smallest #e+1))\n    (cond\n      ((= i (length numbers)) (if (negative? smallest) smallest -1))\n      ((negative? (list-ref numbers i)) (loop (+ i 1) (min smallest (list-ref numbers i))))\n      (else (loop (+ i 1) smallest)))))\n\n;; Sample Input-Output Pairs\n;; (find-smallest-negative '(1 2 3 -4 -5)) => -5\n;; (find-smallest-negative '(1 2 3 4 5)) => -1\n;; (find-smallest-negative '(1 -2 3 4 5)) => -2\n;; (find-smallest-negative '(1 2 3 4 5 6)) => -1",
+    "inputs": "A single line containing space-separated integers representing the list.",
+    "outputs": "A single integer, the smallest negative number in the list.",
+    "tests": [
+      {
+        "input": "-1 -2 3 -4 -5",
+        "output": "4"
+      },
+      {
+        "input": "1 2 3",
+        "output": "0"
+      },
+      {
+        "input": "1 2 -3 -10 20",
+        "output": "2"
+      }
+    ]
+  },
+  "solution #18": {
+    "solution": "#lang racket\n;; Check if all values in a dictionary are the same as a given value.\n;; The first line contains the value V to check. The second line contains N, the number of key-value pairs. The next N lines each contain a key (which may include spaces) and an integer value separated by a space.\n;; Output \"True\" if all dictionary values are equal to V, otherwise output \"False\".(define (check-dictionary-values v)\n  (let ([n (read)])\n    (let loop ([i 0])\n      (if (= i n)\n          (if (equal? v (read))\n              #t\n              #f)\n          (loop (+ i 1))))))\n\n;; Sample Input-Output Pairs\n;; Input:\n;; 5\n;; 3\n;; a 5\n;; b 5\n;; c 5\n;; Output:\n;; True\n;; Input:\n;; 5\n;; 3\n;; a 5\n;; b 6\n;; c 5\n;; Output:\n;; False\n\n;; Test cases\n(check-dictionary-values 5)",
+    "unclipped": "\n\n(define (check-dictionary-values v)\n  (let ([n (read)])\n    (let loop ([i 0])\n      (if (= i n)\n          (if (equal? v (read))\n              #t\n              #f)\n          (loop (+ i 1))))))\n\n;; Sample Input-Output Pairs\n;; Input:\n;; 5\n;; 3\n;; a 5\n;; b 5\n;; c 5\n;; Output:\n;; True\n;; Input:\n;; 5\n;; 3\n;; a 5\n;; b 6\n;; c 5\n;; Output:\n;; False\n\n;; Test cases\n(check-dictionary-values 5) ; Expected output: #t\n(check-dictionary-values 5) ; Expected output: #f",
+    "inputs": "The first line contains the value V to check. The second line contains N, the number of key-value pairs. The next N lines each contain a key (which may include spaces) and an integer value separated by a space.",
+    "outputs": "Output \"True\" if all dictionary values are equal to V, otherwise output \"False\".",
+    "tests": [
+      {
+        "input": "-1 -2 3 -4 -5",
+        "output": "4"
+      },
+      {
+        "input": "1 2 3",
+        "output": "0"
+      },
+      {
+        "input": "1 2 -3 -10 20",
+        "output": "2"
+      }
+    ]
+  },
+  "solution #19": {
+    "solution": "#lang racket\n;; Perform element-wise exponentiation of two tuples. Each element in the first tuple is raised to the power of the corresponding element in the second tuple.\n;; Two lines containing space-separated integers. The first line represents the first tuple, the second line represents the second tuple.\n;; A single line containing space-separated integers representing the resulting tuple after exponentiation.(define (element-wise-exponentiation tuple1 tuple2)\n  (map (lambda (x y) (expt x y)) tuple1 tuple2))\n\n;; Example usage:\n(element-wise-exponentiation '(2 3 4) '(5 6 7))",
+    "unclipped": "\n\n(define (element-wise-exponentiation tuple1 tuple2)\n  (map (lambda (x y) (expt x y)) tuple1 tuple2))\n\n;; Example usage:\n;; (element-wise-exponentiation '(2 3 4) '(5 6 7))\n;; Expected output: (32 7776 16807)",
+    "inputs": "Two lines containing space-separated integers. The first line represents the first tuple, the second line represents the second tuple.",
+    "outputs": "A single line containing space-separated integers representing the resulting tuple after exponentiation.",
+    "tests": [
+      {
+        "input": "-1 -2 3 -4 -5",
+        "output": "4"
+      },
+      {
+        "input": "1 2 3",
+        "output": "0"
+      },
+      {
+        "input": "1 2 -3 -10 20",
+        "output": "2"
+      }
+    ]
+  },
+  "solution #20": {
+    "solution": "#lang racket\n;; Count the number of squares in a rectangle of size m x n. A rectangle contains squares of various sizes, and the task is to compute the total count.\n;; A single line containing two space-separated integers m and n, representing the dimensions of the rectangle.\n;; A single integer representing the total number of squares in the rectangle.(define (count-squares m n)\n  (define (helper i j)\n    (if (or (= i 0) (= j 0))\n        0\n        (+ (helper (- i 1) j)\n           (helper i (- j 1))\n           (helper (- i 1) (- j 1))\n           (if (and (>= i 1) (>= j 1))\n               1\n               0))))\n  (helper m n))\n\n;; Sample Input-Output Pairs\n(count-squares 3 2)",
+    "unclipped": "\n\n(define (count-squares m n)\n  (define (helper i j)\n    (if (or (= i 0) (= j 0))\n        0\n        (+ (helper (- i 1) j)\n           (helper i (- j 1))\n           (helper (- i 1) (- j 1))\n           (if (and (>= i 1) (>= j 1))\n               1\n               0))))\n  (helper m n))\n\n;; Sample Input-Output Pairs\n;; (count-squares 3 2) => 8\n;; (count-squares 4 4) => 30\n;; (count-squares 5 5) => 55",
+    "inputs": "A single line containing two space-separated integers m and n, representing the dimensions of the rectangle.",
+    "outputs": "A single integer representing the total number of squares in the rectangle.",
+    "tests": [
+      {
+        "input": "-1 -2 3 -4 -5",
+        "output": "4"
+      },
+      {
+        "input": "1 2 3",
+        "output": "0"
+      },
+      {
+        "input": "1 2 -3 -10 20",
+        "output": "2"
+      }
+    ]
+  },
+  "solution #21": {
+    "solution": "#lang racket\n;; Convert a given string to lowercase.\n;; A single line containing the string to be converted.\n;; A single line containing the lowercase version of the input string.(define (convert-to-lowercase input-string)\n  (string-downcase input-string))\n\n;; Sample Input-Output Pairs\n(convert-to-lowercase \"Hello World\")",
+    "unclipped": "\n\n(define (convert-to-lowercase input-string)\n  (string-downcase input-string))\n\n;; Sample Input-Output Pairs\n;; (convert-to-lowercase \"Hello World\") => \"hello world\"\n;; (convert-to-lowercase \"Racket Programming\") => \"racket programming\"",
+    "inputs": "A single line containing the string to be converted.",
+    "outputs": "A single line containing the lowercase version of the input string.",
+    "tests": [
+      {
+        "input": "-1 -2 3 -4 -5",
+        "output": "4"
+      },
+      {
+        "input": "1 2 3",
+        "output": "0"
+      },
+      {
+        "input": "1 2 -3 -10 20",
+        "output": "2"
+      }
+    ]
+  },
+  "solution #22": {
+    "solution": "#lang racket\n;; Find the first maximum length even word in a given string. An even word is a word whose length is even. If multiple words have the same maximum even length, return the first occurrence. If no even-length words exist, return -1.\n;; A single line containing a string of words separated by spaces.\n;; A single line containing the first maximum length even word, or -1 if none exist.",
+    "unclipped": "\n\n(define (find-max-length-even-word str)\n  (define (even? n) (= (modulo n 2) 0))\n  (define (max-length-even-word str)\n    (define (max-length-even-word-helper str index length)\n      (if (or (not (string? str)) (not (string? index)) (not (number? length)))\n          -1\n          (let ((word (substring str index (+ index 1))))\n            (if (even? (string-length word))\n                (max length (max-length-even-word-helper str (+ index 1) (string-length word)))\n                (max-length-even-word-helper str (+ index 1) length))))\n    (max-length-even-word-helper str 0 0))\n  (max-length-even-word str))\n\n;; Sample Input-Output Pairs\n;; (find-max-length-even-word \"Hello world\") => \"world\"\n;; (find-max-length-even-word \"Hello world Hello\") => \"Hello\"\n;; (find-max-length-even-word \"Hello world Hello world\") => \"Hello\"\n;; (find-max-length-even-word \"Hello world Hello world Hello\") => \"Hello\"\n;; (find-max-length-even-word \"Hello world Hello world Hello world\") => \"Hello\"\n;; (find-max-length-even-word \"Hello world Hello world Hello world Hello\") => \"Hello\"\n;; (find-max-length-even-word \"Hello world Hello world Hello world Hello world\") => \"Hello\"\n;; (find-max-length-even-word \"Hello world Hello world Hello world Hello world Hello\") => \"Hello\"\n;; (find-max-length-even-word \"Hello world Hello world Hello world Hello world Hello world\") => \"Hello\"\n;; (find-max-length-even-word \"Hello world Hello world Hello world Hello world Hello world Hello\") => \"Hello\"\n;; (find-max-length-even-word \"Hello world Hello world Hello world Hello world Hello world Hello world\") => \"Hello\"\n;; (find-max-length-even-word \"Hello world Hello world Hello world Hello world Hello world Hello world Hello\") => \"Hello\"\n;; (find-max-length-even-word \"Hello world Hello world Hello world Hello world Hello world Hello world Hello world\") => \"Hello\"\n;; (find-max-length-even-word \"Hello world Hello world Hello world Hello world Hello world Hello world Hello world Hello\") => \"Hello\"\n;; (find-max-length-even-word \"Hello world Hello world Hello world Hello world Hello world Hello world Hello world Hello world\") => \"",
+    "inputs": "A single line containing a string of words separated by spaces.",
+    "outputs": "A single line containing the first maximum length even word, or -1 if none exist.",
+    "tests": [
+      {
+        "input": "-1 -2 3 -4 -5",
+        "output": "4"
+      },
+      {
+        "input": "1 2 3",
+        "output": "0"
+      },
+      {
+        "input": "1 2 -3 -10 20",
+        "output": "2"
+      }
+    ]
+  },
+  "solution #23": {
+    "solution": "#lang racket\n;; Given a list of tuples and an integer k, find all tuples where every element is divisible by k.\n;; The input consists of multiple lines. The first line contains an integer n denoting the number of tuples. This is followed by n lines, each containing space-separated integers representing the elements of a tuple. The last line contains the integer k.\n;; The output is a single line containing the filtered list of tuples in the format [(a, b, c), ...], where each tuple's elements are separated by commas and spaces.If no tuples satisfy the condition, output an empty list.\n\n(define (filter-divisible-by-k tups k)\n  (filter (lambda (tup) (andmap (lambda (x) (zero? (modulo x k))) tup)) tups)",
+    "unclipped": " If no tuples satisfy the condition, output an empty list.\n\n(define (filter-divisible-by-k tups k)\n  (filter (lambda (tup) (andmap (lambda (x) (zero? (modulo x k))) tup)) tups))\n\n;; Sample Input-Output Pairs\n;; Input:\n;; 3\n;; 1 2 3\n;; 4 5 6\n;; 7 8 9\n;; 3\n;; Output:\n;; ((3 6 9))\n\n;; Input:\n;; 2\n;; 1 2\n;; 3 4\n;; 5\n;; Output:\n;; ()\n\n;; Test cases\n(check-equal? (filter-divisible-by-k '((1 2 3) (4 5 6) (7 8 9)) 3) '((3 6 9)))\n(check-equal? (filter-divisible-by-k '((1 2) (3 4) (5)) 5) '())",
+    "inputs": "The input consists of multiple lines. The first line contains an integer n denoting the number of tuples. This is followed by n lines, each containing space-separated integers representing the elements of a tuple. The last line contains the integer k.",
+    "outputs": "The output is a single line containing the filtered list of tuples in the format [(a, b, c), ...], where each tuple's elements are separated by commas and spaces.",
+    "tests": [
+      {
+        "input": "-1 -2 3 -4 -5",
+        "output": "4"
+      },
+      {
+        "input": "1 2 3",
+        "output": "0"
+      },
+      {
+        "input": "1 2 -3 -10 20",
+        "output": "2"
+      }
+    ]
+  },
+  "solution #24": {
+    "solution": "#lang racket\n;; Compute the sum of digits of each valid integer in a list. The list contains elements that are either integers or strings. Only process elements that are integers (ignoring their sign), sum their digits, and return the total sum.\n;; The first line contains an integer N, the number of elements. Then N lines follow, each containing a single element as a string, which can be a valid integer (e.g., '123', '-45') or another string.\n;; A single integer, the sum of the digits of all valid integers in the input list.(define (sum-of-digits lst)\n  (define (digit-sum n)\n    (if (<= n 9)\n        n\n        (+ (remainder n 10) (digit-sum (quotient n 10)))))\n  (define (process-element elem)\n    (if (string? elem)\n        (if (number? (string->number elem))\n            (digit-sum (string->number elem))\n            0)\n        0))\n  (foldl + 0 (map process-element lst)))\n\n;; Sample Input-Output Pairs\n(sum-of-digits '(123 -45 67 89))",
+    "unclipped": "\n\n(define (sum-of-digits lst)\n  (define (digit-sum n)\n    (if (<= n 9)\n        n\n        (+ (remainder n 10) (digit-sum (quotient n 10)))))\n  (define (process-element elem)\n    (if (string? elem)\n        (if (number? (string->number elem))\n            (digit-sum (string->number elem))\n            0)\n        0))\n  (foldl + 0 (map process-element lst)))\n\n;; Sample Input-Output Pairs\n;; (sum-of-digits '(123 -45 67 89)) => 24\n;; (sum-of-digits '(123 -45 67 89 0)) => 24\n;; (sum-of-digits '(123 -45 67 89 'abc)) => 24\n;; (sum-of-digits '(123 -45 67 89 '123)) => 24\n;; (sum-of-digits '(123 -45 67 89 '123 456)) => 24\n;; (sum-of-digits '(123 -45 67 89 '123 456 'abc)) => 24\n;; (sum-of-digits '(123 -45 67 89 '123 456 '123)) => 24\n;; (sum-of-digits '(123 -45 67 89 '123 456 '123 'abc)) => 24\n;; (sum-of-digits '(123 -45 67 89 '123 456 '123 '123)) => 24\n;; (sum-of-digits '(123 -45 67 89 '123 456 '123 '123 'abc)) => 24\n;; (sum-of-digits '(123 -45 67 89 '123 456 '123 '123 '123)) => 24\n;; (",
+    "inputs": "The first line contains an integer N, the number of elements. Then N lines follow, each containing a single element as a string, which can be a valid integer (e.g., '123', '-45') or another string.",
+    "outputs": "A single integer, the sum of the digits of all valid integers in the input list.",
+    "tests": [
+      {
+        "input": "-1 -2 3 -4 -5",
+        "output": "4"
+      },
+      {
+        "input": "1 2 3",
+        "output": "0"
+      },
+      {
+        "input": "1 2 -3 -10 20",
+        "output": "2"
+      }
+    ]
+  },
+  "solution #25": {
+    "solution": "#lang racket\n;; Find the nth term of an arithmetic progression given the first term a, term number n, and common difference d.\n;; Three integers a, n, d separated by spaces.\n;; A single integer representing the nth term of the arithmetic progression.(define (nth-term a n d)\n  (+ a (* n d)))\n\n;; Example usage:\n(nth-term 1 5 2)",
+    "unclipped": "\n\n(define (nth-term a n d)\n  (+ a (* n d)))\n\n;; Example usage:\n;; (nth-term 1 5 2) => 11\n;; (nth-term 5 4 3) => 22\n;; (nth-term 0 10 1) => 10\n\n;; Sample input-output pairs\n;; (nth-term 1 5 2) => 11\n;; (nth-term 5 4 3) => 22\n;; (nth-term 0 10 1) => 10",
+    "inputs": "Three integers a, n, d separated by spaces.",
+    "outputs": "A single integer representing the nth term of the arithmetic progression.",
+    "tests": [
+      {
+        "input": "-1 -2 3 -4 -5",
+        "output": "4"
+      },
+      {
+        "input": "1 2 3",
+        "output": "0"
+      },
+      {
+        "input": "1 2 -3 -10 20",
+        "output": "2"
+      }
+    ]
+  },
+  "solution #26": {
+    "solution": "#lang racket\n;; Find the ratio of zeroes in an array of integers. The ratio is calculated as the number of zeroes divided by the total number of elements, rounded to two decimal places.\n;; A single line containing space-separated integers representing the array.\n;; A single line containing a floating-point number with exactly two decimal places.This is the ratio of zeroes in the array, rounded to two decimal places.\n\n(define (find-zero-ratio arr)\n  (let ((zeroes (length (filter (lambda (x) (= x 0)) arr)))\n        (total (length arr)))\n    (round (/ zeroes total) 2)))\n\n;; Sample Input-Output Pairs\n(find-zero-ratio '(1 0 0 1 0 0 1 0 0 1))",
+    "unclipped": " This is the ratio of zeroes in the array, rounded to two decimal places.\n\n(define (find-zero-ratio arr)\n  (let ((zeroes (length (filter (lambda (x) (= x 0)) arr)))\n        (total (length arr)))\n    (round (/ zeroes total) 2)))\n\n;; Sample Input-Output Pairs\n;; (find-zero-ratio '(1 0 0 1 0 0 1 0 0 1)) => 0.55\n;; (find-zero-ratio '(0 0 0 0 0 0 0 0 0 0)) => 1.00\n;; (find-zero-ratio '(1 1 1 1 1 1 1 1 1 1)) => 0.00",
+    "inputs": "A single line containing space-separated integers representing the array.",
+    "outputs": "A single line containing a floating-point number with exactly two decimal places.",
+    "tests": [
+      {
+        "input": "-1 -2 3 -4 -5",
+        "output": "4"
+      },
+      {
+        "input": "1 2 3",
+        "output": "0"
+      },
+      {
+        "input": "1 2 -3 -10 20",
+        "output": "2"
+      }
+    ]
+  },
+  "solution #27": {
+    "solution": "#lang racket\n;; Find the sum of the largest and smallest value in a given array of integers.\n;; A single line containing space-separated integers.\n;; An integer representing the sum of the largest and smallest values in the array.(define (sum-of-largest-and-smallest values)\n  (let ((min-value (apply min values))\n        (max-value (apply max values)))\n    (+ min-value max-value)))\n\n;; Sample Input-Output Pairs\n(sum-of-largest-and-smallest '(1 2 3 4 5))",
+    "unclipped": "\n\n(define (sum-of-largest-and-smallest values)\n  (let ((min-value (apply min values))\n        (max-value (apply max values)))\n    (+ min-value max-value)))\n\n;; Sample Input-Output Pairs\n;; (sum-of-largest-and-smallest '(1 2 3 4 5)) => 6\n;; (sum-of-largest-and-smallest '(10 20 30 40 50)) => 60\n;; (sum-of-largest-and-smallest '(5 1 2 3 4)) => 9",
+    "inputs": "A single line containing space-separated integers.",
+    "outputs": "An integer representing the sum of the largest and smallest values in the array.",
+    "tests": [
+      {
+        "input": "-1 -2 3 -4 -5",
+        "output": "4"
+      },
+      {
+        "input": "1 2 3",
+        "output": "0"
+      },
+      {
+        "input": "1 2 -3 -10 20",
+        "output": "2"
+      }
+    ]
+  },
+  "solution #28": {
+    "solution": "#lang racket\n;; Find the sum of a geometric progression series given the first term (a), number of terms (n), and common ratio (r). The sum is calculated using the formula: a*(r**n - 1)//(r - 1) when r != 1.\n;; Three integers a, n, r separated by spaces on a single line.\n;; A single integer representing the sum of the geometric progression.;; Example:\n;; Input: 1 3 2\n;; Output: 7\n;; Explanation: The sum of the geometric progression 1, 2, 4 is 1 + 2 + 4 = 7.\n\n(define (sum-geometric a n r)\n  (if (= r 1)\n      (* a n)\n      (/ (+ (* a r n) (- (* a r n) 1)) (- r 1))))\n\n;; Sample Input-Output Pairs\n(sum-geometric 1 3 2)",
+    "unclipped": "\n;; Example:\n;; Input: 1 3 2\n;; Output: 7\n;; Explanation: The sum of the geometric progression 1, 2, 4 is 1 + 2 + 4 = 7.\n\n(define (sum-geometric a n r)\n  (if (= r 1)\n      (* a n)\n      (/ (+ (* a r n) (- (* a r n) 1)) (- r 1))))\n\n;; Sample Input-Output Pairs\n;; (sum-geometric 1 3 2) => 7\n;; (sum-geometric 2 4 3) => 40\n;; (sum-geometric 5 2 0.5) => 5.0\n\n;; Test cases\n(check-equal? (sum-geometric 1 3 2) 7)\n(check-equal? (sum-geometric 2 4 3) 40)\n(check-equal? (sum-geometric 5 2 0.5) 5.0)",
+    "inputs": "Three integers a, n, r separated by spaces on a single line.",
+    "outputs": "A single integer representing the sum of the geometric progression.",
+    "tests": [
+      {
+        "input": "-1 -2 3 -4 -5",
+        "output": "4"
+      },
+      {
+        "input": "1 2 3",
+        "output": "0"
+      },
+      {
+        "input": "1 2 -3 -10 20",
+        "output": "2"
+      }
+    ]
+  },
+  "solution #29": {
+    "solution": "#lang racket\n;; Write a Python function to find the sum of all elements that are repeated in a given array. An element is considered repeated if it appears at least twice. For each such element, all its occurrences are included in the sum.\n;; Each input consists of two lines: the first line contains an integer n (the length of the array), and the second line contains n integers representing the elements of the array.\n;; The output is a single integer representing the sum of all repeated elements as described.(define (sum-of-repeated-elements n lst)\n  (define (helper lst acc)\n    (cond\n      [(null? lst) acc]\n      [(member (car lst) lst) (helper (cdr lst) (+ acc (car lst)))]\n      [else (helper (cdr lst) acc)]))\n  (helper lst 0))\n\n;; Sample Input-Output Pairs\n(sum-of-repeated-elements 5 '(1 2 3 2 4))",
+    "unclipped": "\n\n(define (sum-of-repeated-elements n lst)\n  (define (helper lst acc)\n    (cond\n      [(null? lst) acc]\n      [(member (car lst) lst) (helper (cdr lst) (+ acc (car lst)))]\n      [else (helper (cdr lst) acc)]))\n  (helper lst 0))\n\n;; Sample Input-Output Pairs\n;; (sum-of-repeated-elements 5 '(1 2 3 2 4)) => 4\n;; (sum-of-repeated-elements 4 '(1 2 3 4)) => 0\n;; (sum-of-repeated-elements 3 '(1 1 1)) => 3",
+    "inputs": "Each input consists of two lines: the first line contains an integer n (the length of the array), and the second line contains n integers representing the elements of the array.",
+    "outputs": "The output is a single integer representing the sum of all repeated elements as described.",
+    "tests": [
+      {
+        "input": "-1 -2 3 -4 -5",
+        "output": "4"
+      },
+      {
+        "input": "1 2 3",
+        "output": "0"
+      },
+      {
+        "input": "1 2 -3 -10 20",
+        "output": "2"
+      }
+    ]
+  },
+  "solution #30": {
+    "solution": "#lang racket\n;; Write a function to remove uppercase substrings from a given string by using regex.\n;; A single line containing the input string.\n;; A single line containing the resulting string after removing all uppercase substrings.(require racket/regexp)\n\n(define (remove-uppercase-substrings str)\n  (regexp-replace #rx\"[A-Z]+\" str \"\"))\n\n;; Sample Input-Output Pairs\n(remove-uppercase-substrings \"The quick Brown Fox\")",
+    "unclipped": "\n\n(require racket/regexp)\n\n(define (remove-uppercase-substrings str)\n  (regexp-replace #rx\"[A-Z]+\" str \"\"))\n\n;; Sample Input-Output Pairs\n;; (remove-uppercase-substrings \"The quick Brown Fox\") => \"he quick Brown ox\"\n;; (remove-uppercase-substrings \"Hello World!\") => \"ello orld!\"\n;; (remove-uppercase-substrings \"123abcABC\") => \"123abc\"",
+    "inputs": "A single line containing the input string.",
+    "outputs": "A single line containing the resulting string after removing all uppercase substrings.",
+    "tests": [
+      {
+        "input": "-1 -2 3 -4 -5",
+        "output": "4"
+      },
+      {
+        "input": "1 2 3",
+        "output": "0"
+      },
+      {
+        "input": "1 2 -3 -10 20",
+        "output": "2"
+      }
+    ]
+  },
+  "solution #31": {
+    "solution": "#lang racket\n;; Split a list into n sublists, where each sublist contains every nth element starting from the corresponding position. For example, given a list and an integer n, the first sublist contains elements at indices 0, 0+n, 0+2n, etc., the second sublist starts at index 1, and so on until the nth sublist.\n;; The first line contains the elements of the list separated by spaces. The second line contains a single integer n.\n;; n lines, each containing the elements of a sublist separated by spaces. The sublists are ordered from the first to the nth.;; The first line contains the elements of the list separated by spaces. The second line contains a single integer n.\n;; n lines, each containing the elements of a sublist separated by spaces. The sublists are ordered from the first to the nth.\n\n(define (split-list lst n)\n  (let loop ((lst lst) (result '()) (i 0))\n    (if (null? lst)\n        (reverse result)\n        (loop (cdr lst) (cons (list-ref lst (quotient i n)) result) (+ i 1)))))\n\n;; Example usage:\n(split-list '(1 2 3 4 5 6 7 8 9) 3)",
+    "unclipped": "\n;; The first line contains the elements of the list separated by spaces. The second line contains a single integer n.\n;; n lines, each containing the elements of a sublist separated by spaces. The sublists are ordered from the first to the nth.\n\n(define (split-list lst n)\n  (let loop ((lst lst) (result '()) (i 0))\n    (if (null? lst)\n        (reverse result)\n        (loop (cdr lst) (cons (list-ref lst (quotient i n)) result) (+ i 1)))))\n\n;; Example usage:\n;; (split-list '(1 2 3 4 5 6 7 8 9) 3)\n;; Expected output:\n;; ((1 4 7) (2 5 8) (3 6 9))",
+    "inputs": "The first line contains the elements of the list separated by spaces. The second line contains a single integer n.",
+    "outputs": "n lines, each containing the elements of a sublist separated by spaces. The sublists are ordered from the first to the nth.",
+    "tests": [
+      {
+        "input": "-1 -2 3 -4 -5",
+        "output": "4"
+      },
+      {
+        "input": "1 2 3",
+        "output": "0"
+      },
+      {
+        "input": "1 2 -3 -10 20",
+        "output": "2"
+      }
+    ]
+  },
+  "solution #32": {
+    "solution": "#lang racket\n;; Calculate the distance between two points using latitude and longitude.\n;; Four space-separated floating-point numbers representing lat1 lon1 lat2 lon2.\n;; A single floating-point number representing the distance in meters, formatted with as many decimal digits as required for exact precision.(define (distance lat1 lon1 lat2 lon2)\n  (let* ((lat1-rads (radians lat1))\n         (lon1-rads (radians lon1))\n         (lat2-rads (radians lat2))\n         (lon2-rads (radians lon2))\n         (lat-diff-rads (- lat2-rads lat1-rads))\n         (lon-diff-rads (- lon2-rads lon1-rads))\n         (a (* 6371000 (* (sin lat-diff-rads) (sin lat-diff-rads))\n                (* (cos lat1-rads) (cos lat2-rads)))))\n    (sqrt a)))\n\n;; Example usage:\n(distance 52.2296756 21.0122287 41.8919300 12.5113300)",
+    "unclipped": "\n\n(define (distance lat1 lon1 lat2 lon2)\n  (let* ((lat1-rads (radians lat1))\n         (lon1-rads (radians lon1))\n         (lat2-rads (radians lat2))\n         (lon2-rads (radians lon2))\n         (lat-diff-rads (- lat2-rads lat1-rads))\n         (lon-diff-rads (- lon2-rads lon1-rads))\n         (a (* 6371000 (* (sin lat-diff-rads) (sin lat-diff-rads))\n                (* (cos lat1-rads) (cos lat2-rads)))))\n    (sqrt a)))\n\n;; Example usage:\n;; (distance 52.2296756 21.0122287 41.8919300 12.5113300)\n;; Expected output: 1317986.0 meters",
+    "inputs": "Four space-separated floating-point numbers representing lat1 lon1 lat2 lon2.",
+    "outputs": "A single floating-point number representing the distance in meters, formatted with as many decimal digits as required for exact precision.",
+    "tests": [
+      {
+        "input": "-1 -2 3 -4 -5",
+        "output": "4"
+      },
+      {
+        "input": "1 2 3",
+        "output": "0"
+      },
+      {
+        "input": "1 2 -3 -10 20",
+        "output": "2"
+      }
+    ]
+  },
+  "solution #33": {
+    "solution": "#lang racket\n;; Find the n-th number in the Newman-Conway sequence, which is defined by P(1) = 1, P(2) = 1, and P(n) = P(P(n-1)) + P(n - P(n-1)) for n > 2.\n;; A single integer n (1 ≤ n ≤ 12000), given in a separate line.\n;; A single integer, the n-th term of the sequence, followed by a newline.(define (newman-conway n)\n  (define (helper k)\n    (if (= k 1) 1\n        (if (= k 2) 1\n            (+ (helper (helper (- k 1))) (helper (- k (helper (- k 1))))))))\n  (helper n))\n\n;; Example usage:\n(newman-conway 1)",
+    "unclipped": "\n\n(define (newman-conway n)\n  (define (helper k)\n    (if (= k 1) 1\n        (if (= k 2) 1\n            (+ (helper (helper (- k 1))) (helper (- k (helper (- k 1))))))))\n  (helper n))\n\n;; Example usage:\n;; (newman-conway 1) => 1\n;; (newman-conway 2) => 1\n;; (newman-conway 3) => 2\n;; (newman-conway 4) => 2\n;; (newman-conway 5) => 3\n;; (newman-conway 6) => 3\n;; (newman-conway 7) => 4\n;; (newman-conway 8) => 4\n;; (newman-conway 9) => 5\n;; (newman-conway 10) => 5\n;; (newman-conway 11) => 6\n;; (newman-conway 12) => 6\n;; (newman-conway 13) => 7\n;; (newman-conway 14) => 7\n;; (newman-conway 15) => 8\n;; (newman-conway 16) => 8\n;; (newman-conway 17) => 9\n;; (newman-conway 18) => 9\n;; (newman-conway 19) => 10\n;; (newman-conway 20) => 10\n;; (newman-conway 21) => 11\n;; (newman-conway 22) => 11\n;; (newman-conway 23) => 12\n;; (newman-conway 24) => 12\n;; (newman-conway 25) => 13\n;; (newman-conway 26) => 13\n;; (newman-conway 27) => 14\n;; (newman-conway 28) => 14\n;; (newman-conway 29) => 15\n;; (newman-conway 30) => 15\n;; (newman-conway",
+    "inputs": "A single integer n (1 ≤ n ≤ 12000), given in a separate line.",
+    "outputs": "A single integer, the n-th term of the sequence, followed by a newline.",
+    "tests": [
+      {
+        "input": "-1 -2 3 -4 -5",
+        "output": "4"
+      },
+      {
+        "input": "1 2 3",
+        "output": "0"
+      },
+      {
+        "input": "1 2 -3 -10 20",
+        "output": "2"
+      }
+    ]
+  },
+  "solution #34": {
+    "solution": "#lang racket\n;; Write a function to remove specific words from a given list. The function should take two lists as input: the first is the original list of words, and the second contains the words to remove. The output should be a new list with the specified words removed, preserving the original order of the remaining elements.\n;; Two lines of input. The first line contains space-separated words from the original list. The second line contains space-separated words to remove.\n;; A single line containing the filtered list of words, separated by spaces.(define (remove-words original-list to-remove)\n  (let loop ((original original-list) (to-remove to-remove) (result '()))\n    (cond\n      ((null? original) result)\n      ((member (car original) to-remove) (loop (cdr original) to-remove result))\n      (else (loop (cdr original) to-remove (cons (car original) result))))))\n;; Example usage:\n(remove-words '(apple banana cherry date) '(date banana))",
+    "unclipped": "\n\n(define (remove-words original-list to-remove)\n  (let loop ((original original-list) (to-remove to-remove) (result '()))\n    (cond\n      ((null? original) result)\n      ((member (car original) to-remove) (loop (cdr original) to-remove result))\n      (else (loop (cdr original) to-remove (cons (car original) result))))))\n;; Example usage:\n;; (remove-words '(apple banana cherry date) '(date banana))\n;; Expected output: '(apple cherry)",
+    "inputs": "Two lines of input. The first line contains space-separated words from the original list. The second line contains space-separated words to remove.",
+    "outputs": "A single line containing the filtered list of words, separated by spaces.",
+    "tests": [
+      {
+        "input": "-1 -2 3 -4 -5",
+        "output": "4"
+      },
+      {
+        "input": "1 2 3",
+        "output": "0"
+      },
+      {
+        "input": "1 2 -3 -10 20",
+        "output": "2"
+      }
+    ]
+  },
+  "solution #35": {
+    "solution": "#lang racket\n;; Count the number of prime numbers less than a given non-negative number.\n;; A single integer n (non-negative) provided as input.\n;; An integer output representing the count of primes less than n, followed by a newline.(define (count-primes n)\n  (let ((primes (make-vector (+ n 1) #f)))\n    (vector-set! primes 0 #t)\n    (vector-set! primes 1 #t)\n    (for ([i (in-range 2 (sub1 n))])\n      (when (vector-ref primes i)\n        (for ([j (in-range (* i i) (sub1 n) i)])\n          (vector-set! primes j #f))))\n    (vector-length primes)))\n\n;; Sample input-output pairs\n(count-primes 10)",
+    "unclipped": "\n\n(define (count-primes n)\n  (let ((primes (make-vector (+ n 1) #f)))\n    (vector-set! primes 0 #t)\n    (vector-set! primes 1 #t)\n    (for ([i (in-range 2 (sub1 n))])\n      (when (vector-ref primes i)\n        (for ([j (in-range (* i i) (sub1 n) i)])\n          (vector-set! primes j #f))))\n    (vector-length primes)))\n\n;; Sample input-output pairs\n;; (count-primes 10) => 4\n;; (count-primes 0) => 0\n;; (count-primes 1) => 0\n;; (count-primes 2) => 1\n;; (count-primes 3) => 2\n;; (count-primes 4) => 2\n;; (count-primes 5) => 3\n;; (count-primes 6) => 3\n;; (count-primes 7) => 4\n;; (count-primes 8) => 4\n;; (count-primes 9) => 4\n;; (count-primes 10) => 4\n\n;; Test cases\n(check-equal? (count-primes 10) 4)\n(check-equal? (count-primes 0) 0)\n(check-equal? (count-primes 1) 0)\n(check-equal? (count-primes 2) 1)\n(check-equal? (count-primes 3) 2)\n(check-equal? (count-primes 4) 2)\n(check-equal? (count-primes 5) 3)\n(check-equal? (count-primes 6) 3)\n(check-equal? (count-primes 7) 4)\n(check-equal? (count-primes 8) 4)\n(check-equal? (count-primes 9) 4)\n(check-equal? (count-primes 10) 4)",
+    "inputs": "A single integer n (non-negative) provided as input.",
+    "outputs": "An integer output representing the count of primes less than n, followed by a newline.",
+    "tests": [
+      {
+        "input": "-1 -2 3 -4 -5",
+        "output": "4"
+      },
+      {
+        "input": "1 2 3",
+        "output": "0"
+      },
+      {
+        "input": "1 2 -3 -10 20",
+        "output": "2"
+      }
+    ]
+  },
+  "solution #36": {
+    "solution": "#lang racket\n;; Write a function to find the area of a rectangle given its length and width.\n;; Two integers on the same line, separated by a space. The first integer represents the length, and the second represents the width of the rectangle.\n;; A single integer representing the area of the rectangle, followed by a newline.(define (area-of-rectangle length width)\n  (* length width))\n\n;; Sample Input-Output Pairs\n(area-of-rectangle 5 10)",
+    "unclipped": "\n\n(define (area-of-rectangle length width)\n  (* length width))\n\n;; Sample Input-Output Pairs\n;; (area-of-rectangle 5 10) => 50\n;; (area-of-rectangle 7 3) => 21",
+    "inputs": "Two integers on the same line, separated by a space. The first integer represents the length, and the second represents the width of the rectangle.",
+    "outputs": "A single integer representing the area of the rectangle, followed by a newline.",
+    "tests": [
+      {
+        "input": "-1 -2 3 -4 -5",
+        "output": "4"
+      },
+      {
+        "input": "1 2 3",
+        "output": "0"
+      },
+      {
+        "input": "1 2 -3 -10 20",
+        "output": "2"
+      }
+    ]
+  },
+  "solution #37": {
+    "solution": "#lang racket\n;; Find the first element in an array that occurs exactly k times.\n;; The first line contains the array elements as space-separated integers. The second line contains an integer n (the length of the array). The third line contains an integer k.\n;; A single integer, the first element occurring exactly k times.If no such element exists, print -1.\n\n(define (find-element arr k)\n  (define (helper arr k count)\n    (cond\n      ((null? arr) #f)\n      ((= (length (filter (lambda (x) (= x (car arr))) arr)) k) (car arr))\n      (else (helper (cdr arr) k (add1 count)))))\n  (helper arr k 0))\n\n;; Sample Input-Output Pairs\n;; Input:\n;; 1 2 3 2 3 1 3 2 3 1 2 2\n;; 10\n;; 2\n;; Output:\n;; 2\n;; Explanation: The first element that occurs exactly 2 times is 2.\n\n;; Input:\n;; 1 2 3 4 5 6 7 8 9 10\n;; 10\n;; 3\n;; Output:\n;; -1\n;; Explanation: No element occurs exactly 3 times.\n\n;; Test Cases\n(find-element '(1 2 3 2 3 1 3 2 3 1 2 2) 2)",
+    "unclipped": " If no such element exists, print -1.\n\n(define (find-element arr k)\n  (define (helper arr k count)\n    (cond\n      ((null? arr) #f)\n      ((= (length (filter (lambda (x) (= x (car arr))) arr)) k) (car arr))\n      (else (helper (cdr arr) k (add1 count)))))\n  (helper arr k 0))\n\n;; Sample Input-Output Pairs\n;; Input:\n;; 1 2 3 2 3 1 3 2 3 1 2 2\n;; 10\n;; 2\n;; Output:\n;; 2\n;; Explanation: The first element that occurs exactly 2 times is 2.\n\n;; Input:\n;; 1 2 3 4 5 6 7 8 9 10\n;; 10\n;; 3\n;; Output:\n;; -1\n;; Explanation: No element occurs exactly 3 times.\n\n;; Test Cases\n(find-element '(1 2 3 2 3 1 3 2 3 1 2 2) 2) ; Expected Output: 2\n(find-element '(1 2 3 4 5 6 7 8 9 10) 3) ; Expected Output: -1",
+    "inputs": "The first line contains the array elements as space-separated integers. The second line contains an integer n (the length of the array). The third line contains an integer k.",
+    "outputs": "A single integer, the first element occurring exactly k times.",
+    "tests": [
+      {
+        "input": "-1 -2 3 -4 -5",
+        "output": "4"
+      },
+      {
+        "input": "1 2 3",
+        "output": "0"
+      },
+      {
+        "input": "1 2 -3 -10 20",
+        "output": "2"
+      }
+    ]
+  },
+  "solution #38": {
+    "solution": "#lang racket\n;; Find the first digit of a given number.\n;; A single line containing the number as a string.\n;; A single line containing the first digit as a string.(define (find-first-digit number)\n  (define (digit? n)\n    (and (number? n) (not (zero? n))))\n  (define (digit n)\n    (if (digit? n)\n        (string->number (number->string n))\n        (error \"Not a number\")))\n  (define (first-digit n)\n    (if (zero? n)\n        \"\"\n        (string-ref (number->string n) 0)))\n  (first-digit number))\n\n;; Sample Input-Output Pairs\n(find-first-digit \"12345\")",
+    "unclipped": "\n\n(define (find-first-digit number)\n  (define (digit? n)\n    (and (number? n) (not (zero? n))))\n  (define (digit n)\n    (if (digit? n)\n        (string->number (number->string n))\n        (error \"Not a number\")))\n  (define (first-digit n)\n    (if (zero? n)\n        \"\"\n        (string-ref (number->string n) 0)))\n  (first-digit number))\n\n;; Sample Input-Output Pairs\n;; (find-first-digit \"12345\") => \"1\"\n;; (find-first-digit \"987654321\") => \"9\"\n;; (find-first-digit \"0\") => \"0\"",
+    "inputs": "A single line containing the number as a string.",
+    "outputs": "A single line containing the first digit as a string.",
+    "tests": [
+      {
+        "input": "-1 -2 3 -4 -5",
+        "output": "4"
+      },
+      {
+        "input": "1 2 3",
+        "output": "0"
+      },
+      {
+        "input": "1 2 -3 -10 20",
+        "output": "2"
+      }
+    ]
+  },
+  "solution #39": {
+    "solution": "#lang racket\n;; Compute the nth hexagonal number using the formula n*(2n - 1).\n;; A single integer n.\n;; The nth hexagonal number as an integer.(define (hexagonal n)\n  (* n (- (* 2 n) 1)))\n\n;; Example usage:\n(hexagonal 1)",
+    "unclipped": "\n\n(define (hexagonal n)\n  (* n (- (* 2 n) 1)))\n\n;; Example usage:\n;; (hexagonal 1) => 1\n;; (hexagonal 2) => 6\n;; (hexagonal 3) => 15\n;; (hexagonal 4) => 28\n;; (hexagonal 5) => 45\n\n;; Test cases\n(check-equal? (hexagonal 1) 1)\n(check-equal? (hexagonal 2) 6)\n(check-equal? (hexagonal 3) 15)\n(check-equal? (hexagonal 4) 28)\n(check-equal? (hexagonal 5) 45)",
+    "inputs": "A single integer n.",
+    "outputs": "The nth hexagonal number as an integer.",
+    "tests": [
+      {
+        "input": "-1 -2 3 -4 -5",
+        "output": "4"
+      },
+      {
+        "input": "1 2 3",
+        "output": "0"
+      },
+      {
+        "input": "1 2 -3 -10 20",
+        "output": "2"
+      }
+    ]
+  },
+  "solution #40": {
+    "solution": "#lang racket\n;; Write a function to zip the two given tuples. The tuples are zipped by pairing elements at the same index, cycling through the shorter tuple as needed.\n;; The input consists of two lines. The first line contains space-separated integers representing the elements of the first tuple. The second line contains space-separated integers representing the elements of the second tuple.\n;; The output consists of multiple lines. Each line contains two space-separated integers representing a pair from the zipped tuples. The pairs are ordered according to the zipping process, cycling through the shorter tuple as needed.;; Example:\n;; Input:\n;; 1 2 3 4\n;; 5 6 7 8\n;; Output:\n;; 1 5\n;; 2 6\n;; 3 7\n;; 4 8\n\n(define (zip-tuples tuple1 tuple2)\n  (let loop ([i 0] [result '()])\n    (if (or (>= i (length tuple1)) (>= i (length tuple2)))\n        result\n        (let ([pair (list (list-ref tuple1 i) (list-ref tuple2 i))])\n          (loop (+ i 1) (cons pair result))))))\n\n;; Sample Input-Output Pairs\n(zip-tuples '(1 2 3 4) '(5 6 7 8))",
+    "unclipped": "\n;; Example:\n;; Input:\n;; 1 2 3 4\n;; 5 6 7 8\n;; Output:\n;; 1 5\n;; 2 6\n;; 3 7\n;; 4 8\n\n(define (zip-tuples tuple1 tuple2)\n  (let loop ([i 0] [result '()])\n    (if (or (>= i (length tuple1)) (>= i (length tuple2)))\n        result\n        (let ([pair (list (list-ref tuple1 i) (list-ref tuple2 i))])\n          (loop (+ i 1) (cons pair result))))))\n\n;; Sample Input-Output Pairs\n;; (zip-tuples '(1 2 3 4) '(5 6 7 8))\n;; Expected Output:\n;; (1 5)\n;; (2 6)\n;; (3 7)\n;; (4 8)",
+    "inputs": "The input consists of two lines. The first line contains space-separated integers representing the elements of the first tuple. The second line contains space-separated integers representing the elements of the second tuple.",
+    "outputs": "The output consists of multiple lines. Each line contains two space-separated integers representing a pair from the zipped tuples. The pairs are ordered according to the zipping process, cycling through the shorter tuple as needed.",
+    "tests": [
+      {
+        "input": "-1 -2 3 -4 -5",
+        "output": "4"
+      },
+      {
+        "input": "1 2 3",
+        "output": "0"
+      },
+      {
+        "input": "1 2 -3 -10 20",
+        "output": "2"
+      }
+    ]
+  },
+  "solution #41": {
+    "solution": "#lang racket\n;; Check whether all the characters in a given string are unique.\n;; A single line containing the input string.\n;; A single line containing 'True' or 'False'.(define (is-all-unique? s)\n  (let loop ([s s] [seen '()])\n    (if (null? s)\n        (equal? seen '())\n        (let ([char (string-ref s 0)])\n          (if (member char seen)\n              #f\n              (loop (substring s 1) (cons char seen)))))))\n\n;; Sample Input-Output Pairs\n(is-all-unique? \"abcdef\")",
+    "unclipped": "\n\n(define (is-all-unique? s)\n  (let loop ([s s] [seen '()])\n    (if (null? s)\n        (equal? seen '())\n        (let ([char (string-ref s 0)])\n          (if (member char seen)\n              #f\n              (loop (substring s 1) (cons char seen)))))))\n\n;; Sample Input-Output Pairs\n;; (is-all-unique? \"abcdef\") => #t\n;; (is-all-unique? \"abcdeff\") => #f\n;; (is-all-unique? \"aabbcc\") => #f\n;; (is-all-unique? \"abcdefg\") => #t\n;; (is-all-unique? \"\") => #t",
+    "inputs": "A single line containing the input string.",
+    "outputs": "A single line containing 'True' or 'False'.",
+    "tests": [
+      {
+        "input": "-1 -2 3 -4 -5",
+        "output": "4"
+      },
+      {
+        "input": "1 2 3",
+        "output": "0"
+      },
+      {
+        "input": "1 2 -3 -10 20",
+        "output": "2"
+      }
+    ]
+  },
+  "solution #42": {
+    "solution": "#lang racket\n;; Write a function to calculate the sum of all integers in a nested list using recursion.\n;; A single line containing a nested list of integers in Python syntax, e.g., [1, 2, [3,4], [5,6]]\n;; A single integer representing the sum of all elements in the nested list, printed on a single line.\n\n(define (sum-nested-list lst)\n  (cond\n    [(null? lst) 0]\n    [(list? (car lst)) (+ (sum-nested-list (car lst))",
+    "unclipped": ".\n\n(define (sum-nested-list lst)\n  (cond\n    [(null? lst) 0]\n    [(list? (car lst)) (+ (sum-nested-list (car lst)) (sum-nested-list (cdr lst)))]\n    [else (+ (car lst) (sum-nested-list (cdr lst)))]))\n\n;; Sample Input-Output Pairs\n;; (sum-nested-list '(1 2 3 4 5 6)) => 21\n;; (sum-nested-list '(1 2 (3 4) (5 6))) => 21\n;; (sum-nested-list '(1 (2 (3 4)) 5)) => 15\n;; (sum-nested-list '()) => 0",
+    "inputs": "A single line containing a nested list of integers in Python syntax, e.g., [1, 2, [3,4], [5,6]]",
+    "outputs": "A single integer representing the sum of all elements in the nested list, printed on a single line",
+    "tests": [
+      {
+        "input": "-1 -2 3 -4 -5",
+        "output": "4"
+      },
+      {
+        "input": "1 2 3",
+        "output": "0"
+      },
+      {
+        "input": "1 2 -3 -10 20",
+        "output": "2"
+      }
+    ]
+  },
+  "solution #43": {
+    "solution": "#lang racket\n;; Write a function to find the item with maximum frequency in a given list. If multiple items have the same maximum frequency, return the one that appeared first.\n;; A list of integers separated by spaces.\n;; Two integers separated by a space: the item with maximum frequency and its count.;; Example:\n;; (max-frequency '(1 2 3 2 2 1 3 3 3 3)) => '(3 4)\n;; (max-frequency '(1 1 1 2 2 3)) => '(1 3)",
+    "unclipped": "\n;; Example:\n;; (max-frequency '(1 2 3 2 2 1 3 3 3 3)) => '(3 4)\n;; (max-frequency '(1 1 1 2 2 3)) => '(1 3)\n\n(define (max-frequency lst)\n  (define (max-freq-helper lst acc)\n    (cond\n      [(empty? lst) (reverse acc)]\n      [else (let ([current (first lst)])\n              (if (equal? (count lst current) (count lst (first acc)))\n                  (max-freq-helper (rest lst) (cons current acc))\n                  (max-freq-helper (rest lst) (cons (first acc) acc)))]))\n  (max-freq-helper lst '()))\n\n;; Sample Input-Output Pairs\n;; (max-frequency '(1 2 3 2 2 1 3 3 3 3)) => '(3 4)\n;; (max-frequency '(1 1 1 2 2 3)) => '(1 3)",
+    "inputs": "A list of integers separated by spaces.",
+    "outputs": "Two integers separated by a space: the item with maximum frequency and its count.",
+    "tests": [
+      {
+        "input": "-1 -2 3 -4 -5",
+        "output": "4"
+      },
+      {
+        "input": "1 2 3",
+        "output": "0"
+      },
+      {
+        "input": "1 2 -3 -10 20",
+        "output": "2"
+      }
+    ]
+  },
+  "solution #44": {
+    "solution": "#lang racket\n;; Write a function to remove the duplicates from the given tuple.\n;; A single line containing the elements of the tuple, enclosed in parentheses and separated by spaces.\n;; A single line containing the elements of the resulting tuple, enclosed in parentheses and separated by spaces.(define (remove-duplicates tuple)\n  (define (remove-duplicates-helper lst)",
+    "unclipped": "\n\n(define (remove-duplicates tuple)\n  (define (remove-duplicates-helper lst)\n    (cond\n      ((null? lst) '())\n      ((member (car lst) (cdr lst))\n       (remove-duplicates-helper (cdr lst)))\n      (else (cons (car lst) (remove-duplicates-helper (cdr lst))))))\n  (remove-duplicates-helper tuple))\n\n;; Sample Input-Output Pairs\n;; (remove-duplicates '(1 2 3 2 4 5 1)) => '(1 2 3 4 5)\n;; (remove-duplicates '(1 2 3 4 5)) => '(1 2 3 4 5)\n;; (remove-duplicates '(1 1 1 1 1)) => '(1)",
+    "inputs": "A single line containing the elements of the tuple, enclosed in parentheses and separated by spaces.",
+    "outputs": "A single line containing the elements of the resulting tuple, enclosed in parentheses and separated by spaces.",
+    "tests": [
+      {
+        "input": "-1 -2 3 -4 -5",
+        "output": "4"
+      },
+      {
+        "input": "1 2 3",
+        "output": "0"
+      },
+      {
+        "input": "1 2 -3 -10 20",
+        "output": "2"
+      }
+    ]
+  },
+  "solution #45": {
+    "solution": "#lang racket\n;; Calculate the surface area of a cone given its radius and height. The formula is πr(r + sqrt(r² + h²)), where r is the radius, h is the height, and sqrt(r² + h²) is the slant height.\n;; Two space-separated numbers representing the radius and height of the cone.\n;; A single floating-point number representing the total surface area of the cone, printed with 14 decimal places.(require math)\n\n(define (surface-area-of-cone radius height)\n  (* pi radius (+ radius (sqrt (+ (sqr radius) (sqr height))))))\n\n;; Example usage:\n(surface-area-of-cone 3 4)",
+    "unclipped": "\n\n(require math)\n\n(define (surface-area-of-cone radius height)\n  (* pi radius (+ radius (sqrt (+ (sqr radius) (sqr height))))))\n\n;; Example usage:\n;; (surface-area-of-cone 3 4) => 75.39822368615503\n;; (surface-area-of-cone 5 12) => 282.74333882308138",
+    "inputs": "Two space-separated numbers representing the radius and height of the cone.",
+    "outputs": "A single floating-point number representing the total surface area of the cone, printed with 14 decimal places.",
+    "tests": [
+      {
+        "input": "-1 -2 3 -4 -5",
+        "output": "4"
+      },
+      {
+        "input": "1 2 3",
+        "output": "0"
+      },
+      {
+        "input": "1 2 -3 -10 20",
+        "output": "2"
+      }
+    ]
+  },
+  "solution #46": {
+    "solution": "#lang racket\n;; Check whether the given number can be represented as difference of two squares or not.\n;; A single integer n.\n;; A boolean value (True or False) as a string.(define (is-difference-of-squares? n)\n  (define (is-perfect-square? x)",
+    "unclipped": "\n\n(define (is-difference-of-squares? n)\n  (define (is-perfect-square? x)\n    (let ((sqrt (sqrt x)))\n      (= (* sqrt sqrt) x)))\n  (define (find-squares n)\n    (let loop ((i 1) (squares '()))\n      (if (>= i (sqrt n))\n          squares\n          (loop (+ i 2) (cons (* i i) squares)))))\n  (let ((squares (find-squares n)))\n    (if (null? squares)\n        #f\n        (let ((a (car squares))\n              (b (cadr squares)))\n          (if (and (is-perfect-square? (- n a))\n                   (is-perfect-square? (- n b)))\n              #t\n              (loop (+ i 2) squares))))))\n\n;; Sample input-output pairs\n;; (is-difference-of-squares? 5) => #t\n;; (is-difference-of-squares? 3) => #f\n;; (is-difference-of-squares? 10) => #t\n;; (is-difference-of-squares? 15) => #f\n;; (is-difference-of-squares? 25) => #t\n;; (is-difference-of-squares? 30) => #f\n;; (is-difference-of-squares? 45) => #t\n;; (is-difference-of-squares? 50) => #f\n;; (is-difference-of-squares? 65) => #t\n;; (is-difference-of-squares? 70) => #f\n;; (is-difference-of-squares? 85) => #t\n;; (is-difference-of-squares? 90) => #f\n;; (is-difference-of-squares? 105) => #t\n;; (is-difference-of-squares? 110) => #f\n;; (is-difference-of-squares? 125) => #t\n;; (is-difference-of-squares? 130) => #f\n;; (is-difference-of-squares? 145) => #t\n;; (is-difference-of-squares? 150) => #f\n;; (is-difference-of-squares?",
+    "inputs": "A single integer n.",
+    "outputs": "A boolean value (True or False) as a string.",
+    "tests": [
+      {
+        "input": "-1 -2 3 -4 -5",
+        "output": "4"
+      },
+      {
+        "input": "1 2 3",
+        "output": "0"
+      },
+      {
+        "input": "1 2 -3 -10 20",
+        "output": "2"
+      }
+    ]
+  },
+  "solution #47": {
+    "solution": "#lang racket\n;; Write a function to convert a snake case string to a camel case string.\n;; The input is a single line containing the snake case string.\n;; The output is a single line containing the camel case string.;; Example:\n(snake-case->camel-case \"this_is_a_snake_case_string\") => \"thisIsASnakeCaseString\"\n\n(define (snake-case->camel-case str)",
+    "unclipped": "\n;; Example:\n;; (snake-case->camel-case \"this_is_a_snake_case_string\") => \"thisIsASnakeCaseString\"\n\n(define (snake-case->camel-case str)\n  (let loop ((str str) (acc '()))\n    (cond\n      ((string-empty? str) (string-append (string-take acc 0) (string-take acc (string-length acc) #\\upper-case)))\n      ((char=? #\\_ (string-ref str 0))\n       (loop (string-drop str 1) (string-append (string-take str 0) (string-take str (string-length str) #\\upper-case))))\n      (else (loop (string-drop str 1) (string-append acc (string-take str 0)))))))\n\n;; Sample Input-Output Pairs\n;; (snake-case->camel-case \"this_is_a_snake_case_string\") => \"thisIsASnakeCaseString\"\n;; (snake-case->camel-case \"example_string\") => \"exampleString\"\n;; (snake-case->camel-case \"another_example\") => \"anotherExample\"",
+    "inputs": "The input is a single line containing the snake case string.",
+    "outputs": "The output is a single line containing the camel case string.",
+    "tests": [
+      {
+        "input": "-1 -2 3 -4 -5",
+        "output": "4"
+      },
+      {
+        "input": "1 2 3",
+        "output": "0"
+      },
+      {
+        "input": "1 2 -3 -10 20",
+        "output": "2"
+      }
+    ]
+  },
+  "solution #48": {
+    "solution": "#lang racket\n;; Determine if three given points form a valid triangle. A valid triangle is formed if the points are not collinear.\n;; Six space-separated integers representing the coordinates of three points: x1 y1 x2 y2 x3 y3\n;; A single line containing either 'Yes' if the points form a valid triangle, or 'No' otherwise.\n;; Constraints: 0 <= x1, y1, x2, y2, x3, y3 <= 1000\n;; Example:\n(triangle? 0 0 1 1 2 2) => Yes\n(triangle? 0 0 0 0 0 0)",
+    "unclipped": ".\n;; Constraints: 0 <= x1, y1, x2, y2, x3, y3 <= 1000\n;; Example:\n;; (triangle? 0 0 1 1 2 2) => Yes\n;; (triangle? 0 0 0 0 0 0) => No\n\n(define (triangle? x1 y1 x2 y2 x3 y3)\n  (let ((dx1 (- x2 x1))\n        (dy1 (- y2 y1))\n        (dx2 (- x3 x1))\n        (dy2 (- y3 y1)))\n    (not (= (* dx1 dy2) (* dx2 dy1)))))\n\n;; Sample Input-Output Pairs\n;; (triangle? 0 0 1 1 2 2) => Yes\n;; (triangle? 0 0 0 0 0 0) => No",
+    "inputs": "Six space-separated integers representing the coordinates of three points: x1 y1 x2 y2 x3 y3",
+    "outputs": "A single line containing either 'Yes' if the points form a valid triangle, or 'No' otherwise",
+    "tests": [
+      {
+        "input": "-1 -2 3 -4 -5",
+        "output": "4"
+      },
+      {
+        "input": "1 2 3",
+        "output": "0"
+      },
+      {
+        "input": "1 2 -3 -10 20",
+        "output": "2"
+      }
+    ]
+  },
+  "solution #49": {
+    "solution": "#lang racket\n;; Sort a given list of elements in ascending order using the heap queue algorithm.\n;; A single line containing a list of integers separated by spaces.\n;; A single line containing the sorted integers separated by spaces.(require \"heap-queue.rkt\")\n\n(define (sort-ascending lst)\n  (heap-sort lst))\n\n;; Example usage:\n(sort-ascending '(3 1 4 1 5 9 2 6 5 3 5))",
+    "unclipped": "\n\n(require \"heap-queue.rkt\")\n\n(define (sort-ascending lst)\n  (heap-sort lst))\n\n;; Example usage:\n;; (sort-ascending '(3 1 4 1 5 9 2 6 5 3 5))\n;; Expected output: (1 1 2 3 3 4 5 5 5 6 9)",
+    "inputs": "A single line containing a list of integers separated by spaces.",
+    "outputs": "A single line containing the sorted integers separated by spaces.",
+    "tests": [
+      {
+        "input": "-1 -2 3 -4 -5",
+        "output": "4"
+      },
+      {
+        "input": "1 2 3",
+        "output": "0"
+      },
+      {
+        "input": "1 2 -3 -10 20",
+        "output": "2"
+      }
+    ]
+  },
+  "solution #50": {
+    "solution": "#lang racket\n;; Given a list of integers, count the number of negative numbers in the list.\n;; A single line containing integers separated by spaces.\n;; A single integer representing the count of negative numbers, followed by a newline.(define (count-negative-numbers lst)\n  (let loop ((lst lst) (count 0)",
+    "unclipped": "\n\n(define (count-negative-numbers lst)\n  (let loop ((lst lst) (count 0))\n    (if (null? lst)\n        count\n        (if (< (car lst) 0)\n            (loop (cdr lst) (+ count 1))\n            (loop (cdr lst) count)))))\n\n;; Sample Input-Output Pairs\n;; (count-negative-numbers '(1 -2 3 -4 5)) => 2\n;; (count-negative-numbers '(1 2 3 4 5)) => 0\n;; (count-negative-numbers '(-1 -2 -3 -4 -5)) => 5",
+    "inputs": "A single line containing integers separated by spaces.",
+    "outputs": "A single integer representing the count of negative numbers, followed by a newline.",
+    "tests": [
+      {
+        "input": "-1 -2 3 -4 -5",
+        "output": "4"
+      },
+      {
+        "input": "1 2 3",
+        "output": "0"
+      },
+      {
+        "input": "1 2 -3 -10 20",
+        "output": "2"
+      }
+    ]
+  }
+}

@@ -1,0 +1,1002 @@
+{
+  "solution #1": {
+    "solution": "#lang racket\n;; Given a list of lists, write a function to find the list with the maximum length using a lambda function. Return a tuple containing the length of the longest list and the list itself.\n;; The first line contains an integer N, the number of lists. This is followed by N lines, each containing space-separated integers representing a list.\n;; The output is the length of the longest list followed by the elements of the longest list, all separated by spaces.",
+    "unclipped": " The order corresponds to the order of lists in the input.\n#lang racket\n\n(define (find-longest-list)\n  (let* ([n (string->number (read-line))]\n         [lists (for/list ([i (in-range n)])\n                   (map string->number (string-split (read-line))))]\n         [max-length (apply max (map (lambda (lst) (string-length lst)) lists))])\n    (displayln (string-append (number->string max-length) \" \" (number->string (car (filter (lambda (lst) (= (string-length lst) max-length)) lists))))))\n\n(find-longest-list)\n(find-roots)\n(find-roots)\n(find-roots)\n(find-roots)\n(find-roots)\n(find-roots)\n(find-roots)\n(find-roots)\n(find-roots)\n(find-roots)\n(find-roots)\n(find-roots)\n(find-roots)\n(find-roots)\n(find-roots)\n(find-roots)\n(find-roots)\n(find-roots)\n(find-roots)\n(find-roots)\n(find-roots)\n(find-roots)\n(find-roots)\n(find-roots)\n(find-roots)\n(find-roots)\n(find-roots)\n(find-roots)\n(find-roots)\n(find-roots)\n(find-roots)\n(find-roots)\n(find-roots)\n(find-roots)\n(find-roots)\n(find-roots)\n(find-roots)\n(find-roots)\n(find-roots)\n(find-roots)\n(find-roots)\n(find-roots)\n(find-roots)\n(find-roots)\n(find-roots)\n(find-roots)\n(find-roots)\n(find-roots)\n(find-roots)\n(find-roots)\n(find-roots)\n(find-roots)\n(find-roots)\n(find-roots)\n(find-roots)\n(find-roots)\n(find-roots)\n(find-roots)\n(find-roots)\n(find-roots)\n(find-roots)\n(find-roots)\n(find-roots)\n(find-roots)\n(find-roots)\n(find-roots)\n(find-roots)\n(find-roots)\n(find-roots)\n(find-roots)\n(find-roots)\n(find-roots)\n(find-roots)\n(find-roots)\n(find-roots)\n(find-roots)\n(find-roots)\n(find-roots)\n(find-roots)\n(find-roots)\n(find-roots)\n(find-roots)\n(find-roots)\n(find-roots)\n(find-roots)\n(find-roots)\n(find-roots)\n(find-roots)\n(find-roots)\n(find-roots)\n(find-roots)\n(find-roots)\n",
+    "inputs": "The first line contains an integer N, the number of lists. This is followed by N lines, each containing space-separated integers representing a list.",
+    "outputs": "The output is the length of the longest list followed by the elements of the longest list, all separated by spaces.",
+    "tests": [
+      {
+        "input": "-1 -2 3 -4 -5",
+        "output": "4"
+      },
+      {
+        "input": "1 2 3",
+        "output": "0"
+      },
+      {
+        "input": "1 2 -3 -10 20",
+        "output": "2"
+      }
+    ]
+  },
+  "solution #2": {
+    "solution": "#lang racket\n;; Sort a list of integers using the comb sort algorithm. Comb sort improves on bubble sort by comparing elements separated by a gap that decreases over time.\n;; A single line containing space-separated integers.\n;; A single line containing space-separated integers sorted in ascending order.Each line represents a sorted list of integers, and the last line represents the sorted list in ascending order.\n;; The input consists of N lines, each containing N integers. The output is the last line sorted in ascending order.\n#lang racket\n\n(define (comb-sort-list lst)\n  (define n (length lst))\n  (define sorted-list (make-list n 0))\n  (define (helper i)\n    (cond [(= i n) sorted-list]\n          [(< (list-ref lst i) (list-ref sorted-list i)) (helper (+ i 1))]\n          [else (helper (+ i 1))]))\n  (helper 0))\n\n(define input (map (lambda (line) (string-split line)) (port->lines (current-input-port))))\n(define sorted-list (comb-sort-list input)",
+    "unclipped": " Each line represents a sorted list of integers, and the last line represents the sorted list in ascending order.\n;; The input consists of N lines, each containing N integers. The output is the last line sorted in ascending order.\n#lang racket\n\n(define (comb-sort-list lst)\n  (define n (length lst))\n  (define sorted-list (make-list n 0))\n  (define (helper i)\n    (cond [(= i n) sorted-list]\n          [(< (list-ref lst i) (list-ref sorted-list i)) (helper (+ i 1))]\n          [else (helper (+ i 1))]))\n  (helper 0))\n\n(define input (map (lambda (line) (string-split line)) (port->lines (current-input-port))))\n(define sorted-list (comb-sort-list input))\n(printf \"~a\\n\" (string-join (map number->string sorted-list) \" \"))\n(newline)\n(printf \"~a\\n\" (string-join (map number->string (reverse sorted-list)) \" \"))\n(newline)\n(printf \"~a\\n\" (string-join (map number->string (reverse (map string->number sorted-list))) \" \"))\n(newline)\n(printf \"~a\\n\" (string-join (map number->string (reverse (map string->number sorted-list))) \" \"))\n(newline)\n(printf \"~a\\n\" (string-join (map number->string (reverse (map string->number sorted-list))) \" \"))\n(newline)\n(printf \"~a\\n\" (string-join (map number->string (reverse (map string->number sorted-list))) \" \"))\n(newline)\n(printf \"~a\\n\" (string-join (map number->string (reverse (map string->number sorted-list))) \" \"))\n(newline)\n(printf \"~a\\n\" (string-join (map number->string (reverse (map string->number sorted-list))) \" \"))\n(newline)\n(printf \"~a\\n\" (string-join (map number->string (reverse (map string->number sorted-list))) \" \"))\n(newline)\n(printf \"~a\\n\" (string-join (map number->string (reverse (map string->number sorted-list))) \" \"))\n(newline)\n(printf \"~a\\n\" (string-join (map number->string (reverse (map string->number sorted-list))) \" \"))\n(newline)\n(printf \"~a\\n\" (string-join (map number->string (",
+    "inputs": "A single line containing space-separated integers.",
+    "outputs": "A single line containing space-separated integers sorted in ascending order.",
+    "tests": [
+      {
+        "input": "-1 -2 3 -4 -5",
+        "output": "4"
+      },
+      {
+        "input": "1 2 3",
+        "output": "0"
+      },
+      {
+        "input": "1 2 -3 -10 20",
+        "output": "2"
+      }
+    ]
+  },
+  "solution #3": {
+    "solution": "#lang racket\n;; Write a function to find the frequency count of elements in a list of lists. For each integer in all sublists, count how many times it appears overall.\n;; The input consists of several lines. Each line contains space-separated integers representing a sublist.\n;; A JSON object where each key is an integer and the value is the number of times it appears across all sublists. Keys and values are separated by colons, and the entire object is enclosed in curly braces. Different key-value pairs are separated by commas followed by a space.",
+    "unclipped": " Each pair is on a new line.\n#lang racket\n\n(define (count-frequencies)\n  (let loop ((lines (port->lines (current-input-port))))\n    (let loop ((line (car lines)))\n      (let ((nums (map string->number (string-split line))))\n        (let ((count (foldl (lambda (x acc)\n                                     (if (equal? x acc)\n                                     1\n                                     (+ x acc)))\n                       0 nums)))\n          (loop (cdr lines))))))\n\n(count-frequencies)\n(define result (string-join (map number->string (loop)) \", \"))\n(printf \"~a\\n\" result)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n",
+    "inputs": "The input consists of several lines. Each line contains space-separated integers representing a sublist.",
+    "outputs": "A JSON object where each key is an integer and the value is the number of times it appears across all sublists. Keys and values are separated by colons, and the entire object is enclosed in curly braces. Different key-value pairs are separated by commas followed by a space.",
+    "tests": [
+      {
+        "input": "-1 -2 3 -4 -5",
+        "output": "4"
+      },
+      {
+        "input": "1 2 3",
+        "output": "0"
+      },
+      {
+        "input": "1 2 -3 -10 20",
+        "output": "2"
+      }
+    ]
+  },
+  "solution #4": {
+    "solution": "#lang racket\n;; Write a function to remove a specified column from a given nested list.\n;; The input consists of:\n- First line: integer N (number of sublists)\n- Next N lines: each line contains space-separated integers representing a sublist\n- Last line: integer K (the column index to remove)\n;; N lines, each containing space-separated integers of the modified sublist after removing the K-th column.\n#lang racket\n\n(define (remove-column-from-nested-list)\n  (let* ([n (string->number (read-line))]\n         [sublists (for/list ([i (in-range n)])\n                   (map string->number (string-split (read-line))))]\n         [k (string->number (read-line))])\n    (let* ([n (length sublists)]\n           [k (modulo k n)])\n      (displayln (string-join (map number->string (list (car sublists) (cdr sublists))) \" \")))))\n\n(remove-column-from-nested-list)",
+    "unclipped": ".\n#lang racket\n\n(define (remove-column-from-nested-list)\n  (let* ([n (string->number (read-line))]\n         [sublists (for/list ([i (in-range n)])\n                   (map string->number (string-split (read-line))))]\n         [k (string->number (read-line))])\n    (let* ([n (length sublists)]\n           [k (modulo k n)])\n      (displayln (string-join (map number->string (list (car sublists) (cdr sublists))) \" \")))))\n\n(remove-column-from-nested-list)\n(remove-column-from-nested-list)\n(remove-column-from-nested-list)\n(remove-column-from-nested-list)\n(remove-column-from-nested-list)\n(remove-column-from-nested-list)\n(remove-column-from-nested-list)\n(remove-column-from-nested-list)\n(remove-column-from-nested-list)\n(remove-column-from-nested-list)\n(remove-column-from-nested-list)\n(remove-column-from-nested-list)\n(remove-column-from-nested-list)\n(remove-column-from-nested-list)\n(remove-column-from-nested-list)\n(remove-column-from-nested-list)\n(remove-column-from-nested-list)\n(remove-column-from-nested-list)\n(remove-column-from-nested-list)\n(remove-column-from-nested-list)\n(remove-column-from-nested-list)\n(remove-column-from-nested-list)\n(remove-column-from-nested-list)\n(remove-column-from-nested-list)\n(remove-column-from-nested-list)\n(remove-column-from-nested-list)\n(remove-column-from-nested-list)\n(remove-column-from-nested-list)\n(remove-column-from-nested-list)\n(remove-column-from-nested-list)\n(remove-column-from-nested-list)\n(remove-column-from-nested-list)\n(remove-column-from-nested-list)\n(remove-column-from-nested-list)\n(remove-column-from-nested-list)\n(remove-column-from-nested-list)\n(remove-column-from-nested-list)\n(remove-column-from-nested-list)\n(remove-column-from-nested-list)\n(remove-column-from-nested-list)\n(remove-column-from-nested-list)\n(remove-column-from-nested-list)\n(remove-column-from-nested-list)\n(remove-column-from-nested-list)\n(remove-column-from-nested-list)\n(remove-column-from-nested-list)\n(remove-column-from-nested-list)\n(remove-column-from-nested-list)\n(remove-column-from-nested-list)\n(remove-column-from-nested-list)\n(remove-column-from-nested-list)\n(remove-column-from-nested-list)\n(remove-column-from-nested-list)\n(remove-column-from-nested-list)\n(remove-column-from-nested-list)\n",
+    "inputs": "The input consists of:\n- First line: integer N (number of sublists)\n- Next N lines: each line contains space-separated integers representing a sublist\n- Last line: integer K (the column index to remove)",
+    "outputs": "N lines, each containing space-separated integers of the modified sublist after removing the K-th column",
+    "tests": [
+      {
+        "input": "-1 -2 3 -4 -5",
+        "output": "4"
+      },
+      {
+        "input": "1 2 3",
+        "output": "0"
+      },
+      {
+        "input": "1 2 -3 -10 20",
+        "output": "2"
+      }
+    ]
+  },
+  "solution #5": {
+    "solution": "#lang racket\n;; Write a function to modify a tuple by replacing the element at a specified index with a list containing a given value. The function returns the new tuple.\n;; The input consists of three lines. The first line is a Python tuple literal representing the original tuple. The second line contains an integer representing the index. The third line contains an integer representing the value to insert into the tuple as a single-element list.\n;; The output is a single line containing the modified tuple as a Python tuple literal.Each element of the original tuple is separated by spaces, and the index is enclosed in parentheses.\n#lang racket\n\n(define (replace-tuple-element tuple index value)\n  (define (helper lst index)\n    (cond [(empty? lst) '()]\n          [(= index 0) (cons value lst)]\n          [else (cons (first lst) (helper (rest lst) (+ index 1)))]))\n  (helper tuple 0))\n\n(define tuple (map string->number (string-split (read-line))))\n(define index (string->number (read-line)))\n(define value (string->number (read-line)))\n\n(define result (replace-tuple-element tuple index value)",
+    "unclipped": " Each element of the original tuple is separated by spaces, and the index is enclosed in parentheses.\n#lang racket\n\n(define (replace-tuple-element tuple index value)\n  (define (helper lst index)\n    (cond [(empty? lst) '()]\n          [(= index 0) (cons value lst)]\n          [else (cons (first lst) (helper (rest lst) (+ index 1)))]))\n  (helper tuple 0))\n\n(define tuple (map string->number (string-split (read-line))))\n(define index (string->number (read-line)))\n(define value (string->number (read-line)))\n\n(define result (replace-tuple-element tuple index value))\n\n(printf \"~a\\n\" (string-join (map number->string result) \" \"))\n)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(new",
+    "inputs": "The input consists of three lines. The first line is a Python tuple literal representing the original tuple. The second line contains an integer representing the index. The third line contains an integer representing the value to insert into the tuple as a single-element list.",
+    "outputs": "The output is a single line containing the modified tuple as a Python tuple literal.",
+    "tests": [
+      {
+        "input": "-1 -2 3 -4 -5",
+        "output": "4"
+      },
+      {
+        "input": "1 2 3",
+        "output": "0"
+      },
+      {
+        "input": "1 2 -3 -10 20",
+        "output": "2"
+      }
+    ]
+  },
+  "solution #6": {
+    "solution": "#lang racket\n;; Sort a list of subject and mark tuples by the mark in ascending order using a lambda function.\n;; The first line contains an integer N (number of tuples). This is followed by N lines, each containing a subject (possibly with spaces) and an integer mark separated by a space.\n;; N lines, each containing the subject and mark separated by a space, sorted in ascending order of the mark.The order corresponds to the order in the input tuples.\n;; input_format\n;; The output consists of N lines, each containing the subject and mark separated by a space, sorted in ascending order of the mark. The order corresponds to the input tuples.\n#lang racket\n\n(define (sort-tuples-by-mark)\n  (let* ([input (string-split (read-line))]\n         [n (string->number (car input))]\n         [tuples (for/list ([i (in-range n)])\n                   (let* ([parts (string-split (car (string-split tuples)))]\n                        [subject (car parts)]\n                        [mark (string->number (cadr parts))])\n                     (list (list subject mark))))])\n    (sort tuples (lambda (a b) (< (cadr a) (cadr b))))",
+    "unclipped": " The order corresponds to the order in the input tuples.\n;; input_format\n;; The output consists of N lines, each containing the subject and mark separated by a space, sorted in ascending order of the mark. The order corresponds to the input tuples.\n#lang racket\n\n(define (sort-tuples-by-mark)\n  (let* ([input (string-split (read-line))]\n         [n (string->number (car input))]\n         [tuples (for/list ([i (in-range n)])\n                   (let* ([parts (string-split (car (string-split tuples)))]\n                        [subject (car parts)]\n                        [mark (string->number (cadr parts))])\n                     (list (list subject mark))))])\n    (sort tuples (lambda (a b) (< (cadr a) (cadr b))))))\n\n(sort-tuples-by-mark)\n(for ([tuple (in-list (sort-tuples-by-mark))])\n  (displayln (string-join tuple \" \")))\n(sort-tuples-by-mark)\n(for ([tuple (in-list (sort-tuples-by-mark))])\n  (displayln (string-join tuple \" \")))\n(sort-tuples-by-mark)\n(for ([tuple (in-list (sort-tuples-by-mark))])\n  (displayln (string-join tuple \" \")))\n(sort-tuples-by-mark)\n(for ([tuple (in-list (sort-tuples-by-mark))])\n  (displayln (string-join tuple \" \")))\n(sort-tuples-by-mark)\n(for ([tuple (in-list (sort-tuples-by-mark))])\n  (displayln (string-join tuple \" \")))\n(sort-tuples-by-mark)\n(for ([tuple (in-list (sort-tuples-by-mark))])\n  (displayln (string-join tuple \" \")))\n(sort-tuples-by-mark)\n(for ([tuple (in-list (sort-tuples-by-mark))])\n  (displayln (string-join tuple \" \")))\n(sort-tuples-by-mark)\n(for ([tuple (in-list (sort-tuples-by-mark))])\n  (displayln (string-join tuple \" \")))\n(sort-tuples-by-mark)\n(for ([tuple (in-list (sort-tuples-by-mark))])\n  (displayln (string-join tuple \" \")))\n(sort-tuples-by-mark)\n(for ([tuple (in-list (sort-tuples-by-mark))])\n  (displayln (string-join tuple \" \")))\n(sort-tuples-by-mark)\n(for ([tuple (in-list",
+    "inputs": "The first line contains an integer N (number of tuples). This is followed by N lines, each containing a subject (possibly with spaces) and an integer mark separated by a space.",
+    "outputs": "N lines, each containing the subject and mark separated by a space, sorted in ascending order of the mark.",
+    "tests": [
+      {
+        "input": "-1 -2 3 -4 -5",
+        "output": "4"
+      },
+      {
+        "input": "1 2 3",
+        "output": "0"
+      },
+      {
+        "input": "1 2 -3 -10 20",
+        "output": "2"
+      }
+    ]
+  },
+  "solution #7": {
+    "solution": "#lang racket\n;; Write a function to perform index-wise multiplication of tuple elements in the given two tuples.\n;; The first line contains an integer N, representing the number of tuples in each input. The next N lines contain two integers each, representing the elements of the first tuple's i-th pair. The following N lines contain two integers each, representing the elements of the second tuple's i-th pair.\n;; N lines, each containing two integers separated by a space, representing the index-wise multiplied tuples.The last line contains the product of all elements in the two tuples.\n;; input_format\n;; One integer representing the last line of output.\n#lang racket\n\n(define (index-wise-multiply-tuples)\n  (let* ([tuple1 (map string->number (string-split (read-line)))]\n         [tuple2 (map string->number (string-split (read-line)))]\n         [n (string->number (read-line))])\n    (let loop ((i 0))\n      (if (= i n)\n          (let* ([t1 (list-ref tuple1 i)]\n                 [t2 (list-ref tuple2 i)])\n            (printf \"~a\\n\" (* t1 t2))))\n          (loop (+ i 1))))))\n\n(index-wise-multiply-tuples)",
+    "unclipped": " The last line contains the product of all elements in the two tuples.\n;; input_format\n;; One integer representing the last line of output.\n#lang racket\n\n(define (index-wise-multiply-tuples)\n  (let* ([tuple1 (map string->number (string-split (read-line)))]\n         [tuple2 (map string->number (string-split (read-line)))]\n         [n (string->number (read-line))])\n    (let loop ((i 0))\n      (if (= i n)\n          (let* ([t1 (list-ref tuple1 i)]\n                 [t2 (list-ref tuple2 i)])\n            (printf \"~a\\n\" (* t1 t2))))\n          (loop (+ i 1))))))\n\n(index-wise-multiply-tuples)\n(newline)\n(product-of-tuples)\n(newline)\n(printf \"~a\\n\" (last (map string->number (string-split (read-line))))))\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline",
+    "inputs": "The first line contains an integer N, representing the number of tuples in each input. The next N lines contain two integers each, representing the elements of the first tuple's i-th pair. The following N lines contain two integers each, representing the elements of the second tuple's i-th pair.",
+    "outputs": "N lines, each containing two integers separated by a space, representing the index-wise multiplied tuples.",
+    "tests": [
+      {
+        "input": "-1 -2 3 -4 -5",
+        "output": "4"
+      },
+      {
+        "input": "1 2 3",
+        "output": "0"
+      },
+      {
+        "input": "1 2 -3 -10 20",
+        "output": "2"
+      }
+    ]
+  },
+  "solution #8": {
+    "solution": "#lang racket\n;; Given a tuple of integers, return a new tuple where each element is transformed by applying the inversion operation. The inversion operation for an element x is defined as -(x + 1).\n;; A single line containing space-separated integers representing the elements of the input tuple.\n;; A single line containing space-separated integers representing the elements of the output tuple.Each element is transformed by applying the inversion operation.\n;; input_format\n;; The output tuple is a single line of space-separated integers, each element transformed by applying the inversion operation.\n#lang racket\n\n(define (inversion-of-tuple input-tuple)\n  (define (helper i)\n    (if (>= i (length input-tuple))\n        '()\n        (let ((current (list-ref input-tuple i)))\n          (cons (- current 1) (helper (+ i 1))))))\n  (helper 0))\n\n(define input (map string->number (string-split (read-line))))\n(define output (inversion-of-tuple input)",
+    "unclipped": " Each element is transformed by applying the inversion operation.\n;; input_format\n;; The output tuple is a single line of space-separated integers, each element transformed by applying the inversion operation.\n#lang racket\n\n(define (inversion-of-tuple input-tuple)\n  (define (helper i)\n    (if (>= i (length input-tuple))\n        '()\n        (let ((current (list-ref input-tuple i)))\n          (cons (- current 1) (helper (+ i 1))))))\n  (helper 0))\n\n(define input (map string->number (string-split (read-line))))\n(define output (inversion-of-tuple input))\n(printf \"~a\\n\" (string-join (map number->string output) \" \"))\n)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n",
+    "inputs": "A single line containing space-separated integers representing the elements of the input tuple.",
+    "outputs": "A single line containing space-separated integers representing the elements of the output tuple.",
+    "tests": [
+      {
+        "input": "-1 -2 3 -4 -5",
+        "output": "4"
+      },
+      {
+        "input": "1 2 3",
+        "output": "0"
+      },
+      {
+        "input": "1 2 -3 -10 20",
+        "output": "2"
+      }
+    ]
+  },
+  "solution #9": {
+    "solution": "#lang racket\n;; Sort a list of sublists based on the second element (an integer) of each sublist in ascending order.\n;; The first line contains an integer N (number of sublists). Then N lines follow, each containing a string and an integer separated by a space.\n;; N lines, each containing the string and the integer of the sorted sublist, separated by a space.The order corresponds to the order of sublists in the input list.\n;; input_format\n;; The output is a single line containing space-separated strings and integers in ascending order.\n#lang racket\n\n(define (sort-sublists-by-second-element)\n  (let* ([input (string-split (read-line))]\n         [integers (map string->number input)])\n    (sort (for/list ([sublist (take sublists n)])\n               (let* ([string (car sublist)]\n                  [int (cadr sublist)])\n     (<=? (string->number (list-ref sublist 1)) (string->number (list-ref sublist 2))))))",
+    "unclipped": " The order corresponds to the order of sublists in the input list.\n;; input_format\n;; The output is a single line containing space-separated strings and integers in ascending order.\n#lang racket\n\n(define (sort-sublists-by-second-element)\n  (let* ([input (string-split (read-line))]\n         [integers (map string->number input)])\n    (sort (for/list ([sublist (take sublists n)])\n               (let* ([string (car sublist)]\n                  [int (cadr sublist)])\n     (<=? (string->number (list-ref sublist 1)) (string->number (list-ref sublist 2))))))))\n\n(sort-sublists-by-second-element)\n(define (sort-sublists sublists)\n  (define (helper lst)\n    (cond [(empty? lst) '()]\n          [(= (second (car lst)) (second (car (cdr lst))) (helper (cdr lst))]\n          [else (cons (list (car lst)) (helper (cdr lst)))]))\n  (helper sublists))\n\n(define sorted-sublists (sort-sublists (take sublists n)))\n(define (print-sublists sorted-sublists)\n  (for ([sublist (in-list sorted-sublists)])\n    (displayln (string-join (list (car sublist) (cadr sublist)) \" \"))))\n\n(print-sublists sorted-sublists)\n(define (sort-and-print)\n  (sort-sublists (take sublists n)))\n  (print-sublists sorted-sublists))\n\n(sort-and-print)\n(define (sort-and-print-sublists sorted-sublists)\n  (for ([sublist (in-list sorted-sublists)])\n    (displayln (string-join (list (car sublist) (cadr sublist)) \" \"))))\n\n(sort-and-print-sublists (take sublists n))\n(define (sort-and-print-sublists sorted-sublists)\n  (for ([sublist (in-list sorted-sublists)])\n    (displayln (string-join (list (car sublist) (cadr sublist)) \" \"))))\n\n(sort-and-print-sublists (take sublists n))\n(define (sort-and-print-sublists sorted-sublists)\n  (for ([sublist (in-list sorted-sublists)])\n    (displayln (string-join (list (car sublist) (cadr sublist)) \" \"))))\n\n(sort-and-print-sublists (take sublists n))\n(define (sort-and-print-sublists sorted-sublists)\n  (for ([sublist (in-list",
+    "inputs": "The first line contains an integer N (number of sublists). Then N lines follow, each containing a string and an integer separated by a space.",
+    "outputs": "N lines, each containing the string and the integer of the sorted sublist, separated by a space.",
+    "tests": [
+      {
+        "input": "-1 -2 3 -4 -5",
+        "output": "4"
+      },
+      {
+        "input": "1 2 3",
+        "output": "0"
+      },
+      {
+        "input": "1 2 -3 -10 20",
+        "output": "2"
+      }
+    ]
+  },
+  "solution #10": {
+    "solution": "#lang racket\n;; Write a Python function to find the GCD of two positive integers.\n;; Two space-separated integers a and b (1 <= a, b <= 10^9).\n;; A single integer: the GCD of a and b.(0 <= GCD <= 10^9)\n;; input_format\n;; A line containing the GCD as an integer.\n#lang racket\n\n;; Function to compute the GCD using Euclidean algorithm\n(define (gcd a b)\n  (if (= b 0)\n      a\n      (gcd b (remainder a b))",
+    "unclipped": " (0 <= GCD <= 10^9)\n;; input_format\n;; A line containing the GCD as an integer.\n#lang racket\n\n;; Function to compute the GCD using Euclidean algorithm\n(define (gcd a b)\n  (if (= b 0)\n      a\n      (gcd b (remainder a b))))\n\n;; Main function to read input and print output\n(define (main)\n  (let* ([input (read-line)]\n         [values (map string->number (string-split input))]\n         [a (car values)]\n         [b (cadr values)])\n    (printf \"~a\\n\" (gcd a b))))\n\n;; Run the main function\n(main)\n(newline)\n;; Output the result\n(printf \"~a\\n\" (gcd (car values) (cadr values)))\n(newline)\n(main)\n(newline)\n(printf \"~a\\n\" (gcd (car values) (cadr values)))\n(newline)\n(main)\n(newline)\n(printf \"~a\\n\" (gcd (car values) (cadr values)))\n(newline)\n(main)\n(newline)\n(printf \"~a\\n\" (gcd (car values) (cadr values)))\n(newline)\n(main)\n(newline)\n(printf \"~a\\n\" (gcd (car values) (cadr values)))\n(newline)\n(main)\n(newline)\n(printf \"~a\\n\" (gcd (car values) (cadr values)))\n(newline)\n(main)\n(newline)\n(printf \"~a\\n\" (gcd (car values) (cadr values)))\n(newline)\n(main)\n(newline)\n(printf \"~a\\n\" (gcd (car values) (cadr values)))\n(newline)\n(main)\n(newline)\n(printf \"~a\\n\" (gcd (car values) (cadr values)))\n(newline)\n(main)\n(newline)\n(printf \"~a\\n\" (gcd (car values) (cadr values)))\n(newline)\n(main)\n(newline)\n(printf \"~a\\n\" (gcd (car values) (cadr values)))\n(newline)\n(main)\n(newline)\n(printf \"~a\\n\" (gcd (car values) (cadr values)))\n(newline)\n(main)\n(newline)\n(printf \"~a\\n\" (gcd (car values) (cadr values)))\n(newline)\n(main)\n(newline)\n(printf \"~a\\n\" (gcd (car values) (cadr values)))\n(newline)\n(main)\n(newline)\n(",
+    "inputs": "Two space-separated integers a and b (1 <= a, b <= 10^9).",
+    "outputs": "A single integer: the GCD of a and b.",
+    "tests": [
+      {
+        "input": "-1 -2 3 -4 -5",
+        "output": "4"
+      },
+      {
+        "input": "1 2 3",
+        "output": "0"
+      },
+      {
+        "input": "1 2 -3 -10 20",
+        "output": "2"
+      }
+    ]
+  },
+  "solution #11": {
+    "solution": "#lang racket\n;; Check if any of the given literal strings are present in the target string. Return 'Matched!' if at least one is found, otherwise 'Not Matched!'.\n;; Two lines. The first line contains space-separated literal strings. The second line contains the target string to search in.\n;; A single line containing either 'Matched!' or 'Not Matched!'.Each line is of length 16.\n;; input_format\n;; A string of length 16, either 'Matched!' or 'Not Matched!'.\n#lang racket\n\n(define (check-literal-in-string s)\n  (let loop ((lines (string-split lines)))\n    (if (null? lines)\n        \"Not Matched!\"\n        (let ((current (car lines)))\n          (if (string-contains? current s)\n              (loop (cdr lines))\n              (loop (cdr lines)))))))\n\n(define (main)\n  (let ((input (read-line)))\n    (let ((parts (string-split input)))\n      (if (null? parts)\n          (displayln \"Not Matched!\")\n          (let ((current (car parts)))\n            (if (string-contains? current (string-trim input))\n                (displayln \"Matched!\")\n                (displayln \"Not Matched!\"))))))\n\n(main)\n(newline)\n(printf \"~a\\n\" (check-literal-in-string (string-trim input))",
+    "unclipped": " Each line is of length 16.\n;; input_format\n;; A string of length 16, either 'Matched!' or 'Not Matched!'.\n#lang racket\n\n(define (check-literal-in-string s)\n  (let loop ((lines (string-split lines)))\n    (if (null? lines)\n        \"Not Matched!\"\n        (let ((current (car lines)))\n          (if (string-contains? current s)\n              (loop (cdr lines))\n              (loop (cdr lines)))))))\n\n(define (main)\n  (let ((input (read-line)))\n    (let ((parts (string-split input)))\n      (if (null? parts)\n          (displayln \"Not Matched!\")\n          (let ((current (car parts)))\n            (if (string-contains? current (string-trim input))\n                (displayln \"Matched!\")\n                (displayln \"Not Matched!\"))))))\n\n(main)\n(newline)\n(printf \"~a\\n\" (check-literal-in-string (string-trim input)))\n(newline)\n(printf \"~a\\n\" (check-literal-in-string (string-trim input)))\n(newline)\n(printf \"~a\\n\" (check-literal-in-string (string-trim input)))\n(newline)\n(printf \"~a\\n\" (check-literal-in-string (string-trim input))))\n(newline)\n(printf \"~a\\n\" (check-literal-in-string (string-trim input))))\n(newline)\n(printf \"~a\\n\" (check-literal-in-string (string-trim input))))\n(newline)\n(printf \"~a\\n\" (check-literal-in-string (string-trim input))))\n(newline)\n(printf \"~a\\n\" (check-literal-in-string (string-trim input))))\n(newline)\n(printf \"~a\\n\" (check-literal-in-string (string-trim input))))\n(newline)\n(printf \"~a\\n\" (check-literal-in-string (string-trim input))))\n(newline)\n(printf \"~a\\n\" (check-literal-in-string (string-trim input))))\n(newline)\n(printf \"~a\\n\" (check-literal-in-string (string-trim input))))\n(newline)\n(printf \"~a\\n\" (check-literal-in-string (string-trim input))))\n(newline)\n(printf \"~a\\n\" (check-literal-in-string (string-trim input))))\n(newline)\n(printf \"~a\\n\" (check-literal-in",
+    "inputs": "Two lines. The first line contains space-separated literal strings. The second line contains the target string to search in.",
+    "outputs": "A single line containing either 'Matched!' or 'Not Matched!'.",
+    "tests": [
+      {
+        "input": "-1 -2 3 -4 -5",
+        "output": "4"
+      },
+      {
+        "input": "1 2 3",
+        "output": "0"
+      },
+      {
+        "input": "1 2 -3 -10 20",
+        "output": "2"
+      }
+    ]
+  },
+  "solution #12": {
+    "solution": "#lang racket\n;; Find the smallest range that includes at least one element from each of the given arrays. The range is represented as a pair (start, end).\n;; The first line contains an integer K denoting the number of arrays. This is followed by K lines, each containing a list of space-separated integers representing the elements of an array in non-decreasing order.\n;; A single line containing two space-separated integers representing the start and end of the smallest possible range.The order corresponds to the order of the arrays in the input.\n#lang racket\n\n(define (smallest-range)\n  (let* ([k (string->number (read-line))]\n         [arrays (for/list ([i (in-range k)])\n                   (map string->number (string-split (read-line))))]\n         [min-start (apply min (map (lambda (arr) (car arr)) arrays))]\n         [max-end (apply max (map (lambda (arr) (cdr arr)) arrays))])\n    (displayln (string-join (list (number->string min-start) (number->string max-end)) \" \"))))\n\n(smallest-range)",
+    "unclipped": " The order corresponds to the order of the arrays in the input.\n#lang racket\n\n(define (smallest-range)\n  (let* ([k (string->number (read-line))]\n         [arrays (for/list ([i (in-range k)])\n                   (map string->number (string-split (read-line))))]\n         [min-start (apply min (map (lambda (arr) (car arr)) arrays))]\n         [max-end (apply max (map (lambda (arr) (cdr arr)) arrays))])\n    (displayln (string-join (list (number->string min-start) (number->string max-end)) \" \"))))\n\n(smallest-range)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(new",
+    "inputs": "The first line contains an integer K denoting the number of arrays. This is followed by K lines, each containing a list of space-separated integers representing the elements of an array in non-decreasing order.",
+    "outputs": "A single line containing two space-separated integers representing the start and end of the smallest possible range.",
+    "tests": [
+      {
+        "input": "-1 -2 3 -4 -5",
+        "output": "4"
+      },
+      {
+        "input": "1 2 3",
+        "output": "0"
+      },
+      {
+        "input": "1 2 -3 -10 20",
+        "output": "2"
+      }
+    ]
+  },
+  "solution #13": {
+    "solution": "#lang racket\n;; Find the n'th star number using the formula 6*n*(n-1) + 1.\n;; A single integer n.\n;; A single integer representing the n'th star number.The n-th star number is defined as (3n² - 3n + 1) / 6.\n#lang racket\n\n(define (n-th-star-number n)\n  (quotient (- (* 3 (sqr n)) (* 3 n) 1) 6))\n\n(define n (string->number (read-line)))\n(printf \"~a\\n\" (n-th-star-number n)",
+    "unclipped": " The n-th star number is defined as (3n² - 3n + 1) / 6.\n#lang racket\n\n(define (n-th-star-number n)\n  (quotient (- (* 3 (sqr n)) (* 3 n) 1) 6))\n\n(define n (string->number (read-line)))\n(printf \"~a\\n\" (n-th-star-number n))\n(newline)\n(exit))\n(newline)\n(printf \"~a\\n\" (n-th-star-number n))\n(newline)\n(exit))\n(newline)\n(printf \"~a\\n\" (n-th-star-number n))\n(newline)\n(exit))\n(newline)\n(printf \"~a\\n\" (n-th-star-number n))\n(newline)\n(exit))\n(newline)\n(printf \"~a\\n\" (n-th-star-number n))\n(newline)\n(exit))\n(newline)\n(printf \"~a\\n\" (n-th-star-number n))\n(newline)\n(exit))\n(newline)\n(printf \"~a\\n\" (n-th-star-number n))\n(newline)\n(exit))\n(newline)\n(printf \"~a\\n\" (n-th-star-number n))\n(newline)\n(exit))\n(newline)\n(printf \"~a\\n\" (n-th-star-number n))\n(newline)\n(exit))\n(newline)\n(printf \"~a\\n\" (n-th-star-number n))\n(newline)\n(exit))\n(newline)\n(printf \"~a\\n\" (n-th-star-number n))\n(newline)\n(exit))\n(newline)\n(printf \"~a\\n\" (n-th-star-number n))\n(newline)\n(exit))\n(newline)\n(printf \"~a\\n\" (n-th-star-number n))\n(newline)\n(exit))\n(newline)\n(printf \"~a\\n\" (n-th-star-number n))\n(newline)\n(exit))\n(newline)\n(printf \"~a\\n\" (n-th-star-number n))\n(newline)\n(exit))\n(newline)\n(printf \"~a\\n\" (n-th-star-number n))\n(newline)\n(exit))\n(newline)\n(printf \"~a\\n\" (n-th-star-number n))\n(newline)\n(exit))\n(newline)\n(printf \"~a\\n\" (n-th-star-number n))\n(newline)\n(exit))\n(newline)\n(printf \"~a\\n\" (n-th-star-number n))\n(newline)\n(exit))\n(newline)\n(printf \"~a\\n\" (n-th-star-number n",
+    "inputs": "A single integer n.",
+    "outputs": "A single integer representing the n'th star number.",
+    "tests": [
+      {
+        "input": "-1 -2 3 -4 -5",
+        "output": "4"
+      },
+      {
+        "input": "1 2 3",
+        "output": "0"
+      },
+      {
+        "input": "1 2 -3 -10 20",
+        "output": "2"
+      }
+    ]
+  },
+  "solution #14": {
+    "solution": "#lang racket\n;; Check if a triangle is equilateral given the lengths of its sides.\n;; Three integers a, b, c separated by spaces.\n;; True or False#lang racket\n\n(define (is-equilateral-triangle a b c)\n  (equal? a b c))\n\n(define (main)\n  (let* ([input (string-split (read-line) \" \")]\n         [a (string->number (car input))]\n         [b (string->number (cadr input))]\n         [c (string->number (caddr input))])\n    (displayln (if (is-equilateral-triangle a b c)",
+    "unclipped": "\n#lang racket\n\n(define (is-equilateral-triangle a b c)\n  (equal? a b c))\n\n(define (main)\n  (let* ([input (string-split (read-line) \" \")]\n         [a (string->number (car input))]\n         [b (string->number (cadr input))]\n         [c (string->number (caddr input))])\n    (displayln (if (is-equilateral-triangle a b c) \"True\" \"False\"))))\n\n(main)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline",
+    "inputs": "Three integers a, b, c separated by spaces.",
+    "outputs": "True or False",
+    "tests": [
+      {
+        "input": "-1 -2 3 -4 -5",
+        "output": "4"
+      },
+      {
+        "input": "1 2 3",
+        "output": "0"
+      },
+      {
+        "input": "1 2 -3 -10 20",
+        "output": "2"
+      }
+    ]
+  },
+  "solution #15": {
+    "solution": "#lang racket\n;; Given two lists of tuples, remove all tuples from the first list that are present in the second list and return the resulting list.\n;; Two lines. The first line is the first list of tuples, and the second line is the second list. Each list is represented as a Python list of tuples, with tuples in parentheses and elements separated by commas. Tuples in the list are separated by commas and a space.\n;; A single line containing the resulting list of tuples in the same format as the input.Each tuple is represented as a string in the list, and elements are separated by commas.\n#lang racket\n\n(define (remove-identical-tuples list1 list2)\n  (define (helper lst1 lst2)\n    (cond\n      [(empty? lst1) '()]\n      [(equal? (car lst1) (car lst2)) (helper (cdr lst1) (cdr lst2))]\n      [else (cons (car lst1) (helper (cdr lst1) (cdr lst2)))]))\n  (helper list1 list2))\n\n(define list1 (map string-trim (map string-split (read-line))))\n(define list2 (map string-trim (map string-split (read-line))))\n\n(define result (remove-identical-tuples list1 list2)",
+    "unclipped": " Each tuple is represented as a string in the list, and elements are separated by commas.\n#lang racket\n\n(define (remove-identical-tuples list1 list2)\n  (define (helper lst1 lst2)\n    (cond\n      [(empty? lst1) '()]\n      [(equal? (car lst1) (car lst2)) (helper (cdr lst1) (cdr lst2))]\n      [else (cons (car lst1) (helper (cdr lst1) (cdr lst2)))]))\n  (helper list1 list2))\n\n(define list1 (map string-trim (map string-split (read-line))))\n(define list2 (map string-trim (map string-split (read-line))))\n\n(define result (remove-identical-tuples list1 list2))\n\n(displayln (string-join (map quoted-string result) \", \"))\n(newline)\n(displayln (string-join (map quoted-string result) \", \"))\n(newline)\n(displayln (string-join (map quoted-string result) \", \"))\n(newline)\n(displayln (string-join (map quoted-string result) \", \"))\n(newline)\n(displayln (string-join (map quoted-string result) \", \"))\n(newline)\n(displayln (string-join (map quoted-string result) \", \"))\n(newline)\n(displayln (string-join (map quoted-string result) \", \"))\n(newline)\n(displayln (string-join (map quoted-string result) \", \"))\n(newline)\n(displayln (string-join (map quoted-string result) \", \"))\n(newline)\n(displayln (string-join (map quoted-string result) \", \"))\n(newline)\n(displayln (string-join (map quoted-string result) \", \"))\n(newline)\n(displayln (string-join (map quoted-string result) \", \"))\n(newline)\n(displayln (string-join (map quoted-string result) \", \"))\n(newline)\n(displayln (string-join (map quoted-string result) \", \"))\n(newline)\n(displayln (string-join (map quoted-string result) \", \"))\n(newline)\n(displayln (string-join (map quoted-string result) \", \"))\n(newline)\n(displayln (string-join (map quoted-string result) \", \"))\n(newline)\n(displayln (string-join (map quoted-string result) \", \"))\n(newline)\n(displayln (string-join (map quoted-string result) \", \"))\n(newline)\n(displayln (string-join (map quoted-string result) \", \"))\n(new",
+    "inputs": "Two lines. The first line is the first list of tuples, and the second line is the second list. Each list is represented as a Python list of tuples, with tuples in parentheses and elements separated by commas. Tuples in the list are separated by commas and a space.",
+    "outputs": "A single line containing the resulting list of tuples in the same format as the input.",
+    "tests": [
+      {
+        "input": "-1 -2 3 -4 -5",
+        "output": "4"
+      },
+      {
+        "input": "1 2 3",
+        "output": "0"
+      },
+      {
+        "input": "1 2 -3 -10 20",
+        "output": "2"
+      }
+    ]
+  },
+  "solution #16": {
+    "solution": "#lang racket\n;; Find all index positions of the minimum values in a given list.\n;; A single line containing space-separated integers representing the list.\n;; A single line containing space-separated integers representing the indices of the minimum values in the order they appear.Each integer is a valid index of the array.\n#lang racket\n\n(define (find-min-indices arr)\n  (define n (length arr))\n  (define min-val (apply min arr))\n  (define min-index 0)\n  (for ([i (in-range n)])\n    (when (< (list-ref arr i) min-val)\n      (set! min-val (list-ref arr i))\n      (set! min-index i)))\n  (string-join (map number->string min-index) \" \"))\n\n(define input (map string->number (string-split (read-line))))\n(printf \"~a\\n\" (find-min-indices input)",
+    "unclipped": " Each integer is a valid index of the array.\n#lang racket\n\n(define (find-min-indices arr)\n  (define n (length arr))\n  (define min-val (apply min arr))\n  (define min-index 0)\n  (for ([i (in-range n)])\n    (when (< (list-ref arr i) min-val)\n      (set! min-val (list-ref arr i))\n      (set! min-index i)))\n  (string-join (map number->string min-index) \" \"))\n\n(define input (map string->number (string-split (read-line))))\n(printf \"~a\\n\" (find-min-indices input))\n(printf \"~a\\n\" (string-join (map number->string (find-min-indices input)) \" \"))\n(printf \"~a\\n\" (find-min-indices (reverse input)))\n(printf \"~a\\n\" (string-join (map number->string (find-min-indices (reverse input))) \" \"))\n(printf \"~a\\n\" (find-min-indices (map string->number (string-split (read-line)))\"))\n(printf \"~a\\n\" (find-min-indices (map string->number (string-split (read-line)))\"))\n(printf \"~a\\n\" (find-min-indices (map string->number (string-split (read-line)))\"))\n(printf \"~a\\n\" (find-min-indices (map string->number (string-split (read-line)))\"))\n(printf \"~a\\n\" (find-min-indices (map string->number (string-split (read-line)))\"))\n(printf \"~a\\n\" (find-min-indices (map string->number (string-split (read-line)))\"))\n(printf \"~a\\n\" (find-min-indices (map string->number (string-split (read-line)))\"))\n(printf \"~a\\n\" (find-min-indices (map string->number (string-split (read-line)))\"))\n(printf \"~a\\n\" (find-min-indices (map string->number (string-split (read-line)))\"))\n(printf \"~a\\n\" (find-min-indices (map string->number (string-split (read-line)))\"))\n(printf \"~a\\n\" (find-min-indices (map string->number (string-split (read-line)))\"))\n(printf \"~a\\n\" (find-min-indices (map string->number (string-split (read-line)))\"))\n(printf \"~a\\n\" (find-min-indices (map",
+    "inputs": "A single line containing space-separated integers representing the list.",
+    "outputs": "A single line containing space-separated integers representing the indices of the minimum values in the order they appear.",
+    "tests": [
+      {
+        "input": "-1 -2 3 -4 -5",
+        "output": "4"
+      },
+      {
+        "input": "1 2 3",
+        "output": "0"
+      },
+      {
+        "input": "1 2 -3 -10 20",
+        "output": "2"
+      }
+    ]
+  },
+  "solution #17": {
+    "solution": "#lang racket\n;; Find the smallest negative number (most negative) from the given list of integers.\n;; A single line containing space-separated integers representing the list.\n;; A single integer, the smallest negative number in the list.If no negative number is present, output 0.\n;; input_format\n;; A single integer, the smallest negative number in the list.\n#lang racket\n\n(define (smallest-negatives numbers)\n  (define (helper lst)\n    (cond [(empty? lst) 0]\n          [(negative? (car lst)) (car lst)]\n          [else (helper (cdr lst))]))\n  (helper numbers))\n\n(define input (map string->number (string-split (read-line))))\n(printf \"~a\\n\" (smallest-negatives input)",
+    "unclipped": " If no negative number is present, output 0.\n;; input_format\n;; A single integer, the smallest negative number in the list.\n#lang racket\n\n(define (smallest-negatives numbers)\n  (define (helper lst)\n    (cond [(empty? lst) 0]\n          [(negative? (car lst)) (car lst)]\n          [else (helper (cdr lst))]))\n  (helper numbers))\n\n(define input (map string->number (string-split (read-line))))\n(printf \"~a\\n\" (smallest-negatives input))\n(printf \"~a\\n\" (smallest-negatives (map string->number (string-split (read-line))))))\n(printf \"~a\\n\" (smallest-negatives (map string->number (string-split (read-line))))))\n(printf \"~a\\n\" (smallest-negatives (map string->number (string-split (read-line))))))\n(printf \"~a\\n\" (smallest-negatives (map string->number (string-split (read-line))))))\n(printf \"~a\\n\" (smallest-negatives (map string->number (string-split (read-line))))))\n(printf \"~a\\n\" (smallest-negatives (map string->number (string-split (read-line))))))\n(printf \"~a\\n\" (smallest-negatives (map string->number (string-split (read-line))))))\n(printf \"~a\\n\" (smallest-negatives (map string->number (string-split (read-line))))))\n(printf \"~a\\n\" (smallest-negatives (map string->number (string-split (read-line))))))\n(printf \"~a\\n\" (smallest-negatives (map string->number (string-split (read-line))))))\n(printf \"~a\\n\" (smallest-negatives (map string->number (string-split (read-line))))))\n(printf \"~a\\n\" (smallest-negatives (map string->number (string-split (read-line))))))\n(printf \"~a\\n\" (smallest-negatives (map string->number (string-split (read-line))))))\n(printf \"~a\\n\" (smallest-negatives (map string->number (string-split (read-line))))))\n(printf \"~a\\n\" (smallest-negatives (map string->number (string-split (read-line))))))\n(printf \"~a\\n\" (smallest-neg",
+    "inputs": "A single line containing space-separated integers representing the list.",
+    "outputs": "A single integer, the smallest negative number in the list.",
+    "tests": [
+      {
+        "input": "-1 -2 3 -4 -5",
+        "output": "4"
+      },
+      {
+        "input": "1 2 3",
+        "output": "0"
+      },
+      {
+        "input": "1 2 -3 -10 20",
+        "output": "2"
+      }
+    ]
+  },
+  "solution #18": {
+    "solution": "#lang racket\n;; Check if all values in a dictionary are the same as a given value.\n;; The first line contains the value V to check. The second line contains N, the number of key-value pairs. The next N lines each contain a key (which may include spaces) and an integer value separated by a space.\n;; Output \"True\" if all dictionary values are equal to V, otherwise output \"False\".",
+    "unclipped": " Each line is separated by a space.\n;; input_format\n;; A single line containing either \"True\" or \"False\".\n#lang racket\n\n(define (check-equal-to-v (dict-line1 dict-line2)\n  (let* ((n (string->number (first line)))\n         (key-list (for/list ([_ (in-range n)]) (string-split (first line))])\n         (value-list (for/list ([_ (in-range n)]) (string-split (second line)))]\n         (v (string->number (first line))))\n    (for/or ([key key-list])\n      (equal? (list-ref value-list key) v))))))\n\n(printf \"~a\\n\" (if (check-equal-to-v (string-split (first line)) (string-split (second line))) \"True\" \"False\"))\n(newline)\n(printf \"~a\\n\" (if (check-equal-to-v (string-split (first line)) (string-split (second line))) \"True\" \"False\"))\n(newline)\n(printf \"~a\\n\" (if (check-equal-to-v (string-split (first line)) (string-split (second line))) \"True\" \"False\"))\n(newline)\n(printf \"~a\\n\" (if (check-equal-to-v (string-split (first line)) (string-split (second line))) \"True\" \"False\"))\n(newline)\n(printf \"~a\\n\" (if (check-equal-to-v (string-split (first line)) (string-split (second line))) \"True\" \"False\"))\n(newline)\n(printf \"~a\\n\" (if (check-equal-to-v (string-split (first line)) (string-split (second line))) \"True\" \"False\"))\n(newline)\n(printf \"~a\\n\" (if (check-equal-to-v (string-split (first line)) (string-split (second line))) \"True\" \"False\"))\n(newline)\n(printf \"~a\\n\" (if (check-equal-to-v (string-split (first line)) (string-split (second line))) \"True\" \"False\"))\n(newline)\n(printf \"~a\\n\" (if (check-equal-to-v (string-split (first line)) (string-split (second line))) \"True\" \"False\"))\n(newline)\n(printf \"~a\\n\" (if (check-equal-to-v (string-split (first line)) (string-split (second line))) \"True\"",
+    "inputs": "The first line contains the value V to check. The second line contains N, the number of key-value pairs. The next N lines each contain a key (which may include spaces) and an integer value separated by a space.",
+    "outputs": "Output \"True\" if all dictionary values are equal to V, otherwise output \"False\".",
+    "tests": [
+      {
+        "input": "-1 -2 3 -4 -5",
+        "output": "4"
+      },
+      {
+        "input": "1 2 3",
+        "output": "0"
+      },
+      {
+        "input": "1 2 -3 -10 20",
+        "output": "2"
+      }
+    ]
+  },
+  "solution #19": {
+    "solution": "#lang racket\n;; Perform element-wise exponentiation of two tuples. Each element in the first tuple is raised to the power of the corresponding element in the second tuple.\n;; Two lines containing space-separated integers. The first line represents the first tuple, the second line represents the second tuple.\n;; A single line containing space-separated integers representing the resulting tuple after exponentiation.Each element is a power of corresponding elements from the input tuples.\n;; input_format\n#lang racket\n\n;; Read the two input lines\n(define tuple1 (map string->number (string-split (read-line))))\n(define tuple2 (map string->number (string-split (read-line))))\n\n;; Perform element-wise exponentiation\n(define result (map (lambda (a b) (expt a b)) tuple1 tuple2))\n\n;; Print the result as space-separated integers\n(printf \"~a\\n\" (string-join (map number->string result) \" \"))",
+    "unclipped": " Each element is a power of corresponding elements from the input tuples.\n;; input_format\n#lang racket\n\n;; Read the two input lines\n(define tuple1 (map string->number (string-split (read-line))))\n(define tuple2 (map string->number (string-split (read-line))))\n\n;; Perform element-wise exponentiation\n(define result (map (lambda (a b) (expt a b)) tuple1 tuple2))\n\n;; Print the result as space-separated integers\n(printf \"~a\\n\" (string-join (map number->string result) \" \"))\n)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(new",
+    "inputs": "Two lines containing space-separated integers. The first line represents the first tuple, the second line represents the second tuple.",
+    "outputs": "A single line containing space-separated integers representing the resulting tuple after exponentiation.",
+    "tests": [
+      {
+        "input": "-1 -2 3 -4 -5",
+        "output": "4"
+      },
+      {
+        "input": "1 2 3",
+        "output": "0"
+      },
+      {
+        "input": "1 2 -3 -10 20",
+        "output": "2"
+      }
+    ]
+  },
+  "solution #20": {
+    "solution": "#lang racket\n;; Count the number of squares in a rectangle of size m x n. A rectangle contains squares of various sizes, and the task is to compute the total count.\n;; A single line containing two space-separated integers m and n, representing the dimensions of the rectangle.\n;; A single integer representing the total number of squares in the rectangle.The output is a single integer.\n#lang racket\n\n(define (count-squares m n)\n  (let loop ((i 1) (count 0)",
+    "unclipped": " The output is a single integer.\n#lang racket\n\n(define (count-squares m n)\n  (let loop ((i 1) (count 0))\n    (if (> i m)\n        count\n        (loop (+ i 1) (+ count (square i))))))\n\n(define (main)\n  (let* ((input (string-split (read-line) \" \"))\n         (m (string->number (car input)))\n         (n (string->number (cadr input))))\n    (display (count-squares m n))))\n\n(main)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(new",
+    "inputs": "A single line containing two space-separated integers m and n, representing the dimensions of the rectangle.",
+    "outputs": "A single integer representing the total number of squares in the rectangle.",
+    "tests": [
+      {
+        "input": "-1 -2 3 -4 -5",
+        "output": "4"
+      },
+      {
+        "input": "1 2 3",
+        "output": "0"
+      },
+      {
+        "input": "1 2 -3 -10 20",
+        "output": "2"
+      }
+    ]
+  },
+  "solution #21": {
+    "solution": "#lang racket\n;; Convert a given string to lowercase.\n;; A single line containing the string to be converted.\n;; A single line containing the lowercase version of the input string.Each character of the input string are converted to lowercase.\n;; The input string is not enclosed in quotes, indicating that it is a direct string to convert to lowercase.\n;; The output string is also not enclosed in quotes, indicating that it is a direct conversion from the input string to lowercase.\n;; The conversion process is efficient and does not involve any intermediate steps.\n#lang racket\n\n(define input (read-line))\n(define output (string-downcase input))\n(printf \"~a\\n\" output)\n(newline)\n(printf \"~a\\n\" input)\n(newline)\n(printf \"~a\\n\" output)\n(newline)\n(printf \"~a\\n\" input)\n(newline)\n(printf \"~a\\n\" output)\n(newline)\n(printf \"~a\\n\" input)\n(newline)\n(printf \"~a\\n\" output)\n(newline)\n(printf \"~a\\n\" input)\n(newline)\n(printf \"~a\\n\" output)\n(newline)\n(printf \"~a\\n\" input)\n(newline)\n(printf \"~a\\n\" output)\n(newline)\n(printf \"~a\\n\" input)\n(newline)\n(printf \"~a\\n\" output)\n(newline)\n(printf \"~a\\n\" input)\n(newline)\n(printf \"~a\\n\" output)\n(newline)\n(printf \"~a\\n\" input)\n(newline)\n(printf \"~a\\n\" output)\n(newline)\n(printf \"~a\\n\" input)\n(newline)\n(printf \"~a\\n\" output)\n(newline)\n(printf \"~a\\n\" input)\n(newline)\n(printf \"~a\\n\" output)\n(newline)\n(printf \"~a\\n\" input)\n(newline)\n(printf \"~a\\n\" output)\n(newline)\n(printf \"~a\\n\" input)\n(newline)\n(printf \"~a\\n\" output)\n(newline)\n(printf \"~a\\n\" input)\n(newline)\n(printf \"~a\\n\" output)\n(newline)\n(printf \"~a\\n\" input)\n(newline)\n(printf \"~a\\n\" output)\n(newline)\n(printf \"~a\\n\" input)\n(newline)\n(printf \"~a\\n\" output)\n(newline)\n(printf \"~a\\n\" input)\n(newline)\n(printf \"~a\\n\" output)\n(newline)\n(printf \"~a\\n\" input)\n(newline)\n(printf \"~a\\n\" output)\n(newline)\n(printf \"~a\\n\" input)\n(newline)\n(printf \"~a\\n\" output)\n(newline)",
+    "unclipped": " Each character of the input string are converted to lowercase.\n;; The input string is not enclosed in quotes, indicating that it is a direct string to convert to lowercase.\n;; The output string is also not enclosed in quotes, indicating that it is a direct conversion from the input string to lowercase.\n;; The conversion process is efficient and does not involve any intermediate steps.\n#lang racket\n\n(define input (read-line))\n(define output (string-downcase input))\n(printf \"~a\\n\" output)\n(newline)\n(printf \"~a\\n\" input)\n(newline)\n(printf \"~a\\n\" output)\n(newline)\n(printf \"~a\\n\" input)\n(newline)\n(printf \"~a\\n\" output)\n(newline)\n(printf \"~a\\n\" input)\n(newline)\n(printf \"~a\\n\" output)\n(newline)\n(printf \"~a\\n\" input)\n(newline)\n(printf \"~a\\n\" output)\n(newline)\n(printf \"~a\\n\" input)\n(newline)\n(printf \"~a\\n\" output)\n(newline)\n(printf \"~a\\n\" input)\n(newline)\n(printf \"~a\\n\" output)\n(newline)\n(printf \"~a\\n\" input)\n(newline)\n(printf \"~a\\n\" output)\n(newline)\n(printf \"~a\\n\" input)\n(newline)\n(printf \"~a\\n\" output)\n(newline)\n(printf \"~a\\n\" input)\n(newline)\n(printf \"~a\\n\" output)\n(newline)\n(printf \"~a\\n\" input)\n(newline)\n(printf \"~a\\n\" output)\n(newline)\n(printf \"~a\\n\" input)\n(newline)\n(printf \"~a\\n\" output)\n(newline)\n(printf \"~a\\n\" input)\n(newline)\n(printf \"~a\\n\" output)\n(newline)\n(printf \"~a\\n\" input)\n(newline)\n(printf \"~a\\n\" output)\n(newline)\n(printf \"~a\\n\" input)\n(newline)\n(printf \"~a\\n\" output)\n(newline)\n(printf \"~a\\n\" input)\n(newline)\n(printf \"~a\\n\" output)\n(newline)\n(printf \"~a\\n\" input)\n(newline)\n(printf \"~a\\n\" output)\n(newline)\n(printf \"~a\\n\" input)\n(newline)\n(printf \"~a\\n\" output)\n(newline)\n(printf \"~a\\n\" input)\n(newline)\n(printf \"~a\\n\" output)\n(newline)\n(printf \"~",
+    "inputs": "A single line containing the string to be converted.",
+    "outputs": "A single line containing the lowercase version of the input string.",
+    "tests": [
+      {
+        "input": "-1 -2 3 -4 -5",
+        "output": "4"
+      },
+      {
+        "input": "1 2 3",
+        "output": "0"
+      },
+      {
+        "input": "1 2 -3 -10 20",
+        "output": "2"
+      }
+    ]
+  },
+  "solution #22": {
+    "solution": "#lang racket\n;; Find the first maximum length even word in a given string. An even word is a word whose length is even. If multiple words have the same maximum even length, return the first occurrence. If no even-length words exist, return -1.\n;; A single line containing a string of words separated by spaces.\n;; A single line containing the first maximum length even word, or -1 if none exist.Each word is separated by a space.\n#lang racket\n\n(define (find-first-max-length-even-word s)\n  (let* ([words (string-split s)]\n         [even-words (filter even? words)])\n    (if (null? even-words)\n        -1\n        (let ([max (apply max (map string-length even-words))])\n          (if (even? max)\n              (string->number max)\n              (string->number max))))))\n\n(define s (read-line))\n(printf \"~a\\n\" (find-first-max-length-even-word s)",
+    "unclipped": " Each word is separated by a space.\n#lang racket\n\n(define (find-first-max-length-even-word s)\n  (let* ([words (string-split s)]\n         [even-words (filter even? words)])\n    (if (null? even-words)\n        -1\n        (let ([max (apply max (map string-length even-words))])\n          (if (even? max)\n              (string->number max)\n              (string->number max))))))\n\n(define s (read-line))\n(printf \"~a\\n\" (find-first-max-length-even-word s))\n(newline (string-join (map number->string (find-first-max-length-even-word s)) \" \"))\n(newline -1)\n(newline (find-first-max-length-even-word s))\n(newline (find-first-max-length-even-word s))\n(newline (find-first-max-length-even-word s))\n(newline (find-first-max-length-even-word s))\n(newline (find-first-max-length-even-word s))\n(newline (find-first-max-length-even-word s))\n(newline (find-first-max-length-even-word s))\n(newline (find-first-max-length-even-word s))\n(newline (find-first-max-length-even-word s))\n(newline (find-first-max-length-even-word s))\n(newline (find-first-max-length-even-word s))\n(newline (find-first-max-length-even-word s))\n(newline (find-first-max-length-even-word s))\n(newline (find-first-max-length-even-word s))\n(newline (find-first-max-length-even-word s))\n(newline (find-first-max-length-even-word s))\n(newline (find-first-max-length-even-word s))\n(newline (find-first-max-length-even-word s))\n(newline (find-first-max-length-even-word s))\n(newline (find-first-max-length-even-word s))\n(newline (find-first-max-length-even-word s))\n(newline (find-first-max-length-even-word s))\n(newline (find-first-max-length-even-word s))\n(newline (find-first-max-length-even-word s))\n(newline (find-first-max-length-even-word s))\n(newline (find-first-max-length-even-word s))\n(newline (find-first-max-length-even-word s))\n(newline (find-first-max-length-even-word s))\n(newline (find-first-max-length-even-word s))\n(newline (find-first-max-length-even-word s))\n(newline (find-first-max-length-even-word s))\n(newline (find-first-max-length-even-word s))\n(newline",
+    "inputs": "A single line containing a string of words separated by spaces.",
+    "outputs": "A single line containing the first maximum length even word, or -1 if none exist.",
+    "tests": [
+      {
+        "input": "-1 -2 3 -4 -5",
+        "output": "4"
+      },
+      {
+        "input": "1 2 3",
+        "output": "0"
+      },
+      {
+        "input": "1 2 -3 -10 20",
+        "output": "2"
+      }
+    ]
+  },
+  "solution #23": {
+    "solution": "#lang racket\n;; Given a list of tuples and an integer k, find all tuples where every element is divisible by k.\n;; The input consists of multiple lines. The first line contains an integer n denoting the number of tuples. This is followed by n lines, each containing space-separated integers representing the elements of a tuple. The last line contains the integer k.\n;; The output is a single line containing the filtered list of tuples in the format [(a, b, c), ...], where each tuple's elements are separated by commas and spaces.The tuples are ordered by the first element of each tuple in ascending order.\n#lang racket\n\n(define (filter-tuples-by-divisor tuples k)\n  (define (is-divisible? tuple k)\n    (for/and ([x (in-list tuple)])\n      (zero? (remainder x k))))\n  \n  (filter (lambda (t) (is-divisible? t k)) tuples)",
+    "unclipped": " The tuples are ordered by the first element of each tuple in ascending order.\n#lang racket\n\n(define (filter-tuples-by-divisor tuples k)\n  (define (is-divisible? tuple k)\n    (for/and ([x (in-list tuple)])\n      (zero? (remainder x k))))\n  \n  (filter (lambda (t) (is-divisible? t k)) tuples))\n\n(define (main)\n  (define n (string->number (read-line)))\n  (define tuples (for/list ([i (in-range n)])\n                   (map string->number (string-split (read-line))))) ; Read all lines until the last one\n  (define k (string->number (read-line)))\n  \n  (define filtered-tuples (filter-tuples-by-divisor filtered-tuples k))\n  \n  (displayln (string-join (map number->string filtered-tuples) \", \")))\n\n(main)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n",
+    "inputs": "The input consists of multiple lines. The first line contains an integer n denoting the number of tuples. This is followed by n lines, each containing space-separated integers representing the elements of a tuple. The last line contains the integer k.",
+    "outputs": "The output is a single line containing the filtered list of tuples in the format [(a, b, c), ...], where each tuple's elements are separated by commas and spaces.",
+    "tests": [
+      {
+        "input": "-1 -2 3 -4 -5",
+        "output": "4"
+      },
+      {
+        "input": "1 2 3",
+        "output": "0"
+      },
+      {
+        "input": "1 2 -3 -10 20",
+        "output": "2"
+      }
+    ]
+  },
+  "solution #24": {
+    "solution": "#lang racket\n;; Compute the sum of digits of each valid integer in a list. The list contains elements that are either integers or strings. Only process elements that are integers (ignoring their sign), sum their digits, and return the total sum.\n;; The first line contains an integer N, the number of elements. Then N lines follow, each containing a single element as a string, which can be a valid integer (e.g., '123', '-45') or another string.\n;; A single integer, the sum of the digits of all valid integers in the input list.",
+    "unclipped": " The input is truncated to N lines, where N is the first integer in the list.\n#lang racket\n\n(define (sum-of-digits-of-valid-integers)\n  (let* ([n (string->number (read-line))]\n         [elements (for/list ([i (in-range n)])\n                   (let ([parts (string-split (read-line i))])\n                     (if (integer? parts)\n                         (string->number parts)\n                         #f))])\n    (apply + (map (lambda (x) (string->number (string-trim (number->string x)))) elements))))\n\n(sum-of-digits-of-valid-integers)\n(newline)\n(apply + (map (lambda (x) (string->number (string-trim (number->string x)))) (take elements (sub1 n))))\n(newline)\n(apply + (map (lambda (x) (string->number (string-trim (number->string x)))) (drop elements (sub1 n))))\n(newline)\n(apply + (map (lambda (x) (string->number (string-trim (number->string x)))) (drop elements (sub1 n))))\n(newline)\n(apply + (map (lambda (x) (string->number (string-trim (number->string x)))) (drop elements (sub1 n))))\n(newline)\n(apply + (map (lambda (x) (string->number (string-trim (number->string x)))) (drop elements (sub1 n))))\n(newline)\n(apply + (map (lambda (x) (string->number (string-trim (number->string x)))) (drop elements (sub1 n))))\n(newline)\n(apply + (map (lambda (x) (string->number (string-trim (number->string x)))) (drop elements (sub1 n))))\n(newline)\n(apply + (map (lambda (x) (string->number (string-trim (number->string x)))) (drop elements (sub1 n))))\n(newline)\n(apply + (map (lambda (x) (string->number (string-trim (number->string x)))) (drop elements (sub1 n))))\n(newline)\n(apply + (map (lambda (x) (string->number (string-trim (number->string x)))) (drop elements (sub1 n))))\n(newline)\n(apply + (map (lambda (x) (string->number (string-tr",
+    "inputs": "The first line contains an integer N, the number of elements. Then N lines follow, each containing a single element as a string, which can be a valid integer (e.g., '123', '-45') or another string.",
+    "outputs": "A single integer, the sum of the digits of all valid integers in the input list.",
+    "tests": [
+      {
+        "input": "-1 -2 3 -4 -5",
+        "output": "4"
+      },
+      {
+        "input": "1 2 3",
+        "output": "0"
+      },
+      {
+        "input": "1 2 -3 -10 20",
+        "output": "2"
+      }
+    ]
+  },
+  "solution #25": {
+    "solution": "#lang racket\n;; Find the nth term of an arithmetic progression given the first term a, term number n, and common difference d.\n;; Three integers a, n, d separated by spaces.\n;; A single integer representing the nth term of the arithmetic progression.The formula for the nth term is: a + (i-1) * d.\n#lang racket\n\n(define (arithmetic-term a n d)\n  (let loop ((i 1) (sum 0))\n    (if (> i n)\n        sum\n        (loop (+ i 1) (+ sum d))))))\n\n(define input (string-split (read-line) \" \"))\n(define a (string->number (car input)))\n(define n (string->number (cadr input)))\n(define d (string->number (caddr input)))\n\n(printf \"~a\\n\" (arithmetic-term a n d)",
+    "unclipped": " The formula for the nth term is: a + (i-1) * d.\n#lang racket\n\n(define (arithmetic-term a n d)\n  (let loop ((i 1) (sum 0))\n    (if (> i n)\n        sum\n        (loop (+ i 1) (+ sum d))))))\n\n(define input (string-split (read-line) \" \"))\n(define a (string->number (car input)))\n(define n (string->number (cadr input)))\n(define d (string->number (caddr input)))\n\n(printf \"~a\\n\" (arithmetic-term a n d))\n(newline)\n(printf \"~a\\n\" (cadr input))\n(printf \"~a\\n\" (caddr input))\n(printf \"~a\\n\" (caddr input))\n(printf \"~a\\n\" (caddr input))\n(printf \"~a\\n\" (caddr input))\n(printf \"~a\\n\" (caddr input))\n(printf \"~a\\n\" (caddr input))\n(printf \"~a\\n\" (caddr input))\n(printf \"~a\\n\" (caddr input))\n(printf \"~a\\n\" (caddr input))\n(printf \"~a\\n\" (caddr input))\n(printf \"~a\\n\" (caddr input))\n(printf \"~a\\n\" (caddr input))\n(printf \"~a\\n\" (caddr input))\n(printf \"~a\\n\" (caddr input))\n(printf \"~a\\n\" (caddr input))\n(printf \"~a\\n\" (caddr input))\n(printf \"~a\\n\" (caddr input))\n(printf \"~a\\n\" (caddr input))\n(printf \"~a\\n\" (caddr input))\n(printf \"~a\\n\" (caddr input))\n(printf \"~a\\n\" (caddr input))\n(printf \"~a\\n\" (caddr input))\n(printf \"~a\\n\" (caddr input))\n(printf \"~a\\n\" (caddr input))\n(printf \"~a\\n\" (caddr input))\n(printf \"~a\\n\" (caddr input))\n(printf \"~a\\n\" (caddr input))\n(printf \"~a\\n\" (caddr input))\n(printf \"~a\\n\" (caddr input))\n(printf \"~a\\n\" (caddr input))\n(printf \"~a\\n\" (caddr input))\n(printf \"~a\\n\" (caddr input))\n(printf \"~a\\n\" (caddr",
+    "inputs": "Three integers a, n, d separated by spaces.",
+    "outputs": "A single integer representing the nth term of the arithmetic progression.",
+    "tests": [
+      {
+        "input": "-1 -2 3 -4 -5",
+        "output": "4"
+      },
+      {
+        "input": "1 2 3",
+        "output": "0"
+      },
+      {
+        "input": "1 2 -3 -10 20",
+        "output": "2"
+      }
+    ]
+  },
+  "solution #26": {
+    "solution": "#lang racket\n;; Find the ratio of zeroes in an array of integers. The ratio is calculated as the number of zeroes divided by the total number of elements, rounded to two decimal places.\n;; A single line containing space-separated integers representing the array.\n;; A single line containing a floating-point number with exactly two decimal places.The ratio is rounded to two decimal places, so the digits are 0.00 and 0.01.\n#lang racket\n\n(define (calculate-ratio arr)\n  (let ((zero-count (length (filter (lambda (x) (= x 0)) arr)))\n    (quotient zero-count (length arr)) 2)))\n\n(define (main)\n  (let* ((input (map string->number (string-split (read-line))))\n    (printf \"~a\\n\" (calculate-ratio input)",
+    "unclipped": " The ratio is rounded to two decimal places, so the digits are 0.00 and 0.01.\n#lang racket\n\n(define (calculate-ratio arr)\n  (let ((zero-count (length (filter (lambda (x) (= x 0)) arr)))\n    (quotient zero-count (length arr)) 2)))\n\n(define (main)\n  (let* ((input (map string->number (string-split (read-line))))\n    (printf \"~a\\n\" (calculate-ratio input))))\n\n(main)\n(newline)\n(printf \"~a\\n\" (calculate-ratio input))\n(newline)\n(printf \"~a\\n\" (calculate-ratio (map string->number (string-split (read-line))))))\n(newline)\n(printf \"~a\\n\" (calculate-ratio (map string->number (string-split (read-line))))))\n(newline)\n(printf \"~a\\n\" (calculate-ratio (map string->number (string-split (read-line))))))\n(newline)\n(printf \"~a\\n\" (calculate-ratio (map string->number (string-split (read-line))))))\n(newline)\n(printf \"~a\\n\" (calculate-ratio (map string->number (string-split (read-line))))))\n(newline)\n(printf \"~a\\n\" (calculate-ratio (map string->number (string-split (read-line))))))\n(newline)\n(printf \"~a\\n\" (calculate-ratio (map string->number (string-split (read-line))))))\n(newline)\n(printf \"~a\\n\" (calculate-ratio (map string->number (string-split (read-line))))))\n(newline)\n(printf \"~a\\n\" (calculate-ratio (map string->number (string-split (read-line))))))\n(newline)\n(printf \"~a\\n\" (calculate-ratio (map string->number (string-split (read-line))))))\n(newline)\n(printf \"~a\\n\" (calculate-ratio (map string->number (string-split (read-line))))))\n(newline)\n(printf \"~a\\n\" (calculate-ratio (map string->number (string-split (read-line))))))\n(newline)\n(printf \"~a\\n\" (calculate-ratio (map string->number (string-split (read-line))))))\n(newline)\n(printf \"~a\\n\" (calculate-ratio (map string->number (string-split (read-line))))))\n(newline)\n(printf \"~a\\n\" (calculate-ratio",
+    "inputs": "A single line containing space-separated integers representing the array.",
+    "outputs": "A single line containing a floating-point number with exactly two decimal places.",
+    "tests": [
+      {
+        "input": "-1 -2 3 -4 -5",
+        "output": "4"
+      },
+      {
+        "input": "1 2 3",
+        "output": "0"
+      },
+      {
+        "input": "1 2 -3 -10 20",
+        "output": "2"
+      }
+    ]
+  },
+  "solution #27": {
+    "solution": "#lang racket\n;; Find the sum of the largest and smallest value in a given array of integers.\n;; A single line containing space-separated integers.\n;; An integer representing the sum of the largest and smallest values in the array.The array elements are enclosed in square brackets and separated by spaces.\n;; input_format\n#lang racket\n\n(define (sum-largest-smallest-values arr)\n  (if (null? arr)\n      0\n      (let* ([max-val (apply max arr)]\n             [min-val (apply min arr)])\n        (+ max-val min-val))))\n\n(define (main)\n  (let ([input (map string->number (string-split (read-line)))]\n    (displayln (sum-largest-smallest-values input)",
+    "unclipped": " The array elements are enclosed in square brackets and separated by spaces.\n;; input_format\n#lang racket\n\n(define (sum-largest-smallest-values arr)\n  (if (null? arr)\n      0\n      (let* ([max-val (apply max arr)]\n             [min-val (apply min arr)])\n        (+ max-val min-val))))\n\n(define (main)\n  (let ([input (map string->number (string-split (read-line)))]\n    (displayln (sum-largest-smallest-values input))))\n\n(main)\n(newline)\n(printf \"[~a]\\n\" (sum-largest-smallest-values input))\n(newline)\n(printf \"~a\\n\" (sum-largest-smallest-values input))\n(newline)\n(printf \"~a\\n\" (sum-largest-smallest-values input))\n(newline)\n(printf \"~a\\n\" (sum-largest-smallest-values input)))\n(newline)\n(printf \"~a\\n\" (sum-largest-smallest-values input)))\n(newline)\n(printf \"~a\\n\" (sum-largest-smallest-values input)))\n(newline)\n(printf \"~a\\n\" (sum-largest-smallest-values input)))\n(newline)\n(printf \"~a\\n\" (sum-largest-smallest-values input)))\n(newline)\n(printf \"~a\\n\" (sum-largest-smallest-values input)))\n(newline)\n(printf \"~a\\n\" (sum-largest-smallest-values input)))\n(newline)\n(printf \"~a\\n\" (sum-largest-smallest-values input)))\n(newline)\n(printf \"~a\\n\" (sum-largest-smallest-values input)))\n(newline)\n(printf \"~a\\n\" (sum-largest-smallest-values input)))\n(newline)\n(printf \"~a\\n\" (sum-largest-smallest-values input)))\n(newline)\n(printf \"~a\\n\" (sum-largest-smallest-values input)))\n(newline)\n(printf \"~a\\n\" (sum-largest-smallest-values input)))\n(newline)\n(printf \"~a\\n\" (sum-largest-smallest-values input)))\n(newline)\n(printf \"~a\\n\" (sum-largest-smallest-values input)))\n(newline)\n(printf \"~a\\n\" (sum-largest-smallest-values input)))\n(newline)\n(printf \"~a\\n\" (sum-largest-smallest-values input)))\n(newline)\n(printf \"~a\\n\" (sum-largest-smallest-values input)))\n(newline)\n(printf \"~a\\n\" (sum-largest-smallest-values input)))\n(newline)\n(printf \"~a\\n\" (sum-largest-smallest-values input)))\n(new",
+    "inputs": "A single line containing space-separated integers.",
+    "outputs": "An integer representing the sum of the largest and smallest values in the array.",
+    "tests": [
+      {
+        "input": "-1 -2 3 -4 -5",
+        "output": "4"
+      },
+      {
+        "input": "1 2 3",
+        "output": "0"
+      },
+      {
+        "input": "1 2 -3 -10 20",
+        "output": "2"
+      }
+    ]
+  },
+  "solution #28": {
+    "solution": "#lang racket\n;; Find the sum of a geometric progression series given the first term (a), number of terms (n), and common ratio (r). The sum is calculated using the formula: a*(r**n - 1)//(r - 1) when r != 1.\n;; Three integers a, n, r separated by spaces on a single line.\n;; A single integer representing the sum of the geometric progression.If r = 1, the sum is simply a*n.\n#lang racket\n\n(define (sum-geometric-progression a n r)\n  (if (= r 1)\n      (* a n)\n      (let loop ((i 1) (total 0))\n        (if (> i n)\n            total\n            (loop (+ i 1) (+ total r))))))\n\n(define input (map string->number (string-split (read-line))))\n(define a (car input))\n(define n (cadr input))\n(define r (caddr input))\n\n(printf \"~a\\n\" (sum-geometric-progression a n r)",
+    "unclipped": " If r = 1, the sum is simply a*n.\n#lang racket\n\n(define (sum-geometric-progression a n r)\n  (if (= r 1)\n      (* a n)\n      (let loop ((i 1) (total 0))\n        (if (> i n)\n            total\n            (loop (+ i 1) (+ total r))))))\n\n(define input (map string->number (string-split (read-line))))\n(define a (car input))\n(define n (cadr input))\n(define r (caddr input))\n\n(printf \"~a\\n\" (sum-geometric-progression a n r))\n(newline)\n(if (= r 1)\n    (printf \"~a\\n\" (string->number (expt a n)))\n    (printf \"~a\\n\" (expt a n)))\n    (printf \"~a\\n\" (expt a n))))\n(newline)\n(if (= r 1)\n    (printf \"~a\\n\" (expt a n))\n    (printf \"~a\\n\" (expt a n))))\n(newline)\n(if (= r 1)\n    (printf \"~a\\n\" (expt a n))\n    (printf \"~a\\n\" (expt a n))))\n(newline)\n(if (= r 1)\n    (printf \"~a\\n\" (expt a n))\n    (printf \"~a\\n\" (expt a n))))\n(newline)\n(if (= r 1)\n    (printf \"~a\\n\" (expt a n))\n    (printf \"~a\\n\" (expt a n))))\n(newline)\n(if (= r 1)\n    (printf \"~a\\n\" (expt a n))\n    (printf \"~a\\n\" (expt a n))))\n(newline)\n(if (= r 1)\n    (printf \"~a\\n\" (expt a n))\n    (printf \"~a\\n\" (expt a n))))\n(newline)\n(if (= r 1)\n    (printf \"~a\\n\" (expt a n))\n    (printf \"~a\\n\" (expt a n))))\n(newline)\n(if (= r 1)\n    (printf \"~a\\n\" (expt a n))\n    (printf \"~a\\n\" (expt a n))))\n(newline)\n(if (= r 1)\n    (printf \"~a\\n\" (expt a n))\n    (printf \"~a\\n\" (expt a n))))\n(newline)\n",
+    "inputs": "Three integers a, n, r separated by spaces on a single line.",
+    "outputs": "A single integer representing the sum of the geometric progression.",
+    "tests": [
+      {
+        "input": "-1 -2 3 -4 -5",
+        "output": "4"
+      },
+      {
+        "input": "1 2 3",
+        "output": "0"
+      },
+      {
+        "input": "1 2 -3 -10 20",
+        "output": "2"
+      }
+    ]
+  },
+  "solution #29": {
+    "solution": "#lang racket\n;; Write a Python function to find the sum of all elements that are repeated in a given array. An element is considered repeated if it appears at least twice. For each such element, all its occurrences are included in the sum.\n;; Each input consists of two lines: the first line contains an integer n (the length of the array), and the second line contains n integers representing the elements of the array.\n;; The output is a single integer representing the sum of all repeated elements as described.The input lines are separated by a newline.\n;; input_format\n;; A single integer, the sum of all repeated elements in the array.\n#lang racket\n\n(define (sum-repeated-elements arr)\n  (define freq (make-hash))\n  (for ([num arr])\n    (hash-set! freq num (add1 (hash-ref freq num 0))))\n  (define sum 0)\n  (for ([count (hash-values freq)])\n    (when (> count 1)\n      (set! sum (+ sum count))))\n  sum)\n\n(define (main)\n  (define n (string->number (read-line)))\n  (define arr (map string->number (string-split (read-line))))\n  (printf \"~a\\n\" (sum-repeated-elements arr)",
+    "unclipped": " The input lines are separated by a newline.\n;; input_format\n;; A single integer, the sum of all repeated elements in the array.\n#lang racket\n\n(define (sum-repeated-elements arr)\n  (define freq (make-hash))\n  (for ([num arr])\n    (hash-set! freq num (add1 (hash-ref freq num 0))))\n  (define sum 0)\n  (for ([count (hash-values freq)])\n    (when (> count 1)\n      (set! sum (+ sum count))))\n  sum)\n\n(define (main)\n  (define n (string->number (read-line)))\n  (define arr (map string->number (string-split (read-line))))\n  (printf \"~a\\n\" (sum-repeated-elements arr)))\n\n(main)\n(newline)\n(main)\n(newline)\n(main)\n(newline)\n(main)\n(newline)\n(main)\n(newline)\n(main)\n(newline)\n(main)\n(newline)\n(main)\n(newline)\n(main)\n(newline)\n(main)\n(newline)\n(main)\n(newline)\n(main)\n(newline)\n(main)\n(newline)\n(main)\n(newline)\n(main)\n(newline)\n(main)\n(newline)\n(main)\n(newline)\n(main)\n(newline)\n(main)\n(newline)\n(main)\n(newline)\n(main)\n(newline)\n(main)\n(newline)\n(main)\n(newline)\n(main)\n(newline)\n(main)\n(newline)\n(main)\n(newline)\n(main)\n(newline)\n(main)\n(newline)\n(main)\n(newline)\n(main)\n(newline)\n(main)\n(newline)\n(main)\n(newline)\n(main)\n(newline)\n(main)\n(newline)\n(main)\n(newline)\n(main)\n(newline)\n(main)\n(newline)\n(main)\n(newline)\n(main)\n(newline)\n(main)\n(newline)\n(main)\n(newline)\n(main)\n(newline)\n(main)\n(newline)\n(main)\n(newline)\n(main)\n(newline)\n(main)\n(newline)\n(main)\n(newline)\n(main)\n(newline)\n(main)\n(newline)\n(main)\n(newline)\n(main)\n(newline)\n(main)\n(newline)\n(main)\n(newline)\n(main)\n(newline)\n(main)\n(newline)\n(main)\n(newline)\n(main)\n(newline)\n(main)\n(newline)\n(main)\n(newline)\n(main)\n(newline)\n(main)\n(newline)\n(main)\n(newline)\n(main)\n(newline)\n(main)\n(newline)\n(main)\n(newline)\n(main)\n(newline)\n(main)\n(newline)\n(main)\n(newline)\n(main)\n(newline",
+    "inputs": "Each input consists of two lines: the first line contains an integer n (the length of the array), and the second line contains n integers representing the elements of the array.",
+    "outputs": "The output is a single integer representing the sum of all repeated elements as described.",
+    "tests": [
+      {
+        "input": "-1 -2 3 -4 -5",
+        "output": "4"
+      },
+      {
+        "input": "1 2 3",
+        "output": "0"
+      },
+      {
+        "input": "1 2 -3 -10 20",
+        "output": "2"
+      }
+    ]
+  },
+  "solution #30": {
+    "solution": "#lang racket\n;; Write a function to remove uppercase substrings from a given string by using regex.\n;; A single line containing the input string.\n;; A single line containing the resulting string after removing all uppercase substrings.The function should return the result.\n#lang racket\n\n(define (remove-uc-substrings s)\n  (regexp-replace* #px\"[A-Z]\" s \"\"))\n\n(define input (read-line))\n(define output (remove-uc-substrings input)",
+    "unclipped": " The function should return the result.\n#lang racket\n\n(define (remove-uc-substrings s)\n  (regexp-replace* #px\"[A-Z]\" s \"\"))\n\n(define input (read-line))\n(define output (remove-uc-substrings input))\n(printf \"~a\\n\" output)\n(newline)\n(exit)\n(newline)\n(printf \"~a\\n\" output)\n(newline)\n(exit)\n(newline)\n(printf \"~a\\n\" output)\n(newline)\n(exit)\n(newline)\n(printf \"~a\\n\" output)\n(newline)\n(exit)\n(newline)\n(printf \"~a\\n\" output)\n(newline)\n(exit)\n(newline)\n(printf \"~a\\n\" output)\n(newline)\n(exit)\n(newline)\n(printf \"~a\\n\" output)\n(newline)\n(exit)\n(newline)\n(printf \"~a\\n\" output)\n(newline)\n(exit)\n(newline)\n(printf \"~a\\n\" output)\n(newline)\n(exit)\n(newline)\n(printf \"~a\\n\" output)\n(newline)\n(exit)\n(newline)\n(printf \"~a\\n\" output)\n(newline)\n(exit)\n(newline)\n(printf \"~a\\n\" output)\n(newline)\n(exit)\n(newline)\n(printf \"~a\\n\" output)\n(newline)\n(exit)\n(newline)\n(printf \"~a\\n\" output)\n(newline)\n(exit)\n(newline)\n(printf \"~a\\n\" output)\n(newline)\n(exit)\n(newline)\n(printf \"~a\\n\" output)\n(newline)\n(exit)\n(newline)\n(printf \"~a\\n\" output)\n(newline)\n(exit)\n(newline)\n(printf \"~a\\n\" output)\n(newline)\n(exit)\n(newline)\n(printf \"~a\\n\" output)\n(newline)\n(exit)\n(newline)\n(printf \"~a\\n\" output)\n(newline)\n(exit)\n(newline)\n(printf \"~a\\n\" output)\n(newline)\n(exit)\n(newline)\n(printf \"~a\\n\" output)\n(newline)\n(exit)\n(newline)\n(printf \"~a\\n\" output)\n(newline)\n(exit)\n(newline)\n(printf \"~a\\n\" output)\n(newline)\n(exit)\n(newline)\n(printf \"~a\\n\" output)\n(newline)\n(exit)\n(newline)\n(printf \"~a\\n\" output)\n(newline)\n(exit)\n(newline)\n(printf \"~a\\n\" output",
+    "inputs": "A single line containing the input string.",
+    "outputs": "A single line containing the resulting string after removing all uppercase substrings.",
+    "tests": [
+      {
+        "input": "-1 -2 3 -4 -5",
+        "output": "4"
+      },
+      {
+        "input": "1 2 3",
+        "output": "0"
+      },
+      {
+        "input": "1 2 -3 -10 20",
+        "output": "2"
+      }
+    ]
+  },
+  "solution #31": {
+    "solution": "#lang racket\n;; Split a list into n sublists, where each sublist contains every nth element starting from the corresponding position. For example, given a list and an integer n, the first sublist contains elements at indices 0, 0+n, 0+2n, etc., the second sublist starts at index 1, and so on until the nth sublist.\n;; The first line contains the elements of the list separated by spaces. The second line contains a single integer n.\n;; n lines, each containing the elements of a sublist separated by spaces. The sublists are ordered from the first to the nth.Each line's elements are separated by spaces.\n;; input_format\n;; The first line is the list of integers, the second line is the integer n, and the following lines are the sublists ordered from the first to the nth, each separated by spaces.\n#lang racket\n\n(define (split-list lst n)\n  (define (helper lst result)\n    (cond [(empty? lst) result]\n          [(= (length lst) 0) result]\n          [(= (remainder (length lst) n)) (cons (reverse lst) result)]\n          [else (cons (first lst) (helper (rest lst) (append result (list (first lst)))])))]\n  (helper lst '())))\n\n(define list (map string->number (string-split (read-line))))\n(define n (string->number (read-line)))\n\n(define result (split-list list n)",
+    "unclipped": " Each line's elements are separated by spaces.\n;; input_format\n;; The first line is the list of integers, the second line is the integer n, and the following lines are the sublists ordered from the first to the nth, each separated by spaces.\n#lang racket\n\n(define (split-list lst n)\n  (define (helper lst result)\n    (cond [(empty? lst) result]\n          [(= (length lst) 0) result]\n          [(= (remainder (length lst) n)) (cons (reverse lst) result)]\n          [else (cons (first lst) (helper (rest lst) (append result (list (first lst)))])))]\n  (helper lst '())))\n\n(define list (map string->number (string-split (read-line))))\n(define n (string->number (read-line)))\n\n(define result (split-list list n))\n\n(for-each (lambda (line)\n        (define values (map string->number (string-split line)))\n        (define n (string->number (list-ref values 0)))\n        (displayln (string-join (map number->string (take values n)) \" \")))\n      (exit))\n  (n-1))\n)\n\n(define (main)\n  (define list (map string->number (string-split (read-line))))\n  (define n (string->number (read-line)))\n  (define result (split-list list n))\n  (for ([line (in-list result)])\n    (displayln (string-join (map number->string (take line n)) \" \"))))\n(main)\n(exit)\n(n-1)\n(main)\n(n-2)\n(3)\n(4)\n(5)\n(6)\n(7)\n(8)\n(9)\n(10)\n(11)\n(12)\n(13)\n(14)\n(15)\n(16)\n(17)\n(18)\n(19)\n(20)\n(21)\n(22)\n(23)\n(24)\n(25)\n(26)\n(27)\n(28)\n(29)\n(30)\n(31)\n(32)\n(33)\n(34)\n(35)\n(36)\n(37)\n(38)\n(39)\n(40)\n(5)\n(6)\n(7)\n(8)\n(9)\n(10)\n(",
+    "inputs": "The first line contains the elements of the list separated by spaces. The second line contains a single integer n.",
+    "outputs": "n lines, each containing the elements of a sublist separated by spaces. The sublists are ordered from the first to the nth.",
+    "tests": [
+      {
+        "input": "-1 -2 3 -4 -5",
+        "output": "4"
+      },
+      {
+        "input": "1 2 3",
+        "output": "0"
+      },
+      {
+        "input": "1 2 -3 -10 20",
+        "output": "2"
+      }
+    ]
+  },
+  "solution #32": {
+    "solution": "#lang racket\n;; Calculate the distance between two points using latitude and longitude.\n;; Four space-separated floating-point numbers representing lat1 lon1 lat2 lon2.\n;; A single floating-point number representing the distance in meters, formatted with as many decimal digits as required for exact precision.The formula is:\n;; distance = sqrt((lat1 - lat2)² + (lon1 - lon2)²)\n;; input_format\n;; A single line containing the distance as a floating-point number with sufficient decimal digits.\n#lang racket\n\n(define (distance l1 l2)\n  (let* ((diff1 (- l1 l2))\n         (diff2 (- l3 l4)))\n    (sqrt (+ diff1 diff2) diff2))))\n\n(define (main)\n  (let* ((input (string-split (read-line) \" \"))\n         (lat1 (string->number (car input)))\n         (lon1 (string->number (cadr input)))\n         (lat2 (string->number (caddr input)))\n         (lon2 (string->number (fourth input))))\n    (displayln (distance lat1 lat2 lon1 lon2)",
+    "unclipped": " The formula is:\n;; distance = sqrt((lat1 - lat2)² + (lon1 - lon2)²)\n;; input_format\n;; A single line containing the distance as a floating-point number with sufficient decimal digits.\n#lang racket\n\n(define (distance l1 l2)\n  (let* ((diff1 (- l1 l2))\n         (diff2 (- l3 l4)))\n    (sqrt (+ diff1 diff2) diff2))))\n\n(define (main)\n  (let* ((input (string-split (read-line) \" \"))\n         (lat1 (string->number (car input)))\n         (lon1 (string->number (cadr input)))\n         (lat2 (string->number (caddr input)))\n         (lon2 (string->number (fourth input))))\n    (displayln (distance lat1 lat2 lon1 lon2))))\n\n(main)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(new",
+    "inputs": "Four space-separated floating-point numbers representing lat1 lon1 lat2 lon2.",
+    "outputs": "A single floating-point number representing the distance in meters, formatted with as many decimal digits as required for exact precision.",
+    "tests": [
+      {
+        "input": "-1 -2 3 -4 -5",
+        "output": "4"
+      },
+      {
+        "input": "1 2 3",
+        "output": "0"
+      },
+      {
+        "input": "1 2 -3 -10 20",
+        "output": "2"
+      }
+    ]
+  },
+  "solution #33": {
+    "solution": "#lang racket\n;; Find the n-th number in the Newman-Conway sequence, which is defined by P(1) = 1, P(2) = 1, and P(n) = P(P(n-1)) + P(n - P(n-1)) for n > 2.\n;; A single integer n (1 ≤ n ≤ 12000), given in a separate line.\n;; A single integer, the n-th term of the sequence, followed by a newline.The n-th term is calculated using the formula (2^(n-1)) * (1 + (2^(n-2)) * (2^(n-1))).\n#lang racket\n\n(define (newton-conway n)\n  (let ((two-n (quotient (* 2 n) 2)))\n    (expt two-n 1) (* 2 (expt two-n 1)) (expt two-n 2))))\n\n(define n (string->number (read-line)))\n(printf \"~a\\n\" (newton-conway n)",
+    "unclipped": " The n-th term is calculated using the formula (2^(n-1)) * (1 + (2^(n-2)) * (2^(n-1))).\n#lang racket\n\n(define (newton-conway n)\n  (let ((two-n (quotient (* 2 n) 2)))\n    (expt two-n 1) (* 2 (expt two-n 1)) (expt two-n 2))))\n\n(define n (string->number (read-line)))\n(printf \"~a\\n\" (newton-conway n))\n(newline (expt n 1) (* 2 (expt n 1)) (expt n 2))))\n(newline (expt n 1) (* 2 (expt n 1)) (expt n 2))))\n(newline (expt n 1) (* 2 (expt n 1)) (expt n 2))))\n(newline (expt n 1) (* 2 (expt n 1)) (expt n 2))))\n(newline (expt n 1) (* 2 (expt n 1)) (expt n 2))))\n(newline (expt n 1) (* 2 (expt n 1)) (expt n 2))))\n(newline (expt n 1) (* 2 (expt n 1)) (expt n 2))))\n(newline (expt n 1) (* 2 (expt n 1)) (expt n 2))))\n(newline (expt n 1) (* 2 (expt n 1)) (expt n 2))))\n(newline (expt n 1) (* 2 (expt n 1)) (expt n 2))))\n(newline (expt n 1) (* 2 (expt n 1)) (expt n 2))))\n(newline (expt n 1) (* 2 (expt n 1)) (expt n 2))))\n(newline (expt n 1) (* 2 (expt n 1)) (expt n 2))))\n(newline (expt n 1) (* 2 (expt n 1)) (expt n 2))))\n(newline (expt n 1) (* 2 (expt n 1)) (",
+    "inputs": "A single integer n (1 ≤ n ≤ 12000), given in a separate line.",
+    "outputs": "A single integer, the n-th term of the sequence, followed by a newline.",
+    "tests": [
+      {
+        "input": "-1 -2 3 -4 -5",
+        "output": "4"
+      },
+      {
+        "input": "1 2 3",
+        "output": "0"
+      },
+      {
+        "input": "1 2 -3 -10 20",
+        "output": "2"
+      }
+    ]
+  },
+  "solution #34": {
+    "solution": "#lang racket\n;; Write a function to remove specific words from a given list. The function should take two lists as input: the first is the original list of words, and the second contains the words to remove. The output should be a new list with the specified words removed, preserving the original order of the remaining elements.\n;; Two lines of input. The first line contains space-separated words from the original list. The second line contains space-separated words to remove.\n;; A single line containing the filtered list of words, separated by spaces.The order of elements in the filtered list corresponds to the order in the original list.\n#lang racket\n\n(define (remove-specified-words)\n  (let* ([original (string-split (read-line))]\n         [remove (string-split (read-line))])\n    (filter (lambda (word) (not (member word remove))) original)))\n\n(remove-specified-words)",
+    "unclipped": " The order of elements in the filtered list corresponds to the order in the original list.\n#lang racket\n\n(define (remove-specified-words)\n  (let* ([original (string-split (read-line))]\n         [remove (string-split (read-line))])\n    (filter (lambda (word) (not (member word remove))) original)))\n\n(remove-specified-words)\n(displayln (string-join (remove-sites) \" \"))\n(newline)\n(remove-sites)\n(displayln (string-join (remove-sites) \" \"))\n(newline)\n(remove-words)\n(displayln (string-join (remove-words) \" \"))\n(newline)\n(remove-ordered)\n(displayln (string-join (remove-ordered) \" \"))\n(newline)\n(remove-ordered)\n(displayln (string-join (remove-ordered) \" \"))\n(newline)\n(remove-ordered)\n(displayln (string-join (remove-ordered) \" \"))\n(newline)\n(remove-ordered)\n(displayln (string-join (remove-ordered) \"\")))\n(newline)\n(remove-ordered)\n(displayln (string-join (remove-ordered) \" \"))\n(newline)\n(remove-ordered)\n(displayln (string-join (remove-ordered) \" \"))\n(newline)\n(remove-ordered)\n(displayln (string-join (remove-ordered) \"\")))\n(newline)\n(remove-ordered)\n(displayln (string-join (remove-ordered) \" \"))\n(newline)\n(remove-ordered)\n(displayln (string-join (remove-ordered) \" \"))\n(newline)\n(remove-ordered)\n(displayln (string-join (remove-ordered) \" \"))\n(newline)\n(remove-ordered)\n(displayln (string-join (remove-ordered) \" \"))\n(newline)\n(remove-ordered)\n(displayln (string-join (remove-ordered) \" \"))\n(newline)\n(remove-ordered)\n(displayln (string-join (remove-ordered) \" \"))\n(newline)\n(remove-ordered)\n(displayln (string-join (remove-ordered) \" \"))\n(newline)\n(remove-ordered)\n(displayln (string-join (remove-ordered) \" \"))\n(newline)\n(remove-ordered)\n(displayln (string-join (remove-ordered) \" \"))\n(newline)\n(remove-ordered)\n(displayln (string-join (remove-ordered) \" \"))\n(newline)\n(remove-ordered)\n(displayln (string-join (remove-ordered) \" \"))\n(newline)\n(remove-ordered)\n(displayln (string",
+    "inputs": "Two lines of input. The first line contains space-separated words from the original list. The second line contains space-separated words to remove.",
+    "outputs": "A single line containing the filtered list of words, separated by spaces.",
+    "tests": [
+      {
+        "input": "-1 -2 3 -4 -5",
+        "output": "4"
+      },
+      {
+        "input": "1 2 3",
+        "output": "0"
+      },
+      {
+        "input": "1 2 -3 -10 20",
+        "output": "2"
+      }
+    ]
+  },
+  "solution #35": {
+    "solution": "#lang racket\n;; Count the number of prime numbers less than a given non-negative number.\n;; A single integer n (non-negative) provided as input.\n;; An integer output representing the count of primes less than n, followed by a newline.",
+    "unclipped": " The prime numbers are separated by spaces.\n;; input_format\n;; A single integer representing the count of primes less than n, followed by a newline.\n#lang racket\n\n(define (count-primes-up-to n)\n  (if (<= n 1)\n      0\n      (let loop ((i 2))\n        (if (> i (sqrt n))\n            0\n            (let ((current (sqrt n)))\n              (if (zero? (remainder n current))\n                  (loop (+ i 1))\n                  (loop (+ i 1)))))))\n\n(define n (read-line))\n(define result (count-primes-up-to (string->number n)))\n(printf \"~a\\n\" result)\n(newline)\n(printf \"~a\\n\" (string-split (number->string result) \" \"))\n(newline)\n(printf \"~a\\n\" (number->string (apply max (number-split (string->number n) \"))))\n(newline)\n(printf \"~a\\n\" (number->string (apply max (number-split (string->number n) \"))))\n(newline)\n(printf \"~a\\n\" (number->string (apply max (number-split (string->number n) \"))))\n(newline)\n(printf \"~a\\n\" (number->string (apply max (number-split (string->number n) \"))))\n(newline)\n(printf \"~a\\n\" (number->string (apply max (number-split (string->number n) \"))))\n(newline)\n(printf \"~a\\n\" (number->string (apply max (number-split (string->number n) \"))))\n(newline)\n(printf \"~a\\n\" (number->string (apply max (number-split (string->number n) \"))))\n(newline)\n(printf \"~a\\n\" (number->string (apply max (number-split (string->number n) \"))))\n(newline)\n(printf \"~a\\n\" (number->string (apply max (number-split (string->number n) \"))))\n(newline)\n(printf \"~a\\n\" (number->string (apply max (number-split (string->number n) \"))))\n(newline)\n(printf \"~a\\n\" (number->string (apply max (number-split (string->number n) \"))))\n(newline)\n(printf \"~a\\n\" (number->string (apply max (number-split (string->number n) \"))))\n(newline)\n(printf \"~a\\n\" (number->string",
+    "inputs": "A single integer n (non-negative) provided as input.",
+    "outputs": "An integer output representing the count of primes less than n, followed by a newline.",
+    "tests": [
+      {
+        "input": "-1 -2 3 -4 -5",
+        "output": "4"
+      },
+      {
+        "input": "1 2 3",
+        "output": "0"
+      },
+      {
+        "input": "1 2 -3 -10 20",
+        "output": "2"
+      }
+    ]
+  },
+  "solution #36": {
+    "solution": "#lang racket\n;; Write a function to find the area of a rectangle given its length and width.\n;; Two integers on the same line, separated by a space. The first integer represents the length, and the second represents the width of the rectangle.\n;; A single integer representing the area of the rectangle, followed by a newline.The order corresponds to the order found in the input line.\n#lang racket\n\n(define (main)\n  (let* ([input (read-line)]\n         [values (map string->number (string-split input))]\n         [length (car values)]\n         [width (cadr values)]\n         [area (* length width)])\n    (displayln area)))\n\n(main)",
+    "unclipped": " The order corresponds to the order found in the input line.\n#lang racket\n\n(define (main)\n  (let* ([input (read-line)]\n         [values (map string->number (string-split input))]\n         [length (car values)]\n         [width (cadr values)]\n         [area (* length width)])\n    (displayln area)))\n\n(main)\n(newline)\n(main)\n(newline)\n(main)\n(newline)\n(main)\n(newline)\n(main)\n(newline)\n(main)\n(newline)\n(main)\n(newline)\n(main)\n(newline)\n(main)\n(newline)\n(main)\n(newline)\n(main)\n(newline)\n(main)\n(newline)\n(main)\n(newline)\n(main)\n(newline)\n(main)\n(newline)\n(main)\n(newline)\n(main)\n(newline)\n(main)\n(newline)\n(main)\n(newline)\n(main)\n(newline)\n(main)\n(newline)\n(main)\n(newline)\n(main)\n(newline)\n(main)\n(newline)\n(main)\n(newline)\n(main)\n(newline)\n(main)\n(newline)\n(main)\n(newline)\n(main)\n(newline)\n(main)\n(newline)\n(main)\n(newline)\n(main)\n(newline)\n(main)\n(newline)\n(main)\n(newline)\n(main)\n(newline)\n(main)\n(newline)\n(main)\n(newline)\n(main)\n(newline)\n(main)\n(newline)\n(main)\n(newline)\n(main)\n(newline)\n(main)\n(newline)\n(main)\n(newline)\n(main)\n(newline)\n(main)\n(newline)\n(main)\n(newline)\n(main)\n(newline)\n(main)\n(newline)\n(main)\n(newline)\n(main)\n(newline)\n(main)\n(newline)\n(main)\n(newline)\n(main)\n(newline)\n(main)\n(newline)\n(main)\n(newline)\n(main)\n(newline)\n(main)\n(newline)\n(main)\n(newline)\n(main)\n(newline)\n(main)\n(newline)\n(main)\n(newline)\n(main)\n(newline)\n(main)\n(newline)\n(main)\n(newline)\n(main)\n(newline)\n(main)\n(newline)\n(main)\n(newline)\n(main)\n(newline)\n(main)\n(newline)\n(main)\n(newline)\n(main)\n(newline)\n(main)\n(newline)\n(main)\n(newline)\n(main)\n(newline)\n(main)\n(newline)\n(main)\n(newline)\n(main)\n(newline)\n(main)\n(newline)\n(main)\n(newline)\n(main)\n(newline)\n(main)\n(newline)\n(main)\n(newline)\n(main)\n(newline)\n(main)\n(newline)\n(main)\n(newline)\n(main)\n(newline",
+    "inputs": "Two integers on the same line, separated by a space. The first integer represents the length, and the second represents the width of the rectangle.",
+    "outputs": "A single integer representing the area of the rectangle, followed by a newline.",
+    "tests": [
+      {
+        "input": "-1 -2 3 -4 -5",
+        "output": "4"
+      },
+      {
+        "input": "1 2 3",
+        "output": "0"
+      },
+      {
+        "input": "1 2 -3 -10 20",
+        "output": "2"
+      }
+    ]
+  },
+  "solution #37": {
+    "solution": "#lang racket\n;; Find the first element in an array that occurs exactly k times.\n;; The first line contains the array elements as space-separated integers. The second line contains an integer n (the length of the array). The third line contains an integer k.\n;; A single integer, the first element occurring exactly k times.If no such element exists, return -1.\n;; input_format\n;; A single integer, the first element occurring exactly k times.\n#lang racket\n\n(define (find-first-occurrence arr n k)\n  (let loop ((i 0))\n    (cond\n      ((= i n) -1)\n      ((= (list-ref arr i) k) i)\n      (else (loop (+ i 1))))))\n\n(define (main)\n  (let* ((input (map string->number (string-split (read-line))))\n         (n (string->number (read-line)))\n         (k (string->number (read-line))))\n    (display (find-first-occurrence input n k)",
+    "unclipped": " If no such element exists, return -1.\n;; input_format\n;; A single integer, the first element occurring exactly k times.\n#lang racket\n\n(define (find-first-occurrence arr n k)\n  (let loop ((i 0))\n    (cond\n      ((= i n) -1)\n      ((= (list-ref arr i) k) i)\n      (else (loop (+ i 1))))))\n\n(define (main)\n  (let* ((input (map string->number (string-split (read-line))))\n         (n (string->number (read-line)))\n         (k (string->number (read-line))))\n    (display (find-first-occurrence input n k))))\n\n(main)\n(newline)\n(newline)\n(newline)\n(main)\n(newline)\n(newline)\n(newline)\n(main)\n(newline)\n(newline)\n(main)\n(newline)\n(newline)\n(main)\n(newline)\n(newline)\n(main)\n(newline)\n(newline)\n(main)\n(newline)\n(main)\n(newline)\n(main)\n(newline)\n(main)\n(newline)\n(main)\n(newline)\n(main)\n(newline)\n(main)\n(newline)\n(main)\n(newline)\n(main)\n(newline)\n(main)\n(newline)\n(main)\n(newline)\n(main)\n(newline)\n(main)\n(newline)\n(main)\n(newline)\n(main)\n(newline)\n(main)\n(newline)\n(main)\n(newline)\n(main)\n(newline)\n(main)\n(newline)\n(main)\n(newline)\n(main)\n(newline)\n(main)\n(newline)\n(main)\n(newline)\n(main)\n(newline)\n(main)\n(newline)\n(main)\n(newline)\n(main)\n(newline)\n(main)\n(newline)\n(main)\n(newline)\n(main)\n(newline)\n(main)\n(newline)\n(main)\n(newline)\n(main)\n(newline)\n(main)\n(newline)\n(main)\n(newline)\n(main)\n(newline)\n(main)\n(newline)\n(main)\n(newline)\n(main)\n(newline)\n(main)\n(newline)\n(main)\n(newline)\n(main)\n(newline)\n(main)\n(newline)\n(main)\n(newline)\n(main)\n(newline)\n(main)\n(newline)\n(main)\n(newline)\n(main)\n(newline)\n(main)\n(newline)\n(main)\n(newline)\n(main)\n(newline)\n(main)\n(newline)\n(main)\n(newline)\n(main)\n(newline)\n(main)\n(newline)\n(main)\n(newline)\n(main)\n(newline)\n(main)\n(newline)\n(main)\n(newline)\n(main)\n(newline)\n(main",
+    "inputs": "The first line contains the array elements as space-separated integers. The second line contains an integer n (the length of the array). The third line contains an integer k.",
+    "outputs": "A single integer, the first element occurring exactly k times.",
+    "tests": [
+      {
+        "input": "-1 -2 3 -4 -5",
+        "output": "4"
+      },
+      {
+        "input": "1 2 3",
+        "output": "0"
+      },
+      {
+        "input": "1 2 -3 -10 20",
+        "output": "2"
+      }
+    ]
+  },
+  "solution #38": {
+    "solution": "#lang racket\n;; Find the first digit of a given number.\n;; A single line containing the number as a string.\n;; A single line containing the first digit as a string.The digits are separated by spaces.\n;; input_format\n;; Two lines, each containing a digit of the number, followed by a newline.\n#lang racket\n\n(define (first-digits-of n)\n  (if (= n 0)\n      '()\n      (let loop ((i 1) (digits (string->list (number->string n))))\n        (if (= i (string-length (number->string n)))\n            (begin\n              (displayln (list->string (reverse first-digits)))\n              (exit))\n            (loop (+ i 1) (cons (remainder n 10)\n first-digits))))))\n\n(define n (string->number (read-line)))\n(first-digits-of n)",
+    "unclipped": " The digits are separated by spaces.\n;; input_format\n;; Two lines, each containing a digit of the number, followed by a newline.\n#lang racket\n\n(define (first-digits-of n)\n  (if (= n 0)\n      '()\n      (let loop ((i 1) (digits (string->list (number->string n))))\n        (if (= i (string-length (number->string n)))\n            (begin\n              (displayln (list->string (reverse first-digits)))\n              (exit))\n            (loop (+ i 1) (cons (remainder n 10)\n first-digits))))))\n\n(define n (string->number (read-line)))\n(first-digits-of n)\n(exit)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline",
+    "inputs": "A single line containing the number as a string.",
+    "outputs": "A single line containing the first digit as a string.",
+    "tests": [
+      {
+        "input": "-1 -2 3 -4 -5",
+        "output": "4"
+      },
+      {
+        "input": "1 2 3",
+        "output": "0"
+      },
+      {
+        "input": "1 2 -3 -10 20",
+        "output": "2"
+      }
+    ]
+  },
+  "solution #39": {
+    "solution": "#lang racket\n;; Compute the nth hexagonal number using the formula n*(2n - 1).\n;; A single integer n.\n;; The nth hexagonal number as an integer.The formula is n*(2n - 1), where n is a positive integer.\n#lang racket\n\n(define (hexagonal-number n)\n  (* n (- (* 2 n) 1)))\n\n(define n (read-line))\n(define result (hexagonal-number (string->number n))",
+    "unclipped": " The formula is n*(2n - 1), where n is a positive integer.\n#lang racket\n\n(define (hexagonal-number n)\n  (* n (- (* 2 n) 1)))\n\n(define n (read-line))\n(define result (hexagonal-number (string->number n)))\n(printf \"~a\\n\" result)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(new",
+    "inputs": "A single integer n.",
+    "outputs": "The nth hexagonal number as an integer.",
+    "tests": [
+      {
+        "input": "-1 -2 3 -4 -5",
+        "output": "4"
+      },
+      {
+        "input": "1 2 3",
+        "output": "0"
+      },
+      {
+        "input": "1 2 -3 -10 20",
+        "output": "2"
+      }
+    ]
+  },
+  "solution #40": {
+    "solution": "#lang racket\n;; Write a function to zip the two given tuples. The tuples are zipped by pairing elements at the same index, cycling through the shorter tuple as needed.\n;; The input consists of two lines. The first line contains space-separated integers representing the elements of the first tuple. The second line contains space-separated integers representing the elements of the second tuple.\n;; The output consists of multiple lines. Each line contains two space-separated integers representing a pair from the zipped tuples. The pairs are ordered according to the zipping process, cycling through the shorter tuple as needed.Each line's elements are in the order of the zipped tuples, not in the order of the input tuples.\n#lang racket\n\n(define (zip-tuples tuple1 tuple2)\n  (let loop ((i 0))\n    (if (= i (length tuple1))\n        '()\n        (let* ((t1 (list-ref tuple1 i))\n               (t2 (list-ref tuple2 i))\n               (pair (list (car tuple1) (car tuple2)))\n               (rest (cdr tuple1)))\n          (if (= i (length rest))\n              '()\n              (cons pair rest))))))\n\n(define (main)\n  (let* ((line1 (string-split (read-line)))\n         (line2 (string-split (read-line)))\n         (tuple1 (map string->number line1))\n         (tuple2 (map string->number line2)))\n    (display (string-join (map number->string (zip-tuples tuple1 tuple2)",
+    "unclipped": " Each line's elements are in the order of the zipped tuples, not in the order of the input tuples.\n#lang racket\n\n(define (zip-tuples tuple1 tuple2)\n  (let loop ((i 0))\n    (if (= i (length tuple1))\n        '()\n        (let* ((t1 (list-ref tuple1 i))\n               (t2 (list-ref tuple2 i))\n               (pair (list (car tuple1) (car tuple2)))\n               (rest (cdr tuple1)))\n          (if (= i (length rest))\n              '()\n              (cons pair rest))))))\n\n(define (main)\n  (let* ((line1 (string-split (read-line)))\n         (line2 (string-split (read-line)))\n         (tuple1 (map string->number line1))\n         (tuple2 (map string->number line2)))\n    (display (string-join (map number->string (zip-tuples tuple1 tuple2)) \" \"))))\n\n(main)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(new",
+    "inputs": "The input consists of two lines. The first line contains space-separated integers representing the elements of the first tuple. The second line contains space-separated integers representing the elements of the second tuple.",
+    "outputs": "The output consists of multiple lines. Each line contains two space-separated integers representing a pair from the zipped tuples. The pairs are ordered according to the zipping process, cycling through the shorter tuple as needed.",
+    "tests": [
+      {
+        "input": "-1 -2 3 -4 -5",
+        "output": "4"
+      },
+      {
+        "input": "1 2 3",
+        "output": "0"
+      },
+      {
+        "input": "1 2 -3 -10 20",
+        "output": "2"
+      }
+    ]
+  },
+  "solution #41": {
+    "solution": "#lang racket\n;; Check whether all the characters in a given string are unique.\n;; A single line containing the input string.\n;; A single line containing 'True' or 'False'.The characters in the string are separated by a single space.\n#lang racket\n\n(define (check-unique-characters s)\n  (define chars (string->list s))\n  (define seen (make-hash))\n  (for ([char (in-list chars)])\n    (when (not (hash-has-key? seen char))\n      (hash-set! seen char #t)\n      (printf \"True\\n\")))\n    (exit))\n  (printf \"False\\n\"))\n\n(define s (read-line))\n(printf \"~a\\n\" (check-unique-characters s)",
+    "unclipped": " The characters in the string are separated by a single space.\n#lang racket\n\n(define (check-unique-characters s)\n  (define chars (string->list s))\n  (define seen (make-hash))\n  (for ([char (in-list chars)])\n    (when (not (hash-has-key? seen char))\n      (hash-set! seen char #t)\n      (printf \"True\\n\")))\n    (exit))\n  (printf \"False\\n\"))\n\n(define s (read-line))\n(printf \"~a\\n\" (check-unique-characters s))\n(exit)\n(printf \"~a\\n\" (check-unique-characters s))\n(exit)\n(printf \"~a\\n\" (check-unique-characters s))\n(exit)\n(printf \"~a\\n\" (check-unique-characters s))\n(exit)\n(printf \"~a\\n\" (check-unique-characters s))\n(exit)\n(printf \"~a\\n\" (check-unique-characters s))\n(exit)\n(printf \"~a\\n\" (check-unique-characters s))\n(exit)\n(printf \"~a\\n\" (check-unique-characters s))\n(exit)\n(printf \"~a\\n\" (check-unique-characters s))\n(exit)\n(printf \"~a\\n\" (check-unique-characters s))\n(exit)\n(printf \"~a\\n\" (check-unique-characters s))\n(exit)\n(printf \"~a\\n\" (check-unique-characters s))\n(exit)\n(printf \"~a\\n\" (check-unique-characters s))\n(exit)\n(printf \"~a\\n\" (check-unique-characters s))\n(exit)\n(printf \"~a\\n\" (check-unique-characters s))\n(exit)\n(printf \"~a\\n\" (check-unique-characters s))\n(exit)\n(printf \"~a\\n\" (check-unique-characters s))\n(exit)\n(printf \"~a\\n\" (check-unique-characters s))\n(exit)\n(printf \"~a\\n\" (check-unique-characters s))\n(exit)\n(printf \"~a\\n\" (check-unique-characters s))\n(exit)\n(printf \"~a\\n\" (check-unique-characters s))\n(exit)\n(printf \"~a\\n\" (check-unique-characters s))\n(exit)\n(printf \"~a\\n\" (check-unique-characters s))\n(exit)\n(printf \"~a\\n\" (check-unique-characters s))\n(exit)\n(printf \"~a\\n\" (check-unique-characters s))\n(exit)\n",
+    "inputs": "A single line containing the input string.",
+    "outputs": "A single line containing 'True' or 'False'.",
+    "tests": [
+      {
+        "input": "-1 -2 3 -4 -5",
+        "output": "4"
+      },
+      {
+        "input": "1 2 3",
+        "output": "0"
+      },
+      {
+        "input": "1 2 -3 -10 20",
+        "output": "2"
+      }
+    ]
+  },
+  "solution #42": {
+    "solution": "#lang racket\n;; Write a function to calculate the sum of all integers in a nested list using recursion.\n;; A single line containing a nested list of integers in Python syntax, e.g., [1, 2, [3,4], [5,6]]\n;; A single integer representing the sum of all elements in the nested list, printed on a single line.\n#lang racket\n\n(define (sum-of-nested-list)\n  (let loop ((line (read-line)))\n    (if (eof-object? line)\n        0\n        (let* ((nums (map string->number (string-split line)))\n               (sum (apply + nums))",
+    "unclipped": ".\n#lang racket\n\n(define (sum-of-nested-list)\n  (let loop ((line (read-line)))\n    (if (eof-object? line)\n        0\n        (let* ((nums (map string->number (string-split line)))\n               (sum (apply + nums)))\n          (loop (rest line))))))\n\n(sum-of-nested-list)\n(newline)\n(sum)\n(newline)\n(sum)\n(newline)\n(nested-list)\n(newline)\n(5)\n(newline)\n(6)\n(newline)\n(7)\n(newline)\n(8)\n(newline)\n(9)\n(newline)\n(10)\n(newline)\n(11)\n(newline)\n(12)\n(newline)\n(13)\n(newline)\n(14)\n(newline)\n(15)\n(newline)\n(16)\n(newline)\n(17)\n(newline)\n(18)\n(newline)\n(19)\n(newline)\n(20)\n(newline)\n(21)\n(newline)\n(22)\n(newline)\n(23)\n(newline)\n(24)\n(newline)\n(25)\n(newline)\n(26)\n(newline)\n(27)\n(newline)\n(28)\n(newline)\n(29)\n(newline)\n(30)\n(newline)\n(31)\n(newline)\n(32)\n(newline)\n(33)\n(newline)\n(34)\n(newline)\n(35)\n(newline)\n(36)\n(newline)\n(37)\n(newline)\n(38)\n(newline)\n(39)\n(newline)\n(40)\n(newline)\n(30)\n(newline)\n(31)\n(newline)\n(32)\n(newline)\n(33)\n(newline)\n(34)\n(newline)\n(35)\n(newline)\n(36)\n(newline)\n(37)\n(newline)\n(38)\n(newline)\n(39)\n(newline)\n(40)\n(newline)\n(31)\n(newline)\n(32)\n(newline)\n(33)\n(newline)\n(34)\n(newline)\n(35)\n(newline)\n(36)\n(newline)\n(37)\n(newline)\n(38)\n(newline)\n(39)\n(newline)\n(40)\n(newline)\n(31)\n(newline)\n(32)\n(new",
+    "inputs": "A single line containing a nested list of integers in Python syntax, e.g., [1, 2, [3,4], [5,6]]",
+    "outputs": "A single integer representing the sum of all elements in the nested list, printed on a single line",
+    "tests": [
+      {
+        "input": "-1 -2 3 -4 -5",
+        "output": "4"
+      },
+      {
+        "input": "1 2 3",
+        "output": "0"
+      },
+      {
+        "input": "1 2 -3 -10 20",
+        "output": "2"
+      }
+    ]
+  },
+  "solution #43": {
+    "solution": "#lang racket\n;; Write a function to find the item with maximum frequency in a given list. If multiple items have the same maximum frequency, return the one that appeared first.\n;; A list of integers separated by spaces.\n;; Two integers separated by a space: the item with maximum frequency and its count.If no such item exists, return (-1, -1).\n#lang racket\n\n(define (find-most-frequent-item list)\n  (define counts (make-hash))\n  (define max-count 0)\n  (define result-item -1)\n  \n  (for ([item list])\n    (hash-set! counts item (add1 (hash-ref counts item 0)))\n    (when (> (hash-ref counts item) max-count)\n      (set! max-count (hash-ref counts item))\n      (set! result-item item))\n    (when (= (hash-ref counts item) max-count)\n      (when (> (index-of list item) (index-of list result-item))\n        (set! result-item item))))\n  \n  (string-join (list result-item (list (car (string-split (list (string-join list \" \") \"))))))\n\n(define input (map string->number (string-split (read-line))))\n(printf \"~a\\n\" (find-most-frequent-item input)",
+    "unclipped": " If no such item exists, return (-1, -1).\n#lang racket\n\n(define (find-most-frequent-item list)\n  (define counts (make-hash))\n  (define max-count 0)\n  (define result-item -1)\n  \n  (for ([item list])\n    (hash-set! counts item (add1 (hash-ref counts item 0)))\n    (when (> (hash-ref counts item) max-count)\n      (set! max-count (hash-ref counts item))\n      (set! result-item item))\n    (when (= (hash-ref counts item) max-count)\n      (when (> (index-of list item) (index-of list result-item))\n        (set! result-item item))))\n  \n  (string-join (list result-item (list (car (string-split (list (string-join list \" \") \"))))))\n\n(define input (map string->number (string-split (read-line))))\n(printf \"~a\\n\" (find-most-frequent-item input))\n(printf \"~a\\n\" (list (car (string-split (find-most-frequent-item input) \" \")) (list (car (string-split (find-most-frequent-item input) \"))))))\n(printf \"~a\\n\" -1 -1)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(new",
+    "inputs": "A list of integers separated by spaces.",
+    "outputs": "Two integers separated by a space: the item with maximum frequency and its count.",
+    "tests": [
+      {
+        "input": "-1 -2 3 -4 -5",
+        "output": "4"
+      },
+      {
+        "input": "1 2 3",
+        "output": "0"
+      },
+      {
+        "input": "1 2 -3 -10 20",
+        "output": "2"
+      }
+    ]
+  },
+  "solution #44": {
+    "solution": "#lang racket\n;; Write a function to remove the duplicates from the given tuple.\n;; A single line containing the elements of the tuple, enclosed in parentheses and separated by spaces.\n;; A single line containing the elements of the resulting tuple, enclosed in parentheses and separated by spaces.Each element is from the original tuple, ordered, and distinct.\n#lang racket\n\n;; Function to remove duplicates from a tuple\n(define (remove-duplicates-tuple tuple)\n  (let loop ((tuple tuple)\n             (result '()))\n    (cond\n      ((null? tuple)\n       (string-join (reverse result) \" \"))\n      (else\n       (let ((current (car tuple)))\n         (if (member current result)\n             (loop (cdr tuple) result)\n             (loop (cdr tuple) (cons current result))))))))\n\n;; Read input from standard input\n(define input (string-split (read-line)))\n\n;; Convert input to tuples\n(define tuple (map string->number input))\n(define result (remove-duplicates-tuple tuple)",
+    "unclipped": " Each element is from the original tuple, ordered, and distinct.\n#lang racket\n\n;; Function to remove duplicates from a tuple\n(define (remove-duplicates-tuple tuple)\n  (let loop ((tuple tuple)\n             (result '()))\n    (cond\n      ((null? tuple)\n       (string-join (reverse result) \" \"))\n      (else\n       (let ((current (car tuple)))\n         (if (member current result)\n             (loop (cdr tuple) result)\n             (loop (cdr tuple) (cons current result))))))))\n\n;; Read input from standard input\n(define input (string-split (read-line)))\n\n;; Convert input to tuples\n(define tuple (map string->number input))\n(define result (remove-duplicates-tuple tuple))\n\n;; Print result as space-separated string\n(printf \"~a\\n\" (string-join (map number->string result) \" \"))\n(newline)\n(printf \"~a\\n\" (string-join (map number->string result) \" \"))\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(new",
+    "inputs": "A single line containing the elements of the tuple, enclosed in parentheses and separated by spaces.",
+    "outputs": "A single line containing the elements of the resulting tuple, enclosed in parentheses and separated by spaces.",
+    "tests": [
+      {
+        "input": "-1 -2 3 -4 -5",
+        "output": "4"
+      },
+      {
+        "input": "1 2 3",
+        "output": "0"
+      },
+      {
+        "input": "1 2 -3 -10 20",
+        "output": "2"
+      }
+    ]
+  },
+  "solution #45": {
+    "solution": "#lang racket\n;; Calculate the surface area of a cone given its radius and height. The formula is πr(r + sqrt(r² + h²)), where r is the radius, h is the height, and sqrt(r² + h²) is the slant height.\n;; Two space-separated numbers representing the radius and height of the cone.\n;; A single floating-point number representing the total surface area of the cone, printed with 14 decimal places.The slant height is derived from radius and height using the Pythagorean theorem.\n#lang racket\n\n(define (surface-area radius height)\n  (* pi radius (sqrt (+ (sqr radius) (sqr height)))))\n\n(define input (map string->number (string-split (read-line))))\n(define radius (car input))\n(define height (cadr input))\n\n(define result (surface-area radius height)",
+    "unclipped": " The slant height is derived from radius and height using the Pythagorean theorem.\n#lang racket\n\n(define (surface-area radius height)\n  (* pi radius (sqrt (+ (sqr radius) (sqr height)))))\n\n(define input (map string->number (string-split (read-line))))\n(define radius (car input))\n(define height (cadr input))\n\n(define result (surface-area radius height))\n(printf \"~a\\n\" result)\n(printf \"~a\\n\" (floor result))\n(printf \"~a\\n\" (exact->inexact result))\n(printf \"~a\\n\" (exact->inexact result))\n(printf \"~a\\n\" (exact->inexact result))\n(printf \"~a\\n\" (exact->inexact result))\n(printf \"~a\\n\" (exact->inexact result))\n(printf \"~a\\n\" (exact->inexact result))\n(printf \"~a\\n\" (exact->inexact result))\n(printf \"~a\\n\" (exact->inexact result))\n(printf \"~a\\n\" (exact->inexact result))\n(printf \"~a\\n\" (exact->inexact result))\n(printf \"~a\\n\" (exact->inexact result))\n(printf \"~a\\n\" (exact->inexact result))\n(printf \"~a\\n\" (exact->inexact result))\n(printf \"~a\\n\" (exact->inexact result))\n(printf \"~a\\n\" (exact->inexact result))\n(printf \"~a\\n\" (exact->inexact result))\n(printf \"~a\\n\" (exact->inexact result))\n(printf \"~a\\n\" (exact->inexact result))\n(printf \"~a\\n\" (exact->inexact result))\n(printf \"~a\\n\" (exact->inexact result))\n(printf \"~a\\n\" (exact->inexact result))\n(printf \"~a\\n\" (exact->inexact result))\n(printf \"~a\\n\" (exact->inexact result))\n(printf \"~a\\n\" (exact->inexact result))\n(printf \"~a\\n\" (exact->inexact result))\n(printf \"~a\\n\" (exact->inexact result))\n(printf \"~a\\n\" (exact->inexact result))\n(printf \"~a\\n\" (exact->inexact result))\n(printf \"~a\\n\" (exact->inexact result))\n(printf \"~a\\n\" (exact->inexact result))\n(printf \"~a\\n\" (exact->inexact",
+    "inputs": "Two space-separated numbers representing the radius and height of the cone.",
+    "outputs": "A single floating-point number representing the total surface area of the cone, printed with 14 decimal places.",
+    "tests": [
+      {
+        "input": "-1 -2 3 -4 -5",
+        "output": "4"
+      },
+      {
+        "input": "1 2 3",
+        "output": "0"
+      },
+      {
+        "input": "1 2 -3 -10 20",
+        "output": "2"
+      }
+    ]
+  },
+  "solution #46": {
+    "solution": "#lang racket\n;; Check whether the given number can be represented as difference of two squares or not.\n;; A single integer n.\n;; A boolean value (True or False) as a string.The output is on a single line.\n#lang racket\n\n(define (is-valid n)\n  (let loop ((a 0))\n    (cond\n      ((> a (sqrt n)) #f)\n      ((integer? (sqrt (- n (sqr a)))) #t)\n      (else (loop (+ a 1))))))\n\n(define n (string->number (read-line)))\n(printf \"~a\\n\" (if (is-valid n)",
+    "unclipped": " The output is on a single line.\n#lang racket\n\n(define (is-valid n)\n  (let loop ((a 0))\n    (cond\n      ((> a (sqrt n)) #f)\n      ((integer? (sqrt (- n (sqr a)))) #t)\n      (else (loop (+ a 1))))))\n\n(define n (string->number (read-line)))\n(printf \"~a\\n\" (if (is-valid n) \"True\" \"False\"))\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n(newline)\n",
+    "inputs": "A single integer n.",
+    "outputs": "A boolean value (True or False) as a string.",
+    "tests": [
+      {
+        "input": "-1 -2 3 -4 -5",
+        "output": "4"
+      },
+      {
+        "input": "1 2 3",
+        "output": "0"
+      },
+      {
+        "input": "1 2 -3 -10 20",
+        "output": "2"
+      }
+    ]
+  },
+  "solution #47": {
+    "solution": "#lang racket\n;; Write a function to convert a snake case string to a camel case string.\n;; The input is a single line containing the snake case string.\n;; The output is a single line containing the camel case string.Each word of the input is converted to uppercase, and each word is separated by a underscore.\n#lang racket\n\n(define (snake-to-camel s)\n  (define words (string-split s))\n  (define camel (apply string-append (map uppercase? words) \"_\")))\n  (define result (snake-to-camel (read-line))",
+    "unclipped": " Each word of the input is converted to uppercase, and each word is separated by a underscore.\n#lang racket\n\n(define (snake-to-camel s)\n  (define words (string-split s))\n  (define camel (apply string-append (map uppercase? words) \"_\")))\n  (define result (snake-to-camel (read-line)))\n  (printf \"~a\\n\" result)\n)\n(newline)\n(printf \"~a\\n\" result)\n(newline)\n(printf \"~a\\n\" result)\n(newline)\n(printf \"~a\\n\" result)\n(newline)\n(printf \"~a\\n\" result)\n(newline)\n(printf \"~a\\n\" result)\n(newline)\n(printf \"~a\\n\" result)\n(newline)\n(printf \"~a\\n\" result)\n(newline)\n(printf \"~a\\n\" result)\n(newline)\n(printf \"~a\\n\" result)\n(newline)\n(printf \"~a\\n\" result)\n(newline)\n(printf \"~a\\n\" result)\n(newline)\n(printf \"~a\\n\" result)\n(newline)\n(printf \"~a\\n\" result)\n(newline)\n(printf \"~a\\n\" result)\n(newline)\n(printf \"~a\\n\" result)\n(newline)\n(printf \"~a\\n\" result)\n(newline)\n(printf \"~a\\n\" result)\n(newline)\n(printf \"~a\\n\" result)\n(newline)\n(printf \"~a\\n\" result)\n(newline)\n(printf \"~a\\n\" result)\n(newline)\n(printf \"~a\\n\" result)\n(newline)\n(printf \"~a\\n\" result)\n(newline)\n(printf \"~a\\n\" result)\n(newline)\n(printf \"~a\\n\" result)\n(newline)\n(printf \"~a\\n\" result)\n(newline)\n(printf \"~a\\n\" result)\n(newline)\n(printf \"~a\\n\" result)\n(newline)\n(printf \"~a\\n\" result)\n(newline)\n(printf \"~a\\n\" result)\n(newline)\n(printf \"~a\\n\" result)\n(newline)\n(printf \"~a\\n\" result)\n(newline)\n(printf \"~a\\n\" result)\n(newline)\n(printf \"~a\\n\" result)\n(newline)\n(printf \"~a\\n\" result)\n(newline)\n(printf \"~a\\n\" result)\n(newline)\n(printf \"~a\\n\" result)\n(newline)\n(printf \"~a\\n\" result)\n(newline)\n(printf \"~a\\n\" result)\n(newline)\n",
+    "inputs": "The input is a single line containing the snake case string.",
+    "outputs": "The output is a single line containing the camel case string.",
+    "tests": [
+      {
+        "input": "-1 -2 3 -4 -5",
+        "output": "4"
+      },
+      {
+        "input": "1 2 3",
+        "output": "0"
+      },
+      {
+        "input": "1 2 -3 -10 20",
+        "output": "2"
+      }
+    ]
+  },
+  "solution #48": {
+    "solution": "#lang racket\n;; Determine if three given points form a valid triangle. A valid triangle is formed if the points are not collinear.\n;; Six space-separated integers representing the coordinates of three points: x1 y1 x2 y2 x3 y3\n;; A single line containing either 'Yes' if the points form a valid triangle, or 'No' otherwise.\n#lang racket\n\n(define (is-valid-triangle x1 y1 x2 y2 x3 y3)\n  (let* ([a (first (map sqrt (list x1 x2 x3)))]\n         [b (second (map sqrt (list x1 x2 x3)))]\n         [c (third (map sqrt (list x1 x2 x3)))]\n         [area (* (sqrt 3) (expt x1 x2 (expt x2 x1)) 2))]\n         [perimeter (+ (* 2 (list x1 x2 x3)))]\n         [height (quotient perimeter 2)])\n    (and (> area 0) (> height 0) (= height 1) (not (= a 0 b 0 c))))))\n\n(define (main)\n  (let ([input (map string->number (string-split (read-line)))]\n        (printf \"~a\\n\" (if (is-valid-triangle (car input) (cadr input) (caddr input))",
+    "unclipped": ".\n#lang racket\n\n(define (is-valid-triangle x1 y1 x2 y2 x3 y3)\n  (let* ([a (first (map sqrt (list x1 x2 x3)))]\n         [b (second (map sqrt (list x1 x2 x3)))]\n         [c (third (map sqrt (list x1 x2 x3)))]\n         [area (* (sqrt 3) (expt x1 x2 (expt x2 x1)) 2))]\n         [perimeter (+ (* 2 (list x1 x2 x3)))]\n         [height (quotient perimeter 2)])\n    (and (> area 0) (> height 0) (= height 1) (not (= a 0 b 0 c))))))\n\n(define (main)\n  (let ([input (map string->number (string-split (read-line)))]\n        (printf \"~a\\n\" (if (is-valid-triangle (car input) (cadr input) (caddr input)) \"Yes\" \"No\"))))\n\n(main)\n(newline)\n(printf \"~n\\n\" \"No\")\n(newline)\n(main)\n(newline)\n(printf \"~a\\n\" \"Yes\")\n(newline)\n(main)\n(newline)\n(printf \"~a\\n\" \"No\")\n(newline)\n(main)\n(newline)\n(printf \"~a\\n\" \"Yes\")\n(newline)\n(main)\n(newline)\n(printf \"~a\\n\" \"No\")\n(newline)\n(main)\n(newline)\n(printf \"~a\\n\" \"Yes\")\n(newline)\n(main)\n(newline)\n(printf \"~a\\n\" \"No\")\n(newline)\n(main)\n(newline)\n(printf \"~a\\n\" \"Yes\")\n(newline)\n(main)\n(newline)\n(printf \"~a\\n\" \"No\")\n(newline)\n(main)\n(newline)\n(printf \"~a\\n\" \"Yes\")\n(newline)\n(main)\n(newline)\n(printf \"~a\\n\" \"No\")\n(newline)\n(main)\n(newline)\n(printf \"~a\\n\" \"Yes\")\n(newline)\n(main)\n(newline)\n(printf \"~a\\n\" \"No\")\n(newline)\n(main)\n(newline)\n(printf \"~a\\n\" \"Yes\")\n(newline)\n(main)\n(newline)\n(printf \"~a\\n\" \"No\")\n(newline)\n(main)\n(newline)\n(printf \"~a\\n\" \"Yes\")\n(newline)\n(main)\n(newline)\n",
+    "inputs": "Six space-separated integers representing the coordinates of three points: x1 y1 x2 y2 x3 y3",
+    "outputs": "A single line containing either 'Yes' if the points form a valid triangle, or 'No' otherwise",
+    "tests": [
+      {
+        "input": "-1 -2 3 -4 -5",
+        "output": "4"
+      },
+      {
+        "input": "1 2 3",
+        "output": "0"
+      },
+      {
+        "input": "1 2 -3 -10 20",
+        "output": "2"
+      }
+    ]
+  },
+  "solution #49": {
+    "solution": "#lang racket\n;; Sort a given list of elements in ascending order using the heap queue algorithm.\n;; A single line containing a list of integers separated by spaces.\n;; A single line containing the sorted integers separated by spaces.Each integer is within the range of the input (inclusive).\n#lang racket\n\n(define (sort-ascendingly input)\n  (define numbers (map string->number (string-split input)))\n  (define sorted-numbers (sort numbers <)",
+    "unclipped": " Each integer is within the range of the input (inclusive).\n#lang racket\n\n(define (sort-ascendingly input)\n  (define numbers (map string->number (string-split input)))\n  (define sorted-numbers (sort numbers <))\n  (define sorted-strings (map number->string sorted-numbers))\n  (define output (string-join sorted-strings \" \"))\n  (printf \"~a\\n\" output)\n)\n\n(define input (read-line))\n(sort-ascendingly input)\n(newline)\n(sort-descendingly input)\n(newline)\n(define sorted (sort (lambda (a b) (< (string-length a) (string-length b))) numbers))\n(printf \"~a\\n\" (string-join (map number->string sorted) \" \"))\n(newline)\n(define max-val (sort (lambda (a b) (> (string-length a) (string-length b))) numbers))\n(printf \"~a\\n\" (string-join (map number->string max-val) \" \"))\n(newline)\n(define min-val (sort (lambda (a b) (< (string-length a) (string-length b))) numbers))\n(printf \"~a\\n\" (string-join (map number->string min-val) \" \"))\n(newline)\n(define (heap-queue algorithm input)\n  (define numbers (map string->number (string-split input)))\n  (define sorted-numbers (sort numbers (lambda (a b) (< (list-ref a) (list-ref b)))))\n  (define sorted-strings (map number->string sorted-numbers))\n  (define output (string-join sorted-strings \" \"))\n(heap-queue (lambda (a b) (< (list-ref a) (list-ref b))) numbers)\n(newline)\n(printf \"~a\\n\" output)\n(newline)\n(printf \"~a\\n\" (list-join (map number->string (sort numbers <)) \" \"))\n(newline)\n(printf \"~a\\n\" (list-join (map number->string (sort numbers <)) \" \"))\n(newline)\n(printf \"~a\\n\" (list-join (map number->string (sort numbers <)) \" \"))\n(newline)\n(printf \"~a\\n\" (list-join (map number->string (sort numbers <)) \" \"))\n(newline)\n(printf \"~a\\n\" (list-join (map number->string (sort numbers <)) \" \"))\n(newline)\n(printf \"~a\\n\" (list-join (map",
+    "inputs": "A single line containing a list of integers separated by spaces.",
+    "outputs": "A single line containing the sorted integers separated by spaces.",
+    "tests": [
+      {
+        "input": "-1 -2 3 -4 -5",
+        "output": "4"
+      },
+      {
+        "input": "1 2 3",
+        "output": "0"
+      },
+      {
+        "input": "1 2 -3 -10 20",
+        "output": "2"
+      }
+    ]
+  },
+  "solution #50": {
+    "solution": "#lang racket\n;; Given a list of integers, count the number of negative numbers in the list.\n;; A single line containing integers separated by spaces.\n;; A single integer representing the count of negative numbers, followed by a newline.The order corresponds to the order in the input list.\n;; input_format\n#lang racket\n\n(define (count-negatives lst)\n  (define count 0)\n  (for ([num lst])\n    (when (< num 0)\n      (set! count (+ count 1))))\n  count)\n\n(define input (map string->number (string-split (read-line))))\n(define result (count-negatives input)",
+    "unclipped": " The order corresponds to the order in the input list.\n;; input_format\n#lang racket\n\n(define (count-negatives lst)\n  (define count 0)\n  (for ([num lst])\n    (when (< num 0)\n      (set! count (+ count 1))))\n  count)\n\n(define input (map string->number (string-split (read-line))))\n(define result (count-negatives input))\n(printf \"~a\\n\" result)\n(newline)\n(printf \"~a\\n\" (string-join (map number->string result) \" \"))\n(newline)\n(printf \"~a\\n\" (string-join (map number->string result) \" \"))\n(newline)\n(printf \"~a\\n\" (string-join (map number->string result) \" \"))\n(newline)\n(printf \"~a\\n\" (string-join (map number->string result) \" \"))\n(newline)\n(printf \"~a\\n\" (string-join (map number->string result) \" \"))\n(newline)\n(printf \"~a\\n\" (string-join (map number->string result) \" \"))\n(newline)\n(printf \"~a\\n\" (string-join (map number->string result) \" \"))\n(newline)\n(printf \"~a\\n\" (string-join (map number->string result) \" \"))\n(newline)\n(printf \"~a\\n\" (string-join (map number->string result) \" \"))\n(newline)\n(printf \"~a\\n\" (string-join (map number->string result) \" \"))\n(newline)\n(printf \"~a\\n\" (string-join (map number->string result) \" \"))\n(newline)\n(printf \"~a\\n\" (string-join (map number->string result) \" \"))\n(newline)\n(printf \"~a\\n\" (string-join (map number->string result) \" \"))\n(newline)\n(printf \"~a\\n\" (string-join (map number->string result) \" \"))\n(newline)\n(printf \"~a\\n\" (string-join (map number->string result) \" \"))\n(newline)\n(printf \"~a\\n\" (string-join (map number->string result) \" \"))\n(newline)\n(printf \"~a\\n\" (string-join (map number->string result) \" \"))\n(newline)\n(printf \"~a\\n\" (string-join (map number->string result) \" \"))\n(newline)\n(printf \"~a\\n\" (string",
+    "inputs": "A single line containing integers separated by spaces.",
+    "outputs": "A single integer representing the count of negative numbers, followed by a newline.",
+    "tests": [
+      {
+        "input": "-1 -2 3 -4 -5",
+        "output": "4"
+      },
+      {
+        "input": "1 2 3",
+        "output": "0"
+      },
+      {
+        "input": "1 2 -3 -10 20",
+        "output": "2"
+      }
+    ]
+  }
+}
