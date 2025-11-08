@@ -1,0 +1,919 @@
+{
+  "version": "1",
+  "metadata": {
+    "marimo_version": "0.16.5"
+  },
+  "cells": [
+    {
+      "id": "Hbol",
+      "code_hash": "1d0db38904205bec4d6f6f6a1f6cec3e",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "MJUe",
+      "code_hash": "3ed519e53b7a9c6a7952f1ae7ca2d547",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<span class=\"markdown prose dark:prose-invert\"><h1 id=\"non-local-control-flow\">Non-Local Control Flow</h1>\n<h2 id=\"setup\">Setup</h2></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "vblA",
+      "code_hash": "8bd73ea595f63ab82dbb3b7de7a0d45e",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "bkHC",
+      "code_hash": "19b5107b485d7eeb23240eefdfc57cc8",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<span class=\"markdown prose dark:prose-invert\"><h2 id=\"generators\">Generators</h2>\n<h3 id=\"introduction\">Introduction</h3>\n<span class=\"paragraph\">A <em>generator function</em> is a special kind of function that suspends its execution\nwhen it produces a value for the caller. The caller may then resume the\ngenerator function to make it produce the next value (if any). Ordinary functions\n<em>do not</em> work this way: they run to completion and cannot be suspended.</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "lEQa",
+      "code_hash": "8a4549c6319ac4a6099779c3b58d9868",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "PKri",
+      "code_hash": "8a0501ade76786e0e745d64de2ae0134",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<span class=\"markdown prose dark:prose-invert\"><span class=\"paragraph\">When you apply a generator function, you get a generator object which keeps track of where the generator is\nsuspended. You can use the built-in function <code>next()</code> to resume the generator, get the next value, and suspend\nimmediately after the next value.</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "Xref",
+      "code_hash": "b5ab3d58f6f0763dfe552b3ad97c1142",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "1\n2\n3\n"
+        }
+      ]
+    },
+    {
+      "id": "SFPL",
+      "code_hash": "bddc4474dc2ae3be334df5237699d10a",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<span class=\"markdown prose dark:prose-invert\"><span class=\"paragraph\">This is not how generators are typically used. It is more typical in Python to use them with for loops, that\nautomatically call next() for you.</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "BYtC",
+      "code_hash": "d765e1a3b695ba1b5565cd7987a32d9e",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "Generator value: 1\nGenerator value: 2\nGenerator value: 3\n"
+        }
+      ]
+    },
+    {
+      "id": "RGSE",
+      "code_hash": "9d971baff829cc8a3c938a47311e79b6",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<span class=\"markdown prose dark:prose-invert\"><h3 id=\"unbounded-generators\">Unbounded Generators</h3>\n<span class=\"paragraph\">Generators really do suspend execution, including suspending an infinite loop.\nConsider the following example of a generator that has an infinite loop.</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "Kclp",
+      "code_hash": "3ed2589504644a0e872144ab56fb6ece",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "emfo",
+      "code_hash": "4eae92226f7c42835f5a2979002a99f7",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<span class=\"markdown prose dark:prose-invert\"><span class=\"paragraph\">We can get a finite prefix of even numbers.</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "Hstk",
+      "code_hash": "c60f42fdf796ff8b09e9e1e1ff5e4ae4",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "0 2 4 6 8 10 12 14 16 18 \n"
+        }
+      ]
+    },
+    {
+      "id": "nWHF",
+      "code_hash": "ff406e6bbd2afaa6730a872960483be5",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<span class=\"markdown prose dark:prose-invert\"><span class=\"paragraph\">Using a for loop is more canonical Python. However, it is important to have the <code>break</code> statement to avoid\nrunning forever.</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "iLit",
+      "code_hash": null,
+      "outputs": [],
+      "console": []
+    },
+    {
+      "id": "ZHCJ",
+      "code_hash": "7417d5b37cea43c9d148a608d1968b5a",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<span class=\"markdown prose dark:prose-invert\"><h3 id=\"generators-as-coroutines\">Generators as Coroutines</h3>\n<span class=\"paragraph\">It is possible to have several generators suspended at once, which means\nwe can actually use multiple generators together.</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "ROlb",
+      "code_hash": "7d91d5222db8f75e5c670dec6a6351bd",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "TqIu",
+      "code_hash": "24270f81e4b53cd5cc79dca8d2d9c10d",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<span class=\"markdown prose dark:prose-invert\"><span class=\"paragraph\">Using <code>next</code> directly gives us fine-grained control. But, a more canonical way to write the code above is\nwith a <code>for</code> loop and <code>zip</code>.</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "qnkX",
+      "code_hash": "5a205a944160420c27d2d507200e0e36",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "10 100\n11 101\n12 102\n"
+        }
+      ]
+    },
+    {
+      "id": "DnEU",
+      "code_hash": "490a639308d77d5943bd0065a8eb4fbf",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<span class=\"markdown prose dark:prose-invert\"><span class=\"paragraph\">Here is an alternative implementation that uses <code>zip</code> and <code>enumerate</code>:</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "ulZA",
+      "code_hash": "9b053c2b88ac8983116ec14ee6342b7f",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "10 100\n11 101\n12 102\n13 103\n14 104\n15 105\n16 106\n17 107\n18 108\n19 109\n20 110\n21 111\n22 112\n23 113\n24 114\n25 115\n26 116\n27 117\n28 118\n29 119\n30 120\n"
+        }
+      ]
+    },
+    {
+      "id": "ecfG",
+      "code_hash": "7689f9a05f9595ca67ddb92a3000e975",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<span class=\"markdown prose dark:prose-invert\"><h3 id=\"generator-composition\">Generator Composition</h3>\n<span class=\"paragraph\">The <code>zip</code> and <code>enumerate</code> functions are built-in Python functions. How could we\nwrite them ourselves? Try writing <code>zip</code> first and then try to get both of these\npieces of code to work:</span>\n<div class=\"language-python codehilite\"><pre><span></span><code><span class=\"k\">for</span> <span class=\"n\">i</span><span class=\"p\">,</span> <span class=\"n\">n</span> <span class=\"ow\">in</span> <span class=\"n\">enumerate_with_next</span><span class=\"p\">(</span><span class=\"n\">nums_from</span><span class=\"p\">(</span><span class=\"mi\">10</span><span class=\"p\">)):</span>\n    <span class=\"nb\">print</span><span class=\"p\">(</span><span class=\"n\">i</span><span class=\"p\">,</span> <span class=\"n\">n</span><span class=\"p\">)</span>\n    <span class=\"k\">if</span> <span class=\"n\">i</span> <span class=\"o\">==</span> <span class=\"mi\">2</span><span class=\"p\">:</span>\n        <span class=\"k\">break</span>\n</code></pre></div>\n<div class=\"language-python codehilite\"><pre><span></span><code><span class=\"k\">for</span> <span class=\"n\">i</span><span class=\"p\">,</span> <span class=\"n\">n</span> <span class=\"ow\">in</span> <span class=\"n\">enumerate_with_next</span><span class=\"p\">(</span><span class=\"n\">make_three_gen</span><span class=\"p\">()):</span>\n    <span class=\"nb\">print</span><span class=\"p\">(</span><span class=\"n\">i</span><span class=\"p\">,</span> <span class=\"n\">n</span><span class=\"p\">)</span>\n    <span class=\"k\">if</span> <span class=\"n\">i</span> <span class=\"o\">==</span> <span class=\"mi\">2</span><span class=\"p\">:</span>\n        <span class=\"k\">break</span>\n</code></pre></div>\n<span class=\"paragraph\">This can be done with <code>next</code> or with a <code>for</code> loop.</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "Pvdt",
+      "code_hash": "52860afa10228671cd65ec75e75de9ab",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "0 10\n1 11\n2 12\n3 13\n4 14\n5 15\n6 16\n7 17\n8 18\n9 19\n10 20\n11 21\n12 22\n"
+        }
+      ]
+    },
+    {
+      "id": "ZBYS",
+      "code_hash": "ccdd091a990a184d5410da626a470539",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<span class=\"markdown prose dark:prose-invert\"><span class=\"paragraph\">The code is simpler with <code>for</code>.</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "aLJB",
+      "code_hash": "0dac8562b5206c82f7cc378160e5f3b1",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "0 4\n1 5\n2 6\n3 7\n4 8\n5 9\n6 10\n7 11\n8 12\n9 13\n10 14\n11 15\n12 16\n"
+        }
+      ]
+    },
+    {
+      "id": "nHfw",
+      "code_hash": "b05ab4a54ac2dbd5a8618951382b7cbd",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<span class=\"markdown prose dark:prose-invert\"><span class=\"paragraph\">Try writing <code>zip</code> with <code>next</code> and getting this code to work:</span>\n<div class=\"language-python codehilite\"><pre><span></span><code><span class=\"k\">for</span> <span class=\"n\">n0</span><span class=\"p\">,</span> <span class=\"n\">n1</span> <span class=\"ow\">in</span> <span class=\"n\">zip_with_next</span><span class=\"p\">(</span><span class=\"n\">nums_from</span><span class=\"p\">(</span><span class=\"mi\">10</span><span class=\"p\">),</span> <span class=\"n\">nums_from</span><span class=\"p\">(</span><span class=\"mi\">100</span><span class=\"p\">)):</span>\n    <span class=\"nb\">print</span><span class=\"p\">(</span><span class=\"n\">n0</span><span class=\"p\">,</span> <span class=\"n\">n1</span><span class=\"p\">)</span>\n    <span class=\"k\">if</span> <span class=\"n\">n0</span> <span class=\"o\">==</span> <span class=\"mi\">12</span><span class=\"p\">:</span>\n        <span class=\"k\">break</span>\n</code></pre></div></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "xXTn",
+      "code_hash": null,
+      "outputs": [],
+      "console": []
+    },
+    {
+      "id": "AjVT",
+      "code_hash": "d7a14e634129158e7e02b973bd1d54f0",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<span class=\"markdown prose dark:prose-invert\"><span class=\"paragraph\">It is not possible to write <code>zip</code> with a <code>for</code>. A <code>for</code> loop iterates through a\nsingle generator at a time, but <code>zip</code> needs to iterate through two generators\nat once.</span>\n<h3 id=\"chaining-generators\">Chaining Generators</h3>\n<span class=\"paragraph\">A common pattern with generators is to write a generator that produces values from one generator and then another.</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "pHFh",
+      "code_hash": "a5924a7d43d2b7ece1d5d970e2f07427",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "NCOB",
+      "code_hash": "071ca7315569f2c19266a60a7042da3b",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "aqbW",
+      "code_hash": "6c647a0bfb0ee2cacd503527e7550efb",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<span class=\"markdown prose dark:prose-invert\"><span class=\"paragraph\">We can rewrite the code above to use <code>for</code>, which you should try. But, there\nis a simpler approach using <code>yield from</code>.</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "TRpd",
+      "code_hash": "6d96f66bf739888f3de4650625d1676b",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "tyWv",
+      "code_hash": "22e0ea4cdb70546b7053234135d720aa",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "1\n2\n3\n11\n22\n33\n"
+        }
+      ]
+    },
+    {
+      "id": "TXez",
+      "code_hash": "e0930c4c705dffd6596828fb196e4c48",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<span class=\"markdown prose dark:prose-invert\"><h3 id=\"back-to-llms\">Back to LLMs</h3>\n<span class=\"paragraph\">Here is a problem in the LLM world where generators are very helpful. It is less\nthan 10 lines of code.</span>\n<span class=\"paragraph\">Suppose you have a large training corpus of text, say on the scale of a few TB.\nYou cannot build an in-memory list of that size, so it is effectively unbounded.\nWe want to tokenize this text to train an LLM. But, we also want to both\nsplit and pack tokens such that each training item is exactly N=2048 tokens\nlong.</span>\n<span class=\"paragraph\">This is a little painful, because documents are of varying length</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "dNNg",
+      "code_hash": "5ebdfb1637334be01e76f856892cceae",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<pre style='font-size: 12px'>Dataset({\n    features: [&#x27;id&#x27;, &#x27;url&#x27;, &#x27;title&#x27;, &#x27;text&#x27;],\n    num_rows: 2434\n})</pre>"
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stderr",
+          "text": "\rGenerating test split:   0%|                                                                                                                                | 0/2434 [00:00<?, ? examples/s]"
+        },
+        {
+          "type": "stream",
+          "name": "stderr",
+          "text": "\rGenerating test split: 100%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588| 2434/2434 [00:00<00:00, 21672.35 examples/s]\n"
+        }
+      ]
+    },
+    {
+      "id": "yCnT",
+      "code_hash": "fb7efb00cc0b1079ee7f51bcbd7c49ce",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<span class=\"markdown prose dark:prose-invert\"><span class=\"paragraph\">Here are three documents from the corpus. The first two are too long and need to be split. The third is too short. We can pad it, but we'll make\nbetter use of memory by packing it into a training item with other documents.</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "wlCL",
+      "code_hash": "9d21976a66595d7ac5cd6be7dc35aa80",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "application/json": "[17184, 4948, 1133]"
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stderr",
+          "text": "Token indices sequence length is longer than the specified maximum sequence length for this model (17184 > 1024). Running this sequence through the model will result in indexing errors\n"
+        }
+      ]
+    },
+    {
+      "id": "kqZH",
+      "code_hash": "df7cdb0ba299088f104cea7f1d6fd3d4",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "wAgl",
+      "code_hash": "09c7dc7fffc47637bc1586d4f8a76d9e",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "17184\n4948\n"
+        },
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "4009\n"
+        },
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "10108\n6305\n"
+        }
+      ]
+    },
+    {
+      "id": "rEll",
+      "code_hash": "45fce6e127ffbdbb56a6077470422f10",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<span class=\"markdown prose dark:prose-invert\"><span class=\"paragraph\">We can now write a generator that yields training items of length 2048 or smaller.</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "dGlV",
+      "code_hash": "e17fabea04288a5d5087a2cd502118ab",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "SdmI",
+      "code_hash": "70262dafdd4b26a1fe2bce9d8e3745b9",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "2048 2048 2048 2048 2048 2048 2048 2048 800 2048 "
+        }
+      ]
+    },
+    {
+      "id": "lgWD",
+      "code_hash": "0fad36aa8709f9179d91bc622fe5774d",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<span class=\"markdown prose dark:prose-invert\"><span class=\"paragraph\">To handle packing, we need to both split and pack simultaneously.</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "yOPj",
+      "code_hash": "90ee72b633b286cf80c6d61704a10006",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "fwwy",
+      "code_hash": null,
+      "outputs": [],
+      "console": []
+    },
+    {
+      "id": "LJZf",
+      "code_hash": "70adfc01cba1de751b76bc33ee5b0d02",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<span class=\"markdown prose dark:prose-invert\"><h2 id=\"async-functions\">Async Functions</h2>\n<h3 id=\"background\">Background</h3>\n<span class=\"paragraph\">Python is single-threaded.</span>\n<span class=\"paragraph\">Python 3.13, released October 7 2024, has experimental support for true concurrency:</span>\n<span class=\"paragraph\"><a href=\"https://docs.python.org/3.13/whatsnew/3.13.html#free-threaded-cpython\" rel=\"noopener\" target=\"_blank\">https://docs.python.org/3.13/whatsnew/3.13.html#free-threaded-cpython</a></span>\n<span class=\"paragraph\">The purpose of <em>asynchronous function</em> is to allow concurrent I/O.</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "urSm",
+      "code_hash": "eb716211c2940987c2f837e23ad9c16b",
+      "outputs": [],
+      "console": []
+    },
+    {
+      "id": "jxvo",
+      "code_hash": "5ce9e9e9255d31d640ee81da9ad75cde",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<span class=\"markdown prose dark:prose-invert\"><span class=\"paragraph\">We have been using synchronous requests.</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "mWxS",
+      "code_hash": "8bd0b30260fd04aa711885ce864c7ea4",
+      "outputs": [],
+      "console": []
+    },
+    {
+      "id": "CcZR",
+      "code_hash": "75813b6c8a7cd55ce24baf268322dce2",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<span class=\"markdown prose dark:prose-invert\"><span class=\"paragraph\">But, we don't actually care about the order in which these results are processed.\nSo, the goal is to send several requests simultaneously.</span>\n<h3 id=\"basics-of-async\">Basics of Async</h3>\n<span class=\"paragraph\">The code below creates two timers that run together. But, the second one finishes\nfirst.</span>\n<ul>\n<li>The <code>async</code> keyword is used to define a function that runs asynchronously. It\n  allows the function to be paused and resumed, making it suitable for tasks\n  that involve waiting (e.g., I/O operations).</li>\n<li>The <code>await</code> keyword is used inside an async function to pause its execution\n  until the awaited operation completes. This allows other tasks to run during\n  the waiting period, which improves efficiency for I/O-bound tasks.</li>\n</ul></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "YWSi",
+      "code_hash": "d4b96f79b540a1cbeb325da98e5cacdd",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "zlud",
+      "code_hash": "ab83f3b3ffa963d53c9510cea7586aac",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<span class=\"markdown prose dark:prose-invert\"><h3 id=\"the-openai-async-interface\">The OpenAI Async Interface</h3>\n<span class=\"paragraph\">The OpenAI API has an async interface that you can use to issue requests concurrently\nto the LLM server.</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "tZnO",
+      "code_hash": "db8c48e4a2dd817a434efcba35e69d8e",
+      "outputs": [],
+      "console": []
+    },
+    {
+      "id": "xvXZ",
+      "code_hash": "0b7dd966aa6866ba2dcc59a51d74bbf9",
+      "outputs": [],
+      "console": []
+    },
+    {
+      "id": "CLip",
+      "code_hash": "a6cec414a5fb38d09a10cdfcf2ac5640",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<span class=\"markdown prose dark:prose-invert\"><h3 id=\"awaiting-several-results\">Awaiting Several Results</h3>\n<span class=\"paragraph\">An explicit sleep is a bad idea. We may not be sleeping long enough, or\nwe may be sleeping needlessly long. It is usually a bad idea to use\n<code>asyncio.create_task</code>. Here is a better approach.</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "YECM",
+      "code_hash": "9e6ed637f1616267f6e898961c6c3575",
+      "outputs": [],
+      "console": []
+    },
+    {
+      "id": "cEAS",
+      "code_hash": "0c8ffe901c585ef82388a3fdc6449380",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<span class=\"markdown prose dark:prose-invert\"><span class=\"paragraph\">A more concise approach:</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "iXej",
+      "code_hash": null,
+      "outputs": [],
+      "console": []
+    },
+    {
+      "id": "EJmg",
+      "code_hash": "2929ec597b8c2e78ae2c17bc38f50b1f",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<span class=\"markdown prose dark:prose-invert\"><h3 id=\"more-advanced-usage\">More Advanced Usage</h3>\n<span class=\"paragraph\">Given a list of tasks, you can wait for the first one to complete, instead of\nwaiting for all of them to complete.</span>\n<span class=\"paragraph\">We will get different capitals each time we run the cell below.</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "UmEG",
+      "code_hash": "eff2d577dfed2aa9dc65ba677c576656",
+      "outputs": [],
+      "console": []
+    },
+    {
+      "id": "vEBW",
+      "code_hash": "373819a15e2cf3dcdfd1ff753381772d",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<span class=\"markdown prose dark:prose-invert\"><span class=\"paragraph\">We can also wait with a timeout.</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "kLmu",
+      "code_hash": "5a1108518c055cc72e26f7911bc9d736",
+      "outputs": [],
+      "console": []
+    },
+    {
+      "id": "IpqN",
+      "code_hash": "f8a31bbfa11602a18f424f39a141f220",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<span class=\"markdown prose dark:prose-invert\"><h2 id=\"exercises\">Exercises</h2>\n<h3 id=\"q1-fibonacci-generator\">Q1. Fibonacci Generator</h3>\n<span class=\"paragraph\"><strong>Task.</strong> Implement a generator that yields the Fibonacci sequence indefinitely, one number at a time.</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "dxZZ",
+      "code_hash": "bde66ab25c27a3265c19290707aa570e",
+      "outputs": [],
+      "console": []
+    },
+    {
+      "id": "dlnW",
+      "code_hash": "82ae96e6da7531e04309d81bb7c0dabf",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<span class=\"markdown prose dark:prose-invert\"><h3 id=\"q2-tokenize-one-token-at-a-time\">Q2. Tokenize One Token at a Time</h3>\n<span class=\"paragraph\"><strong>Task.</strong> Implement a generator that yields token IDs from a Hugging Face tokenizer for a given input text, one token at a time.</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "TTti",
+      "code_hash": "5da90b09986229f19947a50cfb3a7147",
+      "outputs": [],
+      "console": []
+    },
+    {
+      "id": "RKFZ",
+      "code_hash": "e9be64cda5af59b2b005a1b0b2f090d0",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<span class=\"markdown prose dark:prose-invert\"><h3 id=\"q3-rank-queries-by-completion-time\">Q3. Rank Queries by Completion Time</h3>\n<span class=\"paragraph\"><strong>Task.</strong> Send multiple chat completion requests concurrently via <code>ASYNC_CLIENT</code> and return results ordered by time of receipt. Each item includes the elapsed seconds and the response text.</span>\n<span class=\"paragraph\"><strong>Helpful Functions</strong></span>\n<ul>\n<li><code>asyncio.as_completed(iterable)</code> \u2014 iterate results in <strong>completion order</strong> (not input order). (<a href=\"https://docs.python.org/3/library/asyncio-task.html#asyncio.as_completed\" rel=\"noopener\" target=\"_blank\">Python documentation</a>)</li>\n<li><code>time.perf_counter()</code> \u2014 high-resolution timer for measuring elapsed time. (<a href=\"https://docs.python.org/3/library/time.html#time.perf_counter\" rel=\"noopener\" target=\"_blank\">Python documentation</a>)</li>\n</ul></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "IaQp",
+      "code_hash": "e77b71389bd9b061b56b1a393801acf5",
+      "outputs": [],
+      "console": []
+    },
+    {
+      "id": "IWgg",
+      "code_hash": "6612e8216d30282dcb22a44710e407c9",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<span class=\"markdown prose dark:prose-invert\"><h3 id=\"q4-rate-limited-queries\">Q4. Rate-Limited Queries</h3>\n<span class=\"paragraph\"><strong>Task.</strong> Query <code>ASYNC_CLIENT</code> respecting a rate limit of <code>rate_limit</code> requests per <code>timeframe</code> seconds. Return responses in the original order of <code>texts</code>.</span></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "fCoF",
+      "code_hash": "95eb6e7a0970b53251c59b5fe4453512",
+      "outputs": [],
+      "console": []
+    },
+    {
+      "id": "LkGn",
+      "code_hash": "4f8501e33150e3d222ec39283f83c1c5",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<span class=\"markdown prose dark:prose-invert\"><h3 id=\"q5-buffered-streaming-generator\">Q5. Buffered Streaming Generator</h3>\n<span class=\"paragraph\"><strong>Task.</strong> Implement an asynchronous generator function <code>streaming_query(text)</code> that streams model output tokens and yields buffered chunks spaced at least one second apart. The function should collect partial text from the stream and emit it periodically, yielding the final remainder at the end.</span>\n<span class=\"paragraph\"><strong>Hint.</strong> In OpenAI-style streaming responses, each event contains incremental deltas, which are small chunks of generated text accessible via <code>event.choices[0].delta.content</code>.</span>\n<span class=\"paragraph\"><strong>Helpful Functions.</strong></span>\n<ul>\n<li><code>asyncio.get_event_loop()</code> \u2014 obtain the (current) event loop; see also <code>get_running_loop()</code>. (<a href=\"https://docs.python.org/3/library/asyncio-eventloop.html#asyncio.get_event_loop\" rel=\"noopener\" target=\"_blank\" title=\"Low-level API Index\">Python documentation</a>)</li>\n<li><code>asyncio.AbstractEventLoop.time()</code> \u2014 event-loop\u2019s monotonic clock used for cadence control. (<a href=\"https://docs.python.org/3/library/asyncio-eventloop.html#asyncio.loop.time\" rel=\"noopener\" target=\"_blank\" title=\"Event Loop Time\">Python documentation</a>)</li>\n</ul></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "zVRe",
+      "code_hash": "4d9a9be92ab15fe061f153b3b7c0e35c",
+      "outputs": [],
+      "console": []
+    }
+  ]
+}

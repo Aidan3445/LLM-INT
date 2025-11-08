@@ -1,0 +1,363 @@
+{
+  "version": "1",
+  "metadata": {
+    "marimo_version": "0.16.5"
+  },
+  "cells": [
+    {
+      "id": "Hbol",
+      "code_hash": "1d0db38904205bec4d6f6f6a1f6cec3e",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "nynn",
+      "code_hash": "f5ea06691f06f1cfee981826677d7afa",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "rpwm",
+      "code_hash": "b7fac8df5b020f41a3ca9af2c9dc07ef",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "AeKw",
+      "code_hash": "b63d038dc999f9ea6f58bcaa0e1fc12c",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<pre style='font-size: 12px'>tensor([  750,   912,  2877,  8402,   982,   262,   470,   264, 35093,   198,\n          750,  1186,  2877,  8402])</pre>"
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "Enter a prompt:  def add(a,b):\n"
+        },
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "def add(a,b):"
+        },
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "\n"
+        },
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "   "
+        },
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": " return"
+        },
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": " a"
+        },
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "+b"
+        },
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "\n"
+        },
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "def"
+        },
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": " sub"
+        },
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "(a"
+        },
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": ",b"
+        }
+      ]
+    },
+    {
+      "id": "NHKE",
+      "code_hash": "4fb9f082aa0d3baa5529e77ef2cff9aa",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "BxFe",
+      "code_hash": "13f0d6ebd157f9fb60c0fdb99cf14c3d",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": [
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "Enter a speculative prompt:  def add(a,b):\n"
+        },
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "WE HAVE 10 TOKENS TO GENERATE\n"
+        },
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "\n"
+        },
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "   "
+        },
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": " return"
+        },
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": " a"
+        },
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "+b"
+        },
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "\n"
+        },
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "def"
+        },
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": " sub"
+        },
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "(a"
+        },
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": ",b"
+        },
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": " mainWE HAVE 9 TOKENS TO GENERATE\n"
+        },
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": ":"
+        },
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": " {\n"
+        },
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "       "
+        },
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": " entry"
+        },
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": ":"
+        },
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": " './"
+        },
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "src"
+        },
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "/main"
+        },
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": ".js"
+        },
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": " main {\nWE HAVE 7 TOKENS TO GENERATE\n"
+        },
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "   "
+        },
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": " width"
+        },
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": ":"
+        },
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": " "
+        },
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "1"
+        },
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "0"
+        },
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "0"
+        },
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": " main   WE HAVE 5 TOKENS TO GENERATE\n"
+        },
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": " ="
+        },
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": " \""
+        },
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "main"
+        },
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "\",\n"
+        },
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "   "
+        },
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": " main =WE HAVE 3 TOKENS TO GENERATE\n"
+        },
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": " function"
+        },
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": "()"
+        },
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": " {\n"
+        },
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": " main newWE HAVE 1 TOKENS TO GENERATE\n"
+        },
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": " world"
+        },
+        {
+          "type": "stream",
+          "name": "stdout",
+          "text": " main resultWE HAVE -1 TOKENS TO GENERATE\n"
+        }
+      ]
+    }
+  ]
+}

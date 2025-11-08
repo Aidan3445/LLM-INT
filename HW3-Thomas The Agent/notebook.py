@@ -1,7 +1,7 @@
 import marimo
 
 __generated_with = "0.16.5"
-app = marimo.App(width="medium", layout_file="layouts/notebook.slides.json")
+app = marimo.App(width="medium")
 
 
 @app.cell
@@ -73,7 +73,8 @@ def _():
             self.available_seats = available_seats
 
         def __str__(self):
-            return f"Flight from {self.origin} to {self.destination} on {self.date} departs at {self.departure_time} and arrives at {self.arrival_time}. Available seats: {self.available_seats}"
+            return f"Flight {self.flight_number} from {self.origin} to {self.destination} on {self.date} departs at {self.departure_time} and arrives at {self.arrival_time}. Available seats: {self.available_seats}"
+
 
         def __repr__(self):
             return f"{self.flight_number}: {self.origin}-->{self.destination}, {self.date}@{self.departure_time}"
@@ -104,6 +105,7 @@ def _(Flight, List, datetime, flights):
                 )
         print(f"Found {len(results)} flights from {origin} to {destination} on {date}")
         print("\n".join([str(flight) for flight in results]))
+
     return
 
 
@@ -164,6 +166,8 @@ def _(datetime):
 
     # find_flights
     ### takes in the origin and destination airport codes as well as the date of departure, it returns a list of Flight objects that match the criteria. Will be read in the format [f"{flight.flight_number}: {flight.origin}-->{flight.destination}, {flight.date}@{flight.departure_time}"]
+    ### Airport codes must be exact IATA codes like "JFK", "BOS", "LAX". Do not use city-level codes like "NYC", "SF", "CHI" or "DC".
+
     ```python
     def find_flights(origin: str, destination: str, date: datetime.date) -> List[Flight]:
     ```
@@ -188,11 +192,12 @@ def _(datetime):
     ```
 
     # !!!IMPORTANT INSTRUCTIONS!!!
-    Don't import anything and don't define helpers.
-    Don't simulate data or function calls. I will run your code on my data.
+    Don't import anything, don't define helpers, don't simulate data or function calls. I will run your code on my data.
+    Flight data is only available for dates between 2023-01-01 and 2023-01-05. Search only within that range.
+    Don't guess or generate flight IDs from the flight number. Always call can_book(flight_number) to get the correct flight ID.
 
     # Today is
-    """ + f" {datetime.date.today().isoformat()}"
+    """ + f" {datetime.date(2023, 1, 1).isoformat()}"
 
     PROMPT_PREFIX = [
         { "role": "system", 
@@ -219,7 +224,7 @@ def _(datetime):
           "content": """There is a Delta flight (id 42) tomorrow. Let's see if it has available seats.
 
     ```python
-    available_seats(42)
+    can_book(42)
     ``` """
         },
         { 
@@ -304,6 +309,8 @@ def _(Dict, List, booked: "List[int]", extract_code_from_markdown, litellm):
         if code is None:
             return booked
 
+        #print line for debugging prompt
+        #print("Model-generated code:\n", code)
 
         with io.StringIO() as buf, contextlib.redirect_stdout(buf):
             output: str = ""
@@ -338,7 +345,9 @@ def _(
             print("User: (blank to quit): ", end="")
             user_input = input()
             if not user_input:
+                print(booked)
                 return booked
+        
             messages.append(
                 {
                     "role": "user",
