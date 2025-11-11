@@ -38,6 +38,7 @@ def _():
             """Main compilation method"""
             self.add_header()
             self.create_rooms()
+            self.create_keys()  # Create keys FIRST
             self.create_items()
             self.setup_containers_and_locks()
             self.setup_puzzles()
@@ -61,6 +62,30 @@ def _():
                 f"# Goal: {self.data['goal']}",
                 ""
             ])
+    
+        def create_keys(self):
+            """Create all keys that are referenced in the game"""
+            self.code_lines.append("# === KEYS ===")
+        
+            # Find all keys that are needed
+            all_keys_needed = set()
+            for room in self.data['rooms']:
+                for item in room.get('items', []):
+                    if item.get('key_required'):
+                        all_keys_needed.add(item['key_required'])
+                    if 'drawers' in item:
+                        for drawer in item['drawers']:
+                            if drawer.get('key_required'):
+                                all_keys_needed.add(drawer['key_required'])
+        
+            # Create key objects
+            for key_id in all_keys_needed:
+                key_var = f"{key_id}"
+                key_name = key_id.replace('_', ' ')
+                self.code_lines.append(f"{key_var} = M.new(type='k', name='{key_name}')")
+                self.entities[key_id] = key_var
+        
+            self.code_lines.append("")
     
         def create_rooms(self):
             """Create all rooms"""
@@ -163,6 +188,9 @@ def _():
                 room_var = room['id']
             
                 for item in room.get('items', []):
+                    # Skip if this item was already created (e.g., as drawer contents)
+                    if item['id'] in self.entities:
+                        continue
                     self._create_item(item, room_var)
         
             self.code_lines.append("")
@@ -195,18 +223,27 @@ def _():
                 item_var = f"{item_id}"
                 self.code_lines.append(f"{item_var} = M.new(type='o', name='{item_name}')")
                 self.entities[item_id] = item_var
+            
+                # Set the description/text content if provided
+                if 'text' in item:
+                    # Escape single quotes in the text
+                    text_content = item['text'].replace("'", "\\'")
+                    self.code_lines.append(f"{item_var}.infos.desc = '{text_content}'")
         
             elif item.get('drawers'):
-                # Special handling for dresser with drawers - make it a container
+                # Special handling for dresser with drawers
+                # Make dresser a regular object (non-functional furniture)
                 item_var = f"{item_id}"
-                self.code_lines.append(f"{item_var} = M.new(type='c', name='{item_name}')")
-                self.code_lines.append(f"{item_var}.add_property('open')  # Dresser is open so you can access drawers")
+                self.code_lines.append(f"{item_var} = M.new(type='o', name='{item_name}')")
                 self.entities[item_id] = item_var
+                self.code_lines.append(f"{parent_location}.add({item_var})")
+                self.code_lines.append("")
             
-                # Create each drawer as a separate container inside the dresser
+                # Create each drawer as a separate container in the room (not ON the dresser)
                 for drawer in item['drawers']:
                     drawer_var = drawer['id']
                     drawer_name = drawer['name']
+                    self.code_lines.append(f"# {drawer_name} (part of the dresser)")
                     self.code_lines.append(f"{drawer_var} = M.new(type='c', name='{drawer_name}')")
                     self.entities[drawer['id']] = drawer_var
                 
@@ -216,11 +253,15 @@ def _():
                     else:
                         self.code_lines.append(f"{drawer_var}.add_property('closed')")
                 
-                    # Place drawer IN the dresser (container within container)
-                    self.code_lines.append(f"{item_var}.add({drawer_var})")
+                    # Place drawer directly in the room (not on the dresser)
+                    self.code_lines.append(f"{parent_location}.add({drawer_var})")
                 
-                    # Create and add contents to drawer
+                    # Add contents to drawer
                     for contained_id in drawer.get('contains', []):
+                        if contained_id in self.entities:
+                            self.code_lines.append(f"{drawer_var}.add({self.entities[contained_id]})")
+                            continue
+                    
                         # Find the item definition in our JSON
                         contained_item = None
                         for room in self.data['rooms']:
@@ -233,16 +274,20 @@ def _():
                             # Create the item if it doesn't exist yet
                             if contained_id not in self.entities:
                                 contained_var = f"{contained_id}"
-                                self.code_lines.append(f"{contained_var} = M.new(type='o', name='{contained_item['name']}')")
+                                item_type = 'o'  # Default to object
+                                self.code_lines.append(f"{contained_var} = M.new(type='{item_type}', name='{contained_item['name']}')")
+                            
+                                # Set description for readable items
+                                if contained_item.get('readable') and 'text' in contained_item:
+                                    text_content = contained_item['text'].replace("'", "\\'")
+                                    self.code_lines.append(f"{contained_var}.infos.desc = '{text_content}'")
+                            
                                 self.entities[contained_id] = contained_var
                             # Add to drawer
                             self.code_lines.append(f"{drawer_var}.add({self.entities[contained_id]})")
                 
                     self.code_lines.append("")
             
-                # Now place the dresser in the room
-                self.code_lines.append(f"{parent_location}.add({item_var})")
-                self.code_lines.append("")
                 return  # Early return since we handled placement
         
             else:
@@ -267,6 +312,7 @@ def _():
             """Set up container relationships and locks"""
             self.code_lines.append("# === LOCKS AND KEYS ===")
         
+            # Set up the lock/key relationships
             for room in self.data['rooms']:
                 for item in room.get('items', []):
                     self._setup_locks(item)
