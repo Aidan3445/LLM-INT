@@ -2,7 +2,7 @@ import re
 import textworld
 
 class EscapeRoomInterface:
-    def __init__(self, game_file, combination_locks=None, direction_aliases=None, password_locks=None):
+    def __init__(self, game_file, combination_locks=None, direction_aliases=None, password_locks=None, room_items=None):
         """
         Initialize the escape room interface
         
@@ -11,12 +11,14 @@ class EscapeRoomInterface:
             combination_locks: Dict mapping item_id to combination code
             direction_aliases: Dict mapping (room, alias) to (target, direction)
             password_locks: Dict mapping item_id to list of password questions
+            room_items: Dict mapping item_id to room_id (to check location)
         """
         self.env = textworld.start(game_file)
         
         self.combination_locks = combination_locks or {}
         self.direction_aliases = direction_aliases or {}
         self.password_locks = password_locks or {}
+        self.room_items = room_items or {}
         self.current_room = None
         self.unlocked_combinations = set()
         self.active_password_lock = None  # Track which password lock is being answered
@@ -30,15 +32,41 @@ class EscapeRoomInterface:
         self.password_progress = {}
         
         # Initialize current room
-        obs_lower = game_state.feedback.lower()
-        if 'tower_bedroom' in obs_lower or 'tower bedroom' in obs_lower:
-            self.current_room = 'tower_bedroom'
-        elif 'spiral_staircase' in obs_lower or 'spiral staircase' in obs_lower:
-            self.current_room = 'spiral_staircase'
-        elif 'dining_room' in obs_lower or 'dining' in obs_lower:
-            self.current_room = 'dining_room'
+        self._update_current_room(game_state.feedback)
         
         return game_state
+    
+    def _update_current_room(self, observation):
+        """Update current room based on observation text"""
+        obs_lower = str(observation).lower()
+        
+        # Try to extract room from observation
+        # Look for common room identification patterns
+        for room_id in self.room_items.values():
+            room_name = room_id.replace('_', ' ')
+            if room_name in obs_lower:
+                self.current_room = room_id
+                return
+        
+        # Fallback: check specific known rooms
+        if 'security_office' in obs_lower or 'security office' in obs_lower:
+            self.current_room = 'security_office'
+        elif 'hallway' in obs_lower or 'corporate hallway' in obs_lower:
+            self.current_room = 'hallway'
+        elif 'data_vault' in obs_lower or 'data vault' in obs_lower:
+            self.current_room = 'data_vault'
+        elif 'spiral_staircase' in obs_lower or 'spiral staircase' in obs_lower:
+            self.current_room = 'spiral_staircase'
+        elif 'tower_bedroom' in obs_lower or 'tower bedroom' in obs_lower:
+            self.current_room = 'tower_bedroom'
+        elif 'dining_room' in obs_lower or 'dining' in obs_lower:
+            self.current_room = 'dining_room'
+    
+    def _is_item_accessible(self, item_id):
+        """Check if an item is in the current room"""
+        if item_id not in self.room_items:
+            return True  # If we don't know, allow it
+        return self.room_items[item_id] == self.current_room
     
     def step(self, command):
         """Process a command"""
@@ -51,6 +79,14 @@ class EscapeRoomInterface:
             
             for item_id, correct_code in self.combination_locks.items():
                 if code == correct_code and item_id not in self.unlocked_combinations:
+                    # Check if item is in current room
+                    if not self._is_item_accessible(item_id):
+                        class FakeState:
+                            def __init__(self, msg):
+                                self.feedback = msg
+                                self.raw = msg
+                        return (FakeState(f"You don't see that here."), 0, False)
+                    
                     self.unlocked_combinations.add(item_id)
                     
                     class FakeState:
@@ -131,6 +167,14 @@ class EscapeRoomInterface:
             for item_id in self.combination_locks.keys():
                 item_name = item_id.replace('_', ' ')
                 if target in item_name or item_name in target:
+                    # Check if item is in current room
+                    if not self._is_item_accessible(item_id):
+                        class FakeState:
+                            def __init__(self, msg):
+                                self.feedback = msg
+                                self.raw = msg
+                        return (FakeState(f"You don't see that here."), 0, False)
+                    
                     if item_id not in self.unlocked_combinations:
                         class FakeState:
                             def __init__(self, msg):
@@ -142,6 +186,14 @@ class EscapeRoomInterface:
             for item_id, questions in self.password_locks.items():
                 item_name = item_id.replace('_', ' ')
                 if target in item_name or item_name in target:
+                    # Check if item is in current room
+                    if not self._is_item_accessible(item_id):
+                        class FakeState:
+                            def __init__(self, msg):
+                                self.feedback = msg
+                                self.raw = msg
+                        return (FakeState(f"You don't see that here."), 0, False)
+                    
                     if item_id not in self.unlocked_combinations:
                         # Start the password question sequence
                         self.active_password_lock = item_id
@@ -169,13 +221,7 @@ class EscapeRoomInterface:
         obs, score, done = self.env.step(command)
         
         # Update current room tracking
-        obs_lower = str(obs).lower()
-        if 'tower_bedroom' in obs_lower or 'tower bedroom' in obs_lower:
-            self.current_room = 'tower_bedroom'
-        elif 'spiral_staircase' in obs_lower or 'spiral staircase' in obs_lower:
-            self.current_room = 'spiral_staircase'
-        elif 'dining_room' in obs_lower or 'dining' in obs_lower:
-            self.current_room = 'dining_room'
+        self._update_current_room(obs.feedback)
         
         return (obs, score, done)
     
@@ -184,9 +230,9 @@ class EscapeRoomInterface:
         self.env.close()
 
 
-def play_escape_room(game_file, combination_locks=None, direction_aliases=None, password_locks=None):
+def play_escape_room(game_file, combination_locks=None, direction_aliases=None, password_locks=None, room_items=None):
     """Interactive play session with custom command handling"""
-    interface = EscapeRoomInterface(game_file, combination_locks, direction_aliases, password_locks)
+    interface = EscapeRoomInterface(game_file, combination_locks, direction_aliases, password_locks, room_items)
     
     game_state = interface.reset()
     print(game_state.feedback)
@@ -265,6 +311,7 @@ if __name__ == "__main__":
     # Generate output filenames
     py_file = f"games/{base_name}/{base_name}_game.py"
     ulx_file = f"games/{base_name}/{base_name}_game.ulx"
+ 
     
     print(f"="*60)
     print(f"Escape Room Generator & Player")
@@ -303,9 +350,12 @@ if __name__ == "__main__":
     combination_locks = {}
     direction_aliases = {}
     password_locks = {}
+    room_items = {}
     
     try:
         import importlib.util
+        import json
+        
         spec = importlib.util.spec_from_file_location("game_module", py_file)
         game_module = importlib.util.module_from_spec(spec)
         spec.loader.exec_module(game_module)
@@ -321,6 +371,16 @@ if __name__ == "__main__":
         if hasattr(game_module, 'PASSWORD_LOCKS'):
             password_locks = game_module.PASSWORD_LOCKS
             print(f"✓ Loaded {len(password_locks)} password locks")
+        
+        # Load room_items mapping from JSON
+        with open(json_file, 'r') as f:
+            json_data = json.load(f)
+            for room in json_data['rooms']:
+                room_id = room['id']
+                for item in room.get('items', []):
+                    if 'id' in item:
+                        room_items[item['id']] = room_id
+            print(f"✓ Loaded {len(room_items)} item locations")
     except Exception as e:
         print(f"⚠ Warning: Could not load metadata: {e}")
     
@@ -329,4 +389,4 @@ if __name__ == "__main__":
     print("Starting game...")
     print("="*60 + "\n")
     
-    play_escape_room(ulx_file, combination_locks, direction_aliases, password_locks)
+    play_escape_room(ulx_file, combination_locks, direction_aliases, password_locks, room_items)
