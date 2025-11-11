@@ -14,5 +14,6 @@ dependencies = [
     "nnsight>=0.5.8",
     "openai>=2.2.0",
     "seaborn>=0.13.2",
+    "textworld>=1.6.2",
     "torch>=2.8.0",
 ]
