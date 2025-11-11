@@ -20,7 +20,7 @@
           "name": "wooden closet",
           "description": "A tall wooden closet with ornate carvings",
           "locked": true,
-          "key_required": "closet_key",
+          "key_required": "wooden_key",
           "contains": ["note_from_queen"]
         },
         {
@@ -40,7 +40,7 @@
               "locked": true,
               "lock_type": "combination",
               "combination": "476",
-              "contains": ["closet_key"]
+              "contains": ["wooden_key"]
             },
             {
               "id": "bottom_drawer",
@@ -69,7 +69,7 @@
           "name": "wooden trapdoor",
           "description": "A trapdoor in the corner of the room leading down",
           "locked": true,
-          "key_required": "closet_key",
+          "key_required": "wooden_key",
           "leads_to": "spiral_staircase",
           "direction": "south",
           "aliases": ["down", "trapdoor"]
@@ -104,12 +104,12 @@
           "text": "Lady Margaret - Court Advisor. Known for her wisdom and connection to the royal family."
         },
         {
-          "id": "locked_door",
+          "id": "heavy_oak_door",
           "name": "heavy oak door",
-          "description": "A sturdy door at the bottom of the staircase with an ornate lock",
+          "description": "A sturdy door at the bottom of the staircase. A paper with three questions is taped to it.",
           "locked": true,
-          "lock_type": "riddle",
-          "riddle_questions": [
+          "lock_type": "password",
+          "password_questions": [
             {
               "question": "Who does the dishes?",
               "answer": "philip",

@@ -1,36 +1,37 @@
 import json
 from typing import Dict, List, Any
 
+
 class TextWorldCompiler:
     def __init__(self, json_data: Dict[str, Any]):
         self.data = json_data
-        self.entities = {}  # Track all created entities
+        self.entities = {}
         self.code_lines = []
-        self.aliases = {}  # Track direction aliases for gameplay interface
-        self.connected_pairs = set()  # Track which room pairs are already connected
+        self.object_buffer = []  # For simple objects like keys, notes
+        self.container_buffer = []  # For containers and their placement
+        self.aliases = {}
+        self.connected_pairs = set()
         
     def compile(self) -> str:
         """Main compilation method"""
         self.add_header()
         self.create_rooms()
-        self.create_keys()  # Create keys FIRST
         self.create_items()
-        self.setup_containers_and_locks()
-        self.setup_puzzles()
-        self.set_starting_conditions()
-        self.add_aliases_data()
+        self.add_locks_and_keys()
+        self.add_player_start()
+        self.set_quest()
+        self.add_aliases()
         self.add_footer()
         
         return "\n".join(self.code_lines)
     
     def add_header(self):
-        """Add imports and game initialization"""
+        """Set the header with theme and goal and boilerplate"""
         self.code_lines.extend([
             "from textworld import GameMaker",
             "from textworld.logic import State, Proposition",
             "from textworld.generator.game import Quest, Event",
             "",
-            "# Create the game maker",
             "M = GameMaker()",
             "",
             f"# Theme: {self.data['theme']}",
@@ -38,356 +39,272 @@ class TextWorldCompiler:
             ""
         ])
     
-    def create_keys(self):
-        """Create all keys that are referenced in the game"""
-        self.code_lines.append("# === KEYS ===")
-        
-        # Find all keys that are needed
-        all_keys_needed = set()
-        for room in self.data['rooms']:
-            for item in room.get('items', []):
-                if item.get('key_required'):
-                    all_keys_needed.add(item['key_required'])
-                if 'drawers' in item:
-                    for drawer in item['drawers']:
-                        if drawer.get('key_required'):
-                            all_keys_needed.add(drawer['key_required'])
-        
-        # Create key objects
-        for key_id in all_keys_needed:
-            key_var = f"{key_id}"
-            key_name = key_id.replace('_', ' ')
-            self.code_lines.append(f"{key_var} = M.new(type='k', name='{key_name}')")
-            self.entities[key_id] = key_var
-        
-        self.code_lines.append("")
-    
     def create_rooms(self):
-        """Create all rooms"""
+        """Create the rooms and connect them"""
         self.code_lines.append("# === ROOMS ===")
         
+        # Create all rooms
         for room in self.data['rooms']:
             room_var = room['id']
-            room_name = room['name']
-            room_desc = room['description']
-            
-            self.code_lines.append(f"{room_var} = M.new_room('{room_name}')")
-            self.code_lines.append(f"{room_var}.desc = '{room_desc}'")
-            self.entities[room['id']] = room_var
-            self.code_lines.append("")
+            self.code_lines.append(f"{room_var} = M.new_room('{room['name']}')")
+            self.code_lines.append(f"{room_var}.desc = '{room['description']}'")
+            self.entities[room_var] = room_var
         
         self.code_lines.append("")
         
-        # Connect rooms via exits
-        self.code_lines.append("# Connect rooms")
-        
-        # Available directions in TextWorld (north, south, east, west)
+        # Connect rooms
         for room in self.data['rooms']:
             room_var = room['id']
             
-            # Handle trapdoors and special exits in items
+            # Check for exits in items (trapdoors, doors)
             for item in room.get('items', []):
                 if 'leads_to' in item:
-                    target_room = item['leads_to']
+                    target = item['leads_to']
+                    connection_key = tuple(sorted([room_var, target]))
                     
-                    # Create a unique key for this connection (order-independent)
-                    connection_key = tuple(sorted([room_var, target_room]))
-                    
-                    # Skip if we've already connected these rooms
                     if connection_key in self.connected_pairs:
-                        self.code_lines.append(f"# Skipping duplicate connection: {room_var} <-> {target_room}")
                         continue
                     
                     self.connected_pairs.add(connection_key)
                     
-                    # Get the actual direction to use (defaults to south)
-                    actual_direction = item.get('direction', 'south')
+                    direction = item.get('direction', 'south')
                     reverse_map = {'north': 'south', 'south': 'north', 'east': 'west', 'west': 'east'}
-                    reverse_direction = reverse_map.get(actual_direction, 'north')
+                    reverse = reverse_map[direction]
                     
-                    self.code_lines.append(f"# Connecting via {item['name']} (actual direction: {actual_direction})")
-                    
-                    # Store aliases for this exit (forward direction only)
-                    if 'aliases' in item:
-                        for alias in item['aliases']:
-                            # Map: (from_room, alias) -> (to_room, actual_direction)
-                            self.aliases[(room_var, alias)] = (target_room, actual_direction)
-                        self.code_lines.append(f"# Aliases from {room_var}: {', '.join(item['aliases'])}")
-                    
-                    self.code_lines.append(f"path_{item['id']} = M.connect({room_var}.{actual_direction}, {target_room}.{reverse_direction})")
+                    self.code_lines.append(f"path_{item['id']} = M.connect({room_var}.{direction}, {target}.{reverse})")
                     
                     if item.get('locked'):
                         self.code_lines.append(f"door_{item['id']} = M.new_door(path_{item['id']}, '{item['name']}')")
-                        self.code_lines.append(f"door_{item['id']}.add_property('locked')")
+                        
+                        # Password locks are handled by interface, just make it closed
+                        if item.get('lock_type') == 'password':
+                            self.code_lines.append(f"door_{item['id']}.add_property('closed')")
+                        else:
+                            self.code_lines.append(f"door_{item['id']}.add_property('locked')")
+                        
                         self.entities[item['id']] = f"door_{item['id']}"
-            
-            # Handle normal exits (rarely used since connections are bidirectional)
-            for exit_info in room.get('exits', []):
-                if exit_info.get('leads_to'):
-                    target = exit_info['leads_to']
                     
-                    # Create a unique key for this connection (order-independent)
-                    connection_key = tuple(sorted([room_var, target]))
-                    
-                    # Check if connection already exists
-                    if connection_key in self.connected_pairs:
-                        # Connection exists, just add aliases for this direction
-                        if 'aliases' in exit_info:
-                            direction = exit_info.get('direction', 'north')
-                            for alias in exit_info['aliases']:
-                                self.aliases[(room_var, alias)] = (target, direction)
-                            self.code_lines.append(f"# Adding aliases from {room_var}: {', '.join(exit_info['aliases'])}")
-                        continue
-                    
-                    self.connected_pairs.add(connection_key)
-                    
-                    direction = exit_info.get('direction', 'north')
-                    reverse_dir = {'north': 'south', 'south': 'north', 'east': 'west', 'west': 'east'}
-                    reverse = reverse_dir.get(direction, 'south')
-                    
-                    # Store aliases for this exit
-                    if 'aliases' in exit_info:
-                        for alias in exit_info['aliases']:
+                    # Store aliases
+                    if 'aliases' in item:
+                        for alias in item['aliases']:
                             self.aliases[(room_var, alias)] = (target, direction)
-                        self.code_lines.append(f"# Exit {direction} from {room_var} with aliases: {', '.join(exit_info['aliases'])}")
-                    
-                    self.code_lines.append(f"M.connect({room_var}.{direction}, {target}.{reverse})")
         
         self.code_lines.append("")
     
     def create_items(self):
-        """Create all items and objects"""
-        self.code_lines.append("# === ITEMS ===")
-        
+        """Create items: objects buffer, then containers buffer"""
+        # Process all items and sort into buffers
         for room in self.data['rooms']:
             room_var = room['id']
             
             for item in room.get('items', []):
-                # Skip if this item was already created (e.g., as drawer contents)
-                if item['id'] in self.entities:
-                    continue
-                self._create_item(item, room_var)
+                if item.get('leads_to'):
+                    continue  # Skip doors/paths
+                
+                self._process_item(item, room_var)
         
+        # Write items section
+        self.code_lines.append("# === ITEMS ===")
+        self.code_lines.append("# Create objects (keys, notes, tools)")
+        self.code_lines.extend(self.object_buffer)
+        self.code_lines.append("")
+        self.code_lines.append("# Create containers and place items")
+        self.code_lines.extend(self.container_buffer)
         self.code_lines.append("")
     
-    def _create_item(self, item: Dict, parent_location: str, indent: int = 0):
-        """Recursively create an item and its contents"""
+    def _process_item(self, item: Dict, room_var: str):
+        """Process an item and add to appropriate buffer"""
         item_id = item['id']
         item_name = item['name']
         
-        # Skip items that are actually doors/paths
-        if 'leads_to' in item:
+        # Skip if already processed
+        if item_id in self.entities:
             return
         
-        # Determine item type
-        if item.get('locked') or item.get('contains'):
-            # Container
-            item_var = f"{item_id}"
-            self.code_lines.append(f"{item_var} = M.new(type='c', name='{item_name}')")
-            self.entities[item_id] = item_var
-            
-            # Containers must have a state: open, closed, or locked
-            if item.get('locked'):
-                self.code_lines.append(f"{item_var}.add_property('locked')")
-            else:
-                # Default to closed if it's a container but not locked
-                self.code_lines.append(f"{item_var}.add_property('closed')")
+        # Keys
+        if item.get('key_required'):
+            key_id = item['key_required']
+            if key_id not in self.entities:
+                self.object_buffer.append(f"{key_id} = M.new(type='k', name='{key_id.replace('_', ' ')}')")
+                self.entities[key_id] = key_id
         
-        elif item.get('readable'):
-            # Readable item (book, note, etc)
-            item_var = f"{item_id}"
-            self.code_lines.append(f"{item_var} = M.new(type='o', name='{item_name}')")
-            self.entities[item_id] = item_var
+        # Drawers
+        if item.get('drawers'):
+            # Dresser is just decoration
+            self.object_buffer.append(f"{item_id} = M.new(type='o', name='{item_name}')")
+            self.entities[item_id] = item_id
+            self.container_buffer.append(f"{room_var}.add({item_id})")
             
-            # Set the description/text content if provided
-            if 'text' in item:
-                # Escape single quotes in the text
-                text_content = item['text'].replace("'", "\\'")
-                self.code_lines.append(f"{item_var}.infos.desc = '{text_content}'")
-        
-        elif item.get('drawers'):
-            # Special handling for dresser with drawers
-            # Make dresser a regular object (non-functional furniture)
-            item_var = f"{item_id}"
-            self.code_lines.append(f"{item_var} = M.new(type='o', name='{item_name}')")
-            self.entities[item_id] = item_var
-            self.code_lines.append(f"{parent_location}.add({item_var})")
-            self.code_lines.append("")
-            
-            # Create each drawer as a separate container in the room (not ON the dresser)
+            # Process each drawer
             for drawer in item['drawers']:
-                drawer_var = drawer['id']
+                drawer_id = drawer['id']
                 drawer_name = drawer['name']
-                self.code_lines.append(f"# {drawer_name} (part of the dresser)")
-                self.code_lines.append(f"{drawer_var} = M.new(type='c', name='{drawer_name}')")
-                self.entities[drawer['id']] = drawer_var
                 
-                # Set drawer state
+                # Create drawer container
+                self.container_buffer.append(f"{drawer_id} = M.new(type='c', name='{drawer_name}')")
+                self.entities[drawer_id] = drawer_id
+                
+                # Set state
                 if drawer.get('lock_type') == 'combination':
-                    # Combination locks are handled by gameplay interface
-                    # In TextWorld, just make it closed (not locked)
-                    self.code_lines.append(f"{drawer_var}.add_property('closed')")
+                    self.container_buffer.append(f"{drawer_id}.add_property('closed')")
                 elif drawer.get('locked'):
-                    self.code_lines.append(f"{drawer_var}.add_property('locked')")
+                    self.container_buffer.append(f"{drawer_id}.add_property('locked')")
                 else:
-                    self.code_lines.append(f"{drawer_var}.add_property('closed')")
+                    self.container_buffer.append(f"{drawer_id}.add_property('closed')")
                 
-                # Place drawer directly in the room (not on the dresser)
-                self.code_lines.append(f"{parent_location}.add({drawer_var})")
+                # Place drawer in room
+                self.container_buffer.append(f"{room_var}.add({drawer_id})")
                 
                 # Add contents to drawer
                 for contained_id in drawer.get('contains', []):
-                    if contained_id in self.entities:
-                        self.code_lines.append(f"{drawer_var}.add({self.entities[contained_id]})")
-                        continue
-                    
-                    # Find the item definition in our JSON
-                    contained_item = None
-                    for room in self.data['rooms']:
-                        for room_item in room.get('items', []):
-                            if room_item['id'] == contained_id:
-                                contained_item = room_item
-                                break
-                    
-                    if contained_item:
-                        # Create the item if it doesn't exist yet
-                        if contained_id not in self.entities:
-                            contained_var = f"{contained_id}"
-                            item_type = 'o'  # Default to object
-                            self.code_lines.append(f"{contained_var} = M.new(type='{item_type}', name='{contained_item['name']}')")
-                            
-                            # Set description for readable items
-                            if contained_item.get('readable') and 'text' in contained_item:
-                                text_content = contained_item['text'].replace("'", "\\'")
-                                self.code_lines.append(f"{contained_var}.infos.desc = '{text_content}'")
-                            
-                            self.entities[contained_id] = contained_var
-                        # Add to drawer
-                        self.code_lines.append(f"{drawer_var}.add({self.entities[contained_id]})")
-                
-                self.code_lines.append("")
+                    # First, make sure the contained item exists
+                    self._ensure_item_created(contained_id)
+                    self.container_buffer.append(f"{drawer_id}.add({contained_id})")
             
-            return  # Early return since we handled placement
+            return
         
-        else:
-            # Regular object
-            item_var = f"{item_id}"
-            self.code_lines.append(f"{item_var} = M.new(type='o', name='{item_name}')")
-            self.entities[item_id] = item_var
+        # Containers (closets, chests)
+        if item.get('locked') or item.get('contains'):
+            self.container_buffer.append(f"{item_id} = M.new(type='c', name='{item_name}')")
+            self.entities[item_id] = item_id
+            
+            # Password locks are handled by interface, so just make it closed
+            if item.get('lock_type') == 'password':
+                self.container_buffer.append(f"{item_id}.add_property('closed')")
+            elif item.get('locked'):
+                self.container_buffer.append(f"{item_id}.add_property('locked')")
+            else:
+                self.container_buffer.append(f"{item_id}.add_property('closed')")
+            
+            # Place container
+            self.container_buffer.append(f"{room_var}.add({item_id})")
+            
+            # Add contents
+            for contained_id in item.get('contains', []):
+                self._ensure_item_created(contained_id)
+                self.container_buffer.append(f"{item_id}.add({contained_id})")
+            
+            return
         
-        # Place item in location
-        self.code_lines.append(f"{parent_location}.add({item_var})")
-        self.code_lines.append("")
+        # Regular objects (notes, tools, etc)
+        self.object_buffer.append(f"{item_id} = M.new(type='o', name='{item_name}')")
+        self.entities[item_id] = item_id
         
-        # Handle nested items (contents)
-        for contained in item.get('contains', []):
-            if isinstance(contained, str):
-                # Just an ID reference, will be created elsewhere
-                pass
-            elif isinstance(contained, dict):
-                self._create_item(contained, item_var)
+        # Set description for readable items
+        if item.get('readable') and 'text' in item:
+            text_content = item['text'].replace("'", "\\'")
+            self.object_buffer.append(f"{item_id}.infos.desc = '{text_content}'")
+        
+        # Place in room
+        self.container_buffer.append(f"{room_var}.add({item_id})")
     
-    def setup_containers_and_locks(self):
-        """Set up container relationships and locks"""
+    def _ensure_item_created(self, item_id: str):
+        """Make sure an item is created before being referenced"""
+        if item_id in self.entities:
+            return
+        
+        # Find the item in JSON
+        for room in self.data['rooms']:
+            for item in room.get('items', []):
+                if item['id'] == item_id:
+                    # Create it
+                    item_name = item['name']
+                    self.object_buffer.append(f"{item_id} = M.new(type='o', name='{item_name}')")
+                    self.entities[item_id] = item_id
+                    
+                    if item.get('readable') and 'text' in item:
+                        text_content = item['text'].replace("'", "\\'")
+                        self.object_buffer.append(f"{item_id}.infos.desc = '{text_content}'")
+                    
+                    return
+    
+    def add_locks_and_keys(self):
+        """Add facts like which keys open what doors"""
         self.code_lines.append("# === LOCKS AND KEYS ===")
         
-        # Set up the lock/key relationships
         for room in self.data['rooms']:
             for item in room.get('items', []):
-                self._setup_locks(item)
+                if item.get('locked') and item.get('key_required'):
+                    item_var = self.entities.get(item['id'])
+                    key_var = self.entities.get(item['key_required'])
+                    if item_var and key_var:
+                        self.code_lines.append(f"M.add_fact('match', {key_var}, {item_var})")
                 
-                # Handle drawers
-                if 'drawers' in item:
+                # Check drawers
+                if item.get('drawers'):
                     for drawer in item['drawers']:
-                        self._setup_locks(drawer)
+                        if drawer.get('locked') and drawer.get('key_required'):
+                            drawer_var = self.entities.get(drawer['id'])
+                            key_var = self.entities.get(drawer['key_required'])
+                            if drawer_var and key_var:
+                                self.code_lines.append(f"M.add_fact('match', {key_var}, {drawer_var})")
         
         self.code_lines.append("")
     
-    def _setup_locks(self, item: Dict):
-        """Setup locks for a specific item"""
-        if item.get('locked') and item.get('key_required'):
-            item_var = self.entities.get(item['id'])
-            key_var = self.entities.get(item['key_required'])
-            
-            if item_var and key_var:
-                self.code_lines.append(f"# {item['name']} locked by {item['key_required']}")
-                self.code_lines.append(f"M.add_fact('match', {key_var}, {item_var})")
+    def add_player_start(self):
+        """Add player start location"""
+        self.code_lines.append("# === PLAYER START ===")
+        starting_room = self.data.get('starting_room', self.data['rooms'][0]['id'])
+        self.code_lines.append(f"M.set_player({starting_room})")
+        self.code_lines.append("")
     
-    def setup_puzzles(self):
-        """Setup special puzzles like combinations and riddles"""
-        self.code_lines.append("# === PUZZLES ===")
+    def set_quest(self):
+        """Set quest/destination"""
+        self.code_lines.append("# === QUEST ===")
         
-        # Track combination locks for gameplay interface
+        # Track combination locks and password locks
         combination_locks = {}
+        password_locks = {}
         
         for room in self.data['rooms']:
+            # Find combination locks
             for item in room.get('items', []):
-                # Combination locks
                 if item.get('lock_type') == 'combination':
-                    combination = item['combination']
-                    item_id = item['id']
-                    combination_locks[item_id] = combination
-                    self.code_lines.append(f"# {item['name']} has combination: {combination}")
+                    combination_locks[item['id']] = item['combination']
                 
-                # Riddle locks
-                if item.get('lock_type') == 'riddle':
-                    self.code_lines.append(f"# {item['name']} has riddle puzzle")
-                    for q in item.get('riddle_questions', []):
-                        self.code_lines.append(f"# Q: {q['question']} -> A: {q['answer']}")
-                    self.code_lines.append("")
+                if item.get('lock_type') == 'password':
+                    password_locks[item['id']] = item.get('password_questions', [])
                 
-                # Handle drawers with combinations
-                if 'drawers' in item:
+                if item.get('drawers'):
                     for drawer in item['drawers']:
                         if drawer.get('lock_type') == 'combination':
-                            combination = drawer['combination']
-                            drawer_id = drawer['id']
-                            combination_locks[drawer_id] = combination
-                            self.code_lines.append(f"# {drawer['name']} has combination: {combination}")
+                            combination_locks[drawer['id']] = drawer['combination']
+                        if drawer.get('lock_type') == 'password':
+                            password_locks[drawer['id']] = drawer.get('password_questions', [])
+            
+            # Find goal room
+            if room.get('is_goal'):
+                self.code_lines.append(f"# Goal: Reach {room['id']}")
+                self.code_lines.append(f"quest = Quest(win_events=[Event(conditions={{M.new_fact('at', M.player, {room['id']})}})])")
+                self.code_lines.append("M.quests = [quest]")
         
-        # Output combination locks as a dictionary
+        # Output combination locks
         if combination_locks:
             self.code_lines.append("")
-            self.code_lines.append("# Combination locks for gameplay interface")
             self.code_lines.append("COMBINATION_LOCKS = {")
             for item_id, combo in combination_locks.items():
                 self.code_lines.append(f"    '{item_id}': '{combo}',")
             self.code_lines.append("}")
         
-        self.code_lines.append("")
-    
-    def set_starting_conditions(self):
-        """Set player starting position and win conditions"""
-        self.code_lines.append("# === GAME SETUP ===")
-        
-        starting_room = self.data.get('starting_room', self.data['rooms'][0]['id'])
-        self.code_lines.append(f"M.set_player({starting_room})")
-        self.code_lines.append("")
-        
-        # Create a proper quest using Quest and Event objects
-        goal_room = None
-        for room in self.data['rooms']:
-            if room.get('is_goal'):
-                goal_room = room['id']
-                win_message = room.get('win_message', 'You win!')
-                self.code_lines.append(f"# Win condition: Reach {goal_room}")
-                self.code_lines.append(f"# Win message: {win_message}")
-                self.code_lines.append("")
-                
-                # Create a quest that triggers when player reaches the goal room
-                self.code_lines.append("# Create quest: reach the dining room")
-                self.code_lines.append(f"quest = Quest(win_events=[")
-                self.code_lines.append(f"    Event(conditions={{M.new_fact('at', M.player, {goal_room})}})")
-                self.code_lines.append(f"])")
-                self.code_lines.append("M.quests = [quest]")
+        # Output password locks
+        if password_locks:
+            self.code_lines.append("")
+            self.code_lines.append("PASSWORD_LOCKS = {")
+            for item_id, questions in password_locks.items():
+                self.code_lines.append(f"    '{item_id}': [")
+                for q in questions:
+                    # Escape single quotes in questions and answers
+                    question_text = q['question'].replace("'", "\\'")
+                    answer_text = q['answer'].replace("'", "\\'")
+                    self.code_lines.append(f"        {{'question': '{question_text}', 'answer': '{answer_text}'}},")
+                self.code_lines.append(f"    ],")
+            self.code_lines.append("}")
         
         self.code_lines.append("")
     
-    def add_aliases_data(self):
-        """Add alias mapping as Python data structure for gameplay interface"""
+    def add_aliases(self):
+        """Add direction aliases"""
         self.code_lines.append("# === DIRECTION ALIASES ===")
-        self.code_lines.append("# Map of (room, alias) -> (target_room, actual_direction)")
-        self.code_lines.append("# Use this in your gameplay interface to translate player commands")
         self.code_lines.append("DIRECTION_ALIASES = {")
         
         for (room, alias), (target, direction) in self.aliases.items():
@@ -397,51 +314,35 @@ class TextWorldCompiler:
         self.code_lines.append("")
     
     def add_footer(self):
-        """Add game generation code"""
+        """Build and compile"""
         self.code_lines.extend([
-            "# === GENERATE GAME ===",
+            "# === BUILD ===",
             "game = M.build()",
-            "",
-            "# Compile to .ulx file",
-            "game_file = M.compile('./castle_escape_game.ulx')",
+            "game_file = M.compile('./game.ulx')",
             "print(f'Game compiled successfully to: {game_file}')",
-            ""
         ])
 
 
 def compile_json_to_textworld(json_file_path: str, output_file_path: str):
-    """
-    Main function to compile JSON to TextWorld code
-    
-    Args:
-        json_file_path: Path to input JSON file
-        output_file_path: Path to output Python file
-    """
+    """Compile JSON to TextWorld code"""
     import os
     
-    # Load JSON
     with open(json_file_path, 'r') as f:
         json_data = json.load(f)
     
-    # Compile
     compiler = TextWorldCompiler(json_data)
-    textworld_code = compiler.compile()
+    code = compiler.compile()
     
-    # Determine the .ulx filename from the output Python file
+    # Fix the output filename
     base_name = os.path.splitext(output_file_path)[0]
     ulx_filename = f"{base_name}.ulx"
+    code = code.replace("'./game.ulx'", f"'./{ulx_filename}'")
     
-    # Replace the hardcoded path in the generated code
-    textworld_code = textworld_code.replace(
-        "game_file = M.compile('./castle_escape_game.ulx')",
-        f"game_file = M.compile('./{ulx_filename}')"
-    )
-    
-    # Write output
     with open(output_file_path, 'w') as f:
-        f.write(textworld_code)
+        f.write(code)
     
     print(f"✓ Compiled {json_file_path} -> {output_file_path}")
     print(f"  Rooms: {len(json_data['rooms'])}")
     print(f"  Theme: {json_data['theme']}")
+    
     return output_file_path
