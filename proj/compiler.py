@@ -1,7 +1,6 @@
 import json
 from typing import Dict, List, Any
 
-
 class TextWorldCompiler:
     def __init__(self, json_data: Dict[str, Any]):
         self.data = json_data
@@ -47,10 +46,22 @@ class TextWorldCompiler:
         for room in self.data['rooms']:
             room_var = room['id']
             self.code_lines.append(f"{room_var} = M.new_room('{room['name']}')")
-            self.code_lines.append(f"{room_var}.desc = '{room['description']}'")
+            self.code_lines.append(f"{room_var}.desc = '{room['description'].replace("'", "\\'")}'")
             self.entities[room_var] = room_var
         
         self.code_lines.append("")
+        
+        # First pass: create keys for doors
+        for room in self.data['rooms']:
+            for item in room.get('items', []):
+                if item.get('leads_to') and item.get('key_required'):
+                    key_id = item['key_required']
+                    if key_id not in self.entities:
+                        self.code_lines.append(f"{key_id} = M.new(type='k', name='{key_id.replace('_', ' ')}')")
+                        self.entities[key_id] = key_id
+        
+        if any(item.get('leads_to') and item.get('key_required') for room in self.data['rooms'] for item in room.get('items', [])):
+            self.code_lines.append("")
         
         # Connect rooms
         for room in self.data['rooms']:
@@ -128,38 +139,38 @@ class TextWorldCompiler:
                 self.object_buffer.append(f"{key_id} = M.new(type='k', name='{key_id.replace('_', ' ')}')")
                 self.entities[key_id] = key_id
         
-        # Drawers
-        if item.get('drawers'):
-            # Dresser is just decoration
+        # Items with subcontainers (generalized from drawers)
+        if item.get('subcontainers'):
+            # Parent item is just decoration
             self.object_buffer.append(f"{item_id} = M.new(type='o', name='{item_name}')")
             self.entities[item_id] = item_id
             self.container_buffer.append(f"{room_var}.add({item_id})")
             
-            # Process each drawer
-            for drawer in item['drawers']:
-                drawer_id = drawer['id']
-                drawer_name = drawer['name']
+            # Process each subcontainer
+            for subcontainer in item['subcontainers']:
+                sub_id = subcontainer['id']
+                sub_name = subcontainer['name']
                 
-                # Create drawer container
-                self.container_buffer.append(f"{drawer_id} = M.new(type='c', name='{drawer_name}')")
-                self.entities[drawer_id] = drawer_id
+                # Create subcontainer
+                self.container_buffer.append(f"{sub_id} = M.new(type='c', name='{sub_name}')")
+                self.entities[sub_id] = sub_id
                 
                 # Set state
-                if drawer.get('lock_type') == 'combination':
-                    self.container_buffer.append(f"{drawer_id}.add_property('closed')")
-                elif drawer.get('locked'):
-                    self.container_buffer.append(f"{drawer_id}.add_property('locked')")
+                if subcontainer.get('lock_type') == 'combination':
+                    self.container_buffer.append(f"{sub_id}.add_property('closed')")
+                elif subcontainer.get('locked'):
+                    self.container_buffer.append(f"{sub_id}.add_property('locked')")
                 else:
-                    self.container_buffer.append(f"{drawer_id}.add_property('closed')")
+                    self.container_buffer.append(f"{sub_id}.add_property('closed')")
                 
-                # Place drawer in room
-                self.container_buffer.append(f"{room_var}.add({drawer_id})")
+                # Place subcontainer in room
+                self.container_buffer.append(f"{room_var}.add({sub_id})")
                 
-                # Add contents to drawer
-                for contained_id in drawer.get('contains', []):
+                # Add contents to subcontainer
+                for contained_id in subcontainer.get('contains', []):
                     # First, make sure the contained item exists
                     self._ensure_item_created(contained_id)
-                    self.container_buffer.append(f"{drawer_id}.add({contained_id})")
+                    self.container_buffer.append(f"{sub_id}.add({contained_id})")
             
             return
         
@@ -230,14 +241,14 @@ class TextWorldCompiler:
                     if item_var and key_var:
                         self.code_lines.append(f"M.add_fact('match', {key_var}, {item_var})")
                 
-                # Check drawers
-                if item.get('drawers'):
-                    for drawer in item['drawers']:
-                        if drawer.get('locked') and drawer.get('key_required'):
-                            drawer_var = self.entities.get(drawer['id'])
-                            key_var = self.entities.get(drawer['key_required'])
-                            if drawer_var and key_var:
-                                self.code_lines.append(f"M.add_fact('match', {key_var}, {drawer_var})")
+                # Check subcontainers
+                if item.get('subcontainers'):
+                    for subcontainer in item['subcontainers']:
+                        if subcontainer.get('locked') and subcontainer.get('key_required'):
+                            sub_var = self.entities.get(subcontainer['id'])
+                            key_var = self.entities.get(subcontainer['key_required'])
+                            if sub_var and key_var:
+                                self.code_lines.append(f"M.add_fact('match', {key_var}, {sub_var})")
         
         self.code_lines.append("")
     
@@ -265,12 +276,12 @@ class TextWorldCompiler:
                 if item.get('lock_type') == 'password':
                     password_locks[item['id']] = item.get('password_questions', [])
                 
-                if item.get('drawers'):
-                    for drawer in item['drawers']:
-                        if drawer.get('lock_type') == 'combination':
-                            combination_locks[drawer['id']] = drawer['combination']
-                        if drawer.get('lock_type') == 'password':
-                            password_locks[drawer['id']] = drawer.get('password_questions', [])
+                if item.get('subcontainers'):
+                    for subcontainer in item['subcontainers']:
+                        if subcontainer.get('lock_type') == 'combination':
+                            combination_locks[subcontainer['id']] = subcontainer['combination']
+                        if subcontainer.get('lock_type') == 'password':
+                            password_locks[subcontainer['id']] = subcontainer.get('password_questions', [])
             
             # Find goal room
             if room.get('is_goal'):

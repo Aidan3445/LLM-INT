@@ -1,0 +1,169 @@
+{
+  "theme": "cyberpunk corporate heist",
+  "title": "Data Vault Breach",
+  "goal": "Reach the data vault and escape with the files",
+  "rooms": [
+    {
+      "id": "security_office",
+      "name": "Security Office",
+      "description": "A dimly lit security office with flickering neon lights casting blue and pink hues. Monitors display static. Coffee cups and energy drink cans litter the desk. The air smells of ozone and burnt circuits.",
+      "items": [
+        {
+          "id": "filing_cabinet",
+          "name": "metal filing cabinet",
+          "description": "A four-drawer filing cabinet with label slots",
+          "subcontainers": [
+            {
+              "id": "cabinet_drawer_a",
+              "name": "drawer A",
+              "locked": false,
+              "contains": ["security_memo"]
+            },
+            {
+              "id": "cabinet_drawer_b",
+              "name": "drawer B",
+              "locked": true,
+              "lock_type": "combination",
+              "combination": "2019",
+              "contains": ["access_card"]
+            },
+            {
+              "id": "cabinet_drawer_c",
+              "name": "drawer C",
+              "locked": false,
+              "contains": []
+            },
+            {
+              "id": "cabinet_drawer_d",
+              "name": "drawer D",
+              "locked": true,
+              "key_required": "cabinet_key",
+              "contains": ["encrypted_note"]
+            }
+          ]
+        },
+        {
+          "id": "security_memo",
+          "name": "security memo",
+          "description": "A printed memo about password policies",
+          "readable": true,
+          "text": "MEMO: All employees must update passwords. New vault access requires: birth year of the replicant from that old film, the one about LA in 2019. You know which one."
+        },
+        {
+          "id": "encrypted_note",
+          "name": "encrypted datapad",
+          "description": "A small datapad with encrypted text",
+          "readable": true,
+          "text": "LOGIN CREDENTIALS - User: admin | Pass: NEON_CITY | Server location: Router in hallway has backup codes written underneath."
+        },
+        {
+          "id": "desk",
+          "name": "cluttered desk",
+          "description": "A desk covered in papers and tech junk",
+          "searchable": true,
+          "contains": ["cabinet_key"]
+        },
+        {
+          "id": "cabinet_key",
+          "name": "small silver key",
+          "description": "A key with 'D' stamped on it"
+        },
+        {
+          "id": "elevator_door",
+          "name": "elevator door",
+          "description": "A sleek chrome elevator door with a card reader",
+          "locked": true,
+          "key_required": "access_card",
+          "leads_to": "hallway",
+          "direction": "north",
+          "aliases": ["elevator", "up"]
+        }
+      ]
+    },
+    {
+      "id": "hallway",
+      "name": "Corporate Hallway",
+      "description": "A sterile white hallway with LED strips running along the floor. Corporate motivational posters line the walls. A router blinks on the wall, and a maintenance panel is partially open.",
+      "items": [
+        {
+          "id": "router",
+          "name": "network router",
+          "description": "A wall-mounted router with blinking LEDs",
+          "readable": true,
+          "text": "Underneath the router, someone has scrawled in permanent marker: 'Server room combo - 7734' and drawn a smiley face."
+        },
+        {
+          "id": "maintenance_panel",
+          "name": "maintenance access panel",
+          "description": "A wall panel with various compartments",
+          "subcontainers": [
+            {
+              "id": "panel_top",
+              "name": "top compartment",
+              "locked": false,
+              "contains": ["wire_cutters"]
+            },
+            {
+              "id": "panel_bottom",
+              "name": "bottom compartment",
+              "locked": false,
+              "contains": ["flashlight"]
+            }
+          ]
+        },
+        {
+          "id": "wire_cutters",
+          "name": "wire cutters",
+          "description": "Standard issue wire cutters"
+        },
+        {
+          "id": "flashlight",
+          "name": "flashlight",
+          "description": "A heavy-duty flashlight"
+        },
+        {
+          "id": "vault_door",
+          "name": "reinforced vault door",
+          "description": "A massive door with a keypad and biometric scanner",
+          "locked": true,
+          "lock_type": "password",
+          "password_questions": [
+            {
+              "question": "Enter admin username:",
+              "answer": "admin",
+              "hint": "Check the encrypted datapad in the security office"
+            },
+            {
+              "question": "Enter password:",
+              "answer": "neon_city",
+              "hint": "The encrypted note has the credentials"
+            },
+            {
+              "question": "Enter server room access code:",
+              "answer": "7734",
+              "hint": "Look at the router in the hallway"
+            }
+          ],
+          "leads_to": "data_vault",
+          "direction": "east",
+          "aliases": ["vault", "east"]
+        }
+      ]
+    },
+    {
+      "id": "data_vault",
+      "name": "Corporate Data Vault",
+      "description": "You've made it! A room full of server racks humming with activity. Holographic displays float in mid-air showing streams of data. In the center, a terminal glows with the words 'DATA EXTRACTED - MISSION COMPLETE'.",
+      "items": [
+        {
+          "id": "server_terminal",
+          "name": "main server terminal",
+          "description": "The central data access point, now displaying your successful breach"
+        }
+      ],
+      "is_goal": true,
+      "win_message": "SUCCESS! You've breached the corporate data vault and extracted the files. Time to jack out before security arrives. You win!"
+    }
+  ],
+  "starting_room": "security_office"
+}

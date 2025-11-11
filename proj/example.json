@@ -27,7 +27,7 @@
           "id": "dresser",
           "name": "oak dresser",
           "description": "A dresser with three drawers - top, middle, and bottom",
-          "drawers": [
+          "subcontainers": [
             {
               "id": "top_drawer",
               "name": "top drawer",

@@ -241,11 +241,30 @@ if __name__ == "__main__":
     if not os.path.exists(json_file):
         print(f"Error: File '{json_file}' not found")
         sys.exit(1)
-    
-    # Generate output filenames
+
+    # Create output directory
     base_name = os.path.splitext(json_file)[0]
-    py_file = f"{base_name}_game.py"
-    ulx_file = f"{base_name}_game.ulx"
+    directory_name = f"games"
+    try:
+        os.mkdir(directory_name)
+        print(f"Directory '{directory_name}' created successfully.")
+    except FileExistsError:
+        print(f"Directory '{directory_name}' already exists.")
+    except OSError as e:
+        print(f"Error creating directory: {e}")
+    
+    directory_name = f"games/{base_name}"
+    try:
+        os.mkdir(directory_name)
+        print(f"Directory '{directory_name}' created successfully.")
+    except FileExistsError:
+        print(f"Directory '{directory_name}' already exists.")
+    except OSError as e:
+        print(f"Error creating directory: {e}")
+
+    # Generate output filenames
+    py_file = f"games/{base_name}/{base_name}_game.py"
+    ulx_file = f"games/{base_name}/{base_name}_game.ulx"
     
     print(f"="*60)
     print(f"Escape Room Generator & Player")
