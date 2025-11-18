@@ -126,6 +126,7 @@
               "hint": "The letters in your bedroom might remind you"
             }
           ],
+          "direction": "east",
           "leads_to": "dining_room"
         }
       ],
@@ -139,7 +140,7 @@
         {
           "id": "feast",
           "name": "royal feast",
-          "description": "A wonderful spread of food - roasted meats, fresh bread, fruits, and desserts"
+          "description": "A wonderful spread of food: roasted meats, fresh bread, fruits, and desserts"
         }
       ],
       "exits": [],

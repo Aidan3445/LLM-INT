@@ -1,0 +1,56 @@
+The theme of this escape room is "Medieval Castle".
+The goal is to reach the dining room for dinner at the bottom of the tower.
+
+
+Room 1: Tower Bedroom
+The player wakes up in a bedroom atop a tall tower with stone walls dimly lit by flickering candles.
+Outside the window, the sun is setting over the mountains, there is a window to the west.
+In the room there is a bed, a locked closet, and a dresser with three stacked drawers, the middle is locked.
+
+The only exit to the room is a wooden trap door in the floor, which is also locked. (Alias direction "down" to "south")
+
+Locked inside the closet is a note from the queen that reads:
+  "My precious daughter, never forget who you are - a princess of this realm. 
+  Your father and I await you at dinner. Love, Mother the Queen"
+This note is a clue that will be useful later. Revealing that the player is a princess.
+
+Inside the unlocked top drawer of the dresser is a note from the king that reads:
+  "My dearest daughter, remember that Philip always serves us faithfully. 
+  The numbers of our family are important: I was born in year 476. Love, Father the King"
+This note reveals the code required to unlock the middle drawer of the dresser.
+
+Locked in the middle drawer of the dresser (behind the code 476) is a wooden key. 
+This key unlocks the closet and the trap door.
+
+
+Room 2: Spiral Staircase
+A long spiral staircase winding down the interior of the tower. 
+Stone walls are lined with portrait paintings, each with a nameplate and description beneath.
+
+There is a door to the east leading to the dining room.
+
+The first portrait is a painting of a stern man in servant's attire, labeled:
+  "Philip - Head Butler. Responsible for maintaining the household and overseeing meal service."
+
+The second portrait is a painting of a sad-looking young boy alone, labeled:
+  "Jack - Stable Boy. Orphaned at age 7. Parents rest in the castle graveyard. Works hard caring for the horses."
+
+The third portrait is a painting of an elegant noblewoman, labeled:
+  "Lady Margaret - Court Advisor. Known for her wisdom and connection to the royal family."
+
+The heavy oak door to the dining room is locked, when you try to open it 
+a voice behind the door asks three questions which you must answer correctly to enter:
+  "Who is the head butler of the castle?" (Answer: Philip) (hint: check the portraits for someone who works in the household)
+  "Where is Jack's father buried?" (Answer: Castle graveyard) (hint: read Jack's portrait carefully)
+  "Who are you?" (Answer: Princess) (hint: find the second note in the tower bedroom)
+
+
+Room 3: Grand Dining Room
+A magnificent dining hall with a long table set for a feast. 
+The King and Queen sit at the head of the table, smiling warmly. Candles illuminate platters of delicious food.
+
+In the room is a wonderful spread of food on a grand table: roasted meats, fresh bread, fruits, and desserts.
+
+
+Win Message:
+You made it to dinner on time! The King and Queen welcome you warmly to the table. Yum! You win!

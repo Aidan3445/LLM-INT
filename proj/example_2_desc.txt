@@ -1,0 +1,54 @@
+The theme of this escape room is "Cyberpunk Corporate Heist".
+The goal is to breach the corporate data vault and escape with the stolen files.
+
+
+Room 1: Security Office
+The player begins in a dimly lit security office with flickering neon lights casting blue and pink hues. Monitors display static. Coffee cups and energy drink cans litter the desk. The air smells of ozone and burnt circuits.
+In the room there is a metal filing cabinet with four drawers (A, B, C, D), a cluttered desk, and an elevator door to the north.
+
+The elevator door is locked and requires an access card to open. (Alias direction "up" to "north")
+
+Inside unlocked drawer A of the filing cabinet is a security memo that reads:
+  "MEMO: All employees must update passwords. New vault access requires: birth year of the replicant
+  from that old film, the one about LA in 2019. You know which one."
+This memo is a clue revealing the combination code 2019 (referencing the film Blade Runner).
+
+Locked in drawer B of the filing cabinet (behind the code 2019) is an access card.
+This card unlocks the elevator door to the hallway.
+
+Drawer C is unlocked but empty.
+
+Drawer D is locked with a key lock. Hidden on the cluttered desk (searchable) is a small silver key stamped with 'D'.
+This key unlocks drawer D.
+
+Locked inside drawer D is an encrypted datapad that reads:
+  "LOGIN CREDENTIALS - User: admin | Pass: NEON_CITY | Server location: Router in hallway has backup codes written underneath."
+This datapad contains credentials that will be needed later to access the vault.
+
+
+Room 2: Corporate Hallway
+A sterile white hallway with LED strips running along the floor. 
+Corporate motivational posters line the walls. A router blinks on the wall, and a maintenance panel is partially open.
+There is a massive reinforced vault door to the east leading to the data vault.
+
+Mounted on the wall is a network router with blinking LEDs. 
+When examined, underneath the router someone has scrawled in permanent marker:
+  "Server room combo - 7734" and drawn a smiley face.
+This is the final piece of information needed to access the vault.
+
+The maintenance access panel has two compartments. In the unlocked top compartment are wire cutters, and in the unlocked bottom compartment is a flashlight.
+The reinforced vault door has a keypad and biometric scanner. When you try to open it, the system prompts three security questions which you must answer correctly to enter:
+  "Enter admin username:" (Answer: admin) (hint: check the encrypted datapad in the security office)
+  "Enter password:" (Answer: neon_city) (hint: the encrypted note has the credentials)
+  "Enter server room access code:" (Answer: 7734) (hint: look at the router in the hallway)
+
+
+Room 3: Corporate Data Vault
+A room full of server racks humming with activity. Holographic displays float in mid-air showing streams of data. 
+In the center, a terminal glows with the words 'DATA EXTRACTED - MISSION COMPLETE'.
+
+In the room is the main server terminal, the central data access point, now displaying your successful breach.
+
+
+Win Message:
+SUCCESS! You've breached the corporate data vault and extracted the files. Time to jack out before security arrives. You win!

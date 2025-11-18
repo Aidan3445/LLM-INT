@@ -45,22 +45,27 @@ class TextWorldCompiler:
         # Create all rooms
         for room in self.data['rooms']:
             room_var = room['id']
-            self.code_lines.append(f"{room_var} = M.new_room('{room['name']}')")
+            self.code_lines.append(f"{room_var} = M.new_room('{room['name'].replace("'", "\\'")}')")
             self.code_lines.append(f"{room_var}.desc = '{room['description'].replace("'", "\\'")}'")
             self.entities[room_var] = room_var
         
         self.code_lines.append("")
         
-        # First pass: create keys for doors
-        for room in self.data['rooms']:
-            for item in room.get('items', []):
-                if item.get('leads_to') and item.get('key_required'):
+        # First pass: create keys
+        def _get_keys(item_list):
+            for item in item_list:
+                if item.get('subcontainers'):
+                    _get_keys(item['subcontainers'])
+                if item.get('key_required'):
                     key_id = item['key_required']
                     if key_id not in self.entities:
                         self.code_lines.append(f"{key_id} = M.new(type='k', name='{key_id.replace('_', ' ')}')")
                         self.entities[key_id] = key_id
-        
-        if any(item.get('leads_to') and item.get('key_required') for room in self.data['rooms'] for item in room.get('items', [])):
+
+        for room in self.data['rooms']:
+            _get_keys(room.get('items', []))
+                    
+        if any(item.get('key_required') for room in self.data['rooms'] for item in room.get('items', [])):
             self.code_lines.append("")
         
         # Connect rooms
@@ -88,7 +93,7 @@ class TextWorldCompiler:
                         self.code_lines.append(f"door_{item['id']} = M.new_door(path_{item['id']}, '{item['name']}')")
                         
                         # Password locks are handled by interface, just make it closed
-                        if item.get('lock_type') == 'password':
+                        if item.get('lock_type') == 'password' or item.get('lock_type') == 'combination':
                             self.code_lines.append(f"door_{item['id']}.add_property('closed')")
                         else:
                             self.code_lines.append(f"door_{item['id']}.add_property('locked')")
@@ -142,7 +147,7 @@ class TextWorldCompiler:
         # Items with subcontainers (generalized from drawers)
         if item.get('subcontainers'):
             # Parent item is just decoration
-            self.object_buffer.append(f"{item_id} = M.new(type='o', name='{item_name}')")
+            self.object_buffer.append(f"{item_id} = M.new(type='o', name='{item_name.replace("'", "\\'")}')")
             self.entities[item_id] = item_id
             self.container_buffer.append(f"{room_var}.add({item_id})")
             
@@ -152,7 +157,7 @@ class TextWorldCompiler:
                 sub_name = subcontainer['name']
                 
                 # Create subcontainer
-                self.container_buffer.append(f"{sub_id} = M.new(type='c', name='{sub_name}')")
+                self.container_buffer.append(f"{sub_id} = M.new(type='c', name='{sub_name.replace("'", "\\'")}')")
                 self.entities[sub_id] = sub_id
                 
                 # Set state
@@ -176,7 +181,7 @@ class TextWorldCompiler:
         
         # Containers (closets, chests)
         if item.get('locked') or item.get('contains'):
-            self.container_buffer.append(f"{item_id} = M.new(type='c', name='{item_name}')")
+            self.container_buffer.append(f"{item_id} = M.new(type='c', name='{item_name.replace("'", "\\'")}')")
             self.entities[item_id] = item_id
             
             # Password locks are handled by interface, so just make it closed
@@ -198,7 +203,7 @@ class TextWorldCompiler:
             return
         
         # Regular objects (notes, tools, etc)
-        self.object_buffer.append(f"{item_id} = M.new(type='o', name='{item_name}')")
+        self.object_buffer.append(f"{item_id} = M.new(type='o', name='{item_name.replace("'", "\\'")}')")
         self.entities[item_id] = item_id
         
         # Set description for readable items
@@ -220,7 +225,7 @@ class TextWorldCompiler:
                 if item['id'] == item_id:
                     # Create it
                     item_name = item['name']
-                    self.object_buffer.append(f"{item_id} = M.new(type='o', name='{item_name}')")
+                    self.object_buffer.append(f"{item_id} = M.new(type='o', name='{item_name.replace("'", "\\'")}')")
                     self.entities[item_id] = item_id
                     
                     if item.get('readable') and 'text' in item:

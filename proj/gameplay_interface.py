@@ -76,9 +76,11 @@ class EscapeRoomInterface:
         combo_match = re.match(r'^(?:enter|type|input|use code)\s+(\d+)(?:\s+(?:on|in|into)\s+(.+))?$', command)
         if combo_match:
             code = combo_match.group(1)
+            target = combo_match.group(2)
             
             for item_id, correct_code in self.combination_locks.items():
-                if code == correct_code and item_id not in self.unlocked_combinations:
+                if code == correct_code and item_id not in self.unlocked_combinations and \
+                (not target or target in item_id.replace('_', ' ') or item_id.replace('_', ' ') in target):
                     # Check if item is in current room
                     if not self._is_item_accessible(item_id):
                         class FakeState:
@@ -288,6 +290,8 @@ if __name__ == "__main__":
         print(f"Error: File '{json_file}' not found")
         sys.exit(1)
 
+    skip_recompile = sys.argv[2].lower() == '--skip' if len(sys.argv) > 2 else False
+
     # Create output directory
     base_name = os.path.splitext(json_file)[0]
     directory_name = f"games"
@@ -295,7 +299,7 @@ if __name__ == "__main__":
         os.mkdir(directory_name)
         print(f"Directory '{directory_name}' created successfully.")
     except FileExistsError:
-        print(f"Directory '{directory_name}' already exists.")
+        pass
     except OSError as e:
         print(f"Error creating directory: {e}")
     
@@ -303,8 +307,13 @@ if __name__ == "__main__":
     try:
         os.mkdir(directory_name)
         print(f"Directory '{directory_name}' created successfully.")
+        skip_recompile = False
     except FileExistsError:
-        print(f"Directory '{directory_name}' already exists.")
+        if not skip_recompile:
+            print(f"Would you like to recompile the game? (y/n): ", end="")
+            choice = input().strip().lower()
+            if choice != 'y':
+                skip_recompile = True
     except OSError as e:
         print(f"Error creating directory: {e}")
 
@@ -320,30 +329,34 @@ if __name__ == "__main__":
     print(f"Output Python: {py_file}")
     print(f"Output Game: {ulx_file}")
     print(f"="*60)
-    
-    # Step 1: Compile JSON to Python
-    print("\nStep 1: Compiling JSON to TextWorld Python code...")
-    try:
-        from compiler import compile_json_to_textworld
-        compile_json_to_textworld(json_file, py_file)
-        print(f"✓ Generated {py_file}")
-    except Exception as e:
-        print(f"✗ Compilation failed: {e}")
-        sys.exit(1)
-    
-    # Step 2: Run the Python file to generate .ulx
-    print("\nStep 2: Generating .ulx game file...")
-    try:
-        result = subprocess.run(['python', py_file], capture_output=True, text=True)
-        if result.returncode != 0:
-            print(f"✗ Game generation failed:")
-            print(result.stderr)
+
+    if skip_recompile:
+        print("\nStep 1: Skipped compilation...")
+        print("\nStep 2: Skipped game generation...")
+    else:
+        # Step 1: Compile JSON to Python
+        print("\nStep 1: Compiling JSON to TextWorld Python code...")
+        try:
+            from compiler import compile_json_to_textworld
+            compile_json_to_textworld(json_file, py_file)
+            print(f"✓ Generated {py_file}")
+        except Exception as e:
+            print(f"✗ Compilation failed: {e}")
             sys.exit(1)
-        print(result.stdout)
-        print(f"✓ Generated {ulx_file}")
-    except Exception as e:
-        print(f"✗ Failed to run {py_file}: {e}")
-        sys.exit(1)
+        
+        # Step 2: Run the Python file to generate .ulx
+        print("\nStep 2: Generating .ulx game file...")
+        try:
+            result = subprocess.run(['python', py_file], capture_output=True, text=True)
+            if result.returncode != 0:
+                print(f"✗ Game generation failed:")
+                print(result.stderr)
+                sys.exit(1)
+            print(result.stdout)
+            print(f"✓ Generated {ulx_file}")
+        except Exception as e:
+            print(f"✗ Failed to run {py_file}: {e}")
+            sys.exit(1)
     
     # Step 3: Load game metadata
     print("\nStep 3: Loading game metadata...")
