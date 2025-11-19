@@ -290,7 +290,8 @@ if __name__ == "__main__":
         print(f"Error: File '{json_file}' not found")
         sys.exit(1)
 
-    skip_recompile = sys.argv[2].lower() == '--skip' if len(sys.argv) > 2 else False
+    # Check for force recompile flag
+    recompile = sys.argv[2].lower() == '--force' if len(sys.argv) > 2 else False
 
     # Create output directory
     base_name = os.path.splitext(json_file)[0]
@@ -307,13 +308,9 @@ if __name__ == "__main__":
     try:
         os.mkdir(directory_name)
         print(f"Directory '{directory_name}' created successfully.")
-        skip_recompile = False
+        recompile = True
     except FileExistsError:
-        if not skip_recompile:
-            print(f"Would you like to recompile the game? (y/n): ", end="")
-            choice = input().strip().lower()
-            if choice != 'y':
-                skip_recompile = True
+        pass
     except OSError as e:
         print(f"Error creating directory: {e}")
 
@@ -330,7 +327,7 @@ if __name__ == "__main__":
     print(f"Output Game: {ulx_file}")
     print(f"="*60)
 
-    if skip_recompile:
+    if not recompile:
         print("\nStep 1: Skipped compilation...")
         print("\nStep 2: Skipped game generation...")
     else:
