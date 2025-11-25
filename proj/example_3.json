@@ -13,7 +13,7 @@
           "name": "wood pedestal",
           "description": "A polished wood pedestal supporting a locked glass box. An inscription is carved into the base.",
           "readable": true,
-          "text": "\"For only those who understand in what order the artists of the world stand.\""
+          "text": "For only those who understand in what order the artists of the world stand."
         },
         {
           "id": "glass_box",
@@ -42,35 +42,35 @@
 
         {
           "id": "painting_claude",
-          "name": "painting signed Claude, 1",
+          "name": "painting signed Claude 1",
           "description": "A landscape of a farm with a man in the foreground. Signed 'Claude, 1'.",
           "readable": true,
           "text": "Claude, 1"
         },
         {
           "id": "painting_gene",
-          "name": "painting signed Gene, 9",
+          "name": "painting signed Gene 9",
           "description": "A still life of fruits. Signed 'Gene, 9'.",
           "readable": true,
           "text": "Gene, 9"
         },
         {
           "id": "painting_julius",
-          "name": "painting signed Julius, 47",
+          "name": "painting signed Julius 47",
           "description": "A beach landscape with a man in the mid-ground. Signed 'Julius, 47'.",
           "readable": true,
           "text": "Julius, 47"
         },
         {
           "id": "painting_roberts",
-          "name": "painting signed Roberts, 90",
+          "name": "painting signed Roberts 90",
           "description": "A portrait of two dancers. Signed 'Roberts, 90'.",
           "readable": true,
           "text": "Roberts, 90"
         },
         {
           "id": "painting_garfield",
-          "name": "painting signed Garfield, 5",
+          "name": "painting signed Garfield 5",
           "description": "A mountain landscape with a man in the background. Signed 'Garfield, 5'.",
           "readable": true,
           "text": "Garfield, 5"
@@ -126,7 +126,7 @@
           "name": "blank calendar",
           "description": "A calendar that appears empty in normal light. Under black light, hidden writing emerges.",
           "readable": true,
-          "text": "\"January 1st - January 7th : 1st , January 7th - January 14th : 2nd, January 14 - January 21st 3rd\""
+          "text": "January 1st - January 7th : 1st , January 7th - January 14th : 2nd, January 14 - January 21st 3rd"
         },
         {
           "id": "front_doors",
