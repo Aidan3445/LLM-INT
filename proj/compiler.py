@@ -27,7 +27,7 @@ class TextWorldCompiler:
     def add_header(self):
         """Set the header with theme and goal and boilerplate"""
         self.code_lines.extend([
-            "from textworld import GameMaker",
+            "from textworld.generator.maker import GameMaker, get_failing_constraints",
             "from textworld.logic import State, Proposition",
             "from textworld.generator.game import Quest, Event",
             "",
@@ -333,7 +333,12 @@ class TextWorldCompiler:
         """Build and compile"""
         self.code_lines.extend([
             "# === BUILD ===",
-            "game = M.build()",
+            "try:",
+            "    game = M.build()",
+            "except Exception as e:",
+            "    error_msg = f'Error building the game: {e}\\n{'~' * 60}\\n{get_failing_constraints(M.state)}\\n{'~' * 60}\\n{[(x.name, x.id) for x in M.findall('k')] + [(x.name, x.id) for x in M.findall('o')] + [(x.name, x.id) for x in M.findall('c')] + [(x.name, x.id) for x in M.findall('r')] }'",
+            "    raise Exception(error_msg)",
+            "",
             "game_file = M.compile('./game.ulx')",
             "print(f'Game compiled successfully to: {game_file}')",
         ])

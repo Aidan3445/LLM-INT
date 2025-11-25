@@ -315,8 +315,8 @@ if __name__ == "__main__":
         print(f"Error creating directory: {e}")
 
     # Generate output filenames
-    py_file = f"games/{base_name}/{base_name}_game.py"
-    ulx_file = f"games/{base_name}/{base_name}_game.ulx"
+    py_file = f"games/{base_name}/game.py"
+    ulx_file = f"games/{base_name}/game.ulx"
  
     
     print(f"="*60)

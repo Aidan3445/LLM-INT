@@ -66,28 +66,28 @@
 
         {
           "id": "paper_4",
-          "name": "note labeled #4",
+          "name": "note labeled 4",
           "description": "A paper with encoded text.",
           "readable": true,
           "text": "#4 fwx"
         },
         {
           "id": "paper_2",
-          "name": "note labeled #2",
+          "name": "note labeled 2",
           "description": "A paper with encoded text.",
           "readable": true,
           "text": "#2 ru"
         },
         {
           "id": "paper_1",
-          "name": "note labeled #1",
+          "name": "note labeled 1",
           "description": "A paper with encoded text.",
           "readable": true,
           "text": "#1 nq"
         },
         {
           "id": "paper_3",
-          "name": "note labeled #3",
+          "name": "note labeled 3",
           "description": "A paper with encoded text.",
           "readable": true,
           "text": "#3 hj"
