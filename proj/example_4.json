@@ -1,0 +1,213 @@
+{
+  "theme": "Scientific Spy",
+  "title": "Breakout from the Secret Laboratory",
+  "goal": "Retrieve the sensitive information from the computer and escape the laboratory.",
+  "rooms": [
+    {
+      "id": "computer_hub",
+      "name": "Computer Hub",
+      "description": "A small, dark room illuminated only by the cold glow of several computer lock screens on the north wall. File cabinets stand against the east and west walls. The only exit is a doorway to the south leading into the laboratory.",
+      "items": [
+        {
+          "id": "computer",
+          "name": "locked computer",
+          "description": "A high-security terminal displaying a password hint.",
+          "readable": true,
+          "text": "Password Hint: shift file info by 5",
+          "locked": true,
+          "lock_type": "password",
+          "password": "ilovecats",
+          "contains": []
+        },
+        {
+          "id": "flash_drive",
+          "name": "flash drive",
+          "description": "A small USB drive used to download sensitive data once the computer is unlocked."
+        },
+
+        {
+          "id": "left_cabinet",
+          "name": "left file cabinet",
+          "description": "A metal file cabinet with two drawers.",
+          "subcontainers": [
+            {
+              "id": "left_drawer_1",
+              "name": "top drawer (left)",
+              "locked": false,
+              "contains": ["paper_4"]
+            },
+            {
+              "id": "left_drawer_2",
+              "name": "bottom drawer (left)",
+              "locked": false,
+              "contains": ["paper_2"]
+            }
+          ]
+        },
+        {
+          "id": "right_cabinet",
+          "name": "right file cabinet",
+          "description": "A metal file cabinet with two drawers.",
+          "subcontainers": [
+            {
+              "id": "right_drawer_1",
+              "name": "top drawer (right)",
+              "locked": false,
+              "contains": ["paper_1"]
+            },
+            {
+              "id": "right_drawer_2",
+              "name": "bottom drawer (right)",
+              "locked": false,
+              "contains": ["paper_3", "flash_drive"]
+            }
+          ]
+        },
+
+        {
+          "id": "paper_4",
+          "name": "note labeled #4",
+          "description": "A paper with encoded text.",
+          "readable": true,
+          "text": "#4 fwx"
+        },
+        {
+          "id": "paper_2",
+          "name": "note labeled #2",
+          "description": "A paper with encoded text.",
+          "readable": true,
+          "text": "#2 ru"
+        },
+        {
+          "id": "paper_1",
+          "name": "note labeled #1",
+          "description": "A paper with encoded text.",
+          "readable": true,
+          "text": "#1 nq"
+        },
+        {
+          "id": "paper_3",
+          "name": "note labeled #3",
+          "description": "A paper with encoded text.",
+          "readable": true,
+          "text": "#3 hj"
+        },
+
+        {
+          "id": "hub_exit_south",
+          "name": "doorway to the lab",
+          "description": "A simple opening leading to the laboratory.",
+          "direction": "south",
+          "leads_to": "lab"
+        }
+      ],
+      "exits": []
+    },
+
+    {
+      "id": "lab",
+      "name": "The Lab",
+      "description": "A pristine laboratory with white tables, shelves of equipment, and a poster about chemical safety on the wall. A massive metal door blocks the way to the south, held shut by thick wooden beams.",
+      "items": [
+        {
+          "id": "chemical_poster",
+          "name": "safety poster",
+          "description": "A poster with a warning slogan.",
+          "readable": true,
+          "text": "\"Beware, Chemicals Can BURN\""
+        },
+        {
+          "id": "wooden_beams",
+          "name": "wooden beams",
+          "description": "Sturdy wooden beams barring the metal door. They look flammable with the right chemicals.",
+          "burnable": true
+        },
+        {
+          "id": "metal_door_lab_exit",
+          "name": "large metal door",
+          "description": "A sealed metal exit door blocked by wooden beams.",
+          "locked": true,
+          "lock_type": "puzzle",
+          "puzzle_description": "Burn the wooden beams using Boron, Uranium, and Radon.",
+          "direction": "south",
+          "leads_to": "hallway"
+        },
+
+        {
+          "id": "chemical_table",
+          "name": "table of chemicals",
+          "description": "A metal table holding several beakers labeled with chemical names.",
+          "searchable": true,
+          "contains": [
+            "oxygen",
+            "boron",
+            "hydrogen",
+            "uranium",
+            "fluorine",
+            "radon",
+            "periodic_table"
+          ]
+        },
+
+        {
+          "id": "oxygen",
+          "name": "Oxygen",
+          "description": "A chemical labeled O."
+        },
+        {
+          "id": "boron",
+          "name": "Boron",
+          "description": "A chemical labeled B."
+        },
+        {
+          "id": "hydrogen",
+          "name": "Hydrogen",
+          "description": "A chemical labeled H."
+        },
+        {
+          "id": "uranium",
+          "name": "Uranium",
+          "description": "A chemical labeled U."
+        },
+        {
+          "id": "fluorine",
+          "name": "Fluorine",
+          "description": "A chemical labeled F."
+        },
+        {
+          "id": "radon",
+          "name": "Radon",
+          "description": "A chemical labeled Rn."
+        },
+        {
+          "id": "periodic_table",
+          "name": "periodic table",
+          "description": "A standard periodic table with chemical symbols.",
+          "readable": true,
+          "text": "Oxygen = O, Boron = B, Hydrogen = H, Uranium = U, Fluorine = F, Radon = Rn"
+        }
+      ],
+      "exits": []
+    },
+
+    {
+      "id": "hallway",
+      "name": "Hallway",
+      "description": "A long, dark hallway. A hidden speaker crackles overhead.",
+      "items": [
+        {
+          "id": "ceiling_voice",
+          "name": "booming voice",
+          "description": "A voice from the ceiling asking a question.",
+          "question": "What was the last chemical needed to escape?",
+          "answer": "radon",
+          "success_effect": "A ceiling tile slides open and a harness drops down for extraction."
+        }
+      ],
+      "exits": [],
+      "is_goal": true,
+      "win_message": "You made it out of the lab with the information and without being caught! You win!"
+    }
+  ],
+  "starting_room": "computer_hub"
+}

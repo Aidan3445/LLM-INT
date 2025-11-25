@@ -1,0 +1,55 @@
+The theme of this escape room is "Museum Heist".
+The goal is to steal the diamond and find your way out of the museum.
+
+
+Location 1: The Diamond Room 
+The player is a thief in the middle of a museum heist. 
+In the middle of the room is a wood pedestal with a glass box on top, the glass box is protected by a lock with a keyboard.
+On the pedestal there is an inscription that reads :
+  "For only those who understand in what order the artists of the world stand"
+
+Inside the glass box is a large shiny diamond. 
+The only exit from the room is behind a large metal door that activates at night to protect the diamond.
+Next to the large metal door is a digital keypad that accepts 4 numbers. 
+
+Along the walls of the room are three landscape paintings in ornate frames each signed by a different artist.
+
+In order from left to right : 
+The first is a landscape of a farm with a man in the foreground, signed "Claude, 1"
+The second is a still life of fruits, signed "Gene, 9"
+The third is a landscape of a beach with a man in the mid ground, signed "Julius, 47"
+The fouth is a portrait of two dancers, signed "Roberts, 90"
+The fifth is a landscape of a mountain with a man in the background, signed "Garfield, 5"
+
+
+The keyboard lock is unlocked with the password "Claude Julius Garfield." 
+
+The player can collect the diamond once they unlock the glass box.
+
+The code 1475 unlocks the large metal door. 
+
+
+Room 2: The Museum Main Hall 
+The main hall of the museum, serves as the ornate entrance and exit. 
+High ceilings are covered in fresco paintings and by the museum doors sits a check-in desk where guests buy tickets during the day.
+There is a large clock on the wall that shows the date and time, it reads January 14th, 2028 2:00 AM
+There is a table in the middle of the room that has a large flower centerpiece. In the flower centerpiece is a hidden black light.
+
+There is one set of main doors to exit the building at it's north side. These doors are locked but have a key hole.
+
+The check-in desk is covered in a blank calendar, when the black light shines on it each day has a different location. It reads: 
+  "January 1st - January 7th : 1st , January 7th - January 14th : 2nd, January 14 - January 21st 3rd"
+
+The first drawer of the desk contains a key.
+The second drawer of the desk contains the key that unlocks the doors.
+The third drawer of the desk contains a key.
+
+
+Room 3: The Getaway Car
+The back of a van with all the people who helped you pull off this hiest, each wearing a mask. 
+
+The car is speeding away from the museum and police sirens are heard fading into the background. 
+
+
+Win Message:
+You made it out of the museum with the diamond and without being caught by the police! You win! Try your best to stay out of trouble!

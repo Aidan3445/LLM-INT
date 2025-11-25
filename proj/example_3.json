@@ -1,0 +1,177 @@
+{
+  "theme": "Museum Heist",
+  "title": "Museum Diamond Escape",
+  "goal": "Steal the diamond and escape the museum.",
+  "rooms": [
+    {
+      "id": "diamond_room",
+      "name": "The Diamond Room",
+      "description": "A dimly lit room at the heart of the museum. In the center stands a wooden pedestal topped with a glass lockbox containing a large, shining diamond. A massive metal door guards the only exit. Along the walls hang five framed paintings, each signed by a different artist.",
+      "items": [
+        {
+          "id": "pedestal",
+          "name": "wood pedestal",
+          "description": "A polished wood pedestal supporting a locked glass box. An inscription is carved into the base.",
+          "readable": true,
+          "text": "\"For only those who understand in what order the artists of the world stand.\""
+        },
+        {
+          "id": "glass_box",
+          "name": "glass lockbox",
+          "description": "A reinforced glass case protecting the diamond. A small keypad is embedded in its base.",
+          "locked": true,
+          "lock_type": "password",
+          "password": "Claude Julius Garfield",
+          "contains": ["diamond"]
+        },
+        {
+          "id": "diamond",
+          "name": "large shiny diamond",
+          "description": "A priceless, sparkling diamond—the target of your heist."
+        },
+        {
+          "id": "metal_door",
+          "name": "large metal door",
+          "description": "A heavy security door that locks automatically at night. A digital keypad beside it awaits a 4-digit code.",
+          "locked": true,
+          "lock_type": "combination",
+          "combination": "1475",
+          "direction": "north",
+          "leads_to": "main_hall"
+        },
+
+        {
+          "id": "painting_claude",
+          "name": "painting signed Claude, 1",
+          "description": "A landscape of a farm with a man in the foreground. Signed 'Claude, 1'.",
+          "readable": true,
+          "text": "Claude, 1"
+        },
+        {
+          "id": "painting_gene",
+          "name": "painting signed Gene, 9",
+          "description": "A still life of fruits. Signed 'Gene, 9'.",
+          "readable": true,
+          "text": "Gene, 9"
+        },
+        {
+          "id": "painting_julius",
+          "name": "painting signed Julius, 47",
+          "description": "A beach landscape with a man in the mid-ground. Signed 'Julius, 47'.",
+          "readable": true,
+          "text": "Julius, 47"
+        },
+        {
+          "id": "painting_roberts",
+          "name": "painting signed Roberts, 90",
+          "description": "A portrait of two dancers. Signed 'Roberts, 90'.",
+          "readable": true,
+          "text": "Roberts, 90"
+        },
+        {
+          "id": "painting_garfield",
+          "name": "painting signed Garfield, 5",
+          "description": "A mountain landscape with a man in the background. Signed 'Garfield, 5'.",
+          "readable": true,
+          "text": "Garfield, 5"
+        }
+      ],
+      "exits": []
+    },
+
+    {
+      "id": "main_hall",
+      "name": "Museum Main Hall",
+      "description": "The ornate entrance hall of the museum, filled with frescoes on the high ceiling. A check-in desk sits near the large front doors. A decorative table in the center of the room holds a tall flower centerpiece.",
+      "items": [
+        {
+          "id": "flower_table",
+          "name": "table with flower centerpiece",
+          "description": "A decorative table with an extravagant flower arrangement. Something is concealed within the petals.",
+          "searchable": true,
+          "contains": ["black_light"]
+        },
+        {
+          "id": "black_light",
+          "name": "hidden black light",
+          "description": "A small black light hidden in the flower centerpiece."
+        },
+        {
+          "id": "checkin_desk",
+          "name": "check-in desk",
+          "description": "A wooden desk with three drawers. A blank calendar lies on its surface.",
+          "subcontainers": [
+            {
+              "id": "desk_drawer_1",
+              "name": "top drawer",
+              "locked": false,
+              "contains": ["key_1"]
+            },
+            {
+              "id": "desk_drawer_2",
+              "name": "middle drawer",
+              "locked": false,
+              "contains": ["exit_key"]
+            },
+            {
+              "id": "desk_drawer_3",
+              "name": "bottom drawer",
+              "locked": false,
+              "contains": ["key_2"]
+            }
+          ]
+        },
+        {
+          "id": "blank_calendar",
+          "name": "blank calendar",
+          "description": "A calendar that appears empty in normal light. Under black light, hidden writing emerges.",
+          "readable": true,
+          "text": "\"January 1st - January 7th : 1st , January 7th - January 14th : 2nd, January 14 - January 21st 3rd\""
+        },
+        {
+          "id": "front_doors",
+          "name": "museum exit doors",
+          "description": "Heavy double doors at the north side of the hall. A keyhole sits beneath the handle.",
+          "locked": true,
+          "key_required": "exit_key",
+          "direction": "north",
+          "leads_to": "getaway_car"
+        },
+        {
+          "id": "clock",
+          "name": "large wall clock",
+          "description": "A massive clock showing the date and time.",
+          "readable": true,
+          "text": "January 14th, 2028 — 2:00 AM"
+        },
+        {
+          "id": "key_1",
+          "name": "small key",
+          "description": "A small brass key. Its purpose is unclear."
+        },
+        {
+          "id": "key_2",
+          "name": "another small key",
+          "description": "A spare key with no immediate use."
+        },
+        {
+          "id": "exit_key",
+          "name": "main door key",
+          "description": "The key that unlocks the museum exit doors."
+        }
+      ],
+      "exits": []
+    },
+
+    {
+      "id": "getaway_car",
+      "name": "Getaway Car",
+      "description": "The back of a speeding van filled with your masked accomplices. Police sirens fade into the distance as the vehicle races away from the museum.",
+      "items": [],
+      "exits": [],
+      "is_goal": true,
+      "win_message": "You made it out of the museum with the diamond and without being caught by the police! You win! Try your best to stay out of trouble!"
+    }
+  ],
+  "starting_room": "diamond_room"
+}
