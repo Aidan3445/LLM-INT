@@ -1,0 +1,82 @@
+The theme of this escape room is “Enchanted Forest.”
+The goal is to find the Forest Guardian’s Amulet and use it to open the magical portal home.
+
+Location 1: Woodland Clearing
+
+The player awakens in a circular clearing surrounded by glowing mushrooms and towering trees.
+Light filters in through the canopy in shades of green and gold. A faint magical hum echoes.
+
+There is one exit to the east, leading deeper into the forest.
+
+To the north sits a stone pedestal covered in ancient carvings.
+On top is a wooden box with a leaf-shaped lock. It requires a Leaf Key.
+
+To the west, tangled roots conceal a hollow tree trunk with two compartments:
+- The top compartment opens freely.
+- The bottom compartment is sealed with a 3-symbol rune lock.
+
+Inside the top compartment, the player finds a note written in shimmering ink:
+
+“The key of leaves is held by the creature of riddles.
+Seek the owl whose eyes see truth.”
+
+This hint leads to the next room.
+
+The rune lock requires a three-symbol sequence.
+Nearby, on the pedestal, there are faint carvings showing:
+Sun → Moon → Star
+This is the code.
+
+Opening it reveals the Leaf Key.
+
+Using the Leaf Key unlocks the wooden box, which contains:
+- A glowing Forest Charm, needed later.
+
+Exiting east leads onward.
+
+
+Location 2: Ancient Grove
+
+Twisting trees form natural archways overhead.
+At the center stands a massive stone owl statue with glowing gemstone eyes.
+
+When the player approaches, the owl speaks:
+
+“Answer me three questions, traveler, and I shall gift you what you seek.”
+
+The owl asks:
+	1.	“What rises in the morning sky?”
+(Answer: Sun)
+	2.	“What guides the tides?”
+(Answer: Moon)
+	3.	“What shines beyond all else?”
+(Answer: Star)
+
+These answers correspond to the symbols found earlier.
+
+Upon answering all three correctly, the owl lifts a stone wing and reveals the Forest Guardian’s Amulet.
+
+A path to the south glows open.
+
+
+Location 3: Portal Glade
+
+A swirling magical portal ripples before a standing stone arch.
+Vines crawl up its frame, and the air is filled with sparkles of light.
+
+The portal is inactive.
+
+At its base lies a stone inscription reading:
+
+“Only the Guardian’s light may open the way.”
+
+Using the Forest Charm and the Forest Guardian’s Amulet together causes them to fuse, unleashing a burst of green magic.
+
+The portal activates.
+
+The player steps through and escapes.
+ 
+
+WIN MESSAGE:
+
+You have restored the forest’s magic and found your way home. You win!

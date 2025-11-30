@@ -1,0 +1,128 @@
+{
+  "theme": "haunted theatre",
+  "title": "Escape the Haunted Theatre",
+  "goal": "Recover the spotlight crystal and lift the theatre's curse",
+  "rooms": [
+    {
+      "id": "dressing_room",
+      "name": "Backstage Dressing Room",
+      "description": "An old dressing room with cracked mirrors and dusty lights. A faint violin echoes in the distance.",
+      "items": [
+        {
+          "id": "makeup_cabinet",
+          "name": "makeup cabinet",
+          "description": "A cabinet with two drawers.",
+          "subcontainers": [
+            {
+              "id": "top_drawer",
+              "name": "top drawer",
+              "locked": false,
+              "contains": ["torn_script"]
+            },
+            {
+              "id": "bottom_drawer",
+              "name": "bottom drawer",
+              "locked": true,
+              "lock_type": "combination",
+              "combination": "003",
+              "contains": ["brass_key"]
+            }
+          ]
+        },
+        {
+          "id": "torn_script",
+          "name": "torn script page",
+          "description": "A torn script page hinting at the number of acts.",
+          "readable": true,
+          "text": "The final cue is lit by the number of acts… Our beloved show ran for three."
+        },
+        {
+          "id": "wardrobe",
+          "name": "locked wardrobe",
+          "description": "A wardrobe with a comedy-mask-shaped keyhole.",
+          "locked": true,
+          "key_required": "brass_key",
+          "contains": ["audience_note"]
+        },
+        {
+          "id": "brass_key",
+          "name": "brass key",
+          "description": "A key shaped like a comedy mask."
+        },
+        {
+          "id": "audience_note",
+          "name": "audience clue",
+          "description": "A note referencing forgotten audience seats.",
+          "readable": true,
+          "text": "The spotlight crystal lies where the applause never ends—in the seats of the forgotten audience."
+        },
+        {
+          "id": "west_exit",
+          "name": "exit to stage",
+          "description": "A hallway leading west to the Main Stage.",
+          "direction": "west",
+          "leads_to": "main_stage"
+        }
+      ],
+      "exits": []
+    },
+    {
+      "id": "main_stage",
+      "name": "Main Stage",
+      "description": "A dusty, decaying stage with rows of empty seats stretching into the dark.",
+      "items": [
+        {
+          "id": "attendance_book",
+          "name": "attendance record book",
+          "description": "A record book with Seat A5 circled.",
+          "readable": true,
+          "text": "Seat A5: Lost item reported by usher."
+        },
+        {
+          "id": "seat_a5",
+          "name": "Seat A5",
+          "description": "A dusty seat with a loose cushion.",
+          "searchable": true,
+          "contains": ["spotlight_crystal"]
+        },
+        {
+          "id": "spotlight_crystal",
+          "name": "Spotlight Crystal",
+          "description": "A radiant crystal used to power the stage spotlight."
+        },
+        {
+          "id": "southern_door",
+          "name": "door to balcony",
+          "description": "A creaking door leading south to the Phantom Balcony.",
+          "direction": "south",
+          "leads_to": "phantom_balcony"
+        }
+      ],
+      "exits": []
+    },
+    {
+      "id": "phantom_balcony",
+      "name": "Phantom Balcony",
+      "description": "A dim balcony overlooking the theatre. A ghostly figure sits at the railing.",
+      "items": [
+        {
+          "id": "phantom",
+          "name": "theatre phantom",
+          "description": "A ghost asking a single question.",
+          "locked": true,
+          "lock_type": "password",
+          "password_questions": [
+            {
+              "question": "How many acts were in the final show?",
+              "answer": "three"
+            }
+          ]
+        }
+      ],
+      "exits": [],
+      "is_goal": true,
+      "win_message": "The theatre lights blaze to life one last time as the curse lifts. You escape the haunted stage forever. You win!"
+    }
+  ],
+  "starting_room": "dressing_room"
+}

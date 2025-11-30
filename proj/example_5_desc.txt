@@ -1,0 +1,78 @@
+The theme of this escape room is “Abandoned Space Station.”
+The goal is to reactivate the escape shuttle and return safely to Earth.
+
+Location 1: Cryosleep Chamber
+
+The player awakens inside a frosted cryopod.
+The chamber is dim, illuminated only by flickering red emergency lights.
+Frost covers the glass windows on the north wall, beyond which only the void of space stretches endlessly.
+
+To the south is a sealed airlock door leading deeper into the station.
+
+Against the eastern wall stands a crew locker, locked with a magnetic card reader.
+A small control console sits on a western counter, and the player notice it has two compartments—one open, one sealed with a small keypad.
+
+Inside the console’s unlocked top compartment, the player finds a scientist’s datapad.
+Its screen glows with a handwritten message:
+
+“Systems failing… Commander Vega entrusted maintenance to Engineer Pierson.
+He always said to remember his favorite number: 3.14.”
+
+The lower compartment is locked with a three-digit combination, and the hint clearly points toward the code 314.
+Inside is a crew keycard.
+
+Using the keycard, the player can unlock the crew locker. Inside, there is a sealed letter:
+
+“Crew member, remember who you are.
+You are Pilot Tiernan of Earth Fleet.
+Only you can initiate the shuttle launch.
+—Commander Vega”
+
+Finally, the same keycard unlocks the airlock door, allowing the player to descend into the heart of the dying station.
+
+
+Location 2: Central Corridor
+
+The central corridor is long and metallic, lit by sporadic overhead flickers.
+Three glowing holographic portraits line the walls.
+
+The first portrait shows a smiling man in a jumpsuit labeled:
+
+Engineer Pierson — Chief Engineer.
+Responsible for repair, maintenance, and power systems.
+
+The next shows a young cadet, her eyes downcast:
+
+Cadet Juno — Communications trainee.
+Lost her family during the Europa Outpost collapse.
+
+The third portrays a proud commander in uniform:
+
+Commander Vega — Leader of Station One.
+Known for bravery and devotion to crew.
+
+At the far east end of the corridor is the escape shuttle hatch, locked and sealed tight.
+A small terminal beside it flashes with three security questions:
+	1.	“Who maintained the station’s power systems?”
+(Answer: Pierson)
+	2.	“Where did Cadet Juno’s family perish?”
+(Answer: Europa Outpost)
+	3.	“Who are you?”
+(Answer: Pilot Tiernan — from the Commander’s message)
+
+Entering the correct answers causes the hatch to unlock with a hiss of releasing pressure.
+
+
+Location 3: Shuttle Bay
+
+Bright lights flood the shuttle bay—the only functioning part of the station.
+A compact white-and-silver escape shuttle sits idle on its landing struts, its engines humming faintly as though waiting for you.
+
+Once the player boards the shuttle, the computer scans their identity and displays one final confirmation screen:
+
+“PILOT TIERNAN — READY FOR LAUNCH.”
+
+
+Win Message:
+You launch the escape shuttle, leaving the derelict station behind.
+You are finally heading home. You win! 🚀

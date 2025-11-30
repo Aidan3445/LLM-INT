@@ -1,0 +1,119 @@
+{
+  "theme": "enchanted forest",
+  "title": "Escape the Enchanted Forest",
+  "goal": "Find the Forest Guardian’s Amulet and open the magical portal home",
+  "rooms": [
+    {
+      "id": "woodland_clearing",
+      "name": "Woodland Clearing",
+      "description": "A circular clearing glowing with magical light. Mushrooms shimmer, and ancient carvings decorate a stone pedestal.",
+      "items": [
+        {
+          "id": "stone_pedestal",
+          "name": "stone pedestal",
+          "description": "A pedestal with faint carvings depicting Sun, Moon, and Star.",
+          "searchable": false
+        },
+        {
+          "id": "wooden_box",
+          "name": "wooden box",
+          "description": "A box with a leaf-shaped lock.",
+          "locked": true,
+          "key_required": "leaf_key",
+          "contains": ["forest_charm"]
+        },
+        {
+          "id": "hollow_tree",
+          "name": "hollow tree trunk",
+          "description": "A tree trunk with two compartments.",
+          "subcontainers": [
+            {
+              "id": "top_compartment",
+              "name": "top compartment",
+              "locked": false,
+              "contains": ["note_riddle"]
+            },
+            {
+              "id": "bottom_compartment",
+              "name": "rune compartment",
+              "locked": true,
+              "lock_type": "combination",
+              "combination": "sun-moon-star",
+              "contains": ["leaf_key"]
+            }
+          ]
+        },
+        {
+          "id": "note_riddle",
+          "name": "riddle note",
+          "description": "A note about a riddle-speaking owl.",
+          "readable": true,
+          "text": "The key of leaves is held by the creature of riddles. Seek the owl whose eyes see truth."
+        },
+        {
+          "id": "forest_charm",
+          "name": "Forest Charm",
+          "description": "A glowing charm infused with forest magic."
+        },
+        {
+          "id": "leaf_key",
+          "name": "Leaf Key",
+          "description": "A key shaped like a leaf, made of green crystal."
+        },
+        {
+          "id": "east_path",
+          "name": "path east",
+          "description": "A path leading deeper into the forest.",
+          "locked": false,
+          "direction": "east",
+          "leads_to": "ancient_grove"
+        }
+      ],
+      "exits": []
+    },
+    {
+      "id": "ancient_grove",
+      "name": "Ancient Grove",
+      "description": "A mystical grove dominated by a massive stone owl statue with glowing eyes.",
+      "items": [
+        {
+          "id": "owl_statue",
+          "name": "stone owl statue",
+          "description": "A wise owl that asks three questions.",
+          "locked": true,
+          "lock_type": "password",
+          "password_questions": [
+            {"question": "What rises in the morning sky?", "answer": "sun"},
+            {"question": "What guides the tides?", "answer": "moon"},
+            {"question": "What shines beyond all else?", "answer": "star"}
+          ],
+          "contains": ["forest_amulet"],
+          "direction": "south",
+          "leads_to": "portal_glade"
+        },
+        {
+          "id": "forest_amulet",
+          "name": "Forest Guardian’s Amulet",
+          "description": "A powerful amulet granted by the Owl Guardian."
+        }
+      ],
+      "exits": []
+    },
+    {
+      "id": "portal_glade",
+      "name": "Portal Glade",
+      "description": "A magical glade containing a dormant portal.",
+      "items": [
+        {
+          "id": "portal",
+          "name": "magical portal",
+          "description": "A portal that activates with combined forest magic."
+        }
+      ],
+      "exits": [],
+      "is_goal": true,
+      "win_message": "You have restored the forest’s magic and found your way home. You win!"
+    }
+  ],
+  "starting_room": "woodland_clearing"
+}

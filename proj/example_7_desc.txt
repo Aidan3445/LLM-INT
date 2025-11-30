@@ -1,0 +1,76 @@
+The theme of this escape room is “Haunted Theatre.”
+The goal is to find the missing spotlight crystal and perform the final cue to lift the curse.
+
+Location 1: Backstage Dressing Room
+
+The player appears inside an old dressing room lined with cracked mirrors and dusty lights.
+A ghostly violin plays faintly somewhere beyond the walls.
+
+An exit leads west to the main stage.
+
+On the north counter stands a makeup cabinet with two drawers.
+- The top drawer is unlocked.
+- The bottom drawer has a 3-digit lock.
+
+Inside the top drawer, the player finds a torn script page reading:
+
+“The final cue is lit by the number of acts…
+Our beloved show ran for three.”
+
+This is a clue for the 3-digit code: 0-0-3.
+
+Inside the bottom drawer, they find a brass key.
+
+The dressing room also contains a locked wardrobe with a keyhole shaped like a comedy mask.
+The brass key fits perfectly.
+
+Inside is a note:
+
+“The spotlight crystal lies where the applause never ends—
+in the seats of the forgotten audience.”
+
+This directs the player to the auditorium.
+
+
+Location 2: Main Stage
+
+Dusty curtains hang on either side of a grand but decaying stage.
+Rows of empty theatre seats stretch into darkness to the west.
+
+A spotlight machine, broken and crystal-less, sits overhead.
+
+On a music stand is a book titled “Audience Attendance Records”.
+Inside, one page is circled:
+
+“Seat A5: Lost item reported by usher.”
+
+Examining the seat row labeled A reveals that seat A5 has a loose cushion.
+Hidden beneath it is the Spotlight Crystal.
+
+Placing the crystal into the stage spotlight causes a ghostly whisper:
+
+“Take your final bow…”
+
+A door to the south creaks open.
+
+
+Location 3: Phantom Balcony
+
+A balcony overlooking the theatre, draped in faded velvet.
+The air is icy cold, and a solitary ghost—the Phantom of the Theatre—sits at the railing.
+
+He asks one question:
+
+“How many acts were in our final show?”
+
+The answer, from the script clue, is three.
+
+When answered correctly, the ghost smiles and bows.
+A swirling exit of light appears.
+
+The player steps through the spectral doorway and escapes the haunted theatre.
+
+
+WIN MESSAGE:
+
+The theatre lights blaze to life one last time as the curse lifts. You escape the haunted stage forever. You win!

@@ -1,0 +1,146 @@
+{
+  "theme": "Abandoned Space Station",
+  "title": "Return to Earth",
+  "goal": "Reactivate the escape shuttle and leave the derelict space station",
+  "rooms": [
+    {
+      "id": "cryosleep_chamber",
+      "name": "Cryosleep Chamber",
+      "description": "A dimly lit chamber filled with frosted cryopods. Emergency lights flicker red. A large viewing window reveals the endless stars outside.",
+      "items": [
+        {
+          "id": "cryopod",
+          "name": "your cryopod",
+          "description": "The cryopod you just awoke from, still covered in frost.",
+          "searchable": true,
+          "contains": []
+        },
+        {
+          "id": "locker",
+          "name": "crew locker",
+          "description": "A metal locker bolted to the wall. A digital panel blinks beside the lock.",
+          "locked": true,
+          "key_required": "crew_keycard",
+          "contains": ["note_from_commander"]
+        },
+        {
+          "id": "control_console",
+          "name": "control console",
+          "description": "A small console with various switches. A locked drawer is built into its side.",
+          "subcontainers": [
+            {
+              "id": "top_compartment",
+              "name": "top compartment",
+              "locked": false,
+              "contains": ["note_from_scientist"]
+            },
+            {
+              "id": "bottom_compartment",
+              "name": "bottom compartment",
+              "locked": true,
+              "lock_type": "combination",
+              "combination": "314",
+              "contains": ["crew_keycard"]
+            }
+          ]
+        },
+        {
+          "id": "note_from_scientist",
+          "name": "scientist's log",
+          "description": "A small datapad containing a personal log file.",
+          "readable": true,
+          "text": "Systems failing… Commander Vega entrusted maintenance to Engineer Pierson. He always said to remember his favorite number: 3.14."
+        },
+        {
+          "id": "note_from_commander",
+          "name": "commander's message",
+          "description": "A sealed envelope with the Commander's insignia.",
+          "readable": true,
+          "text": "Crew member, remember who you are. You are Pilot Tiernan of Earth Fleet. You alone can launch the escape shuttle. — Commander Vega"
+        },
+        {
+          "id": "airlock_door",
+          "name": "airlock door",
+          "description": "A sealed door with warning labels. It leads deeper into the station.",
+          "locked": true,
+          "key_required": "crew_keycard",
+          "direction": "south",
+          "aliases": ["down", "airlock", "airlock door"],
+          "leads_to": "central_corridor"
+        }
+      ],
+      "exits": []
+    },
+    {
+      "id": "central_corridor",
+      "name": "Central Corridor",
+      "description": "A long metallic hallway illuminated by flickering overhead panels. The walls are lined with digital portraits of past crew members.",
+      "items": [
+        {
+          "id": "portrait_pierson",
+          "name": "portrait of Engineer Pierson",
+          "description": "A holographic portrait of a smiling engineer.",
+          "readable": true,
+          "text": "Engineer Pierson — Chief Engineer. Responsible for repair, maintenance, and power systems."
+        },
+        {
+          "id": "portrait_juno",
+          "name": "portrait of Cadet Juno",
+          "description": "A hologram of a young space cadet.",
+          "readable": true,
+          "text": "Cadet Juno — Communications Trainee. Lost her family during the Europa outpost collapse."
+        },
+        {
+          "id": "portrait_vega",
+          "name": "portrait of Commander Vega",
+          "description": "A proud commander in full uniform.",
+          "readable": true,
+          "text": "Commander Vega — Leader of Earth Fleet Station One. Known for bravery and devotion to crew."
+        },
+        {
+          "id": "shuttle_door",
+          "name": "escape shuttle hatch",
+          "description": "A reinforced door leading to the escape shuttle bay. A terminal beside it displays three questions.",
+          "locked": true,
+          "lock_type": "password",
+          "password_questions": [
+            {
+              "question": "Who maintained the station's power systems?",
+              "answer": "pierson",
+              "hint": "Check the engineer's portrait."
+            },
+            {
+              "question": "Where did Cadet Juno's family perish?",
+              "answer": "europa outpost",
+              "hint": "Read her portrait closely."
+            },
+            {
+              "question": "Who are you?",
+              "answer": "pilot tiernan",
+              "hint": "Perhaps someone left you a message."
+            }
+          ],
+          "direction": "east",
+          "leads_to": "shuttle_bay"
+        }
+      ],
+      "exits": []
+    },
+    {
+      "id": "shuttle_bay",
+      "name": "Escape Shuttle Bay",
+      "description": "A brightly lit hangar housing a small escape shuttle. Its engines hum softly, awaiting launch commands.",
+      "items": [
+        {
+          "id": "escape_shuttle",
+          "name": "escape shuttle",
+          "description": "A compact spacecraft ready for departure back to Earth."
+        }
+      ],
+      "exits": [],
+      "is_goal": true,
+      "win_message": "You board the escape shuttle and initiate launch. The engines roar to life as the derelict station fades behind you. You are heading home. You win!"
+    }
+  ],
+  "starting_room": "cryosleep_chamber"
+}
