@@ -45,8 +45,13 @@ class TextWorldCompiler:
         # Create all rooms
         for room in self.data['rooms']:
             room_var = room['id']
-            self.code_lines.append(f"{room_var} = M.new_room('{room['name'].replace("'", "\\'")}')")
-            self.code_lines.append(f"{room_var}.desc = '{room['description'].replace("'", "\\'")}'")
+
+            name = room['name'].replace("'", "\\'")
+            desc = room['description'].replace("'", "\\'")
+
+            self.code_lines.append(f"{room_var} = M.new_room('{name}')")
+            self.code_lines.append(f"{room_var}.desc = '{desc}'")
+
             self.entities[room_var] = room_var
         
         self.code_lines.append("")
@@ -147,7 +152,8 @@ class TextWorldCompiler:
         # Items with subcontainers (generalized from drawers)
         if item.get('subcontainers'):
             # Parent item is just decoration
-            self.object_buffer.append(f"{item_id} = M.new(type='o', name='{item_name.replace("'", "\\'")}')")
+            safe_name = item_name.replace("'", "\\'")
+            self.object_buffer.append(f"{item_id} = M.new(type='o', name='{safe_name}')")
             self.entities[item_id] = item_id
             self.container_buffer.append(f"{room_var}.add({item_id})")
             
@@ -157,7 +163,8 @@ class TextWorldCompiler:
                 sub_name = subcontainer['name']
                 
                 # Create subcontainer
-                self.container_buffer.append(f"{sub_id} = M.new(type='c', name='{sub_name.replace("'", "\\'")}')")
+                safe_subname = sub_name.replace("'", "\\'")
+                self.container_buffer.append(f"{sub_id} = M.new(type='c', name='{safe_subname}')")
                 self.entities[sub_id] = sub_id
                 
                 # Set state
@@ -181,7 +188,8 @@ class TextWorldCompiler:
         
         # Containers (closets, chests)
         if item.get('locked') or item.get('contains'):
-            self.container_buffer.append(f"{item_id} = M.new(type='c', name='{item_name.replace("'", "\\'")}')")
+            safe_name = item_name.replace("'", "\\'")
+            self.container_buffer.append(f"{item_id} = M.new(type='c', name='{safe_name}')")
             self.entities[item_id] = item_id
             
             # Password locks are handled by interface, so just make it closed
@@ -203,7 +211,8 @@ class TextWorldCompiler:
             return
         
         # Regular objects (notes, tools, etc)
-        self.object_buffer.append(f"{item_id} = M.new(type='o', name='{item_name.replace("'", "\\'")}')")
+        safe_name = item_name.replace("'", "\\'")
+        self.object_buffer.append(f"{item_id} = M.new(type='o', name='{safe_name}')")
         self.entities[item_id] = item_id
         
         # Set description for readable items
@@ -225,7 +234,8 @@ class TextWorldCompiler:
                 if item['id'] == item_id:
                     # Create it
                     item_name = item['name']
-                    self.object_buffer.append(f"{item_id} = M.new(type='o', name='{item_name.replace("'", "\\'")}')")
+                    safe_name = item_name.replace("'", "\\'")
+                    self.object_buffer.append(f"{item_id} = M.new(type='o', name='{safe_name}')")
                     self.entities[item_id] = item_id
                     
                     if item.get('readable') and 'text' in item:
@@ -336,7 +346,13 @@ class TextWorldCompiler:
             "try:",
             "    game = M.build()",
             "except Exception as e:",
-            "    error_msg = f'Error building the game: {e}\\n{'~' * 60}\\n{get_failing_constraints(M.state)}\\n{'~' * 60}\\n{[(x.name, x.id) for x in M.findall('k')] + [(x.name, x.id) for x in M.findall('o')] + [(x.name, x.id) for x in M.findall('c')] + [(x.name, x.id) for x in M.findall('r')] }'",
+            "    bar = '~' * 60",
+            "    objects = [(x.name, x.id) for x in M.findall('k')] + \\\n"
+            "              [(x.name, x.id) for x in M.findall('o')] + \\\n"
+            "              [(x.name, x.id) for x in M.findall('c')] + \\\n"
+            "              [(x.name, x.id) for x in M.findall('r')]",
+            "    fc = get_failing_constraints(M.state)",
+            "    error_msg = f\"Error building the game: {e}\\n{bar}\\n{fc}\\n{bar}\\n{objects}\"",
             "    raise Exception(error_msg)",
             "",
             "game_file = M.compile('./game.ulx')",
