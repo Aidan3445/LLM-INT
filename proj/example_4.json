@@ -19,11 +19,6 @@
           "password": "ilovecats",
           "contains": []
         },
-        {
-          "id": "flash_drive",
-          "name": "flash drive",
-          "description": "A small USB drive used to download sensitive data once the computer is unlocked."
-        },
 
         {
           "id": "left_cabinet",
@@ -94,6 +89,12 @@
         },
 
         {
+          "id": "flash_drive",
+          "name": "flash drive",
+          "description": "A small USB drive used to download sensitive data once the computer is unlocked."
+        },
+
+        {
           "id": "hub_exit_south",
           "name": "doorway to the lab",
           "description": "A simple opening leading to the laboratory.",
@@ -114,7 +115,7 @@
           "name": "safety poster",
           "description": "A poster with a warning slogan.",
           "readable": true,
-          "text": "\"Beware, Chemicals Can BURN\""
+          "text": "Beware, Chemicals Can BURN"
         },
         {
           "id": "wooden_beams",
