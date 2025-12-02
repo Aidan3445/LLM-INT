@@ -6,8 +6,7 @@ import tempfile
 from compiler import compile_json_to_textworld
 import jsonschema
 
-os.environ['GOOGLE_API_KEY'] = 'AIzaSyCCGzZ998gpIYb1OUCCP4GR3HFUmDdNFt8'
-
+# need to change configuration
 lm = dspy.LM('gemini/gemini-2.0-flash-exp')
 dspy.configure(lm=lm)
 
@@ -15,6 +14,9 @@ class GenerateGameJSON(dspy.Signature):
     theme = dspy.InputField()
     title = dspy.InputField()
     goal = dspy.InputField()
+    model_json_schema = dspy.InputField(desc="JSON schema to follow exactly")
+    error_feedback = dspy.InputField(desc="Previous validation errors to avoid")
+    examples = dspy.InputField(desc="Example valid game JSONs showing the correct format")
     output_json = dspy.OutputField(desc="A VALID JSON dictionary matching the required schema exactly.")
     
 class GameGenerator(dspy.Module):
@@ -22,8 +24,8 @@ class GameGenerator(dspy.Module):
         super().__init__()
         self.generate = dspy.ChainOfThought(GenerateGameJSON)
 
-    def forward(self, theme, title, goal):
-        result = self.generate(theme=theme, title=title, goal=goal)
+    def forward(self, theme, title, goal, schema, examples):
+        result = self.generate(theme=theme, title=title, goal=goal, schema=json.dumps(schema, indent=2), examples=examples)
         text = result.output_json.strip()
 
         try:
@@ -33,13 +35,23 @@ class GameGenerator(dspy.Module):
             raise ValueError(f"Invalid JSON received:\n{text}")
 
 class BatchGameGenerator:
-    def __init__(self, output_dir="game_jsons_and_txts", n=300, schema=None):
+    def __init__(self, output_dir="game_jsons_and_txts", n=300, schema=None, example_files=None):
         self.output_dir = output_dir
         self.n = n
         self.schema = schema
+        self.example_jsons = self.load_examples(example_files) if example_files else []
         os.makedirs(output_dir, exist_ok=True)
         self.generator = GameGenerator()
 
+    def load_examples(self, example_files):
+        examples = []
+        for filepath in example_files:
+            with open(filepath, 'r') as f:
+                example_data = json.load(f)
+                examples.append(json.dumps(example_data, indent=2))
+        
+        return "\n\n---EXAMPLE---\n\n".join(examples)
+        
     def random_theme(self):
         themes = [
             "Ancient Temple", "Cyberpunk Heist", "Submarine Lab",
@@ -94,6 +106,7 @@ class BatchGameGenerator:
                 title=title,
                 goal=goal,
                 schema=self.schema,
+                examples=self.example_jsons,
                 max_retries=4
             )
 
@@ -366,6 +379,7 @@ if __name__ == "__main__":
         }
         }
 
+    example_files =['game_jsons_and_txts/example_1.json', 'game_jsons_and_txts/example_2.json']
 
-    batch = BatchGameGenerator(output_dir="games/valid", n=300, schema=GAME_SCHEMA)
+    batch = BatchGameGenerator(output_dir="games/valid", n=300, schema=GAME_SCHEMA, example_files=example_files)
     batch.run()
