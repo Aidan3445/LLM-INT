@@ -1,5 +1,5 @@
 # Escape Room Game
-`uv run python gameplay_interface.py example.json`
+`uv run python gameplay_interface.py game_jsons_and_texts/example.json`
 
 `--force` to force reloading game data from JSON file.
 
