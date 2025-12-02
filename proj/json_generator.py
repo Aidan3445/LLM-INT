@@ -2,9 +2,14 @@ import os
 import json
 import dspy
 import random
+import tempfile
+from compiler import compile_json_to_textworld
+import jsonschema
 
+os.environ['GOOGLE_API_KEY'] = 'AIzaSyCCGzZ998gpIYb1OUCCP4GR3HFUmDdNFt8'
 
-# Need to configure dspy model
+lm = dspy.LM('gemini/gemini-2.0-flash-exp')
+dspy.configure(lm=lm)
 
 class GenerateGameJSON(dspy.Signature):
     theme = dspy.InputField()
@@ -28,9 +33,10 @@ class GameGenerator(dspy.Module):
             raise ValueError(f"Invalid JSON received:\n{text}")
 
 class BatchGameGenerator:
-    def __init__(self, output_dir="game_jsons_and_txts", n=300):
+    def __init__(self, output_dir="game_jsons_and_txts", n=300, schema=None):
         self.output_dir = output_dir
         self.n = n
+        self.schema = schema
         os.makedirs(output_dir, exist_ok=True)
         self.generator = GameGenerator()
 
@@ -82,19 +88,284 @@ class BatchGameGenerator:
             title = f"{theme} Adventure #{i+1}"
             goal = "Solve the puzzles, achieve the main objective, and escape."
 
-            try:
-                data = self.generator(theme=theme, title=title, goal=goal)
-                path = os.path.join(self.output_dir, f"example_{i+1}.json")
+            game = self.generate_valid_game(
+                generator=self.generator,
+                theme=theme,
+                title=title,
+                goal=goal,
+                schema=self.schema,
+                max_retries=4
+            )
 
-                with open(path, "w") as f:
-                    json.dump(data, f, indent=2)
+            if game is None:
+                print(f"✗ FAILED permanently #{i+1} after retries")
+                continue
 
-                print(f"✓ Saved {path}")
+            path = os.path.join(self.output_dir, f"game_{i+1}.json")
+            with open(path, "w") as f:
+                json.dump(game, f, indent=2)
 
-            except Exception as e:
-                print(f"✗ Failed generating #{i+1}: {e}")
+            print(f"✓ SAVED: {path}")
+            
+    def generate_valid_game(self, generator, theme, title, goal, schema, max_retries=4):
+        for attempt in range(max_retries):
+            data = generator(theme=theme, title=title, goal=goal)
+
+            ok, err = self.validate_schema(data, schema)
+            if not ok:
+                print(f"[Attempt {attempt+1}] Schema error, regenerating: {err}")
+                continue
+
+            ok, err = self.validate_compiles(data)
+            if not ok:
+                print(f"[Attempt {attempt+1}] Compiler error, regenerating:\n{err}")
+                continue
+
+            return data
+
+        return None
+    
+
+    def validate_compiles(self, json_data, output_dir="compiled_temp"):
+
+        os.makedirs(output_dir, exist_ok=True)
+
+        with tempfile.NamedTemporaryFile(mode="w", suffix=".json", delete=False, dir=output_dir) as tmp_json:
+            json.dump(json_data, tmp_json, indent=2)
+            json_file = tmp_json.name
+
+        py_file = os.path.splitext(json_file)[0] + ".py"
+
+        try:
+            compile_json_to_textworld(json_file, py_file)
+            return True, None
+        except Exception as e:
+            return False, str(e)
+        
+
+    def validate_schema(self, json_data, schema):
+        try:
+            jsonschema.validate(json_data, schema)
+            return True, None
+        except jsonschema.ValidationError as e:
+            return False, str(e)
                 
                 
 if __name__ == "__main__":
-    batch = BatchGameGenerator(output_dir="games_jsons_and_txts", n=300)
+    GAME_SCHEMA = {
+        "$schema": "http://json-schema.org/draft-07/schema#",
+        "title": "Adventure Game Configuration",
+        "type": "object",
+        "required": ["theme", "title", "goal", "rooms", "starting_room"],
+        "properties": {
+            "theme": {
+            "type": "string",
+            "description": "The overall theme or setting of the adventure"
+            },
+            "title": {
+            "type": "string",
+            "description": "The title of the adventure"
+            },
+            "goal": {
+            "type": "string",
+            "description": "Description of the player's objective"
+            },
+            "starting_room": {
+            "type": "string",
+            "description": "ID of the room where the player begins"
+            },
+            "rooms": {
+            "type": "array",
+            "description": "Array of all rooms in the adventure",
+            "minItems": 1,
+            "items": {
+                "$ref": "#/definitions/room"
+            }
+            }
+        },
+        "definitions": {
+            "room": {
+            "type": "object",
+            "required": ["id", "name", "description", "items"],
+            "properties": {
+                "id": {
+                "type": "string",
+                "description": "Unique identifier for the room"
+                },
+                "name": {
+                "type": "string",
+                "description": "Display name of the room"
+                },
+                "description": {
+                "type": "string",
+                "description": "Detailed description of the room"
+                },
+                "items": {
+                "type": "array",
+                "description": "Array of items in the room",
+                "items": {
+                    "$ref": "#/definitions/item"
+                }
+                },
+                "exits": {
+                "type": "array",
+                "description": "Array of exit objects (if not using door items)",
+                "items": {
+                    "type": "object"
+                }
+                },
+                "is_goal": {
+                "type": "boolean",
+                "description": "Whether this room is the goal/winning room"
+                },
+                "win_message": {
+                "type": "string",
+                "description": "Message displayed when player reaches this goal room"
+                }
+            }
+            },
+            "item": {
+            "type": "object",
+            "required": ["id", "name", "description"],
+            "properties": {
+                "id": {
+                "type": "string",
+                "description": "Unique identifier for the item"
+                },
+                "name": {
+                "type": "string",
+                "description": "Display name of the item"
+                },
+                "description": {
+                "type": "string",
+                "description": "Description of the item"
+                },
+                "searchable": {
+                "type": "boolean",
+                "description": "Whether the item can be searched to find contained items"
+                },
+                "contains": {
+                "type": "array",
+                "description": "Array of item IDs contained within this item",
+                "items": {
+                    "type": "string"
+                }
+                },
+                "subcontainers": {
+                "type": "array",
+                "description": "Array of sub-containers (e.g., drawers, compartments)",
+                "items": {
+                    "$ref": "#/definitions/subcontainer"
+                }
+                },
+                "locked": {
+                "type": "boolean",
+                "description": "Whether the item is locked"
+                },
+                "lock_type": {
+                "type": "string",
+                "enum": ["combination", "password", "key"],
+                "description": "Type of lock mechanism"
+                },
+                "key_required": {
+                "type": "string",
+                "description": "ID of the item needed to unlock this"
+                },
+                "combination": {
+                "type": "string",
+                "description": "Combination code to unlock (for combination locks)"
+                },
+                "password_questions": {
+                "type": "array",
+                "description": "Array of password questions for password-protected locks",
+                "items": {
+                    "$ref": "#/definitions/passwordQuestion"
+                }
+                },
+                "readable": {
+                "type": "boolean",
+                "description": "Whether the item can be read"
+                },
+                "text": {
+                "type": "string",
+                "description": "Text content when item is read"
+                },
+                "leads_to": {
+                "type": "string",
+                "description": "Room ID this door/exit leads to"
+                },
+                "direction": {
+                "type": "string",
+                "description": "Direction name for this exit (e.g., 'north', 'east')"
+                },
+                "aliases": {
+                "type": "array",
+                "description": "Alternative names/commands for this item",
+                "items": {
+                    "type": "string"
+                }
+                }
+            }
+            },
+            "subcontainer": {
+            "type": "object",
+            "required": ["id", "name", "locked", "contains"],
+            "properties": {
+                "id": {
+                "type": "string",
+                "description": "Unique identifier for the subcontainer"
+                },
+                "name": {
+                "type": "string",
+                "description": "Display name of the subcontainer"
+                },
+                "locked": {
+                "type": "boolean",
+                "description": "Whether the subcontainer is locked"
+                },
+                "lock_type": {
+                "type": "string",
+                "enum": ["combination", "key"],
+                "description": "Type of lock mechanism"
+                },
+                "combination": {
+                "type": "string",
+                "description": "Combination code to unlock"
+                },
+                "key_required": {
+                "type": "string",
+                "description": "ID of the item needed to unlock"
+                },
+                "contains": {
+                "type": "array",
+                "description": "Array of item IDs contained within",
+                "items": {
+                    "type": "string"
+                }
+                }
+            }
+            },
+            "passwordQuestion": {
+            "type": "object",
+            "required": ["question", "answer", "hint"],
+            "properties": {
+                "question": {
+                "type": "string",
+                "description": "The password question/prompt"
+                },
+                "answer": {
+                "type": "string",
+                "description": "The correct answer (case-insensitive)"
+                },
+                "hint": {
+                "type": "string",
+                "description": "Hint to help the player find the answer"
+                }
+            }
+            }
+        }
+        }
+
+
+    batch = BatchGameGenerator(output_dir="games/valid", n=300, schema=GAME_SCHEMA)
     batch.run()
