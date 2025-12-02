@@ -2,7 +2,7 @@ import argparse
 import json
 import os
 
-from llm_client import generate_game_json
+from json_generator import generate_game_json
 from compiler import compile_json_to_textworld
 
 
