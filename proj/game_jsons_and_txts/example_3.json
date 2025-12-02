@@ -19,9 +19,7 @@
           "id": "glass_box",
           "name": "glass lockbox",
           "description": "A reinforced glass case protecting the diamond. A small keypad is embedded in its base.",
-          "locked": true,
-          "lock_type": "password",
-          "password": "Claude Julius Garfield",
+          "locked": false,
           "contains": ["diamond"]
         },
         {
@@ -151,7 +149,7 @@
         },
         {
           "id": "key_2",
-          "name": "another small key",
+          "name": "baby key",
           "description": "A spare key with no immediate use."
         },
         {
