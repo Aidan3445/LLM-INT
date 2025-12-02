@@ -294,7 +294,7 @@ if __name__ == "__main__":
     recompile = sys.argv[2].lower() == '--force' if len(sys.argv) > 2 else False
 
     # Create output directory
-    base_name = os.path.splitext(json_file)[0]
+    base_name = os.path.splitext(json_file)[0].split("/")[1]
     directory_name = f"games"
     try:
         os.mkdir(directory_name)
