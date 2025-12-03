@@ -28,7 +28,7 @@ if __name__ == "__main__":
     # Instantiate the interceptor
     interceptor = LLM_intercepter(
         model="claude-sonnet-4-5",
-        api_key="sk-D2aaKxoUVvyW2iCsw5-ULg",
+        api_key="xxx",
         api_base="https://api.litellm.ai"
     )
     print('set interceptor')
