@@ -114,7 +114,7 @@ class BatchGameGenerator:
         return random.choice(themes)
 
     def run(self):
-        for i in range(8, self.n):
+        for i in range(self.n):
             theme = self.random_theme()
             title = f"{theme} Adventure #{i+1}"
             goal = "Solve the puzzles, achieve the main objective, and escape."
