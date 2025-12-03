@@ -5,12 +5,16 @@ import random
 import tempfile
 from compiler import compile_json_to_textworld
 import jsonschema
+from dotenv import load_dotenv
+
+# Load environment variables
+load_dotenv()
 
 # need to change configuration
 lm = dspy.LM(
-        model="claude-sonnet-4-5",
-        api_key="sk-cmU9dANhBlbtImdA3FbRdw",
-        api_base="https://litellm.guha-anderson.com"
+        model=os.getenv("MODEL", "claude-sonnet-4-5"),
+        api_key=os.getenv("API_KEY"),
+        api_base=os.getenv("API_BASE", "https://litellm.guha-anderson.com")
         )
 dspy.settings.configure(lm=lm)
 
@@ -305,7 +309,7 @@ if __name__ == "__main__":
                 },
                 "password_questions": {
                 "type": "array",
-                "description": "Array of password questions for password-protected locks",
+                "description": "Array of password questions for password-protected locks (doors only)",
                 "items": {
                     "$ref": "#/definitions/passwordQuestion"
                 }
@@ -394,7 +398,7 @@ if __name__ == "__main__":
         }
         }
 
-    verified = [1, 2, 3, 5, 7]
+    verified = [1, 2, 3, 5, 6, 7]
     example_files = [f"game_jsons_and_txts/example_{v}.json" for v in verified]
 
     batch = BatchGameGenerator(output_dir="game_jsons_and_texts/generated/valid", n=3, schema=GAME_SCHEMA, example_files=example_files)
