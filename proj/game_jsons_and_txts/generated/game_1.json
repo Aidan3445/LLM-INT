@@ -1,0 +1,204 @@
+{
+  "theme": "Wild West Bank Break-In",
+  "title": "Wild West Bank Break-In Adventure #1",
+  "goal": "Solve the puzzles, achieve the main objective, and escape.",
+  "starting_room": "back_alley",
+  "rooms": [
+    {
+      "id": "back_alley",
+      "name": "Back Alley Behind the Bank",
+      "description": "A dusty alley behind the Dusty Gulch Bank. The sun beats down on wooden crates and trash bins. A locked back door leads into the bank. You can hear the faint sound of a piano from the saloon next door.",
+      "items": [
+        {
+          "id": "trash_bin",
+          "name": "old trash bin",
+          "description": "A dented metal bin overflowing with garbage and discarded papers",
+          "searchable": true,
+          "contains": [
+            "crumpled_note"
+          ]
+        },
+        {
+          "id": "crumpled_note",
+          "name": "crumpled note",
+          "description": "A torn piece of paper with faded writing",
+          "readable": true,
+          "text": "Remember: Black Bart's bounty, then Mad Dog's bounty, then Rattlesnake Pete's bounty. That's the combination to the banker's desk."
+        },
+        {
+          "id": "wooden_crates",
+          "name": "stack of wooden crates",
+          "description": "Several weathered crates stacked against the wall",
+          "searchable": true,
+          "contains": [
+            "crowbar"
+          ]
+        },
+        {
+          "id": "crowbar",
+          "name": "rusty crowbar",
+          "description": "A heavy iron crowbar, useful for prying things open"
+        },
+        {
+          "id": "back_door",
+          "name": "bank back door",
+          "description": "A sturdy wooden door with a heavy lock. The wood around the lock looks weak.",
+          "locked": true,
+          "key_required": "crowbar",
+          "direction": "north",
+          "leads_to": "bank_office",
+          "aliases": [
+            "door",
+            "north"
+          ]
+        }
+      ],
+      "exits": []
+    },
+    {
+      "id": "bank_office",
+      "name": "Bank Manager's Office",
+      "description": "A cramped office with a large oak desk, filing cabinets, and wanted posters covering the walls. Dust motes float in the light streaming through a barred window. The vault door looms on the east wall.",
+      "items": [
+        {
+          "id": "wanted_poster_bart",
+          "name": "wanted poster for Black Bart",
+          "description": "A weathered poster showing a bearded outlaw",
+          "readable": true,
+          "text": "WANTED: Black Bart - Bank Robbery, Horse Theft. REWARD: $500"
+        },
+        {
+          "id": "wanted_poster_dog",
+          "name": "wanted poster for Mad Dog Morgan",
+          "description": "A poster depicting a wild-eyed gunslinger",
+          "readable": true,
+          "text": "WANTED: Mad Dog Morgan - Murder, Cattle Rustling. REWARD: $250"
+        },
+        {
+          "id": "wanted_poster_pete",
+          "name": "wanted poster for Rattlesnake Pete",
+          "description": "A faded poster showing a sneering outlaw",
+          "readable": true,
+          "text": "WANTED: Rattlesnake Pete - Stagecoach Robbery. REWARD: $100"
+        },
+        {
+          "id": "oak_desk",
+          "name": "banker's oak desk",
+          "description": "A heavy desk with three locked drawers and papers scattered across the top",
+          "subcontainers": [
+            {
+              "id": "top_drawer",
+              "name": "top drawer",
+              "locked": true,
+              "lock_type": "combination",
+              "combination": "500250100",
+              "contains": [
+                "vault_instructions"
+              ]
+            },
+            {
+              "id": "middle_drawer",
+              "name": "middle drawer",
+              "locked": false,
+              "contains": [
+                "bank_ledger"
+              ]
+            },
+            {
+              "id": "bottom_drawer",
+              "name": "bottom drawer",
+              "locked": false,
+              "contains": []
+            }
+          ]
+        },
+        {
+          "id": "vault_instructions",
+          "name": "vault access instructions",
+          "description": "A confidential document with vault security protocols",
+          "readable": true,
+          "text": "VAULT ACCESS PROTOCOL: Security questions must be answered correctly. Q1: What town was robbed by the James Gang? Q2: Where do outlaws hide their gold? Q3: Who guards this bank?"
+        },
+        {
+          "id": "bank_ledger",
+          "name": "bank ledger",
+          "description": "A leather-bound book with transaction records",
+          "readable": true,
+          "text": "Recent deposits from Tombstone mining operations. Note: Sheriff Clayton requests we keep his name on all security documents as the official bank guardian."
+        },
+        {
+          "id": "filing_cabinet",
+          "name": "metal filing cabinet",
+          "description": "A tall cabinet with various files and documents",
+          "searchable": true,
+          "contains": [
+            "newspaper_clipping"
+          ]
+        },
+        {
+          "id": "newspaper_clipping",
+          "name": "old newspaper clipping",
+          "description": "A yellowed newspaper article",
+          "readable": true,
+          "text": "TOMBSTONE GAZETTE: James Gang strikes again! The notorious outlaws robbed the Tombstone Bank last Tuesday, making off with $10,000 in gold. They are believed to be hiding in the canyon caves where many outlaws stash their stolen loot."
+        },
+        {
+          "id": "vault_door",
+          "name": "heavy vault door",
+          "description": "A massive iron door with a complex locking mechanism. A brass panel displays three security questions.",
+          "locked": true,
+          "lock_type": "password",
+          "password_questions": [
+            {
+              "question": "What town was robbed by the James Gang?",
+              "answer": "tombstone",
+              "hint": "Check the newspaper clipping in the filing cabinet"
+            },
+            {
+              "question": "Where do outlaws hide their gold?",
+              "answer": "canyon caves",
+              "hint": "The newspaper mentions where outlaws stash their loot"
+            },
+            {
+              "question": "Who guards this bank?",
+              "answer": "sheriff clayton",
+              "hint": "Look at the bank ledger for the official guardian's name"
+            }
+          ],
+          "direction": "east",
+          "leads_to": "bank_vault",
+          "aliases": [
+            "vault",
+            "east"
+          ]
+        }
+      ],
+      "exits": []
+    },
+    {
+      "id": "bank_vault",
+      "name": "Bank Vault",
+      "description": "You've made it! The vault is filled with stacks of gold bars, bags of coins, and strongboxes overflowing with cash. The gleam of gold fills the room. A back exit leads to freedom.",
+      "items": [
+        {
+          "id": "gold_bars",
+          "name": "stacks of gold bars",
+          "description": "Gleaming bars of pure gold, worth a fortune"
+        },
+        {
+          "id": "money_bags",
+          "name": "bags of gold coins",
+          "description": "Heavy canvas bags filled with gold and silver coins"
+        },
+        {
+          "id": "strongbox",
+          "name": "open strongbox",
+          "description": "A metal box overflowing with paper currency"
+        }
+      ],
+      "exits": [],
+      "is_goal": true,
+      "win_message": "SUCCESS! You've broken into the Dusty Gulch Bank vault and secured the gold! Time to ride off into the sunset before the sheriff returns. You win, partner!"
+    }
+  ]
+}

@@ -1,0 +1,223 @@
+{
+  "theme": "Cursed Pirate Lagoon",
+  "title": "Cursed Pirate Lagoon Adventure #2",
+  "goal": "Solve the puzzles, achieve the main objective, and escape.",
+  "starting_room": "shipwreck_cabin",
+  "rooms": [
+    {
+      "id": "shipwreck_cabin",
+      "name": "Shipwreck Cabin",
+      "description": "The rotting interior of a beached pirate ship. Moonlight filters through holes in the hull. Barnacles cover the walls, and the smell of salt and decay fills the air. A skeleton sits slumped in the captain's chair, still clutching a rusted compass.",
+      "items": [
+        {
+          "id": "captains_desk",
+          "name": "captain's desk",
+          "description": "A weathered oak desk covered in charts and nautical instruments. Three drawers are built into the front.",
+          "subcontainers": [
+            {
+              "id": "top_drawer",
+              "name": "top drawer",
+              "locked": false,
+              "contains": [
+                "captains_log"
+              ]
+            },
+            {
+              "id": "middle_drawer",
+              "name": "middle drawer",
+              "locked": true,
+              "lock_type": "combination",
+              "combination": "1718",
+              "contains": [
+                "iron_key"
+              ]
+            },
+            {
+              "id": "bottom_drawer",
+              "name": "bottom drawer",
+              "locked": false,
+              "contains": []
+            }
+          ]
+        },
+        {
+          "id": "captains_log",
+          "name": "captain's logbook",
+          "description": "A leather-bound journal with water-stained pages",
+          "readable": true,
+          "text": "Final entry: The year is 1718. We buried the cursed treasure in the cave beyond the lagoon. Only Captain Blackheart knows the way. The crew's names: First Mate Morgan, Gunner Flint, and Cook Bones. Beware the curse!"
+        },
+        {
+          "id": "sea_chest",
+          "name": "old sea chest",
+          "description": "A barnacle-encrusted chest with a skull-shaped lock",
+          "locked": true,
+          "key_required": "iron_key",
+          "contains": [
+            "treasure_map"
+          ]
+        },
+        {
+          "id": "treasure_map",
+          "name": "torn treasure map",
+          "description": "A map showing the lagoon with an X marking a cave entrance",
+          "readable": true,
+          "text": "The map shows a cave entrance marked with an X. Scrawled at the bottom: 'The cave opens only to those who know: Who commands the ship? Where do the dead rest? What breaks the curse?'"
+        },
+        {
+          "id": "iron_key",
+          "name": "rusty iron key",
+          "description": "A heavy iron key covered in rust and barnacles"
+        },
+        {
+          "id": "skeleton",
+          "name": "skeleton in captain's chair",
+          "description": "The remains of a pirate captain, still wearing a tattered coat",
+          "searchable": true,
+          "contains": [
+            "silver_coin"
+          ]
+        },
+        {
+          "id": "silver_coin",
+          "name": "cursed silver coin",
+          "description": "A Spanish silver coin that glows faintly with an eerie green light"
+        },
+        {
+          "id": "cabin_door",
+          "name": "cabin door",
+          "description": "A swollen wooden door leading out to the beach",
+          "locked": false,
+          "direction": "north",
+          "leads_to": "lagoon_beach",
+          "aliases": [
+            "door",
+            "exit",
+            "north"
+          ]
+        }
+      ],
+      "exits": []
+    },
+    {
+      "id": "lagoon_beach",
+      "name": "Moonlit Lagoon Beach",
+      "description": "A crescent beach of white sand under a full moon. Palm trees sway in the warm breeze. Phosphorescent waves lap at the shore. To the west, a dark cave entrance yawns in the rocky cliff face. Strange whispers seem to emanate from within.",
+      "items": [
+        {
+          "id": "palm_tree",
+          "name": "hollow palm tree",
+          "description": "A dead palm tree with a hollow trunk",
+          "searchable": true,
+          "contains": [
+            "pirates_note"
+          ]
+        },
+        {
+          "id": "pirates_note",
+          "name": "waterlogged note",
+          "description": "A note written in crude handwriting",
+          "readable": true,
+          "text": "Morgan's reminder: The captain always said the treasure would rest in Davy Jones' locker. Only gold can break the curse of the silver. - First Mate Morgan"
+        },
+        {
+          "id": "driftwood_pile",
+          "name": "pile of driftwood",
+          "description": "A jumbled pile of weathered wood and debris",
+          "searchable": true,
+          "contains": []
+        },
+        {
+          "id": "cave_entrance",
+          "name": "dark cave entrance",
+          "description": "A foreboding cave entrance carved with skull symbols. A stone door blocks the way, with three questions etched into its surface.",
+          "locked": true,
+          "lock_type": "password",
+          "password_questions": [
+            {
+              "question": "Who commands the ship?",
+              "answer": "captain blackheart",
+              "hint": "Check the captain's logbook for the captain's name"
+            },
+            {
+              "question": "Where do the dead rest?",
+              "answer": "davy jones locker",
+              "hint": "Look for notes left by the crew"
+            },
+            {
+              "question": "What breaks the curse?",
+              "answer": "gold",
+              "hint": "Morgan's note mentions what can break the curse"
+            }
+          ],
+          "direction": "west",
+          "leads_to": "treasure_cave",
+          "aliases": [
+            "cave",
+            "entrance",
+            "west"
+          ]
+        }
+      ],
+      "exits": []
+    },
+    {
+      "id": "treasure_cave",
+      "name": "Cursed Treasure Cave",
+      "description": "A vast cavern lit by glowing green crystals. In the center sits a stone altar holding an ornate chest overflowing with gold doubloons. The cursed silver coin in your possession begins to pulse with dark energy. Beyond the altar, a shimmering portal of light offers escape.",
+      "items": [
+        {
+          "id": "treasure_chest",
+          "name": "pirate treasure chest",
+          "description": "An overflowing chest of gold coins, jewels, and precious artifacts",
+          "searchable": true,
+          "contains": [
+            "golden_doubloon"
+          ]
+        },
+        {
+          "id": "golden_doubloon",
+          "name": "golden doubloon",
+          "description": "A heavy gold coin that radiates warmth and light"
+        },
+        {
+          "id": "stone_altar",
+          "name": "ancient stone altar",
+          "description": "A weathered altar with two circular indentations - one silver, one gold",
+          "readable": true,
+          "text": "Inscription: 'To break the curse and find freedom, place the cursed silver and blessed gold together upon this altar.'"
+        },
+        {
+          "id": "escape_portal",
+          "name": "shimmering portal",
+          "description": "A magical portal of swirling light that leads to freedom. It requires both the cursed silver coin and the golden doubloon to activate.",
+          "locked": true,
+          "key_required": "golden_doubloon",
+          "direction": "north",
+          "leads_to": "freedom",
+          "aliases": [
+            "portal",
+            "exit",
+            "north"
+          ]
+        }
+      ],
+      "exits": []
+    },
+    {
+      "id": "freedom",
+      "name": "Safe Harbor",
+      "description": "You emerge on a sunny beach far from the cursed lagoon. A merchant ship waits at anchor, ready to take you home. The curse is broken, and the treasure is yours!",
+      "items": [
+        {
+          "id": "merchant_ship",
+          "name": "merchant vessel",
+          "description": "A sturdy ship with friendly sailors waving from the deck"
+        }
+      ],
+      "exits": [],
+      "is_goal": true,
+      "win_message": "You've broken the curse of the Pirate Lagoon and escaped with the treasure! The cursed silver coin crumbles to dust as the golden doubloon glows brightly. Captain Blackheart's spirit appears briefly, nodding in gratitude before fading away. You sail toward the horizon, a wealthy adventurer with an incredible tale to tell. You win!"
+    }
+  ]
+}

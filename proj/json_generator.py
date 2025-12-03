@@ -162,6 +162,10 @@ class BatchGameGenerator:
 
         os.makedirs(output_dir, exist_ok=True)
 
+        # clear output_dir
+        for f in os.listdir(output_dir):
+            os.remove(os.path.join(output_dir, f))
+
         with tempfile.NamedTemporaryFile(mode="w", suffix=".json", delete=False, dir=output_dir) as tmp_json:
             json.dump(json_data, tmp_json, indent=2)
             json_file = tmp_json.name
@@ -401,5 +405,5 @@ if __name__ == "__main__":
     verified = [1, 2, 3, 5, 6, 7]
     example_files = [f"game_jsons_and_txts/example_{v}.json" for v in verified]
 
-    batch = BatchGameGenerator(output_dir="game_jsons_and_texts/generated/valid", n=3, schema=GAME_SCHEMA, example_files=example_files)
+    batch = BatchGameGenerator(output_dir="game_jsons_and_txts/generated", n=3, schema=GAME_SCHEMA, example_files=example_files)
     batch.run()
