@@ -23,7 +23,7 @@ class GenerateGameJSON(dspy.Signature):
     title = dspy.InputField()
     goal = dspy.InputField()
     json_schema = dspy.InputField(desc="JSON schema to follow exactly")
-    #error_feedback = dspy.InputField(desc="Previous validation errors to avoid")
+    error_feedback = dspy.InputField(desc="Previous validation errors to avoid")
     examples = dspy.InputField(desc="Example valid game JSONs showing the correct format")
     output_json = dspy.OutputField(desc="A VALID JSON dictionary matching the required schema exactly.")
     
@@ -32,12 +32,13 @@ class GameGenerator(dspy.Module):
         super().__init__()
         self.generate = dspy.ChainOfThought(GenerateGameJSON)
 
-    def forward(self, theme, title, goal, schema, examples):
+    def forward(self, theme, title, goal, schema, error_feedback, examples):
         result = self.generate(
                 theme=theme, 
                 title=title, 
                 goal=goal, 
                 json_schema=json.dumps(schema, indent=2), 
+                error_feedback=error_feedback if error_feedback else "No previous errors.",
                 examples=examples)
         text = result.output_json.strip()
         # Text may contain extra text before/after JSON, so extract JSON part
@@ -332,11 +333,11 @@ if __name__ == "__main__":
                 },
                 "direction": {
                 "type": "string",
-                "description": "Direction name for this exit (e.g., 'north', 'east')"
+                "description": "Direction name for this exit (must be one of: north, south, east, west)"
                 },
                 "aliases": {
                 "type": "array",
-                "description": "Alternative names/commands for this item",
+                "description": "Alternative names for the direction (e.g., 'down' for a trapdoor)",
                 "items": {
                     "type": "string"
                 }
