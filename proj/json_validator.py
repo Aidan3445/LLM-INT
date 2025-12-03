@@ -132,9 +132,9 @@ class TextWorldValidator:
                 self.errors.append(f"Door '{item_id}' cannot have 'subcontainers'")
 
             # Door id and name must be the same with `_` <=> ` `
-            expected_name = item_id.replace('_', ' ')
-            if item['name'] != expected_name:
-                self.errors.append(f"Door '{item_id}' name must be '{expected_name}' to match its id")
+            expected_id = item['name'].replace(' ', '_')
+            if item_id != expected_id:
+                self.errors.append(f"Door id '{item_id}' must be '{expected_id.replace(' ', '_')}' to match its name")
         
         # SUBCONTAINER validations
         if has_subcontainers:

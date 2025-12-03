@@ -141,17 +141,34 @@ class BatchGameGenerator:
             print(f"✓ SAVED: {path}")
             
     def generate_valid_game(self, generator, theme, title, goal, schema, examples, max_retries=4):
+        error_feedback = ""
+        
         for attempt in range(max_retries):
-            data = generator(theme=theme, title=title, goal=goal, schema=schema, examples=examples)
+            try:
+                data = generator(
+                    theme=theme, 
+                    title=title, 
+                    goal=goal, 
+                    schema=schema, 
+                    error_feedback=error_feedback if error_feedback else "No previous errors.",
+                    examples=examples
+                )
+            except ValueError as e:
+                # JSON parsing failed in GameGenerator
+                print(f"[Attempt {attempt+1}] JSON parsing error: {e}")
+                error_feedback = f"JSON PARSING ERROR (attempt {attempt+1}): {e}\nPlease output ONLY valid JSON with no extra text."
+                continue
 
             ok, err = self.validate_schema(data, schema)
             if not ok:
                 print(f"[Attempt {attempt+1}] Schema error, regenerating: {err}")
+                error_feedback = f"SCHEMA VALIDATION ERROR (attempt {attempt+1}): {err}\nPlease fix this issue in your next generation."
                 continue
 
             ok, err = self.validate_compiles(data)
             if not ok:
                 print(f"[Attempt {attempt+1}] Compiler error, regenerating:\n{err}")
+                error_feedback = f"COMPILER ERROR (attempt {attempt+1}): {err}\nThe JSON was valid but failed to compile. Please fix the logical/structural issue."
                 continue
 
             return data
@@ -403,8 +420,8 @@ if __name__ == "__main__":
         }
         }
 
-    verified = [1, 2, 3, 5, 6, 7]
-    example_files = [f"game_jsons_and_txts/example_{v}.json" for v in verified]
+    verified = 8
+    example_files = [f"game_jsons_and_txts/example_{v+1}.json" for v in range(verified)]
 
-    batch = BatchGameGenerator(output_dir="game_jsons_and_txts/generated", n=3, schema=GAME_SCHEMA, example_files=example_files)
+    batch = BatchGameGenerator(output_dir="game_jsons_and_txts/generated", n=5, schema=GAME_SCHEMA, example_files=example_files)
     batch.run()

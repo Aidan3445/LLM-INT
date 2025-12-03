@@ -128,7 +128,7 @@
           "contains": []
         },
         {
-          "id": "cave_entrance",
+          "id": "dark_cave_entrance",
           "name": "dark cave entrance",
           "description": "A foreboding cave entrance carved with skull symbols. A stone door blocks the way, with three questions etched into its surface.",
           "locked": true,
@@ -188,7 +188,7 @@
           "text": "Inscription: 'To break the curse and find freedom, place the cursed silver and blessed gold together upon this altar.'"
         },
         {
-          "id": "escape_portal",
+          "id": "shimmering_portal",
           "name": "shimmering portal",
           "description": "A magical portal of swirling light that leads to freedom. It requires both the cursed silver coin and the golden doubloon to activate.",
           "locked": true,
