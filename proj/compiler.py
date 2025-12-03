@@ -1,5 +1,6 @@
 import json
 from typing import Dict, List, Any
+from json_validator import validate_json_file
 
 class TextWorldCompiler:
     def __init__(self, json_data: Dict[str, Any]):
@@ -366,6 +367,10 @@ def compile_json_to_textworld(json_file_path: str, output_file_path: str):
     
     with open(json_file_path, 'r') as f:
         json_data = json.load(f)
+        # Validate JSON
+        is_valid = validate_json_file(json_file_path)
+        if not is_valid:
+            sys.exit(1)
     
     compiler = TextWorldCompiler(json_data)
     code = compiler.compile()

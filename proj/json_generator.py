@@ -7,15 +7,19 @@ from compiler import compile_json_to_textworld
 import jsonschema
 
 # need to change configuration
-lm = dspy.LM('gemini/gemini-2.0-flash-exp')
-dspy.configure(lm=lm)
+lm = dspy.LM(
+        model="claude-sonnet-4-5",
+        api_key="sk-cmU9dANhBlbtImdA3FbRdw",
+        api_base="https://litellm.guha-anderson.com"
+        )
+dspy.settings.configure(lm=lm)
 
 class GenerateGameJSON(dspy.Signature):
     theme = dspy.InputField()
     title = dspy.InputField()
     goal = dspy.InputField()
-    model_json_schema = dspy.InputField(desc="JSON schema to follow exactly")
-    error_feedback = dspy.InputField(desc="Previous validation errors to avoid")
+    json_schema = dspy.InputField(desc="JSON schema to follow exactly")
+    #error_feedback = dspy.InputField(desc="Previous validation errors to avoid")
     examples = dspy.InputField(desc="Example valid game JSONs showing the correct format")
     output_json = dspy.OutputField(desc="A VALID JSON dictionary matching the required schema exactly.")
     
@@ -25,8 +29,19 @@ class GameGenerator(dspy.Module):
         self.generate = dspy.ChainOfThought(GenerateGameJSON)
 
     def forward(self, theme, title, goal, schema, examples):
-        result = self.generate(theme=theme, title=title, goal=goal, schema=json.dumps(schema, indent=2), examples=examples)
+        result = self.generate(
+                theme=theme, 
+                title=title, 
+                goal=goal, 
+                json_schema=json.dumps(schema, indent=2), 
+                examples=examples)
         text = result.output_json.strip()
+        # Text may contain extra text before/after JSON, so extract JSON part
+        # first `{` to last `}`
+        start = text.find("{")
+        end = text.rfind("}") + 1
+        text = text[start:end]
+
 
         try:
             data = json.loads(text)
@@ -120,9 +135,9 @@ class BatchGameGenerator:
 
             print(f"✓ SAVED: {path}")
             
-    def generate_valid_game(self, generator, theme, title, goal, schema, max_retries=4):
+    def generate_valid_game(self, generator, theme, title, goal, schema, examples, max_retries=4):
         for attempt in range(max_retries):
-            data = generator(theme=theme, title=title, goal=goal)
+            data = generator(theme=theme, title=title, goal=goal, schema=schema, examples=examples)
 
             ok, err = self.validate_schema(data, schema)
             if not ok:
@@ -379,7 +394,8 @@ if __name__ == "__main__":
         }
         }
 
-    example_files =['game_jsons_and_txts/example_1.json', 'game_jsons_and_txts/example_2.json']
+    verified = [1, 2, 3, 5, 7]
+    example_files = [f"game_jsons_and_txts/example_{v}.json" for v in verified]
 
-    batch = BatchGameGenerator(output_dir="games/valid", n=300, schema=GAME_SCHEMA, example_files=example_files)
+    batch = BatchGameGenerator(output_dir="game_jsons_and_texts/generated/valid", n=3, schema=GAME_SCHEMA, example_files=example_files)
     batch.run()

@@ -1,0 +1,308 @@
+import json
+from typing import Dict, List, Any, Set, Tuple
+
+class ValidationError(Exception):
+    """Custom exception for validation errors"""
+    pass
+
+class TextWorldValidator:
+    def __init__(self, json_data: Dict[str, Any]):
+        self.data = json_data
+        self.errors = []
+        self.warnings = []
+        self.all_item_ids = set()
+        self.all_room_ids = set()
+        
+    def validate(self) -> Tuple[bool, List[str], List[str]]:
+        """Run all validations. Returns (is_valid, errors, warnings)"""
+        try:
+            self._validate_top_level()
+            self._collect_all_ids()
+            self._validate_rooms()
+            self._validate_items()
+            self._validate_references()
+            self._validate_lock_logic()
+            
+            return (len(self.errors) == 0, self.errors, self.warnings)
+        except Exception as e:
+            self.errors.append(f"Validation crashed: {str(e)}")
+            return (False, self.errors, self.warnings)
+    
+    def _validate_top_level(self):
+        """Validate top-level required fields"""
+        required = ['theme', 'title', 'goal', 'rooms', 'starting_room']
+        for field in required:
+            if field not in self.data:
+                self.errors.append(f"Missing required top-level field: '{field}'")
+        
+        if 'rooms' in self.data and not isinstance(self.data['rooms'], list):
+            self.errors.append("'rooms' must be an array")
+        
+        if 'rooms' in self.data and len(self.data['rooms']) == 0:
+            self.errors.append("Must have at least one room")
+    
+    def _collect_all_ids(self):
+        """Collect all room and item IDs for reference checking"""
+        for room in self.data.get('rooms', []):
+            if 'id' in room:
+                if room['id'] in self.all_room_ids:
+                    self.errors.append(f"Duplicate room ID: '{room['id']}'")
+                self.all_room_ids.add(room['id'])
+                
+                for item in room.get('items', []):
+                    self._collect_item_ids(item)
+    
+    def _collect_item_ids(self, item: Dict):
+        """Recursively collect item IDs"""
+        if 'id' in item:
+            if item['id'] in self.all_item_ids:
+                self.errors.append(f"Duplicate item ID: '{item['id']}'")
+            self.all_item_ids.add(item['id'])
+        
+        # Collect from subcontainers
+        for sub in item.get('subcontainers', []):
+            if 'id' in sub:
+                if sub['id'] in self.all_item_ids:
+                    self.errors.append(f"Duplicate item ID: '{sub['id']}'")
+                self.all_item_ids.add(sub['id'])
+    
+    def _validate_rooms(self):
+        """Validate room structure"""
+        goal_rooms = []
+        
+        for room in self.data.get('rooms', []):
+            # Required fields
+            for field in ['id', 'name', 'description']:
+                if field not in room:
+                    self.errors.append(f"Room missing required field: '{field}'")
+            
+            # Check goal room
+            if room.get('is_goal'):
+                goal_rooms.append(room['id'])
+                if 'win_message' not in room:
+                    self.errors.append(f"Goal room '{room['id']}' missing 'win_message'")
+        
+        # Exactly one goal room
+        if len(goal_rooms) == 0:
+            self.errors.append("Must have exactly one room with 'is_goal': true")
+        elif len(goal_rooms) > 1:
+            self.errors.append(f"Multiple goal rooms found: {goal_rooms}. Only one allowed.")
+        
+        # Starting room exists
+        if 'starting_room' in self.data:
+            if self.data['starting_room'] not in self.all_room_ids:
+                self.errors.append(f"starting_room '{self.data['starting_room']}' does not exist")
+    
+    def _validate_items(self):
+        """Validate all items in all rooms"""
+        for room in self.data.get('rooms', []):
+            for item in room.get('items', []):
+                self._validate_item(item, room['id'])
+    
+    def _validate_item(self, item: Dict, room_id: str):
+        """Validate a single item"""
+        # Required fields
+        for field in ['id', 'name', 'description']:
+            if field not in item:
+                self.errors.append(f"Item in '{room_id}' missing required field: '{field}'")
+                return
+        
+        item_id = item['id']
+        
+        # Determine item type
+        is_door = 'leads_to' in item
+        has_subcontainers = 'subcontainers' in item
+        is_container = 'contains' in item or 'locked' in item or 'searchable' in item
+        is_readable = item.get('readable', False)
+        
+        # DOOR validations
+        if is_door:
+            if 'direction' not in item:
+                self.errors.append(f"Door '{item_id}' missing 'direction'")
+            elif item['direction'] not in ['north', 'south', 'east', 'west']:
+                self.errors.append(f"Door '{item_id}' has invalid direction: '{item['direction']}'")
+            
+            if item['leads_to'] not in self.all_room_ids:
+                self.errors.append(f"Door '{item_id}' leads_to non-existent room: '{item['leads_to']}'")
+            
+            # Doors can't have contains or subcontainers
+            if 'contains' in item:
+                self.errors.append(f"Door '{item_id}' cannot have 'contains'")
+            if has_subcontainers:
+                self.errors.append(f"Door '{item_id}' cannot have 'subcontainers'")
+        
+        # SUBCONTAINER validations
+        if has_subcontainers:
+            if is_door:
+                self.errors.append(f"Item '{item_id}' cannot be both door and have subcontainers")
+            
+            if not isinstance(item['subcontainers'], list):
+                self.errors.append(f"Item '{item_id}' subcontainers must be an array")
+            else:
+                for sub in item['subcontainers']:
+                    self._validate_subcontainer(sub, item_id)
+        
+        # CONTAINER validations
+        if is_container and not is_door and not has_subcontainers:
+            if 'contains' in item and not isinstance(item['contains'], list):
+                self.errors.append(f"Container '{item_id}' contains must be an array")
+        
+        # READABLE validations
+        if is_readable:
+            if 'text' not in item:
+                self.errors.append(f"Readable item '{item_id}' missing 'text' field")
+        
+        # LOCK validations
+        self._validate_locks(item, item_id, is_door)
+    
+    def _validate_subcontainer(self, sub: Dict, parent_id: str):
+        """Validate a subcontainer"""
+        if 'id' not in sub:
+            self.errors.append(f"Subcontainer in '{parent_id}' missing 'id'")
+            return
+        
+        if 'name' not in sub:
+            self.errors.append(f"Subcontainer '{sub['id']}' missing 'name'")
+        
+        if 'contains' in sub and not isinstance(sub['contains'], list):
+            self.errors.append(f"Subcontainer '{sub['id']}' contains must be an array")
+        
+        # Subcontainers can have locks
+        self._validate_locks(sub, sub['id'], is_door=False)
+    
+    def _validate_locks(self, item: Dict, item_id: str, is_door: bool):
+        """Validate locking mechanisms"""
+        has_key = 'key_required' in item
+        has_lock_type = 'lock_type' in item
+        is_locked = item.get('locked', False)
+        
+        # Can't have both key and lock_type
+        if has_key and has_lock_type:
+            self.errors.append(f"Item '{item_id}' cannot have both 'key_required' and 'lock_type'")
+        
+        # If locked, must have a lock mechanism
+        if is_locked and not has_key and not has_lock_type:
+            self.errors.append(f"Item '{item_id}' is locked but has no key_required or lock_type")
+        
+        # Validate lock_type
+        if has_lock_type:
+            lock_type = item['lock_type']
+            
+            if lock_type not in ['combination', 'password']:
+                self.errors.append(f"Item '{item_id}' has invalid lock_type: '{lock_type}'")
+            
+            if lock_type == 'combination':
+                if 'combination' not in item:
+                    self.errors.append(f"Item '{item_id}' has lock_type 'combination' but missing 'combination' field")
+                elif not isinstance(item['combination'], str):
+                    self.errors.append(f"Item '{item_id}' combination must be a string")
+                elif not item['combination'].isdigit():
+                    self.errors.append(f"Item '{item_id}' combination must contain only digits")
+            
+            if lock_type == 'password':
+                if 'password_questions' not in item:
+                    self.errors.append(f"Item '{item_id}' has lock_type 'password' but missing 'password_questions'")
+                elif not isinstance(item['password_questions'], list):
+                    self.errors.append(f"Item '{item_id}' password_questions must be an array")
+                elif len(item['password_questions']) == 0:
+                    self.errors.append(f"Item '{item_id}' password_questions cannot be empty")
+                else:
+                    for i, q in enumerate(item['password_questions']):
+                        if 'question' not in q:
+                            self.errors.append(f"Item '{item_id}' password question {i} missing 'question'")
+                        if 'answer' not in q:
+                            self.errors.append(f"Item '{item_id}' password question {i} missing 'answer'")
+                
+                # Password locks only valid for doors
+                if not is_door:
+                    self.warnings.append(f"Item '{item_id}' uses password lock but is not a door (may not work as expected)")
+    
+    def _validate_references(self):
+        """Validate all ID references"""
+        for room in self.data.get('rooms', []):
+            for item in room.get('items', []):
+                self._validate_item_references(item)
+    
+    def _validate_item_references(self, item: Dict):
+        """Validate references in an item"""
+        item_id = item.get('id', 'unknown')
+        
+        # Check key_required
+        if 'key_required' in item:
+            # Keys can be auto-generated, so just warn if not found
+            if item['key_required'] not in self.all_item_ids:
+                self.warnings.append(f"Item '{item_id}' references key '{item['key_required']}' which is not explicitly defined (will be auto-generated)")
+        
+        # Check contains
+        for contained_id in item.get('contains', []):
+            if contained_id not in self.all_item_ids:
+                self.errors.append(f"Item '{item_id}' contains non-existent item: '{contained_id}'")
+        
+        # Check subcontainers
+        for sub in item.get('subcontainers', []):
+            if 'key_required' in sub:
+                if sub['key_required'] not in self.all_item_ids:
+                    self.warnings.append(f"Subcontainer '{sub.get('id', 'unknown')}' references key '{sub['key_required']}' which is not defined (will be auto-generated)")
+            
+            for contained_id in sub.get('contains', []):
+                if contained_id not in self.all_item_ids:
+                    self.errors.append(f"Subcontainer '{sub.get('id', 'unknown')}' contains non-existent item: '{contained_id}'")
+    
+    def _validate_lock_logic(self):
+        """Validate game logic around locks and accessibility"""
+        # Check if goal room is reachable
+        # This is a simple check - doesn't handle complex key chains
+        
+        # Check for orphaned keys (keys that don't unlock anything)
+        referenced_keys = set()
+        for room in self.data.get('rooms', []):
+            for item in room.get('items', []):
+                if 'key_required' in item:
+                    referenced_keys.add(item['key_required'])
+                for sub in item.get('subcontainers', []):
+                    if 'key_required' in sub:
+                        referenced_keys.add(sub['key_required'])
+        
+        # Find items that look like keys but aren't referenced
+        for item_id in self.all_item_ids:
+            if 'key' in item_id.lower() and item_id not in referenced_keys:
+                self.warnings.append(f"Item '{item_id}' looks like a key but isn't used to unlock anything")
+
+
+def validate_json_file(json_file_path: str) -> bool:
+    """Validate a JSON file and print results"""
+    try:
+        with open(json_file_path, 'r') as f:
+            json_data = json.load(f)
+    except json.JSONDecodeError as e:
+        raise Exception(f"Invalid JSON: {e}")
+    except FileNotFoundError:
+        raise Exception(f"File not found: {json_file_path}")
+    
+    validator = TextWorldValidator(json_data)
+    is_valid, errors, warnings = validator.validate()
+    
+    print(f"\n{'='*60}")
+    print(f"Validation Results: {json_file_path}")
+    print(f"{'='*60}")
+    
+    if errors:
+        all_errors = "\n  • ".join(errors)
+        error_message = f"\n❗ ERRORS ({len(errors)}):\n  • {all_errors}"
+        raise ValidationError(error_message)
+    
+    if warnings:
+        print(f"\n⚠️  WARNINGS ({len(warnings)}):")
+        for warning in warnings:
+            print(f"  • {warning}")
+    
+    if is_valid:
+        print(f"\n✅ Validation passed!")
+        print(f"   Rooms: {len(validator.all_room_ids)}")
+        print(f"   Items: {len(validator.all_item_ids)}")
+    else:
+        raise ValidationError("\n❗ Validation failed for unknown reasons.")
+
+    print(f"{'='*60}\n")
+    
+    return is_valid
