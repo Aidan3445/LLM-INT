@@ -67,6 +67,12 @@ class EscapeRoomInterface:
         if item_id not in self.room_items:
             return True  # If we don't know, allow it
         return self.room_items[item_id] == self.current_room
+
+    def llm_feedback(self, feedback, user_input="", game_json=""):
+        """Use an LLM to generate on-theme messages for the user"""
+        # TODO: LLM integration
+        return feedback
+
     
     def step(self, command):
         """Process a command"""
@@ -232,12 +238,16 @@ class EscapeRoomInterface:
         self.env.close()
 
 
-def play_escape_room(game_file, combination_locks=None, direction_aliases=None, password_locks=None, room_items=None):
+def play_escape_room(game_file, game_json, combination_locks=None, direction_aliases=None, password_locks=None, room_items=None):
     """Interactive play session with custom command handling"""
     interface = EscapeRoomInterface(game_file, combination_locks, direction_aliases, password_locks, room_items)
+
+    game_json_string = ""
+    with open(game_json, 'r') as f:
+        game_json_string = f.read()
     
     game_state = interface.reset()
-    print(game_state.feedback)
+    print(interface.llm_feedback(game_state.feedback, game_json=game_json_string))
     
     score = 0
     moves = 0
@@ -255,7 +265,7 @@ def play_escape_room(game_file, combination_locks=None, direction_aliases=None, 
                 break
             
             obs, reward, done = interface.step(command)
-            print(obs.feedback)
+            print(interface.llm_feedback(obs.feedback, user_input=command, game_json=game_json_string))
             
             score += reward
             moves += 1
@@ -399,4 +409,4 @@ if __name__ == "__main__":
     print("Starting game...")
     print("="*60 + "\n")
     
-    play_escape_room(ulx_file, combination_locks, direction_aliases, password_locks, room_items)
+    play_escape_room(ulx_file, json_file, combination_locks, direction_aliases, password_locks, room_items)

@@ -4,7 +4,7 @@ The goal is to steal the diamond and find your way out of the museum.
 
 Location 1: The Diamond Room 
 The player is a thief in the middle of a museum heist. 
-In the middle of the room is a wood pedestal with a glass box on top, the glass box is protected by a lock with a keyboard.
+In the middle of the room is a wood pedestal with a glass box on top, the glass box is closed but unlocked.
 On the pedestal there is an inscription that reads :
   "For only those who understand in what order the artists of the world stand"
 
@@ -18,13 +18,10 @@ In order from left to right :
 The first is a landscape of a farm with a man in the foreground, signed "Claude, 1"
 The second is a still life of fruits, signed "Gene, 9"
 The third is a landscape of a beach with a man in the mid ground, signed "Julius, 47"
-The fouth is a portrait of two dancers, signed "Roberts, 90"
+The fourth is a portrait of two dancers, signed "Roberts, 90"
 The fifth is a landscape of a mountain with a man in the background, signed "Garfield, 5"
 
-
-The keyboard lock is unlocked with the password "Claude Julius Garfield." 
-
-The player can collect the diamond once they unlock the glass box.
+The player can collect the diamond.
 
 The code 1475 unlocks the large metal door. 
 
@@ -40,9 +37,9 @@ There is one set of main doors to exit the building at it's north side. These do
 The check-in desk is covered in a blank calendar, when the black light shines on it each day has a different location. It reads: 
   "January 1st - January 7th : 1st , January 7th - January 14th : 2nd, January 14 - January 21st 3rd"
 
-The first drawer of the desk contains a key.
+The first drawer of the desk contains a small key with no use.
 The second drawer of the desk contains the key that unlocks the doors.
-The third drawer of the desk contains a key.
+The third drawer of the desk contains a baby key with no use.
 
 
 Room 3: The Getaway Car
