@@ -6,6 +6,8 @@ class ValidationError(Exception):
     pass
 
 class TextWorldValidator:
+    FORBIDDEN_NAME_CHARS = set('.,!?:;')
+    
     def __init__(self, json_data: Dict[str, Any]):
         self.data = json_data
         self.errors = []
@@ -28,6 +30,12 @@ class TextWorldValidator:
             self.errors.append(f"Validation crashed: {str(e)}")
             return (False, self.errors, self.warnings)
     
+    def _check_name_punctuation(self, name_value: str, name_type: str):
+        """Check if a name contains forbidden punctuation characters"""
+        found_chars = [c for c in name_value if c in self.FORBIDDEN_NAME_CHARS]
+        if found_chars:
+            self.errors.append(f"{name_type} '{name_value}' contains forbidden punctuation: {found_chars}")
+    
     def _validate_top_level(self):
         """Validate top-level required fields"""
         required = ['theme', 'title', 'goal', 'rooms', 'starting_room']
@@ -48,6 +56,9 @@ class TextWorldValidator:
                 if room['id'] in self.all_room_ids:
                     self.errors.append(f"Duplicate room ID: '{room['id']}'")
                 self.all_room_ids.add(room['id'])
+            
+            if 'name' in room:
+                self._check_name_punctuation(room['name'], "Room name")
                 
                 for item in room.get('items', []):
                     self._collect_item_ids(item)
@@ -59,12 +70,18 @@ class TextWorldValidator:
                 self.errors.append(f"Duplicate item ID: '{item['id']}'")
             self.all_item_ids.add(item['id'])
         
+        if 'name' in item:
+            self._check_name_punctuation(item['name'], "Item name")
+        
         # Collect from subcontainers
         for sub in item.get('subcontainers', []):
             if 'id' in sub:
                 if sub['id'] in self.all_item_ids:
                     self.errors.append(f"Duplicate item ID: '{sub['id']}'")
                 self.all_item_ids.add(sub['id'])
+            
+            if 'name' in sub:
+                self._check_name_punctuation(sub['name'], "Subcontainer name")
     
     def _validate_rooms(self):
         """Validate room structure"""
@@ -132,9 +149,15 @@ class TextWorldValidator:
                 self.errors.append(f"Door '{item_id}' cannot have 'subcontainers'")
 
             # Door id and name must be the same with `_` <=> ` `
+            # Auto-fix if mismatched
             expected_id = item['name'].replace(' ', '_')
             if item_id != expected_id:
-                self.errors.append(f"Door id '{item_id}' must be '{expected_id.replace(' ', '_')}' to match its name")
+                old_id = item['id']
+                item['id'] = expected_id
+                # Update our tracking sets
+                self.all_item_ids.discard(old_id)
+                self.all_item_ids.add(expected_id)
+                self.warnings.append(f"Door id '{old_id}' auto-corrected to '{expected_id}' to match its name")
         
         # SUBCONTAINER validations
         if has_subcontainers:

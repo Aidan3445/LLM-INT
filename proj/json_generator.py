@@ -4,6 +4,7 @@ import dspy
 import random
 import tempfile
 from compiler import compile_json_to_textworld
+from json_validator import validate_json_file
 import jsonschema
 from dotenv import load_dotenv
 
@@ -137,6 +138,9 @@ class BatchGameGenerator:
             path = os.path.join(self.output_dir, f"game_{i+1}.json")
             with open(path, "w") as f:
                 json.dump(game, f, indent=2)
+                # run validator one last time to save changes
+                # not efficient but whatevs
+                validate_json_file(path)
 
             print(f"✓ SAVED: {path}")
             
@@ -420,8 +424,8 @@ if __name__ == "__main__":
         }
         }
 
-    verified = 8
+    verified = 9
     example_files = [f"game_jsons_and_txts/example_{v+1}.json" for v in range(verified)]
 
-    batch = BatchGameGenerator(output_dir="game_jsons_and_txts/generated", n=5, schema=GAME_SCHEMA, example_files=example_files)
+    batch = BatchGameGenerator(output_dir="game_jsons_and_txts/generated", n=50, schema=GAME_SCHEMA, example_files=example_files)
     batch.run()
