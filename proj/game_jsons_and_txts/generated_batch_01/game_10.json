@@ -1,0 +1,240 @@
+{
+    "theme": "Oracle's Chamber",
+    "title": "Oracle's Chamber Adventure #10",
+    "goal": "Solve the puzzles, achieve the main objective, and escape.",
+    "starting_room": "antechamber",
+    "rooms": [
+        {
+            "id": "antechamber",
+            "name": "Oracle's Antechamber",
+            "description": "A circular stone chamber lit by flickering torches mounted on ancient walls. Mystical symbols glow faintly on the floor, forming a complex pattern. The air is thick with incense, and whispers seem to echo from nowhere. A heavy wooden door stands to the east, and various artifacts line the walls.",
+            "items": [
+                {
+                    "id": "stone_altar",
+                    "name": "stone altar",
+                    "description": "A weathered altar with carved symbols depicting the sun, moon, and stars",
+                    "searchable": true,
+                    "contains": [
+                        "silver_amulet"
+                    ]
+                },
+                {
+                    "id": "silver_amulet",
+                    "name": "silver amulet",
+                    "description": "An amulet engraved with the symbol of the Oracle"
+                },
+                {
+                    "id": "ancient_cabinet",
+                    "name": "ancient cabinet",
+                    "description": "A tall wooden cabinet with three drawers, each marked with a different celestial symbol",
+                    "subcontainers": [
+                        {
+                            "id": "sun_drawer",
+                            "name": "sun drawer",
+                            "locked": false,
+                            "contains": [
+                                "prophecy_scroll"
+                            ]
+                        },
+                        {
+                            "id": "moon_drawer",
+                            "name": "moon drawer",
+                            "locked": true,
+                            "lock_type": "combination",
+                            "combination": "777",
+                            "contains": [
+                                "bronze_key"
+                            ]
+                        },
+                        {
+                            "id": "star_drawer",
+                            "name": "star drawer",
+                            "locked": false,
+                            "contains": []
+                        }
+                    ]
+                },
+                {
+                    "id": "prophecy_scroll",
+                    "name": "prophecy scroll",
+                    "description": "An ancient scroll with faded writing",
+                    "readable": true,
+                    "text": "The First Prophecy: Seven seers saw seven visions in the seventh hour. Remember the sacred number: 777. The Oracle speaks only to those who know the Three Truths."
+                },
+                {
+                    "id": "bronze_key",
+                    "name": "bronze key",
+                    "description": "A key with mystical engravings"
+                },
+                {
+                    "id": "locked_chest",
+                    "name": "ornate chest",
+                    "description": "A chest bound with bronze fittings and a keyhole",
+                    "locked": true,
+                    "key_required": "bronze_key",
+                    "contains": [
+                        "vision_tablet"
+                    ]
+                },
+                {
+                    "id": "vision_tablet",
+                    "name": "vision tablet",
+                    "description": "A stone tablet inscribed with ancient wisdom",
+                    "readable": true,
+                    "text": "The Second Prophecy: The Oracle dwells beyond the Chamber of Visions. She who sees all was born in the Temple of Seers. Her gift is the Sight Beyond Sight."
+                },
+                {
+                    "id": "heavy_wooden_door",
+                    "name": "heavy wooden door",
+                    "description": "A door carved with images of prophets and seers, leading deeper into the Oracle's domain",
+                    "locked": true,
+                    "key_required": "silver_amulet",
+                    "direction": "east",
+                    "leads_to": "vision_chamber",
+                    "aliases": [
+                        "door",
+                        "east"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "vision_chamber",
+            "name": "Chamber of Visions",
+            "description": "A mystical chamber where the walls shimmer with ethereal light. Crystal orbs float in mid-air, each showing swirling mists and fleeting images. Ancient tapestries depicting prophetic visions hang between marble columns. A sense of timelessness pervades the space. The Oracle's inner sanctum lies beyond a sealed door to the north.",
+            "items": [
+                {
+                    "id": "crystal_orb_past",
+                    "name": "crystal orb of the past",
+                    "description": "A floating orb showing images of ancient times",
+                    "readable": true,
+                    "text": "Within the swirling mists, you see the Oracle as a young girl in the Temple of Seers, receiving her gift of prophecy from the High Priestess."
+                },
+                {
+                    "id": "crystal_orb_present",
+                    "name": "crystal orb of the present",
+                    "description": "An orb displaying current events across the realm",
+                    "readable": true,
+                    "text": "The orb shows seekers from distant lands traveling to consult the Oracle, hoping to learn their destinies."
+                },
+                {
+                    "id": "crystal_orb_future",
+                    "name": "crystal orb of the future",
+                    "description": "A mysterious orb with shifting, unclear visions",
+                    "readable": true,
+                    "text": "The future remains clouded, but one truth is clear: only those who understand the Oracle's nature may enter her presence."
+                },
+                {
+                    "id": "tapestry_north",
+                    "name": "tapestry of prophecy",
+                    "description": "A grand tapestry showing the Oracle surrounded by symbols",
+                    "readable": true,
+                    "text": "The tapestry depicts the Oracle in her sanctum, her eyes glowing with inner light. Beneath is written: 'She who possesses the Sight Beyond Sight dwells in the Chamber of Visions, born of the Temple of Seers.'"
+                },
+                {
+                    "id": "marble_pedestal",
+                    "name": "marble pedestal",
+                    "description": "A pedestal with compartments for sacred offerings",
+                    "subcontainers": [
+                        {
+                            "id": "offering_box_1",
+                            "name": "first offering box",
+                            "locked": false,
+                            "contains": [
+                                "incense_stick"
+                            ]
+                        },
+                        {
+                            "id": "offering_box_2",
+                            "name": "second offering box",
+                            "locked": false,
+                            "contains": [
+                                "wisdom_scroll"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "incense_stick",
+                    "name": "sacred incense",
+                    "description": "Incense used in prophetic rituals"
+                },
+                {
+                    "id": "wisdom_scroll",
+                    "name": "scroll of wisdom",
+                    "description": "A scroll containing the Three Truths",
+                    "readable": true,
+                    "text": "The Three Truths of the Oracle: First Truth - Where was she born? The Temple of Seers. Second Truth - Where does she dwell? The Chamber of Visions. Third Truth - What is her gift? The Sight Beyond Sight."
+                },
+                {
+                    "id": "sealed_sanctum_door",
+                    "name": "sealed sanctum door",
+                    "description": "An imposing door sealed with ancient magic. Three questions are inscribed in glowing script upon its surface.",
+                    "locked": true,
+                    "lock_type": "password",
+                    "password_questions": [
+                        {
+                            "question": "Where was the Oracle born?",
+                            "answer": "temple of seers",
+                            "hint": "The vision tablet and crystal orbs reveal her origins"
+                        },
+                        {
+                            "question": "Where does the Oracle dwell?",
+                            "answer": "chamber of visions",
+                            "hint": "The scroll of wisdom contains the Three Truths"
+                        },
+                        {
+                            "question": "What is the Oracle's gift?",
+                            "answer": "sight beyond sight",
+                            "hint": "Check the prophecy texts and tapestries"
+                        }
+                    ],
+                    "direction": "north",
+                    "leads_to": "oracle_sanctum",
+                    "aliases": [
+                        "door",
+                        "north"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "oracle_sanctum",
+            "name": "Oracle's Inner Sanctum",
+            "description": "You have entered the heart of the Oracle's domain! The chamber glows with divine light emanating from a central dais. Upon a throne of pure crystal sits the Oracle herself, her eyes shimmering with otherworldly knowledge. She smiles knowingly as you approach. Behind her, a portal of swirling light offers passage back to the mortal realm.",
+            "items": [
+                {
+                    "id": "crystal_throne",
+                    "name": "crystal throne",
+                    "description": "A magnificent throne carved from a single massive crystal, radiating power and wisdom"
+                },
+                {
+                    "id": "oracle_figure",
+                    "name": "the Oracle",
+                    "description": "The legendary Oracle, her presence both comforting and awe-inspiring",
+                    "readable": true,
+                    "text": "The Oracle speaks: 'You have proven yourself worthy by solving the ancient puzzles and understanding the Three Truths. Your destiny awaits beyond the portal. Go forth with my blessing.'"
+                },
+                {
+                    "id": "sacred_dais",
+                    "name": "sacred dais",
+                    "description": "The platform upon which the Oracle's throne rests, inscribed with prophecies",
+                    "searchable": true,
+                    "contains": [
+                        "prophecy_gem"
+                    ]
+                },
+                {
+                    "id": "prophecy_gem",
+                    "name": "gem of prophecy",
+                    "description": "A radiant gemstone containing a fragment of the Oracle's power"
+                }
+            ],
+            "exits": [],
+            "is_goal": true,
+            "win_message": "The Oracle rises from her throne and blesses you with ancient wisdom. 'You have navigated the trials of my chamber and proven your worth,' she intones. 'Take this knowledge back to the world.' The portal behind her flares brilliantly, and you step through, forever changed by your encounter with the Oracle. You win!"
+        }
+    ]
+}

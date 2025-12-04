@@ -1,0 +1,221 @@
+{
+    "theme": "Mutant Greenhouse",
+    "title": "Mutant Greenhouse Adventure #6",
+    "goal": "Solve the puzzles, achieve the main objective, and escape.",
+    "starting_room": "research_lab",
+    "rooms": [
+        {
+            "id": "research_lab",
+            "name": "Abandoned Research Lab",
+            "description": "A cluttered laboratory filled with overturned equipment and shattered glass. Vines creep through cracks in the walls, and strange bioluminescent spores float in the air. Emergency lights flicker overhead, casting eerie shadows. A computer terminal blinks on a desk, and filing cabinets line the walls.",
+            "items": [
+                {
+                    "id": "research_desk",
+                    "name": "research desk",
+                    "description": "A metal desk covered in papers and broken equipment. It has two drawers.",
+                    "subcontainers": [
+                        {
+                            "id": "top_drawer",
+                            "name": "top drawer",
+                            "locked": false,
+                            "contains": [
+                                "research_notes"
+                            ]
+                        },
+                        {
+                            "id": "bottom_drawer",
+                            "name": "bottom drawer",
+                            "locked": true,
+                            "lock_type": "combination",
+                            "combination": "237",
+                            "contains": [
+                                "security_keycard"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "research_notes",
+                    "name": "research journal",
+                    "description": "A leather-bound journal with water-stained pages",
+                    "readable": true,
+                    "text": "Day 47: Specimen 237 is growing at an alarming rate. Dr. Chen has locked the fertilizer in the storage cabinet. The specimens are numbered: Specimen 237 (Venus Flytrap), Specimen 109 (Kudzu), Specimen 451 (Orchid). Only Dr. Martinez knows the evacuation protocols."
+                },
+                {
+                    "id": "computer_terminal",
+                    "name": "computer terminal",
+                    "description": "A dusty computer screen displaying a login prompt",
+                    "readable": true,
+                    "text": "SYSTEM LOG: Last entry by Dr. Chen - 'Emergency protocols activated. Greenhouse contamination level critical. Evacuation route through main greenhouse to emergency exit. Storage cabinet key hidden in specimen freezer.'"
+                },
+                {
+                    "id": "filing_cabinet",
+                    "name": "metal filing cabinet",
+                    "description": "A tall filing cabinet with employee records",
+                    "searchable": true,
+                    "contains": [
+                        "employee_roster"
+                    ]
+                },
+                {
+                    "id": "employee_roster",
+                    "name": "employee roster",
+                    "description": "A document listing facility personnel",
+                    "readable": true,
+                    "text": "FACILITY PERSONNEL: Dr. Sarah Martinez - Lead Botanist, Dr. James Chen - Research Assistant, Lab Technician Rodriguez - Maintenance. Dr. Martinez's office is located in the main greenhouse observation deck."
+                },
+                {
+                    "id": "specimen_freezer",
+                    "name": "specimen freezer",
+                    "description": "A large freezer unit used for preserving plant samples",
+                    "searchable": true,
+                    "contains": [
+                        "cabinet_key"
+                    ]
+                },
+                {
+                    "id": "cabinet_key",
+                    "name": "small brass key",
+                    "description": "A key labeled 'Storage Cabinet'"
+                },
+                {
+                    "id": "security_keycard",
+                    "name": "security access card",
+                    "description": "A magnetic keycard with 'GREENHOUSE ACCESS' printed on it"
+                },
+                {
+                    "id": "reinforced_greenhouse_door",
+                    "name": "reinforced greenhouse door",
+                    "description": "A heavy door with a card reader leading to the main greenhouse. Vines are trying to push through the seams.",
+                    "locked": true,
+                    "key_required": "security_keycard",
+                    "direction": "north",
+                    "leads_to": "main_greenhouse",
+                    "aliases": [
+                        "door",
+                        "north"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "main_greenhouse",
+            "name": "Main Greenhouse",
+            "description": "A massive glass-domed greenhouse overtaken by mutant vegetation. Giant vines coil around support beams, and flowers the size of beach balls pulse with unnatural colors. The air is thick and humid. Specimen tanks line the walls, and a storage cabinet stands in the corner. An observation deck overlooks the space, and a sealed emergency exit glows red on the far wall.",
+            "items": [
+                {
+                    "id": "specimen_tank_237",
+                    "name": "specimen tank 237",
+                    "description": "A large tank containing a massive mutant Venus Flytrap with snapping jaws",
+                    "readable": true,
+                    "text": "SPECIMEN 237: Venus Flytrap Hybrid - Growth rate: 300% above normal. Status: CONTAINED. Warning: Highly aggressive."
+                },
+                {
+                    "id": "specimen_tank_109",
+                    "name": "specimen tank 109",
+                    "description": "A reinforced tank barely containing writhing kudzu vines",
+                    "readable": true,
+                    "text": "SPECIMEN 109: Kudzu Variant - Spreads at 5 meters per hour. Status: CRITICAL. Location: Kudzu originates from the southern regions."
+                },
+                {
+                    "id": "specimen_tank_451",
+                    "name": "specimen tank 451",
+                    "description": "A climate-controlled tank with a glowing orchid",
+                    "readable": true,
+                    "text": "SPECIMEN 451: Bioluminescent Orchid - Emits spores that cause hallucinations. Status: STABLE. Note: Orchids require precise temperature control."
+                },
+                {
+                    "id": "storage_cabinet",
+                    "name": "locked storage cabinet",
+                    "description": "A metal cabinet with a brass lock, labeled 'FERTILIZERS & CHEMICALS'",
+                    "locked": true,
+                    "key_required": "cabinet_key",
+                    "contains": [
+                        "hazmat_suit",
+                        "facility_manual"
+                    ]
+                },
+                {
+                    "id": "hazmat_suit",
+                    "name": "protective hazmat suit",
+                    "description": "A full-body protective suit required for safe evacuation"
+                },
+                {
+                    "id": "facility_manual",
+                    "name": "facility operations manual",
+                    "description": "A thick binder with emergency procedures",
+                    "readable": true,
+                    "text": "EMERGENCY EVACUATION PROTOCOL: In case of containment breach, proceed to emergency exit. Exit requires authorization from Lead Botanist. Security questions verify identity: 1) What is the most dangerous specimen? 2) Where does kudzu originate? 3) Who authorizes evacuation?"
+                },
+                {
+                    "id": "observation_desk",
+                    "name": "observation deck desk",
+                    "description": "Dr. Martinez's desk overlooking the greenhouse floor",
+                    "searchable": true,
+                    "contains": [
+                        "personal_note"
+                    ]
+                },
+                {
+                    "id": "personal_note",
+                    "name": "handwritten note",
+                    "description": "A note in Dr. Martinez's handwriting",
+                    "readable": true,
+                    "text": "Personal reminder: Specimen 237 is by far our most dangerous creation. If anything goes wrong, I'm the only one authorized to initiate evacuation as Lead Botanist. The hazmat suit in storage is essential - don't try to leave without it!"
+                },
+                {
+                    "id": "emergency_exit_door",
+                    "name": "emergency exit door",
+                    "description": "A sealed emergency exit with a biometric panel and security questions displayed on a screen. Red warning lights flash around it.",
+                    "locked": true,
+                    "lock_type": "password",
+                    "password_questions": [
+                        {
+                            "question": "What is the most dangerous specimen number?",
+                            "answer": "237",
+                            "hint": "Check the research notes and Dr. Martinez's personal note"
+                        },
+                        {
+                            "question": "Where does kudzu originate from?",
+                            "answer": "southern regions",
+                            "hint": "Read the information on specimen tank 109"
+                        },
+                        {
+                            "question": "Who authorizes evacuation?",
+                            "answer": "dr martinez",
+                            "hint": "Check the facility manual and employee roster"
+                        }
+                    ],
+                    "direction": "east",
+                    "leads_to": "safety_zone",
+                    "aliases": [
+                        "exit",
+                        "east"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "safety_zone",
+            "name": "Decontamination Safety Zone",
+            "description": "You've made it to the safety zone! A clean, sterile room with bright white lights and fresh air. Through the window, you can see emergency vehicles arriving. A decontamination shower runs automatically, washing away any spores. You're safe now.",
+            "items": [
+                {
+                    "id": "emergency_phone",
+                    "name": "emergency phone",
+                    "description": "A red phone connected to emergency services"
+                },
+                {
+                    "id": "decon_shower",
+                    "name": "decontamination shower",
+                    "description": "An automated shower system removing any contamination"
+                }
+            ],
+            "exits": [],
+            "is_goal": true,
+            "win_message": "SUCCESS! You've escaped the mutant greenhouse and reached the safety zone. The facility is being sealed off by emergency teams. Thanks to your quick thinking and puzzle-solving skills, you survived the botanical nightmare. The mutant plants will be contained, and you live to tell the tale. You win!"
+        }
+    ]
+}

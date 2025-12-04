@@ -1,0 +1,228 @@
+{
+    "theme": "Lost Monastery",
+    "title": "Lost Monastery Adventure #11",
+    "goal": "Solve the puzzles, achieve the main objective, and escape.",
+    "starting_room": "meditation_chamber",
+    "rooms": [
+        {
+            "id": "meditation_chamber",
+            "name": "Meditation Chamber",
+            "description": "A serene stone chamber with faded tapestries hanging on the walls. Incense burners sit cold and unused. Shafts of dusty light filter through high windows. The air is still and heavy with centuries of silence. Prayer cushions are arranged in a circle around a central altar.",
+            "items": [
+                {
+                    "id": "stone_altar",
+                    "name": "stone altar",
+                    "description": "A simple altar with carved symbols and a small offering bowl",
+                    "searchable": true,
+                    "contains": [
+                        "copper_key"
+                    ]
+                },
+                {
+                    "id": "copper_key",
+                    "name": "small copper key",
+                    "description": "An aged copper key with monastery symbols etched into it"
+                },
+                {
+                    "id": "wooden_cabinet",
+                    "name": "wooden prayer cabinet",
+                    "description": "A tall cabinet with three drawers used for storing sacred texts and items",
+                    "subcontainers": [
+                        {
+                            "id": "top_drawer",
+                            "name": "top drawer",
+                            "locked": false,
+                            "contains": [
+                                "monastery_chronicle"
+                            ]
+                        },
+                        {
+                            "id": "middle_drawer",
+                            "name": "middle drawer",
+                            "locked": true,
+                            "lock_type": "combination",
+                            "combination": "1108",
+                            "contains": [
+                                "iron_key"
+                            ]
+                        },
+                        {
+                            "id": "bottom_drawer",
+                            "name": "bottom drawer",
+                            "locked": false,
+                            "contains": []
+                        }
+                    ]
+                },
+                {
+                    "id": "monastery_chronicle",
+                    "name": "monastery chronicle",
+                    "description": "An ancient book recording the monastery's history",
+                    "readable": true,
+                    "text": "The Monastery of Silent Peaks was founded in the year 1108 by Master Chen. Our three sacred principles guide all who dwell here: Wisdom, Compassion, and Discipline. May these teachings endure through the ages."
+                },
+                {
+                    "id": "iron_key",
+                    "name": "heavy iron key",
+                    "description": "A large iron key that looks important"
+                },
+                {
+                    "id": "meditation_cushions",
+                    "name": "circle of prayer cushions",
+                    "description": "Worn cushions arranged for meditation practice",
+                    "searchable": true,
+                    "contains": [
+                        "hidden_scroll"
+                    ]
+                },
+                {
+                    "id": "hidden_scroll",
+                    "name": "hidden scroll",
+                    "description": "A scroll tucked beneath one of the cushions",
+                    "readable": true,
+                    "text": "Brother Wei's reminder: Master Chen taught that true knowledge resides in the Sacred Library. The three principles unlock all doors. Remember: the first principle illuminates the mind, the second opens the heart, the third strengthens the spirit."
+                },
+                {
+                    "id": "locked_chest",
+                    "name": "ornate wooden chest",
+                    "description": "A beautifully carved chest with a copper lock",
+                    "locked": true,
+                    "key_required": "copper_key",
+                    "contains": [
+                        "master_letter"
+                    ]
+                },
+                {
+                    "id": "master_letter",
+                    "name": "letter from Master Chen",
+                    "description": "A personal letter sealed with the master's seal",
+                    "readable": true,
+                    "text": "To my devoted students: I have hidden the path to enlightenment in the Sacred Library. Only those who understand our three principles may enter. The Inner Sanctum awaits those pure of heart. - Master Chen"
+                },
+                {
+                    "id": "heavy_wooden_door",
+                    "name": "heavy wooden door",
+                    "description": "A thick door leading deeper into the monastery. It requires the iron key.",
+                    "locked": true,
+                    "key_required": "iron_key",
+                    "direction": "east",
+                    "leads_to": "sacred_library",
+                    "aliases": [
+                        "door",
+                        "east"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "sacred_library",
+            "name": "Sacred Library",
+            "description": "A vast library with towering shelves filled with ancient texts and scrolls. Dust motes dance in beams of light from narrow windows. The smell of old paper and sandalwood fills the air. Stone tablets with inscriptions line the walls. A magnificent door carved with symbols stands at the far end.",
+            "items": [
+                {
+                    "id": "bookshelf_wisdom",
+                    "name": "wisdom bookshelf",
+                    "description": "A shelf dedicated to texts about wisdom and knowledge",
+                    "readable": true,
+                    "text": "Shelf label: 'Wisdom - The First Principle. Through wisdom, we illuminate the darkness of ignorance.'"
+                },
+                {
+                    "id": "bookshelf_compassion",
+                    "name": "compassion bookshelf",
+                    "description": "A shelf containing teachings on compassion and kindness",
+                    "readable": true,
+                    "text": "Shelf label: 'Compassion - The Second Principle. Through compassion, we open our hearts to all beings.'"
+                },
+                {
+                    "id": "bookshelf_discipline",
+                    "name": "discipline bookshelf",
+                    "description": "A shelf holding texts about discipline and practice",
+                    "readable": true,
+                    "text": "Shelf label: 'Discipline - The Third Principle. Through discipline, we strengthen our spirit and resolve.'"
+                },
+                {
+                    "id": "reading_table",
+                    "name": "reading table",
+                    "description": "A large table with several open books and scrolls",
+                    "searchable": true,
+                    "contains": [
+                        "library_note"
+                    ]
+                },
+                {
+                    "id": "library_note",
+                    "name": "librarian's note",
+                    "description": "A note left by the monastery librarian",
+                    "readable": true,
+                    "text": "The Inner Sanctum can only be accessed by those who know the sacred principles and honor our founder. Brother Wei keeps forgetting - I've told him a hundred times that Master Chen's teachings are the key to everything!"
+                },
+                {
+                    "id": "stone_tablets",
+                    "name": "inscribed stone tablets",
+                    "description": "Ancient tablets with monastery teachings carved into them",
+                    "readable": true,
+                    "text": "Tablet inscription: 'Let all who seek enlightenment remember the three pillars upon which this monastery stands. Let all who enter the Inner Sanctum speak the name of our founder with reverence.'"
+                },
+                {
+                    "id": "carved_sanctum_door",
+                    "name": "carved sanctum door",
+                    "description": "An ornate door carved with images of monks in meditation. Three questions are inscribed on a bronze plaque beside it.",
+                    "locked": true,
+                    "lock_type": "password",
+                    "password_questions": [
+                        {
+                            "question": "What is the first sacred principle?",
+                            "answer": "wisdom",
+                            "hint": "Check the monastery chronicle and the bookshelves in the library"
+                        },
+                        {
+                            "question": "What is the second sacred principle?",
+                            "answer": "compassion",
+                            "hint": "The three principles are mentioned in multiple texts throughout the monastery"
+                        },
+                        {
+                            "question": "Who founded this monastery?",
+                            "answer": "master chen",
+                            "hint": "The monastery chronicle records the founder's name"
+                        }
+                    ],
+                    "direction": "north",
+                    "leads_to": "inner_sanctum",
+                    "aliases": [
+                        "sanctum",
+                        "north"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "inner_sanctum",
+            "name": "Inner Sanctum",
+            "description": "You have reached the Inner Sanctum! A peaceful chamber bathed in golden light from a circular skylight above. In the center sits a meditation platform surrounded by lotus flowers. The walls are adorned with beautiful murals depicting the monastery's history. A hidden passage behind a tapestry leads to freedom - the mountain path outside.",
+            "items": [
+                {
+                    "id": "meditation_platform",
+                    "name": "golden meditation platform",
+                    "description": "A raised platform where the masters achieved enlightenment"
+                },
+                {
+                    "id": "lotus_flowers",
+                    "name": "sacred lotus flowers",
+                    "description": "Fresh lotus flowers that somehow still bloom in this ancient place"
+                },
+                {
+                    "id": "wall_murals",
+                    "name": "historical murals",
+                    "description": "Beautiful paintings showing the monastery's founding and golden age",
+                    "readable": true,
+                    "text": "The murals depict Master Chen founding the monastery, monks studying in the library, and generations of students achieving enlightenment in this very sanctum."
+                }
+            ],
+            "exits": [],
+            "is_goal": true,
+            "win_message": "You have reached the Inner Sanctum and discovered the path to freedom! As you stand in this sacred space, you feel a sense of peace and accomplishment. The hidden passage behind the tapestry leads you safely down the mountain. You have solved the mysteries of the Lost Monastery and escaped. You win!"
+        }
+    ]
+}

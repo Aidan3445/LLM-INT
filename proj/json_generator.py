@@ -429,7 +429,7 @@ if __name__ == "__main__":
         }
         }
 
-    verified = 9
+    verified = 10
     example_files = [f"game_jsons_and_txts/example_{v+1}.json" for v in range(verified)]
 
     batch = BatchGameGenerator(output_dir="game_jsons_and_txts/generated", n=50, schema=GAME_SCHEMA, example_files=example_files)

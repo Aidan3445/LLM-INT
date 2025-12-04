@@ -1,0 +1,234 @@
+{
+  "theme": "Dream Archive",
+  "title": "Dream Archive Adventure #1",
+  "goal": "Solve the puzzles, achieve the main objective, and escape.",
+  "starting_room": "memory_vault",
+  "rooms": [
+    {
+      "id": "memory_vault",
+      "name": "Memory Vault",
+      "description": "A circular chamber with walls lined with glowing crystalline shelves. Each shelf holds a floating orb containing a captured dream. The air shimmers with ethereal light, and whispers of forgotten memories echo softly. A large filing cabinet stands against one wall, and a locked dream container sits on a pedestal in the center.",
+      "items": [
+        {
+          "id": "filing_cabinet",
+          "name": "dream filing cabinet",
+          "description": "A tall cabinet with three drawers labeled with strange symbols",
+          "subcontainers": [
+            {
+              "id": "top_drawer",
+              "name": "top drawer",
+              "locked": false,
+              "contains": [
+                "archivist_note"
+              ]
+            },
+            {
+              "id": "middle_drawer",
+              "name": "middle drawer",
+              "locked": true,
+              "lock_type": "combination",
+              "combination": "528",
+              "contains": [
+                "silver_key"
+              ]
+            },
+            {
+              "id": "bottom_drawer",
+              "name": "bottom drawer",
+              "locked": false,
+              "contains": []
+            }
+          ]
+        },
+        {
+          "id": "archivist_note",
+          "name": "archivist's log",
+          "description": "A glowing document written in shifting text",
+          "readable": true,
+          "text": "Archive Entry: The Dreamer's most vivid memory occurred on May 28th (5/28). This date unlocks the middle drawer. Remember: The Dreamer is named Luna Winters, keeper of the Nightmare Fragment and the Hope Shard."
+        },
+        {
+          "id": "silver_key",
+          "name": "crystalline silver key",
+          "description": "A key made of solidified moonlight that hums with dream energy"
+        },
+        {
+          "id": "dream_container",
+          "name": "sealed dream container",
+          "description": "A glass sphere containing swirling mist, locked with a silver mechanism",
+          "locked": true,
+          "key_required": "silver_key",
+          "contains": [
+            "nightmare_fragment"
+          ]
+        },
+        {
+          "id": "nightmare_fragment",
+          "name": "Nightmare Fragment",
+          "description": "A dark crystal shard pulsing with shadowy energy, one of the artifacts needed to escape"
+        },
+        {
+          "id": "memory_shelves",
+          "name": "crystalline memory shelves",
+          "description": "Shelves holding countless dream orbs, each containing a captured memory",
+          "searchable": true,
+          "contains": [
+            "dream_journal"
+          ]
+        },
+        {
+          "id": "dream_journal",
+          "name": "Dreamer's journal",
+          "description": "A leather-bound journal that writes itself with dream entries",
+          "readable": true,
+          "text": "Journal Entry: I am Luna Winters, and I've been trapped in the Dream Archive for what feels like eternity. To escape, I must gather the Nightmare Fragment and the Hope Shard, then pass through the Corridor of Forgotten Dreams to reach the Reality Portal. The Sanctuary of Lost Thoughts holds the final key."
+        },
+        {
+          "id": "corridor_door",
+          "name": "shimmering doorway",
+          "description": "A doorway made of liquid light leading deeper into the archive",
+          "locked": false,
+          "direction": "north",
+          "leads_to": "forgotten_corridor",
+          "aliases": [
+            "doorway",
+            "north"
+          ]
+        }
+      ],
+      "exits": []
+    },
+    {
+      "id": "forgotten_corridor",
+      "name": "Corridor of Forgotten Dreams",
+      "description": "A long hallway where the walls constantly shift and change, displaying fragments of half-remembered dreams. Ghostly figures walk past, replaying moments from forgotten memories. Three large murals dominate the walls, each depicting a different scene. At the end of the corridor stands an ornate door covered in question marks.",
+      "items": [
+        {
+          "id": "mural_childhood",
+          "name": "mural of childhood",
+          "description": "A painting showing a young girl playing in a garden",
+          "readable": true,
+          "text": "Mural inscription: 'The Dreamer's first memory - playing in the Sanctuary of Lost Thoughts, where innocence dwells forever.'"
+        },
+        {
+          "id": "mural_nightmare",
+          "name": "mural of nightmares",
+          "description": "A dark painting depicting shadowy creatures and fears",
+          "readable": true,
+          "text": "Mural inscription: 'The Dreamer's greatest fear - being forgotten and lost in the Void of Memories, where names disappear.'"
+        },
+        {
+          "id": "mural_hope",
+          "name": "mural of hope",
+          "description": "A bright painting showing a figure reaching toward light",
+          "readable": true,
+          "text": "Mural inscription: 'The Dreamer's deepest wish - to wake and return to reality, to remember who they truly are.'"
+        },
+        {
+          "id": "floating_chest",
+          "name": "floating dream chest",
+          "description": "A chest suspended in mid-air, glowing with warm golden light",
+          "searchable": true,
+          "contains": [
+            "hope_shard"
+          ]
+        },
+        {
+          "id": "hope_shard",
+          "name": "Hope Shard",
+          "description": "A brilliant crystal fragment radiating warmth and light, the second artifact needed to escape"
+        },
+        {
+          "id": "memory_fragments",
+          "name": "scattered memory fragments",
+          "description": "Glowing shards of broken memories floating in the air",
+          "searchable": true,
+          "contains": [
+            "identity_note"
+          ]
+        },
+        {
+          "id": "identity_note",
+          "name": "fragment of identity",
+          "description": "A piece of memory containing crucial information",
+          "readable": true,
+          "text": "Memory Fragment: You are Luna Winters. You must remember this. Your first memory was in the Sanctuary of Lost Thoughts. You fear the Void of Memories above all else."
+        },
+        {
+          "id": "portal_door",
+          "name": "door to reality",
+          "description": "An ornate door covered in swirling question marks. A plaque reads: 'Only those who know themselves may pass.'",
+          "locked": true,
+          "lock_type": "password",
+          "password_questions": [
+            {
+              "question": "What is the Dreamer's name?",
+              "answer": "luna winters",
+              "hint": "Check the archivist's note and the identity fragment"
+            },
+            {
+              "question": "Where was the Dreamer's first memory?",
+              "answer": "sanctuary of lost thoughts",
+              "hint": "Read the mural of childhood carefully"
+            },
+            {
+              "question": "What is the Dreamer's greatest fear?",
+              "answer": "void of memories",
+              "hint": "The mural of nightmares reveals this"
+            }
+          ],
+          "direction": "east",
+          "leads_to": "reality_portal",
+          "aliases": [
+            "door",
+            "east"
+          ]
+        }
+      ],
+      "exits": []
+    },
+    {
+      "id": "reality_portal",
+      "name": "Reality Portal Chamber",
+      "description": "You have reached the heart of the Dream Archive! A massive swirling portal of light and color dominates the room, showing glimpses of the waking world beyond. Two pedestals stand before the portal, each with an empty socket waiting for a dream artifact. The air crackles with the energy of transition between dreams and reality.",
+      "items": [
+        {
+          "id": "artifact_pedestals",
+          "name": "twin artifact pedestals",
+          "description": "Two crystalline pedestals with sockets shaped for the Nightmare Fragment and Hope Shard",
+          "readable": true,
+          "text": "Inscription: 'Balance the darkness and light. Place both artifacts to activate the portal and return to reality.'"
+        },
+        {
+          "id": "swirling_portal",
+          "name": "reality portal",
+          "description": "A magnificent portal showing the waking world. It requires both dream artifacts to fully activate.",
+          "locked": true,
+          "key_required": "hope_shard",
+          "direction": "north",
+          "leads_to": "waking_world",
+          "aliases": [
+            "portal",
+            "north"
+          ]
+        }
+      ],
+      "exits": []
+    },
+    {
+      "id": "waking_world",
+      "name": "The Waking World",
+      "description": "You open your eyes and find yourself in a comfortable bed, sunlight streaming through the window. The Dream Archive fades like morning mist. You are awake, you are real, and you remember everything. The adventure through your own archived dreams has come to an end.",
+      "items": [
+        {
+          "id": "bedroom_window",
+          "name": "bedroom window",
+          "description": "A window showing the real world outside - trees, sky, and the promise of a new day"
+        }
+      ],
+      "exits": [],
+      "is_goal": true,
+      "win_message": "You have successfully navigated the Dream Archive and returned to reality! The Nightmare Fragment and Hope Shard merge into a single memory crystal that you hold in your hand - a reminder that you conquered your own subconscious. You are awake, you are Luna Winters, and you are free. You win!"
+    }
+  ]
+}

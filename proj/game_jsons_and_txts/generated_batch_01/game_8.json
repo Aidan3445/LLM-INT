@@ -1,0 +1,226 @@
+{
+  "theme": "Oracle's Chamber",
+  "title": "Oracle's Chamber Adventure #8",
+  "goal": "Solve the puzzles, achieve the main objective, and escape.",
+  "starting_room": "oracles_antechamber",
+  "rooms": [
+    {
+      "id": "oracles_antechamber",
+      "name": "Oracle's Antechamber",
+      "description": "A circular chamber lit by floating orbs of pale blue light. Ancient tapestries depicting prophetic visions hang on the stone walls. The air shimmers with residual magic. Incense smoke curls upward from bronze braziers, filling the room with the scent of myrrh and sage.",
+      "items": [
+        {
+          "id": "stone_altar",
+          "name": "stone altar",
+          "description": "A weathered altar carved with mystical symbols and celestial patterns",
+          "searchable": true,
+          "contains": [
+            "crystal_shard"
+          ]
+        },
+        {
+          "id": "crystal_shard",
+          "name": "glowing crystal shard",
+          "description": "A fragment of crystal that pulses with inner light"
+        },
+        {
+          "id": "prophecy_cabinet",
+          "name": "prophecy cabinet",
+          "description": "An ornate wooden cabinet with three drawers, each marked with a different celestial symbol",
+          "subcontainers": [
+            {
+              "id": "sun_drawer",
+              "name": "sun drawer",
+              "locked": false,
+              "contains": [
+                "first_prophecy"
+              ]
+            },
+            {
+              "id": "moon_drawer",
+              "name": "moon drawer",
+              "locked": true,
+              "lock_type": "combination",
+              "combination": "777",
+              "contains": [
+                "silver_key"
+              ]
+            },
+            {
+              "id": "star_drawer",
+              "name": "star drawer",
+              "locked": false,
+              "contains": []
+            }
+          ]
+        },
+        {
+          "id": "first_prophecy",
+          "name": "First Prophecy scroll",
+          "description": "An ancient scroll written in flowing script",
+          "readable": true,
+          "text": "The First Prophecy: In the year when three sevens align, the Oracle spoke her first vision. The Seer of Delphi was her name, and she foretold the coming of heroes. Remember: 777."
+        },
+        {
+          "id": "locked_chest",
+          "name": "ornate locked chest",
+          "description": "A chest decorated with mother-of-pearl inlays and mystical runes",
+          "locked": true,
+          "key_required": "silver_key",
+          "contains": [
+            "second_prophecy"
+          ]
+        },
+        {
+          "id": "second_prophecy",
+          "name": "Second Prophecy scroll",
+          "description": "A scroll sealed with golden wax",
+          "readable": true,
+          "text": "The Second Prophecy: The Oracle's wisdom flows from the sacred spring of Delphi. She who sees beyond the veil guards the path to truth. Only those who know her name and her source may proceed."
+        },
+        {
+          "id": "silver_key",
+          "name": "silver key",
+          "description": "A delicate key made of tarnished silver with mystical engravings"
+        },
+        {
+          "id": "tapestry_left",
+          "name": "tapestry of past visions",
+          "description": "A tapestry showing scenes of ancient prophecies coming true",
+          "readable": true,
+          "text": "The tapestry depicts the Oracle of Delphi speaking prophecies that shaped kingdoms. Beneath it reads: 'She who drinks from the sacred spring sees all.'"
+        },
+        {
+          "id": "bronze_door",
+          "name": "bronze door",
+          "description": "A heavy door engraved with images of seers and prophets. It leads deeper into the Oracle's domain.",
+          "locked": true,
+          "key_required": "crystal_shard",
+          "direction": "east",
+          "leads_to": "hall_of_visions",
+          "aliases": [
+            "door",
+            "east"
+          ]
+        }
+      ],
+      "exits": []
+    },
+    {
+      "id": "hall_of_visions",
+      "name": "Hall of Visions",
+      "description": "A long hallway lined with mirrors that reflect not your image, but glimpses of possible futures. Crystalline pillars support the vaulted ceiling. Three pedestals stand in the center, each holding a different artifact. The walls are covered with inscriptions in ancient languages.",
+      "items": [
+        {
+          "id": "pedestal_wisdom",
+          "name": "pedestal of wisdom",
+          "description": "A marble pedestal holding a golden chalice",
+          "readable": true,
+          "text": "Inscription: 'The Chalice of Wisdom - From this vessel, the Oracle drinks the waters of the sacred spring to gain her sight.'"
+        },
+        {
+          "id": "pedestal_truth",
+          "name": "pedestal of truth",
+          "description": "A jade pedestal displaying an ancient tome",
+          "readable": true,
+          "text": "Inscription: 'The Book of Truth - Within these pages lie the names of all who have sought the Oracle's counsel. The greatest seers are remembered: Pythia, Cassandra, and the Seer of Delphi.'"
+        },
+        {
+          "id": "pedestal_sight",
+          "name": "pedestal of sight",
+          "description": "An obsidian pedestal supporting a crystal orb",
+          "readable": true,
+          "text": "Inscription: 'The Orb of Sight - Through this sphere, one may glimpse the threads of fate that bind all things.'"
+        },
+        {
+          "id": "scroll_rack",
+          "name": "scroll rack",
+          "description": "A wooden rack holding numerous ancient scrolls",
+          "searchable": true,
+          "contains": [
+            "third_prophecy"
+          ]
+        },
+        {
+          "id": "third_prophecy",
+          "name": "Third Prophecy scroll",
+          "description": "A scroll bound with golden thread",
+          "readable": true,
+          "text": "The Third Prophecy: To enter the Inner Sanctum where the Oracle dwells, you must prove your knowledge. Answer truly: What is the Oracle's title? From what source does her power flow? In what sacred place does she reside?"
+        },
+        {
+          "id": "offering_bowl",
+          "name": "offering bowl",
+          "description": "A silver bowl filled with precious gems and coins left by past seekers",
+          "searchable": true,
+          "contains": [
+            "golden_coin"
+          ]
+        },
+        {
+          "id": "golden_coin",
+          "name": "ancient golden coin",
+          "description": "A coin stamped with the image of the Oracle's temple"
+        },
+        {
+          "id": "sanctum_door",
+          "name": "sanctum door",
+          "description": "A magnificent door carved from a single piece of white marble. Three questions are inscribed upon its surface in glowing script.",
+          "locked": true,
+          "lock_type": "password",
+          "password_questions": [
+            {
+              "question": "What is the Oracle's title?",
+              "answer": "seer of delphi",
+              "hint": "Check the First Prophecy scroll and the Book of Truth"
+            },
+            {
+              "question": "From what source does her power flow?",
+              "answer": "sacred spring",
+              "hint": "The Second Prophecy and the tapestry mention this"
+            },
+            {
+              "question": "In what sacred place does she reside?",
+              "answer": "delphi",
+              "hint": "Multiple scrolls and inscriptions reference this location"
+            }
+          ],
+          "direction": "north",
+          "leads_to": "inner_sanctum",
+          "aliases": [
+            "door",
+            "north"
+          ]
+        }
+      ],
+      "exits": []
+    },
+    {
+      "id": "inner_sanctum",
+      "name": "Oracle's Inner Sanctum",
+      "description": "You have reached the heart of the Oracle's Chamber! A magnificent room bathed in ethereal light. In the center, a pool of crystal-clear water bubbles up from the sacred spring. Above it, a spectral figure of the Oracle appears, her eyes glowing with ancient wisdom. She nods in approval as you enter, and a portal of shimmering light opens behind her, offering your escape.",
+      "items": [
+        {
+          "id": "sacred_spring",
+          "name": "sacred spring",
+          "description": "The legendary spring of prophecy, its waters glowing with mystical energy"
+        },
+        {
+          "id": "oracle_spirit",
+          "name": "spirit of the Oracle",
+          "description": "The ethereal form of the ancient Oracle, radiating wisdom and power",
+          "readable": true,
+          "text": "The Oracle speaks: 'You have proven yourself worthy by solving the mysteries of my chamber. Your wisdom and perseverance have earned you passage. Go now, and carry the knowledge you have gained.'"
+        },
+        {
+          "id": "prophecy_throne",
+          "name": "throne of prophecy",
+          "description": "An ornate throne where the Oracle once sat to deliver her visions"
+        }
+      ],
+      "exits": [],
+      "is_goal": true,
+      "win_message": "The Oracle's spirit blesses you as you step through the shimmering portal. You have successfully navigated the mysteries of the Oracle's Chamber and gained her wisdom. The portal carries you safely away, your mind filled with newfound knowledge. You win!"
+    }
+  ]
+}

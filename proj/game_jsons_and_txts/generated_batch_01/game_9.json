@@ -1,0 +1,216 @@
+{
+    "theme": "Forbidden Forest Ritual Site",
+    "title": "Forbidden Forest Ritual Site Adventure #9",
+    "goal": "Solve the puzzles, achieve the main objective, and escape.",
+    "starting_room": "ritual_clearing",
+    "rooms": [
+        {
+            "id": "ritual_clearing",
+            "name": "Ancient Ritual Clearing",
+            "description": "A circular clearing deep in the forbidden forest. Ancient standing stones form a perfect circle around a central altar. Moss-covered symbols glow faintly in the moonlight. The air is thick with the scent of pine and something older, more primal. Carved totems watch from the tree line.",
+            "items": [
+                {
+                    "id": "central_altar",
+                    "name": "stone altar",
+                    "description": "A flat stone altar covered in ancient runes and dried herbs",
+                    "readable": true,
+                    "text": "Inscription: 'The ritual was performed by the Forest Keeper in the year of the witch trials. The sacred flame burns at the heart of the ancient oak. Only moonwater can break the forest's binding.'"
+                },
+                {
+                    "id": "hollow_log",
+                    "name": "hollow fallen log",
+                    "description": "A massive rotting log covered in mushrooms and moss",
+                    "searchable": true,
+                    "contains": [
+                        "ritual_notes"
+                    ]
+                },
+                {
+                    "id": "ritual_notes",
+                    "name": "weathered parchment",
+                    "description": "Ancient notes written in faded ink",
+                    "readable": true,
+                    "text": "Ritual Notes: The binding ceremony was completed in the year 1692, during the dark times. The Forest Keeper sealed the power within the sacred grove. Three truths must be spoken to enter the inner sanctum."
+                },
+                {
+                    "id": "stone_box",
+                    "name": "carved stone box",
+                    "description": "A heavy box carved with forest symbols and a four-digit combination lock",
+                    "locked": true,
+                    "lock_type": "combination",
+                    "combination": "1692",
+                    "contains": [
+                        "iron_key"
+                    ]
+                },
+                {
+                    "id": "iron_key",
+                    "name": "ancient iron key",
+                    "description": "A heavy iron key with a wolf's head carved into the handle"
+                },
+                {
+                    "id": "ritual_chest",
+                    "name": "wooden ritual chest",
+                    "description": "A chest bound with iron bands and a wolf-head lock",
+                    "locked": true,
+                    "key_required": "iron_key",
+                    "contains": [
+                        "sacred_herbs",
+                        "forest_keeper_journal"
+                    ]
+                },
+                {
+                    "id": "sacred_herbs",
+                    "name": "bundle of sacred herbs",
+                    "description": "Dried herbs tied with braided grass, used in ancient rituals"
+                },
+                {
+                    "id": "forest_keeper_journal",
+                    "name": "Forest Keeper's journal",
+                    "description": "A leather-bound journal with detailed entries",
+                    "readable": true,
+                    "text": "I am the Forest Keeper, guardian of these woods. The ritual site's power flows from the ancient oak at the grove's heart. I have sealed the inner sanctum with three questions. Only one who understands the forest's secrets may enter."
+                },
+                {
+                    "id": "standing_stones",
+                    "name": "circle of standing stones",
+                    "description": "Twelve ancient stones arranged in a perfect circle",
+                    "readable": true,
+                    "text": "Each stone is carved with a different symbol: moon, oak, wolf, raven, serpent, stag, bear, owl, fox, boar, crow, and thorn."
+                },
+                {
+                    "id": "carved_totem",
+                    "name": "wooden totem pole",
+                    "description": "A tall totem carved with animal spirits",
+                    "searchable": true,
+                    "contains": [
+                        "moonwater_vial"
+                    ]
+                },
+                {
+                    "id": "moonwater_vial",
+                    "name": "vial of moonwater",
+                    "description": "A small glass vial containing water that glows with silvery light"
+                },
+                {
+                    "id": "overgrown_forest_path",
+                    "name": "overgrown forest path",
+                    "description": "A narrow path leading deeper into the sacred grove",
+                    "locked": false,
+                    "direction": "north",
+                    "leads_to": "sacred_grove",
+                    "aliases": [
+                        "path",
+                        "north"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "sacred_grove",
+            "name": "Sacred Grove",
+            "description": "A mystical grove dominated by an enormous ancient oak tree. Its gnarled roots spread across the forest floor like veins. Fireflies dance in the air, and the sound of distant chanting echoes through the trees. A stone archway covered in vines leads to the inner sanctum.",
+            "items": [
+                {
+                    "id": "ancient_oak",
+                    "name": "ancient oak tree",
+                    "description": "A massive oak tree that must be thousands of years old. Its trunk is carved with countless symbols.",
+                    "readable": true,
+                    "text": "The carvings tell a story: 'Here burns the sacred flame, eternal heart of the forest. The Forest Keeper tends the fire. The ancient oak holds all power. Moonwater cleanses and releases.'"
+                },
+                {
+                    "id": "root_hollow",
+                    "name": "hollow in the oak roots",
+                    "description": "A dark hollow between the massive roots of the oak",
+                    "searchable": true,
+                    "contains": [
+                        "bone_talisman"
+                    ]
+                },
+                {
+                    "id": "bone_talisman",
+                    "name": "bone talisman",
+                    "description": "A talisman carved from bone and hung on a leather cord"
+                },
+                {
+                    "id": "stone_shrine",
+                    "name": "moss-covered shrine",
+                    "description": "A small shrine with offerings of flowers and stones",
+                    "readable": true,
+                    "text": "Offerings to the forest spirits. A plaque reads: 'The Forest Keeper protects us. The ancient oak gives us life. Moonwater purifies our souls.'"
+                },
+                {
+                    "id": "ritual_circle",
+                    "name": "ritual circle",
+                    "description": "A circle of stones with ash from ancient fires",
+                    "searchable": true,
+                    "contains": []
+                },
+                {
+                    "id": "vine-covered_stone_archway",
+                    "name": "vine-covered stone archway",
+                    "description": "An ancient archway leading to the inner sanctum. Three questions are carved into the stone.",
+                    "locked": true,
+                    "lock_type": "password",
+                    "password_questions": [
+                        {
+                            "question": "Who guards the forest?",
+                            "answer": "forest keeper",
+                            "hint": "Check the journal and inscriptions around the ritual site"
+                        },
+                        {
+                            "question": "Where does the sacred flame burn?",
+                            "answer": "ancient oak",
+                            "hint": "Read the altar inscription and the oak tree carvings"
+                        },
+                        {
+                            "question": "What breaks the binding?",
+                            "answer": "moonwater",
+                            "hint": "The altar inscription mentions what can break the forest's binding"
+                        }
+                    ],
+                    "direction": "east",
+                    "leads_to": "inner_sanctum",
+                    "aliases": [
+                        "archway",
+                        "east"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "inner_sanctum",
+            "name": "Inner Sanctum",
+            "description": "You have entered the heart of the ritual site! A sacred flame burns in a stone basin at the center of a circular chamber. The walls are covered in glowing runes that pulse with ancient power. Roots from the great oak above form a natural ceiling. The air hums with magical energy. A shaft of moonlight illuminates a path leading upward to freedom.",
+            "items": [
+                {
+                    "id": "sacred_flame",
+                    "name": "eternal sacred flame",
+                    "description": "A flame that burns without fuel, glowing with green and silver light"
+                },
+                {
+                    "id": "stone_basin",
+                    "name": "ritual stone basin",
+                    "description": "The basin holding the sacred flame, carved with protective symbols"
+                },
+                {
+                    "id": "glowing_runes",
+                    "name": "ancient glowing runes",
+                    "description": "Magical inscriptions covering every surface",
+                    "readable": true,
+                    "text": "The runes tell of the forest's power: 'Here lies the heart of the ancient wood. The ritual is complete. The binding is sealed. The forest endures eternal.'"
+                },
+                {
+                    "id": "root_ceiling",
+                    "name": "ceiling of oak roots",
+                    "description": "Massive roots forming a natural dome overhead, pulsing with life"
+                }
+            ],
+            "exits": [],
+            "is_goal": true,
+            "win_message": "You have reached the inner sanctum and witnessed the sacred flame! The ancient ritual site has accepted your presence. The forest's power flows through you as the moonlight guides you safely out of the forbidden woods. The mysteries of the ritual site are now yours to keep. You win!"
+        }
+    ]
+}

@@ -1,0 +1,218 @@
+{
+    "theme": "Martian Terraforming Hub",
+    "title": "Martian Terraforming Hub Adventure #2",
+    "goal": "Solve the puzzles, achieve the main objective, and escape.",
+    "starting_room": "oxygen_processing_lab",
+    "rooms": [
+        {
+            "id": "oxygen_processing_lab",
+            "name": "Oxygen Processing Laboratory",
+            "description": "A sterile white laboratory filled with humming atmospheric processors and blinking control panels. Through the reinforced viewport, you see the rust-red Martian landscape stretching to the horizon. Warning lights flash amber on several monitors. The air smells of recycled oxygen and ozone.",
+            "items": [
+                {
+                    "id": "workstation",
+                    "name": "research workstation",
+                    "description": "A cluttered desk with datapads and equipment manuals scattered across its surface",
+                    "searchable": true,
+                    "contains": [
+                        "maintenance_manual"
+                    ]
+                },
+                {
+                    "id": "maintenance_manual",
+                    "name": "maintenance manual",
+                    "description": "A technical manual for the terraforming systems",
+                    "readable": true,
+                    "text": "MARS TERRAFORMING HUB - Operational since 2157. Chief Engineer: Dr. Sarah Chen. Lead Botanist: Dr. Marcus Webb. Remember: atmospheric pressure readings are stored in the secure cabinet. Emergency protocols require knowledge of key personnel."
+                },
+                {
+                    "id": "storage_cabinet",
+                    "name": "secure storage cabinet",
+                    "description": "A metal cabinet with three drawers labeled with biohazard symbols",
+                    "subcontainers": [
+                        {
+                            "id": "top_drawer",
+                            "name": "top drawer",
+                            "locked": false,
+                            "contains": [
+                                "research_notes"
+                            ]
+                        },
+                        {
+                            "id": "middle_drawer",
+                            "name": "middle drawer",
+                            "locked": true,
+                            "lock_type": "combination",
+                            "combination": "2157",
+                            "contains": [
+                                "access_keycard"
+                            ]
+                        },
+                        {
+                            "id": "bottom_drawer",
+                            "name": "bottom drawer",
+                            "locked": false,
+                            "contains": []
+                        }
+                    ]
+                },
+                {
+                    "id": "research_notes",
+                    "name": "research datapad",
+                    "description": "A datapad containing research observations",
+                    "readable": true,
+                    "text": "Dr. Webb's Log: The algae tanks in the biodome are thriving! Our work here will make Mars habitable. Dr. Chen continues to maintain the life support systems flawlessly. The combination to the secure drawer is the year we began operations - 2157."
+                },
+                {
+                    "id": "access_keycard",
+                    "name": "security access keycard",
+                    "description": "A magnetic keycard labeled 'AUTHORIZED PERSONNEL ONLY'"
+                },
+                {
+                    "id": "oxygen_processor",
+                    "name": "large oxygen processor",
+                    "description": "A massive machine converting CO2 into breathable oxygen, humming steadily"
+                },
+                {
+                    "id": "reinforced_pressure_door",
+                    "name": "reinforced pressure door",
+                    "description": "A heavy airlock door with a card reader and emergency release handle",
+                    "locked": true,
+                    "key_required": "access_keycard",
+                    "direction": "north",
+                    "leads_to": "central_control_hub",
+                    "aliases": [
+                        "airlock",
+                        "door",
+                        "north"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "central_control_hub",
+            "name": "Central Control Hub",
+            "description": "The nerve center of the terraforming facility. Holographic displays show atmospheric data, temperature readings, and facility schematics. A large window overlooks the biodome filled with green plants - a stark contrast to the barren Martian surface beyond. Emergency lighting casts everything in a red glow.",
+            "items": [
+                {
+                    "id": "main_console",
+                    "name": "main control console",
+                    "description": "The primary control station with multiple screens and input terminals",
+                    "readable": true,
+                    "text": "SYSTEM STATUS: Atmospheric processors online. Biodome integrity: 98%. Emergency evacuation protocols available. Current facility commander: Dr. Sarah Chen."
+                },
+                {
+                    "id": "personnel_board",
+                    "name": "personnel assignment board",
+                    "description": "A digital board displaying crew assignments and photos",
+                    "readable": true,
+                    "text": "CURRENT ASSIGNMENTS - Dr. Sarah Chen: Chief Engineer, Life Support Systems. Dr. Marcus Webb: Lead Botanist, Biodome Operations. Location: All botanical research conducted in the biodome greenhouse."
+                },
+                {
+                    "id": "emergency_locker",
+                    "name": "emergency equipment locker",
+                    "description": "A red locker marked with emergency symbols and supply compartments",
+                    "subcontainers": [
+                        {
+                            "id": "top_compartment",
+                            "name": "top compartment",
+                            "locked": false,
+                            "contains": [
+                                "oxygen_tank"
+                            ]
+                        },
+                        {
+                            "id": "bottom_compartment",
+                            "name": "bottom compartment",
+                            "locked": false,
+                            "contains": [
+                                "evacuation_guide"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "oxygen_tank",
+                    "name": "portable oxygen tank",
+                    "description": "A compact emergency oxygen supply"
+                },
+                {
+                    "id": "evacuation_guide",
+                    "name": "evacuation procedures guide",
+                    "description": "A laminated card with emergency protocols",
+                    "readable": true,
+                    "text": "EMERGENCY EVACUATION: In case of critical system failure, proceed to escape pod bay. Security verification required. You must confirm: Who maintains life support? Where is botanical research conducted? What is your role?"
+                },
+                {
+                    "id": "supply_crate",
+                    "name": "supply crate",
+                    "description": "A sealed crate with Martian colony supplies",
+                    "searchable": true,
+                    "contains": [
+                        "mission_patch"
+                    ]
+                },
+                {
+                    "id": "mission_patch",
+                    "name": "mission patch",
+                    "description": "A fabric patch reading 'Mars Terraforming Initiative - Survivor'",
+                    "readable": true,
+                    "text": "You are a survivor of the Mars Terraforming Initiative. Your mission: ensure humanity's future on the red planet."
+                },
+                {
+                    "id": "escape_pod_access_hatch",
+                    "name": "escape pod access hatch",
+                    "description": "A sealed hatch leading to the emergency escape pod bay. A security terminal displays three verification questions.",
+                    "locked": true,
+                    "lock_type": "password",
+                    "password_questions": [
+                        {
+                            "question": "Who maintains the life support systems?",
+                            "answer": "dr sarah chen",
+                            "hint": "Check the personnel board and maintenance manual"
+                        },
+                        {
+                            "question": "Where is botanical research conducted?",
+                            "answer": "biodome greenhouse",
+                            "hint": "Look at the personnel assignments"
+                        },
+                        {
+                            "question": "What is your role?",
+                            "answer": "survivor",
+                            "hint": "The mission patch might remind you"
+                        }
+                    ],
+                    "direction": "east",
+                    "leads_to": "escape_pod_bay",
+                    "aliases": [
+                        "hatch",
+                        "pod",
+                        "east"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "escape_pod_bay",
+            "name": "Emergency Escape Pod Bay",
+            "description": "You've made it to the escape pod! A sleek emergency vehicle sits in its launch cradle, ready for immediate departure. Through the launch tube, you can see the stars above Mars. The pod's systems hum to life as you approach, displaying 'LAUNCH SEQUENCE READY' on its screen.",
+            "items": [
+                {
+                    "id": "escape_pod",
+                    "name": "emergency escape pod",
+                    "description": "A compact spacecraft designed for emergency evacuation back to Earth orbit"
+                },
+                {
+                    "id": "launch_controls",
+                    "name": "launch control panel",
+                    "description": "The pod's control system showing green status lights across all systems"
+                }
+            ],
+            "exits": [],
+            "is_goal": true,
+            "win_message": "SUCCESS! You board the escape pod and initiate the launch sequence. The pod rockets away from the Martian surface, leaving the damaged terraforming hub behind. As Mars shrinks in the viewport, you set course for Earth. You've survived the crisis and escaped the red planet. You win!"
+        }
+    ]
+}

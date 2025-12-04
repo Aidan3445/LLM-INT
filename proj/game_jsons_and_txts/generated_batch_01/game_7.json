@@ -1,0 +1,224 @@
+{
+    "theme": "Gilded Opera House",
+    "title": "Gilded Opera House Adventure #7",
+    "goal": "Solve the puzzles, achieve the main objective, and escape.",
+    "starting_room": "prima_donna_dressing_room",
+    "rooms": [
+        {
+            "id": "prima_donna_dressing_room",
+            "name": "Prima Donna's Dressing Room",
+            "description": "An opulent dressing room with gilded mirrors, velvet curtains, and crystal chandeliers. The air smells of perfume and powder. Costumes hang on racks, and makeup covers an ornate vanity. A faded playbill is framed on the wall.",
+            "items": [
+                {
+                    "id": "vanity_table",
+                    "name": "ornate vanity table",
+                    "description": "A marble-topped vanity with gold trim and three drawers",
+                    "subcontainers": [
+                        {
+                            "id": "top_drawer",
+                            "name": "top drawer",
+                            "locked": false,
+                            "contains": [
+                                "opera_review"
+                            ]
+                        },
+                        {
+                            "id": "middle_drawer",
+                            "name": "middle drawer",
+                            "locked": true,
+                            "lock_type": "combination",
+                            "combination": "1875",
+                            "contains": [
+                                "silver_key"
+                            ]
+                        },
+                        {
+                            "id": "bottom_drawer",
+                            "name": "bottom drawer",
+                            "locked": false,
+                            "contains": []
+                        }
+                    ]
+                },
+                {
+                    "id": "opera_review",
+                    "name": "newspaper review",
+                    "description": "A yellowed newspaper clipping reviewing an opera performance",
+                    "readable": true,
+                    "text": "REVIEW: Carmen's triumphant premiere at our opera house in 1875! Composer Bizet's masterpiece in four acts captivated the audience. Maestro Fontaine conducted brilliantly, and the prima donna's performance was unforgettable."
+                },
+                {
+                    "id": "framed_playbill",
+                    "name": "framed playbill",
+                    "description": "An elegant playbill behind glass, advertising Carmen",
+                    "readable": true,
+                    "text": "TONIGHT ONLY: Carmen - An opera in four acts by Georges Bizet. Conducted by Maestro Fontaine. Stage Manager: Vittorio Rossi. Premiered 1875."
+                },
+                {
+                    "id": "costume_trunk",
+                    "name": "locked costume trunk",
+                    "description": "A large trunk with elaborate brass fittings and a keyhole shaped like a musical note",
+                    "locked": true,
+                    "key_required": "silver_key",
+                    "contains": [
+                        "backstage_pass",
+                        "director_letter"
+                    ]
+                },
+                {
+                    "id": "silver_key",
+                    "name": "silver key",
+                    "description": "A delicate silver key with a treble clef design"
+                },
+                {
+                    "id": "backstage_pass",
+                    "name": "backstage access pass",
+                    "description": "A laminated pass granting access to backstage areas"
+                },
+                {
+                    "id": "director_letter",
+                    "name": "director's letter",
+                    "description": "A letter from the opera house director",
+                    "readable": true,
+                    "text": "My dear Prima Donna, remember that you are the star of this house. Maestro Fontaine leads the orchestra, Vittorio manages the stage, but you bring the magic. The grand stage awaits your return. - Director Alessandro"
+                },
+                {
+                    "id": "jewelry_box",
+                    "name": "velvet jewelry box",
+                    "description": "A small box sitting on the vanity",
+                    "searchable": true,
+                    "contains": [
+                        "golden_brooch"
+                    ]
+                },
+                {
+                    "id": "golden_brooch",
+                    "name": "golden opera mask brooch",
+                    "description": "A beautiful brooch shaped like a Venetian opera mask"
+                },
+                {
+                    "id": "dressing_room_door",
+                    "name": "dressing room door",
+                    "description": "A heavy wooden door with gold leaf decoration, leading to the backstage corridor",
+                    "locked": true,
+                    "key_required": "backstage_pass",
+                    "direction": "west",
+                    "leads_to": "backstage_corridor",
+                    "aliases": [
+                        "door",
+                        "west"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "backstage_corridor",
+            "name": "Backstage Corridor",
+            "description": "A long hallway lined with portraits of famous performers and conductors. Gas lamps flicker along the walls. Props and set pieces are stored in alcoves. The corridor leads to the grand stage entrance, which is sealed with an ornate door bearing three questions.",
+            "items": [
+                {
+                    "id": "portrait_fontaine",
+                    "name": "portrait of Maestro Fontaine",
+                    "description": "An oil painting of a distinguished conductor holding a baton",
+                    "readable": true,
+                    "text": "Maestro Fontaine - Principal Conductor. Led the orchestra for 30 years. Known for his passionate interpretations and dedication to the musical arts."
+                },
+                {
+                    "id": "portrait_rossi",
+                    "name": "portrait of Vittorio Rossi",
+                    "description": "A painting of a stern-looking man in formal attire",
+                    "readable": true,
+                    "text": "Vittorio Rossi - Stage Manager. Responsible for all backstage operations, set changes, and ensuring performances run smoothly. His office is located in the wings."
+                },
+                {
+                    "id": "portrait_alessandro",
+                    "name": "portrait of Director Alessandro",
+                    "description": "A grand portrait of an elegant gentleman in evening dress",
+                    "readable": true,
+                    "text": "Director Alessandro - Opera House Director. Oversees all artistic and administrative matters. His vision brought this opera house to international acclaim."
+                },
+                {
+                    "id": "prop_cabinet",
+                    "name": "prop storage cabinet",
+                    "description": "A tall cabinet filled with opera props and accessories",
+                    "searchable": true,
+                    "contains": [
+                        "stage_directions"
+                    ]
+                },
+                {
+                    "id": "stage_directions",
+                    "name": "stage directions document",
+                    "description": "A worn document with notes about stage operations",
+                    "readable": true,
+                    "text": "STAGE OPERATIONS: All set changes coordinated by Stage Manager Rossi. His office in the wings contains emergency procedures. Remember: the conductor leads the music, the stage manager leads the production."
+                },
+                {
+                    "id": "music_stand",
+                    "name": "conductor's music stand",
+                    "description": "An ornate music stand with sheet music still on it",
+                    "readable": true,
+                    "text": "Sheet music for Carmen by Georges Bizet. Handwritten note: 'Maestro Fontaine's favorite - he conducted this masterpiece with unmatched passion.'"
+                },
+                {
+                    "id": "grand_stage_entrance",
+                    "name": "grand stage entrance",
+                    "description": "Massive double doors with gilded handles and carved musical motifs. A brass plaque displays three questions that must be answered to proceed.",
+                    "locked": true,
+                    "lock_type": "password",
+                    "password_questions": [
+                        {
+                            "question": "Who conducted the orchestra?",
+                            "answer": "maestro fontaine",
+                            "hint": "Check the portraits and playbill for the conductor's name"
+                        },
+                        {
+                            "question": "Where is the stage manager's office?",
+                            "answer": "wings",
+                            "hint": "The stage directions document mentions this location"
+                        },
+                        {
+                            "question": "Who are you?",
+                            "answer": "prima donna",
+                            "hint": "The director's letter reminds you of your role"
+                        }
+                    ],
+                    "direction": "north",
+                    "leads_to": "grand_stage",
+                    "aliases": [
+                        "stage",
+                        "entrance",
+                        "north"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "grand_stage",
+            "name": "Grand Stage",
+            "description": "You step onto the magnificent grand stage of the opera house! The vast auditorium stretches before you with rows of red velvet seats rising to gilded balconies. The crystal chandelier sparkles overhead. Spotlights illuminate the stage, and the orchestra pit awaits. The exit doors at the back of the house stand open, leading to freedom.",
+            "items": [
+                {
+                    "id": "crystal_chandelier",
+                    "name": "grand crystal chandelier",
+                    "description": "A massive chandelier hanging above the auditorium, sparkling with thousands of crystals"
+                },
+                {
+                    "id": "orchestra_pit",
+                    "name": "orchestra pit",
+                    "description": "The sunken area before the stage where the orchestra performs"
+                },
+                {
+                    "id": "spotlight",
+                    "name": "stage spotlight",
+                    "description": "Brilliant lights illuminating the stage in a warm glow"
+                }
+            ],
+            "exits": [],
+            "is_goal": true,
+            "win_message": "Bravo! You have reached the grand stage and taken your rightful place in the spotlight! The audience erupts in thunderous applause as you take your bow. The opera house doors open, and you exit triumphantly to freedom. The performance of a lifetime is complete. You win!"
+        }
+    ]
+}

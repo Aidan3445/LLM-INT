@@ -1,0 +1,226 @@
+{
+    "theme": "Medieval Dungeon",
+    "title": "Medieval Dungeon Adventure #5",
+    "goal": "Solve the puzzles, achieve the main objective, and escape.",
+    "starting_room": "dungeon_cell",
+    "rooms": [
+        {
+            "id": "dungeon_cell",
+            "name": "Dark Dungeon Cell",
+            "description": "A cold, damp cell deep beneath the castle. Water drips from the stone ceiling, and rats scurry in the shadows. Iron bars block the window, allowing only a sliver of moonlight to enter. The air smells of mold and despair. A skeleton lies slumped in the corner, and a heavy wooden door is the only exit.",
+            "items": [
+                {
+                    "id": "skeleton",
+                    "name": "prisoner's skeleton",
+                    "description": "The remains of a previous prisoner, still wearing tattered clothes",
+                    "searchable": true,
+                    "contains": [
+                        "prisoners_journal"
+                    ]
+                },
+                {
+                    "id": "prisoners_journal",
+                    "name": "prisoner's journal",
+                    "description": "A small, water-damaged book clutched in the skeleton's bony hand",
+                    "readable": true,
+                    "text": "Day 127: I have been here so long I've lost hope. This cursed dungeon was built in 1342 by the cruel Sir Blackwood. They say the treasure vault holds the key to freedom, but I'll never see it. The combination to my chest is the year this prison was born."
+                },
+                {
+                    "id": "loose_stone",
+                    "name": "loose stone in wall",
+                    "description": "A stone in the wall that appears slightly out of place",
+                    "searchable": true,
+                    "contains": [
+                        "rusty_key"
+                    ]
+                },
+                {
+                    "id": "rusty_key",
+                    "name": "rusty iron key",
+                    "description": "An old key hidden behind the loose stone, covered in rust"
+                },
+                {
+                    "id": "wooden_chest",
+                    "name": "old wooden chest",
+                    "description": "A chest in the corner with a combination lock showing four rotating number wheels",
+                    "locked": true,
+                    "lock_type": "combination",
+                    "combination": "1342",
+                    "contains": [
+                        "guard_uniform",
+                        "escape_note"
+                    ]
+                },
+                {
+                    "id": "guard_uniform",
+                    "name": "guard's uniform",
+                    "description": "A stolen guard uniform, useful for blending in"
+                },
+                {
+                    "id": "escape_note",
+                    "name": "escape plan note",
+                    "description": "A note written by the previous prisoner",
+                    "readable": true,
+                    "text": "If you're reading this, I'm already dead. To escape, you must reach the treasure vault. The guards keep records in their room - learn the dungeon master's name, where they take the condemned, and remember who you truly are. Only then can you pass through the vault door."
+                },
+                {
+                    "id": "heavy_cell_door",
+                    "name": "heavy cell door",
+                    "description": "A thick wooden door reinforced with iron bands. A rusty lock secures it.",
+                    "locked": true,
+                    "key_required": "rusty_key",
+                    "direction": "north",
+                    "leads_to": "guard_room",
+                    "aliases": [
+                        "door",
+                        "north"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "guard_room",
+            "name": "Guard Room",
+            "description": "A dimly lit room where guards take their rest. Torches flicker on the walls, casting dancing shadows. A wooden table is covered with dice and playing cards. Wanted posters and duty rosters hang on the walls. A massive iron door to the east leads to the treasure vault.",
+            "items": [
+                {
+                    "id": "wanted_poster_thief",
+                    "name": "wanted poster for Red Hand Tom",
+                    "description": "A poster showing a notorious thief",
+                    "readable": true,
+                    "text": "WANTED: Red Hand Tom - Theft, Burglary. Last seen near the gallows. REWARD: 50 gold pieces"
+                },
+                {
+                    "id": "wanted_poster_murderer",
+                    "name": "wanted poster for Black Knife Mary",
+                    "description": "A poster depicting a dangerous criminal",
+                    "readable": true,
+                    "text": "WANTED: Black Knife Mary - Murder, Assault. Sentenced to the gallows. REWARD: 100 gold pieces"
+                },
+                {
+                    "id": "duty_roster",
+                    "name": "guard duty roster",
+                    "description": "A schedule posted on the wall",
+                    "readable": true,
+                    "text": "GUARD DUTY ROSTER - All guards report to Sir Blackwood, Dungeon Master. Night shift: Check all cells. Morning shift: Escort condemned prisoners to the gallows. Remember: Only knights of the realm are held in the high-security cells."
+                },
+                {
+                    "id": "guards_desk",
+                    "name": "guard's desk",
+                    "description": "A sturdy oak desk with three drawers and various papers scattered on top",
+                    "subcontainers": [
+                        {
+                            "id": "top_drawer",
+                            "name": "top drawer",
+                            "locked": false,
+                            "contains": [
+                                "dungeon_log"
+                            ]
+                        },
+                        {
+                            "id": "middle_drawer",
+                            "name": "middle drawer",
+                            "locked": true,
+                            "lock_type": "combination",
+                            "combination": "100",
+                            "contains": [
+                                "silver_key"
+                            ]
+                        },
+                        {
+                            "id": "bottom_drawer",
+                            "name": "bottom drawer",
+                            "locked": false,
+                            "contains": []
+                        }
+                    ]
+                },
+                {
+                    "id": "dungeon_log",
+                    "name": "dungeon master's log",
+                    "description": "A leather-bound book with daily entries",
+                    "readable": true,
+                    "text": "Entry 47: Another knight captured trying to overthrow the king. These noble fools never learn. The middle drawer combination is the reward for Black Knife Mary. We must maintain order in Sir Blackwood's dungeon."
+                },
+                {
+                    "id": "silver_key",
+                    "name": "silver vault key",
+                    "description": "A polished silver key with intricate engravings"
+                },
+                {
+                    "id": "weapon_rack",
+                    "name": "weapon rack",
+                    "description": "A rack holding swords and shields",
+                    "searchable": true,
+                    "contains": [
+                        "torch"
+                    ]
+                },
+                {
+                    "id": "torch",
+                    "name": "lit torch",
+                    "description": "A burning torch that provides light"
+                },
+                {
+                    "id": "iron_vault_door",
+                    "name": "iron vault door",
+                    "description": "A massive iron door with elaborate locks. Three questions are engraved on a brass plate beside it.",
+                    "locked": true,
+                    "lock_type": "password",
+                    "password_questions": [
+                        {
+                            "question": "Who is the master of this dungeon?",
+                            "answer": "sir blackwood",
+                            "hint": "Check the duty roster and the dungeon log"
+                        },
+                        {
+                            "question": "Where are the condemned taken?",
+                            "answer": "the gallows",
+                            "hint": "Read the wanted posters and duty roster carefully"
+                        },
+                        {
+                            "question": "What is your true identity?",
+                            "answer": "knight",
+                            "hint": "The duty roster mentions who is held in high-security cells"
+                        }
+                    ],
+                    "direction": "east",
+                    "leads_to": "treasure_vault",
+                    "aliases": [
+                        "vault",
+                        "east"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "treasure_vault",
+            "name": "Royal Treasure Vault",
+            "description": "You've made it! A magnificent chamber filled with chests overflowing with gold coins, jeweled crowns, and precious artifacts. Torches illuminate piles of treasure collected over centuries. At the far end, a secret passage leads up a spiral staircase to freedom. Fresh air flows down from above.",
+            "items": [
+                {
+                    "id": "treasure_chests",
+                    "name": "chests of gold",
+                    "description": "Multiple chests filled with gold coins and precious gems"
+                },
+                {
+                    "id": "jeweled_crown",
+                    "name": "jeweled crown",
+                    "description": "A magnificent crown encrusted with rubies and diamonds"
+                },
+                {
+                    "id": "secret_passage",
+                    "name": "secret passage",
+                    "description": "A hidden staircase leading up to freedom",
+                    "readable": true,
+                    "text": "Stone steps wind upward, and you can see daylight at the top. Freedom awaits!"
+                }
+            ],
+            "exits": [],
+            "is_goal": true,
+            "win_message": "You've escaped the dungeon with your freedom and discovered the royal treasure! As you climb the secret passage, you emerge in the forest outside the castle walls. The fresh air fills your lungs as you leave your imprisonment behind forever. You win!"
+        }
+    ]
+}

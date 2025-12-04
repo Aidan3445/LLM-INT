@@ -313,29 +313,26 @@ def validate_json_file(json_file_path: str) -> bool:
     print(f"\n{'='*60}")
     print(f"Validation Results: {json_file_path}")
     print(f"{'='*60}")
-    
+
+    feedback = ""
     if errors:
         all_errors = "\n  • ".join(errors)
-        error_message = f"\n❗ ERRORS ({len(errors)}):\n  • {all_errors}"
-        if not warnings:
-            raise ValidationError(error_message)
-    
+        feedback += f"\n❗ ERRORS ({len(errors)}):\n  • {all_errors}"
     if warnings:
-        print(f"\n⚠️  WARNINGS ({len(warnings)}):")
+        feedback += f"\n⚠️  WARNINGS ({len(warnings)}):"
         for warning in warnings:
-            print(f"  • {warning}")
-        if is_valid:
-            print(f"\n⚠️ Updating file with auto-corrections...")
-            with open(json_file_path, 'w') as f:
-                json.dump(json_data, f, indent=4)
-    
+            feedback += f"\n  • {warning}"
+
     if is_valid:
         print(f"\n✅ Validation passed!")
         print(f"   Rooms: {len(validator.all_room_ids)}")
         print(f"   Items: {len(validator.all_item_ids)}")
+        if warnings:
+            print(f"\n⚠️ Updating file with auto-corrections...")
+            with open(json_file_path, 'w') as f:
+                json.dump(json_data, f, indent=4)
     else:
-        raise ValidationError("\n❗ Validation failed for unknown reasons.")
-
-    print(f"{'='*60}\n")
+        feedback += "\n❗ Validation failed."
+        raise ValidationError(feedback)
     
     return is_valid

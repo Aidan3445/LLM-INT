@@ -1,0 +1,272 @@
+{
+  "theme": "Doomsday Cult Sanctuary",
+  "title": "Doomsday Cult Sanctuary Adventure #3",
+  "goal": "Solve the puzzles, achieve the main objective, and escape.",
+  "starting_room": "initiation_chamber",
+  "rooms": [
+    {
+      "id": "initiation_chamber",
+      "name": "Initiation Chamber",
+      "description": "A dimly lit circular room with stone walls covered in apocalyptic murals. Black candles flicker on iron stands, casting dancing shadows. In the center, a stone altar bears strange symbols. The air is thick with incense and an unsettling sense of devotion. Crimson robes hang on hooks along the walls.",
+      "items": [
+        {
+          "id": "stone_altar",
+          "name": "ceremonial stone altar",
+          "description": "A dark stone altar with carved symbols and burn marks from countless rituals",
+          "searchable": true,
+          "contains": [
+            "ritual_dagger"
+          ]
+        },
+        {
+          "id": "ritual_dagger",
+          "name": "ceremonial dagger",
+          "description": "A silver dagger with cult symbols etched into the blade"
+        },
+        {
+          "id": "wooden_chest",
+          "name": "offering chest",
+          "description": "A wooden chest where initiates leave their worldly possessions",
+          "locked": true,
+          "key_required": "ritual_dagger",
+          "contains": [
+            "founders_journal"
+          ]
+        },
+        {
+          "id": "founders_journal",
+          "name": "founder's journal",
+          "description": "A leather-bound journal belonging to the cult's founder",
+          "readable": true,
+          "text": "I, Prophet Ezekiel, established the Sanctuary of the Final Dawn in the year 1984. When the stars align and the seventh seal breaks, we shall ascend from the Sacred Vault beneath the mountain. Only the faithful shall know the way."
+        },
+        {
+          "id": "candle_stand",
+          "name": "iron candle stand",
+          "description": "A tall stand holding seven black candles, representing the seven seals",
+          "subcontainers": [
+            {
+              "id": "candle_base",
+              "name": "hollow base",
+              "locked": true,
+              "lock_type": "combination",
+              "combination": "1984",
+              "contains": [
+                "brass_key"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "brass_key",
+          "name": "tarnished brass key",
+          "description": "An old brass key with a sun symbol engraved on it"
+        },
+        {
+          "id": "wall_mural",
+          "name": "apocalyptic mural",
+          "description": "A disturbing painting showing the end of the world and figures ascending to salvation",
+          "readable": true,
+          "text": "The mural depicts Prophet Ezekiel leading his followers to the Sacred Vault. Above them, seven stars shine in the darkness. At the bottom, an inscription reads: 'The faithful shall answer the three questions of enlightenment.'"
+        },
+        {
+          "id": "heavy_wooden_door",
+          "name": "heavy wooden door",
+          "description": "A thick door carved with symbols of the sun and moon, leading deeper into the sanctuary",
+          "locked": true,
+          "key_required": "brass_key",
+          "direction": "north",
+          "leads_to": "sacred_library",
+          "aliases": [
+            "door",
+            "north"
+          ]
+        }
+      ],
+      "exits": []
+    },
+    {
+      "id": "sacred_library",
+      "name": "Sacred Library",
+      "description": "A musty library filled with shelves of ancient texts, prophecies, and cult doctrine. Dust motes float in shafts of light from high windows. A large reading table dominates the center, covered in open books and scrolls. The walls are lined with portraits of cult elders.",
+      "items": [
+        {
+          "id": "reading_table",
+          "name": "reading table",
+          "description": "A heavy oak table covered with sacred texts and prophecies",
+          "searchable": true,
+          "contains": [
+            "prophecy_scroll"
+          ]
+        },
+        {
+          "id": "prophecy_scroll",
+          "name": "scroll of prophecy",
+          "description": "An ancient scroll containing the cult's core prophecy",
+          "readable": true,
+          "text": "The Prophecy of the Final Dawn: When the world ends in fire and darkness, the faithful shall gather in the Sacred Vault beneath the mountain. There, Prophet Ezekiel shall lead them to salvation beyond the veil."
+        },
+        {
+          "id": "portrait_ezekiel",
+          "name": "portrait of Prophet Ezekiel",
+          "description": "A large painting of a stern man with piercing eyes, wearing ceremonial robes",
+          "readable": true,
+          "text": "Prophet Ezekiel - Founder and Eternal Guide. Born 1940, received the vision in 1984. His wisdom illuminates the path to salvation."
+        },
+        {
+          "id": "portrait_elder_sarah",
+          "name": "portrait of Elder Sarah",
+          "description": "A painting of a woman in white robes holding a book",
+          "readable": true,
+          "text": "Elder Sarah - Keeper of Sacred Texts. She maintains the library and teaches new initiates the ways of enlightenment."
+        },
+        {
+          "id": "portrait_elder_marcus",
+          "name": "portrait of Elder Marcus",
+          "description": "A painting of a bearded man holding a staff",
+          "readable": true,
+          "text": "Elder Marcus - Guardian of the Sanctum. He protects the High Priest's chambers and ensures only the worthy may enter."
+        },
+        {
+          "id": "bookshelf",
+          "name": "tall bookshelf",
+          "description": "A massive shelf filled with leather-bound volumes of cult teachings",
+          "subcontainers": [
+            {
+              "id": "top_shelf",
+              "name": "top shelf",
+              "locked": false,
+              "contains": [
+                "doctrine_book"
+              ]
+            },
+            {
+              "id": "hidden_compartment",
+              "name": "hidden compartment",
+              "locked": false,
+              "contains": [
+                "silver_key"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "doctrine_book",
+          "name": "book of doctrine",
+          "description": "A thick volume outlining the cult's beliefs and practices",
+          "readable": true,
+          "text": "Chapter 7: The Sacred Vault - The vault lies beneath the mountain, accessible only through the High Priest's Sanctum. It is the place of final gathering, where the faithful await the end times."
+        },
+        {
+          "id": "silver_key",
+          "name": "ornate silver key",
+          "description": "A decorative silver key with intricate engravings"
+        },
+        {
+          "id": "sanctum_door",
+          "name": "sanctum door",
+          "description": "An imposing door leading to the High Priest's private chambers. A bronze plaque displays three questions that must be answered.",
+          "locked": true,
+          "lock_type": "password",
+          "password_questions": [
+            {
+              "question": "Who founded the Sanctuary?",
+              "answer": "prophet ezekiel",
+              "hint": "Check the founder's journal and the portraits"
+            },
+            {
+              "question": "Where do the faithful gather for salvation?",
+              "answer": "sacred vault",
+              "hint": "Read the prophecy scroll and the book of doctrine"
+            },
+            {
+              "question": "What lies beneath the mountain?",
+              "answer": "sacred vault",
+              "hint": "The doctrine book mentions what is beneath the mountain"
+            }
+          ],
+          "direction": "east",
+          "leads_to": "high_priests_sanctum",
+          "aliases": [
+            "door",
+            "east"
+          ]
+        }
+      ],
+      "exits": []
+    },
+    {
+      "id": "high_priests_sanctum",
+      "name": "High Priest's Sanctum",
+      "description": "The private chamber of the cult's leader. Rich tapestries hang from the walls, depicting scenes of apocalypse and rebirth. A grand desk sits before a stained glass window showing a rising sun. In the corner, a hidden passage has been revealed behind a moved bookcase, leading to freedom.",
+      "items": [
+        {
+          "id": "grand_desk",
+          "name": "high priest's desk",
+          "description": "An ornate desk made of dark wood, covered with maps and documents",
+          "subcontainers": [
+            {
+              "id": "desk_drawer",
+              "name": "locked drawer",
+              "locked": true,
+              "key_required": "silver_key",
+              "contains": [
+                "escape_map"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "escape_map",
+          "name": "escape route map",
+          "description": "A hand-drawn map showing a secret tunnel leading out of the sanctuary",
+          "readable": true,
+          "text": "Emergency Exit: In case of raid or danger, use the hidden passage behind the eastern bookcase. It leads through the mountain to the outside world. Only the High Priest knows of this route."
+        },
+        {
+          "id": "stained_glass",
+          "name": "stained glass window",
+          "description": "A beautiful window depicting a sun rising over mountains",
+          "readable": true,
+          "text": "The window shows the sun of enlightenment rising over the sanctuary, symbolizing the cult's promise of salvation."
+        },
+        {
+          "id": "ceremonial_robes",
+          "name": "high priest's robes",
+          "description": "Elaborate robes hanging on a stand, adorned with gold thread and symbols",
+          "searchable": true,
+          "contains": []
+        },
+        {
+          "id": "hidden_passage",
+          "name": "hidden passage",
+          "description": "A narrow stone passage revealed behind a moved bookcase. Cool air flows from within, carrying the scent of freedom.",
+          "locked": false,
+          "direction": "south",
+          "leads_to": "mountain_exit",
+          "aliases": [
+            "passage",
+            "tunnel",
+            "south"
+          ]
+        }
+      ],
+      "exits": []
+    },
+    {
+      "id": "mountain_exit",
+      "name": "Mountain Exit",
+      "description": "You emerge from the tunnel into bright sunlight on the mountainside. Fresh air fills your lungs as you look back at the dark entrance to the sanctuary. Below, you can see a road leading to civilization. You are free!",
+      "items": [
+        {
+          "id": "mountain_path",
+          "name": "winding mountain path",
+          "description": "A steep path leading down the mountain to safety"
+        }
+      ],
+      "exits": [],
+      "is_goal": true,
+      "win_message": "You have escaped the Doomsday Cult Sanctuary! The fresh mountain air and sunlight wash away the darkness of the cult's influence. You are finally free from their grasp. You win!"
+    }
+  ]
+}

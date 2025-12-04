@@ -1,0 +1,227 @@
+{
+    "theme": "Lost Monastery",
+    "title": "Lost Monastery Adventure #4",
+    "goal": "Solve the puzzles, achieve the main objective, and escape.",
+    "starting_room": "meditation_chamber",
+    "rooms": [
+        {
+            "id": "meditation_chamber",
+            "name": "Ancient Meditation Chamber",
+            "description": "A circular stone chamber with faded murals depicting enlightened monks. Prayer cushions are scattered across the floor. Incense burners sit cold and empty. Shafts of dusty light filter through cracks in the ceiling. The air is still and heavy with centuries of silence.",
+            "items": [
+                {
+                    "id": "prayer_cushions",
+                    "name": "pile of prayer cushions",
+                    "description": "Old meditation cushions stacked in the corner",
+                    "searchable": true,
+                    "contains": [
+                        "brass_key"
+                    ]
+                },
+                {
+                    "id": "brass_key",
+                    "name": "small brass key",
+                    "description": "A tarnished brass key with a lotus flower engraved on it"
+                },
+                {
+                    "id": "stone_altar",
+                    "name": "stone altar",
+                    "description": "A simple altar with three offering bowls and a locked compartment beneath",
+                    "subcontainers": [
+                        {
+                            "id": "left_bowl",
+                            "name": "left offering bowl",
+                            "locked": false,
+                            "contains": [
+                                "meditation_scroll"
+                            ]
+                        },
+                        {
+                            "id": "center_bowl",
+                            "name": "center offering bowl",
+                            "locked": false,
+                            "contains": []
+                        },
+                        {
+                            "id": "altar_compartment",
+                            "name": "altar compartment",
+                            "locked": true,
+                            "lock_type": "combination",
+                            "combination": "108",
+                            "contains": [
+                                "iron_key"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "meditation_scroll",
+                    "name": "meditation scroll",
+                    "description": "An ancient scroll with faded writing",
+                    "readable": true,
+                    "text": "The path to enlightenment requires 108 prostrations. Master Chen founded this monastery in the year 1392. Remember: the abbot's wisdom is found in sacred texts, his resting place is the mountain peak, and his true name was Rinzen."
+                },
+                {
+                    "id": "iron_key",
+                    "name": "heavy iron key",
+                    "description": "A large iron key with intricate Buddhist symbols"
+                },
+                {
+                    "id": "wooden_chest",
+                    "name": "locked wooden chest",
+                    "description": "A cedar chest bound with iron bands and a brass lock",
+                    "locked": true,
+                    "key_required": "brass_key",
+                    "contains": [
+                        "monastery_chronicle"
+                    ]
+                },
+                {
+                    "id": "monastery_chronicle",
+                    "name": "monastery chronicle",
+                    "description": "A leather-bound book recording the monastery's history",
+                    "readable": true,
+                    "text": "Chronicle of the Mountain Monastery: Founded by Master Chen in 1392, this sanctuary has housed generations of monks seeking enlightenment. The sacred library contains our most precious texts. Abbot Rinzen, our greatest teacher, achieved enlightenment and ascended from the mountain peak in 1445."
+                },
+                {
+                    "id": "heavy_wooden_door",
+                    "name": "heavy wooden door",
+                    "description": "A thick wooden door carved with lotus flowers, leading to the library",
+                    "locked": true,
+                    "key_required": "iron_key",
+                    "direction": "east",
+                    "leads_to": "sacred_library",
+                    "aliases": [
+                        "door",
+                        "east"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "sacred_library",
+            "name": "Sacred Library",
+            "description": "A vast chamber lined with wooden shelves holding ancient texts and scrolls. Dust motes dance in beams of light from high windows. A large reading table dominates the center. The smell of old paper and sandalwood fills the air. Stone steps lead upward to the north.",
+            "items": [
+                {
+                    "id": "reading_table",
+                    "name": "reading table",
+                    "description": "A massive wooden table with carved dragon legs",
+                    "searchable": true,
+                    "contains": [
+                        "sutra_book"
+                    ]
+                },
+                {
+                    "id": "sutra_book",
+                    "name": "book of sutras",
+                    "description": "A collection of Buddhist teachings and wisdom",
+                    "readable": true,
+                    "text": "The Diamond Sutra: All conditioned things are like dreams, illusions, bubbles, and shadows. The wise monk knows that true wisdom is found in the sacred texts of the library, where knowledge is preserved for eternity."
+                },
+                {
+                    "id": "bookshelf",
+                    "name": "ancient bookshelf",
+                    "description": "Tall shelves filled with manuscripts and scrolls",
+                    "subcontainers": [
+                        {
+                            "id": "top_shelf",
+                            "name": "top shelf",
+                            "locked": false,
+                            "contains": [
+                                "abbot_biography"
+                            ]
+                        },
+                        {
+                            "id": "middle_shelf",
+                            "name": "middle shelf",
+                            "locked": false,
+                            "contains": []
+                        },
+                        {
+                            "id": "bottom_shelf",
+                            "name": "bottom shelf",
+                            "locked": false,
+                            "contains": [
+                                "mountain_map"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "abbot_biography",
+                    "name": "biography of Abbot Rinzen",
+                    "description": "A detailed account of the monastery's greatest teacher",
+                    "readable": true,
+                    "text": "Abbot Rinzen: Born in 1380, he became abbot in 1420. Known for his profound wisdom and compassion. After 25 years of teaching, he achieved final enlightenment and departed from the mountain peak, leaving behind only his prayer beads and a message: 'Seek the summit where earth meets sky.'"
+                },
+                {
+                    "id": "mountain_map",
+                    "name": "map of the mountain",
+                    "description": "A hand-drawn map showing the monastery and surrounding peaks",
+                    "readable": true,
+                    "text": "The map shows the monastery built into the mountainside. A path leads from the library to the summit. A note reads: 'The mountain peak is where Abbot Rinzen achieved enlightenment and ascended to nirvana.'"
+                },
+                {
+                    "id": "stone_stairway",
+                    "name": "stone stairway",
+                    "description": "Ancient stone steps leading upward, blocked by a ceremonial gate. Three questions are carved into the gate's surface.",
+                    "locked": true,
+                    "lock_type": "password",
+                    "password_questions": [
+                        {
+                            "question": "What was the abbot's true name?",
+                            "answer": "rinzen",
+                            "hint": "Check the meditation scroll and the abbot's biography"
+                        },
+                        {
+                            "question": "Where is wisdom preserved?",
+                            "answer": "sacred library",
+                            "hint": "The book of sutras mentions where knowledge is kept"
+                        },
+                        {
+                            "question": "Where did the abbot achieve enlightenment?",
+                            "answer": "mountain peak",
+                            "hint": "Read the abbot's biography and the mountain map carefully"
+                        }
+                    ],
+                    "direction": "north",
+                    "leads_to": "mountain_summit",
+                    "aliases": [
+                        "stairs",
+                        "stairway",
+                        "north",
+                        "up"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "mountain_summit",
+            "name": "Mountain Summit",
+            "description": "You stand at the peak of the mountain, above the clouds. The monastery lies far below. Prayer flags flutter in the wind. A simple stone shrine marks the spot where Abbot Rinzen achieved enlightenment. The view stretches endlessly in all directions. A sense of profound peace washes over you. You have found the path to freedom.",
+            "items": [
+                {
+                    "id": "stone_shrine",
+                    "name": "enlightenment shrine",
+                    "description": "A humble shrine with offerings of flowers and incense, marking the sacred spot"
+                },
+                {
+                    "id": "prayer_flags",
+                    "name": "colorful prayer flags",
+                    "description": "Strings of flags carrying prayers and blessings on the wind"
+                },
+                {
+                    "id": "abbots_beads",
+                    "name": "Abbot Rinzen's prayer beads",
+                    "description": "The sacred prayer beads left behind by the enlightened master, resting on the shrine"
+                }
+            ],
+            "exits": [],
+            "is_goal": true,
+            "win_message": "You have reached the mountain summit where Abbot Rinzen achieved enlightenment! As you stand at this sacred peak, you feel a profound sense of peace and understanding. The path to freedom was not just physical, but spiritual. You have solved the mysteries of the Lost Monastery and found your way to liberation. You win!"
+        }
+    ]
+}
