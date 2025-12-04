@@ -1,0 +1,258 @@
+{
+    "theme": "Virtual Reality Malfunction",
+    "title": "Virtual Reality Malfunction Adventure #45",
+    "goal": "Solve the puzzles, achieve the main objective, and escape.",
+    "starting_room": "vr_tutorial_zone",
+    "rooms": [
+        {
+            "id": "vr_tutorial_zone",
+            "name": "Glitching Tutorial Zone",
+            "description": "You awaken in a stark white room with flickering walls. Digital artifacts flash across your vision - the VR simulation is clearly malfunctioning. Error messages scroll endlessly across floating screens. A tutorial bot stands frozen mid-gesture, its face glitching between different expressions. The air crackles with corrupted data.",
+            "items": [
+                {
+                    "id": "tutorial_bot",
+                    "name": "frozen tutorial bot",
+                    "description": "A humanoid AI guide stuck in an error loop, sparking with digital corruption",
+                    "readable": true,
+                    "text": "ERROR: Tutorial_Bot.exe has stopped responding. Last message: 'Welcome, User! Remember your admin credentials: Username is SysAdmin. The emergency logout code is stored in the corrupted file cabinet.'"
+                },
+                {
+                    "id": "floating_screens",
+                    "name": "error message screens",
+                    "description": "Multiple holographic screens displaying cascading error codes",
+                    "readable": true,
+                    "text": "SYSTEM ERROR 404: Reality.exe not found. ERROR 505: Simulation integrity compromised. CRITICAL: Emergency code is 505. Contact Administrator Nova Chen immediately."
+                },
+                {
+                    "id": "file_cabinet",
+                    "name": "corrupted file cabinet",
+                    "description": "A digital filing system with drawers phasing in and out of existence",
+                    "subcontainers": [
+                        {
+                            "id": "top_drawer",
+                            "name": "top drawer",
+                            "locked": false,
+                            "contains": [
+                                "system_log"
+                            ]
+                        },
+                        {
+                            "id": "middle_drawer",
+                            "name": "middle drawer",
+                            "locked": true,
+                            "lock_type": "combination",
+                            "combination": "505",
+                            "contains": [
+                                "access_keycard"
+                            ]
+                        },
+                        {
+                            "id": "bottom_drawer",
+                            "name": "bottom drawer",
+                            "locked": false,
+                            "contains": []
+                        }
+                    ]
+                },
+                {
+                    "id": "system_log",
+                    "name": "system diagnostic log",
+                    "description": "A glowing data tablet with fragmented text",
+                    "readable": true,
+                    "text": "DIAGNOSTIC LOG: VR System v45.0 - Administrator: Nova Chen. Malfunction detected at 14:30. Emergency protocols require error code 505 to access restricted areas. User must reach System Core to initiate manual logout."
+                },
+                {
+                    "id": "access_keycard",
+                    "name": "admin access keycard",
+                    "description": "A digital keycard flickering with unstable code, labeled 'RESTRICTED ACCESS'"
+                },
+                {
+                    "id": "supply_crate",
+                    "name": "emergency supply crate",
+                    "description": "A container marked with warning symbols, partially phased through the floor",
+                    "searchable": true,
+                    "contains": [
+                        "wire_cutters"
+                    ]
+                },
+                {
+                    "id": "wire_cutters",
+                    "name": "digital wire cutters",
+                    "description": "A tool designed to cut through corrupted data barriers"
+                },
+                {
+                    "id": "corrupted_data_barrier",
+                    "name": "corrupted data barrier",
+                    "description": "A wall of scrambled code blocking the exit. It looks weak enough to cut through.",
+                    "locked": true,
+                    "key_required": "wire_cutters",
+                    "direction": "east",
+                    "leads_to": "corrupted_game_world",
+                    "aliases": [
+                        "barrier",
+                        "east",
+                        "wall"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "corrupted_game_world",
+            "name": "Corrupted Game World",
+            "description": "A bizarre landscape where multiple game environments have merged together. Medieval castles blend into futuristic cities, and the sky cycles rapidly between day and night. NPCs wander aimlessly, repeating broken dialogue. A massive door labeled 'SYSTEM CORE' pulses with red warning lights. The ground beneath your feet occasionally becomes transparent, revealing streams of code.",
+            "items": [
+                {
+                    "id": "npc_knight",
+                    "name": "glitching knight NPC",
+                    "description": "A medieval knight whose armor keeps changing colors and textures",
+                    "readable": true,
+                    "text": "Knight NPC dialogue loop: 'Greetings, traveler! The System Core lies beyond... beyond... ERROR... The administrator's name is Nova Chen... Chen... Chen... The password vault holds the key... key... key...'"
+                },
+                {
+                    "id": "npc_scientist",
+                    "name": "corrupted scientist NPC",
+                    "description": "A lab-coated figure whose face is a blur of pixels",
+                    "readable": true,
+                    "text": "Scientist NPC dialogue: 'The simulation is collapsing! We're trapped in the VR mainframe! Only the System Core can save us... The admin username is SysAdmin... Check the password vault for emergency protocols...'"
+                },
+                {
+                    "id": "npc_child",
+                    "name": "flickering child NPC",
+                    "description": "A young avatar that phases between different character models",
+                    "readable": true,
+                    "text": "Child NPC whispers: 'I'm scared... I want to go home... The lady said we're in the mainframe... mainframe... mainframe... She said her name was Nova Chen...'"
+                },
+                {
+                    "id": "password_vault",
+                    "name": "emergency password vault",
+                    "description": "A secure container requiring an access keycard to open",
+                    "locked": true,
+                    "key_required": "access_keycard",
+                    "contains": [
+                        "emergency_protocol",
+                        "logout_token"
+                    ]
+                },
+                {
+                    "id": "emergency_protocol",
+                    "name": "emergency protocol document",
+                    "description": "An official document with logout procedures",
+                    "readable": true,
+                    "text": "EMERGENCY LOGOUT PROTOCOL: In case of system malfunction, proceed to System Core. Authentication required: Admin username (SysAdmin), Administrator name (Nova Chen), and location of trapped users (VR Mainframe). Present logout token to activate emergency exit."
+                },
+                {
+                    "id": "logout_token",
+                    "name": "emergency logout token",
+                    "description": "A glowing digital key that can activate the emergency exit sequence"
+                },
+                {
+                    "id": "glitch_fountain",
+                    "name": "glitching fountain",
+                    "description": "A fountain where water flows upward and sideways, defying physics",
+                    "searchable": true,
+                    "contains": [
+                        "memory_chip"
+                    ]
+                },
+                {
+                    "id": "memory_chip",
+                    "name": "corrupted memory chip",
+                    "description": "A data chip containing fragments of system information",
+                    "readable": true,
+                    "text": "MEMORY FRAGMENT: System Administrator Nova Chen initiated emergency shutdown at 14:30. All users trapped in VR Mainframe. Manual override required at System Core. Username: SysAdmin."
+                },
+                {
+                    "id": "System_Core_entrance",
+                    "name": "System Core entrance",
+                    "description": "A massive reinforced door with a security terminal. Three authentication questions glow on the screen.",
+                    "locked": true,
+                    "lock_type": "password",
+                    "password_questions": [
+                        {
+                            "question": "Enter administrator username:",
+                            "answer": "sysadmin",
+                            "hint": "Check the tutorial bot's last message and the memory chip"
+                        },
+                        {
+                            "question": "Enter administrator's full name:",
+                            "answer": "nova chen",
+                            "hint": "Multiple NPCs and documents mention the administrator's name"
+                        },
+                        {
+                            "question": "Where are users currently trapped?",
+                            "answer": "vr mainframe",
+                            "hint": "The scientist NPC and emergency protocol mention this location"
+                        }
+                    ],
+                    "direction": "north",
+                    "leads_to": "system_core",
+                    "aliases": [
+                        "door",
+                        "north",
+                        "core"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "system_core",
+            "name": "VR System Core",
+            "description": "You've reached the heart of the virtual reality system! A massive chamber filled with floating data streams and holographic displays. In the center, a control terminal pulses with stable blue light - the only uncorrupted system in the entire simulation. Around you, the walls display the real world: a VR lab where your physical body lies in a pod. An emergency logout portal shimmers nearby, waiting to be activated.",
+            "items": [
+                {
+                    "id": "control_terminal",
+                    "name": "main control terminal",
+                    "description": "The central computer system with full administrative access",
+                    "readable": true,
+                    "text": "SYSTEM CORE TERMINAL: Emergency logout sequence ready. Insert logout token to activate. WARNING: All users will be safely ejected from VR simulation. System will undergo full reboot."
+                },
+                {
+                    "id": "holographic_displays",
+                    "name": "status displays",
+                    "description": "Screens showing the real-world VR lab and your physical body",
+                    "readable": true,
+                    "text": "DISPLAY: VR Lab - Subject in Pod 45. Vital signs stable. Emergency technicians standing by. Ready for logout sequence."
+                },
+                {
+                    "id": "emergency_logout_portal",
+                    "name": "emergency logout portal",
+                    "description": "A shimmering gateway back to reality, activated by the logout token",
+                    "locked": true,
+                    "key_required": "logout_token",
+                    "direction": "west",
+                    "leads_to": "reality",
+                    "aliases": [
+                        "portal",
+                        "west",
+                        "exit"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "reality",
+            "name": "VR Laboratory",
+            "description": "Your eyes flutter open. You're lying in a VR pod in a clean, white laboratory. Technicians rush over to help you out of the equipment. The malfunctioning simulation fades from your mind like a bad dream. You're back in the real world, safe and sound.",
+            "items": [
+                {
+                    "id": "vr_pod",
+                    "name": "VR immersion pod",
+                    "description": "The pod you were trapped in, now powered down and safe"
+                },
+                {
+                    "id": "technician",
+                    "name": "relief technician",
+                    "description": "A worried-looking technician checking your vital signs",
+                    "readable": true,
+                    "text": "Technician: 'Thank goodness you made it out! The system experienced a critical malfunction. You were trapped for hours. We're so sorry - this will never happen again!'"
+                }
+            ],
+            "exits": [],
+            "is_goal": true,
+            "win_message": "SUCCESS! You've escaped the malfunctioning VR simulation and returned to reality! The emergency logout sequence worked perfectly, and you're safely back in the real world. The technicians assure you that the system will be completely overhauled. Your quick thinking and puzzle-solving skills saved you from being trapped indefinitely. You win!"
+        }
+    ]
+}

@@ -1,0 +1,261 @@
+{
+    "theme": "Neon Noir Detective Office",
+    "title": "Neon Noir Detective Office Adventure #43",
+    "goal": "Solve the puzzles, achieve the main objective, and escape.",
+    "starting_room": "detective_office",
+    "rooms": [
+        {
+            "id": "detective_office",
+            "name": "Rain-Soaked Detective Office",
+            "description": "A cramped office on the 43rd floor. Rain streaks down the window, distorting the neon signs outside. Your desk is cluttered with case files and empty coffee cups. A holographic display flickers in the corner. The air smells of cigarette smoke and cheap whiskey.",
+            "items": [
+                {
+                    "id": "desk",
+                    "name": "detective's desk",
+                    "description": "A battered wooden desk covered in papers and old tech",
+                    "subcontainers": [
+                        {
+                            "id": "top_drawer",
+                            "name": "top drawer",
+                            "locked": false,
+                            "contains": [
+                                "case_file_alpha"
+                            ]
+                        },
+                        {
+                            "id": "middle_drawer",
+                            "name": "middle drawer",
+                            "locked": true,
+                            "lock_type": "combination",
+                            "combination": "0847",
+                            "contains": [
+                                "access_keycard"
+                            ]
+                        },
+                        {
+                            "id": "bottom_drawer",
+                            "name": "bottom drawer",
+                            "locked": false,
+                            "contains": []
+                        }
+                    ]
+                },
+                {
+                    "id": "case_file_alpha",
+                    "name": "case file alpha",
+                    "description": "A manila folder marked 'CASE #0847 - CONFIDENTIAL'",
+                    "readable": true,
+                    "text": "CASE #0847: The Neon Dragon Syndicate. Primary suspect: Victor Zhao. Last seen at the Nexus Club in the Downtown Sector. Evidence stored in locker 7. Detective badge required for evidence room access."
+                },
+                {
+                    "id": "filing_cabinet",
+                    "name": "metal filing cabinet",
+                    "description": "A dented filing cabinet with four drawers",
+                    "subcontainers": [
+                        {
+                            "id": "drawer_a",
+                            "name": "drawer A",
+                            "locked": false,
+                            "contains": [
+                                "witness_statement"
+                            ]
+                        },
+                        {
+                            "id": "drawer_b",
+                            "name": "drawer B",
+                            "locked": false,
+                            "contains": []
+                        },
+                        {
+                            "id": "drawer_c",
+                            "name": "drawer C",
+                            "locked": true,
+                            "lock_type": "combination",
+                            "combination": "007",
+                            "contains": [
+                                "evidence_locker_key"
+                            ]
+                        },
+                        {
+                            "id": "drawer_d",
+                            "name": "drawer D",
+                            "locked": false,
+                            "contains": []
+                        }
+                    ]
+                },
+                {
+                    "id": "witness_statement",
+                    "name": "witness statement",
+                    "description": "A typed statement from a witness",
+                    "readable": true,
+                    "text": "Witness Report: I saw the suspect enter the Nexus Club around midnight. He was carrying a briefcase. The club is in the Downtown Sector. I heard him mention something about 'locker 7' to his associate. - Anonymous Witness #007"
+                },
+                {
+                    "id": "evidence_locker_key",
+                    "name": "small brass key",
+                    "description": "A key labeled 'Evidence Locker 7'"
+                },
+                {
+                    "id": "access_keycard",
+                    "name": "detective's keycard",
+                    "description": "A magnetic keycard with your detective badge number"
+                },
+                {
+                    "id": "holographic_display",
+                    "name": "holographic terminal",
+                    "description": "A flickering holographic display showing city surveillance feeds",
+                    "readable": true,
+                    "text": "SURVEILLANCE LOG: Victor Zhao spotted entering Nexus Club, Downtown Sector. Subject is armed and dangerous. Approach with caution. Your detective ID: Detective Morgan Cross."
+                },
+                {
+                    "id": "coat_rack",
+                    "name": "old coat rack",
+                    "description": "A wooden coat rack with a trench coat hanging on it",
+                    "searchable": true,
+                    "contains": [
+                        "detective_notes"
+                    ]
+                },
+                {
+                    "id": "detective_notes",
+                    "name": "personal notes",
+                    "description": "Your handwritten notes on the case",
+                    "readable": true,
+                    "text": "Notes: Victor Zhao - leader of Neon Dragon Syndicate. Operates out of Downtown Sector. Must gather evidence from locker 7 before confronting him. Remember: I'm Detective Morgan Cross, badge #0847."
+                },
+                {
+                    "id": "reinforced_office_door",
+                    "name": "reinforced office door",
+                    "description": "A heavy door with a card reader leading to the evidence room",
+                    "locked": true,
+                    "key_required": "access_keycard",
+                    "direction": "south",
+                    "leads_to": "evidence_room",
+                    "aliases": [
+                        "door",
+                        "south"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "evidence_room",
+            "name": "Evidence Storage Room",
+            "description": "A sterile room lined with numbered lockers. Fluorescent lights hum overhead. Security cameras watch from every corner. The air is cold and smells of disinfectant. A large vault door dominates the far wall, leading to the high-security area.",
+            "items": [
+                {
+                    "id": "evidence_locker_7",
+                    "name": "evidence locker 7",
+                    "description": "A metal locker with a brass keyhole",
+                    "locked": true,
+                    "key_required": "evidence_locker_key",
+                    "contains": [
+                        "encrypted_datapad",
+                        "surveillance_photo"
+                    ]
+                },
+                {
+                    "id": "encrypted_datapad",
+                    "name": "encrypted datapad",
+                    "description": "A digital tablet with encrypted files",
+                    "readable": true,
+                    "text": "DECRYPTED FILES: Victor Zhao's operations center is in the Downtown Sector. His syndicate meets at the Nexus Club. To access the high-security vault, you must verify your identity and case details."
+                },
+                {
+                    "id": "surveillance_photo",
+                    "name": "surveillance photograph",
+                    "description": "A grainy photo of Victor Zhao",
+                    "readable": true,
+                    "text": "Photo shows Victor Zhao entering a building in the Downtown Sector. Timestamp: 23:47. Location confirmed: Nexus Club."
+                },
+                {
+                    "id": "security_terminal",
+                    "name": "security terminal",
+                    "description": "A computer terminal with access logs",
+                    "readable": true,
+                    "text": "SECURITY LOG: Evidence collected for Case #0847. Detective Morgan Cross authorized. Suspect location: Downtown Sector, Nexus Club. Proceed to high-security vault for final evidence."
+                },
+                {
+                    "id": "storage_shelves",
+                    "name": "metal storage shelves",
+                    "description": "Shelves filled with evidence boxes and files",
+                    "searchable": true,
+                    "contains": [
+                        "case_summary"
+                    ]
+                },
+                {
+                    "id": "case_summary",
+                    "name": "case summary report",
+                    "description": "A comprehensive summary of the investigation",
+                    "readable": true,
+                    "text": "CASE SUMMARY: Detective Morgan Cross investigating Case #0847. Suspect Victor Zhao operates from the Nexus Club in Downtown Sector. All evidence points to syndicate headquarters at this location."
+                },
+                {
+                    "id": "high_security_vault_door",
+                    "name": "high_security vault door",
+                    "description": "A massive steel door with a biometric scanner and question panel",
+                    "locked": true,
+                    "lock_type": "password",
+                    "password_questions": [
+                        {
+                            "question": "What is your detective name?",
+                            "answer": "morgan cross",
+                            "hint": "Check your personal notes and the holographic display"
+                        },
+                        {
+                            "question": "Where does Victor Zhao operate?",
+                            "answer": "downtown sector",
+                            "hint": "Multiple files mention the suspect's location"
+                        },
+                        {
+                            "question": "What is the suspect's base of operations?",
+                            "answer": "nexus club",
+                            "hint": "The case file and surveillance data reveal this"
+                        }
+                    ],
+                    "direction": "east",
+                    "leads_to": "syndicate_headquarters",
+                    "aliases": [
+                        "vault",
+                        "east"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "syndicate_headquarters",
+            "name": "Nexus Club - Syndicate Headquarters",
+            "description": "You've infiltrated the Neon Dragon Syndicate's headquarters! The room pulses with holographic displays and neon lights. Victor Zhao's empty desk sits in the center, surrounded by evidence of his criminal empire. A emergency exit glows green on the far wall - your escape route after gathering the final evidence.",
+            "items": [
+                {
+                    "id": "zhao_desk",
+                    "name": "Victor Zhao's desk",
+                    "description": "A sleek desk covered in holographic projectors and data chips",
+                    "searchable": true,
+                    "contains": [
+                        "incriminating_evidence"
+                    ]
+                },
+                {
+                    "id": "incriminating_evidence",
+                    "name": "syndicate records",
+                    "description": "Digital files containing all the evidence needed to bring down the Neon Dragon Syndicate"
+                },
+                {
+                    "id": "holographic_map",
+                    "name": "holographic city map",
+                    "description": "A 3D map showing the syndicate's operations across the city",
+                    "readable": true,
+                    "text": "The map reveals the full extent of Victor Zhao's criminal network. With this evidence, you can finally close Case #0847."
+                }
+            ],
+            "exits": [],
+            "is_goal": true,
+            "win_message": "SUCCESS! You've gathered all the evidence needed to bring down the Neon Dragon Syndicate. Victor Zhao's empire crumbles as you transmit the data to headquarters. The rain-soaked streets of the neon city are a little safer tonight. Case #0847: CLOSED. You win, Detective!"
+        }
+    ]
+}

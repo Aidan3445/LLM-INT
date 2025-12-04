@@ -91,8 +91,8 @@
                     "description": "A device that signals rescue teams - essential for escape"
                 },
                 {
-                    "id": "pressure-sealed_door",
-                    "name": "pressure-sealed door",
+                    "id": "pressure_sealed_door",
+                    "name": "pressure_sealed door",
                     "description": "A heavy door with a card reader leading to the equipment bay",
                     "locked": true,
                     "key_required": "access_card",

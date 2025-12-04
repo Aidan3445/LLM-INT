@@ -11,7 +11,7 @@
             "items": [
                 {
                     "id": "crystal_pond",
-                    "name": "crystal-clear pond",
+                    "name": "crystal clear pond",
                     "description": "A perfectly still pond that reflects the sky like a mirror. Something glimmers beneath the surface.",
                     "searchable": true,
                     "contains": [

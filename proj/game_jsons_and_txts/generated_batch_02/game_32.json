@@ -171,8 +171,8 @@
                     "contains": []
                 },
                 {
-                    "id": "rune-covered_door",
-                    "name": "rune-covered door",
+                    "id": "rune_covered_door",
+                    "name": "rune_covered door",
                     "description": "A door inscribed with glowing magical runes. Three questions appear in shimmering text on its surface.",
                     "locked": true,
                     "lock_type": "password",

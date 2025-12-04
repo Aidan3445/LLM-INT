@@ -68,7 +68,7 @@
                 },
                 {
                     "id": "locked_chest",
-                    "name": "iron-bound chest",
+                    "name": "iron bound chest",
                     "description": "A heavy chest secured with an iron lock, covered in protective runes",
                     "locked": true,
                     "key_required": "iron_key",

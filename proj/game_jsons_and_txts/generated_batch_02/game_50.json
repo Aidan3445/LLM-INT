@@ -1,0 +1,232 @@
+{
+    "theme": "Retro Arcade Time Loop",
+    "title": "Retro Arcade Time Loop Adventure #50",
+    "goal": "Solve the puzzles, achieve the main objective, and escape.",
+    "starting_room": "arcade_floor",
+    "rooms": [
+        {
+            "id": "arcade_floor",
+            "name": "Neon Arcade Floor",
+            "description": "A dimly lit arcade filled with the glow of CRT screens and neon lights. Classic game cabinets line the walls, their attract modes playing on loop. The carpet has a garish geometric pattern, and the air smells of popcorn and ozone. A digital clock on the wall blinks 11:59 PM repeatedly. You have a strange feeling you've been here before.",
+            "items": [
+                {
+                    "id": "pac_man_cabinet",
+                    "name": "Pac-Man arcade cabinet",
+                    "description": "A yellow cabinet with the classic maze-chase game. The high score screen is displayed.",
+                    "readable": true,
+                    "text": "HIGH SCORES: 1st - LOOP 999,999 | 2nd - ALEX 850,000 | 3rd - MAZE 720,000. A sticky note reads: 'Alex always wins. Check the token dispenser.'"
+                },
+                {
+                    "id": "space_invaders_cabinet",
+                    "name": "Space Invaders cabinet",
+                    "description": "A black cabinet with descending alien sprites. The screen shows game over.",
+                    "readable": true,
+                    "text": "GAME OVER. INSERT TOKEN. A faded sticker on the side reads: 'Tournament Champion 1982 - The year everything changed.'"
+                },
+                {
+                    "id": "galaga_cabinet",
+                    "name": "Galaga arcade cabinet",
+                    "description": "A blue cabinet with a space shooter game frozen mid-game.",
+                    "readable": true,
+                    "text": "The screen shows a paused game. Someone has taped a note: 'The manager keeps the office key in the prize counter. Check the bottom shelf.'"
+                },
+                {
+                    "id": "token_dispenser",
+                    "name": "arcade token dispenser",
+                    "description": "A coin-operated machine that dispenses brass arcade tokens.",
+                    "searchable": true,
+                    "contains": [
+                        "brass_token"
+                    ]
+                },
+                {
+                    "id": "brass_token",
+                    "name": "brass arcade token",
+                    "description": "A token embossed with 'LOOP ARCADE - BREAK THE CYCLE'"
+                },
+                {
+                    "id": "prize_counter",
+                    "name": "prize counter display",
+                    "description": "A glass case filled with cheap toys and prizes. The counter has shelves underneath.",
+                    "subcontainers": [
+                        {
+                            "id": "top_shelf",
+                            "name": "top shelf",
+                            "locked": false,
+                            "contains": [
+                                "loop_journal"
+                            ]
+                        },
+                        {
+                            "id": "bottom_shelf",
+                            "name": "bottom shelf",
+                            "locked": false,
+                            "contains": [
+                                "office_key"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "loop_journal",
+                    "name": "time-worn journal",
+                    "description": "A notebook with dozens of identical entries, all in your handwriting.",
+                    "readable": true,
+                    "text": "Entry #50: I'm trapped in a time loop. The arcade resets at midnight. My name is Alex Chen. I work here as the night manager. The server room holds the answer. The system admin password is hidden in the employee records."
+                },
+                {
+                    "id": "office_key",
+                    "name": "manager's office key",
+                    "description": "A small silver key with a keychain shaped like a joystick"
+                },
+                {
+                    "id": "manager's_office_door",
+                    "name": "manager's office door",
+                    "description": "A door marked 'EMPLOYEES ONLY' with a keyhole below the handle.",
+                    "locked": true,
+                    "key_required": "office_key",
+                    "direction": "west",
+                    "leads_to": "back_office",
+                    "aliases": [
+                        "door",
+                        "west"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "back_office",
+            "name": "Manager's Back Office",
+            "description": "A cluttered office with posters of classic arcade games covering the walls. A desk is buried under maintenance logs and employee files. A filing cabinet stands in the corner. Through a window, you can see the arcade floor frozen in time. A heavy metal door labeled 'SERVER ROOM' dominates the back wall.",
+            "items": [
+                {
+                    "id": "desk_clutter",
+                    "name": "messy desk",
+                    "description": "A desk covered in papers, empty energy drink cans, and arcade repair manuals.",
+                    "searchable": true,
+                    "contains": [
+                        "maintenance_log"
+                    ]
+                },
+                {
+                    "id": "maintenance_log",
+                    "name": "arcade maintenance log",
+                    "description": "A logbook tracking repairs and system updates.",
+                    "readable": true,
+                    "text": "Latest Entry: Installed new time-sync system on all cabinets. Connected to central server. Tournament mode activated for 1982 anniversary event. System admin: Check employee file for credentials."
+                },
+                {
+                    "id": "filing_cabinet",
+                    "name": "employee filing cabinet",
+                    "description": "A metal cabinet with three drawers labeled A-F, G-M, and N-Z.",
+                    "subcontainers": [
+                        {
+                            "id": "drawer_a_f",
+                            "name": "drawer A-F",
+                            "locked": false,
+                            "contains": [
+                                "employee_file_alex"
+                            ]
+                        },
+                        {
+                            "id": "drawer_g_m",
+                            "name": "drawer G-M",
+                            "locked": true,
+                            "lock_type": "combination",
+                            "combination": "1982",
+                            "contains": [
+                                "system_admin_note"
+                            ]
+                        },
+                        {
+                            "id": "drawer_n_z",
+                            "name": "drawer N-Z",
+                            "locked": false,
+                            "contains": []
+                        }
+                    ]
+                },
+                {
+                    "id": "employee_file_alex",
+                    "name": "employee file for Alex Chen",
+                    "description": "A personnel file with your photo and information.",
+                    "readable": true,
+                    "text": "Name: Alex Chen | Position: Night Manager | Start Date: 1982 | Notes: Responsible for closing procedures and system maintenance. Has full access to server room."
+                },
+                {
+                    "id": "system_admin_note",
+                    "name": "system administrator note",
+                    "description": "A confidential memo about the arcade's computer system.",
+                    "readable": true,
+                    "text": "CONFIDENTIAL: Server room access protocol. Security questions required. Q1: What game holds the highest score? Q2: Where are the arcade machines connected? Q3: Who has full system access?"
+                },
+                {
+                    "id": "arcade_poster",
+                    "name": "framed tournament poster",
+                    "description": "A poster advertising the 1982 Championship Tournament.",
+                    "readable": true,
+                    "text": "LOOP ARCADE CHAMPIONSHIP 1982! Grand Prize: $10,000! Featured Games: Pac-Man, Donkey Kong, Space Invaders. The poster shows Pac-Man as the main attraction with the highest prize pool."
+                },
+                {
+                    "id": "server_room_security_door",
+                    "name": "server room security door",
+                    "description": "A reinforced metal door with a digital keypad. A screen displays three security questions.",
+                    "locked": true,
+                    "lock_type": "password",
+                    "password_questions": [
+                        {
+                            "question": "What game holds the highest score?",
+                            "answer": "pac-man",
+                            "hint": "Check the high score displays on the arcade floor"
+                        },
+                        {
+                            "question": "Where are the arcade machines connected?",
+                            "answer": "central server",
+                            "hint": "The maintenance log mentions the system architecture"
+                        },
+                        {
+                            "question": "Who has full system access?",
+                            "answer": "alex chen",
+                            "hint": "Look at your employee file and the journal entries"
+                        }
+                    ],
+                    "direction": "north",
+                    "leads_to": "server_room",
+                    "aliases": [
+                        "door",
+                        "north"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "server_room",
+            "name": "Central Server Room",
+            "description": "You've made it to the heart of the arcade! A room filled with blinking servers and tangled cables. In the center, a main terminal displays a countdown: 00:00:59... 00:00:58... The screen shows 'TIME LOOP PROTOCOL ACTIVE - ITERATION #50'. A large red button labeled 'EMERGENCY SYSTEM RESET' glows invitingly. Around you, monitors show every moment of your previous 49 loops playing simultaneously.",
+            "items": [
+                {
+                    "id": "main_terminal",
+                    "name": "central control terminal",
+                    "description": "The master computer controlling the entire arcade's time-sync system.",
+                    "readable": true,
+                    "text": "SYSTEM STATUS: Time loop active. All arcade machines synchronized. Iteration: 50. To break the loop, press EMERGENCY RESET. Warning: This will erase all loop data and return timeline to normal."
+                },
+                {
+                    "id": "server_racks",
+                    "name": "humming server racks",
+                    "description": "Rows of servers processing the temporal loop calculations, their lights blinking in perfect synchronization."
+                },
+                {
+                    "id": "reset_button",
+                    "name": "emergency reset button",
+                    "description": "A large red button that will break the time loop and restore normal time flow."
+                }
+            ],
+            "exits": [],
+            "is_goal": true,
+            "win_message": "You press the EMERGENCY RESET button. The servers whir and click, the countdown stops, and suddenly everything goes silent. The clock on the wall ticks past midnight for the first time in what feels like forever. The arcade machines power down normally. You hear the sound of the front door unlocking. The time loop is broken! You're free to leave the arcade and return to the normal flow of time. After 50 iterations, you finally escaped! You win!"
+        }
+    ]
+}

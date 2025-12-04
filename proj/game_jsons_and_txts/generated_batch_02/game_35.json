@@ -47,8 +47,8 @@
                     "text": "To whoever finds this: I am Sir Edmund, wrongly imprisoned by the tyrant lord. The guard keeps his keys locked away. Remember the year of the great siege - 1453. May you find freedom where I could not."
                 },
                 {
-                    "id": "iron-banded_cell_door",
-                    "name": "iron-banded cell door",
+                    "id": "iron_banded_cell_door",
+                    "name": "iron_banded cell door",
                     "description": "A heavy oak door reinforced with iron bands. The lock looks old but sturdy.",
                     "locked": true,
                     "key_required": "rusty_nail",
