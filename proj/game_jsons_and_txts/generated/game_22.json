@@ -1,0 +1,286 @@
+{
+    "theme": "Wizard's Menagerie",
+    "title": "Wizard's Menagerie Adventure #22",
+    "goal": "Solve the puzzles, achieve the main objective, and escape.",
+    "starting_room": "creature_holding_pens",
+    "rooms": [
+        {
+            "id": "creature_holding_pens",
+            "name": "Creature Holding Pens",
+            "description": "A large chamber filled with enchanted cages housing various magical creatures. Glowing runes pulse on the walls, and the air smells of hay, magic, and something vaguely sulfurous. A phoenix chirps softly in one cage, while a small dragon snores in another. Feeding schedules and care instructions are posted on clipboards hanging from hooks.",
+            "items": [
+                {
+                    "id": "supply_cabinet",
+                    "name": "creature supply cabinet",
+                    "description": "A tall wooden cabinet with three drawers containing feeding supplies and care equipment",
+                    "subcontainers": [
+                        {
+                            "id": "top_drawer",
+                            "name": "top drawer",
+                            "locked": false,
+                            "contains": [
+                                "feeding_schedule"
+                            ]
+                        },
+                        {
+                            "id": "middle_drawer",
+                            "name": "middle drawer",
+                            "locked": true,
+                            "lock_type": "combination",
+                            "combination": "357",
+                            "contains": [
+                                "brass_key"
+                            ]
+                        },
+                        {
+                            "id": "bottom_drawer",
+                            "name": "bottom drawer",
+                            "locked": false,
+                            "contains": []
+                        }
+                    ]
+                },
+                {
+                    "id": "feeding_schedule",
+                    "name": "creature feeding schedule",
+                    "description": "A parchment listing feeding times for the menagerie creatures",
+                    "readable": true,
+                    "text": "FEEDING SCHEDULE: Phoenix - 3 meals daily. Unicorn - 5 portions of enchanted oats. Dragon hatchling - 7 servings of flame-roasted meat. Remember: The combination to the middle drawer is the number of meals in order: Phoenix, Unicorn, Dragon."
+                },
+                {
+                    "id": "brass_key",
+                    "name": "brass cage key",
+                    "description": "A small brass key with a dragon emblem engraved on the handle"
+                },
+                {
+                    "id": "phoenix_cage",
+                    "name": "phoenix cage",
+                    "description": "An ornate golden cage containing a beautiful phoenix with crimson and gold feathers",
+                    "readable": true,
+                    "text": "Nameplate: 'Ember - Phoenix. Origin: Flame Mountains. Caretaker: Wizard Aldric Flameheart.'"
+                },
+                {
+                    "id": "unicorn_cage",
+                    "name": "unicorn enclosure",
+                    "description": "A spacious pen with a shimmering white unicorn",
+                    "readable": true,
+                    "text": "Nameplate: 'Starlight - Unicorn. Origin: Moonlit Glade. Caretaker: Wizard Aldric Flameheart.'"
+                },
+                {
+                    "id": "dragon_cage",
+                    "name": "dragon hatchling cage",
+                    "description": "A reinforced steel cage containing a small sleeping dragon",
+                    "readable": true,
+                    "text": "Nameplate: 'Scales - Dragon Hatchling. Origin: Volcanic Peaks. Caretaker: Wizard Aldric Flameheart.'"
+                },
+                {
+                    "id": "locked_chest",
+                    "name": "reinforced storage chest",
+                    "description": "A heavy chest bound with iron bands and a brass lock",
+                    "locked": true,
+                    "key_required": "brass_key",
+                    "contains": [
+                        "wizards_journal"
+                    ]
+                },
+                {
+                    "id": "wizards_journal",
+                    "name": "wizard's personal journal",
+                    "description": "A leather-bound journal with Aldric's notes and observations",
+                    "readable": true,
+                    "text": "Journal Entry: My menagerie grows! I've collected creatures from across the realm. The Spell Library holds my most precious research. Only I, Aldric Flameheart, may enter. The creatures must never escape to the Forbidden Forest, where wild magic runs rampant."
+                },
+                {
+                    "id": "hay_pile",
+                    "name": "pile of enchanted hay",
+                    "description": "A large pile of hay that glows faintly with preservation magic",
+                    "searchable": true,
+                    "contains": [
+                        "silver_coin"
+                    ]
+                },
+                {
+                    "id": "silver_coin",
+                    "name": "ancient silver coin",
+                    "description": "A coin stamped with mystical symbols, possibly used for magical transactions"
+                },
+                {
+                    "id": "heavy_oak_door",
+                    "name": "heavy oak door",
+                    "description": "A sturdy door leading north to the wizard's spell library. Runes glow faintly around the frame.",
+                    "locked": false,
+                    "direction": "north",
+                    "leads_to": "spell_library",
+                    "aliases": [
+                        "door",
+                        "north"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "spell_library",
+            "name": "Wizard's Spell Library",
+            "description": "A circular tower room lined floor to ceiling with ancient spellbooks and scrolls. A large desk sits in the center, covered with open books, bubbling potions, and magical instruments. Crystal orbs float near the ceiling, casting a soft blue light. The smell of old parchment and incense fills the air. A locked vault door dominates the eastern wall.",
+            "items": [
+                {
+                    "id": "spellbook_shelf",
+                    "name": "ancient spellbook shelf",
+                    "description": "A towering bookshelf containing hundreds of magical tomes",
+                    "searchable": true,
+                    "contains": [
+                        "creature_compendium"
+                    ]
+                },
+                {
+                    "id": "creature_compendium",
+                    "name": "Compendium of Magical Creatures",
+                    "description": "A comprehensive guide to magical beasts and their properties",
+                    "readable": true,
+                    "text": "Chapter on Phoenixes: These magnificent birds are reborn from their own ashes and originate from the Flame Mountains. Chapter on Unicorns: Pure creatures of the Moonlit Glade, they possess healing magic. Chapter on Dragons: Even hatchlings from the Volcanic Peaks possess great power and wisdom."
+                },
+                {
+                    "id": "wizards_desk",
+                    "name": "wizard's cluttered desk",
+                    "description": "A massive oak desk covered in magical research and experimental apparatus",
+                    "subcontainers": [
+                        {
+                            "id": "desk_drawer_left",
+                            "name": "left drawer",
+                            "locked": false,
+                            "contains": [
+                                "research_notes"
+                            ]
+                        },
+                        {
+                            "id": "desk_drawer_right",
+                            "name": "right drawer",
+                            "locked": false,
+                            "contains": [
+                                "vault_instructions"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "research_notes",
+                    "name": "magical research notes",
+                    "description": "Scattered notes about various magical experiments",
+                    "readable": true,
+                    "text": "Research Log: Successfully created portal to the Sanctuary of Stars. This will be my escape route if the menagerie ever becomes compromised. The portal requires the Star Crystal to activate."
+                },
+                {
+                    "id": "vault_instructions",
+                    "name": "vault security protocol",
+                    "description": "A document detailing the vault's security measures",
+                    "readable": true,
+                    "text": "VAULT SECURITY: Three questions must be answered to access my most valuable artifacts. Q1: What is the wizard's full name? Q2: Where do phoenixes originate? Q3: Where must the creatures never escape to?"
+                },
+                {
+                    "id": "potion_table",
+                    "name": "alchemy table",
+                    "description": "A table covered with bubbling potions and alchemical ingredients",
+                    "searchable": true,
+                    "contains": []
+                },
+                {
+                    "id": "floating_orbs",
+                    "name": "floating crystal orbs",
+                    "description": "Magical orbs that provide light and hover near the ceiling",
+                    "readable": true,
+                    "text": "The orbs pulse with a steady rhythm, casting dancing shadows across the ancient texts."
+                },
+                {
+                    "id": "enchanted_vault_door",
+                    "name": "enchanted vault door",
+                    "description": "A massive door covered in protective runes. A magical interface displays three security questions.",
+                    "locked": true,
+                    "lock_type": "password",
+                    "password_questions": [
+                        {
+                            "question": "What is the wizard's full name?",
+                            "answer": "aldric flameheart",
+                            "hint": "Check the creature nameplates and the wizard's journal"
+                        },
+                        {
+                            "question": "Where do phoenixes originate?",
+                            "answer": "flame mountains",
+                            "hint": "Look at the phoenix cage nameplate or the creature compendium"
+                        },
+                        {
+                            "question": "Where must the creatures never escape to?",
+                            "answer": "forbidden forest",
+                            "hint": "The wizard's journal mentions this important location"
+                        }
+                    ],
+                    "direction": "east",
+                    "leads_to": "artifact_vault",
+                    "aliases": [
+                        "vault",
+                        "east"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "artifact_vault",
+            "name": "Artifact Vault",
+            "description": "You've entered the wizard's secret vault! The room glows with magical energy from countless enchanted artifacts displayed on pedestals and shelves. In the center, a swirling portal of starlight hovers above a circular platform. The legendary Star Crystal rests on a pedestal before the portal, pulsing with cosmic power.",
+            "items": [
+                {
+                    "id": "star_crystal",
+                    "name": "Star Crystal",
+                    "description": "A magnificent crystal that contains the light of a thousand stars, the key to activating the escape portal"
+                },
+                {
+                    "id": "artifact_displays",
+                    "name": "enchanted artifact displays",
+                    "description": "Shelves and pedestals holding various magical items: wands, amulets, rings, and mystical relics"
+                },
+                {
+                    "id": "portal_platform",
+                    "name": "portal activation platform",
+                    "description": "A circular platform with the Star Crystal pedestal at its center. The portal swirls above it.",
+                    "readable": true,
+                    "text": "Inscription on platform: 'Place the Star Crystal upon the pedestal to activate the portal to the Sanctuary of Stars and escape the menagerie.'"
+                },
+                {
+                    "id": "starlight_portal",
+                    "name": "starlight portal",
+                    "description": "A shimmering portal of cosmic energy that leads to the Sanctuary of Stars. It requires the Star Crystal to fully activate.",
+                    "locked": true,
+                    "key_required": "star_crystal",
+                    "direction": "north",
+                    "leads_to": "sanctuary_of_stars",
+                    "aliases": [
+                        "portal",
+                        "north"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "sanctuary_of_stars",
+            "name": "Sanctuary of Stars",
+            "description": "You emerge in a breathtaking celestial sanctuary floating among the stars. Constellations swirl around you in a cosmic dance. The wizard's menagerie is far behind, and you stand in a place of pure magical wonder. A pathway of starlight leads to freedom.",
+            "items": [
+                {
+                    "id": "constellation_display",
+                    "name": "living constellations",
+                    "description": "Brilliant stars forming mythical creatures and heroes, dancing through the cosmic void"
+                },
+                {
+                    "id": "starlight_path",
+                    "name": "pathway of stars",
+                    "description": "A glowing path made of pure starlight leading to your escape"
+                }
+            ],
+            "exits": [],
+            "is_goal": true,
+            "win_message": "You have successfully navigated the Wizard's Menagerie and escaped through the portal to the Sanctuary of Stars! The Star Crystal glows warmly in your hand as you walk the starlight path to freedom. Wizard Aldric's magical creatures are safe in their pens, and you have proven yourself worthy of wielding such powerful magic. You win!"
+        }
+    ]
+}

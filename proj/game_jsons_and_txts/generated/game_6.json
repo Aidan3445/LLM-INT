@@ -1,0 +1,223 @@
+{
+    "theme": "Submarine Lab",
+    "title": "Submarine Lab Adventure #6",
+    "goal": "Solve the puzzles, achieve the main objective, and escape.",
+    "starting_room": "research_lab",
+    "rooms": [
+        {
+            "id": "research_lab",
+            "name": "Deep Sea Research Laboratory",
+            "description": "A cramped underwater laboratory filled with scientific equipment and blinking monitors. Through the reinforced porthole, you see the dark ocean depths and bioluminescent creatures drifting past. Emergency lights cast an eerie red glow. The air smells of recycled oxygen and electronics.",
+            "items": [
+                {
+                    "id": "lab_computer",
+                    "name": "main research computer",
+                    "description": "A computer terminal displaying various research data and logs",
+                    "readable": true,
+                    "text": "RESEARCH LOG - Dr. Sarah Chen, Lead Scientist. Project started: 03/15/2024. Depth: 3152 meters. Mission: Study deep-sea organisms. Emergency protocol: All personnel must know the facility director's name, our depth, and the location of backup oxygen."
+                },
+                {
+                    "id": "equipment_cabinet",
+                    "name": "equipment storage cabinet",
+                    "description": "A tall metal cabinet with multiple compartments for storing lab equipment",
+                    "subcontainers": [
+                        {
+                            "id": "top_compartment",
+                            "name": "top compartment",
+                            "locked": false,
+                            "contains": [
+                                "research_notes"
+                            ]
+                        },
+                        {
+                            "id": "middle_compartment",
+                            "name": "middle compartment",
+                            "locked": true,
+                            "lock_type": "combination",
+                            "combination": "3152",
+                            "contains": [
+                                "access_card"
+                            ]
+                        },
+                        {
+                            "id": "bottom_compartment",
+                            "name": "bottom compartment",
+                            "locked": false,
+                            "contains": []
+                        }
+                    ]
+                },
+                {
+                    "id": "research_notes",
+                    "name": "research notebook",
+                    "description": "A waterproof notebook filled with scientific observations",
+                    "readable": true,
+                    "text": "Dr. Chen's Notes: Remember the facility depth for the equipment cabinet - 3152 meters. Director Martinez oversees all operations. The specimen freezer requires the master key from the storage bay."
+                },
+                {
+                    "id": "access_card",
+                    "name": "security access card",
+                    "description": "A magnetic keycard labeled 'AUTHORIZED PERSONNEL ONLY'"
+                },
+                {
+                    "id": "microscope_station",
+                    "name": "research microscope station",
+                    "description": "A workstation with a high-powered microscope and sample slides",
+                    "searchable": true,
+                    "contains": [
+                        "sample_log"
+                    ]
+                },
+                {
+                    "id": "sample_log",
+                    "name": "specimen log",
+                    "description": "A document cataloging collected samples",
+                    "readable": true,
+                    "text": "SPECIMEN LOG: Sample 47B collected from thermal vent. Unusual bioluminescent properties. Storage location: Specimen freezer in equipment bay. Note: Backup oxygen tanks stored in equipment bay lockers."
+                },
+                {
+                    "id": "specimen_freezer",
+                    "name": "specimen freezer unit",
+                    "description": "A locked freezer containing biological samples",
+                    "locked": true,
+                    "key_required": "master_key",
+                    "contains": [
+                        "emergency_beacon"
+                    ]
+                },
+                {
+                    "id": "emergency_beacon",
+                    "name": "emergency locator beacon",
+                    "description": "A device that signals rescue teams - essential for escape"
+                },
+                {
+                    "id": "pressure-sealed_door",
+                    "name": "pressure-sealed door",
+                    "description": "A heavy door with a card reader leading to the equipment bay",
+                    "locked": true,
+                    "key_required": "access_card",
+                    "direction": "east",
+                    "leads_to": "equipment_bay",
+                    "aliases": [
+                        "door",
+                        "east"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "equipment_bay",
+            "name": "Equipment Storage Bay",
+            "description": "A utilitarian storage area lined with metal lockers and supply crates. Diving suits hang on the walls, and oxygen tanks are secured in racks. A maintenance panel blinks with warning lights. The hum of life support systems fills the air.",
+            "items": [
+                {
+                    "id": "personnel_board",
+                    "name": "personnel information board",
+                    "description": "A board displaying crew member profiles and photos",
+                    "readable": true,
+                    "text": "CREW ROSTER: Director Carlos Martinez - Facility Commander. Dr. Sarah Chen - Lead Researcher. Engineer James Park - Maintenance and Systems. Dr. Lisa Wong - Marine Biologist."
+                },
+                {
+                    "id": "supply_locker",
+                    "name": "supply locker",
+                    "description": "A large locker containing various equipment and supplies",
+                    "searchable": true,
+                    "contains": [
+                        "master_key",
+                        "maintenance_manual"
+                    ]
+                },
+                {
+                    "id": "master_key",
+                    "name": "master key",
+                    "description": "A key labeled 'MASTER - ALL STORAGE UNITS'"
+                },
+                {
+                    "id": "maintenance_manual",
+                    "name": "facility maintenance manual",
+                    "description": "A technical manual with emergency procedures",
+                    "readable": true,
+                    "text": "EMERGENCY PROCEDURES: In case of evacuation, proceed to escape pod bay. Access requires security clearance. Emergency questions verify identity: Who is the facility director? What is our operational depth? Where are backup oxygen tanks stored?"
+                },
+                {
+                    "id": "oxygen_rack",
+                    "name": "oxygen tank rack",
+                    "description": "A rack holding emergency oxygen tanks",
+                    "readable": true,
+                    "text": "EMERGENCY OXYGEN STORAGE - Equipment Bay Lockers. Tanks checked and certified by Engineer Park."
+                },
+                {
+                    "id": "tool_chest",
+                    "name": "engineer's tool chest",
+                    "description": "A heavy toolbox with various repair equipment",
+                    "searchable": true,
+                    "contains": [
+                        "wire_cutters"
+                    ]
+                },
+                {
+                    "id": "wire_cutters",
+                    "name": "heavy-duty wire cutters",
+                    "description": "Industrial wire cutters for cutting through obstacles"
+                },
+                {
+                    "id": "escape_pod_bay_hatch",
+                    "name": "escape pod bay hatch",
+                    "description": "A reinforced hatch leading to the escape pod bay. A security terminal displays three verification questions.",
+                    "locked": true,
+                    "lock_type": "password",
+                    "password_questions": [
+                        {
+                            "question": "Who is the facility director?",
+                            "answer": "carlos martinez",
+                            "hint": "Check the personnel board in the equipment bay"
+                        },
+                        {
+                            "question": "What is the operational depth in meters?",
+                            "answer": "3152",
+                            "hint": "The research computer log mentions the facility depth"
+                        },
+                        {
+                            "question": "Where are backup oxygen tanks stored?",
+                            "answer": "equipment bay lockers",
+                            "hint": "Look at the specimen log and oxygen rack information"
+                        }
+                    ],
+                    "direction": "north",
+                    "leads_to": "escape_pod_bay",
+                    "aliases": [
+                        "hatch",
+                        "north"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "escape_pod_bay",
+            "name": "Emergency Escape Pod Bay",
+            "description": "You've reached the escape pod bay! A sleek emergency escape pod sits in its launch tube, ready for deployment. Control panels glow with green ready lights. Through the launch window, you can see the dark ocean waiting. The emergency beacon in your possession will guide rescue teams to your location.",
+            "items": [
+                {
+                    "id": "escape_pod",
+                    "name": "emergency escape pod",
+                    "description": "A small submarine designed for emergency evacuation to the surface"
+                },
+                {
+                    "id": "launch_controls",
+                    "name": "pod launch controls",
+                    "description": "The control panel for launching the escape pod, all systems showing green"
+                },
+                {
+                    "id": "rescue_radio",
+                    "name": "emergency radio",
+                    "description": "A radio system for contacting surface vessels once you reach safe depth"
+                }
+            ],
+            "exits": [],
+            "is_goal": true,
+            "win_message": "SUCCESS! You board the escape pod with the emergency beacon and initiate launch sequence. The pod detaches and begins its ascent through the dark waters. As you rise toward the surface, the beacon transmits your location to rescue teams. The pressure decreases, light begins to filter down from above, and soon you'll break through to safety. You've escaped the submarine lab! You win!"
+        }
+    ]
+}

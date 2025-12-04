@@ -1,0 +1,217 @@
+{
+    "theme": "Crystal-Powered Train Station",
+    "title": "Crystal-Powered Train Station Adventure #7",
+    "goal": "Solve the puzzles, achieve the main objective, and escape.",
+    "starting_room": "station_control_room",
+    "rooms": [
+        {
+            "id": "station_control_room",
+            "name": "Station Control Room",
+            "description": "A dimly lit control room filled with brass gauges, copper pipes, and flickering crystal displays. The walls are lined with technical diagrams showing the station's crystal power grid. Emergency lights cast an amber glow over dusty control panels. Through a grimy window, you can see the darkened train platform below.",
+            "items": [
+                {
+                    "id": "control_desk",
+                    "name": "main control desk",
+                    "description": "A large desk covered in switches, dials, and indicator lights. Three drawers are built into the front.",
+                    "subcontainers": [
+                        {
+                            "id": "top_drawer",
+                            "name": "top drawer",
+                            "locked": false,
+                            "contains": [
+                                "technical_manual"
+                            ]
+                        },
+                        {
+                            "id": "middle_drawer",
+                            "name": "middle drawer",
+                            "locked": true,
+                            "lock_type": "combination",
+                            "combination": "357",
+                            "contains": [
+                                "copper_key"
+                            ]
+                        },
+                        {
+                            "id": "bottom_drawer",
+                            "name": "bottom drawer",
+                            "locked": false,
+                            "contains": []
+                        }
+                    ]
+                },
+                {
+                    "id": "technical_manual",
+                    "name": "crystal power manual",
+                    "description": "A worn technical manual with diagrams of crystal configurations",
+                    "readable": true,
+                    "text": "CRYSTAL POWER SYSTEMS - Aurora Station: Power levels by crystal type: Red Crystal = 3 units, Green Crystal = 5 units, Blue Crystal = 7 units. Total system capacity: 15 units. Chief Engineer: Marcus Brightstone. Remember: combine power levels in order of wavelength (red, green, blue) for emergency access."
+                },
+                {
+                    "id": "copper_key",
+                    "name": "copper key",
+                    "description": "A key made of polished copper with crystal inlays"
+                },
+                {
+                    "id": "supply_cabinet",
+                    "name": "locked supply cabinet",
+                    "description": "A tall metal cabinet with a copper lock mechanism",
+                    "locked": true,
+                    "key_required": "copper_key",
+                    "contains": [
+                        "red_crystal",
+                        "station_log"
+                    ]
+                },
+                {
+                    "id": "red_crystal",
+                    "name": "red power crystal",
+                    "description": "A glowing red crystal that pulses with energy"
+                },
+                {
+                    "id": "station_log",
+                    "name": "station master's log",
+                    "description": "A leather-bound logbook with recent entries",
+                    "readable": true,
+                    "text": "Final Entry: Power failure in the main crystal chamber. I've hidden the green crystal in the wall safe and the blue crystal in the equipment locker. Only someone who knows our station's true name (Aurora Station), our power source (crystal energy), and our chief engineer (Marcus Brightstone) can access the chamber. The last train departs at midnight!"
+                },
+                {
+                    "id": "wall_safe",
+                    "name": "wall safe",
+                    "description": "A small safe embedded in the wall behind a technical diagram",
+                    "searchable": true,
+                    "contains": [
+                        "green_crystal"
+                    ]
+                },
+                {
+                    "id": "green_crystal",
+                    "name": "green power crystal",
+                    "description": "A glowing green crystal humming with energy"
+                },
+                {
+                    "id": "equipment_locker",
+                    "name": "equipment locker",
+                    "description": "A tall locker containing maintenance tools and supplies",
+                    "searchable": true,
+                    "contains": [
+                        "blue_crystal",
+                        "maintenance_note"
+                    ]
+                },
+                {
+                    "id": "blue_crystal",
+                    "name": "blue power crystal",
+                    "description": "A glowing blue crystal crackling with energy"
+                },
+                {
+                    "id": "maintenance_note",
+                    "name": "maintenance note",
+                    "description": "A hastily written note on yellowed paper",
+                    "readable": true,
+                    "text": "Reminder: The crystal chamber door requires three security answers. Station name: Aurora Station. Power type: Crystal Energy. Chief Engineer: Marcus Brightstone. Don't forget!"
+                },
+                {
+                    "id": "reinforced_chamber_door",
+                    "name": "reinforced chamber door",
+                    "description": "A heavy door with brass fittings leading to the crystal power chamber. A security panel displays three questions.",
+                    "locked": true,
+                    "lock_type": "password",
+                    "password_questions": [
+                        {
+                            "question": "What is the name of this station?",
+                            "answer": "aurora station",
+                            "hint": "Check the technical manual and station logs"
+                        },
+                        {
+                            "question": "What powers this station?",
+                            "answer": "crystal energy",
+                            "hint": "The maintenance note mentions the power type"
+                        },
+                        {
+                            "question": "Who is the chief engineer?",
+                            "answer": "marcus brightstone",
+                            "hint": "The technical manual lists the chief engineer's name"
+                        }
+                    ],
+                    "direction": "north",
+                    "leads_to": "crystal_chamber",
+                    "aliases": [
+                        "door",
+                        "north"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "crystal_chamber",
+            "name": "Crystal Power Chamber",
+            "description": "A circular chamber with a domed ceiling covered in glowing crystal veins. In the center stands a large brass pedestal with three empty crystal slots arranged in a triangle - red, green, and blue. Copper conduits run along the walls, currently dark and inactive. The air tingles with latent magical energy.",
+            "items": [
+                {
+                    "id": "crystal_pedestal",
+                    "name": "main power pedestal",
+                    "description": "A brass pedestal with three crystal slots labeled with colored symbols",
+                    "readable": true,
+                    "text": "POWER RESTORATION PROTOCOL: Insert all three power crystals (red, green, blue) to restore station power and unlock platform access. Warning: Crystals must be collected before insertion."
+                },
+                {
+                    "id": "technical_display",
+                    "name": "crystal energy display",
+                    "description": "A glass panel showing crystal energy flow diagrams",
+                    "readable": true,
+                    "text": "Crystal Energy Network: Red Crystal (3 units) \u2192 Green Crystal (5 units) \u2192 Blue Crystal (7 units) = Total System Power (15 units). All three crystals required for full restoration."
+                },
+                {
+                    "id": "copper_conduits",
+                    "name": "copper power conduits",
+                    "description": "Intricate copper pipes and wires connecting the pedestal to the station's power grid",
+                    "searchable": true,
+                    "contains": []
+                },
+                {
+                    "id": "platform_access_door",
+                    "name": "platform access door",
+                    "description": "A large door with crystal-powered locks leading to the departure platform. It requires full power restoration to open.",
+                    "locked": true,
+                    "key_required": "blue_crystal",
+                    "direction": "east",
+                    "leads_to": "departure_platform",
+                    "aliases": [
+                        "door",
+                        "east"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "departure_platform",
+            "name": "Departure Platform",
+            "description": "You've made it! The platform is now brilliantly lit by glowing crystal lamps. A magnificent steam train with crystal-powered engines sits at the platform, its brass fittings gleaming. Steam hisses from the pipes, and the crystals in the engine glow with rainbow light. The conductor waves from the cabin, ready to depart.",
+            "items": [
+                {
+                    "id": "crystal_train",
+                    "name": "crystal-powered train",
+                    "description": "A beautiful locomotive with crystal energy cores visible through brass-framed windows. The engine hums with power, ready for departure."
+                },
+                {
+                    "id": "platform_clock",
+                    "name": "station clock",
+                    "description": "A large clock showing it's nearly midnight - the last departure time",
+                    "readable": true,
+                    "text": "The clock reads 11:58 PM. The last train departs in 2 minutes!"
+                },
+                {
+                    "id": "conductor",
+                    "name": "train conductor",
+                    "description": "A friendly conductor in a crisp uniform, gesturing for you to board"
+                }
+            ],
+            "exits": [],
+            "is_goal": true,
+            "win_message": "SUCCESS! You've restored power to Aurora Station and caught the last crystal-powered train! As the train pulls away from the platform, the station's lights blaze brilliantly behind you. The crystal engines hum smoothly as you speed through the night toward your destination. You win!"
+        }
+    ]
+}

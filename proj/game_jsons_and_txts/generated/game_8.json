@@ -1,0 +1,220 @@
+{
+    "theme": "Wizard's Menagerie",
+    "title": "Wizard's Menagerie Adventure #8",
+    "goal": "Solve the puzzles, achieve the main objective, and escape.",
+    "starting_room": "creature_keeper_quarters",
+    "rooms": [
+        {
+            "id": "creature_keeper_quarters",
+            "name": "Creature Keeper's Quarters",
+            "description": "A cozy room filled with the scent of hay and magical herbs. Shelves line the walls holding bottles of potions, feeding schedules, and care manuals. Through a barred window, you can hear the distant roar of a dragon and the melodic song of a phoenix. A large wooden cabinet stands against one wall, and a desk is covered with papers and scrolls.",
+            "items": [
+                {
+                    "id": "wooden_cabinet",
+                    "name": "wooden supply cabinet",
+                    "description": "A tall cabinet with three drawers labeled with creature symbols",
+                    "subcontainers": [
+                        {
+                            "id": "top_drawer",
+                            "name": "top drawer",
+                            "locked": false,
+                            "contains": [
+                                "feeding_schedule"
+                            ]
+                        },
+                        {
+                            "id": "middle_drawer",
+                            "name": "middle drawer",
+                            "locked": true,
+                            "lock_type": "combination",
+                            "combination": "357",
+                            "contains": [
+                                "brass_key"
+                            ]
+                        },
+                        {
+                            "id": "bottom_drawer",
+                            "name": "bottom drawer",
+                            "locked": false,
+                            "contains": []
+                        }
+                    ]
+                },
+                {
+                    "id": "feeding_schedule",
+                    "name": "creature feeding schedule",
+                    "description": "A parchment listing feeding times for the menagerie creatures",
+                    "readable": true,
+                    "text": "FEEDING SCHEDULE: Phoenix - 3:00 AM (rebirth hour), Unicorn - 5:00 AM (dawn grazing), Griffin - 7:00 AM (morning hunt). Remember: The combination to the supply drawer is the feeding times in order!"
+                },
+                {
+                    "id": "keeper_desk",
+                    "name": "keeper's desk",
+                    "description": "A cluttered desk covered with creature care notes and magical diagrams",
+                    "searchable": true,
+                    "contains": [
+                        "apprentice_letter"
+                    ]
+                },
+                {
+                    "id": "apprentice_letter",
+                    "name": "letter to apprentice",
+                    "description": "A sealed letter addressed to 'The New Apprentice'",
+                    "readable": true,
+                    "text": "Dear Apprentice, welcome to the menagerie! You are now Keeper Aldric's assistant. Your first task is to feed the Moonlight Dragon in the sanctuary. Remember who you are and your duties. - Master Wizard Thornwick"
+                },
+                {
+                    "id": "brass_key",
+                    "name": "brass enclosure key",
+                    "description": "A key with a dragon symbol etched into the handle"
+                },
+                {
+                    "id": "locked_chest",
+                    "name": "locked storage chest",
+                    "description": "A reinforced chest with a brass lock, likely containing important supplies",
+                    "locked": true,
+                    "key_required": "brass_key",
+                    "contains": [
+                        "creature_manual"
+                    ]
+                },
+                {
+                    "id": "creature_manual",
+                    "name": "creature care manual",
+                    "description": "A thick book with detailed information about magical creatures",
+                    "readable": true,
+                    "text": "CHAPTER 7: The Phoenix nests in the Flame Roost where eternal fire burns. CHAPTER 12: Unicorns require pure spring water from the Crystal Springs. CHAPTER 18: The Moonlight Dragon sleeps in the Inner Sanctuary, the most sacred part of the menagerie."
+                },
+                {
+                    "id": "menagerie_entrance_door",
+                    "name": "menagerie entrance door",
+                    "description": "A sturdy oak door leading into the main menagerie halls",
+                    "locked": false,
+                    "direction": "west",
+                    "leads_to": "menagerie_hall",
+                    "aliases": [
+                        "door",
+                        "west"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "menagerie_hall",
+            "name": "Grand Menagerie Hall",
+            "description": "A magnificent hall with high vaulted ceilings and enchanted skylights that show the stars even during daytime. Magical enclosures line both sides, each housing a different creature. A phoenix preens its golden feathers in one enclosure, while a unicorn grazes peacefully in another. Plaques describe each creature. A massive ornate door at the far end is sealed with magical wards.",
+            "items": [
+                {
+                    "id": "phoenix_plaque",
+                    "name": "phoenix information plaque",
+                    "description": "A brass plaque mounted beside the phoenix enclosure",
+                    "readable": true,
+                    "text": "PHOENIX (Phoenixus Eternus): Immortal bird of flame. Nests in the Flame Roost. Reborn from ashes every 500 years. Caretaker: Keeper Aldric."
+                },
+                {
+                    "id": "unicorn_plaque",
+                    "name": "unicorn information plaque",
+                    "description": "A silver plaque beside the unicorn's enclosure",
+                    "readable": true,
+                    "text": "UNICORN (Equus Magicus): Pure-hearted creature of light. Drinks only from Crystal Springs. Horn has healing properties. Caretaker: Keeper Aldric."
+                },
+                {
+                    "id": "griffin_plaque",
+                    "name": "griffin information plaque",
+                    "description": "A bronze plaque beside an empty griffin perch",
+                    "readable": true,
+                    "text": "GRIFFIN (Gryphus Majesticus): Noble guardian creature. Currently on patrol. Returns at dawn. Caretaker: Keeper Aldric."
+                },
+                {
+                    "id": "supply_shelf",
+                    "name": "magical supply shelf",
+                    "description": "A shelf stocked with various magical creature supplies",
+                    "searchable": true,
+                    "contains": [
+                        "moonlight_nectar"
+                    ]
+                },
+                {
+                    "id": "moonlight_nectar",
+                    "name": "bottle of moonlight nectar",
+                    "description": "A glowing bottle containing the Moonlight Dragon's favorite food"
+                },
+                {
+                    "id": "observation_bench",
+                    "name": "keeper's observation bench",
+                    "description": "A wooden bench with a logbook resting on it",
+                    "searchable": true,
+                    "contains": [
+                        "keeper_logbook"
+                    ]
+                },
+                {
+                    "id": "keeper_logbook",
+                    "name": "Keeper Aldric's logbook",
+                    "description": "A daily log of menagerie activities",
+                    "readable": true,
+                    "text": "Day 247: The Moonlight Dragon grows restless. Only I, Keeper Aldric, am permitted to enter the Inner Sanctuary. The dragon's lair is the most sacred space in our menagerie. Note: Security questions updated to ensure only authorized keepers may enter."
+                },
+                {
+                    "id": "sanctuary_entrance",
+                    "name": "sanctuary entrance",
+                    "description": "A massive door carved with dragon motifs and glowing runes. A magical panel displays three security questions.",
+                    "locked": true,
+                    "lock_type": "password",
+                    "password_questions": [
+                        {
+                            "question": "Who is the keeper of this menagerie?",
+                            "answer": "keeper aldric",
+                            "hint": "Check the creature plaques and the logbook"
+                        },
+                        {
+                            "question": "Where does the phoenix nest?",
+                            "answer": "flame roost",
+                            "hint": "Read the creature care manual and the phoenix plaque"
+                        },
+                        {
+                            "question": "Who are you?",
+                            "answer": "apprentice",
+                            "hint": "The letter from Master Wizard Thornwick tells you your role"
+                        }
+                    ],
+                    "direction": "north",
+                    "leads_to": "dragon_sanctuary",
+                    "aliases": [
+                        "sanctuary",
+                        "north"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "dragon_sanctuary",
+            "name": "Moonlight Dragon Sanctuary",
+            "description": "You have entered the Inner Sanctuary! A breathtaking chamber with walls of polished moonstone that glow with soft silver light. In the center, curled on a bed of enchanted crystals, rests the magnificent Moonlight Dragon. Its scales shimmer like starlight, and its eyes glow with ancient wisdom. The dragon raises its head and rumbles contentedly as you approach with the moonlight nectar. A portal of swirling light appears, offering passage home.",
+            "items": [
+                {
+                    "id": "moonlight_dragon",
+                    "name": "Moonlight Dragon",
+                    "description": "A majestic dragon with scales that shimmer like moonlight on water. It watches you with intelligent, kind eyes."
+                },
+                {
+                    "id": "crystal_bed",
+                    "name": "bed of enchanted crystals",
+                    "description": "A nest made of glowing magical crystals that pulse with lunar energy"
+                },
+                {
+                    "id": "dragon_hoard",
+                    "name": "dragon's treasure hoard",
+                    "description": "A small collection of magical artifacts and precious gems, gifts from grateful wizards",
+                    "searchable": true,
+                    "contains": []
+                }
+            ],
+            "exits": [],
+            "is_goal": true,
+            "win_message": "Success! The Moonlight Dragon accepts the moonlight nectar gratefully and nuzzles you gently with its massive snout. You have proven yourself a worthy keeper of the menagerie. The dragon's magical aura surrounds you, and Master Wizard Thornwick appears through the portal, congratulating you on completing your first task. You are now a true apprentice of the Wizard's Menagerie! You win!"
+        }
+    ]
+}

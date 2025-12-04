@@ -1,0 +1,259 @@
+{
+    "theme": "Cyberpunk Heist",
+    "title": "Cyberpunk Heist Adventure #21",
+    "goal": "Solve the puzzles, achieve the main objective, and escape.",
+    "starting_room": "server_room",
+    "rooms": [
+        {
+            "id": "server_room",
+            "name": "Corporate Server Room",
+            "description": "A cold room filled with humming server racks bathed in blue LED light. Cable bundles snake across the floor. The air conditioning hums loudly. Holographic displays flicker with streams of encrypted data. A heavy security door blocks the exit north.",
+            "items": [
+                {
+                    "id": "server_rack_alpha",
+                    "name": "server rack alpha",
+                    "description": "A tall rack of blade servers with blinking status lights",
+                    "searchable": true,
+                    "contains": [
+                        "maintenance_tablet"
+                    ]
+                },
+                {
+                    "id": "maintenance_tablet",
+                    "name": "maintenance tablet",
+                    "description": "A ruggedized tablet with system logs and notes",
+                    "readable": true,
+                    "text": "MAINTENANCE LOG: Server room access code is based on the founding year of NeoTech Corporation. Check the corporate history display. Remember: Lead Engineer is Kai Nakamura, Chief Security Officer is Sarah Martinez, and the backup data is stored in the Quantum Vault."
+                },
+                {
+                    "id": "workstation_desk",
+                    "name": "technician workstation",
+                    "description": "A cluttered desk with multiple monitors and a locked drawer unit",
+                    "subcontainers": [
+                        {
+                            "id": "top_drawer",
+                            "name": "top drawer",
+                            "locked": false,
+                            "contains": [
+                                "corporate_memo"
+                            ]
+                        },
+                        {
+                            "id": "middle_drawer",
+                            "name": "middle drawer",
+                            "locked": true,
+                            "lock_type": "combination",
+                            "combination": "2077",
+                            "contains": [
+                                "access_keycard"
+                            ]
+                        },
+                        {
+                            "id": "bottom_drawer",
+                            "name": "bottom drawer",
+                            "locked": false,
+                            "contains": []
+                        }
+                    ]
+                },
+                {
+                    "id": "corporate_memo",
+                    "name": "corporate memo",
+                    "description": "An official company document on digital paper",
+                    "readable": true,
+                    "text": "MEMO TO ALL STAFF: NeoTech Corporation was founded in 2077 during the height of the cybernetic revolution. Our commitment to innovation remains unchanged. All personnel must update their security credentials by end of quarter."
+                },
+                {
+                    "id": "access_keycard",
+                    "name": "blue access keycard",
+                    "description": "A plastic keycard with a magnetic strip and NeoTech logo"
+                },
+                {
+                    "id": "wall_display",
+                    "name": "corporate history display",
+                    "description": "A holographic display showing company milestones and achievements",
+                    "readable": true,
+                    "text": "NeoTech Corporation Timeline: Founded 2077 by visionary technologists. 2080 - First neural interface released. 2085 - Quantum computing breakthrough. 2090 - Global expansion complete. Leading the future of human augmentation."
+                },
+                {
+                    "id": "supply_locker",
+                    "name": "equipment supply locker",
+                    "description": "A metal locker containing various tools and equipment",
+                    "locked": true,
+                    "key_required": "access_keycard",
+                    "contains": [
+                        "encrypted_drive"
+                    ]
+                },
+                {
+                    "id": "encrypted_drive",
+                    "name": "encrypted data drive",
+                    "description": "A small storage device with classified information",
+                    "readable": true,
+                    "text": "CLASSIFIED: Project Nightfall credentials - Username: GHOST_PROTOCOL - Password: NEON_SHADOW - The Quantum Vault contains the master encryption keys for all corporate data."
+                },
+                {
+                    "id": "reinforced_security_door",
+                    "name": "reinforced security door",
+                    "description": "A heavy door with a biometric scanner and keycard reader",
+                    "locked": true,
+                    "key_required": "access_keycard",
+                    "direction": "north",
+                    "leads_to": "security_hub",
+                    "aliases": [
+                        "door",
+                        "north"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "security_hub",
+            "name": "Security Control Hub",
+            "description": "A dimly lit command center with walls of monitors displaying security camera feeds. Neon strips pulse along the edges of the room. A central console glows with active alerts. The smell of ozone and energy drinks fills the air. A massive vault door dominates the east wall.",
+            "items": [
+                {
+                    "id": "security_console",
+                    "name": "main security console",
+                    "description": "A sophisticated control panel with multiple screens and input devices",
+                    "searchable": true,
+                    "contains": [
+                        "security_manual"
+                    ]
+                },
+                {
+                    "id": "security_manual",
+                    "name": "security protocol manual",
+                    "description": "A digital manual outlining security procedures",
+                    "readable": true,
+                    "text": "SECURITY PROTOCOLS: Vault access requires three-factor authentication. Personnel must correctly identify: 1) Lead Engineer name, 2) Backup storage location, 3) Chief Security Officer name. Failure results in lockdown and alert to armed response team."
+                },
+                {
+                    "id": "monitor_wall",
+                    "name": "surveillance monitor array",
+                    "description": "Dozens of screens showing various areas of the facility",
+                    "readable": true,
+                    "text": "Camera feeds show: Server Room (clear), Executive Offices (empty), Quantum Vault (sealed), Rooftop Helipad (one aircraft standing by). All systems nominal."
+                },
+                {
+                    "id": "filing_cabinet",
+                    "name": "personnel filing cabinet",
+                    "description": "A cabinet containing employee records and profiles",
+                    "subcontainers": [
+                        {
+                            "id": "drawer_a",
+                            "name": "drawer A",
+                            "locked": false,
+                            "contains": [
+                                "personnel_file_nakamura"
+                            ]
+                        },
+                        {
+                            "id": "drawer_b",
+                            "name": "drawer B",
+                            "locked": false,
+                            "contains": [
+                                "personnel_file_martinez"
+                            ]
+                        },
+                        {
+                            "id": "drawer_c",
+                            "name": "drawer C",
+                            "locked": false,
+                            "contains": []
+                        }
+                    ]
+                },
+                {
+                    "id": "personnel_file_nakamura",
+                    "name": "file for Kai Nakamura",
+                    "description": "Personnel record for the lead engineer",
+                    "readable": true,
+                    "text": "EMPLOYEE RECORD: Kai Nakamura - Lead Engineer, Neural Systems Division. Clearance Level: Omega. Specialization: Quantum computing architecture and neural interface design. Years of service: 8."
+                },
+                {
+                    "id": "personnel_file_martinez",
+                    "name": "file for Sarah Martinez",
+                    "description": "Personnel record for the security chief",
+                    "readable": true,
+                    "text": "EMPLOYEE RECORD: Sarah Martinez - Chief Security Officer. Clearance Level: Alpha-Prime. Former military cybersecurity specialist. Responsible for all facility security protocols and armed response coordination."
+                },
+                {
+                    "id": "coffee_station",
+                    "name": "break room coffee station",
+                    "description": "A small area with a coffee maker and scattered energy drink cans",
+                    "searchable": true,
+                    "contains": [
+                        "handwritten_note"
+                    ]
+                },
+                {
+                    "id": "handwritten_note",
+                    "name": "sticky note",
+                    "description": "A note scrawled in hasty handwriting",
+                    "readable": true,
+                    "text": "Reminder: The vault authentication answers are in the maintenance tablet and security manual. Also, Project Nightfall login is on that encrypted drive in the server room locker."
+                },
+                {
+                    "id": "quantum_vault_door",
+                    "name": "quantum vault door",
+                    "description": "A massive reinforced door with a holographic authentication interface displaying three security questions",
+                    "locked": true,
+                    "lock_type": "password",
+                    "password_questions": [
+                        {
+                            "question": "Enter Lead Engineer name:",
+                            "answer": "kai nakamura",
+                            "hint": "Check the maintenance tablet and personnel files"
+                        },
+                        {
+                            "question": "Enter backup storage location:",
+                            "answer": "quantum vault",
+                            "hint": "The maintenance tablet mentions where backup data is stored"
+                        },
+                        {
+                            "question": "Enter Chief Security Officer name:",
+                            "answer": "sarah martinez",
+                            "hint": "Look through the personnel files in the cabinet"
+                        }
+                    ],
+                    "direction": "east",
+                    "leads_to": "data_core",
+                    "aliases": [
+                        "vault",
+                        "east"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "data_core",
+            "name": "Quantum Data Core",
+            "description": "You have breached the inner sanctum! A massive quantum computer core pulses with ethereal blue light in the center of the chamber. Holographic data streams swirl through the air like digital auroras. Server towers line the walls, their lights blinking in hypnotic patterns. A terminal displays the words ACCESS GRANTED - DATA EXTRACTION COMPLETE.",
+            "items": [
+                {
+                    "id": "quantum_core",
+                    "name": "central quantum processor",
+                    "description": "The heart of NeoTech's computing power, a marvel of technology worth billions"
+                },
+                {
+                    "id": "data_terminal",
+                    "name": "master data terminal",
+                    "description": "The primary access point for all corporate secrets and classified projects",
+                    "readable": true,
+                    "text": "SYSTEM STATUS: All encryption bypassed. Project Nightfall files downloaded. Corporate financial records acquired. Neural interface schematics copied. Extraction successful."
+                },
+                {
+                    "id": "holographic_display",
+                    "name": "floating holographic interface",
+                    "description": "A three-dimensional display showing the stolen data being transferred to your device"
+                }
+            ],
+            "exits": [],
+            "is_goal": true,
+            "win_message": "SUCCESS! You have infiltrated NeoTech Corporation and extracted their most valuable data. The quantum vault has been breached, and terabytes of classified information are now in your possession. Time to jack out and disappear into the neon-lit streets before security realizes what happened. The heist is complete. You win!"
+        }
+    ]
+}

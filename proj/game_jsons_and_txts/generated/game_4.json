@@ -1,0 +1,252 @@
+{
+    "theme": "Cursed Pirate Lagoon",
+    "title": "Cursed Pirate Lagoon Adventure #4",
+    "goal": "Solve the puzzles, achieve the main objective, and escape.",
+    "starting_room": "cursed_cove",
+    "rooms": [
+        {
+            "id": "cursed_cove",
+            "name": "Cursed Pirate Cove",
+            "description": "A hidden cove shrouded in perpetual fog. The water glows with an unnatural green phosphorescence. Skeletal remains of ships jut from the shallow tide pools. Strange whispers echo from the rocks, and ghostly lights flicker in the mist. A barnacle-covered chest sits half-buried in the sand.",
+            "items": [
+                {
+                    "id": "tide_pool",
+                    "name": "glowing tide pool",
+                    "description": "A pool of seawater that glows with eerie green light",
+                    "searchable": true,
+                    "contains": [
+                        "waterlogged_map"
+                    ]
+                },
+                {
+                    "id": "waterlogged_map",
+                    "name": "waterlogged map",
+                    "description": "A soggy map with faded markings and writing",
+                    "readable": true,
+                    "text": "Map notation: Captain Redbeard's crew sailed in 1692. The curse began when they stole the Sea Witch's amulet. Only three things can break it: the captain's true name, the witch's domain, and the stolen treasure's nature."
+                },
+                {
+                    "id": "ship_wreckage",
+                    "name": "splintered ship wreckage",
+                    "description": "The broken remains of a pirate vessel embedded in the rocks",
+                    "searchable": true,
+                    "contains": [
+                        "ships_bell"
+                    ]
+                },
+                {
+                    "id": "ships_bell",
+                    "name": "tarnished ship's bell",
+                    "description": "A brass bell with an inscription barely visible through the corrosion",
+                    "readable": true,
+                    "text": "Engraved on the bell: 'The Crimson Revenge - Captain William Redbeard - Est. 1692'"
+                },
+                {
+                    "id": "barnacle_chest",
+                    "name": "barnacle-covered chest",
+                    "description": "An old sea chest encrusted with barnacles and locked with a combination mechanism",
+                    "locked": true,
+                    "lock_type": "combination",
+                    "combination": "1692",
+                    "contains": [
+                        "iron_key",
+                        "crew_manifest"
+                    ]
+                },
+                {
+                    "id": "iron_key",
+                    "name": "rusted iron key",
+                    "description": "A heavy iron key eaten away by salt and time"
+                },
+                {
+                    "id": "crew_manifest",
+                    "name": "crew manifest",
+                    "description": "A list of the ship's crew members and their roles",
+                    "readable": true,
+                    "text": "Crew of The Crimson Revenge: Captain William Redbeard (Commander), First Mate Bones (Navigation), Quartermaster Flint (Supplies), Gunner Hawkins (Artillery). Last voyage: Raided the Sea Witch's island and took her cursed amulet."
+                },
+                {
+                    "id": "driftwood_pile",
+                    "name": "pile of driftwood",
+                    "description": "A heap of weathered wood and debris washed up on shore",
+                    "subcontainers": [
+                        {
+                            "id": "top_section",
+                            "name": "top section",
+                            "locked": false,
+                            "contains": [
+                                "witchs_warning"
+                            ]
+                        },
+                        {
+                            "id": "bottom_section",
+                            "name": "bottom section",
+                            "locked": false,
+                            "contains": []
+                        }
+                    ]
+                },
+                {
+                    "id": "witchs_warning",
+                    "name": "carved wooden plank",
+                    "description": "A piece of driftwood with words carved into it",
+                    "readable": true,
+                    "text": "Carved message: 'The Sea Witch of Serpent's Isle curses all who steal from her domain. Return the amulet to break the curse, or be trapped in these waters forever.'"
+                },
+                {
+                    "id": "dark_cave_entrance",
+                    "name": "dark cave entrance",
+                    "description": "A narrow opening in the cliff face, partially hidden by hanging seaweed. The lock is rusted but still functional.",
+                    "locked": true,
+                    "key_required": "iron_key",
+                    "direction": "north",
+                    "leads_to": "smugglers_cave",
+                    "aliases": [
+                        "cave",
+                        "north"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "smugglers_cave",
+            "name": "Smuggler's Cave",
+            "description": "A damp cave lit by bioluminescent algae growing on the walls. Old smuggling crates are stacked in corners, and pirate graffiti covers the stone surfaces. The sound of dripping water echoes throughout. A heavy wooden door reinforced with iron bands blocks the far passage.",
+            "items": [
+                {
+                    "id": "graffiti_wall",
+                    "name": "graffiti-covered wall",
+                    "description": "Stone walls covered in carved messages and drawings from pirates",
+                    "readable": true,
+                    "text": "Various carvings: 'Redbeard was here 1692' ... 'The witch's amulet brings only death' ... 'Bones says the captain's real name is William' ... 'Flint: We should never have gone to Serpent's Isle'"
+                },
+                {
+                    "id": "smuggling_crates",
+                    "name": "stack of old crates",
+                    "description": "Wooden crates marked with various merchant symbols",
+                    "searchable": true,
+                    "contains": [
+                        "pirates_journal"
+                    ]
+                },
+                {
+                    "id": "pirates_journal",
+                    "name": "pirate's journal",
+                    "description": "A leather journal belonging to one of the crew members",
+                    "readable": true,
+                    "text": "Journal of Quartermaster Flint: We raided Serpent's Isle and took the Sea Witch's golden amulet. Captain Redbeard - his true name is William - said it would make us rich. But now we're cursed! The witch appeared in our dreams, saying only returning the amulet can save us. We hid it in the ritual chamber beyond this cave."
+                },
+                {
+                    "id": "stone_altar",
+                    "name": "small stone altar",
+                    "description": "A crude altar with candle stubs and offerings to sea gods",
+                    "subcontainers": [
+                        {
+                            "id": "altar_compartment",
+                            "name": "hidden compartment",
+                            "locked": false,
+                            "contains": [
+                                "ritual_instructions"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "ritual_instructions",
+                    "name": "ritual scroll",
+                    "description": "Instructions for breaking the curse, written in an ancient hand",
+                    "readable": true,
+                    "text": "To break the Sea Witch's curse: Enter the ritual chamber and place the stolen amulet upon the altar. Speak the answers to three questions, and the curse shall be lifted. The amulet must be returned to break the spell."
+                },
+                {
+                    "id": "algae_pool",
+                    "name": "pool of glowing algae",
+                    "description": "A shallow pool filled with luminescent organisms",
+                    "searchable": true,
+                    "contains": [
+                        "brass_key"
+                    ]
+                },
+                {
+                    "id": "brass_key",
+                    "name": "corroded brass key",
+                    "description": "A small brass key covered in green corrosion"
+                },
+                {
+                    "id": "locked_chest",
+                    "name": "iron-bound chest",
+                    "description": "A sturdy chest with a brass lock mechanism",
+                    "locked": true,
+                    "key_required": "brass_key",
+                    "contains": [
+                        "cursed_amulet"
+                    ]
+                },
+                {
+                    "id": "cursed_amulet",
+                    "name": "golden amulet",
+                    "description": "A beautiful golden amulet that pulses with dark energy - the source of the curse"
+                },
+                {
+                    "id": "iron-reinforced_door",
+                    "name": "iron-reinforced door",
+                    "description": "A heavy wooden door banded with iron. Three questions are carved into a stone tablet beside it.",
+                    "locked": true,
+                    "lock_type": "password",
+                    "password_questions": [
+                        {
+                            "question": "What is the captain's true name?",
+                            "answer": "william",
+                            "hint": "Check the ship's bell and the graffiti for the captain's real name"
+                        },
+                        {
+                            "question": "Where did the Sea Witch dwell?",
+                            "answer": "serpents isle",
+                            "hint": "The witch's warning and journal mention her island home"
+                        },
+                        {
+                            "question": "What was stolen from the witch?",
+                            "answer": "amulet",
+                            "hint": "Multiple sources mention what treasure was taken"
+                        }
+                    ],
+                    "direction": "east",
+                    "leads_to": "ritual_chamber",
+                    "aliases": [
+                        "door",
+                        "east"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "ritual_chamber",
+            "name": "Ritual Chamber of the Sea Witch",
+            "description": "A circular chamber carved from living rock. Ancient symbols glow on the walls with pale blue light. In the center stands a stone altar surrounded by a circle of shells and sea glass. The air hums with magical energy. As you place the cursed amulet on the altar, the ghostly form of the Sea Witch appears, her expression softening from anger to gratitude.",
+            "items": [
+                {
+                    "id": "ritual_altar",
+                    "name": "Sea Witch's altar",
+                    "description": "An ancient altar carved with protective symbols and ocean imagery"
+                },
+                {
+                    "id": "glowing_symbols",
+                    "name": "magical wall symbols",
+                    "description": "Ancient runes that pulse with the rhythm of the tides",
+                    "readable": true,
+                    "text": "The symbols tell the story of the Sea Witch: a guardian of the ocean who cursed those who stole from her sacred treasures. Return what was taken, and be forgiven."
+                },
+                {
+                    "id": "shell_circle",
+                    "name": "circle of shells",
+                    "description": "A perfect circle of rare shells surrounding the altar, each one unique and beautiful"
+                }
+            ],
+            "exits": [],
+            "is_goal": true,
+            "win_message": "As you place the golden amulet on the altar, the Sea Witch's spirit materializes before you. Her eyes, once filled with fury, now show peace. 'You have returned what was stolen,' she whispers, her voice like waves on sand. 'The curse is broken.' The green glow fades from the waters, the fog lifts, and a path of moonlight appears on the ocean surface, leading to safety. The ghostly ships vanish, and the souls of Captain Redbeard and his crew are finally freed. You have broken the curse of the Pirate Lagoon! You win!"
+        }
+    ]
+}

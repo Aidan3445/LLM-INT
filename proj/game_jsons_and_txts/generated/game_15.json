@@ -1,0 +1,225 @@
+{
+    "theme": "Bio-Android Nursery",
+    "title": "Bio-Android Nursery Adventure #15",
+    "goal": "Solve the puzzles, achieve the main objective, and escape.",
+    "starting_room": "incubation_chamber",
+    "rooms": [
+        {
+            "id": "incubation_chamber",
+            "name": "Incubation Chamber",
+            "description": "A sterile white room filled with rows of glowing bio-pods. Each pod contains a developing bio-android suspended in luminescent blue fluid. Soft humming from life support systems fills the air. Monitoring screens display vital signs and development stages. A maintenance station sits against the far wall.",
+            "items": [
+                {
+                    "id": "maintenance_station",
+                    "name": "maintenance workstation",
+                    "description": "A metal workstation with tools and diagnostic equipment. It has two storage compartments.",
+                    "subcontainers": [
+                        {
+                            "id": "upper_compartment",
+                            "name": "upper compartment",
+                            "locked": false,
+                            "contains": [
+                                "development_log"
+                            ]
+                        },
+                        {
+                            "id": "lower_compartment",
+                            "name": "lower compartment",
+                            "locked": true,
+                            "lock_type": "combination",
+                            "combination": "2157",
+                            "contains": [
+                                "access_keycard"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "development_log",
+                    "name": "bio-android development log",
+                    "description": "A digital tablet displaying development records",
+                    "readable": true,
+                    "text": "Development Log Entry: Project Genesis initiated in year 2157. Lead scientist Dr. Aria Chen oversees all bio-android production. Current batch designation: Alpha-7. Remember: All androids are created in the Genesis Lab and maintained by the Synthesis Division."
+                },
+                {
+                    "id": "access_keycard",
+                    "name": "maintenance access keycard",
+                    "description": "A plastic keycard with a blue stripe labeled 'Maintenance Access'"
+                },
+                {
+                    "id": "bio_pod_17",
+                    "name": "bio-pod 17",
+                    "description": "A cylindrical pod with a viewing window. Something is tucked behind the control panel.",
+                    "searchable": true,
+                    "contains": [
+                        "research_notes"
+                    ]
+                },
+                {
+                    "id": "research_notes",
+                    "name": "crumpled research notes",
+                    "description": "Handwritten notes on water-resistant paper",
+                    "readable": true,
+                    "text": "Dr. Chen's Notes: Emergency protocol requires knowledge of facility operations. Control Center access restricted to authorized personnel. Security questions based on project fundamentals. The androids' neural patterns are stored in the Memory Core."
+                },
+                {
+                    "id": "supply_cabinet",
+                    "name": "locked supply cabinet",
+                    "description": "A tall metal cabinet with a keycard reader",
+                    "locked": true,
+                    "key_required": "access_keycard",
+                    "contains": [
+                        "neural_interface_tool"
+                    ]
+                },
+                {
+                    "id": "neural_interface_tool",
+                    "name": "neural interface device",
+                    "description": "A handheld device used for android diagnostics and programming"
+                },
+                {
+                    "id": "reinforced_security_door",
+                    "name": "reinforced security door",
+                    "description": "A heavy door with a keycard reader leading to the Control Center",
+                    "locked": true,
+                    "key_required": "access_keycard",
+                    "direction": "north",
+                    "leads_to": "control_center",
+                    "aliases": [
+                        "door",
+                        "north"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "control_center",
+            "name": "Control Center",
+            "description": "A high-tech command center with wall-mounted monitors displaying facility schematics and bio-android status reports. Holographic displays float in mid-air showing neural network patterns. A central console dominates the room, and information panels line the walls. An emergency exit door glows red on the east wall.",
+            "items": [
+                {
+                    "id": "central_console",
+                    "name": "main control console",
+                    "description": "A sophisticated computer terminal with multiple screens and input devices",
+                    "searchable": true,
+                    "contains": [
+                        "facility_manual"
+                    ]
+                },
+                {
+                    "id": "facility_manual",
+                    "name": "facility operations manual",
+                    "description": "A digital manual displayed on a screen",
+                    "readable": true,
+                    "text": "FACILITY OPERATIONS: Bio-Android Nursery Facility established 2157. Chief Administrator: Dr. Aria Chen. Primary Function: Genesis Lab creates all bio-android units. Synthesis Division handles maintenance and upgrades. Memory Core stores all neural data. Emergency evacuation procedures require supervisor authorization."
+                },
+                {
+                    "id": "info_panel_genesis",
+                    "name": "Genesis Lab information panel",
+                    "description": "A wall panel with details about the Genesis Lab",
+                    "readable": true,
+                    "text": "GENESIS LAB: Primary bio-android creation facility. All units begin development here in specialized incubation pods. Initial neural programming occurs during the genesis phase."
+                },
+                {
+                    "id": "info_panel_synthesis",
+                    "name": "Synthesis Division panel",
+                    "description": "A display showing information about the Synthesis Division",
+                    "readable": true,
+                    "text": "SYNTHESIS DIVISION: Responsible for bio-android maintenance, repairs, and neural upgrades. All post-creation modifications handled by synthesis technicians."
+                },
+                {
+                    "id": "info_panel_memory",
+                    "name": "Memory Core information panel",
+                    "description": "A screen displaying Memory Core specifications",
+                    "readable": true,
+                    "text": "MEMORY CORE: Central storage facility for all bio-android neural patterns, memories, and personality matrices. Backup systems ensure no data loss."
+                },
+                {
+                    "id": "security_locker",
+                    "name": "security equipment locker",
+                    "description": "A locker containing emergency equipment and supplies",
+                    "subcontainers": [
+                        {
+                            "id": "top_shelf",
+                            "name": "top shelf",
+                            "locked": false,
+                            "contains": [
+                                "emergency_beacon"
+                            ]
+                        },
+                        {
+                            "id": "bottom_shelf",
+                            "name": "bottom shelf",
+                            "locked": false,
+                            "contains": []
+                        }
+                    ]
+                },
+                {
+                    "id": "emergency_beacon",
+                    "name": "emergency locator beacon",
+                    "description": "A device that signals for rescue once outside the facility"
+                },
+                {
+                    "id": "emergency_exit_door",
+                    "name": "emergency exit door",
+                    "description": "A red emergency door with a biometric scanner and security terminal. Three security questions are displayed on the screen.",
+                    "locked": true,
+                    "lock_type": "password",
+                    "password_questions": [
+                        {
+                            "question": "Who is the Chief Administrator?",
+                            "answer": "dr. aria chen",
+                            "hint": "Check the development log and facility manual"
+                        },
+                        {
+                            "question": "Where are bio-androids created?",
+                            "answer": "genesis lab",
+                            "hint": "Read the information panels about facility operations"
+                        },
+                        {
+                            "question": "Where are neural patterns stored?",
+                            "answer": "memory core",
+                            "hint": "Look at the Memory Core information panel"
+                        }
+                    ],
+                    "direction": "east",
+                    "leads_to": "exit_bay",
+                    "aliases": [
+                        "exit",
+                        "east"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "exit_bay",
+            "name": "Emergency Exit Bay",
+            "description": "You've reached the emergency evacuation area! A large airlock door stands open, revealing a decontamination corridor leading to the outside world. Emergency lights flash green, indicating safe passage. Through the transparent walls, you can see the facility's exterior and freedom beyond.",
+            "items": [
+                {
+                    "id": "airlock_door",
+                    "name": "open airlock door",
+                    "description": "A massive door designed for emergency evacuations, now standing open"
+                },
+                {
+                    "id": "decon_corridor",
+                    "name": "decontamination corridor",
+                    "description": "A sterile passage that leads to the outside world"
+                },
+                {
+                    "id": "exit_terminal",
+                    "name": "exit status terminal",
+                    "description": "A screen displaying evacuation status and safety protocols",
+                    "readable": true,
+                    "text": "EVACUATION STATUS: AUTHORIZED. All safety protocols cleared. Exit passage secure. Emergency beacon activated. Rescue en route."
+                }
+            ],
+            "exits": [],
+            "is_goal": true,
+            "win_message": "SUCCESS! You've navigated through the Bio-Android Nursery and reached the emergency exit. The decontamination process completes, and the outer doors open to reveal the world outside. Your emergency beacon signals for rescue, and you step out into freedom. You win!"
+        }
+    ]
+}

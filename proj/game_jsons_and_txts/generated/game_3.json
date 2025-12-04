@@ -1,0 +1,230 @@
+{
+    "theme": "Space-Farm Biodome",
+    "title": "Space-Farm Biodome Adventure #3",
+    "goal": "Solve the puzzles, achieve the main objective, and escape.",
+    "starting_room": "hydroponics_bay",
+    "rooms": [
+        {
+            "id": "hydroponics_bay",
+            "name": "Hydroponics Bay",
+            "description": "A vast chamber filled with rows of vertical growing towers bathed in purple LED light. Nutrient mist hangs in the air, and the hum of water pumps echoes throughout. Warning lights flash red on several control panels. Through the transparent dome ceiling, you see the stars and the curve of Earth below.",
+            "items": [
+                {
+                    "id": "control_panel",
+                    "name": "main control panel",
+                    "description": "A digital interface displaying system diagnostics and warnings",
+                    "readable": true,
+                    "text": "SYSTEM STATUS: CRITICAL - Oxygen levels dropping. CO2 scrubbers offline. Emergency protocol initiated. Refer to Chief Botanist Chen's maintenance logs for override procedures."
+                },
+                {
+                    "id": "supply_locker",
+                    "name": "supply locker",
+                    "description": "A metal locker containing tools and equipment for biodome maintenance",
+                    "subcontainers": [
+                        {
+                            "id": "top_shelf",
+                            "name": "top shelf",
+                            "locked": false,
+                            "contains": [
+                                "maintenance_log"
+                            ]
+                        },
+                        {
+                            "id": "locked_compartment",
+                            "name": "locked compartment",
+                            "locked": true,
+                            "lock_type": "combination",
+                            "combination": "2047",
+                            "contains": [
+                                "access_keycard"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "maintenance_log",
+                    "name": "maintenance logbook",
+                    "description": "A digital tablet with maintenance records",
+                    "readable": true,
+                    "text": "Chief Botanist Chen - Log Entry: The biodome was established in 2047, the year humanity first achieved sustainable space agriculture. Remember: I am Chen Wei, head of agricultural operations. Our crops are stored in the Seed Vault for preservation."
+                },
+                {
+                    "id": "access_keycard",
+                    "name": "security access keycard",
+                    "description": "A magnetic keycard labeled 'AUTHORIZED PERSONNEL ONLY'"
+                },
+                {
+                    "id": "grow_tower_a",
+                    "name": "grow tower A",
+                    "description": "A vertical hydroponic tower growing leafy greens",
+                    "searchable": true,
+                    "contains": [
+                        "hidden_note"
+                    ]
+                },
+                {
+                    "id": "hidden_note",
+                    "name": "handwritten note",
+                    "description": "A note tucked between the growing trays",
+                    "readable": true,
+                    "text": "Emergency Note: If systems fail, the backup oxygen generator is in the Climate Control Room. The emergency shuttle is our only way out if life support completely fails."
+                },
+                {
+                    "id": "equipment_cabinet",
+                    "name": "equipment cabinet",
+                    "description": "A locked cabinet containing specialized tools",
+                    "locked": true,
+                    "key_required": "access_keycard",
+                    "contains": [
+                        "repair_tool",
+                        "system_manual"
+                    ]
+                },
+                {
+                    "id": "repair_tool",
+                    "name": "multi-tool",
+                    "description": "A versatile repair tool for biodome systems"
+                },
+                {
+                    "id": "system_manual",
+                    "name": "biodome operations manual",
+                    "description": "A comprehensive guide to biodome systems",
+                    "readable": true,
+                    "text": "BIODOME OPERATIONS: In emergency situations, personnel must access the Climate Control Room to restore life support. The emergency shuttle bay can be accessed once climate systems are stabilized. Chief Botanist Chen Wei has override authority for all systems."
+                },
+                {
+                    "id": "pressure-sealed_door",
+                    "name": "pressure-sealed door",
+                    "description": "A heavy door leading to the Climate Control Room. The lock mechanism appears jammed.",
+                    "locked": true,
+                    "key_required": "repair_tool",
+                    "direction": "north",
+                    "leads_to": "climate_control",
+                    "aliases": [
+                        "door",
+                        "north"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "climate_control",
+            "name": "Climate Control Room",
+            "description": "A compact room filled with humming machinery, pipes, and monitoring screens. The walls are lined with environmental control systems. A large window shows the hydroponics bay beyond. Red emergency lights pulse rhythmically. The air feels thin, and you can hear the labored wheezing of failing oxygen generators.",
+            "items": [
+                {
+                    "id": "oxygen_generator",
+                    "name": "backup oxygen generator",
+                    "description": "A large cylindrical machine with status lights and control buttons",
+                    "readable": true,
+                    "text": "OXYGEN GENERATOR STATUS: STANDBY MODE - Requires manual activation. Warning: Generator can only be activated by authorized personnel with proper credentials."
+                },
+                {
+                    "id": "monitoring_station",
+                    "name": "environmental monitoring station",
+                    "description": "A bank of screens displaying atmospheric data and system diagnostics",
+                    "readable": true,
+                    "text": "ATMOSPHERIC ANALYSIS: O2 levels at 14% and falling. CO2 at dangerous levels. Temperature stable. Recommendation: Activate backup systems immediately and proceed to emergency evacuation if restoration fails."
+                },
+                {
+                    "id": "wall_cabinet",
+                    "name": "wall-mounted cabinet",
+                    "description": "A glass-fronted cabinet containing emergency supplies",
+                    "searchable": true,
+                    "contains": [
+                        "emergency_protocol"
+                    ]
+                },
+                {
+                    "id": "emergency_protocol",
+                    "name": "emergency protocol document",
+                    "description": "A laminated card with emergency procedures",
+                    "readable": true,
+                    "text": "EMERGENCY EVACUATION PROTOCOL: In the event of life support failure, proceed to the Emergency Shuttle Bay. Access requires verification: Chief's name, crop storage location, and year of biodome establishment."
+                },
+                {
+                    "id": "desk_unit",
+                    "name": "control desk",
+                    "description": "A desk with multiple drawers and a computer terminal",
+                    "subcontainers": [
+                        {
+                            "id": "left_drawer",
+                            "name": "left drawer",
+                            "locked": false,
+                            "contains": [
+                                "crew_roster"
+                            ]
+                        },
+                        {
+                            "id": "right_drawer",
+                            "name": "right drawer",
+                            "locked": false,
+                            "contains": []
+                        }
+                    ]
+                },
+                {
+                    "id": "crew_roster",
+                    "name": "crew roster",
+                    "description": "A list of biodome personnel and their roles",
+                    "readable": true,
+                    "text": "BIODOME CREW MANIFEST: Chief Botanist - Chen Wei, Agricultural Engineer - Sarah Martinez, Systems Technician - James Park, Research Assistant - Dr. Yuki Tanaka. All personnel trained in emergency evacuation procedures."
+                },
+                {
+                    "id": "shuttle_bay_access_hatch",
+                    "name": "shuttle bay access hatch",
+                    "description": "A reinforced hatch with a biometric scanner and security terminal. Three verification questions are displayed on the screen.",
+                    "locked": true,
+                    "lock_type": "password",
+                    "password_questions": [
+                        {
+                            "question": "Enter Chief Botanist's full name:",
+                            "answer": "chen wei",
+                            "hint": "Check the maintenance log and crew roster"
+                        },
+                        {
+                            "question": "Where are crops stored for preservation?",
+                            "answer": "seed vault",
+                            "hint": "The maintenance log mentions this location"
+                        },
+                        {
+                            "question": "What year was the biodome established?",
+                            "answer": "2047",
+                            "hint": "The maintenance log records the founding year"
+                        }
+                    ],
+                    "direction": "east",
+                    "leads_to": "shuttle_bay",
+                    "aliases": [
+                        "hatch",
+                        "east"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "shuttle_bay",
+            "name": "Emergency Shuttle Bay",
+            "description": "You've made it to the emergency shuttle bay! A sleek escape shuttle sits on the launch platform, its engines already warming up in standby mode. Through the bay windows, Earth hangs like a blue marble against the black void of space. The shuttle's door is open, and the interior lights glow with a welcoming warmth. Safety at last.",
+            "items": [
+                {
+                    "id": "escape_shuttle",
+                    "name": "emergency escape shuttle",
+                    "description": "A compact spacecraft designed for emergency evacuation, fully fueled and ready for launch"
+                },
+                {
+                    "id": "launch_console",
+                    "name": "launch control console",
+                    "description": "A terminal displaying pre-flight checks and launch authorization",
+                    "readable": true,
+                    "text": "SHUTTLE STATUS: READY FOR LAUNCH - All systems nominal. Destination: Earth Orbital Station Alpha. Estimated flight time: 2 hours. Awaiting crew boarding."
+                }
+            ],
+            "exits": [],
+            "is_goal": true,
+            "win_message": "You board the emergency shuttle and seal the hatch behind you. The engines roar to life as the bay doors open to the stars. The biodome emergency is behind you now as you accelerate toward Earth. Through the viewport, you watch the failing biodome grow smaller, its lights flickering in the darkness. You've escaped just in time. Mission accomplished - you win!"
+        }
+    ]
+}
