@@ -1,0 +1,196 @@
+{
+    "theme": "Neon Noir Detective Office",
+    "title": "Neon Noir Detective Office Adventure #26",
+    "goal": "Solve the puzzles, achieve the main objective, and escape.",
+    "starting_room": "detective_office",
+    "rooms": [
+        {
+            "id": "detective_office",
+            "name": "Private Detective Office",
+            "description": "A dimly lit office with venetian blinds casting shadows across the walls. Neon signs from the street below flicker through the window in pink and blue. A ceiling fan rotates slowly overhead. Rain patters against the glass. Your desk is cluttered with case files, empty coffee cups, and a vintage rotary phone. The air smells of cigarette smoke and cheap whiskey.",
+            "items": [
+                {
+                    "id": "desk",
+                    "name": "detective's desk",
+                    "description": "A battered wooden desk covered in papers, coffee rings, and case files",
+                    "searchable": true,
+                    "contains": [
+                        "brass_key"
+                    ]
+                },
+                {
+                    "id": "brass_key",
+                    "name": "small brass key",
+                    "description": "A tarnished brass key with the number '3' engraved on it"
+                },
+                {
+                    "id": "filing_cabinet",
+                    "name": "metal filing cabinet",
+                    "description": "A dented four-drawer filing cabinet with years of case files",
+                    "subcontainers": [
+                        {
+                            "id": "drawer_1",
+                            "name": "drawer 1",
+                            "locked": false,
+                            "contains": [
+                                "case_file_ruby"
+                            ]
+                        },
+                        {
+                            "id": "drawer_2",
+                            "name": "drawer 2",
+                            "locked": true,
+                            "lock_type": "combination",
+                            "combination": "1947",
+                            "contains": [
+                                "evidence_log"
+                            ]
+                        },
+                        {
+                            "id": "drawer_3",
+                            "name": "drawer 3",
+                            "locked": true,
+                            "key_required": "brass_key",
+                            "contains": [
+                                "witness_statement"
+                            ]
+                        },
+                        {
+                            "id": "drawer_4",
+                            "name": "drawer 4",
+                            "locked": false,
+                            "contains": []
+                        }
+                    ]
+                },
+                {
+                    "id": "case_file_ruby",
+                    "name": "case file for Ruby Sinclair",
+                    "description": "A manila folder with photos and notes about the prime suspect",
+                    "readable": true,
+                    "text": "CASE FILE: Ruby Sinclair - Prime suspect in the Diamond District heist. Last seen at the Velvet Lounge downtown. Known associate of the Neon Syndicate. Case opened in 1947. Approach with caution - she's dangerous and clever."
+                },
+                {
+                    "id": "evidence_log",
+                    "name": "evidence log",
+                    "description": "A detailed log of physical evidence collected from the crime scene",
+                    "readable": true,
+                    "text": "EVIDENCE LOG - Case #1947: Fingerprints lifted from safe. Lipstick-stained cigarette found at scene. Security footage shows suspect entering through service entrance. Forensic analysis confirms DNA match. All evidence points to downtown Velvet Lounge connection."
+                },
+                {
+                    "id": "witness_statement",
+                    "name": "witness statement",
+                    "description": "A typed statement from a key witness",
+                    "readable": true,
+                    "text": "WITNESS STATEMENT: 'I saw her clear as day. Ruby Sinclair, no doubt about it. She was wearing red, like always. The crime happened at the Velvet Lounge, just after midnight. I heard her say something about fingerprints being her calling card. She's guilty, detective. Lock her up.'"
+                },
+                {
+                    "id": "newspaper",
+                    "name": "yesterday's newspaper",
+                    "description": "A crumpled newspaper on the desk",
+                    "readable": true,
+                    "text": "CITY TRIBUNE: Diamond District Heist Rocks Downtown! The Velvet Lounge was the scene of a daring robbery last night. Police are searching for suspects. Detective work continues."
+                },
+                {
+                    "id": "office_door",
+                    "name": "office door",
+                    "description": "A frosted glass door with 'PRIVATE INVESTIGATOR' painted in gold letters",
+                    "locked": false,
+                    "direction": "north",
+                    "leads_to": "evidence_corridor",
+                    "aliases": [
+                        "door",
+                        "north"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "evidence_corridor",
+            "name": "Evidence Corridor",
+            "description": "A narrow hallway with flickering fluorescent lights. The walls are lined with framed newspaper clippings of solved cases. A water cooler gurgles in the corner. At the end of the hall, a heavy security door leads to the evidence room. A keypad glows beside it with three security questions displayed on a small screen.",
+            "items": [
+                {
+                    "id": "water_cooler",
+                    "name": "office water cooler",
+                    "description": "A standard water cooler with a stack of paper cups",
+                    "searchable": true,
+                    "contains": []
+                },
+                {
+                    "id": "framed_clippings",
+                    "name": "framed newspaper clippings",
+                    "description": "Articles about famous cases solved by the detective agency",
+                    "readable": true,
+                    "text": "Headlines include: 'Detective Cracks Syndicate Case!' and 'Ruby Sinclair: From Socialite to Suspect' and 'Velvet Lounge: Hub of Criminal Activity?'"
+                },
+                {
+                    "id": "bulletin_board",
+                    "name": "cork bulletin board",
+                    "description": "A board covered with photos, string connections, and notes",
+                    "readable": true,
+                    "text": "The board shows connections between Ruby Sinclair, the Velvet Lounge, and various crimes. Red string connects her photo to the downtown location. A note reads: 'Fingerprints don't lie - forensic evidence is key.'"
+                },
+                {
+                    "id": "evidence_room_security_door",
+                    "name": "evidence room security door",
+                    "description": "A reinforced steel door with a digital keypad. Three security questions must be answered to gain access.",
+                    "locked": true,
+                    "lock_type": "password",
+                    "password_questions": [
+                        {
+                            "question": "Enter suspect name:",
+                            "answer": "ruby sinclair",
+                            "hint": "Check the case files in the filing cabinet"
+                        },
+                        {
+                            "question": "Enter crime location:",
+                            "answer": "velvet lounge",
+                            "hint": "Multiple documents mention where the crime occurred"
+                        },
+                        {
+                            "question": "Enter evidence type:",
+                            "answer": "fingerprints",
+                            "hint": "The evidence log and witness statement mention the key forensic evidence"
+                        }
+                    ],
+                    "direction": "east",
+                    "leads_to": "case_resolution",
+                    "aliases": [
+                        "door",
+                        "east"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "case_resolution",
+            "name": "Evidence Room - Case Closed",
+            "description": "You've made it to the evidence room! The lights flicker on automatically, revealing walls lined with evidence boxes and filing cabinets. In the center of the room, a large table displays all the evidence for Case #1947 - photographs, fingerprint cards, and the stolen diamonds themselves, now recovered. A monitor on the wall shows 'CASE CLOSED - SUSPECT APPREHENDED.' Through the back exit, you can see the neon-lit city streets and freedom.",
+            "items": [
+                {
+                    "id": "evidence_table",
+                    "name": "evidence display table",
+                    "description": "A table with all the case evidence neatly organized and labeled"
+                },
+                {
+                    "id": "recovered_diamonds",
+                    "name": "recovered diamonds",
+                    "description": "The stolen diamonds from the Diamond District heist, now safely recovered"
+                },
+                {
+                    "id": "case_monitor",
+                    "name": "case status monitor",
+                    "description": "A computer screen showing the case has been successfully solved",
+                    "readable": true,
+                    "text": "CASE #1947 - STATUS: CLOSED. Suspect: Ruby Sinclair. Location: Velvet Lounge. Evidence: Fingerprints confirmed. Diamonds recovered. Excellent detective work!"
+                }
+            ],
+            "exits": [],
+            "is_goal": true,
+            "win_message": "Case closed, detective! You've cracked the case, identified Ruby Sinclair as the culprit, located the evidence at the Velvet Lounge, and recovered the stolen diamonds. The neon lights of the city beckon as you step out into the rain-soaked streets, another mystery solved. Time to celebrate with a drink at the corner bar. You win!"
+        }
+    ]
+}

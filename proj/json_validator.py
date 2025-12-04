@@ -6,7 +6,7 @@ class ValidationError(Exception):
     pass
 
 class TextWorldValidator:
-    FORBIDDEN_NAME_CHARS = set('.,!?:;')
+    FORBIDDEN_NAME_CHARS = set('.,!?:;-')
     
     def __init__(self, json_data: Dict[str, Any]):
         self.data = json_data

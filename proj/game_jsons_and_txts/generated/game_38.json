@@ -1,0 +1,211 @@
+{
+    "theme": "Magic Carpet Port",
+    "title": "Magic Carpet Port Adventure #38",
+    "goal": "Solve the puzzles, achieve the main objective, and escape.",
+    "starting_room": "merchant_shop",
+    "rooms": [
+        {
+            "id": "merchant_shop",
+            "name": "Carpet Merchant's Shop",
+            "description": "A cluttered shop filled with rolled carpets of every color and pattern. Incense smoke curls through the air, and brass lanterns cast dancing shadows on the walls. Through the window, you see flying carpets docking at tall towers in the distance. A heavy wooden desk sits against one wall, and an ornate chest rests in the corner.",
+            "items": [
+                {
+                    "id": "wooden_desk",
+                    "name": "merchant's wooden desk",
+                    "description": "A desk covered in scrolls, coins, and trading ledgers. It has three drawers with brass handles.",
+                    "subcontainers": [
+                        {
+                            "id": "top_drawer",
+                            "name": "top drawer",
+                            "locked": false,
+                            "contains": [
+                                "merchant_log"
+                            ]
+                        },
+                        {
+                            "id": "middle_drawer",
+                            "name": "middle drawer",
+                            "locked": true,
+                            "lock_type": "combination",
+                            "combination": "1001",
+                            "contains": [
+                                "brass_key"
+                            ]
+                        },
+                        {
+                            "id": "bottom_drawer",
+                            "name": "bottom drawer",
+                            "locked": false,
+                            "contains": []
+                        }
+                    ]
+                },
+                {
+                    "id": "merchant_log",
+                    "name": "merchant's trading log",
+                    "description": "A leather-bound book with records of carpet sales and deliveries",
+                    "readable": true,
+                    "text": "Trading Log Entry: The Port of Winds was established by Sultan Azim the Wise in the year 1001. Business has been excellent! Remember: The legendary Sky Serpent carpet is kept at the Sky Dock, accessible only to those who prove their knowledge. The greatest treasures are hidden in the Vault of Stars."
+                },
+                {
+                    "id": "brass_key",
+                    "name": "ornate brass key",
+                    "description": "A key decorated with flying carpet engravings"
+                },
+                {
+                    "id": "ornate_chest",
+                    "name": "locked treasure chest",
+                    "description": "A chest inlaid with mother-of-pearl and secured with a brass lock",
+                    "locked": true,
+                    "key_required": "brass_key",
+                    "contains": [
+                        "magic_lamp",
+                        "ancient_scroll"
+                    ]
+                },
+                {
+                    "id": "magic_lamp",
+                    "name": "enchanted brass lamp",
+                    "description": "A magical lamp that glows with inner light, one of the sacred artifacts of the port"
+                },
+                {
+                    "id": "ancient_scroll",
+                    "name": "scroll of port history",
+                    "description": "An old scroll detailing the port's founding",
+                    "readable": true,
+                    "text": "The Port of Winds: Founded by Sultan Azim the Wise, this magical port serves as a hub for carpet traders from across the realm. The Sky Dock holds the legendary Sky Serpent carpet, reserved for the Chosen Traveler who can answer the three questions of wisdom."
+                },
+                {
+                    "id": "carpet_pile",
+                    "name": "pile of rolled carpets",
+                    "description": "Dozens of carpets stacked against the wall, some shimmering with magic",
+                    "searchable": true,
+                    "contains": [
+                        "carpet_token"
+                    ]
+                },
+                {
+                    "id": "carpet_token",
+                    "name": "golden carpet token",
+                    "description": "A golden medallion shaped like a flying carpet, another sacred artifact"
+                },
+                {
+                    "id": "beaded_curtain_doorway",
+                    "name": "beaded curtain doorway",
+                    "description": "A doorway covered with colorful beaded curtains leading to the bazaar",
+                    "locked": false,
+                    "direction": "east",
+                    "leads_to": "port_bazaar",
+                    "aliases": [
+                        "curtain",
+                        "east"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "port_bazaar",
+            "name": "Port Bazaar",
+            "description": "A bustling marketplace filled with exotic goods and magical wares. Merchants call out their prices while magic carpets fly overhead. Colorful awnings provide shade, and the smell of spices fills the air. Notice boards and scrolls are posted on the walls. A grand archway to the north leads to the Sky Dock.",
+            "items": [
+                {
+                    "id": "notice_board",
+                    "name": "port notice board",
+                    "description": "A board covered with announcements and information about the port",
+                    "readable": true,
+                    "text": "PORT ANNOUNCEMENTS: Welcome to the Port of Winds! Founded by Sultan Azim the Wise. All visitors must register at the customs office. Reminder: The Vault of Stars contains the port's most valuable treasures and magical artifacts."
+                },
+                {
+                    "id": "merchant_stall",
+                    "name": "spice merchant's stall",
+                    "description": "A stall overflowing with colorful spices in clay pots",
+                    "searchable": true,
+                    "contains": [
+                        "traveler_note"
+                    ]
+                },
+                {
+                    "id": "traveler_note",
+                    "name": "traveler's journal page",
+                    "description": "A torn page from someone's travel journal",
+                    "readable": true,
+                    "text": "I have finally reached the legendary Port of Winds! They say only the Chosen Traveler can claim the Sky Serpent carpet from the Sky Dock. I must remember who I am - I am the Chosen Traveler, destined to ride the winds!"
+                },
+                {
+                    "id": "information_scroll",
+                    "name": "port information scroll",
+                    "description": "An official scroll with details about the port's attractions",
+                    "readable": true,
+                    "text": "Guide to the Port of Winds: Visit the Vault of Stars to see our collection of magical treasures! The Sky Dock offers the finest carpet rides. Remember: Sultan Azim the Wise welcomes all honest traders to our magnificent port."
+                },
+                {
+                    "id": "fountain",
+                    "name": "magical fountain",
+                    "description": "A fountain with water that flows upward, defying gravity",
+                    "searchable": true,
+                    "contains": []
+                },
+                {
+                    "id": "Sky_Dock_archway",
+                    "name": "Sky Dock archway",
+                    "description": "A magnificent archway decorated with stars and moons. Three questions are carved into stone tablets on either side.",
+                    "locked": true,
+                    "lock_type": "password",
+                    "password_questions": [
+                        {
+                            "question": "Who founded the Port of Winds?",
+                            "answer": "sultan azim the wise",
+                            "hint": "Check the merchant's log and the notice board"
+                        },
+                        {
+                            "question": "Where are the greatest treasures kept?",
+                            "answer": "vault of stars",
+                            "hint": "Multiple sources mention where valuable items are stored"
+                        },
+                        {
+                            "question": "Who are you?",
+                            "answer": "chosen traveler",
+                            "hint": "The traveler's journal page reveals your identity"
+                        }
+                    ],
+                    "direction": "north",
+                    "leads_to": "sky_dock",
+                    "aliases": [
+                        "archway",
+                        "gate",
+                        "north"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "sky_dock",
+            "name": "Sky Dock",
+            "description": "You have reached the legendary Sky Dock! A platform high above the port, open to the endless sky. In the center floats the magnificent Sky Serpent carpet - a masterpiece woven with golden thread that shimmers like scales. Stars twinkle above, and the wind whispers of distant lands waiting to be explored. The carpet pulses with ancient magic, ready to carry you away.",
+            "items": [
+                {
+                    "id": "sky_serpent_carpet",
+                    "name": "Sky Serpent magic carpet",
+                    "description": "A legendary flying carpet that glows with golden light, decorated with intricate serpent patterns"
+                },
+                {
+                    "id": "docking_platform",
+                    "name": "magical docking platform",
+                    "description": "A platform made of crystallized clouds that floats impossibly in the air"
+                },
+                {
+                    "id": "wind_chimes",
+                    "name": "enchanted wind chimes",
+                    "description": "Chimes that play melodies carried by the magical winds",
+                    "readable": true,
+                    "text": "The chimes sing: 'The Chosen Traveler has arrived at last. The Sky Serpent awaits to carry you across the seven winds to freedom and adventure!'"
+                }
+            ],
+            "exits": [],
+            "is_goal": true,
+            "win_message": "You step onto the Sky Serpent carpet and it rises into the air! The magical carpet responds to your thoughts, soaring higher and higher above the Port of Winds. The bazaar below becomes tiny as you fly through clouds and past stars. The wind rushes through your hair as you escape on the legendary carpet, free to explore the endless skies. You win!"
+        }
+    ]
+}

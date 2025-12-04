@@ -1,0 +1,249 @@
+{
+    "theme": "Storm-Chaser Mobile Lab",
+    "title": "Storm-Chaser Mobile Lab Adventure #39",
+    "goal": "Solve the puzzles, achieve the main objective, and escape.",
+    "starting_room": "main_laboratory",
+    "rooms": [
+        {
+            "id": "main_laboratory",
+            "name": "Main Laboratory",
+            "description": "The mobile lab shakes violently as the storm rages outside. Computer screens flicker with real-time weather data. Equipment rattles on metal shelves. Through the reinforced windows, you see debris flying past in the howling wind. Red emergency lights pulse overhead. You need to escape before the vehicle is torn apart.",
+            "items": [
+                {
+                    "id": "weather_station",
+                    "name": "weather monitoring station",
+                    "description": "A bank of computers displaying atmospheric data and storm measurements",
+                    "readable": true,
+                    "text": "CURRENT CONDITIONS: Barometric Pressure: 952 mb (extremely low), Wind Speed: 178 mph (Category 5), Temperature: 72\u00b0F. WARNING: Structural integrity compromised. Evacuate immediately."
+                },
+                {
+                    "id": "equipment_rack",
+                    "name": "equipment storage rack",
+                    "description": "A tall metal rack with various meteorological instruments and tools",
+                    "searchable": true,
+                    "contains": [
+                        "emergency_radio"
+                    ]
+                },
+                {
+                    "id": "emergency_radio",
+                    "name": "emergency radio",
+                    "description": "A handheld weather radio with emergency broadcasts",
+                    "readable": true,
+                    "text": "EMERGENCY BROADCAST: All storm-chaser units evacuate immediately. This is a historic storm event. Wind speeds have reached 178 mph. Seek shelter in reinforced safe rooms. Lead meteorologist Doctor Chen has activated emergency protocols."
+                },
+                {
+                    "id": "research_desk",
+                    "name": "research workstation",
+                    "description": "A desk covered with papers, charts, and a locked filing system with three drawers",
+                    "subcontainers": [
+                        {
+                            "id": "top_drawer",
+                            "name": "top drawer",
+                            "locked": false,
+                            "contains": [
+                                "storm_log"
+                            ]
+                        },
+                        {
+                            "id": "middle_drawer",
+                            "name": "middle drawer",
+                            "locked": true,
+                            "lock_type": "combination",
+                            "combination": "952",
+                            "contains": [
+                                "access_keycard"
+                            ]
+                        },
+                        {
+                            "id": "bottom_drawer",
+                            "name": "bottom drawer",
+                            "locked": false,
+                            "contains": []
+                        }
+                    ]
+                },
+                {
+                    "id": "storm_log",
+                    "name": "storm chase logbook",
+                    "description": "A notebook with detailed observations from today's chase",
+                    "readable": true,
+                    "text": "Storm Chase Log - Day 39: We've intercepted an unprecedented supercell. Doctor Chen recorded the lowest pressure reading ever: 952 millibars. The combination to secure equipment is always the pressure reading. Team members: Lead Meteorologist Doctor Chen, Data Analyst Rodriguez, and Equipment Specialist Kim."
+                },
+                {
+                    "id": "access_keycard",
+                    "name": "security access keycard",
+                    "description": "A magnetic keycard labeled 'Equipment Bay Access - Doctor Chen'"
+                },
+                {
+                    "id": "wall_chart",
+                    "name": "tornado classification chart",
+                    "description": "A laminated poster showing the Enhanced Fujita Scale",
+                    "readable": true,
+                    "text": "ENHANCED FUJITA SCALE: EF0: 65-85 mph, EF1: 86-110 mph, EF2: 111-135 mph, EF3: 136-165 mph, EF4: 166-200 mph, EF5: Over 200 mph. Current storm classification: EF4 based on 178 mph winds."
+                },
+                {
+                    "id": "equipment_bay_door",
+                    "name": "equipment bay door",
+                    "description": "A reinforced door leading to the rear equipment storage area. A card reader blinks red beside it.",
+                    "locked": true,
+                    "key_required": "access_keycard",
+                    "direction": "south",
+                    "leads_to": "equipment_bay",
+                    "aliases": [
+                        "door",
+                        "south"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "equipment_bay",
+            "name": "Equipment Bay",
+            "description": "The rear section of the mobile lab filled with storm-chasing gear, radar equipment, and emergency supplies. The vehicle lurches violently. Metal groans under the stress. A ladder leads up to the observation deck, and a heavily reinforced door marked 'SAFE ROOM' is built into the floor.",
+            "items": [
+                {
+                    "id": "radar_console",
+                    "name": "portable radar console",
+                    "description": "A sophisticated radar system showing the storm's structure",
+                    "readable": true,
+                    "text": "RADAR ANALYSIS: Mesocyclone detected. Rotation speed: 178 mph. Storm moving northeast. Hook echo visible - tornado on ground. Safe room protocol: Answer security questions to access emergency shelter."
+                },
+                {
+                    "id": "supply_locker",
+                    "name": "emergency supply locker",
+                    "description": "A metal locker containing emergency equipment and supplies",
+                    "searchable": true,
+                    "contains": [
+                        "team_roster",
+                        "bolt_cutters"
+                    ]
+                },
+                {
+                    "id": "team_roster",
+                    "name": "team identification roster",
+                    "description": "A laminated card with team member information",
+                    "readable": true,
+                    "text": "STORM CHASE TEAM #39: Lead Meteorologist - Doctor Chen (Specialization: Atmospheric Pressure Systems), Data Analyst - Rodriguez (Specialization: Doppler Radar), Equipment Specialist - Kim (Specialization: Vehicle Maintenance). Emergency shelter location: Underground safe room beneath vehicle."
+                },
+                {
+                    "id": "bolt_cutters",
+                    "name": "heavy duty bolt cutters",
+                    "description": "Large bolt cutters for emergency use"
+                },
+                {
+                    "id": "storage_cabinet",
+                    "name": "locked storage cabinet",
+                    "description": "A cabinet with a chain and padlock securing sensitive equipment",
+                    "locked": true,
+                    "key_required": "bolt_cutters",
+                    "contains": [
+                        "pressure_gauge"
+                    ]
+                },
+                {
+                    "id": "pressure_gauge",
+                    "name": "calibrated pressure gauge",
+                    "description": "A precision instrument for measuring atmospheric pressure",
+                    "readable": true,
+                    "text": "Calibration note: This gauge recorded the historic 952 mb reading. Doctor Chen always says: 'Pressure drops mean danger rises. The safe room is underground where we're protected.'"
+                },
+                {
+                    "id": "ladder_to_observation_deck",
+                    "name": "ladder to observation deck",
+                    "description": "A metal ladder leading up to the roof observation platform. A sign warns: 'DANGER - Do not use during active storm conditions.'",
+                    "locked": false,
+                    "direction": "north",
+                    "leads_to": "observation_deck",
+                    "aliases": [
+                        "ladder",
+                        "up",
+                        "north"
+                    ]
+                },
+                {
+                    "id": "reinforced_safe_room_hatch",
+                    "name": "reinforced safe room hatch",
+                    "description": "A heavy steel hatch built into the floor with a digital security panel. Three questions are displayed on the screen.",
+                    "locked": true,
+                    "lock_type": "password",
+                    "password_questions": [
+                        {
+                            "question": "Who leads this storm chase team?",
+                            "answer": "doctor chen",
+                            "hint": "Check the storm log and team roster"
+                        },
+                        {
+                            "question": "What is the current wind speed in mph?",
+                            "answer": "178",
+                            "hint": "Look at the weather monitoring station and radar console"
+                        },
+                        {
+                            "question": "Where is the emergency shelter located?",
+                            "answer": "underground",
+                            "hint": "The team roster and pressure gauge note mention this"
+                        }
+                    ],
+                    "direction": "west",
+                    "leads_to": "underground_safe_room",
+                    "aliases": [
+                        "hatch",
+                        "down",
+                        "west"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "observation_deck",
+            "name": "Observation Deck",
+            "description": "The roof-mounted observation platform is exposed to the full fury of the storm. Wind screams past at incredible speeds. Rain pelts horizontally. Through the chaos, you can see the massive tornado bearing down on your position. This is no place to stay - you need to get back down immediately!",
+            "items": [
+                {
+                    "id": "anemometer",
+                    "name": "wind speed anemometer",
+                    "description": "A spinning instrument measuring wind velocity, barely holding together",
+                    "readable": true,
+                    "text": "CRITICAL READING: 178 mph sustained winds. Gusts exceeding 200 mph. EVACUATE OBSERVATION DECK IMMEDIATELY."
+                },
+                {
+                    "id": "camera_mount",
+                    "name": "storm camera mount",
+                    "description": "A reinforced mount with cameras capturing the tornado's approach. One camera has been ripped away by the wind."
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "underground_safe_room",
+            "name": "Underground Safe Room",
+            "description": "You've made it to the reinforced underground shelter! The thick concrete walls muffle the storm's roar to a distant rumble. Emergency lights provide steady illumination. Supplies line the walls. A communication system crackles with weather service updates. You're safe here until the storm passes.",
+            "items": [
+                {
+                    "id": "emergency_supplies",
+                    "name": "emergency supply cache",
+                    "description": "Shelves stocked with water, food, medical supplies, and emergency equipment"
+                },
+                {
+                    "id": "communication_system",
+                    "name": "emergency communication system",
+                    "description": "A radio system connected to the National Weather Service",
+                    "readable": true,
+                    "text": "WEATHER SERVICE UPDATE: The tornado has passed your location. Storm-Chaser Mobile Lab #39 has been destroyed, but all personnel are confirmed safe in the underground shelter. Remain in place until all-clear is given. Rescue teams en route."
+                },
+                {
+                    "id": "safe_room_log",
+                    "name": "safe room logbook",
+                    "description": "A log of all previous emergency shelter uses",
+                    "readable": true,
+                    "text": "This safe room has protected storm chasers through 15 major storm events. Today marks the most severe: 952 mb pressure, 178 mph winds, EF4 tornado. Doctor Chen's design has saved lives once again."
+                }
+            ],
+            "exits": [],
+            "is_goal": true,
+            "win_message": "SUCCESS! You've reached the underground safe room just in time. Above you, the tornado tears the mobile lab apart, but you're protected by the reinforced shelter. The storm eventually passes, and rescue teams arrive to extract you safely. You survived Storm-Chaser Mobile Lab Adventure #39! You win!"
+        }
+    ]
+}

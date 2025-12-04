@@ -1,0 +1,220 @@
+{
+    "theme": "Haunted Doll Factory",
+    "title": "Haunted Doll Factory Adventure #41",
+    "goal": "Solve the puzzles, achieve the main objective, and escape.",
+    "starting_room": "assembly_room",
+    "rooms": [
+        {
+            "id": "assembly_room",
+            "name": "Doll Assembly Room",
+            "description": "A dusty factory floor filled with abandoned workbenches and rusted machinery. Half-finished porcelain dolls lie scattered about, their empty eyes seeming to follow your movement. Cobwebs hang from the ceiling, and the air smells of old paint and decay. A flickering overhead light casts dancing shadows across the room.",
+            "items": [
+                {
+                    "id": "workbench",
+                    "name": "old workbench",
+                    "description": "A wooden workbench covered in doll parts, tools, and dust",
+                    "searchable": true,
+                    "contains": [
+                        "factory_memo"
+                    ]
+                },
+                {
+                    "id": "factory_memo",
+                    "name": "factory memo",
+                    "description": "A yellowed memo pinned to the workbench",
+                    "readable": true,
+                    "text": "MEMO: Production started in 1952. Remember to lock the storage cabinet - combination is the year we began production. - Manager Elias Crane"
+                },
+                {
+                    "id": "tool_cabinet",
+                    "name": "metal tool cabinet",
+                    "description": "A tall cabinet with three drawers, each labeled with different tool types",
+                    "subcontainers": [
+                        {
+                            "id": "top_drawer",
+                            "name": "top drawer",
+                            "locked": false,
+                            "contains": [
+                                "production_log"
+                            ]
+                        },
+                        {
+                            "id": "middle_drawer",
+                            "name": "middle drawer",
+                            "locked": true,
+                            "lock_type": "combination",
+                            "combination": "1952",
+                            "contains": [
+                                "silver_key"
+                            ]
+                        },
+                        {
+                            "id": "bottom_drawer",
+                            "name": "bottom drawer",
+                            "locked": false,
+                            "contains": []
+                        }
+                    ]
+                },
+                {
+                    "id": "production_log",
+                    "name": "production logbook",
+                    "description": "A leather-bound book with production records",
+                    "readable": true,
+                    "text": "Crane Doll Factory - Est. 1952. Owner: Elias Crane. Specialty: Porcelain dolls. WARNING: The prototype doll created in the Prototype Workshop has been reported to move on its own. Keep locked away."
+                },
+                {
+                    "id": "silver_key",
+                    "name": "tarnished silver key",
+                    "description": "A small silver key with a tag reading 'Storage'"
+                },
+                {
+                    "id": "broken_doll",
+                    "name": "cracked porcelain doll",
+                    "description": "A damaged doll sitting on a shelf, its head tilted at an unnatural angle",
+                    "searchable": true,
+                    "contains": [
+                        "hidden_note"
+                    ]
+                },
+                {
+                    "id": "hidden_note",
+                    "name": "hidden note",
+                    "description": "A small note stuffed inside the broken doll",
+                    "readable": true,
+                    "text": "If you're reading this, you need to destroy the cursed doll before it's too late. It's locked in storage. The furnace room is the only place hot enough to destroy it completely."
+                },
+                {
+                    "id": "heavy_wooden_door",
+                    "name": "heavy wooden door",
+                    "description": "A door leading to the showroom, slightly ajar and creaking in an unfelt breeze",
+                    "locked": false,
+                    "direction": "east",
+                    "leads_to": "showroom",
+                    "aliases": [
+                        "door",
+                        "east"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "showroom",
+            "name": "Doll Showroom",
+            "description": "A large room with glass display cases lining the walls, each containing pristine porcelain dolls in elaborate dresses. Their glassy eyes seem to watch you from every angle. A grand chandelier hangs overhead, several of its crystals missing. Moonlight streams through grimy windows, casting an eerie glow. A locked storage closet stands in the corner, and a reinforced door leads north.",
+            "items": [
+                {
+                    "id": "display_case_1",
+                    "name": "glass display case",
+                    "description": "A case containing a Victorian-era doll in a blue dress",
+                    "readable": true,
+                    "text": "Placard: 'Victorian Lady - Handcrafted by Elias Crane, 1955'"
+                },
+                {
+                    "id": "display_case_2",
+                    "name": "corner display case",
+                    "description": "A case with a bride doll in a white gown",
+                    "readable": true,
+                    "text": "Placard: 'Eternal Bride - Created in our Prototype Workshop, 1953. Not for sale.'"
+                },
+                {
+                    "id": "guest_book",
+                    "name": "visitor guest book",
+                    "description": "A dusty book on a pedestal near the entrance",
+                    "readable": true,
+                    "text": "Last entry dated 1967: 'Beautiful dolls, but something feels wrong about this place. The owner, Mr. Crane, seems obsessed with his prototype. - Margaret Holloway'"
+                },
+                {
+                    "id": "storage_closet",
+                    "name": "locked storage closet",
+                    "description": "A reinforced closet with a silver lock and warning signs",
+                    "locked": true,
+                    "key_required": "silver_key",
+                    "contains": [
+                        "cursed_doll"
+                    ]
+                },
+                {
+                    "id": "cursed_doll",
+                    "name": "cursed porcelain doll",
+                    "description": "A beautiful but deeply unsettling porcelain doll with jet-black hair and eyes that seem to follow you. Its presence fills you with dread. This must be destroyed in the furnace."
+                },
+                {
+                    "id": "newspaper_clipping",
+                    "name": "old newspaper article",
+                    "description": "A framed newspaper clipping on the wall",
+                    "readable": true,
+                    "text": "DAILY HERALD - 1967: Crane Doll Factory closes after mysterious incidents. Owner Elias Crane disappeared. Workers reported dolls moving on their own, particularly a prototype created in the factory's Prototype Workshop."
+                },
+                {
+                    "id": "chandelier",
+                    "name": "broken chandelier",
+                    "description": "A once-grand chandelier now covered in dust and cobwebs",
+                    "searchable": true,
+                    "contains": []
+                },
+                {
+                    "id": "reinforced_metal_door",
+                    "name": "reinforced metal door",
+                    "description": "A heavy door with a security panel. Three questions are etched into a brass plate beside it.",
+                    "locked": true,
+                    "lock_type": "password",
+                    "password_questions": [
+                        {
+                            "question": "Who owned this factory?",
+                            "answer": "elias crane",
+                            "hint": "Check the factory memo and production log"
+                        },
+                        {
+                            "question": "What did this factory make?",
+                            "answer": "porcelain dolls",
+                            "hint": "The production log states the factory's specialty"
+                        },
+                        {
+                            "question": "Where was the cursed doll created?",
+                            "answer": "prototype workshop",
+                            "hint": "Multiple sources mention where the prototype was made"
+                        }
+                    ],
+                    "direction": "north",
+                    "leads_to": "furnace_room",
+                    "aliases": [
+                        "door",
+                        "north"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "furnace_room",
+            "name": "Factory Furnace Room",
+            "description": "A sweltering room dominated by a massive industrial furnace that still radiates heat after all these years. The walls are blackened with soot, and the air shimmers with waves of heat. A control panel with a large red button sits beside the furnace. This is where defective dolls were once destroyed - and where the cursed doll must meet its end.",
+            "items": [
+                {
+                    "id": "furnace",
+                    "name": "industrial furnace",
+                    "description": "A massive brick furnace with an iron door. Orange light glows from within, and intense heat radiates outward."
+                },
+                {
+                    "id": "control_panel",
+                    "name": "furnace control panel",
+                    "description": "A panel with temperature gauges and a large activation button",
+                    "readable": true,
+                    "text": "WARNING: Furnace reaches 2000\u00b0F. Sufficient to destroy any material. Place items inside and activate to incinerate."
+                },
+                {
+                    "id": "safety_sign",
+                    "name": "safety warning sign",
+                    "description": "A faded sign on the wall",
+                    "readable": true,
+                    "text": "SAFETY NOTICE: This furnace was used to destroy defective dolls and factory waste. Ensure area is clear before activation."
+                }
+            ],
+            "exits": [],
+            "is_goal": true,
+            "win_message": "You place the cursed porcelain doll into the blazing furnace and activate the controls. The doll's eyes seem to widen in terror as the flames consume it. A piercing shriek echoes through the factory, then suddenly - silence. The oppressive atmosphere lifts, and you feel the curse break. The factory is finally at peace. You've completed your mission and can now escape this haunted place. You win!"
+        }
+    ]
+}

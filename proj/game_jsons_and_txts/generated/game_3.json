@@ -82,7 +82,7 @@
                 },
                 {
                     "id": "repair_tool",
-                    "name": "multi-tool",
+                    "name": "multi_tool",
                     "description": "A versatile repair tool for biodome systems"
                 },
                 {
@@ -93,8 +93,8 @@
                     "text": "BIODOME OPERATIONS: In emergency situations, personnel must access the Climate Control Room to restore life support. The emergency shuttle bay can be accessed once climate systems are stabilized. Chief Botanist Chen Wei has override authority for all systems."
                 },
                 {
-                    "id": "pressure-sealed_door",
-                    "name": "pressure-sealed door",
+                    "id": "pressure_sealed_door",
+                    "name": "pressure_sealed door",
                     "description": "A heavy door leading to the Climate Control Room. The lock mechanism appears jammed.",
                     "locked": true,
                     "key_required": "repair_tool",
@@ -129,7 +129,7 @@
                 },
                 {
                     "id": "wall_cabinet",
-                    "name": "wall-mounted cabinet",
+                    "name": "wall mounted cabinet",
                     "description": "A glass-fronted cabinet containing emergency supplies",
                     "searchable": true,
                     "contains": [

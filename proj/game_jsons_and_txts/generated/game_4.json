@@ -189,8 +189,8 @@
                     "description": "A beautiful golden amulet that pulses with dark energy - the source of the curse"
                 },
                 {
-                    "id": "iron-reinforced_door",
-                    "name": "iron-reinforced door",
+                    "id": "iron_reinforced_door",
+                    "name": "iron_reinforced door",
                     "description": "A heavy wooden door banded with iron. Three questions are carved into a stone tablet beside it.",
                     "locked": true,
                     "lock_type": "password",

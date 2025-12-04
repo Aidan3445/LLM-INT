@@ -1,0 +1,229 @@
+{
+  "theme": "Kaiju Alert Command Center",
+  "title": "Kaiju Alert Command Center Adventure #33",
+  "goal": "Solve the puzzles, achieve the main objective, and escape.",
+  "starting_room": "control_room",
+  "rooms": [
+    {
+      "id": "control_room",
+      "name": "Main Control Room",
+      "description": "A high-tech command center with wall-sized monitors displaying seismic activity and radar sweeps. Red emergency lights pulse rhythmically. Coffee cups and scattered reports cover workstations. Through the reinforced windows, you can see the distant silhouette of a massive creature approaching the city. Alarms blare warnings about an imminent kaiju breach.",
+      "items": [
+        {
+          "id": "main_console",
+          "name": "main control console",
+          "description": "A sophisticated computer terminal with multiple screens showing kaiju tracking data",
+          "subcontainers": [
+            {
+              "id": "console_drawer_a",
+              "name": "drawer A",
+              "locked": false,
+              "contains": [
+                "security_memo"
+              ]
+            },
+            {
+              "id": "console_drawer_b",
+              "name": "drawer B",
+              "locked": true,
+              "lock_type": "combination",
+              "combination": "2054",
+              "contains": [
+                "research_keycard"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "security_memo",
+          "name": "security protocol memo",
+          "description": "An urgent memo about evacuation procedures",
+          "readable": true,
+          "text": "SECURITY MEMO: All personnel must evacuate via the emergency bay. Research keycard stored in console drawer B. Combination is the year of the first kaiju attack: 2054. Remember your training!"
+        },
+        {
+          "id": "research_keycard",
+          "name": "research lab keycard",
+          "description": "A magnetic keycard labeled 'RESEARCH LAB ACCESS - LEVEL 3'"
+        },
+        {
+          "id": "operations_desk",
+          "name": "operations desk",
+          "description": "A cluttered desk covered with incident reports and kaiju classification files",
+          "searchable": true,
+          "contains": [
+            "incident_report"
+          ]
+        },
+        {
+          "id": "incident_report",
+          "name": "kaiju incident report",
+          "description": "A detailed report about recent kaiju activity",
+          "readable": true,
+          "text": "INCIDENT REPORT K-033: Kaiju designation TITAN-7 detected approaching from the Pacific Trench. Lead researcher Doctor Chen has classified it as Category 5. Chief of Operations Commander Hayes has ordered full evacuation. All data must be secured in the research vault."
+        },
+        {
+          "id": "wall_monitors",
+          "name": "monitoring displays",
+          "description": "Large screens showing real-time kaiju tracking and city evacuation status",
+          "readable": true,
+          "text": "ALERT: TITAN-7 ETA 15 minutes. Evacuation status: 73% complete. Research lab contains critical data on kaiju weakness. Secure all classified materials before evacuation."
+        },
+        {
+          "id": "reinforced_security_door",
+          "name": "reinforced security door",
+          "description": "A heavy steel door with a card reader leading to the research wing",
+          "locked": true,
+          "key_required": "research_keycard",
+          "direction": "east",
+          "leads_to": "research_lab",
+          "aliases": [
+            "door",
+            "east"
+          ]
+        }
+      ],
+      "exits": []
+    },
+    {
+      "id": "research_lab",
+      "name": "Kaiju Research Laboratory",
+      "description": "A sterile laboratory filled with scientific equipment and holographic displays showing 3D models of various kaiju. Specimen containers line the walls, and a large research vault dominates the far side of the room. Papers and data tablets are scattered everywhere, evidence of a hasty evacuation. The floor trembles periodically as the approaching kaiju draws closer.",
+      "items": [
+        {
+          "id": "research_terminal",
+          "name": "research computer terminal",
+          "description": "A high-security terminal with classified kaiju research data",
+          "readable": true,
+          "text": "CLASSIFIED RESEARCH DATABASE: TITAN-7 weakness identified - electromagnetic pulse at frequency 432 Hz. Data backed up in vault. Access code required for evacuation authorization."
+        },
+        {
+          "id": "specimen_cabinet",
+          "name": "specimen storage cabinet",
+          "description": "A locked cabinet containing kaiju tissue samples and research materials",
+          "locked": true,
+          "lock_type": "combination",
+          "combination": "432",
+          "contains": [
+            "vault_key",
+            "tissue_sample"
+          ]
+        },
+        {
+          "id": "vault_key",
+          "name": "research vault key",
+          "description": "A biometric key for accessing the secure research vault"
+        },
+        {
+          "id": "tissue_sample",
+          "name": "kaiju tissue sample",
+          "description": "A sealed container with a glowing blue tissue sample from a previous kaiju encounter"
+        },
+        {
+          "id": "doctor_chen_desk",
+          "name": "Doctor Chen desk",
+          "description": "The lead researcher's desk with personal notes and research journals",
+          "searchable": true,
+          "contains": [
+            "research_journal"
+          ]
+        },
+        {
+          "id": "research_journal",
+          "name": "Doctor Chen research journal",
+          "description": "A personal journal with handwritten notes about kaiju behavior",
+          "readable": true,
+          "text": "Research Journal - Doctor Chen: TITAN-7 is unlike anything we've seen. Its weakness frequency is 432 Hz. Commander Hayes must authorize the evacuation. Only those who know the lead researcher, the operations chief, and the kaiju's designation can access the emergency bay."
+        },
+        {
+          "id": "research_vault",
+          "name": "secure research vault",
+          "description": "A reinforced vault containing critical kaiju research data and evacuation protocols",
+          "locked": true,
+          "key_required": "vault_key",
+          "contains": [
+            "evacuation_protocol",
+            "kaiju_data_drive"
+          ]
+        },
+        {
+          "id": "evacuation_protocol",
+          "name": "emergency evacuation protocol",
+          "description": "Official evacuation procedures and authorization codes",
+          "readable": true,
+          "text": "EVACUATION PROTOCOL: All personnel must proceed to the emergency bay. Bay access requires security verification. The electromagnetic pulse weapon is stored in the bay for final defense. Authorization questions must be answered correctly."
+        },
+        {
+          "id": "kaiju_data_drive",
+          "name": "classified data drive",
+          "description": "A portable drive containing all research data on TITAN-7's weaknesses"
+        },
+        {
+          "id": "holographic_display",
+          "name": "kaiju hologram projector",
+          "description": "A 3D holographic display showing TITAN-7's approach trajectory",
+          "readable": true,
+          "text": "HOLOGRAPHIC ANALYSIS: TITAN-7 approaching from Pacific Trench. Category 5 threat level. Estimated height: 400 feet. Current designation: TITAN-7. Weakness: EM pulse at 432 Hz."
+        },
+        {
+          "id": "evacuation_bay_blast_door",
+          "name": "evacuation bay blast door",
+          "description": "A massive reinforced door leading to the emergency evacuation bay. A security terminal displays three verification questions.",
+          "locked": true,
+          "lock_type": "password",
+          "password_questions": [
+            {
+              "question": "Who is the lead kaiju researcher?",
+              "answer": "doctor chen",
+              "hint": "Check the incident report and research journal"
+            },
+            {
+              "question": "Who is the chief of operations?",
+              "answer": "commander hayes",
+              "hint": "The incident report mentions the person who ordered evacuation"
+            },
+            {
+              "question": "What is the kaiju designation?",
+              "answer": "titan-7",
+              "hint": "Look at the incident report and holographic display"
+            }
+          ],
+          "direction": "north",
+          "leads_to": "evacuation_bay",
+          "aliases": [
+            "blast door",
+            "north"
+          ]
+        }
+      ],
+      "exits": []
+    },
+    {
+      "id": "evacuation_bay",
+      "name": "Emergency Evacuation Bay",
+      "description": "You've made it to the evacuation bay! A sleek emergency transport vehicle sits ready on the launch pad, its engines humming. Through the massive bay doors, you can see the city skyline and the towering form of TITAN-7 in the distance. The electromagnetic pulse weapon is mounted and ready. A control panel shows the evacuation route is clear. It's time to escape!",
+      "items": [
+        {
+          "id": "transport_vehicle",
+          "name": "emergency transport",
+          "description": "A high-speed evacuation vehicle designed to outrun kaiju threats"
+        },
+        {
+          "id": "emp_weapon",
+          "name": "electromagnetic pulse cannon",
+          "description": "A powerful weapon calibrated to TITAN-7's weakness frequency"
+        },
+        {
+          "id": "launch_control",
+          "name": "launch control panel",
+          "description": "The final control panel showing all systems green for evacuation",
+          "readable": true,
+          "text": "LAUNCH CONTROL: All systems operational. Evacuation route clear. EMP weapon armed and ready. You have successfully secured the research data and can now evacuate safely. Good luck!"
+        }
+      ],
+      "exits": [],
+      "is_goal": true,
+      "win_message": "SUCCESS! You board the emergency transport with the critical kaiju research data. As you launch away from the command center, you activate the EMP weapon, buying the city precious time. TITAN-7 staggers as the electromagnetic pulse hits its weakness point. You've completed your mission and escaped with vital information that will help humanity defend against future kaiju attacks. The command center may be lost, but the knowledge you saved will protect countless lives. You win!"
+    }
+  ]
+}

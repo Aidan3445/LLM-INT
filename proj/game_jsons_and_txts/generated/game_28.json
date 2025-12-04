@@ -1,0 +1,236 @@
+{
+    "theme": "Secret Speakeasy",
+    "title": "Secret Speakeasy Adventure #28",
+    "goal": "Solve the puzzles, achieve the main objective, and escape.",
+    "starting_room": "back_alley",
+    "rooms": [
+        {
+            "id": "back_alley",
+            "name": "Dark Back Alley",
+            "description": "A dimly lit alley behind a seemingly abandoned warehouse in downtown Chicago. The year is 1925, and Prohibition is in full swing. Trash cans line the brick walls, and a single flickering streetlamp casts long shadows. You can hear distant jazz music and smell cigar smoke. A heavy metal door is set into the wall, and a fire escape ladder hangs overhead.",
+            "items": [
+                {
+                    "id": "trash_can",
+                    "name": "dented trash can",
+                    "description": "A metal trash can overflowing with newspapers and refuse",
+                    "searchable": true,
+                    "contains": [
+                        "newspaper_clipping"
+                    ]
+                },
+                {
+                    "id": "newspaper_clipping",
+                    "name": "Chicago Tribune clipping",
+                    "description": "A torn newspaper article from 1925",
+                    "readable": true,
+                    "text": "PROHIBITION CONTINUES: Five years since the Volstead Act of 1920 banned alcohol. Federal agents raid suspected speakeasies daily. Rumor has it the Cotton Club's owner, Big Eddie Malone, operates the finest underground establishment in the city."
+                },
+                {
+                    "id": "wooden_crate",
+                    "name": "wooden shipping crate",
+                    "description": "A crate marked 'FRAGILE - GLASSWARE' with loose boards",
+                    "searchable": true,
+                    "contains": [
+                        "crowbar"
+                    ]
+                },
+                {
+                    "id": "crowbar",
+                    "name": "iron crowbar",
+                    "description": "A heavy crowbar, perfect for prying open locked doors"
+                },
+                {
+                    "id": "fire_escape",
+                    "name": "rusty fire escape ladder",
+                    "description": "A ladder leading up to a boarded window",
+                    "searchable": true,
+                    "contains": [
+                        "bootlegger_note"
+                    ]
+                },
+                {
+                    "id": "bootlegger_note",
+                    "name": "bootlegger's note",
+                    "description": "A crumpled note hidden behind the ladder",
+                    "readable": true,
+                    "text": "Reminder: The cellar lock combination is the year Prohibition started, followed by the year it's supposed to end (1933). Don't forget! - Sal"
+                },
+                {
+                    "id": "heavy_metal_door",
+                    "name": "heavy metal door",
+                    "description": "A reinforced door with a sturdy lock. The wood around the lock looks weak enough to pry open.",
+                    "locked": true,
+                    "key_required": "crowbar",
+                    "direction": "north",
+                    "leads_to": "storage_cellar",
+                    "aliases": [
+                        "door",
+                        "north"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "storage_cellar",
+            "name": "Underground Storage Cellar",
+            "description": "A brick-walled cellar filled with wooden barrels and crates. The air is cool and smells of aged whiskey. Dim electric bulbs hang from the ceiling. Against one wall stands a locked cabinet, and a large barrel has been converted into a makeshift desk. You can hear muffled jazz music and laughter coming from behind a concealed door in the far wall.",
+            "items": [
+                {
+                    "id": "barrel_desk",
+                    "name": "barrel desk",
+                    "description": "A large barrel with a wooden plank on top serving as a desk surface",
+                    "searchable": true,
+                    "contains": [
+                        "ledger_book"
+                    ]
+                },
+                {
+                    "id": "ledger_book",
+                    "name": "bootlegger's ledger",
+                    "description": "A leather-bound book with records of illegal alcohol shipments",
+                    "readable": true,
+                    "text": "Shipment Log: Canadian whiskey arrives every Tuesday. Big Eddie Malone runs this operation. The password to enter the club changes weekly - this week it's the name of the famous Cotton Club in Harlem. Remember: Eddie, Cotton Club, Harlem."
+                },
+                {
+                    "id": "locked_cabinet",
+                    "name": "wooden liquor cabinet",
+                    "description": "A tall cabinet with three compartments, secured with various locks",
+                    "subcontainers": [
+                        {
+                            "id": "top_compartment",
+                            "name": "top compartment",
+                            "locked": false,
+                            "contains": [
+                                "jazz_poster"
+                            ]
+                        },
+                        {
+                            "id": "middle_compartment",
+                            "name": "middle compartment",
+                            "locked": true,
+                            "lock_type": "combination",
+                            "combination": "19201933",
+                            "contains": [
+                                "brass_key"
+                            ]
+                        },
+                        {
+                            "id": "bottom_compartment",
+                            "name": "bottom compartment",
+                            "locked": false,
+                            "contains": []
+                        }
+                    ]
+                },
+                {
+                    "id": "jazz_poster",
+                    "name": "concert poster",
+                    "description": "A colorful poster advertising a jazz performance",
+                    "readable": true,
+                    "text": "LIVE JAZZ TONIGHT! Featuring Louis Armstrong at the Cotton Club, Harlem's finest speakeasy. Doors open at 9 PM. Password required for entry."
+                },
+                {
+                    "id": "brass_key",
+                    "name": "small brass key",
+                    "description": "A key with a tag reading 'Storage Room 3'"
+                },
+                {
+                    "id": "storage_crate",
+                    "name": "locked storage crate",
+                    "description": "A reinforced crate with a brass padlock",
+                    "locked": true,
+                    "key_required": "brass_key",
+                    "contains": [
+                        "membership_card"
+                    ]
+                },
+                {
+                    "id": "membership_card",
+                    "name": "speakeasy membership card",
+                    "description": "A card with embossed lettering",
+                    "readable": true,
+                    "text": "MEMBER: The Cotton Club - Chicago Branch. Proprietor: Big Eddie Malone. Present this card and answer the doorman's questions to gain entry. Location: Harlem district."
+                },
+                {
+                    "id": "wine_rack",
+                    "name": "dusty wine rack",
+                    "description": "A rack holding empty bottles and one sealed envelope",
+                    "searchable": true,
+                    "contains": [
+                        "sealed_letter"
+                    ]
+                },
+                {
+                    "id": "sealed_letter",
+                    "name": "sealed envelope",
+                    "description": "An envelope marked 'CONFIDENTIAL'",
+                    "readable": true,
+                    "text": "To all staff: The speakeasy entrance requires three answers: Who runs this establishment? What's the name of our club? Where is the original Cotton Club located? Stay sharp and keep the feds out. - Eddie"
+                },
+                {
+                    "id": "concealed_speakeasy_door",
+                    "name": "concealed speakeasy door",
+                    "description": "A hidden door disguised as a bookshelf. A small speaking slot opens when you approach, and a gruff voice asks for verification.",
+                    "locked": true,
+                    "lock_type": "password",
+                    "password_questions": [
+                        {
+                            "question": "Who runs this establishment?",
+                            "answer": "big eddie malone",
+                            "hint": "Check the ledger book and membership card"
+                        },
+                        {
+                            "question": "What's the name of our club?",
+                            "answer": "cotton club",
+                            "hint": "The jazz poster and membership card mention this"
+                        },
+                        {
+                            "question": "Where is the original Cotton Club located?",
+                            "answer": "harlem",
+                            "hint": "Read the concert poster and membership card carefully"
+                        }
+                    ],
+                    "direction": "west",
+                    "leads_to": "secret_speakeasy",
+                    "aliases": [
+                        "door",
+                        "bookshelf",
+                        "west"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "secret_speakeasy",
+            "name": "The Cotton Club Speakeasy",
+            "description": "You've made it! The speakeasy is alive with energy. A jazz band plays on a small stage, couples dance on a crowded floor, and well-dressed patrons sip cocktails at the bar. Crystal chandeliers cast a warm glow over velvet booths. The bartender slides a glass of champagne across the mahogany bar to you with a knowing wink. Behind the bar, a door marked 'EXIT' leads to freedom.",
+            "items": [
+                {
+                    "id": "jazz_band",
+                    "name": "live jazz band",
+                    "description": "A talented quartet playing hot jazz on trumpet, piano, drums, and saxophone"
+                },
+                {
+                    "id": "mahogany_bar",
+                    "name": "polished mahogany bar",
+                    "description": "A beautiful bar stocked with illegal liquor from around the world"
+                },
+                {
+                    "id": "champagne_glass",
+                    "name": "glass of champagne",
+                    "description": "A crystal flute filled with bubbling French champagne"
+                },
+                {
+                    "id": "velvet_booth",
+                    "name": "velvet booth",
+                    "description": "Luxurious seating where Chicago's elite gather to drink and socialize"
+                }
+            ],
+            "exits": [],
+            "is_goal": true,
+            "win_message": "Success! You've gained entry to the most exclusive speakeasy in Chicago. Big Eddie Malone himself raises a glass to you from across the room. The jazz is hot, the drinks are cold, and you're now part of the secret world of Prohibition-era nightlife. The exit is yours whenever you're ready, but for now, enjoy the party! You win!"
+        }
+    ]
+}

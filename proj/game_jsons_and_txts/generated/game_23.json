@@ -1,0 +1,291 @@
+{
+    "theme": "Witch's Cottage",
+    "title": "Witch's Cottage Adventure #23",
+    "goal": "Solve the puzzles, achieve the main objective, and escape.",
+    "starting_room": "witchs_kitchen",
+    "rooms": [
+        {
+            "id": "witchs_kitchen",
+            "name": "Witch's Kitchen",
+            "description": "A cluttered kitchen filled with hanging herbs, bubbling cauldrons, and shelves of mysterious jars. The air is thick with the scent of sage and something more sinister. A black cat watches you from atop a wooden cupboard. Moonlight streams through a small window, illuminating dust motes that dance like tiny spirits.",
+            "items": [
+                {
+                    "id": "large_cauldron",
+                    "name": "bubbling cauldron",
+                    "description": "A large iron cauldron with green liquid bubbling inside. Something glints at the bottom.",
+                    "searchable": true,
+                    "contains": [
+                        "brass_key"
+                    ]
+                },
+                {
+                    "id": "brass_key",
+                    "name": "tarnished brass key",
+                    "description": "A small brass key covered in dried potion residue"
+                },
+                {
+                    "id": "wooden_cupboard",
+                    "name": "tall wooden cupboard",
+                    "description": "An old cupboard with carved moon symbols. It has three drawers.",
+                    "subcontainers": [
+                        {
+                            "id": "top_drawer",
+                            "name": "top drawer",
+                            "locked": false,
+                            "contains": [
+                                "recipe_book"
+                            ]
+                        },
+                        {
+                            "id": "middle_drawer",
+                            "name": "middle drawer",
+                            "locked": true,
+                            "lock_type": "combination",
+                            "combination": "372",
+                            "contains": [
+                                "spell_scroll"
+                            ]
+                        },
+                        {
+                            "id": "bottom_drawer",
+                            "name": "bottom drawer",
+                            "locked": false,
+                            "contains": []
+                        }
+                    ]
+                },
+                {
+                    "id": "recipe_book",
+                    "name": "worn recipe book",
+                    "description": "A stained book filled with potion recipes",
+                    "readable": true,
+                    "text": "Recipe for Moonlight Elixir: Combine 3 drops of moonflower essence, 7 petals of nightshade, and 2 roots of mandrake. Stir clockwise under a full moon. This potion grants the drinker the ability to see through magical barriers."
+                },
+                {
+                    "id": "spell_scroll",
+                    "name": "ancient spell scroll",
+                    "description": "A scroll with glowing runes written in silver ink",
+                    "readable": true,
+                    "text": "Scroll of Revealing: This cottage belongs to Morgana the Wise. Her faithful companion Shadow guards her secrets. The most powerful grimoire rests in the locked cabinet where all knowledge is kept safe."
+                },
+                {
+                    "id": "locked_cabinet",
+                    "name": "locked spice cabinet",
+                    "description": "A small cabinet with a brass lock, labeled 'Rare Ingredients'",
+                    "locked": true,
+                    "key_required": "brass_key",
+                    "contains": [
+                        "moonflower_vial",
+                        "witchs_diary"
+                    ]
+                },
+                {
+                    "id": "moonflower_vial",
+                    "name": "vial of moonflower essence",
+                    "description": "A glass vial containing shimmering blue liquid"
+                },
+                {
+                    "id": "witchs_diary",
+                    "name": "witch's personal diary",
+                    "description": "A leather-bound journal with a pentagram on the cover",
+                    "readable": true,
+                    "text": "Dear Diary, Shadow has been acting strange lately, sensing something in the garden. I've hidden my most precious grimoire in the locked cabinet in my laboratory. Only those who truly understand magic may enter. - Morgana"
+                },
+                {
+                    "id": "black_cat",
+                    "name": "black cat",
+                    "description": "A sleek black cat with glowing yellow eyes. A small tag on its collar reads 'Shadow'.",
+                    "readable": true,
+                    "text": "The cat's collar tag reads: 'Shadow - Familiar of Morgana the Wise. If found, return to the Enchanted Garden.'"
+                },
+                {
+                    "id": "heavy_oak_door",
+                    "name": "heavy oak door",
+                    "description": "A sturdy door leading to the potion laboratory. Strange symbols glow faintly on its surface.",
+                    "locked": false,
+                    "direction": "north",
+                    "leads_to": "potion_laboratory",
+                    "aliases": [
+                        "door",
+                        "north"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "potion_laboratory",
+            "name": "Potion Laboratory",
+            "description": "A spacious room filled with bubbling beakers, smoking flasks, and shelves lined with bottles of every color. A large workbench dominates the center, covered in open books and scattered ingredients. Crystal orbs hang from the ceiling, casting an eerie purple glow. A locked cabinet stands against the far wall, and a door to the garden is visible to the east.",
+            "items": [
+                {
+                    "id": "workbench",
+                    "name": "alchemist's workbench",
+                    "description": "A cluttered workbench with various potion-making tools and ingredients",
+                    "searchable": true,
+                    "contains": [
+                        "nightshade_petals"
+                    ]
+                },
+                {
+                    "id": "nightshade_petals",
+                    "name": "dried nightshade petals",
+                    "description": "A small pouch containing dark purple petals"
+                },
+                {
+                    "id": "bookshelf",
+                    "name": "towering bookshelf",
+                    "description": "Shelves packed with ancient tomes and scrolls",
+                    "searchable": true,
+                    "contains": [
+                        "potion_guide"
+                    ]
+                },
+                {
+                    "id": "potion_guide",
+                    "name": "master potion guide",
+                    "description": "A comprehensive guide to advanced potion-making",
+                    "readable": true,
+                    "text": "Chapter 7: The Art of Transformation. Remember, a true witch always keeps her grimoire in the locked cabinet. The garden beyond holds the final ingredients needed for the most powerful spells. Only Morgana's familiar Shadow knows the secret paths through the enchanted roses."
+                },
+                {
+                    "id": "crystal_orbs",
+                    "name": "hanging crystal orbs",
+                    "description": "Glowing orbs that illuminate the laboratory with magical light",
+                    "readable": true,
+                    "text": "The orbs pulse with energy, and within them you can see swirling images: a black cat named Shadow, a witch named Morgana, and a locked cabinet glowing with power."
+                },
+                {
+                    "id": "ingredient_chest",
+                    "name": "ingredient chest",
+                    "description": "A wooden chest with two compartments for storing rare materials",
+                    "subcontainers": [
+                        {
+                            "id": "upper_compartment",
+                            "name": "upper compartment",
+                            "locked": false,
+                            "contains": [
+                                "mandrake_root"
+                            ]
+                        },
+                        {
+                            "id": "lower_compartment",
+                            "name": "lower compartment",
+                            "locked": false,
+                            "contains": []
+                        }
+                    ]
+                },
+                {
+                    "id": "mandrake_root",
+                    "name": "mandrake root",
+                    "description": "A gnarled root that seems to squirm slightly in your hand"
+                },
+                {
+                    "id": "enchanted_garden_door",
+                    "name": "enchanted garden door",
+                    "description": "A door covered in living vines and flowers. A brass plaque displays three questions that must be answered to pass.",
+                    "locked": true,
+                    "lock_type": "password",
+                    "password_questions": [
+                        {
+                            "question": "What is the witch's name?",
+                            "answer": "morgana",
+                            "hint": "Check the spell scroll and diary found in the kitchen"
+                        },
+                        {
+                            "question": "What is the name of her familiar?",
+                            "answer": "shadow",
+                            "hint": "Look at the black cat's collar tag in the kitchen"
+                        },
+                        {
+                            "question": "Where does she keep her grimoire?",
+                            "answer": "locked cabinet",
+                            "hint": "The witch's diary and potion guide mention this location"
+                        }
+                    ],
+                    "direction": "east",
+                    "leads_to": "enchanted_garden",
+                    "aliases": [
+                        "door",
+                        "east"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "enchanted_garden",
+            "name": "Enchanted Garden",
+            "description": "You step into a magical garden bathed in silvery moonlight. Luminescent flowers bloom in impossible colors, and the air shimmers with enchantment. A stone path winds through beds of glowing herbs and mystical plants. In the center stands an ancient willow tree with a door carved into its trunk. Beyond the tree, a shimmering portal of light offers escape from the witch's domain.",
+            "items": [
+                {
+                    "id": "glowing_flowers",
+                    "name": "luminescent moonflowers",
+                    "description": "Flowers that glow with an inner light, their petals soft as silk"
+                },
+                {
+                    "id": "ancient_willow",
+                    "name": "ancient willow tree",
+                    "description": "A massive tree with a door carved into its trunk. Runes glow softly on the bark.",
+                    "readable": true,
+                    "text": "The runes read: 'Freedom lies beyond for those who have gathered the knowledge and ingredients of true magic. The portal awaits the worthy.'"
+                },
+                {
+                    "id": "herb_garden",
+                    "name": "mystical herb garden",
+                    "description": "Beds of magical herbs growing in neat rows",
+                    "searchable": true,
+                    "contains": [
+                        "liberation_note"
+                    ]
+                },
+                {
+                    "id": "liberation_note",
+                    "name": "note of liberation",
+                    "description": "A note pinned to a garden stake",
+                    "readable": true,
+                    "text": "To any who find themselves trapped in my cottage: You have done well to reach this garden. The portal beyond will return you to your world. May you carry the wisdom of magic with you always. - Morgana the Wise"
+                },
+                {
+                    "id": "stone_fountain",
+                    "name": "bubbling stone fountain",
+                    "description": "A fountain with crystal-clear water that sparkles with magical energy"
+                },
+                {
+                    "id": "shimmering_escape_portal",
+                    "name": "shimmering escape portal",
+                    "description": "A swirling portal of light and color that leads back to the mortal world",
+                    "locked": false,
+                    "direction": "north",
+                    "leads_to": "freedom",
+                    "aliases": [
+                        "portal",
+                        "north"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "freedom",
+            "name": "The Forest Path",
+            "description": "You emerge from the portal onto a moonlit forest path. The witch's cottage has vanished behind you, leaving only the whisper of wind through the trees. You are free, carrying with you the secrets and mysteries you discovered within those enchanted walls.",
+            "items": [
+                {
+                    "id": "forest_trees",
+                    "name": "towering oak trees",
+                    "description": "Ancient trees that line the path leading away from the magical realm"
+                },
+                {
+                    "id": "moon",
+                    "name": "full moon",
+                    "description": "A bright full moon illuminating your path to safety"
+                }
+            ],
+            "exits": [],
+            "is_goal": true,
+            "win_message": "You have successfully escaped the Witch's Cottage! Through cleverness and determination, you solved Morgana's puzzles and discovered the secrets of her magical domain. The moonflower essence, nightshade petals, and mandrake root you found glow softly in your pocket - souvenirs of your mystical adventure. You walk away a little wiser in the ways of magic. You win!"
+        }
+    ]
+}
