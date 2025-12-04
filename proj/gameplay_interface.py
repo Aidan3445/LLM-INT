@@ -77,6 +77,12 @@ class EscapeRoomInterface:
             user_input=user_input,
             game_json=game_json
         )
+    
+    def interpret_user_input(self, user_input, game_json):
+        return self.interceptor.interpret_user_input(
+            user_input=user_input,
+            game_json=game_json
+        )
 
     
     def step(self, command):
@@ -272,7 +278,12 @@ def play_escape_room(game_file, game_json, combination_locks=None, direction_ali
                 print("Thanks for playing!")
                 break
             
-            obs, reward, done = interface.step(command)
+            # Let the LLM fix/interpret user input
+            interpreted = interface.interpret_user_input(command, game_json_string)
+
+            obs, reward, done = interface.step(interpreted)
+            
+        
             print("ORIGINAL")
             print(obs.feedback)
             print("ENHANCED")
