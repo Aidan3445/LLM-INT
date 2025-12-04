@@ -317,12 +317,17 @@ def validate_json_file(json_file_path: str) -> bool:
     if errors:
         all_errors = "\n  • ".join(errors)
         error_message = f"\n❗ ERRORS ({len(errors)}):\n  • {all_errors}"
-        raise ValidationError(error_message)
+        if not warnings:
+            raise ValidationError(error_message)
     
     if warnings:
         print(f"\n⚠️  WARNINGS ({len(warnings)}):")
         for warning in warnings:
             print(f"  • {warning}")
+        if is_valid:
+            print(f"\n⚠️ Updating file with auto-corrections...")
+            with open(json_file_path, 'w') as f:
+                json.dump(json_data, f, indent=4)
     
     if is_valid:
         print(f"\n✅ Validation passed!")

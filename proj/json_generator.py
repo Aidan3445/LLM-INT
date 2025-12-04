@@ -138,11 +138,16 @@ class BatchGameGenerator:
             path = os.path.join(self.output_dir, f"game_{i+1}.json")
             with open(path, "w") as f:
                 json.dump(game, f, indent=2)
-                # run validator one last time to save changes
-                # not efficient but whatevs
-                validate_json_file(path)
 
-            print(f"✓ SAVED: {path}")
+            try:
+                # run validator one last time to save changes
+                # not efficient bc we did this to the temp file already, but whatever
+                validate_json_file(path)
+                print(f"✓ SAVED: {path}")
+            except Exception as e:
+                print(f"✗ VALIDATION FAILED on saved file #{i+1}: {e}")
+                # delete the invalid file
+                os.remove(path)
             
     def generate_valid_game(self, generator, theme, title, goal, schema, examples, max_retries=4):
         error_feedback = ""
