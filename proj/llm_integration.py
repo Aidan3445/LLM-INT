@@ -4,7 +4,7 @@ from pathlib import Path
 import json
 
 class LLM_intercepter:
-    def __init__(self, model="claude-sonnet-4-5", api_key="", api_base="https://api.litellm.ai"):
+    def __init__(self, model="claude-sonnet-4-5", api_key="", api_base="https://litellm.guha-anderson.com"):
         self.llm = LM(
             model=model,
             api_key=api_key,
@@ -16,11 +16,12 @@ class LLM_intercepter:
     def llm_feedback(self, feedback, user_input="", game_json=""):
             """Use an LLM to generate on-theme messages for the user"""
             
-            feedback_sig = dspy.Signature("feedback: str, user_input: str, game_json: str -> enhanced_feedback: str")
+            feedback_sig = dspy.Signature("feedback: str, user_input: str, game_json: str -> enhanced_feedback: str", 
+                                          instructions="Do not give away any hints. Just enhance the story a bit")
             
             feedback_predict = dspy.Predict(feedback_sig)
             feedback_predict.set_lm(self.llm)
-            return feedback_predict(feedback=feedback, user_input=user_input, game_json=game_json)
+            return feedback_predict(feedback=feedback, user_input=user_input, game_json=game_json)["enhanced_feedback"]
         
         
 if __name__ == "__main__":
@@ -28,8 +29,8 @@ if __name__ == "__main__":
     # Instantiate the interceptor
     interceptor = LLM_intercepter(
         model="claude-sonnet-4-5",
-        api_key="xxx",
-        api_base="https://api.litellm.ai"
+        api_key="",
+        api_base="https://litellm.guha-anderson.com"
     )
     print('set interceptor')
 
