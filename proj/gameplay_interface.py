@@ -1,5 +1,6 @@
 import re
 import textworld
+from llm_integration import LLM_intercepter
 
 class EscapeRoomInterface:
     def __init__(self, game_file, combination_locks=None, direction_aliases=None, password_locks=None, room_items=None):
@@ -23,6 +24,7 @@ class EscapeRoomInterface:
         self.unlocked_combinations = set()
         self.active_password_lock = None  # Track which password lock is being answered
         self.password_progress = {}  # Track current question index for each lock
+        self.interceptor = LLM_intercepter()
         
     def reset(self):
         """Start a new game"""
@@ -70,8 +72,17 @@ class EscapeRoomInterface:
 
     def llm_feedback(self, feedback, user_input="", game_json=""):
         """Use an LLM to generate on-theme messages for the user"""
-        # TODO: LLM integration
-        return feedback
+        return self.interceptor.llm_feedback(
+            feedback=feedback,
+            user_input=user_input,
+            game_json=game_json
+        )
+    
+    def interpret_user_input(self, user_input, game_json):
+        return self.interceptor.interpret_user_input(
+            user_input=user_input,
+            game_json=game_json
+        )
 
     
     def step(self, command):
@@ -247,6 +258,9 @@ def play_escape_room(game_file, game_json, combination_locks=None, direction_ali
         game_json_string = f.read()
     
     game_state = interface.reset()
+    print("ORIGINAL")
+    print(game_state.feedback)
+    print("ENHANCED")
     print(interface.llm_feedback(game_state.feedback, game_json=game_json_string))
     
     score = 0
@@ -264,7 +278,15 @@ def play_escape_room(game_file, game_json, combination_locks=None, direction_ali
                 print("Thanks for playing!")
                 break
             
-            obs, reward, done = interface.step(command)
+            # Let the LLM fix/interpret user input
+            interpreted = interface.interpret_user_input(command, game_json_string)
+
+            obs, reward, done = interface.step(interpreted)
+            
+        
+            print("ORIGINAL")
+            print(obs.feedback)
+            print("ENHANCED")
             print(interface.llm_feedback(obs.feedback, user_input=command, game_json=game_json_string))
             
             score += reward
