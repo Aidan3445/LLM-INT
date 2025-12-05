@@ -1,0 +1,241 @@
+{
+    "theme": "Cursed Painting Gallery",
+    "title": "Cursed Painting Gallery Adventure #8",
+    "goal": "Solve the puzzles, achieve the main objective, and escape.",
+    "starting_room": "gallery_entrance",
+    "rooms": [
+        {
+            "id": "gallery_entrance",
+            "name": "Gallery Entrance Hall",
+            "description": "A dimly lit entrance hall with marble floors and walls painted deep crimson. Ornate frames line the walls, but the paintings within seem to shift when you're not looking directly at them. A chandelier flickers overhead, casting dancing shadows. The air feels heavy and oppressive. A reception desk stands near the entrance, and a doorway leads deeper into the gallery.",
+            "items": [
+                {
+                    "id": "reception_desk",
+                    "name": "reception desk",
+                    "description": "An antique wooden desk with carved details and several drawers",
+                    "subcontainers": [
+                        {
+                            "id": "top_drawer",
+                            "name": "top drawer",
+                            "locked": false,
+                            "contains": [
+                                "gallery_brochure"
+                            ]
+                        },
+                        {
+                            "id": "middle_drawer",
+                            "name": "middle drawer",
+                            "locked": true,
+                            "lock_type": "combination",
+                            "combination": "1888",
+                            "contains": [
+                                "brass_key"
+                            ]
+                        },
+                        {
+                            "id": "bottom_drawer",
+                            "name": "bottom drawer",
+                            "locked": false,
+                            "contains": []
+                        }
+                    ]
+                },
+                {
+                    "id": "gallery_brochure",
+                    "name": "gallery brochure",
+                    "description": "A glossy brochure describing the gallery",
+                    "readable": true,
+                    "text": "Welcome to the Blackwood Gallery, established 1888. Founded by art collector Helena Blackwood to showcase the works of her brother, the enigmatic artist Lucian Blackwood. Our permanent collection features paintings from the Shadowlands series. Gallery hours and curator information available at the main desk."
+                },
+                {
+                    "id": "brass_key",
+                    "name": "ornate brass key",
+                    "description": "A brass key with an eye symbol engraved on the handle"
+                },
+                {
+                    "id": "guest_book",
+                    "name": "visitor guest book",
+                    "description": "A leather-bound book for gallery visitors to sign",
+                    "readable": true,
+                    "text": "Recent entries show increasingly disturbing comments: 'The paintings are watching me.' 'I heard whispers from the frames.' 'Don't look into their eyes.' The last entry is from Curator Margaret Ashford: 'I've discovered the truth about Lucian's paintings. His studio holds the answers. The combination is the year Helena founded this cursed place.'"
+                },
+                {
+                    "id": "entrance_painting",
+                    "name": "painting of the gallery founder",
+                    "description": "A portrait of a stern woman in Victorian dress",
+                    "readable": true,
+                    "text": "Portrait of Helena Blackwood (1850-1920), Gallery Founder. The plaque reads: 'Helena dedicated her life to preserving her brother's legacy, though she never understood the dark power within his art.'"
+                },
+                {
+                    "id": "locked_display_case",
+                    "name": "locked display case",
+                    "description": "A glass case containing gallery documents and a brass lock",
+                    "locked": true,
+                    "key_required": "brass_key",
+                    "contains": [
+                        "curator_journal"
+                    ]
+                },
+                {
+                    "id": "curator_journal",
+                    "name": "curator's journal",
+                    "description": "A personal journal belonging to Margaret Ashford",
+                    "readable": true,
+                    "text": "Margaret Ashford's Journal: I've been curator here for five years, but only recently discovered the truth. Lucian Blackwood's paintings aren't just art - they're portals. He painted them in his studio in the Shadowlands, channeling dark forces. The main gallery contains his most powerful works. I must find a way to seal them before it's too late."
+                },
+                {
+                    "id": "gallery_door",
+                    "name": "gallery door",
+                    "description": "A heavy wooden door with ornate carvings leading to the main gallery",
+                    "locked": false,
+                    "direction": "north",
+                    "leads_to": "main_gallery",
+                    "aliases": [
+                        "door",
+                        "north"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "main_gallery",
+            "name": "Main Gallery",
+            "description": "A vast gallery space with high ceilings and walls covered in dark paintings. Each painting depicts twisted landscapes and shadowy figures that seem to move in your peripheral vision. The temperature drops noticeably as you enter. Spotlights illuminate the artwork, but shadows pool in the corners. A locked door marked 'Curator's Office' stands at the far end.",
+            "items": [
+                {
+                    "id": "painting_shadowlands_one",
+                    "name": "painting titled 'Shadowlands I'",
+                    "description": "A large canvas showing a dark forest with glowing eyes peering from between the trees",
+                    "readable": true,
+                    "text": "Shadowlands I by Lucian Blackwood, 1885. Oil on canvas. The plaque notes: 'First in the Shadowlands series. Painted in the artist's studio in the Shadowlands region. Critics noted the painting's unsettling quality and the way the eyes seem to follow viewers.'"
+                },
+                {
+                    "id": "painting_shadowlands_two",
+                    "name": "painting titled 'Shadowlands II'",
+                    "description": "A disturbing portrait of a figure with no face, only darkness where features should be",
+                    "readable": true,
+                    "text": "Shadowlands II by Lucian Blackwood, 1886. Oil on canvas. The artist's technique creates an illusion of depth that draws the viewer in. Painted in his isolated studio, Lucian claimed the subjects came to him in visions."
+                },
+                {
+                    "id": "painting_shadowlands_three",
+                    "name": "painting titled 'Shadowlands III'",
+                    "description": "A landscape of twisted architecture and impossible geometry",
+                    "readable": true,
+                    "text": "Shadowlands III by Lucian Blackwood, 1887. Oil on canvas. The final painting completed before the artist's mysterious disappearance. Some say he walked into his own painting, never to return. His studio in the Shadowlands was found abandoned."
+                },
+                {
+                    "id": "information_plaque",
+                    "name": "artist information plaque",
+                    "description": "A detailed plaque about Lucian Blackwood",
+                    "readable": true,
+                    "text": "LUCIAN BLACKWOOD (1848-1887): Enigmatic artist known for his dark, surrealist works. Worked exclusively in his studio in the Shadowlands region. His sister Helena founded this gallery to preserve his legacy. Disappeared under mysterious circumstances in 1887. His paintings are said to be cursed, though the gallery maintains this is merely superstition."
+                },
+                {
+                    "id": "sculpture_pedestal",
+                    "name": "marble pedestal",
+                    "description": "A pedestal displaying a small sculpture and containing a hidden compartment",
+                    "searchable": true,
+                    "contains": [
+                        "silver_key"
+                    ]
+                },
+                {
+                    "id": "silver_key",
+                    "name": "tarnished silver key",
+                    "description": "A silver key with paint stains on it, labeled 'OFFICE'"
+                },
+                {
+                    "id": "gallery_bench",
+                    "name": "viewing bench",
+                    "description": "A velvet bench for viewing the artwork",
+                    "searchable": true,
+                    "contains": [
+                        "hidden_note"
+                    ]
+                },
+                {
+                    "id": "hidden_note",
+                    "name": "crumpled note",
+                    "description": "A hastily written note stuffed under the bench cushion",
+                    "readable": true,
+                    "text": "Margaret's note: If you're reading this, you've discovered what I have. The paintings are alive. Lucian painted them in the Shadowlands, and they contain fragments of that dark realm. To escape, you must reach my office. The door requires knowledge of the artist, his work, and where he created these cursed masterpieces."
+                },
+                {
+                    "id": "curator's_office_door",
+                    "name": "curator's office door",
+                    "description": "A locked door with a brass plaque reading 'Curator's Office - Private'. Three security questions are displayed on a digital panel beside it.",
+                    "locked": true,
+                    "lock_type": "password",
+                    "password_questions": [
+                        {
+                            "question": "What is the artist's full name?",
+                            "answer": "lucian blackwood",
+                            "hint": "Check the gallery brochure and the artist information plaque"
+                        },
+                        {
+                            "question": "Where was the artist's studio located?",
+                            "answer": "shadowlands",
+                            "hint": "Multiple painting plaques mention where Lucian worked"
+                        },
+                        {
+                            "question": "Who is the gallery curator?",
+                            "answer": "margaret ashford",
+                            "hint": "The guest book and journal reveal the curator's identity"
+                        }
+                    ],
+                    "direction": "east",
+                    "leads_to": "curator_office",
+                    "aliases": [
+                        "office",
+                        "east"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "curator_office",
+            "name": "Curator's Office and Secret Exit",
+            "description": "You've reached the curator's office! A cluttered room filled with art books, research papers, and protective equipment. On the desk lies an open grimoire with instructions for sealing cursed artwork. Most importantly, a hidden door behind a bookshelf stands open, revealing a stairway leading down to the street exit. Fresh air flows in from outside. You're almost free!",
+            "items": [
+                {
+                    "id": "curator_desk",
+                    "name": "curator's desk",
+                    "description": "A desk covered in research materials about Lucian Blackwood",
+                    "searchable": true,
+                    "contains": [
+                        "final_letter"
+                    ]
+                },
+                {
+                    "id": "final_letter",
+                    "name": "Margaret's final letter",
+                    "description": "A letter addressed 'To whoever finds this'",
+                    "readable": true,
+                    "text": "If you're reading this, you've made it to safety. I discovered too late that Lucian's paintings are portals to the Shadowlands. They feed on viewers' fear and attention. I've documented everything for the authorities. Use the secret exit behind the bookshelf - it leads directly outside. Don't look back at the paintings. - Margaret Ashford"
+                },
+                {
+                    "id": "grimoire",
+                    "name": "ancient grimoire",
+                    "description": "A book of occult knowledge about cursed objects",
+                    "readable": true,
+                    "text": "Chapter 7: Cursed Artwork. Paintings created in places of dark power can become conduits for malevolent forces. The artist Lucian Blackwood is a documented case. His works painted in the Shadowlands region contain genuine supernatural properties. Recommended action: seal the gallery and prevent public access."
+                },
+                {
+                    "id": "protective_equipment",
+                    "name": "box of protective equipment",
+                    "description": "Salt, iron filings, and blessed water for protection against supernatural forces"
+                },
+                {
+                    "id": "secret_exit",
+                    "name": "secret exit passage",
+                    "description": "A hidden stairway leading down to street level, away from the cursed gallery"
+                }
+            ],
+            "exits": [],
+            "is_goal": true,
+            "win_message": "You've escaped the Cursed Painting Gallery! As you descend the secret stairway and emerge onto the street, you hear a faint whisper from behind you - but you don't look back. The gallery's dark secrets remain trapped within its walls. You've solved the puzzles, uncovered the truth about Lucian Blackwood's cursed paintings, and made it out alive. You win!"
+        }
+    ]
+}

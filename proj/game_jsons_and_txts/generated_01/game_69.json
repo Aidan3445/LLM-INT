@@ -1,0 +1,284 @@
+{
+    "theme": "Fairy Realm Crossing",
+    "title": "Fairy Realm Crossing Adventure #69",
+    "goal": "Solve the puzzles, achieve the main objective, and escape.",
+    "starting_room": "enchanted_garden",
+    "rooms": [
+        {
+            "id": "enchanted_garden",
+            "name": "Enchanted Fairy Garden",
+            "description": "You find yourself in a luminous garden where oversized flowers glow with bioluminescent light. Tiny fairy lights dance through the air like living stars. A babbling brook winds through beds of crystalline flowers that chime softly in the breeze. Mushroom circles dot the mossy ground, and a magnificent willow tree stands at the garden's center. The air shimmers with magic and smells of honeysuckle and starlight.",
+            "items": [
+                {
+                    "id": "willow_tree",
+                    "name": "ancient willow tree",
+                    "description": "A massive willow with silver bark and leaves that shimmer like moonlight",
+                    "searchable": true,
+                    "contains": [
+                        "silver_acorn"
+                    ]
+                },
+                {
+                    "id": "silver_acorn",
+                    "name": "silver acorn",
+                    "description": "A perfectly formed acorn made of solid silver, warm to the touch"
+                },
+                {
+                    "id": "mushroom_circle",
+                    "name": "fairy ring of mushrooms",
+                    "description": "A perfect circle of glowing toadstools that pulse with magical energy",
+                    "searchable": true,
+                    "contains": [
+                        "fairy_chronicle"
+                    ]
+                },
+                {
+                    "id": "fairy_chronicle",
+                    "name": "chronicle of the crossing",
+                    "description": "A tiny book written in flowing script that glows as you read it",
+                    "readable": true,
+                    "text": "The Fairy Realm Crossing was established in the year 1369 by Queen Titania. Three sacred truths guard the path home: Know the Queen's name, know where the portal dwells, and know what you seek. The Moonstone Key opens all fairy locks."
+                },
+                {
+                    "id": "flower_bed",
+                    "name": "bed of crystal flowers",
+                    "description": "Flowers made of living crystal that chime melodiously when touched",
+                    "subcontainers": [
+                        {
+                            "id": "rose_cluster",
+                            "name": "cluster of crystal roses",
+                            "locked": false,
+                            "contains": [
+                                "petal_note"
+                            ]
+                        },
+                        {
+                            "id": "lily_cluster",
+                            "name": "cluster of crystal lilies",
+                            "locked": true,
+                            "lock_type": "combination",
+                            "combination": "1369",
+                            "contains": [
+                                "moonstone_key"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "petal_note",
+                    "name": "note written on a petal",
+                    "description": "A message inscribed on a crystalline rose petal",
+                    "readable": true,
+                    "text": "Dear traveler, the combination to the lily cluster is the year our realm was founded - 1369. Queen Titania herself blessed this garden. The Moonstone Key within will help you on your journey."
+                },
+                {
+                    "id": "moonstone_key",
+                    "name": "moonstone key",
+                    "description": "A key carved from pure moonstone that glows with inner light"
+                },
+                {
+                    "id": "locked_treasure_box",
+                    "name": "fairy treasure box",
+                    "description": "A delicate box made of woven starlight and morning dew, sealed with a moonstone lock",
+                    "locked": true,
+                    "key_required": "moonstone_key",
+                    "contains": [
+                        "fairy_dust_pouch",
+                        "queens_letter"
+                    ]
+                },
+                {
+                    "id": "fairy_dust_pouch",
+                    "name": "pouch of fairy dust",
+                    "description": "A silk pouch filled with shimmering golden dust that sparkles with magic"
+                },
+                {
+                    "id": "queens_letter",
+                    "name": "letter from Queen Titania",
+                    "description": "An elegant letter sealed with a crown of flowers",
+                    "readable": true,
+                    "text": "Welcome, lost traveler. I am Queen Titania, ruler of this realm. To return home, you must pass through the Mystic Grove to reach the Portal Glade where the gateway stands. Only those who understand our ways may pass. Carry fairy dust for protection."
+                },
+                {
+                    "id": "babbling_brook",
+                    "name": "enchanted brook",
+                    "description": "A stream of liquid starlight flowing over smooth stones",
+                    "searchable": true,
+                    "contains": [
+                        "water_lily"
+                    ]
+                },
+                {
+                    "id": "water_lily",
+                    "name": "glowing water lily",
+                    "description": "A luminous lily floating on the water's surface"
+                },
+                {
+                    "id": "gate_of_living_vines",
+                    "name": "gate of living vines",
+                    "description": "An archway formed of flowering vines that leads deeper into the fairy realm. It requires the silver acorn to open.",
+                    "locked": true,
+                    "key_required": "silver_acorn",
+                    "direction": "north",
+                    "leads_to": "mystic_grove",
+                    "aliases": [
+                        "gate",
+                        "north"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "mystic_grove",
+            "name": "Mystic Grove",
+            "description": "A mystical forest grove where ancient trees with faces carved in their bark watch your every move. Fireflies the size of your fist illuminate the twilight air. Glowing mushrooms create pathways of light across the forest floor. A stone circle stands at the grove's heart, and ethereal music seems to emanate from the trees themselves. The air is thick with enchantment and possibility.",
+            "items": [
+                {
+                    "id": "ancient_oak",
+                    "name": "speaking oak tree",
+                    "description": "A massive oak with a wise, weathered face carved into its trunk",
+                    "readable": true,
+                    "text": "The oak's voice echoes in your mind: 'Greetings, traveler. Queen Titania rules these woods with grace and wisdom. The portal you seek lies in the Portal Glade beyond. To pass through my guardian door, you must prove your knowledge of our realm.'"
+                },
+                {
+                    "id": "stone_circle",
+                    "name": "ancient stone circle",
+                    "description": "Seven standing stones arranged in a perfect circle, each carved with fairy runes",
+                    "readable": true,
+                    "text": "The stones are inscribed with the history of the realm: 'Here Queen Titania holds court. Here the portal to the mortal world opens in the Portal Glade. Here travelers seek passage home.'"
+                },
+                {
+                    "id": "hollow_log",
+                    "name": "hollow fairy log",
+                    "description": "A fallen log covered in luminous moss with a hollow interior",
+                    "searchable": true,
+                    "contains": [
+                        "sprite_journal"
+                    ]
+                },
+                {
+                    "id": "sprite_journal",
+                    "name": "sprite's journal",
+                    "description": "A tiny journal belonging to a forest sprite",
+                    "readable": true,
+                    "text": "Day 47: Queen Titania visited the grove today! She reminded us that the portal in the Portal Glade is the only way home for lost travelers. I must remember to tell visitors: they seek passage home, our queen is Titania, and the portal dwells in the Portal Glade."
+                },
+                {
+                    "id": "mushroom_shelf",
+                    "name": "shelf of giant mushrooms",
+                    "description": "Enormous glowing mushrooms growing in tiers like natural shelves",
+                    "subcontainers": [
+                        {
+                            "id": "top_mushroom",
+                            "name": "top mushroom cap",
+                            "locked": false,
+                            "contains": [
+                                "realm_map"
+                            ]
+                        },
+                        {
+                            "id": "middle_mushroom",
+                            "name": "middle mushroom cap",
+                            "locked": false,
+                            "contains": []
+                        }
+                    ]
+                },
+                {
+                    "id": "realm_map",
+                    "name": "map of the fairy realm",
+                    "description": "A living map that shows the layout of the realm",
+                    "readable": true,
+                    "text": "MAP OF THE FAIRY REALM: Enchanted Garden (entrance) \u2192 Mystic Grove (current location) \u2192 Portal Glade (exit portal). The Portal Glade contains the gateway home. Queen Titania's palace lies to the east, but the portal is your destination."
+                },
+                {
+                    "id": "fairy_fountain",
+                    "name": "fountain of wishes",
+                    "description": "A crystal fountain filled with water that reflects starlight",
+                    "searchable": true,
+                    "contains": [
+                        "crystal_vial"
+                    ]
+                },
+                {
+                    "id": "crystal_vial",
+                    "name": "vial of starlight water",
+                    "description": "A vial filled with water from the fountain that glows softly"
+                },
+                {
+                    "id": "guardian_door_of_thorns",
+                    "name": "guardian door of thorns",
+                    "description": "A magnificent door woven from living rose vines and thorns. Three questions are carved into a wooden plaque beside it, glowing with fairy magic.",
+                    "locked": true,
+                    "lock_type": "password",
+                    "password_questions": [
+                        {
+                            "question": "Who rules the fairy realm?",
+                            "answer": "queen titania",
+                            "hint": "Check the chronicle, the queen's letter, and the speaking oak's words"
+                        },
+                        {
+                            "question": "Where does the portal dwell?",
+                            "answer": "portal glade",
+                            "hint": "The map and multiple texts mention where the gateway is located"
+                        },
+                        {
+                            "question": "What do you seek?",
+                            "answer": "passage home",
+                            "hint": "The sprite's journal and your goal make this clear"
+                        }
+                    ],
+                    "direction": "east",
+                    "leads_to": "portal_glade",
+                    "aliases": [
+                        "door",
+                        "east"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "portal_glade",
+            "name": "Portal Glade",
+            "description": "You have reached the Portal Glade! A circular clearing bathed in ethereal moonlight, even though it seems to be perpetual twilight. In the center, a swirling portal of silver and blue light hovers above the ground, its surface rippling like water. Flowers of every color imaginable bloom in perfect circles around it. Queen Titania herself stands beside the portal, her wings shimmering with rainbow light. She smiles warmly and gestures toward the gateway home.",
+            "items": [
+                {
+                    "id": "swirling_portal",
+                    "name": "gateway portal",
+                    "description": "A magnificent portal swirling with silver and blue energy, showing glimpses of the mortal world beyond"
+                },
+                {
+                    "id": "queen_titania",
+                    "name": "Queen Titania",
+                    "description": "The radiant queen of the fairies, beautiful and ageless, with wings like stained glass",
+                    "readable": true,
+                    "text": "Queen Titania speaks in a voice like silver bells: 'Well done, brave traveler. You have solved the mysteries of my realm and proven yourself worthy. Step through the portal, and you shall return home safely. May you always remember your time in the Fairy Realm Crossing.'"
+                },
+                {
+                    "id": "flower_throne",
+                    "name": "throne of flowers",
+                    "description": "An elegant throne woven from living flowers and vines where the queen holds court"
+                },
+                {
+                    "id": "blessing_stone",
+                    "name": "stone of blessing",
+                    "description": "A smooth stone that radiates warmth and comfort",
+                    "searchable": true,
+                    "contains": [
+                        "fairy_blessing"
+                    ]
+                },
+                {
+                    "id": "fairy_blessing",
+                    "name": "fairy blessing token",
+                    "description": "A small token that glows with protective magic, a gift from the realm"
+                }
+            ],
+            "exits": [],
+            "is_goal": true,
+            "win_message": "With Queen Titania's blessing, you step through the shimmering portal. The fairy realm fades away as you feel yourself pulled through space and magic. Moments later, you emerge back in the mortal world, forever changed by your adventure in the Fairy Realm Crossing. The portal closes behind you with a soft chime, leaving only the memory of magic and wonder. You win!"
+        }
+    ]
+}

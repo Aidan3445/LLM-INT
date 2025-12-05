@@ -1,0 +1,276 @@
+{
+    "theme": "Knight's Tournament Grounds",
+    "title": "Knight's Tournament Grounds Adventure #10",
+    "goal": "Solve the puzzles, achieve the main objective, and escape.",
+    "starting_room": "tournament_armory",
+    "rooms": [
+        {
+            "id": "tournament_armory",
+            "name": "Tournament Armory",
+            "description": "A stone chamber filled with suits of armor, shields, and weapons. Sunlight streams through narrow windows, illuminating dust motes in the air. The smell of oil and metal fills the room. Colorful heraldic banners hang from the walls, each bearing a different knight's coat of arms.",
+            "items": [
+                {
+                    "id": "weapon_rack",
+                    "name": "wooden weapon rack",
+                    "description": "A sturdy rack holding various tournament weapons - lances, swords, and maces",
+                    "searchable": true,
+                    "contains": [
+                        "iron_key"
+                    ]
+                },
+                {
+                    "id": "iron_key",
+                    "name": "iron key",
+                    "description": "A heavy iron key with a lion emblem on the handle"
+                },
+                {
+                    "id": "armor_stand",
+                    "name": "suit of armor on stand",
+                    "description": "A complete suit of plate armor standing at attention, holding a shield",
+                    "searchable": true,
+                    "contains": []
+                },
+                {
+                    "id": "storage_chest",
+                    "name": "reinforced storage chest",
+                    "description": "A large wooden chest bound with iron straps and a heavy lock",
+                    "locked": true,
+                    "key_required": "iron_key",
+                    "contains": [
+                        "tournament_scroll",
+                        "bronze_key"
+                    ]
+                },
+                {
+                    "id": "tournament_scroll",
+                    "name": "tournament registry scroll",
+                    "description": "An official scroll listing the knights competing in the tournament",
+                    "readable": true,
+                    "text": "GRAND TOURNAMENT REGISTRY - Year 1485. Competing Knights: Sir Aldric the Bold (Red Dragon), Sir Brennan of Ashford (Golden Lion), Sir Cedric the Just (Silver Falcon), Sir Dorian Blackwood (Black Raven). Grand Champion: Sir Aldric the Bold. Remember: The champion's symbol unlocks the greatest treasures."
+                },
+                {
+                    "id": "bronze_key",
+                    "name": "bronze key",
+                    "description": "A small bronze key with intricate engravings"
+                },
+                {
+                    "id": "equipment_cabinet",
+                    "name": "equipment cabinet",
+                    "description": "A tall cabinet with multiple compartments for storing tournament gear",
+                    "subcontainers": [
+                        {
+                            "id": "top_compartment",
+                            "name": "top compartment",
+                            "locked": false,
+                            "contains": [
+                                "herald_note"
+                            ]
+                        },
+                        {
+                            "id": "middle_compartment",
+                            "name": "middle compartment",
+                            "locked": true,
+                            "lock_type": "combination",
+                            "combination": "1485",
+                            "contains": [
+                                "silver_key"
+                            ]
+                        },
+                        {
+                            "id": "bottom_compartment",
+                            "name": "bottom compartment",
+                            "locked": false,
+                            "contains": []
+                        }
+                    ]
+                },
+                {
+                    "id": "herald_note",
+                    "name": "herald's announcement",
+                    "description": "A notice written by the tournament herald",
+                    "readable": true,
+                    "text": "By order of the King: The Grand Tournament shall commence in the year of our Lord 1485. All knights must register their heraldic symbols. The champion shall be granted access to the Hall of Victory."
+                },
+                {
+                    "id": "silver_key",
+                    "name": "silver key",
+                    "description": "A polished silver key that gleams in the light"
+                },
+                {
+                    "id": "banner_red_dragon",
+                    "name": "red dragon banner",
+                    "description": "A crimson banner displaying a fierce red dragon",
+                    "readable": true,
+                    "text": "Heraldic Banner - Sir Aldric the Bold: Red Dragon on crimson field. Victor of fifteen tournaments. Known for courage and honor."
+                },
+                {
+                    "id": "banner_golden_lion",
+                    "name": "golden lion banner",
+                    "description": "A yellow banner showing a majestic golden lion",
+                    "readable": true,
+                    "text": "Heraldic Banner - Sir Brennan of Ashford: Golden Lion on yellow field. Defender of the realm. Skilled in mounted combat."
+                },
+                {
+                    "id": "banner_silver_falcon",
+                    "name": "silver falcon banner",
+                    "description": "A white banner depicting a silver falcon in flight",
+                    "readable": true,
+                    "text": "Heraldic Banner - Sir Cedric the Just: Silver Falcon on white field. Known for fairness and wisdom. Champion of the common folk."
+                },
+                {
+                    "id": "banner_black_raven",
+                    "name": "black raven banner",
+                    "description": "A dark banner showing a black raven",
+                    "readable": true,
+                    "text": "Heraldic Banner - Sir Dorian Blackwood: Black Raven on dark field. Master strategist. Undefeated in three consecutive tournaments."
+                },
+                {
+                    "id": "heavy_oak_door",
+                    "name": "heavy oak door",
+                    "description": "A reinforced door leading out to the tournament field. It has a complex lock mechanism.",
+                    "locked": true,
+                    "key_required": "bronze_key",
+                    "direction": "east",
+                    "leads_to": "tournament_field",
+                    "aliases": [
+                        "door",
+                        "east"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "tournament_field",
+            "name": "Tournament Field",
+            "description": "A vast open field surrounded by wooden viewing stands decorated with colorful pennants. The jousting lane runs down the center, marked by wooden barriers. A scoring table sits near the stands, covered with parchments and records. To the north stands an ornate gateway leading to the Champion's Hall.",
+            "items": [
+                {
+                    "id": "scoring_table",
+                    "name": "tournament scoring table",
+                    "description": "A table covered with tournament records, score sheets, and official documents",
+                    "searchable": true,
+                    "contains": [
+                        "score_parchment"
+                    ]
+                },
+                {
+                    "id": "score_parchment",
+                    "name": "final tournament scores",
+                    "description": "The official scoring record from the grand tournament",
+                    "readable": true,
+                    "text": "FINAL SCORES - Grand Tournament 1485: Sir Aldric the Bold: 47 points (CHAMPION), Sir Dorian Blackwood: 43 points, Sir Brennan of Ashford: 38 points, Sir Cedric the Just: 35 points. The champion's heraldry shall be honored in the Hall of Victory."
+                },
+                {
+                    "id": "viewing_stands",
+                    "name": "wooden viewing stands",
+                    "description": "Tiered wooden benches where spectators watch the tournament",
+                    "searchable": true,
+                    "contains": [
+                        "spectator_note"
+                    ]
+                },
+                {
+                    "id": "spectator_note",
+                    "name": "spectator's journal",
+                    "description": "A small journal left behind by a tournament spectator",
+                    "readable": true,
+                    "text": "What an exciting tournament! Sir Aldric truly deserved his victory. I heard the guards say that to enter the Champion's Hall, one must know: Who won the tournament? What is the champion's heraldic symbol? Where does the victor's banner hang?"
+                },
+                {
+                    "id": "jousting_barrier",
+                    "name": "wooden jousting barrier",
+                    "description": "A long wooden fence dividing the jousting lane",
+                    "searchable": true,
+                    "contains": []
+                },
+                {
+                    "id": "trophy_case",
+                    "name": "locked trophy case",
+                    "description": "A glass case displaying tournament trophies and medals",
+                    "locked": true,
+                    "key_required": "silver_key",
+                    "contains": [
+                        "champion_medal"
+                    ]
+                },
+                {
+                    "id": "champion_medal",
+                    "name": "champion's medal",
+                    "description": "A golden medal engraved with a red dragon, awarded to the tournament champion"
+                },
+                {
+                    "id": "pennant_pole",
+                    "name": "tall pennant pole",
+                    "description": "A pole flying colorful tournament pennants",
+                    "readable": true,
+                    "text": "The pennants display the colors of all competing knights. At the very top flies the red dragon banner of Sir Aldric, marking him as champion. The banner hangs in the Hall of Victory as tradition dictates."
+                },
+                {
+                    "id": "ornate_champion's_gate",
+                    "name": "ornate champion's gate",
+                    "description": "A magnificent gateway adorned with carved lions and dragons. A bronze plaque displays three questions that must be answered to proceed.",
+                    "locked": true,
+                    "lock_type": "password",
+                    "password_questions": [
+                        {
+                            "question": "Who won the grand tournament?",
+                            "answer": "sir aldric the bold",
+                            "hint": "Check the tournament registry scroll and the final scores"
+                        },
+                        {
+                            "question": "What is the champion's heraldic symbol?",
+                            "answer": "red dragon",
+                            "hint": "Look at the banners in the armory and the champion's information"
+                        },
+                        {
+                            "question": "Where does the victor's banner hang?",
+                            "answer": "hall of victory",
+                            "hint": "Read the spectator's journal and the pennant pole description"
+                        }
+                    ],
+                    "direction": "north",
+                    "leads_to": "champions_hall",
+                    "aliases": [
+                        "gate",
+                        "gateway",
+                        "north"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "champions_hall",
+            "name": "Champion's Hall of Victory",
+            "description": "A magnificent hall with vaulted ceilings and stained glass windows depicting legendary knights. The walls are lined with shields and banners of past champions. In the center, on a marble pedestal, rests the Tournament Crown - a golden circlet studded with rubies. Torches cast a warm glow over the hall, and the air is filled with the weight of history and honor.",
+            "items": [
+                {
+                    "id": "tournament_crown",
+                    "name": "Tournament Crown",
+                    "description": "A magnificent golden crown awarded to the grand champion, symbolizing ultimate victory and honor"
+                },
+                {
+                    "id": "marble_pedestal",
+                    "name": "marble pedestal",
+                    "description": "A pristine white marble pedestal holding the Tournament Crown"
+                },
+                {
+                    "id": "champion_shields",
+                    "name": "wall of champion shields",
+                    "description": "Dozens of shields belonging to past tournament champions, each telling a story of valor",
+                    "readable": true,
+                    "text": "The shields represent centuries of tournament tradition. Each champion's heraldry is preserved here for eternity. Sir Aldric's red dragon shield now joins this honored collection."
+                },
+                {
+                    "id": "stained_glass",
+                    "name": "stained glass windows",
+                    "description": "Beautiful windows depicting knights in combat, their armor gleaming in colored light"
+                }
+            ],
+            "exits": [],
+            "is_goal": true,
+            "win_message": "You have reached the Champion's Hall of Victory! As you approach the Tournament Crown, the hall fills with the ethereal sound of trumpets. You have proven yourself worthy by solving the challenges of the tournament grounds. The crown glows with an inner light, acknowledging your achievement. You are victorious! You win!"
+        }
+    ]
+}

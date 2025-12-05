@@ -1,0 +1,267 @@
+{
+    "theme": "Mystery Theater Dressing Room",
+    "title": "Mystery Theater Dressing Room Adventure #13",
+    "goal": "Solve the puzzles, achieve the main objective, and escape.",
+    "starting_room": "star_dressing_room",
+    "rooms": [
+        {
+            "id": "star_dressing_room",
+            "name": "Star's Dressing Room",
+            "description": "An elegant dressing room with a large mirror surrounded by bright bulbs. Costumes hang on a brass rack, and makeup covers an antique vanity. The walls are adorned with framed playbills and photographs of past performances. The scent of greasepaint and perfume lingers in the air. A heavy velvet curtain conceals the door to the backstage area.",
+            "items": [
+                {
+                    "id": "vanity_table",
+                    "name": "antique vanity table",
+                    "description": "A beautiful vanity with an ornate mirror and several drawers filled with theatrical makeup",
+                    "subcontainers": [
+                        {
+                            "id": "top_drawer",
+                            "name": "top drawer",
+                            "locked": false,
+                            "contains": [
+                                "opening_night_program"
+                            ]
+                        },
+                        {
+                            "id": "middle_drawer",
+                            "name": "middle drawer",
+                            "locked": true,
+                            "lock_type": "combination",
+                            "combination": "1923",
+                            "contains": [
+                                "brass_key"
+                            ]
+                        },
+                        {
+                            "id": "bottom_drawer",
+                            "name": "bottom drawer",
+                            "locked": false,
+                            "contains": []
+                        }
+                    ]
+                },
+                {
+                    "id": "opening_night_program",
+                    "name": "opening night program",
+                    "description": "A vintage program from the theater's grand opening",
+                    "readable": true,
+                    "text": "GRAND OPENING - The Midnight Theater, Est. 1923. Tonight's Performance: 'The Phantom's Masquerade' directed by the legendary Vincent Blackwood. Lead Actor: Madame Celeste Noir. Stage Manager: Thomas Grey. This historic theater shall stand as a monument to the dramatic arts!"
+                },
+                {
+                    "id": "brass_key",
+                    "name": "ornate brass key",
+                    "description": "A decorative brass key with theatrical masks engraved on the handle"
+                },
+                {
+                    "id": "costume_rack",
+                    "name": "costume rack",
+                    "description": "A brass rack holding elaborate period costumes and cloaks",
+                    "searchable": true,
+                    "contains": [
+                        "hidden_letter"
+                    ]
+                },
+                {
+                    "id": "hidden_letter",
+                    "name": "director's letter",
+                    "description": "A letter tucked into a costume pocket",
+                    "readable": true,
+                    "text": "My Dearest Celeste, tonight's performance of 'The Phantom's Masquerade' will be our greatest triumph! I have hidden the key to the prop room in your vanity - the combination is the year our beloved Midnight Theater opened its doors. Break a leg! - Vincent"
+                },
+                {
+                    "id": "framed_playbills",
+                    "name": "collection of framed playbills",
+                    "description": "Vintage playbills from famous productions at the Midnight Theater",
+                    "readable": true,
+                    "text": "Featured productions: 'The Phantom's Masquerade' (1923), 'Midnight Sonata' (1925), 'The Crimson Curtain' (1927). All directed by Vincent Blackwood, starring Madame Celeste Noir."
+                },
+                {
+                    "id": "locked_trunk",
+                    "name": "theatrical trunk",
+                    "description": "A large steamer trunk covered in travel stickers and locked with a brass padlock",
+                    "locked": true,
+                    "key_required": "brass_key",
+                    "contains": [
+                        "script_pages",
+                        "stage_manager_notes"
+                    ]
+                },
+                {
+                    "id": "script_pages",
+                    "name": "script pages",
+                    "description": "Pages from 'The Phantom's Masquerade' script",
+                    "readable": true,
+                    "text": "Act III, Scene 2: The phantom reveals himself in the prop room, surrounded by masks and mirrors. The final confrontation takes place on the grand stage, where truth and illusion merge."
+                },
+                {
+                    "id": "stage_manager_notes",
+                    "name": "stage manager's notes",
+                    "description": "Thomas Grey's production notes",
+                    "readable": true,
+                    "text": "Production Notes: All props stored in the prop room backstage. Director Blackwood insists on perfection. Madame Noir's performance is breathtaking. The grand stage awaits the final act. Emergency exit through stage door requires authorization."
+                },
+                {
+                    "id": "velvet_curtain_concealing_door",
+                    "name": "velvet curtain concealing door",
+                    "description": "A heavy burgundy curtain hiding a door that leads to the backstage prop room",
+                    "locked": false,
+                    "direction": "north",
+                    "leads_to": "backstage_prop_room",
+                    "aliases": [
+                        "curtain",
+                        "door",
+                        "north"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "backstage_prop_room",
+            "name": "Backstage Prop Room",
+            "description": "A cluttered room filled with theatrical props, masks, and set pieces. Shelves line the walls, packed with everything from fake swords to ornate candelabras. Mannequins wearing various costumes stand in the corners like silent witnesses. A workbench holds tools and paint. The air smells of sawdust and old fabric. A grand door with theatrical masks carved into it leads to the stage.",
+            "items": [
+                {
+                    "id": "prop_shelves",
+                    "name": "prop storage shelves",
+                    "description": "Tall shelves crammed with theatrical props and set decorations",
+                    "searchable": true,
+                    "contains": [
+                        "phantom_mask"
+                    ]
+                },
+                {
+                    "id": "phantom_mask",
+                    "name": "phantom's mask",
+                    "description": "An ornate half-mask from 'The Phantom's Masquerade' production",
+                    "readable": true,
+                    "text": "The iconic mask worn in the climactic scene. A note attached reads: 'The phantom's identity is revealed in the prop room, but his legacy lives on the grand stage.'"
+                },
+                {
+                    "id": "workbench",
+                    "name": "prop master's workbench",
+                    "description": "A sturdy workbench covered with tools, paint, and half-finished props",
+                    "subcontainers": [
+                        {
+                            "id": "tool_drawer",
+                            "name": "tool drawer",
+                            "locked": false,
+                            "contains": [
+                                "theater_history_book"
+                            ]
+                        },
+                        {
+                            "id": "paint_drawer",
+                            "name": "paint drawer",
+                            "locked": false,
+                            "contains": []
+                        }
+                    ]
+                },
+                {
+                    "id": "theater_history_book",
+                    "name": "theater history book",
+                    "description": "A book documenting the Midnight Theater's illustrious past",
+                    "readable": true,
+                    "text": "THE MIDNIGHT THEATER: A History. Founded in 1923 by visionary director Vincent Blackwood. The opening production, 'The Phantom's Masquerade,' starred the incomparable Madame Celeste Noir. The grand stage has hosted countless legendary performances. To access the stage, one must prove knowledge of our heritage."
+                },
+                {
+                    "id": "costume_mannequins",
+                    "name": "costume mannequins",
+                    "description": "Several mannequins dressed in elaborate costumes from past productions",
+                    "searchable": true,
+                    "contains": [
+                        "celeste_photograph"
+                    ]
+                },
+                {
+                    "id": "celeste_photograph",
+                    "name": "signed photograph",
+                    "description": "A black and white photograph of Madame Celeste Noir in costume",
+                    "readable": true,
+                    "text": "Photograph of Madame Celeste Noir as the lead in 'The Phantom's Masquerade.' Her signature reads: 'To my beloved Midnight Theater - where dreams become reality. Forever yours, Celeste Noir.'"
+                },
+                {
+                    "id": "director_chair",
+                    "name": "director's chair",
+                    "description": "A folding chair with 'VINCENT BLACKWOOD - DIRECTOR' stenciled on the back",
+                    "searchable": true,
+                    "contains": [
+                        "director_journal"
+                    ]
+                },
+                {
+                    "id": "director_journal",
+                    "name": "director's journal",
+                    "description": "Vincent Blackwood's personal production journal",
+                    "readable": true,
+                    "text": "Final Entry: Tonight, 'The Phantom's Masquerade' opens on our grand stage. Celeste is magnificent. The prop room is ready. Everything is perfect. To enter the stage for the final act, one must answer the three questions of theatrical knowledge. Only then can the performance reach its conclusion."
+                },
+                {
+                    "id": "grand_stage_door",
+                    "name": "grand stage door",
+                    "description": "An impressive door carved with theatrical masks - comedy and tragedy. Three questions are inscribed on a brass plaque mounted beside it.",
+                    "locked": true,
+                    "lock_type": "password",
+                    "password_questions": [
+                        {
+                            "question": "Who directed the opening production?",
+                            "answer": "vincent blackwood",
+                            "hint": "Check the opening night program and theater history book"
+                        },
+                        {
+                            "question": "What was the opening production called?",
+                            "answer": "the phantom's masquerade",
+                            "hint": "Multiple documents mention the theater's first performance"
+                        },
+                        {
+                            "question": "Who was the lead actor?",
+                            "answer": "madame celeste noir",
+                            "hint": "Look at the program, photograph, and various notes about the star"
+                        }
+                    ],
+                    "direction": "east",
+                    "leads_to": "grand_stage",
+                    "aliases": [
+                        "stage",
+                        "door",
+                        "east"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "grand_stage",
+            "name": "The Grand Stage",
+            "description": "You step onto the magnificent grand stage of the Midnight Theater! The vast auditorium stretches before you with rows of plush red velvet seats rising to ornate balconies. A crystal chandelier hangs from the painted ceiling. The stage lights illuminate you like a star. The heavy curtains are drawn back, and the stage door at the rear stands open, revealing the night air and freedom beyond.",
+            "items": [
+                {
+                    "id": "crystal_chandelier",
+                    "name": "grand crystal chandelier",
+                    "description": "A spectacular chandelier casting brilliant light across the theater"
+                },
+                {
+                    "id": "stage_curtains",
+                    "name": "velvet stage curtains",
+                    "description": "Heavy burgundy curtains framing the stage, drawn back to reveal the auditorium"
+                },
+                {
+                    "id": "spotlight",
+                    "name": "stage spotlight",
+                    "description": "Bright theatrical lights illuminating the stage in a warm glow"
+                },
+                {
+                    "id": "phantom_portrait",
+                    "name": "portrait of the phantom",
+                    "description": "A large portrait hanging above the stage showing the phantom character from the famous production",
+                    "readable": true,
+                    "text": "The phantom watches over the stage eternally, a reminder of the Midnight Theater's legendary opening night in 1923."
+                }
+            ],
+            "exits": [],
+            "is_goal": true,
+            "win_message": "Bravo! You have reached the grand stage and solved the mysteries of the Midnight Theater! As you stand in the spotlight where legends once performed, you feel the weight of theatrical history. The stage door opens to the cool night air, and you exit triumphantly. The ghosts of Vincent Blackwood and Madame Celeste Noir would be proud. The curtain falls on your adventure. You win!"
+        }
+    ]
+}

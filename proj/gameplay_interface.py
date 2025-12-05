@@ -79,7 +79,7 @@ class EscapeRoomInterface:
         command = command.strip().lower()
         
         # Check for combination lock commands
-        combo_match = re.match(r'^(?:enter|type|input|use code)\s+(\d+)(?:\s+(?:on|in|into)\s+(.+))?$', command)
+        combo_match = re.match(r'^(?:enter|type|input|use code)\s+([a-zA-Z0-9]+)(?:\s+(?:on|in|into)\s+(.+))?$', command)
         if combo_match:
             code = combo_match.group(1)
             target = combo_match.group(2)
@@ -304,7 +304,7 @@ if __name__ == "__main__":
     recompile = sys.argv[2].lower() == '--force' if len(sys.argv) > 2 else False
 
     # Create output directory
-    base_name = os.path.splitext(json_file)[0].split("/")[1]
+    base_name = os.path.splitext(os.path.basename(json_file))[0]
     directory_name = f"games"
     try:
         os.mkdir(directory_name)
@@ -410,3 +410,4 @@ if __name__ == "__main__":
     print("="*60 + "\n")
     
     play_escape_room(ulx_file, json_file, combination_locks, direction_aliases, password_locks, room_items)
+

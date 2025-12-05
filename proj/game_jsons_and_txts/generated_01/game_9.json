@@ -1,0 +1,274 @@
+{
+    "theme": "Hall of Mirrors Maze",
+    "title": "Hall of Mirrors Maze Adventure #9",
+    "goal": "Solve the puzzles, achieve the main objective, and escape.",
+    "starting_room": "mirror_gallery",
+    "rooms": [
+        {
+            "id": "mirror_gallery",
+            "name": "Mirror Gallery Entrance",
+            "description": "You stand in a dazzling gallery where countless mirrors line every wall, creating infinite reflections that stretch into impossible distances. Crystal chandeliers multiply endlessly in the reflective surfaces. The floor is polished marble that also acts as a mirror, making it difficult to judge depth and distance. Ornate frames of gold and silver surround each mirror, and some appear to be more than simple reflections.",
+            "items": [
+                {
+                    "id": "ornate_pedestal",
+                    "name": "ornate pedestal",
+                    "description": "A marble pedestal in the center of the room with a velvet cushion on top",
+                    "searchable": true,
+                    "contains": [
+                        "silver_key"
+                    ]
+                },
+                {
+                    "id": "silver_key",
+                    "name": "silver key",
+                    "description": "A delicate silver key with a mirror-like polish that reflects light"
+                },
+                {
+                    "id": "gilded_cabinet",
+                    "name": "gilded cabinet",
+                    "description": "A tall cabinet with mirrored doors and three drawers, each labeled with a different symbol",
+                    "subcontainers": [
+                        {
+                            "id": "top_drawer",
+                            "name": "top drawer",
+                            "locked": false,
+                            "contains": [
+                                "architects_journal"
+                            ]
+                        },
+                        {
+                            "id": "middle_drawer",
+                            "name": "middle drawer",
+                            "locked": true,
+                            "lock_type": "combination",
+                            "combination": "1888",
+                            "contains": [
+                                "brass_key"
+                            ]
+                        },
+                        {
+                            "id": "bottom_drawer",
+                            "name": "bottom drawer",
+                            "locked": false,
+                            "contains": []
+                        }
+                    ]
+                },
+                {
+                    "id": "architects_journal",
+                    "name": "architect's journal",
+                    "description": "A leather-bound journal with detailed notes and sketches",
+                    "readable": true,
+                    "text": "Journal of Master Architect Viktor Mirrors - Year 1888: I have completed my greatest work, the Hall of Mirrors Maze. Using 999 mirrors, I have created a labyrinth of reflections. The maze was commissioned by the Illusionist's Guild. Only those who understand the nature of reflection may escape."
+                },
+                {
+                    "id": "brass_key",
+                    "name": "brass key",
+                    "description": "A brass key with intricate engravings of mirror patterns"
+                },
+                {
+                    "id": "locked_display_case",
+                    "name": "locked display case",
+                    "description": "A glass display case with a silver lock, containing important documents",
+                    "locked": true,
+                    "key_required": "silver_key",
+                    "contains": [
+                        "maze_blueprint",
+                        "guild_certificate"
+                    ]
+                },
+                {
+                    "id": "maze_blueprint",
+                    "name": "maze blueprint",
+                    "description": "Architectural drawings of the Hall of Mirrors Maze",
+                    "readable": true,
+                    "text": "Blueprint: Hall of Mirrors Maze - Designed by Viktor Mirrors, 1888. Total mirrors: 999. The maze consists of three chambers: Gallery, Reflection Chamber, and Crystal Exit Hall. The exit is protected by three security questions to prevent unauthorized escape."
+                },
+                {
+                    "id": "guild_certificate",
+                    "name": "guild certificate",
+                    "description": "An official certificate from the Illusionist's Guild",
+                    "readable": true,
+                    "text": "Certificate of Completion: The Illusionist's Guild hereby certifies that Master Architect Viktor Mirrors has completed the Hall of Mirrors Maze to our specifications. This maze shall serve as the ultimate test of perception and wisdom."
+                },
+                {
+                    "id": "decorative_mirror_left",
+                    "name": "decorative mirror with golden frame",
+                    "description": "A large mirror with an ornate golden frame and a small compartment behind it",
+                    "searchable": true,
+                    "contains": [
+                        "hidden_note"
+                    ]
+                },
+                {
+                    "id": "hidden_note",
+                    "name": "hidden note",
+                    "description": "A folded note tucked behind the mirror",
+                    "readable": true,
+                    "text": "Reminder: The middle drawer combination is the year this maze was built. Viktor always said that understanding reflection is the key to everything. The Reflection Chamber holds the final secrets."
+                },
+                {
+                    "id": "mirrored_door",
+                    "name": "mirrored door",
+                    "description": "A door completely covered in mirrors, making it almost invisible against the surrounding walls. It has a brass keyhole.",
+                    "locked": true,
+                    "key_required": "brass_key",
+                    "direction": "east",
+                    "leads_to": "reflection_chamber",
+                    "aliases": [
+                        "door",
+                        "east"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "reflection_chamber",
+            "name": "Reflection Chamber",
+            "description": "A circular chamber where mirrors are arranged at precise angles, creating kaleidoscopic patterns of light and reflection. Every movement creates a cascade of mirrored images. The ceiling is a massive mirror that reflects the floor, creating a dizzying sense of vertigo. Strange optical illusions make it difficult to distinguish real objects from reflections. A sealed crystal door stands at the far end.",
+            "items": [
+                {
+                    "id": "central_mirror_column",
+                    "name": "central mirror column",
+                    "description": "A tall column covered entirely in mirrors, rotating slowly on a base",
+                    "readable": true,
+                    "text": "Inscription on base: 'In reflection, truth is revealed. The architect's name echoes in every surface. The guild's purpose is to test and teach. Count the mirrors: 999 paths to enlightenment.'"
+                },
+                {
+                    "id": "reflection_table",
+                    "name": "reflection table",
+                    "description": "A table with a mirrored surface and hidden compartments underneath",
+                    "subcontainers": [
+                        {
+                            "id": "left_compartment",
+                            "name": "left compartment",
+                            "locked": false,
+                            "contains": [
+                                "mirror_theory_book"
+                            ]
+                        },
+                        {
+                            "id": "right_compartment",
+                            "name": "right compartment",
+                            "locked": false,
+                            "contains": [
+                                "maintenance_log"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "mirror_theory_book",
+                    "name": "book of mirror theory",
+                    "description": "A scholarly text about mirrors and reflection",
+                    "readable": true,
+                    "text": "Chapter 7: The Hall of Mirrors Maze contains exactly 999 mirrors, each positioned to create specific optical effects. Master Viktor Mirrors spent five years perfecting the angles. The maze teaches that reality and reflection are intertwined."
+                },
+                {
+                    "id": "maintenance_log",
+                    "name": "maintenance log",
+                    "description": "A logbook recording upkeep of the maze",
+                    "readable": true,
+                    "text": "Maintenance Log: All 999 mirrors cleaned and inspected. The Illusionist's Guild requires monthly inspections. Viktor Mirrors' original design remains unchanged. The Crystal Exit Hall security system is functioning perfectly."
+                },
+                {
+                    "id": "kaleidoscope_mirror",
+                    "name": "kaleidoscope mirror",
+                    "description": "A special mirror that creates rainbow patterns when light hits it",
+                    "searchable": true,
+                    "contains": [
+                        "prism_crystal"
+                    ]
+                },
+                {
+                    "id": "prism_crystal",
+                    "name": "prism crystal",
+                    "description": "A crystal that splits light into rainbow colors"
+                },
+                {
+                    "id": "wall_plaque",
+                    "name": "commemorative wall plaque",
+                    "description": "A brass plaque mounted between two mirrors",
+                    "readable": true,
+                    "text": "In Honor of Master Architect Viktor Mirrors - Creator of this magnificent maze. Commissioned by the Illusionist's Guild to challenge and enlighten all who enter. May your reflections guide you to truth."
+                },
+                {
+                    "id": "infinity_mirror_box",
+                    "name": "infinity mirror box",
+                    "description": "A box with mirrors on the inside creating an infinite tunnel effect",
+                    "searchable": true,
+                    "contains": [
+                        "final_clue"
+                    ]
+                },
+                {
+                    "id": "final_clue",
+                    "name": "final clue scroll",
+                    "description": "A scroll with instructions for escaping the maze",
+                    "readable": true,
+                    "text": "To escape the Hall of Mirrors Maze, you must answer three questions at the Crystal Exit Hall: Who created this maze? How many mirrors does it contain? Who commissioned its construction? Only with this knowledge can you leave."
+                },
+                {
+                    "id": "crystal_exit_door",
+                    "name": "crystal exit door",
+                    "description": "A magnificent door made of crystal and mirrors, with three questions etched into its surface in glowing script.",
+                    "locked": true,
+                    "lock_type": "password",
+                    "password_questions": [
+                        {
+                            "question": "Who created this maze?",
+                            "answer": "viktor mirrors",
+                            "hint": "Check the architect's journal and the commemorative plaque"
+                        },
+                        {
+                            "question": "How many mirrors does the maze contain?",
+                            "answer": "999",
+                            "hint": "The blueprint and mirror theory book mention the exact number"
+                        },
+                        {
+                            "question": "Who commissioned this maze?",
+                            "answer": "illusionist's guild",
+                            "hint": "The guild certificate and various documents identify the commissioners"
+                        }
+                    ],
+                    "direction": "north",
+                    "leads_to": "crystal_exit_hall",
+                    "aliases": [
+                        "door",
+                        "exit",
+                        "north"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "crystal_exit_hall",
+            "name": "Crystal Exit Hall",
+            "description": "You have reached the exit! A breathtaking hall where crystal mirrors catch and refract natural sunlight streaming in from skylights above. Unlike the confusing maze behind you, this space is clear and open. A grand archway at the far end opens to the outside world. The reflections here are peaceful and beautiful, no longer disorienting. You can see the exit clearly before you.",
+            "items": [
+                {
+                    "id": "crystal_fountain",
+                    "name": "crystal fountain",
+                    "description": "A fountain made of crystal that reflects light in beautiful patterns"
+                },
+                {
+                    "id": "victory_mirror",
+                    "name": "victory mirror",
+                    "description": "A large mirror with an inscription at its base",
+                    "readable": true,
+                    "text": "Congratulations, seeker of truth. You have navigated the Hall of Mirrors Maze and proven your wisdom. May your reflections always show you the path forward. - Viktor Mirrors"
+                },
+                {
+                    "id": "exit_archway",
+                    "name": "grand exit archway",
+                    "description": "A beautiful archway leading to freedom, framed by mirrors that reflect the sky beyond"
+                }
+            ],
+            "exits": [],
+            "is_goal": true,
+            "win_message": "You have successfully escaped the Hall of Mirrors Maze! As you step through the crystal exit hall and into the sunlight beyond, the infinite reflections fade behind you. You solved the puzzles, understood the architect's vision, and proved yourself worthy of escape. The maze's secrets are now yours to keep. You win!"
+        }
+    ]
+}

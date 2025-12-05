@@ -1,0 +1,284 @@
+{
+  "theme": "Fairy Realm Crossing",
+  "title": "Fairy Realm Crossing Adventure #73",
+  "goal": "Solve the puzzles, achieve the main objective, and escape.",
+  "starting_room": "enchanted_glade",
+  "rooms": [
+    {
+      "id": "enchanted_glade",
+      "name": "Enchanted Glade",
+      "description": "You find yourself in a mystical glade where reality seems to shimmer and bend. Luminescent flowers bloom in impossible colors, and the air sparkles with floating motes of fairy dust. Ancient trees with silver bark form a circle around you, their branches swaying despite the absence of wind. A crystal-clear stream babbles nearby, and mushroom rings dot the moss-covered ground.",
+      "items": [
+        {
+          "id": "fairy_fountain",
+          "name": "fairy fountain",
+          "description": "A small fountain carved from moonstone, with water that glows with an inner light",
+          "searchable": true,
+          "contains": [
+            "silver_acorn"
+          ]
+        },
+        {
+          "id": "silver_acorn",
+          "name": "silver acorn",
+          "description": "A perfectly formed acorn made of solid silver, warm to the touch"
+        },
+        {
+          "id": "mushroom_circle",
+          "name": "fairy ring of mushrooms",
+          "description": "A perfect circle of red and white spotted mushrooms that pulse with faint light",
+          "readable": true,
+          "text": "Ancient runes are carved into the largest mushroom: 'The Fairy Queen Titania rules from her Moonlit Court. The realm was born in the year 1313, when the veil between worlds grew thin. Beware the tricks of the Trickster Puck.'"
+        },
+        {
+          "id": "hollow_tree",
+          "name": "hollow silver tree",
+          "description": "An ancient tree with a hollow trunk that serves as a natural storage space",
+          "subcontainers": [
+            {
+              "id": "upper_hollow",
+              "name": "upper hollow",
+              "locked": false,
+              "contains": [
+                "fairy_chronicle"
+              ]
+            },
+            {
+              "id": "lower_hollow",
+              "name": "lower hollow",
+              "locked": true,
+              "lock_type": "combination",
+              "combination": "1313",
+              "contains": [
+                "golden_key"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "fairy_chronicle",
+          "name": "chronicle of the fairy realm",
+          "description": "A book bound in leaves and spider silk, written in shimmering ink",
+          "readable": true,
+          "text": "The Fairy Realm Crossing was established in the year 1313 when Queen Titania opened the gateway between worlds. The Moonlit Court is where she holds audience. Only those who understand the three sacred truths may pass through the Starlight Gate."
+        },
+        {
+          "id": "golden_key",
+          "name": "golden key",
+          "description": "A delicate key made of pure gold, shaped like a butterfly"
+        },
+        {
+          "id": "moss_covered_stone_bench",
+          "name": "moss covered stone bench",
+          "description": "A weathered stone bench covered in soft green moss and tiny flowers",
+          "searchable": true,
+          "contains": [
+            "pixie_note"
+          ]
+        },
+        {
+          "id": "pixie_note",
+          "name": "note from a pixie",
+          "description": "A tiny note written in glittering script",
+          "readable": true,
+          "text": "Dear traveler, if you wish to reach the Moonlit Court, you must first unlock the Enchanted Garden. The golden key opens the way, but beware of Puck's mischief along the path!"
+        },
+        {
+          "id": "locked_fairy_chest",
+          "name": "ornate fairy chest",
+          "description": "A chest made of crystal and wrapped in living vines, secured with a golden lock",
+          "locked": true,
+          "key_required": "golden_key",
+          "contains": [
+            "fairy_dust_pouch",
+            "realm_map"
+          ]
+        },
+        {
+          "id": "fairy_dust_pouch",
+          "name": "pouch of fairy dust",
+          "description": "A silk pouch filled with glittering dust that seems to move on its own"
+        },
+        {
+          "id": "realm_map",
+          "name": "map of the fairy realm",
+          "description": "A magical map that shows the layout of the realm",
+          "readable": true,
+          "text": "The map shows three locations: the Enchanted Glade (where you are), the Enchanted Garden (to the north), and the Moonlit Court (beyond the garden). A note reads: 'The Starlight Gate guards the way home.'"
+        },
+        {
+          "id": "archway_of_living_vines",
+          "name": "archway of living vines",
+          "description": "An archway formed by intertwining vines covered in glowing flowers. It requires the silver acorn to activate.",
+          "locked": true,
+          "key_required": "silver_acorn",
+          "direction": "north",
+          "leads_to": "enchanted_garden",
+          "aliases": [
+            "archway",
+            "vines",
+            "north"
+          ]
+        }
+      ],
+      "exits": []
+    },
+    {
+      "id": "enchanted_garden",
+      "name": "Enchanted Garden",
+      "description": "A breathtaking garden where flowers sing soft melodies and butterflies leave trails of stardust. Crystalline pathways wind between beds of impossible blooms. A magnificent fountain in the center depicts dancing fairies. Topiaries shaped like mythical creatures line the paths. At the far end, an enormous gate made of starlight shimmers and pulses.",
+      "items": [
+        {
+          "id": "singing_flowers",
+          "name": "bed of singing flowers",
+          "description": "Flowers that hum in harmony, their petals opening and closing in rhythm",
+          "readable": true,
+          "text": "The flowers' song carries words: 'Queen Titania, wise and fair, rules from her throne beyond compare. In the Moonlit Court she dwells, where ancient magic weaves its spells.'"
+        },
+        {
+          "id": "fairy_fountain_center",
+          "name": "central fairy fountain",
+          "description": "A grand fountain with statues of fairies frozen in an eternal dance",
+          "searchable": true,
+          "contains": [
+            "crystal_rose"
+          ]
+        },
+        {
+          "id": "crystal_rose",
+          "name": "crystal rose",
+          "description": "A perfect rose made entirely of clear crystal that refracts rainbow light"
+        },
+        {
+          "id": "butterfly_topiary",
+          "name": "butterfly shaped topiary",
+          "description": "A bush carefully trimmed into the shape of a giant butterfly",
+          "searchable": true,
+          "contains": [
+            "pucks_riddle"
+          ]
+        },
+        {
+          "id": "pucks_riddle",
+          "name": "scroll of Puck's riddle",
+          "description": "A mischievous scroll that giggles when touched",
+          "readable": true,
+          "text": "Puck's Riddle: 'I am the Trickster, quick and sly! To pass the gate, you must know why: Who rules with grace upon her throne? Where does she sit, in court alone? And what's my name, so widely known?'"
+        },
+        {
+          "id": "moonflower_bed",
+          "name": "bed of moonflowers",
+          "description": "Flowers that glow with silvery moonlight even in daylight",
+          "readable": true,
+          "text": "A plaque reads: 'These moonflowers bloom only in the presence of Queen Titania's magic. They grow wild throughout the Moonlit Court, her sacred domain.'"
+        },
+        {
+          "id": "garden_pedestal",
+          "name": "marble pedestal",
+          "description": "A pedestal with compartments for offerings to the fairy folk",
+          "subcontainers": [
+            {
+              "id": "left_compartment",
+              "name": "left compartment",
+              "locked": false,
+              "contains": [
+                "fairy_tale_book"
+              ]
+            },
+            {
+              "id": "right_compartment",
+              "name": "right compartment",
+              "locked": false,
+              "contains": []
+            }
+          ]
+        },
+        {
+          "id": "fairy_tale_book",
+          "name": "book of fairy tales",
+          "description": "A leather-bound book containing stories of the fairy realm",
+          "readable": true,
+          "text": "Chapter One: Queen Titania and the Trickster. Long ago, Queen Titania ruled the Moonlit Court with wisdom and grace. Her loyal servant Puck, the Trickster, entertained the court with his pranks and riddles. Together they maintained the balance of the fairy realm."
+        },
+        {
+          "id": "stone_sundial",
+          "name": "ancient sundial",
+          "description": "A sundial that somehow shows the time in both the mortal and fairy realms",
+          "readable": true,
+          "text": "Inscribed on the base: 'Time flows differently here. What is a day in the mortal world may be a year in the realm of fairies. Remember: Puck the Trickster guards the final gate.'"
+        },
+        {
+          "id": "gate_to_the_Crystal_Palace",
+          "name": "gate to the Crystal Palace",
+          "description": "A magnificent gate made of pure starlight that shifts and shimmers. Three questions appear in glowing letters across its surface.",
+          "locked": true,
+          "lock_type": "password",
+          "password_questions": [
+            {
+              "question": "Who rules the fairy realm?",
+              "answer": "queen titania",
+              "hint": "Check the mushroom ring inscription, the chronicle, and the singing flowers"
+            },
+            {
+              "question": "Where does the queen hold court?",
+              "answer": "moonlit court",
+              "hint": "Multiple sources mention where Queen Titania's throne is located"
+            },
+            {
+              "question": "What is the name of the Trickster?",
+              "answer": "puck",
+              "hint": "The fairy tale book and various notes mention the Trickster's name"
+            }
+          ],
+          "direction": "east",
+          "leads_to": "moonlit_court",
+          "aliases": [
+            "gate",
+            "starlight",
+            "east"
+          ]
+        }
+      ],
+      "exits": []
+    },
+    {
+      "id": "moonlit_court",
+      "name": "Moonlit Court",
+      "description": "You have reached the heart of the fairy realm! The Moonlit Court is a magnificent chamber beneath a dome of stars. Queen Titania sits upon a throne of living crystal, her presence radiating gentle power. Moonflowers bloom everywhere, and the air shimmers with pure magic. A swirling portal of light hovers nearby, offering passage back to the mortal world.",
+      "items": [
+        {
+          "id": "crystal_throne",
+          "name": "throne of living crystal",
+          "description": "A magnificent throne that seems to grow from the floor itself, pulsing with inner light"
+        },
+        {
+          "id": "queen_titania",
+          "name": "Queen Titania",
+          "description": "The radiant Fairy Queen, beautiful and terrible in her majesty",
+          "readable": true,
+          "text": "Queen Titania speaks: 'Well done, mortal. You have solved the riddles and proven yourself worthy. Few from your world ever reach my court. The portal home awaits you. Go with my blessing, and remember what you have learned here.'"
+        },
+        {
+          "id": "moonflower_garden",
+          "name": "garden of moonflowers",
+          "description": "A stunning display of flowers that glow with captured moonlight"
+        },
+        {
+          "id": "starlight_dome",
+          "name": "dome of stars",
+          "description": "The ceiling shows a perfect view of the night sky, with constellations that don't exist in the mortal world"
+        },
+        {
+          "id": "return_portal",
+          "name": "portal to the mortal world",
+          "description": "A swirling vortex of light and color that leads back home",
+          "readable": true,
+          "text": "The portal hums with power, ready to transport you safely back to your own world."
+        }
+      ],
+      "exits": [],
+      "is_goal": true,
+      "win_message": "Queen Titania rises from her throne and touches your forehead gently. 'You have navigated the Fairy Realm Crossing with wisdom and courage,' she says. 'Return to your world, but know that you will always be welcome here.' You step through the portal, and in a flash of light, you find yourself back in the mortal world. The adventure is complete, but the memory of the fairy realm will stay with you forever. You win!"
+    }
+  ]
+}

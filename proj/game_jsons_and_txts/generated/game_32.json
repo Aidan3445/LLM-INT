@@ -1,0 +1,226 @@
+{
+    "theme": "Alien Embassy Negotiation Room",
+    "title": "Alien Embassy Negotiation Room Adventure #32",
+    "goal": "Solve the puzzles, achieve the main objective, and escape.",
+    "starting_room": "embassy_reception",
+    "rooms": [
+        {
+            "id": "embassy_reception",
+            "name": "Embassy Reception Hall",
+            "description": "A sleek reception area with walls that shimmer with holographic star maps. The air hums with a faint electromagnetic field. Alien symbols glow softly on the walls. A large desk holds various diplomatic materials, and a locked cabinet stands against the far wall. Through a window, you see three moons hanging in an alien sky.",
+            "items": [
+                {
+                    "id": "reception_desk",
+                    "name": "diplomatic reception desk",
+                    "description": "A curved desk made of an unknown metallic material with three compartments",
+                    "subcontainers": [
+                        {
+                            "id": "top_compartment",
+                            "name": "top compartment",
+                            "locked": false,
+                            "contains": [
+                                "ambassador_memo"
+                            ]
+                        },
+                        {
+                            "id": "middle_compartment",
+                            "name": "middle compartment",
+                            "locked": true,
+                            "lock_type": "combination",
+                            "combination": "742",
+                            "contains": [
+                                "access_crystal"
+                            ]
+                        },
+                        {
+                            "id": "bottom_compartment",
+                            "name": "bottom compartment",
+                            "locked": false,
+                            "contains": []
+                        }
+                    ]
+                },
+                {
+                    "id": "ambassador_memo",
+                    "name": "ambassador briefing document",
+                    "description": "A holographic document with important diplomatic information",
+                    "readable": true,
+                    "text": "CONFIDENTIAL BRIEFING: The Zephyr delegation arrives today. Remember the sacred numbers of their home system: 7 planets, 4 inhabited moons, 2 suns. Ambassador Chen will lead negotiations. The treaty concerns trade rights in the Andromeda sector."
+                },
+                {
+                    "id": "access_crystal",
+                    "name": "crystalline access key",
+                    "description": "A translucent blue crystal that pulses with inner light"
+                },
+                {
+                    "id": "locked_cabinet",
+                    "name": "secure diplomatic cabinet",
+                    "description": "A cabinet with a crystal-shaped lock mechanism",
+                    "locked": true,
+                    "key_required": "access_crystal",
+                    "contains": [
+                        "translation_device",
+                        "cultural_guide"
+                    ]
+                },
+                {
+                    "id": "translation_device",
+                    "name": "universal translation device",
+                    "description": "A small device that can translate alien languages and symbols"
+                },
+                {
+                    "id": "cultural_guide",
+                    "name": "Zephyr cultural protocol guide",
+                    "description": "A guide explaining Zephyr customs and diplomatic etiquette",
+                    "readable": true,
+                    "text": "ZEPHYR CULTURAL PROTOCOLS: The Zephyr people value harmony and balance. Their leader is High Consul Vex. They consider the meditation gardens sacred spaces where important decisions are made. Always address them by their formal titles."
+                },
+                {
+                    "id": "star_map",
+                    "name": "holographic star map",
+                    "description": "A three dimensional map showing various star systems",
+                    "searchable": true,
+                    "contains": [
+                        "navigation_chip"
+                    ]
+                },
+                {
+                    "id": "navigation_chip",
+                    "name": "data chip with coordinates",
+                    "description": "A small chip containing stellar navigation data",
+                    "readable": true,
+                    "text": "ANDROMEDA SECTOR COORDINATES: This sector contains valuable resources and trade routes. Both Earth and Zephyr claim rights to this region. Negotiations must establish shared access."
+                },
+                {
+                    "id": "corridor_door",
+                    "name": "corridor door",
+                    "description": "A sliding door leading to the diplomatic corridor",
+                    "locked": false,
+                    "direction": "north",
+                    "leads_to": "diplomatic_corridor",
+                    "aliases": [
+                        "door",
+                        "north"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "diplomatic_corridor",
+            "name": "Diplomatic Corridor",
+            "description": "A long hallway lined with portraits of past ambassadors and alien dignitaries. Soft blue lighting creates a calm atmosphere. Display cases show artifacts from various alien civilizations. At the end of the corridor, massive doors lead to the main negotiation chamber.",
+            "items": [
+                {
+                    "id": "portrait_chen",
+                    "name": "portrait of Ambassador Chen",
+                    "description": "A formal portrait of Earth's lead negotiator",
+                    "readable": true,
+                    "text": "Ambassador Sarah Chen - Earth's Chief Diplomatic Officer. Specializes in interstellar trade agreements and cultural exchange programs."
+                },
+                {
+                    "id": "portrait_vex",
+                    "name": "portrait of High Consul Vex",
+                    "description": "A portrait showing a tall alien with luminescent skin",
+                    "readable": true,
+                    "text": "High Consul Vex - Leader of the Zephyr Confederation. Known for wisdom and commitment to peaceful coexistence among species."
+                },
+                {
+                    "id": "portrait_krell",
+                    "name": "portrait of Mediator Krell",
+                    "description": "A portrait of a distinguished alien mediator",
+                    "readable": true,
+                    "text": "Mediator Krell - Neutral third party from the Galactic Council. Oversees negotiations to ensure fairness and adherence to interstellar law."
+                },
+                {
+                    "id": "display_case",
+                    "name": "artifact display case",
+                    "description": "A glass case containing various diplomatic gifts and cultural artifacts",
+                    "searchable": true,
+                    "contains": [
+                        "treaty_template"
+                    ]
+                },
+                {
+                    "id": "treaty_template",
+                    "name": "standard treaty document",
+                    "description": "A template showing the format for interstellar agreements",
+                    "readable": true,
+                    "text": "TREATY TEMPLATE: All agreements must include: Parties involved, resources or territories in question, terms of access, and signatures of authorized representatives. This treaty concerns the Andromeda sector."
+                },
+                {
+                    "id": "meditation_alcove",
+                    "name": "small meditation alcove",
+                    "description": "A peaceful alcove with cushions and soft lighting",
+                    "searchable": true,
+                    "contains": [
+                        "harmony_stone"
+                    ]
+                },
+                {
+                    "id": "harmony_stone",
+                    "name": "Zephyr harmony stone",
+                    "description": "A smooth stone that radiates a sense of peace and balance"
+                },
+                {
+                    "id": "negotiation_chamber_entrance",
+                    "name": "negotiation chamber entrance",
+                    "description": "Massive ornate doors leading to the main negotiation chamber. A security panel displays three verification questions.",
+                    "locked": true,
+                    "lock_type": "password",
+                    "password_questions": [
+                        {
+                            "question": "Who leads the Earth delegation?",
+                            "answer": "ambassador chen",
+                            "hint": "Check the portraits and briefing documents"
+                        },
+                        {
+                            "question": "What sector is being negotiated?",
+                            "answer": "andromeda sector",
+                            "hint": "The ambassador's memo and navigation chip mention this"
+                        },
+                        {
+                            "question": "Where do Zephyr make important decisions?",
+                            "answer": "meditation gardens",
+                            "hint": "The cultural protocol guide explains Zephyr customs"
+                        }
+                    ],
+                    "direction": "east",
+                    "leads_to": "negotiation_chamber",
+                    "aliases": [
+                        "entrance",
+                        "east"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "negotiation_chamber",
+            "name": "Grand Negotiation Chamber",
+            "description": "You have entered the magnificent negotiation chamber! A circular table made of polished crystal dominates the center of the room. Holographic displays show star charts and treaty documents. Representatives from Earth and Zephyr stand ready to finalize the historic agreement. The atmosphere crackles with the energy of diplomatic breakthrough. A portal of light opens, showing the way home.",
+            "items": [
+                {
+                    "id": "crystal_table",
+                    "name": "negotiation table",
+                    "description": "A beautiful circular table where historic agreements are signed"
+                },
+                {
+                    "id": "treaty_display",
+                    "name": "holographic treaty display",
+                    "description": "A floating display showing the finalized agreement",
+                    "readable": true,
+                    "text": "ANDROMEDA SECTOR TREATY: Earth and Zephyr agree to shared access and resource management in the Andromeda sector. Both parties commit to peaceful cooperation and mutual benefit. Signed by Ambassador Chen and High Consul Vex."
+                },
+                {
+                    "id": "celebration_table",
+                    "name": "celebration refreshment table",
+                    "description": "A table with refreshments from both Earth and Zephyr cultures"
+                }
+            ],
+            "exits": [],
+            "is_goal": true,
+            "win_message": "SUCCESS! You have facilitated a historic diplomatic breakthrough between Earth and the Zephyr Confederation! The Andromeda Sector Treaty is signed, establishing peaceful cooperation and shared prosperity. Both civilizations celebrate this momentous achievement. The portal home opens before you, and you return as a hero of interstellar diplomacy. You win!"
+        }
+    ]
+}

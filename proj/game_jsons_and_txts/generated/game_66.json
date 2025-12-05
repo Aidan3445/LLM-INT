@@ -1,0 +1,248 @@
+{
+    "theme": "Crystal Cavern Nexus",
+    "title": "Crystal Cavern Nexus Adventure #66",
+    "goal": "Solve the puzzles, achieve the main objective, and escape.",
+    "starting_room": "crystal_chamber",
+    "rooms": [
+        {
+            "id": "crystal_chamber",
+            "name": "Luminous Crystal Chamber",
+            "description": "A vast underground chamber filled with glowing crystals of every color. Blue and purple crystals pulse with inner light, casting dancing shadows on the rough stone walls. The air hums with energy. Stalactites drip from the ceiling, and a shallow pool of crystal-clear water reflects the ethereal glow. Ancient mining equipment lies scattered about.",
+            "items": [
+                {
+                    "id": "mining_cart",
+                    "name": "old mining cart",
+                    "description": "A rusty metal cart filled with rocks and debris",
+                    "searchable": true,
+                    "contains": [
+                        "geologist_journal"
+                    ]
+                },
+                {
+                    "id": "geologist_journal",
+                    "name": "geologist's field journal",
+                    "description": "A worn leather journal with notes about the cavern",
+                    "readable": true,
+                    "text": "Day 47: The crystal formations here are extraordinary! The main nexus crystal resonates at exactly 432 Hz. Dr. Sarah Chen discovered that the three primary crystal types - Azurite, Luminite, and Quartzite - form the foundation of this cave system. The sealed chamber beyond requires knowledge of these crystals."
+                },
+                {
+                    "id": "tool_chest",
+                    "name": "metal tool chest",
+                    "description": "A heavy chest with three compartments for mining tools",
+                    "subcontainers": [
+                        {
+                            "id": "top_compartment",
+                            "name": "top compartment",
+                            "locked": false,
+                            "contains": [
+                                "crystal_map"
+                            ]
+                        },
+                        {
+                            "id": "middle_compartment",
+                            "name": "middle compartment",
+                            "locked": true,
+                            "lock_type": "combination",
+                            "combination": "432",
+                            "contains": [
+                                "brass_key"
+                            ]
+                        },
+                        {
+                            "id": "bottom_compartment",
+                            "name": "bottom compartment",
+                            "locked": false,
+                            "contains": []
+                        }
+                    ]
+                },
+                {
+                    "id": "crystal_map",
+                    "name": "hand drawn cave map",
+                    "description": "A detailed map showing the cavern system and crystal locations",
+                    "readable": true,
+                    "text": "Map notation: The Nexus Core lies beyond the Resonance Gallery. Three crystal types mark the path: Azurite (blue), Luminite (purple), and Quartzite (clear). The storage locker combination is the resonance frequency of the main crystal."
+                },
+                {
+                    "id": "brass_key",
+                    "name": "tarnished brass key",
+                    "description": "A small brass key with crystal dust coating it"
+                },
+                {
+                    "id": "storage_locker",
+                    "name": "sealed storage locker",
+                    "description": "A metal locker with a crystal-shaped lock",
+                    "locked": true,
+                    "key_required": "brass_key",
+                    "contains": [
+                        "research_notes"
+                    ]
+                },
+                {
+                    "id": "research_notes",
+                    "name": "research documentation",
+                    "description": "Scientific notes about the cavern exploration",
+                    "readable": true,
+                    "text": "Research Team Notes: Lead researcher Dr. Sarah Chen has documented the three crystal types. The blue crystals are Azurite, found in the northern passages. The purple crystals are Luminite, discovered in the western chambers. The clear crystals are Quartzite, located throughout. Team members: Dr. Chen, geologist Marcus Webb, and engineer Lisa Torres."
+                },
+                {
+                    "id": "crystal_pool",
+                    "name": "reflective crystal pool",
+                    "description": "A shallow pool of water surrounded by glowing crystals",
+                    "searchable": true,
+                    "contains": [
+                        "waterproof_pouch"
+                    ]
+                },
+                {
+                    "id": "waterproof_pouch",
+                    "name": "waterproof equipment pouch",
+                    "description": "A sealed pouch containing expedition supplies",
+                    "searchable": true,
+                    "contains": [
+                        "flashlight"
+                    ]
+                },
+                {
+                    "id": "flashlight",
+                    "name": "heavy duty flashlight",
+                    "description": "A powerful flashlight for exploring dark passages"
+                },
+                {
+                    "id": "narrow_eastern_passage",
+                    "name": "narrow eastern passage",
+                    "description": "A tight passage leading deeper into the cavern system, blocked by fallen rocks",
+                    "locked": true,
+                    "key_required": "brass_key",
+                    "direction": "east",
+                    "leads_to": "resonance_gallery",
+                    "aliases": [
+                        "passage",
+                        "east"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "resonance_gallery",
+            "name": "Resonance Gallery",
+            "description": "A magnificent gallery where massive crystals grow from floor to ceiling. The crystals emit a low humming sound that resonates through your bones. Three enormous crystal formations dominate the space - one blue, one purple, and one clear. Each has a plaque at its base. A reinforced door stands at the far end, covered in crystalline patterns.",
+            "items": [
+                {
+                    "id": "blue_crystal",
+                    "name": "massive blue crystal formation",
+                    "description": "A towering formation of deep blue crystals",
+                    "readable": true,
+                    "text": "Plaque: AZURITE FORMATION - Discovered 2019. This rare blue crystal exhibits piezoelectric properties and resonates with sound frequencies."
+                },
+                {
+                    "id": "purple_crystal",
+                    "name": "massive purple crystal formation",
+                    "description": "A stunning cluster of purple crystals that pulse with light",
+                    "readable": true,
+                    "text": "Plaque: LUMINITE FORMATION - Discovered 2020. These bioluminescent crystals generate their own light through unknown mechanisms."
+                },
+                {
+                    "id": "clear_crystal",
+                    "name": "massive clear crystal formation",
+                    "description": "A transparent crystal structure that refracts light into rainbows",
+                    "readable": true,
+                    "text": "Plaque: QUARTZITE FORMATION - Discovered 2021. The most common crystal type in this cavern system, known for its clarity and strength."
+                },
+                {
+                    "id": "observation_platform",
+                    "name": "wooden observation platform",
+                    "description": "A raised platform with scientific equipment and notes",
+                    "searchable": true,
+                    "contains": [
+                        "team_roster"
+                    ]
+                },
+                {
+                    "id": "team_roster",
+                    "name": "expedition team roster",
+                    "description": "A laminated document listing the research team",
+                    "readable": true,
+                    "text": "Crystal Cavern Research Expedition - Team Leader: Dr. Sarah Chen (Geologist). Team Members: Marcus Webb (Field Geologist), Lisa Torres (Mining Engineer). Mission: Document and study the unique crystal formations of the Nexus Cavern system."
+                },
+                {
+                    "id": "equipment_crate",
+                    "name": "scientific equipment crate",
+                    "description": "A large crate containing various instruments and tools",
+                    "searchable": true,
+                    "contains": [
+                        "frequency_meter"
+                    ]
+                },
+                {
+                    "id": "frequency_meter",
+                    "name": "digital frequency meter",
+                    "description": "A device for measuring crystal resonance frequencies"
+                },
+                {
+                    "id": "reinforced_exit_door",
+                    "name": "reinforced exit door",
+                    "description": "A heavy steel door with a security panel. Three questions are displayed on a digital screen.",
+                    "locked": true,
+                    "lock_type": "password",
+                    "password_questions": [
+                        {
+                            "question": "Who leads this expedition?",
+                            "answer": "dr sarah chen",
+                            "hint": "Check the research notes and team roster"
+                        },
+                        {
+                            "question": "What is the blue crystal called?",
+                            "answer": "azurite",
+                            "hint": "Read the plaques on the crystal formations"
+                        },
+                        {
+                            "question": "What is the clear crystal called?",
+                            "answer": "quartzite",
+                            "hint": "Examine all three crystal formation plaques"
+                        }
+                    ],
+                    "direction": "north",
+                    "leads_to": "nexus_core",
+                    "aliases": [
+                        "door",
+                        "north"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "nexus_core",
+            "name": "Crystal Nexus Core",
+            "description": "You have reached the heart of the crystal cavern! An enormous central crystal pulses with brilliant white light, illuminating a natural cathedral of stone and crystal. The walls are covered in smaller crystals that reflect and amplify the light into a dazzling display. A natural chimney leads upward toward the surface, with carved steps spiraling up the walls. Fresh air flows down from above.",
+            "items": [
+                {
+                    "id": "central_nexus_crystal",
+                    "name": "central nexus crystal",
+                    "description": "A massive crystal formation that serves as the heart of the entire cavern system, pulsing with energy"
+                },
+                {
+                    "id": "research_station",
+                    "name": "abandoned research station",
+                    "description": "A small camp with equipment, notes, and supplies left by the research team",
+                    "searchable": true,
+                    "contains": [
+                        "final_log"
+                    ]
+                },
+                {
+                    "id": "final_log",
+                    "name": "final expedition log",
+                    "description": "The last entry in the expedition records",
+                    "readable": true,
+                    "text": "Final Log - Dr. Sarah Chen: We've done it! We've reached the Nexus Core. The central crystal is beyond anything we imagined. Its energy readings are off the charts. We're heading back to the surface to report our findings. The carved steps lead directly up and out. This discovery will change everything we know about crystalline formations."
+                }
+            ],
+            "exits": [],
+            "is_goal": true,
+            "win_message": "You have successfully navigated the Crystal Cavern Nexus and reached the legendary Nexus Core! The massive central crystal pulses with approval as you climb the carved steps toward the surface. Sunlight streams down from above, and you emerge victorious from the depths, having solved all the puzzles and discovered the secrets of the crystal cavern. You win!"
+        }
+    ]
+}

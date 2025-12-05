@@ -1,0 +1,260 @@
+{
+    "theme": "Hall of Mirrors Maze",
+    "title": "Hall of Mirrors Maze Adventure #25",
+    "goal": "Solve the puzzles, achieve the main objective, and escape.",
+    "starting_room": "mirror_gallery",
+    "rooms": [
+        {
+            "id": "mirror_gallery",
+            "name": "Mirror Gallery Entrance",
+            "description": "You stand in a circular room surrounded by dozens of ornate mirrors of all shapes and sizes. Each mirror reflects your image differently - some stretch you tall, others make you wide, and a few seem to show you from impossible angles. The air shimmers with an otherworldly quality. Silver frames gleam in the ethereal light that seems to come from everywhere and nowhere at once.",
+            "items": [
+                {
+                    "id": "tall_mirror",
+                    "name": "tall elongated mirror",
+                    "description": "A mirror that stretches your reflection impossibly tall. Strange numbers are etched into its silver frame.",
+                    "readable": true,
+                    "text": "Frame inscription: 'In this hall, count what you see - First the mirrors, then the keys, finally the doors to be free. The numbers reveal the way: 7, 2, 1.'"
+                },
+                {
+                    "id": "wide_mirror",
+                    "name": "wide distorting mirror",
+                    "description": "A mirror that makes your reflection appear squat and wide. Words are carved into its base.",
+                    "readable": true,
+                    "text": "Base inscription: 'What you seek lies within the vessel of vanity. The guardian's name is written in reverse upon the truthful glass.'"
+                },
+                {
+                    "id": "ornate_cabinet",
+                    "name": "mirrored cabinet",
+                    "description": "A cabinet with mirrored doors and three drawers, each with a small keyhole.",
+                    "subcontainers": [
+                        {
+                            "id": "top_drawer",
+                            "name": "top drawer",
+                            "locked": false,
+                            "contains": [
+                                "maze_map"
+                            ]
+                        },
+                        {
+                            "id": "middle_drawer",
+                            "name": "middle drawer",
+                            "locked": true,
+                            "lock_type": "combination",
+                            "combination": "721",
+                            "contains": [
+                                "silver_key"
+                            ]
+                        },
+                        {
+                            "id": "bottom_drawer",
+                            "name": "bottom drawer",
+                            "locked": false,
+                            "contains": []
+                        }
+                    ]
+                },
+                {
+                    "id": "maze_map",
+                    "name": "maze diagram",
+                    "description": "A hand-drawn map of the mirror maze with notes scribbled in the margins.",
+                    "readable": true,
+                    "text": "Map notes: 'The maze was created by the Mirror Master Narcissus in the year of seven mirrors. To escape, one must know: Who built this maze? Where does truth hide? What breaks all illusions?'"
+                },
+                {
+                    "id": "silver_key",
+                    "name": "reflective silver key",
+                    "description": "A key made of polished silver that reflects light in dazzling patterns."
+                },
+                {
+                    "id": "vanity_table",
+                    "name": "antique vanity table",
+                    "description": "An elegant vanity table with a locked drawer and various cosmetic items scattered on top.",
+                    "locked": true,
+                    "key_required": "silver_key",
+                    "contains": [
+                        "guardian_note"
+                    ]
+                },
+                {
+                    "id": "guardian_note",
+                    "name": "Mirror Guardian's letter",
+                    "description": "A sealed letter with an official-looking wax seal.",
+                    "readable": true,
+                    "text": "To whom it may concern: I, Narcissus, have created this maze to test those who seek passage. Truth hides in the Chamber of Reflections, where only the honest mirror shows reality. Remember: light breaks all illusions."
+                },
+                {
+                    "id": "decorative_mirrors",
+                    "name": "cluster of small mirrors",
+                    "description": "Seven small decorative mirrors arranged in a circle on the wall.",
+                    "searchable": true,
+                    "contains": [
+                        "brass_key"
+                    ]
+                },
+                {
+                    "id": "brass_key",
+                    "name": "tarnished brass key",
+                    "description": "An old brass key hidden behind one of the decorative mirrors."
+                },
+                {
+                    "id": "mirrored_archway",
+                    "name": "mirrored archway",
+                    "description": "An archway lined with mirrors leading deeper into the maze. A brass lock secures the passage.",
+                    "locked": true,
+                    "key_required": "brass_key",
+                    "direction": "east",
+                    "leads_to": "reflection_chamber",
+                    "aliases": [
+                        "archway",
+                        "east",
+                        "passage"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "reflection_chamber",
+            "name": "Chamber of Reflections",
+            "description": "A hexagonal chamber where every wall is a perfect mirror. Your reflection multiplies infinitely in all directions, creating a dizzying kaleidoscope effect. In the center stands a pedestal with a large mirror that seems different from the others - its reflection appears perfectly accurate and undistorted. Strange symbols glow faintly on the floor.",
+            "items": [
+                {
+                    "id": "truth_mirror",
+                    "name": "Mirror of Truth",
+                    "description": "The only mirror in the room that shows an accurate, undistorted reflection. Text appears backwards in its surface.",
+                    "readable": true,
+                    "text": "Reflected text (reads backwards): 'sussicraN' - When read correctly in a mirror, it spells: 'Narcissus'"
+                },
+                {
+                    "id": "distorted_mirror_1",
+                    "name": "warped mirror",
+                    "description": "A mirror that shows your reflection twisted and distorted.",
+                    "readable": true,
+                    "text": "This mirror lies. It shows only falsehood and deception."
+                },
+                {
+                    "id": "distorted_mirror_2",
+                    "name": "fractured mirror",
+                    "description": "A mirror with cracks that split your reflection into fragments.",
+                    "readable": true,
+                    "text": "Broken reflections reveal broken truths. Seek the whole to find reality."
+                },
+                {
+                    "id": "central_pedestal",
+                    "name": "crystal pedestal",
+                    "description": "A pedestal made of clear crystal with a locked compartment at its base.",
+                    "locked": true,
+                    "key_required": "silver_key",
+                    "contains": [
+                        "prism_crystal"
+                    ]
+                },
+                {
+                    "id": "prism_crystal",
+                    "name": "light prism crystal",
+                    "description": "A multifaceted crystal that refracts light into rainbow patterns. It seems to be an important artifact."
+                },
+                {
+                    "id": "floor_symbols",
+                    "name": "glowing floor symbols",
+                    "description": "Mystical symbols etched into the floor that pulse with soft light.",
+                    "readable": true,
+                    "text": "Symbols translate to: 'The Chamber of Reflections holds truth. Only light can shatter the final illusion and reveal the exit.'"
+                },
+                {
+                    "id": "hidden_alcove",
+                    "name": "concealed alcove",
+                    "description": "A small alcove hidden behind one of the mirrors, barely visible.",
+                    "searchable": true,
+                    "contains": [
+                        "ancient_scroll"
+                    ]
+                },
+                {
+                    "id": "ancient_scroll",
+                    "name": "scroll of the maze",
+                    "description": "An old parchment with faded writing.",
+                    "readable": true,
+                    "text": "Ancient wisdom: The maze was built by Narcissus, who loved his own reflection. Truth hides in the Chamber of Reflections. Light is the key to breaking all illusions and finding freedom."
+                },
+                {
+                    "id": "door_of_questions",
+                    "name": "door of questions",
+                    "description": "A magnificent door covered in mirrors and inscribed with three questions. Each question glows with an ethereal light.",
+                    "locked": true,
+                    "lock_type": "password",
+                    "password_questions": [
+                        {
+                            "question": "Who built this maze?",
+                            "answer": "narcissus",
+                            "hint": "Check the maze map and the Mirror of Truth"
+                        },
+                        {
+                            "question": "Where does truth hide?",
+                            "answer": "chamber of reflections",
+                            "hint": "The guardian's letter and floor symbols mention this"
+                        },
+                        {
+                            "question": "What breaks all illusions?",
+                            "answer": "light",
+                            "hint": "Multiple sources mention what shatters illusions"
+                        }
+                    ],
+                    "direction": "north",
+                    "leads_to": "true_exit",
+                    "aliases": [
+                        "door",
+                        "north",
+                        "exit"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "true_exit",
+            "name": "The True Exit",
+            "description": "You step through the door into a room bathed in pure, brilliant light. All the mirrors have vanished, replaced by clear glass windows showing the world outside. A final mirror stands before you, but this one shows not your reflection, but an open doorway leading to freedom. The illusions have been shattered.",
+            "items": [
+                {
+                    "id": "final_mirror",
+                    "name": "mirror of freedom",
+                    "description": "A mirror that no longer reflects, but instead shows the path to freedom.",
+                    "readable": true,
+                    "text": "Inscription: 'You have seen through the illusions and found the truth. The maze releases you.'"
+                },
+                {
+                    "id": "door_to_freedom",
+                    "name": "door to freedom",
+                    "description": "A simple wooden door leading out of the maze, requiring only the light crystal to open.",
+                    "locked": true,
+                    "key_required": "prism_crystal",
+                    "direction": "south",
+                    "leads_to": "outside_world",
+                    "aliases": [
+                        "door",
+                        "exit",
+                        "south"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "outside_world",
+            "name": "Beyond the Maze",
+            "description": "You emerge into bright sunlight, leaving the Hall of Mirrors behind. The maze's entrance has vanished, leaving only a shimmering memory. You are free, having conquered the illusions and found the truth within the reflections.",
+            "items": [
+                {
+                    "id": "sunlight",
+                    "name": "warm sunlight",
+                    "description": "The real world welcomes you back with warmth and clarity."
+                }
+            ],
+            "exits": [],
+            "is_goal": true,
+            "win_message": "Congratulations! You have successfully navigated the Hall of Mirrors Maze, solved all the puzzles, and escaped the endless reflections. The prism crystal in your hand glows one final time before fading, its purpose fulfilled. You have proven yourself worthy by distinguishing truth from illusion. You win!"
+        }
+    ]
+}

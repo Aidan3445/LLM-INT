@@ -1,0 +1,274 @@
+{
+    "theme": "Bio-Android Nursery",
+    "title": "Bio-Android Nursery Adventure #50",
+    "goal": "Solve the puzzles, achieve the main objective, and escape.",
+    "starting_room": "incubation_chamber",
+    "rooms": [
+        {
+            "id": "incubation_chamber",
+            "name": "Incubation Chamber",
+            "description": "A sterile white chamber filled with rows of glowing incubation pods. Bio-androids in various stages of development float in translucent gel. Soft blue lights pulse rhythmically, and the air hums with the sound of life support systems. Monitoring stations line the walls, and cables snake across the floor. The temperature is precisely controlled, creating an almost womb-like atmosphere.",
+            "items": [
+                {
+                    "id": "monitoring_station",
+                    "name": "monitoring station",
+                    "description": "A computer terminal displaying vital signs and growth metrics for the bio-androids",
+                    "readable": true,
+                    "text": "SYSTEM STATUS: Facility operational since 2087. Chief Scientist: Dr. Helena Voss. Lead Engineer: Marcus Chen. All bio-android specimens are numbered sequentially. Current active pods: Alpha Seven, Beta Three, Gamma Nine."
+                },
+                {
+                    "id": "incubation_pod_alpha",
+                    "name": "incubation pod alpha seven",
+                    "description": "A large cylindrical pod containing a nearly complete bio-android suspended in nutrient gel",
+                    "readable": true,
+                    "text": "Pod Alpha Seven - Status: 98% complete. Neural pathways: Fully integrated. Physical development: Optimal. Estimated completion: 24 hours."
+                },
+                {
+                    "id": "incubation_pod_beta",
+                    "name": "incubation pod beta three",
+                    "description": "A pod with a bio-android in mid-stage development, its features still forming",
+                    "readable": true,
+                    "text": "Pod Beta Three - Status: 67% complete. Skeletal structure: Solidified. Organ development: In progress. Estimated completion: 72 hours."
+                },
+                {
+                    "id": "supply_cabinet",
+                    "name": "medical supply cabinet",
+                    "description": "A tall cabinet with three compartments containing medical equipment and supplies",
+                    "subcontainers": [
+                        {
+                            "id": "top_compartment",
+                            "name": "top compartment",
+                            "locked": false,
+                            "contains": [
+                                "facility_manual"
+                            ]
+                        },
+                        {
+                            "id": "middle_compartment",
+                            "name": "middle compartment",
+                            "locked": true,
+                            "lock_type": "combination",
+                            "combination": "2087",
+                            "contains": [
+                                "access_keycard"
+                            ]
+                        },
+                        {
+                            "id": "bottom_compartment",
+                            "name": "bottom compartment",
+                            "locked": false,
+                            "contains": []
+                        }
+                    ]
+                },
+                {
+                    "id": "facility_manual",
+                    "name": "facility operations manual",
+                    "description": "A thick binder with operational procedures and protocols",
+                    "readable": true,
+                    "text": "Bio-Android Nursery Operations Manual - Established 2087. All personnel must follow safety protocols. Access to Control Center requires proper authorization. Emergency evacuation procedures are located in the Control Center archives."
+                },
+                {
+                    "id": "access_keycard",
+                    "name": "security access keycard",
+                    "description": "A magnetic keycard with a blue stripe and security clearance markings"
+                },
+                {
+                    "id": "workbench",
+                    "name": "maintenance workbench",
+                    "description": "A metal workbench covered with tools and diagnostic equipment",
+                    "searchable": true,
+                    "contains": [
+                        "technician_notes"
+                    ]
+                },
+                {
+                    "id": "technician_notes",
+                    "name": "technician log",
+                    "description": "A digital tablet with maintenance logs and personal notes",
+                    "readable": true,
+                    "text": "Maintenance Log - Marcus Chen: The combination to the middle compartment is the year we opened this facility. Dr. Voss keeps reminding me that proper documentation is essential. The bio-androids are developing perfectly in their growth pods."
+                },
+                {
+                    "id": "nutrient_tank",
+                    "name": "nutrient storage tank",
+                    "description": "A large tank containing the specialized gel used in the incubation pods",
+                    "searchable": true,
+                    "contains": [
+                        "small_wrench"
+                    ]
+                },
+                {
+                    "id": "small_wrench",
+                    "name": "adjustable wrench",
+                    "description": "A standard maintenance tool that could be useful"
+                },
+                {
+                    "id": "control_center_door",
+                    "name": "control center door",
+                    "description": "A reinforced door with a card reader and biometric scanner leading to the facility control center",
+                    "locked": true,
+                    "key_required": "access_keycard",
+                    "direction": "north",
+                    "leads_to": "control_center",
+                    "aliases": [
+                        "door",
+                        "north"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "control_center",
+            "name": "Control Center",
+            "description": "The nerve center of the bio-android facility. Multiple screens display real-time data from all incubation chambers. A large holographic display shows a rotating 3D model of a bio-android. Filing cabinets and research stations line the walls. The room has a clinical, high-tech atmosphere with soft white lighting and the constant hum of computers.",
+            "items": [
+                {
+                    "id": "main_console",
+                    "name": "main control console",
+                    "description": "The primary control station with multiple monitors and input terminals",
+                    "readable": true,
+                    "text": "FACILITY CONTROL SYSTEM: All bio-android development monitored from this location. Chief Scientist Dr. Helena Voss oversees all research. Growth pods are the primary development chambers. Emergency exit protocols require proper authorization."
+                },
+                {
+                    "id": "holographic_display",
+                    "name": "holographic display",
+                    "description": "A 3D projection showing detailed bio-android anatomy and systems",
+                    "readable": true,
+                    "text": "Bio-Android Development Model: Neural network integration complete at 98%. All specimens develop in specialized growth pods. Dr. Voss pioneered this revolutionary technology."
+                },
+                {
+                    "id": "research_desk",
+                    "name": "research desk",
+                    "description": "Dr. Voss's personal workstation covered with papers and data tablets",
+                    "subcontainers": [
+                        {
+                            "id": "desk_drawer",
+                            "name": "locked desk drawer",
+                            "locked": true,
+                            "key_required": "small_wrench",
+                            "contains": [
+                                "research_journal"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "research_journal",
+                    "name": "research journal",
+                    "description": "Dr. Voss's personal research notes and observations",
+                    "readable": true,
+                    "text": "Research Journal - Dr. Helena Voss: The bio-androids are developing beyond our expectations. Each specimen grows in its designated pod, monitored constantly. I am proud to be the chief scientist of this groundbreaking project. Emergency protocols are essential - only authorized personnel should access the exit bay."
+                },
+                {
+                    "id": "filing_cabinet",
+                    "name": "filing cabinet",
+                    "description": "A secure cabinet containing classified research documents",
+                    "searchable": true,
+                    "contains": [
+                        "personnel_roster",
+                        "emergency_protocol"
+                    ]
+                },
+                {
+                    "id": "personnel_roster",
+                    "name": "personnel roster",
+                    "description": "A document listing all facility staff and their roles",
+                    "readable": true,
+                    "text": "FACILITY PERSONNEL: Dr. Helena Voss - Chief Scientist, Project Director. Marcus Chen - Lead Engineer, Systems Maintenance. Dr. Sarah Kim - Bio-Systems Specialist. All personnel have emergency evacuation training."
+                },
+                {
+                    "id": "emergency_protocol",
+                    "name": "emergency protocol document",
+                    "description": "Official procedures for facility evacuation",
+                    "readable": true,
+                    "text": "EMERGENCY EVACUATION PROTOCOL: In case of system failure or containment breach, proceed to Emergency Exit Bay. Authorization required. Security verification questions: Who is the chief scientist? Where do bio-androids develop? What is your clearance level?"
+                },
+                {
+                    "id": "supply_locker",
+                    "name": "equipment locker",
+                    "description": "A metal locker containing emergency supplies and protective gear",
+                    "searchable": true,
+                    "contains": [
+                        "protective_suit"
+                    ]
+                },
+                {
+                    "id": "protective_suit",
+                    "name": "hazmat protective suit",
+                    "description": "A full-body suit required for safe evacuation through contaminated areas"
+                },
+                {
+                    "id": "wall_screen",
+                    "name": "wall mounted screen",
+                    "description": "A large display showing facility schematics and status reports",
+                    "readable": true,
+                    "text": "FACILITY SCHEMATIC: Incubation Chamber - Primary development area. Control Center - Monitoring and research hub. Emergency Exit Bay - Evacuation route. All bio-android specimens are classified as research personnel for security purposes."
+                },
+                {
+                    "id": "emergency_exit_bay_door",
+                    "name": "emergency exit bay door",
+                    "description": "A heavy security door leading to the emergency exit bay. A terminal displays three security verification questions.",
+                    "locked": true,
+                    "lock_type": "password",
+                    "password_questions": [
+                        {
+                            "question": "Who is the chief scientist?",
+                            "answer": "dr helena voss",
+                            "hint": "Check the monitoring station, research journal, and personnel roster"
+                        },
+                        {
+                            "question": "Where do bio-androids develop?",
+                            "answer": "growth pods",
+                            "hint": "Multiple documents mention where the bio-androids are grown"
+                        },
+                        {
+                            "question": "What is your clearance level?",
+                            "answer": "research personnel",
+                            "hint": "The wall screen mentions how bio-android specimens are classified"
+                        }
+                    ],
+                    "direction": "east",
+                    "leads_to": "emergency_exit_bay",
+                    "aliases": [
+                        "exit",
+                        "door",
+                        "east"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "emergency_exit_bay",
+            "name": "Emergency Exit Bay",
+            "description": "You have reached the emergency exit! A clean, well-lit chamber with decontamination showers and an airlock leading outside. Emergency lights glow green, indicating safe passage. Through the reinforced window, you can see the outside world. A sleek evacuation pod sits ready in its launch cradle. You are safe now.",
+            "items": [
+                {
+                    "id": "decontamination_shower",
+                    "name": "decontamination shower",
+                    "description": "An automated shower system for removing any biological contaminants"
+                },
+                {
+                    "id": "evacuation_pod",
+                    "name": "emergency evacuation pod",
+                    "description": "A small spacecraft designed for rapid evacuation to the nearest safe zone"
+                },
+                {
+                    "id": "airlock_window",
+                    "name": "reinforced window",
+                    "description": "A thick window showing the landscape outside the facility"
+                },
+                {
+                    "id": "emergency_supplies",
+                    "name": "emergency supply cache",
+                    "description": "A locker containing food, water, and medical supplies for evacuees"
+                }
+            ],
+            "exits": [],
+            "is_goal": true,
+            "win_message": "SUCCESS! You have escaped the Bio-Android Nursery and reached the emergency exit bay. The evacuation pod powers up, ready to transport you to safety. Behind you, the facility continues its work, but you have solved all the puzzles and found your way to freedom. The airlock opens, and fresh air rushes in. You win!"
+        }
+    ]
+}

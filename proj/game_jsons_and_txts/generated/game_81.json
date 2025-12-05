@@ -1,0 +1,223 @@
+{
+  "theme": "Underground River Temple",
+  "title": "Underground River Temple Adventure #81",
+  "goal": "Solve the puzzles, achieve the main objective, and escape.",
+  "starting_room": "flooded_antechamber",
+  "rooms": [
+    {
+      "id": "flooded_antechamber",
+      "name": "Flooded Antechamber",
+      "description": "You stand in a partially flooded stone chamber deep beneath the earth. Water drips from stalactites above, creating ripples in the ankle-deep water covering the floor. Ancient carvings of river gods adorn the walls, their eyes seeming to follow your movements. Phosphorescent moss provides an eerie green glow. A large stone chest sits on a raised platform, and a wooden cabinet leans against the far wall.",
+      "items": [
+        {
+          "id": "stone_chest",
+          "name": "iron bound chest",
+          "description": "A heavy stone chest reinforced with iron bands, sealed with a complex lock mechanism",
+          "locked": true,
+          "key_required": "crystal_key",
+          "contains": [
+            "temple_scroll"
+          ]
+        },
+        {
+          "id": "temple_scroll",
+          "name": "ancient temple scroll",
+          "description": "A waterproof scroll containing temple history and secrets",
+          "readable": true,
+          "text": "Temple Records: This sacred temple was built in the year 432 by High Priest Aquarius to honor the River Goddess. The three sacred guardians are: the Serpent of the Deep, the Crane of the Shore, and the Turtle of Wisdom. Only those who know the goddess's true domain may pass beyond."
+        },
+        {
+          "id": "wooden_cabinet",
+          "name": "weathered wooden cabinet",
+          "description": "An old cabinet with three drawers, warped by moisture but still functional",
+          "subcontainers": [
+            {
+              "id": "top_drawer",
+              "name": "top drawer",
+              "locked": false,
+              "contains": [
+                "priest_journal"
+              ]
+            },
+            {
+              "id": "middle_drawer",
+              "name": "middle drawer",
+              "locked": true,
+              "lock_type": "combination",
+              "combination": "432",
+              "contains": [
+                "crystal_key"
+              ]
+            },
+            {
+              "id": "bottom_drawer",
+              "name": "bottom drawer",
+              "locked": false,
+              "contains": []
+            }
+          ]
+        },
+        {
+          "id": "priest_journal",
+          "name": "priest's journal",
+          "description": "A leather-bound journal with faded ink",
+          "readable": true,
+          "text": "Journal Entry: I have hidden the crystal key in the middle drawer. The combination is the year of our temple's founding - 432. The River Goddess dwells in the sacred underground river that flows beneath our feet. We must never forget her domain."
+        },
+        {
+          "id": "crystal_key",
+          "name": "crystal key",
+          "description": "A translucent key carved from a single piece of blue crystal, cold to the touch"
+        },
+        {
+          "id": "wall_carvings",
+          "name": "ancient wall carvings",
+          "description": "Detailed carvings depicting three guardian creatures",
+          "readable": true,
+          "text": "The carvings show three sacred guardians: A serpent coiled in deep water, a crane standing on the shore, and a wise turtle bearing the weight of knowledge. Each guardian protects a different aspect of the temple."
+        },
+        {
+          "id": "moss_covered_altar",
+          "name": "moss covered altar",
+          "description": "A small stone altar covered in glowing phosphorescent moss",
+          "searchable": true,
+          "contains": [
+            "silver_coin"
+          ]
+        },
+        {
+          "id": "silver_coin",
+          "name": "ancient silver coin",
+          "description": "A coin bearing the image of a river goddess on one side"
+        },
+        {
+          "id": "carved_stone_archway",
+          "name": "carved stone archway",
+          "description": "A grand archway carved with flowing water patterns, leading deeper into the temple",
+          "locked": false,
+          "direction": "north",
+          "leads_to": "river_shrine",
+          "aliases": [
+            "archway",
+            "north"
+          ]
+        }
+      ],
+      "exits": []
+    },
+    {
+      "id": "river_shrine",
+      "name": "River Shrine",
+      "description": "A magnificent shrine chamber where an underground river flows through a carved channel in the floor. The sound of rushing water echoes off the vaulted ceiling. Statues of the three guardian creatures stand in alcoves along the walls. Offerings of flowers and coins lie scattered near the water's edge. A sealed door bearing the symbol of the River Goddess blocks the northern passage.",
+      "items": [
+        {
+          "id": "serpent_statue",
+          "name": "serpent statue",
+          "description": "A coiled serpent carved from black stone, its eyes set with green gems",
+          "readable": true,
+          "text": "Plaque beneath statue: 'The Serpent of the Deep - Guardian of hidden waters and keeper of secrets. It dwells in the darkest depths.'"
+        },
+        {
+          "id": "crane_statue",
+          "name": "crane statue",
+          "description": "An elegant crane carved from white marble, standing on one leg",
+          "readable": true,
+          "text": "Plaque beneath statue: 'The Crane of the Shore - Guardian of transitions between land and water. It watches over the boundary between worlds.'"
+        },
+        {
+          "id": "turtle_statue",
+          "name": "turtle statue",
+          "description": "A wise-looking turtle carved from jade, its shell inscribed with ancient symbols",
+          "readable": true,
+          "text": "Plaque beneath statue: 'The Turtle of Wisdom - Guardian of knowledge and patience. It carries the weight of all temple secrets.'"
+        },
+        {
+          "id": "offering_bowl",
+          "name": "stone offering bowl",
+          "description": "A bowl filled with water from the sacred river",
+          "searchable": true,
+          "contains": [
+            "waterproof_note"
+          ]
+        },
+        {
+          "id": "waterproof_note",
+          "name": "waterproof note",
+          "description": "A note sealed in wax to protect it from water",
+          "readable": true,
+          "text": "Note from the temple keeper: Remember the sacred guardians in order of their realm - first the depths, then the shore, then the land. The goddess herself resides in the underground river that gives this temple life."
+        },
+        {
+          "id": "river_channel",
+          "name": "underground river channel",
+          "description": "Crystal-clear water flows through a carved stone channel, disappearing into darkness",
+          "readable": true,
+          "text": "The water is pure and cold, flowing from some deep source. This underground river is the heart of the temple, the domain of the River Goddess herself."
+        },
+        {
+          "id": "sealed_sanctum_door",
+          "name": "sealed sanctum door",
+          "description": "A massive door carved with the image of the River Goddess. Three questions are inscribed in the stone, glowing with a faint blue light.",
+          "locked": true,
+          "lock_type": "password",
+          "password_questions": [
+            {
+              "question": "Who built this temple?",
+              "answer": "high priest aquarius",
+              "hint": "The temple scroll contains the temple's history"
+            },
+            {
+              "question": "Name the three guardians in order of their realm",
+              "answer": "serpent crane turtle",
+              "hint": "Check the waterproof note for the correct order"
+            },
+            {
+              "question": "What is the domain of the River Goddess?",
+              "answer": "underground river",
+              "hint": "The priest's journal and river channel descriptions mention this"
+            }
+          ],
+          "direction": "north",
+          "leads_to": "inner_sanctum",
+          "aliases": [
+            "door",
+            "north"
+          ]
+        }
+      ],
+      "exits": []
+    },
+    {
+      "id": "inner_sanctum",
+      "name": "Inner Sanctum",
+      "description": "You have reached the heart of the Underground River Temple! The inner sanctum is a breathtaking chamber where the underground river flows through a pool of crystal-clear water that glows with divine light. A magnificent statue of the River Goddess rises from the center of the pool, her arms outstretched in blessing. Ancient treasures and offerings surround the statue. On the far side, a shaft of natural light streams down from above, illuminating a stairway leading up to freedom.",
+      "items": [
+        {
+          "id": "goddess_statue",
+          "name": "statue of the River Goddess",
+          "description": "A beautiful statue carved from luminous white stone, depicting a serene goddess with flowing robes that seem to ripple like water"
+        },
+        {
+          "id": "sacred_pool",
+          "name": "sacred pool",
+          "description": "A pool of glowing water that radiates peace and tranquility",
+          "readable": true,
+          "text": "The water in this pool is said to grant blessings to those who have proven themselves worthy by solving the temple's mysteries."
+        },
+        {
+          "id": "treasure_offerings",
+          "name": "ancient treasure offerings",
+          "description": "Gold coins, precious gems, and sacred artifacts left by pilgrims over the centuries"
+        },
+        {
+          "id": "escape_stairway",
+          "name": "illuminated stairway",
+          "description": "A natural stone stairway leading upward toward daylight and freedom"
+        }
+      ],
+      "exits": [],
+      "is_goal": true,
+      "win_message": "You have successfully navigated the Underground River Temple and reached the sacred Inner Sanctum! The River Goddess's blessing washes over you as you stand in her presence. The mysteries of the temple have been solved, and the path to freedom lies before you. You climb the illuminated stairway and emerge into the sunlight, forever changed by your journey through the ancient temple. You win!"
+    }
+  ]
+}

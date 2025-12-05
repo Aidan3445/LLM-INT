@@ -1,0 +1,260 @@
+{
+    "theme": "Virtual Reality Malfunction",
+    "title": "Virtual Reality Malfunction Adventure #27",
+    "goal": "Solve the puzzles, achieve the main objective, and escape.",
+    "starting_room": "corrupted_tutorial_zone",
+    "rooms": [
+        {
+            "id": "corrupted_tutorial_zone",
+            "name": "Corrupted Tutorial Zone",
+            "description": "A glitching virtual environment where reality flickers and distorts. Digital artifacts float through the air like broken pixels. Half-rendered objects phase in and out of existence. The walls display cascading error messages in neon green text. An NPC guide stands frozen mid-gesture, its face a scrambled mess of polygons. The air hums with the sound of corrupted data.",
+            "items": [
+                {
+                    "id": "frozen_npc",
+                    "name": "frozen tutorial guide",
+                    "description": "A glitching NPC stuck in a loop, repeating fragmented welcome messages",
+                    "readable": true,
+                    "text": "W-W-Welcome to NeuroScape VR, user. This sim-sim-simulation was launched in 2047 by Dr. Sarah Chen, Chief Architect. Please proceed to the System Core for-for-for... ERROR 404."
+                },
+                {
+                    "id": "tutorial_terminal",
+                    "name": "flickering tutorial terminal",
+                    "description": "A holographic terminal displaying corrupted tutorial information",
+                    "readable": true,
+                    "text": "TUTORIAL SYSTEM v3.2 - Created by NeuroScape Industries. System Administrator: Marcus Webb. Emergency protocols stored in System Core. WARNING: Critical malfunction detected. Year of deployment: 2047."
+                },
+                {
+                    "id": "glitching_locker",
+                    "name": "glitching storage locker",
+                    "description": "A digital locker that phases between solid and transparent states",
+                    "subcontainers": [
+                        {
+                            "id": "top_compartment",
+                            "name": "top compartment",
+                            "locked": false,
+                            "contains": [
+                                "error_log"
+                            ]
+                        },
+                        {
+                            "id": "bottom_compartment",
+                            "name": "bottom compartment",
+                            "locked": true,
+                            "lock_type": "combination",
+                            "combination": "2047",
+                            "contains": [
+                                "access_chip"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "error_log",
+                    "name": "system error log",
+                    "description": "A holographic document displaying system errors",
+                    "readable": true,
+                    "text": "ERROR LOG - NeuroScape VR System: Critical malfunction in year 2047. All users trapped in simulation. System Administrator Marcus Webb attempting emergency shutdown. Access to System Core required. Combination is deployment year: 2047."
+                },
+                {
+                    "id": "access_chip",
+                    "name": "digital access chip",
+                    "description": "A glowing data chip that grants access to restricted areas"
+                },
+                {
+                    "id": "corrupted_chest",
+                    "name": "corrupted data chest",
+                    "description": "A container made of flickering polygons with a digital lock",
+                    "locked": true,
+                    "key_required": "access_chip",
+                    "contains": [
+                        "architect_memo",
+                        "debug_tool"
+                    ]
+                },
+                {
+                    "id": "architect_memo",
+                    "name": "architect's memo",
+                    "description": "A message from the system's creator",
+                    "readable": true,
+                    "text": "From Dr. Sarah Chen, Chief Architect: If you're reading this, the system has malfunctioned. Emergency logout protocols are in the System Core. You must know: Who designed this system? Where are emergency protocols stored? What is your true nature?"
+                },
+                {
+                    "id": "debug_tool",
+                    "name": "debug access tool",
+                    "description": "A digital tool that can bypass corrupted barriers"
+                },
+                {
+                    "id": "floating_debris",
+                    "name": "floating digital debris",
+                    "description": "Fragments of broken code and corrupted textures drifting in the air",
+                    "searchable": true,
+                    "contains": [
+                        "memory_fragment"
+                    ]
+                },
+                {
+                    "id": "memory_fragment",
+                    "name": "memory fragment",
+                    "description": "A piece of corrupted memory data",
+                    "readable": true,
+                    "text": "MEMORY FRAGMENT: You are a beta tester for NeuroScape VR. The simulation trapped all users when it malfunctioned. You must reach the Emergency Exit Protocol to escape."
+                },
+                {
+                    "id": "corrupted_data_barrier",
+                    "name": "corrupted data barrier",
+                    "description": "A wall of glitching code blocking the path to the System Core. It requires the debug tool to pass through.",
+                    "locked": true,
+                    "key_required": "debug_tool",
+                    "direction": "north",
+                    "leads_to": "system_core_chamber",
+                    "aliases": [
+                        "barrier",
+                        "wall",
+                        "north"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "system_core_chamber",
+            "name": "System Core Chamber",
+            "description": "A vast digital space representing the heart of the VR system. Streams of data flow like rivers through the air, forming complex patterns. Massive server towers made of light pulse with energy. Holographic displays show system diagnostics and error reports. The ground is a grid of glowing lines. Everything flickers and glitches periodically. A sealed emergency exit portal shimmers at the far end.",
+            "items": [
+                {
+                    "id": "main_server_tower",
+                    "name": "central server tower",
+                    "description": "A towering structure of light and data, the core of the entire system",
+                    "readable": true,
+                    "text": "CENTRAL SERVER - NeuroScape VR System Core. Architect: Dr. Sarah Chen. Administrator: Marcus Webb. All emergency protocols stored here in the System Core. Status: CRITICAL MALFUNCTION."
+                },
+                {
+                    "id": "diagnostic_terminal",
+                    "name": "system diagnostic terminal",
+                    "description": "A holographic interface displaying system status and logs",
+                    "readable": true,
+                    "text": "SYSTEM DIAGNOSTICS: NeuroScape VR experiencing cascade failure. Emergency protocols located in System Core database. Chief Architect Dr. Chen's authorization required for emergency logout. All trapped users are beta testers."
+                },
+                {
+                    "id": "data_stream",
+                    "name": "flowing data stream",
+                    "description": "A river of glowing code flowing through the chamber",
+                    "searchable": true,
+                    "contains": [
+                        "admin_badge"
+                    ]
+                },
+                {
+                    "id": "admin_badge",
+                    "name": "administrator badge",
+                    "description": "A digital badge belonging to Marcus Webb, the System Administrator"
+                },
+                {
+                    "id": "security_console",
+                    "name": "security access console",
+                    "description": "A console with multiple access panels and compartments",
+                    "subcontainers": [
+                        {
+                            "id": "left_panel",
+                            "name": "left access panel",
+                            "locked": false,
+                            "contains": [
+                                "protocol_manual"
+                            ]
+                        },
+                        {
+                            "id": "right_panel",
+                            "name": "right access panel",
+                            "locked": false,
+                            "contains": []
+                        }
+                    ]
+                },
+                {
+                    "id": "protocol_manual",
+                    "name": "emergency protocol manual",
+                    "description": "A digital manual outlining emergency procedures",
+                    "readable": true,
+                    "text": "EMERGENCY PROTOCOLS: In case of system failure, proceed to Emergency Exit Portal. Authorization requires verification: 1) Who is the Chief Architect? 2) Where are emergency protocols stored? 3) What is your role in this simulation?"
+                },
+                {
+                    "id": "holographic_display",
+                    "name": "holographic status display",
+                    "description": "A large display showing system information and user data",
+                    "readable": true,
+                    "text": "USER STATUS REPORT: All beta testers trapped in simulation due to malfunction. Chief Architect Dr. Sarah Chen working on external fix. System Administrator Marcus Webb maintaining core stability. Emergency logout available at Exit Protocol."
+                },
+                {
+                    "id": "memory_bank",
+                    "name": "system memory bank",
+                    "description": "A crystalline structure storing system memories and data",
+                    "searchable": true,
+                    "contains": [
+                        "identity_file"
+                    ]
+                },
+                {
+                    "id": "identity_file",
+                    "name": "user identity file",
+                    "description": "Your personal file within the system",
+                    "readable": true,
+                    "text": "USER PROFILE: You are a beta tester for NeuroScape VR. Role: Beta Tester. Status: Trapped in simulation. Clearance: Emergency protocols accessible. Remember your role to escape."
+                },
+                {
+                    "id": "emergency_exit_portal",
+                    "name": "emergency exit portal",
+                    "description": "A shimmering portal surrounded by security barriers. Three verification questions appear in holographic text before it.",
+                    "locked": true,
+                    "lock_type": "password",
+                    "password_questions": [
+                        {
+                            "question": "Who is the Chief Architect?",
+                            "answer": "dr sarah chen",
+                            "hint": "Check the system logs and the frozen NPC's message"
+                        },
+                        {
+                            "question": "Where are emergency protocols stored?",
+                            "answer": "system core",
+                            "hint": "Multiple terminals mention where the protocols are kept"
+                        },
+                        {
+                            "question": "What is your role?",
+                            "answer": "beta tester",
+                            "hint": "Your identity file and memory fragments reveal your role"
+                        }
+                    ],
+                    "direction": "east",
+                    "leads_to": "emergency_exit_protocol",
+                    "aliases": [
+                        "portal",
+                        "exit",
+                        "east"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "emergency_exit_protocol",
+            "name": "Emergency Exit Protocol Chamber",
+            "description": "You've reached the emergency logout zone! A pristine white space free of glitches and corruption. In the center, a glowing logout terminal displays 'EMERGENCY LOGOUT READY' in calm blue text. The chaotic digital world fades away behind you. A countdown timer shows the logout sequence initializing. You can feel yourself beginning to disconnect from the simulation.",
+            "items": [
+                {
+                    "id": "logout_terminal",
+                    "name": "emergency logout terminal",
+                    "description": "A clean, functional terminal ready to disconnect you from the VR system",
+                    "readable": true,
+                    "text": "EMERGENCY LOGOUT PROTOCOL ACTIVATED. User: Beta Tester. Disconnection sequence initiated. Thank you for your participation in NeuroScape VR. We apologize for the malfunction. Logout in 3... 2... 1..."
+                },
+                {
+                    "id": "status_display",
+                    "name": "system status display",
+                    "description": "A screen showing your successful escape from the corrupted simulation"
+                }
+            ],
+            "exits": [],
+            "is_goal": true,
+            "win_message": "SUCCESS! The emergency logout protocol activates, and you feel the VR headset releasing from your head. The digital world dissolves around you as you return to reality. You've escaped the malfunctioning NeuroScape VR simulation! As your vision clears, you see technicians rushing to help other trapped beta testers. You made it out. You win!"
+        }
+    ]
+}

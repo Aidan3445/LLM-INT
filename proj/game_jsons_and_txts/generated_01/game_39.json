@@ -1,0 +1,265 @@
+{
+    "theme": "Knight's Tournament Grounds",
+    "title": "Knight's Tournament Grounds Adventure #39",
+    "goal": "Solve the puzzles, achieve the main objective, and escape.",
+    "starting_room": "knights_pavilion",
+    "rooms": [
+        {
+            "id": "knights_pavilion",
+            "name": "Knight's Pavilion",
+            "description": "A grand canvas pavilion decorated with colorful banners and heraldic shields. Wooden benches line the walls, and armor stands display gleaming plate mail. The smell of leather and oil fills the air. Tournament pennants flutter from the tent poles. A heavy wooden chest sits in the corner, and various equipment is scattered about.",
+            "items": [
+                {
+                    "id": "armor_stand",
+                    "name": "knight's armor stand",
+                    "description": "A wooden stand displaying a full suit of tournament armor with a blue and gold surcoat",
+                    "searchable": true,
+                    "contains": [
+                        "brass_key"
+                    ]
+                },
+                {
+                    "id": "brass_key",
+                    "name": "small brass key",
+                    "description": "A brass key with a lion emblem engraved on the handle"
+                },
+                {
+                    "id": "equipment_table",
+                    "name": "equipment table",
+                    "description": "A sturdy table covered with tournament gear and documents",
+                    "subcontainers": [
+                        {
+                            "id": "left_compartment",
+                            "name": "left compartment",
+                            "locked": false,
+                            "contains": [
+                                "tournament_proclamation"
+                            ]
+                        },
+                        {
+                            "id": "right_compartment",
+                            "name": "right compartment",
+                            "locked": false,
+                            "contains": []
+                        }
+                    ]
+                },
+                {
+                    "id": "tournament_proclamation",
+                    "name": "tournament proclamation",
+                    "description": "An official proclamation announcing the grand tournament",
+                    "readable": true,
+                    "text": "HEAR YE! The Grand Tournament of 1347 is hereby proclaimed! All knights of noble birth are invited to compete for glory and honor. The champion shall be crowned in the Champion's Hall. Lord Marshal Sir Edmund presides over all contests held upon the tournament lists."
+                },
+                {
+                    "id": "wooden_chest",
+                    "name": "heavy wooden chest",
+                    "description": "A reinforced chest bound with iron straps and a four-digit combination lock",
+                    "locked": true,
+                    "lock_type": "combination",
+                    "combination": "1347",
+                    "contains": [
+                        "iron_key",
+                        "herald_scroll"
+                    ]
+                },
+                {
+                    "id": "iron_key",
+                    "name": "iron key",
+                    "description": "A heavy iron key with intricate scrollwork"
+                },
+                {
+                    "id": "herald_scroll",
+                    "name": "herald's scroll",
+                    "description": "A scroll containing tournament records and announcements",
+                    "readable": true,
+                    "text": "Tournament Records: The year 1347 marks our finest tournament yet. Sir Roland the Valiant has won every joust, proving himself the greatest champion. The armory holds the weapons and shields of all competitors. Remember: only knights of proven valor may enter the Champion's Hall."
+                },
+                {
+                    "id": "weapon_rack",
+                    "name": "weapon rack",
+                    "description": "A rack holding practice swords and wooden shields",
+                    "searchable": true,
+                    "contains": [
+                        "squire_note"
+                    ]
+                },
+                {
+                    "id": "squire_note",
+                    "name": "squire's note",
+                    "description": "A hastily written note from a squire",
+                    "readable": true,
+                    "text": "Reminder: Sir Roland's shield is in the armory. The brass key opens the supply cabinet where we keep the tournament records. Don't forget - the combination to the chest is the year of this grand tournament!"
+                },
+                {
+                    "id": "supply_cabinet",
+                    "name": "locked supply cabinet",
+                    "description": "A tall cabinet with a brass lock, containing tournament supplies",
+                    "locked": true,
+                    "key_required": "brass_key",
+                    "contains": [
+                        "tournament_roster"
+                    ]
+                },
+                {
+                    "id": "tournament_roster",
+                    "name": "tournament roster",
+                    "description": "A detailed list of all competing knights and their achievements",
+                    "readable": true,
+                    "text": "TOURNAMENT ROSTER: Sir Roland the Valiant - Champion of the Lists, undefeated in single combat. Sir Geoffrey of Kent - Master of the Melee. Sir William the Bold - Victor of the Archery Contest. All final jousts are held upon the tournament lists before the assembled nobility."
+                },
+                {
+                    "id": "pavilion_entrance",
+                    "name": "pavilion entrance",
+                    "description": "A canvas flap leading out to the tournament grounds and toward the armory",
+                    "locked": true,
+                    "key_required": "iron_key",
+                    "direction": "north",
+                    "leads_to": "armory",
+                    "aliases": [
+                        "entrance",
+                        "exit",
+                        "north"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "armory",
+            "name": "Tournament Armory",
+            "description": "A stone building filled with racks of weapons, shields, and armor. Swords gleam in the torchlight, and colorful heraldic banners hang from the rafters. The air smells of metal and oil. A large table displays various shields bearing different coats of arms. The Champion's Hall lies beyond a magnificent door to the east.",
+            "items": [
+                {
+                    "id": "shield_display",
+                    "name": "heraldic shield display",
+                    "description": "A table showcasing the shields of tournament competitors",
+                    "readable": true,
+                    "text": "Shield Display: Sir Roland's shield - Azure, a lion rampant or. Sir Geoffrey's shield - Gules, three swords argent. Sir William's shield - Vert, a stag proper. Each knight's heraldry tells the story of their noble lineage."
+                },
+                {
+                    "id": "weapon_cabinet",
+                    "name": "weapon cabinet",
+                    "description": "A locked cabinet containing the finest tournament weapons",
+                    "subcontainers": [
+                        {
+                            "id": "lance_section",
+                            "name": "lance section",
+                            "locked": false,
+                            "contains": [
+                                "lance_record"
+                            ]
+                        },
+                        {
+                            "id": "sword_section",
+                            "name": "sword section",
+                            "locked": false,
+                            "contains": []
+                        }
+                    ]
+                },
+                {
+                    "id": "lance_record",
+                    "name": "lance tournament record",
+                    "description": "A parchment recording jousting victories",
+                    "readable": true,
+                    "text": "JOUSTING RECORDS: Sir Roland the Valiant has unhorsed every opponent in the lists. His skill with the lance is unmatched. The final joust takes place on the tournament lists, where champions are made and legends are born."
+                },
+                {
+                    "id": "armor_workbench",
+                    "name": "armor workbench",
+                    "description": "A workbench with tools for maintaining armor and weapons",
+                    "searchable": true,
+                    "contains": [
+                        "armorer_journal"
+                    ]
+                },
+                {
+                    "id": "armorer_journal",
+                    "name": "armorer's journal",
+                    "description": "A leather-bound journal kept by the master armorer",
+                    "readable": true,
+                    "text": "Day 47: I have repaired Sir Roland's armor after his victorious joust. He is truly the champion of this tournament. Lord Marshal Sir Edmund has declared that only knights who understand the tournament's ways may enter the Champion's Hall. Three questions guard the entrance."
+                },
+                {
+                    "id": "heraldic_banner",
+                    "name": "champion's banner",
+                    "description": "A magnificent banner bearing Sir Roland's coat of arms",
+                    "readable": true,
+                    "text": "The banner displays a golden lion on a blue field - the arms of Sir Roland the Valiant, Champion of the Tournament. Beneath is inscribed: 'Victor of the Lists, Defender of Honor, Knight of the Realm.'"
+                },
+                {
+                    "id": "tournament_map",
+                    "name": "tournament grounds map",
+                    "description": "A detailed map showing the layout of the tournament grounds",
+                    "readable": true,
+                    "text": "MAP OF TOURNAMENT GROUNDS: The Knight's Pavilion (preparation area), The Armory (weapons and armor), The Tournament Lists (jousting field), The Champion's Hall (victory celebration). All knights compete upon the lists for glory and honor."
+                },
+                {
+                    "id": "champion's_hall_door",
+                    "name": "champion's hall door",
+                    "description": "An ornate door carved with scenes of jousting knights and tournament victories. Three questions are engraved on a golden plaque.",
+                    "locked": true,
+                    "lock_type": "password",
+                    "password_questions": [
+                        {
+                            "question": "Who is the tournament champion?",
+                            "answer": "sir roland",
+                            "hint": "Check the herald's scroll, tournament roster, and armorer's journal"
+                        },
+                        {
+                            "question": "Where does the final joust take place?",
+                            "answer": "tournament lists",
+                            "hint": "Multiple documents mention where jousting occurs"
+                        },
+                        {
+                            "question": "What is your noble rank?",
+                            "answer": "knight",
+                            "hint": "The proclamation states who may compete in the tournament"
+                        }
+                    ],
+                    "direction": "east",
+                    "leads_to": "champions_hall",
+                    "aliases": [
+                        "door",
+                        "hall",
+                        "east"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "champions_hall",
+            "name": "Champion's Hall",
+            "description": "You have entered the glorious Champion's Hall! A magnificent chamber with vaulted ceilings and stained glass windows depicting legendary knights. Banners of past champions hang from the walls. In the center, a golden throne awaits the tournament victor. Trumpets sound as you enter, and the assembled nobility rises in applause. You have proven yourself worthy!",
+            "items": [
+                {
+                    "id": "golden_throne",
+                    "name": "champion's throne",
+                    "description": "A magnificent throne of carved oak gilded with gold leaf, reserved for the tournament champion"
+                },
+                {
+                    "id": "victory_crown",
+                    "name": "laurel crown of victory",
+                    "description": "A golden crown of laurel leaves, the symbol of tournament supremacy"
+                },
+                {
+                    "id": "champions_tapestry",
+                    "name": "tapestry of champions",
+                    "description": "A grand tapestry showing all the great tournament victors throughout history",
+                    "readable": true,
+                    "text": "The tapestry depicts legendary champions: Sir Roland the Valiant, Sir Percival the Pure, Sir Galahad the Good. Your name shall be added to this honored roll."
+                },
+                {
+                    "id": "trophy_table",
+                    "name": "table of trophies",
+                    "description": "A table displaying golden cups, jeweled swords, and other prizes of victory"
+                }
+            ],
+            "exits": [],
+            "is_goal": true,
+            "win_message": "Congratulations, noble knight! You have solved the mysteries of the tournament grounds and proven yourself worthy of entering the Champion's Hall. Lord Marshal Sir Edmund places the laurel crown upon your head as the crowd cheers. You are declared the victor of the Grand Tournament! Glory and honor are yours. You win!"
+        }
+    ]
+}

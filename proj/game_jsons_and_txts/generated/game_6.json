@@ -1,0 +1,210 @@
+{
+    "theme": "Abandoned Cyber-Zoo",
+    "title": "Abandoned Cyber-Zoo Adventure #6",
+    "goal": "Solve the puzzles, achieve the main objective, and escape.",
+    "starting_room": "security_control_room",
+    "rooms": [
+        {
+            "id": "security_control_room",
+            "name": "Security Control Room",
+            "description": "A dimly lit control room with flickering holographic displays showing empty zoo enclosures. Dust covers the consoles, and sparking wires hang from the ceiling. Through the reinforced window, you can see the abandoned exhibits bathed in emergency lighting. The air smells of ozone and decay.",
+            "items": [
+                {
+                    "id": "main_console",
+                    "name": "main security console",
+                    "description": "A large console with multiple compartments and a cracked display screen",
+                    "subcontainers": [
+                        {
+                            "id": "console_top_drawer",
+                            "name": "top drawer",
+                            "locked": false,
+                            "contains": [
+                                "security_log"
+                            ]
+                        },
+                        {
+                            "id": "console_bottom_drawer",
+                            "name": "bottom drawer",
+                            "locked": true,
+                            "lock_type": "combination",
+                            "combination": "2157",
+                            "contains": [
+                                "access_keycard"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "security_log",
+                    "name": "security incident log",
+                    "description": "A digital tablet with the last security entries",
+                    "readable": true,
+                    "text": "FINAL ENTRY - Day 2157: All systems failing. The cyber animals have gone dormant. Director Chen ordered evacuation. Remember: The zoo opened with three original exhibits - the Apex Predator in the Habitat Dome, the Aquatic Wonder in the Marine Tank, and the Sky Dancer in the Aviary."
+                },
+                {
+                    "id": "access_keycard",
+                    "name": "security access keycard",
+                    "description": "A magnetic keycard labeled 'EXHIBIT ACCESS - AUTHORIZED PERSONNEL ONLY'"
+                },
+                {
+                    "id": "supply_locker",
+                    "name": "emergency supply locker",
+                    "description": "A metal locker with emergency equipment",
+                    "searchable": true,
+                    "contains": [
+                        "maintenance_tool"
+                    ]
+                },
+                {
+                    "id": "maintenance_tool",
+                    "name": "electronic maintenance tool",
+                    "description": "A multi-purpose tool for repairing electronic locks and panels"
+                },
+                {
+                    "id": "wall_monitor",
+                    "name": "cracked wall monitor",
+                    "description": "A damaged screen still displaying some information",
+                    "readable": true,
+                    "text": "ZOO DIRECTORY: Habitat Dome (Cyber Tiger Exhibit) - East Wing. Marine Observatory - North Wing. Aviary Complex - West Wing. Shuttle Bay - Restricted Access via Habitat Dome."
+                },
+                {
+                    "id": "exhibit_hall_access_door",
+                    "name": "exhibit hall access door",
+                    "description": "A reinforced door leading to the main exhibit area. The card reader blinks red.",
+                    "locked": true,
+                    "key_required": "access_keycard",
+                    "direction": "east",
+                    "leads_to": "habitat_dome",
+                    "aliases": [
+                        "door",
+                        "east"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "habitat_dome",
+            "name": "Cyber Habitat Dome",
+            "description": "A massive domed enclosure designed to simulate a jungle environment. Artificial trees with fiber optic leaves cast strange shadows. In the center, a deactivated cyber tiger lies dormant on a rock formation, its metallic fur dulled with age. Holographic butterflies flicker in and out of existence. Information kiosks line the walkway.",
+            "items": [
+                {
+                    "id": "cyber_tiger_display",
+                    "name": "cyber tiger display",
+                    "description": "A magnificent robotic tiger, now powered down. A maintenance panel is visible on its side.",
+                    "searchable": true,
+                    "contains": [
+                        "power_core_fragment"
+                    ]
+                },
+                {
+                    "id": "power_core_fragment",
+                    "name": "glowing power core fragment",
+                    "description": "A piece of advanced technology that still pulses with energy"
+                },
+                {
+                    "id": "information_kiosk",
+                    "name": "interactive information kiosk",
+                    "description": "A touch screen display with zoo information",
+                    "readable": true,
+                    "text": "CYBER TIGER EXHIBIT: Our apex predator! Designed by Dr. Sarah Chen in 2157. This magnificent creature represents the pinnacle of bio-mechanical engineering. Fun fact: Tigers are known as apex predators in their natural habitat!"
+                },
+                {
+                    "id": "exhibit_storage",
+                    "name": "exhibit storage cabinet",
+                    "description": "A locked cabinet containing exhibit maintenance supplies",
+                    "locked": true,
+                    "key_required": "maintenance_tool",
+                    "contains": [
+                        "director_note",
+                        "shuttle_key"
+                    ]
+                },
+                {
+                    "id": "director_note",
+                    "name": "director's personal note",
+                    "description": "A handwritten note from Director Chen",
+                    "readable": true,
+                    "text": "Personal reminder: Shuttle bay access requires security clearance. Questions are: Who designed the cyber animals? What year did we open? What type of predator is the tiger? The shuttle key is in this cabinet. - Director Sarah Chen"
+                },
+                {
+                    "id": "shuttle_key",
+                    "name": "shuttle bay key",
+                    "description": "A physical key labeled 'EMERGENCY SHUTTLE BAY'"
+                },
+                {
+                    "id": "observation_deck",
+                    "name": "elevated observation deck",
+                    "description": "A raised platform with a better view of the exhibit",
+                    "searchable": true,
+                    "contains": [
+                        "visitor_guide"
+                    ]
+                },
+                {
+                    "id": "visitor_guide",
+                    "name": "zoo visitor guide",
+                    "description": "A promotional brochure for the cyber zoo",
+                    "readable": true,
+                    "text": "Welcome to the Cyber-Zoo! Opened in 2157 by visionary Director Dr. Sarah Chen. Experience the future of wildlife preservation through advanced robotics and AI. Our exhibits feature the most realistic cyber animals ever created!"
+                },
+                {
+                    "id": "shuttle_bay_access_door",
+                    "name": "shuttle bay access door",
+                    "description": "A heavy security door with a biometric scanner and question panel. A sign reads 'EMERGENCY EVACUATION ROUTE'.",
+                    "locked": true,
+                    "lock_type": "password",
+                    "password_questions": [
+                        {
+                            "question": "Who designed the cyber animals?",
+                            "answer": "dr sarah chen",
+                            "hint": "Check the information kiosk and visitor materials"
+                        },
+                        {
+                            "question": "What year did the zoo open?",
+                            "answer": "2157",
+                            "hint": "The security log and visitor guide both mention this"
+                        },
+                        {
+                            "question": "What type of predator is the tiger?",
+                            "answer": "apex predator",
+                            "hint": "Read the information kiosk about the cyber tiger"
+                        }
+                    ],
+                    "direction": "north",
+                    "leads_to": "shuttle_bay",
+                    "aliases": [
+                        "door",
+                        "north"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "shuttle_bay",
+            "name": "Emergency Shuttle Bay",
+            "description": "You've made it to the evacuation point! A sleek emergency shuttle sits on the launch pad, its engines humming to life as you approach. The bay doors are open to the sky, showing stars beyond. Control panels glow with ready status indicators. Freedom is just a launch sequence away.",
+            "items": [
+                {
+                    "id": "emergency_shuttle",
+                    "name": "emergency evacuation shuttle",
+                    "description": "A compact spacecraft designed for emergency evacuations, fully fueled and ready to launch"
+                },
+                {
+                    "id": "launch_console",
+                    "name": "shuttle launch console",
+                    "description": "The control panel shows all systems green and ready for departure"
+                },
+                {
+                    "id": "bay_window",
+                    "name": "observation window",
+                    "description": "A large window showing the launch pad and the open sky beyond"
+                }
+            ],
+            "exits": [],
+            "is_goal": true,
+            "win_message": "SUCCESS! You board the emergency shuttle and initiate the launch sequence. The engines roar to life as the shuttle lifts off from the abandoned cyber-zoo. Through the window, you watch the derelict facility shrink below you as you escape to safety. The cyber animals will sleep forever, but you are free! You win!"
+        }
+    ]
+}

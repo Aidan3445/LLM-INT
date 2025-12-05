@@ -1,0 +1,247 @@
+{
+    "theme": "Cultivated Dream Orchard",
+    "title": "Cultivated Dream Orchard Adventure #45",
+    "goal": "Solve the puzzles, achieve the main objective, and escape.",
+    "starting_room": "orchard_entrance",
+    "rooms": [
+        {
+            "id": "orchard_entrance",
+            "name": "Orchard Entrance Gate",
+            "description": "You stand before a magnificent orchard where trees bear glowing fruit that pulse with dream energy. The air shimmers with possibility and smells of honey and starlight. An ornate wooden gate blocks the path forward, and a small gardener's shed stands to one side. Luminescent butterflies drift between the trees.",
+            "items": [
+                {
+                    "id": "gardeners_shed",
+                    "name": "weathered gardener's shed",
+                    "description": "A small wooden shed with tools and supplies for tending the dream orchard",
+                    "subcontainers": [
+                        {
+                            "id": "tool_box",
+                            "name": "tool box",
+                            "locked": false,
+                            "contains": [
+                                "cultivation_manual"
+                            ]
+                        },
+                        {
+                            "id": "locked_cabinet",
+                            "name": "locked cabinet",
+                            "locked": true,
+                            "lock_type": "combination",
+                            "combination": "739",
+                            "contains": [
+                                "silver_pruning_shears"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "cultivation_manual",
+                    "name": "dream cultivation manual",
+                    "description": "A leather bound guide to growing dreams in the orchard",
+                    "readable": true,
+                    "text": "Dream Cultivation Guide: The orchard was founded in year 739 by the Dreamweaver Celestia. Three types of dreams grow here: Hope Dreams (golden fruit), Memory Dreams (silver fruit), and Prophecy Dreams (violet fruit). The master gardener is known as the Keeper of Visions."
+                },
+                {
+                    "id": "silver_pruning_shears",
+                    "name": "enchanted pruning shears",
+                    "description": "Silver shears that can cut through magical barriers and harvest dream fruit"
+                },
+                {
+                    "id": "welcome_sign",
+                    "name": "carved welcome sign",
+                    "description": "An ornate wooden sign with information about the orchard",
+                    "readable": true,
+                    "text": "Welcome to the Cultivated Dream Orchard. Established 739. Tended by the Keeper of Visions. Please respect the dream trees and harvest only ripe fruit. The Harvest Sanctuary awaits those who understand the orchard's secrets."
+                },
+                {
+                    "id": "supply_crate",
+                    "name": "wooden supply crate",
+                    "description": "A crate filled with gardening supplies and equipment",
+                    "searchable": true,
+                    "contains": [
+                        "brass_key"
+                    ]
+                },
+                {
+                    "id": "brass_key",
+                    "name": "tarnished brass key",
+                    "description": "An old brass key with a tree symbol engraved on it"
+                },
+                {
+                    "id": "locked_chest",
+                    "name": "gardener's locked chest",
+                    "description": "A sturdy chest secured with a brass lock",
+                    "locked": true,
+                    "key_required": "brass_key",
+                    "contains": [
+                        "orchard_history"
+                    ]
+                },
+                {
+                    "id": "orchard_history",
+                    "name": "orchard history scroll",
+                    "description": "A scroll detailing the history of the dream orchard",
+                    "readable": true,
+                    "text": "The Cultivated Dream Orchard was created by Dreamweaver Celestia, who planted the first dream seeds in the Sacred Grove. The most powerful dreams are stored in the Harvest Sanctuary, where only those who prove their knowledge may enter."
+                },
+                {
+                    "id": "ornate_wooden_gate",
+                    "name": "ornate wooden gate",
+                    "description": "A beautiful gate carved with dream symbols, overgrown with magical vines",
+                    "locked": true,
+                    "key_required": "silver_pruning_shears",
+                    "direction": "north",
+                    "leads_to": "dream_grove",
+                    "aliases": [
+                        "gate",
+                        "north"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "dream_grove",
+            "name": "Sacred Dream Grove",
+            "description": "The heart of the orchard, where ancient trees with silver bark and golden leaves grow in perfect circles. Dream fruit hangs from every branch, glowing softly. In the center stands a stone fountain flowing with liquid starlight. Three magnificent trees dominate the grove, each bearing a different type of dream fruit. A grand archway leads to the Harvest Sanctuary.",
+            "items": [
+                {
+                    "id": "hope_tree",
+                    "name": "ancient hope tree",
+                    "description": "A majestic tree bearing golden fruit that radiates warmth and optimism",
+                    "readable": true,
+                    "text": "Plaque at base: 'The Hope Tree - First planted by Celestia. Its golden fruit brings courage and joy to all who taste it.'"
+                },
+                {
+                    "id": "memory_tree",
+                    "name": "ancient memory tree",
+                    "description": "A graceful tree with silver fruit that shimmer with captured moments",
+                    "readable": true,
+                    "text": "Plaque at base: 'The Memory Tree - Preserves precious moments in silver fruit. Each fruit contains a cherished memory from the Sacred Grove.'"
+                },
+                {
+                    "id": "prophecy_tree",
+                    "name": "ancient prophecy tree",
+                    "description": "A mysterious tree bearing violet fruit that pulse with future visions",
+                    "readable": true,
+                    "text": "Plaque at base: 'The Prophecy Tree - Its violet fruit reveals glimpses of what may come. The Keeper of Visions tends it with great care.'"
+                },
+                {
+                    "id": "starlight_fountain",
+                    "name": "starlight fountain",
+                    "description": "A fountain flowing with liquid light, surrounded by flowering dream vines",
+                    "searchable": true,
+                    "contains": [
+                        "golden_dream_fruit",
+                        "keepers_journal"
+                    ]
+                },
+                {
+                    "id": "golden_dream_fruit",
+                    "name": "ripe golden dream fruit",
+                    "description": "A perfectly ripe hope dream fruit glowing with golden light, one of the sacred artifacts"
+                },
+                {
+                    "id": "keepers_journal",
+                    "name": "Keeper's personal journal",
+                    "description": "A journal belonging to the Keeper of Visions",
+                    "readable": true,
+                    "text": "Journal Entry: I am the Keeper of Visions, guardian of this sacred orchard. To enter the Harvest Sanctuary, one must answer the three questions of cultivation: Who founded this orchard? Where do the most precious memories grow? What is my title as guardian?"
+                },
+                {
+                    "id": "stone_pedestal",
+                    "name": "carved stone pedestal",
+                    "description": "A pedestal with a hollow space perfect for placing dream fruit",
+                    "searchable": true,
+                    "contains": [
+                        "violet_dream_fruit"
+                    ]
+                },
+                {
+                    "id": "violet_dream_fruit",
+                    "name": "ripe violet dream fruit",
+                    "description": "A perfectly ripe prophecy dream fruit pulsing with violet energy, another sacred artifact"
+                },
+                {
+                    "id": "grand_sanctuary_archway",
+                    "name": "grand sanctuary archway",
+                    "description": "A magnificent archway covered in flowering vines and glowing runes. Three questions are inscribed in the stone.",
+                    "locked": true,
+                    "lock_type": "password",
+                    "password_questions": [
+                        {
+                            "question": "Who founded this orchard?",
+                            "answer": "dreamweaver celestia",
+                            "hint": "Check the cultivation manual and orchard history"
+                        },
+                        {
+                            "question": "Where do the most precious memories grow?",
+                            "answer": "sacred grove",
+                            "hint": "Read the Memory Tree's plaque and the orchard history"
+                        },
+                        {
+                            "question": "What is the guardian's title?",
+                            "answer": "keeper of visions",
+                            "hint": "The welcome sign and journal mention this title"
+                        }
+                    ],
+                    "direction": "east",
+                    "leads_to": "harvest_sanctuary",
+                    "aliases": [
+                        "archway",
+                        "east"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "harvest_sanctuary",
+            "name": "Harvest Sanctuary",
+            "description": "You have reached the legendary Harvest Sanctuary! A breathtaking chamber where the most powerful dream fruits are stored in crystalline cases. The walls are lined with shelves holding dreams of every color imaginable. In the center, a portal of swirling dream energy offers passage back to the waking world. The air thrums with concentrated dream magic.",
+            "items": [
+                {
+                    "id": "crystal_cases",
+                    "name": "crystalline display cases",
+                    "description": "Beautiful cases holding the most precious dream fruits ever cultivated"
+                },
+                {
+                    "id": "dream_archive",
+                    "name": "archive of dreams",
+                    "description": "Shelves containing thousands of preserved dreams in glowing containers",
+                    "readable": true,
+                    "text": "Archive Label: The Cultivated Dream Orchard's complete collection. Every dream ever grown, harvested, and preserved. A testament to Dreamweaver Celestia's vision and the Keeper's dedication."
+                },
+                {
+                    "id": "portal_to_waking_world",
+                    "name": "portal to waking world",
+                    "description": "A shimmering portal that leads back to reality, activated by the power of dream fruits",
+                    "locked": true,
+                    "key_required": "golden_dream_fruit",
+                    "direction": "north",
+                    "leads_to": "awakening",
+                    "aliases": [
+                        "portal",
+                        "north"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "awakening",
+            "name": "The Awakening",
+            "description": "You step through the portal and find yourself in a beautiful garden at dawn. The dream orchard fades like morning mist, but you hold in your hands the golden and violet dream fruits - tangible proof of your journey. The dreams you cultivated will stay with you forever.",
+            "items": [
+                {
+                    "id": "morning_garden",
+                    "name": "dawn garden",
+                    "description": "A peaceful garden where dreams and reality meet in perfect harmony"
+                }
+            ],
+            "exits": [],
+            "is_goal": true,
+            "win_message": "You have successfully navigated the Cultivated Dream Orchard and harvested the sacred dream fruits! The golden fruit fills you with hope, and the violet fruit grants you glimpses of wonderful possibilities. Dreamweaver Celestia's legacy lives on through you. You win!"
+        }
+    ]
+}

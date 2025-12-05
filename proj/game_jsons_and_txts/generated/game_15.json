@@ -1,0 +1,230 @@
+{
+  "theme": "Steampunk Observatory",
+  "title": "Steampunk Observatory Adventure #15",
+  "goal": "Solve the puzzles, achieve the main objective, and escape.",
+  "starting_room": "observation_deck",
+  "rooms": [
+    {
+      "id": "observation_deck",
+      "name": "Observation Deck",
+      "description": "A circular chamber filled with brass telescopes and copper instruments. Gears tick rhythmically in the walls. Through the domed glass ceiling, stars twinkle in the night sky. Steam hisses from pipes running along the floor. A massive orrery dominates the center of the room, its planets slowly rotating on mechanical arms.",
+      "items": [
+        {
+          "id": "brass_telescope",
+          "name": "brass telescope",
+          "description": "A large telescope mounted on a rotating base, pointed at the stars",
+          "readable": true,
+          "text": "Engraved on the base: 'Built in the year 1889 by Master Clockmaker Gideon Brass. May it reveal the secrets of the cosmos.'"
+        },
+        {
+          "id": "instrument_cabinet",
+          "name": "instrument cabinet",
+          "description": "A tall cabinet with glass doors containing various astronomical tools and three drawers",
+          "subcontainers": [
+            {
+              "id": "top_drawer",
+              "name": "top drawer",
+              "locked": false,
+              "contains": [
+                "astronomers_journal"
+              ]
+            },
+            {
+              "id": "middle_drawer",
+              "name": "middle drawer",
+              "locked": true,
+              "lock_type": "combination",
+              "combination": "1889",
+              "contains": [
+                "copper_key"
+              ]
+            },
+            {
+              "id": "bottom_drawer",
+              "name": "bottom drawer",
+              "locked": false,
+              "contains": []
+            }
+          ]
+        },
+        {
+          "id": "astronomers_journal",
+          "name": "astronomer's journal",
+          "description": "A leather bound notebook filled with observations and calculations",
+          "readable": true,
+          "text": "Journal Entry: The observatory was completed in 1889, the same year I discovered the comet. My assistants are Cogsworth the engineer, Tesla the electrician, and young Ada the mathematician. The gear chamber holds my greatest invention."
+        },
+        {
+          "id": "copper_key",
+          "name": "copper key",
+          "description": "A key made of polished copper with gear teeth along its edge"
+        },
+        {
+          "id": "mechanical_orrery",
+          "name": "mechanical orrery",
+          "description": "A complex clockwork model of the solar system with eight planets orbiting a central sun",
+          "readable": true,
+          "text": "A brass plaque reads: 'Eight planets circle our sun. Count them well, for their number unlocks secrets below.'"
+        },
+        {
+          "id": "supply_chest",
+          "name": "supply chest",
+          "description": "A wooden chest reinforced with brass corners",
+          "locked": true,
+          "key_required": "copper_key",
+          "contains": [
+            "maintenance_log"
+          ]
+        },
+        {
+          "id": "maintenance_log",
+          "name": "maintenance log",
+          "description": "A technical document detailing the observatory's systems",
+          "readable": true,
+          "text": "MAINTENANCE LOG: The roof mechanism requires the master control wheel from the gear chamber. Engineer Cogsworth maintains all mechanical systems. The control room password system was installed for security."
+        },
+        {
+          "id": "iron_spiral_staircase",
+          "name": "iron spiral staircase",
+          "description": "A wrought iron staircase descending into the mechanical depths of the observatory",
+          "locked": false,
+          "direction": "south",
+          "leads_to": "gear_chamber",
+          "aliases": [
+            "staircase",
+            "stairs",
+            "down"
+          ]
+        }
+      ],
+      "exits": []
+    },
+    {
+      "id": "gear_chamber",
+      "name": "Gear Chamber",
+      "description": "A cavernous room filled with massive rotating gears and spinning flywheels. Steam pipes cross the ceiling like metal veins. The rhythmic clanking of machinery echoes off the stone walls. Pressure gauges line one wall, and a large workbench sits covered in tools and blueprints. A reinforced vault door leads to the control room.",
+      "items": [
+        {
+          "id": "wall_mounted_gear_mechanism",
+          "name": "wall mounted gear mechanism",
+          "description": "A complex arrangement of interlocking gears mounted on the wall",
+          "readable": true,
+          "text": "Each gear is labeled with a number. The largest gear shows '8' and appears to be the key to the system."
+        },
+        {
+          "id": "workbench",
+          "name": "engineer's workbench",
+          "description": "A sturdy workbench covered in tools, oil cans, and technical drawings",
+          "searchable": true,
+          "contains": [
+            "blueprint"
+          ]
+        },
+        {
+          "id": "blueprint",
+          "name": "technical blueprint",
+          "description": "A detailed schematic of the observatory's systems",
+          "readable": true,
+          "text": "OBSERVATORY SCHEMATIC: The control room houses the master telescope controls and roof opening mechanism. Access requires knowledge of: the chief engineer's name, the location of the master control wheel, and the builder's identity."
+        },
+        {
+          "id": "brass_bound_chest",
+          "name": "brass bound chest",
+          "description": "A heavy chest bound with brass straps and secured with a combination lock showing eight numbered dials",
+          "locked": true,
+          "lock_type": "combination",
+          "combination": "8",
+          "contains": [
+            "master_control_wheel",
+            "engineers_note"
+          ]
+        },
+        {
+          "id": "master_control_wheel",
+          "name": "master control wheel",
+          "description": "A large brass wheel with intricate engravings, clearly an important component"
+        },
+        {
+          "id": "engineers_note",
+          "name": "engineer's note",
+          "description": "A note written in precise handwriting",
+          "readable": true,
+          "text": "Note from Cogsworth: The master control wheel must be installed in the control room to operate the roof mechanism. Remember, the wheel is stored in the gear chamber for safekeeping."
+        },
+        {
+          "id": "pressure_gauges",
+          "name": "pressure gauge panel",
+          "description": "A panel of brass pressure gauges monitoring the steam systems",
+          "readable": true,
+          "text": "All gauges read normal. A small label reads: 'Maintained by Chief Engineer Cogsworth since 1889.'"
+        },
+        {
+          "id": "tool_rack",
+          "name": "tool rack",
+          "description": "A rack holding various wrenches, hammers, and mechanical tools",
+          "searchable": true,
+          "contains": []
+        },
+        {
+          "id": "reinforced_vault_door",
+          "name": "reinforced vault door",
+          "description": "A massive steel door with a security panel displaying three questions etched in brass",
+          "locked": true,
+          "lock_type": "password",
+          "password_questions": [
+            {
+              "question": "Who is the chief engineer?",
+              "answer": "cogsworth",
+              "hint": "Check the pressure gauges and the astronomer's journal"
+            },
+            {
+              "question": "Where is the master control wheel stored?",
+              "answer": "gear chamber",
+              "hint": "The engineer's note mentions the storage location"
+            },
+            {
+              "question": "Who built this observatory?",
+              "answer": "gideon brass",
+              "hint": "Look at the engraving on the brass telescope"
+            }
+          ],
+          "direction": "east",
+          "leads_to": "control_room",
+          "aliases": [
+            "vault",
+            "door",
+            "east"
+          ]
+        }
+      ],
+      "exits": []
+    },
+    {
+      "id": "control_room",
+      "name": "Observatory Control Room",
+      "description": "You have reached the heart of the observatory! A magnificent control room with walls covered in switches, levers, and glowing vacuum tubes. In the center stands a pedestal with a socket for the master control wheel. Above, a massive steam powered roof mechanism waits to open the observatory dome to the stars. Through the windows, you can see the night sky waiting to be explored.",
+      "items": [
+        {
+          "id": "control_pedestal",
+          "name": "control pedestal",
+          "description": "A brass pedestal with a wheel socket and activation lever",
+          "readable": true,
+          "text": "Instructions: Insert the master control wheel and pull the lever to open the observatory roof and complete your mission."
+        },
+        {
+          "id": "vacuum_tube_array",
+          "name": "vacuum tube array",
+          "description": "Rows of glowing tubes that power the observatory's electrical systems"
+        },
+        {
+          "id": "master_telescope_controls",
+          "name": "master telescope controls",
+          "description": "An elaborate control panel for operating the main telescope"
+        }
+      ],
+      "exits": [],
+      "is_goal": true,
+      "win_message": "You insert the master control wheel into the pedestal and pull the activation lever. With a tremendous hiss of steam and grinding of gears, the observatory roof splits open, revealing the magnificent starry sky above! The telescopes whir to life, and you have successfully restored the Steampunk Observatory to its full glory. The cosmos awaits your discoveries! You win!"
+    }
+  ]
+}

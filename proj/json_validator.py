@@ -54,9 +54,17 @@ class TextWorldValidator:
         for room in self.data.get('rooms', []):
             if 'id' in room:
                 if room['id'] in self.all_room_ids:
-                    self.errors.append(f"Duplicate room ID: '{room['id']}'")
+                    old_id = room['id']
+                    new_id = room['name'].replace(' ', '_')
+                    if new_id == old_id:
+                        self.errors.append(f"Duplicate room id '{old_id}' found and cannot be auto-corrected")
+                    else:
+                        # Update our tracking sets
+                        self.all_room_ids.discard(old_id)
+                        self.warnings.append(f"Duplicate room id '{old_id}' auto-corrected to '{room['id']}' to match its name")
+                        room['id'] = new_id
                 self.all_room_ids.add(room['id'])
-            
+        
             if 'name' in room:
                 self._check_name_punctuation(room['name'], "Room name")
                 
@@ -67,7 +75,15 @@ class TextWorldValidator:
         """Recursively collect item IDs"""
         if 'id' in item:
             if item['id'] in self.all_item_ids:
-                self.errors.append(f"Duplicate item ID: '{item['id']}'")
+                old_id = item['id']
+                new_id = item['name'].replace(' ', '_')
+                if new_id == old_id:
+                    self.errors.append(f"Duplicate item id '{old_id}' found and cannot be auto-corrected")
+                else:
+                    # Update our tracking sets
+                    self.all_item_ids.discard(old_id)
+                    self.warnings.append(f"Duplicate item id '{old_id}' auto-corrected to '{item['id']}' to match its name")
+                    item['id'] = new_id
             self.all_item_ids.add(item['id'])
         
         if 'name' in item:
@@ -77,7 +93,15 @@ class TextWorldValidator:
         for sub in item.get('subcontainers', []):
             if 'id' in sub:
                 if sub['id'] in self.all_item_ids:
-                    self.errors.append(f"Duplicate item ID: '{sub['id']}'")
+                    old_id = sub['id']
+                    new_id = sub['name'].replace(' ', '_')
+                    if new_id == old_id:
+                        self.errors.append(f"Duplicate subcontainer id '{old_id}' found and cannot be auto-corrected")
+                    else:
+                        # Update our tracking sets
+                        self.all_item_ids.discard(old_id)
+                        self.warnings.append(f"Duplicate subcontainer id '{old_id}' auto-corrected to '{sub['id']}' to match its name")
+                        sub['id'] = new_id
                 self.all_item_ids.add(sub['id'])
             
             if 'name' in sub:
@@ -224,8 +248,6 @@ class TextWorldValidator:
                     self.errors.append(f"Item '{item_id}' has lock_type 'combination' but missing 'combination' field")
                 elif not isinstance(item['combination'], str):
                     self.errors.append(f"Item '{item_id}' combination must be a string")
-                elif not item['combination'].isdigit():
-                    self.errors.append(f"Item '{item_id}' combination must contain only digits")
             
             if lock_type == 'password':
                 if 'password_questions' not in item:
@@ -328,6 +350,7 @@ def validate_json_file(json_file_path: str) -> bool:
         print(f"   Rooms: {len(validator.all_room_ids)}")
         print(f"   Items: {len(validator.all_item_ids)}")
         if warnings:
+            print(feedback)
             print(f"\n⚠️ Updating file with auto-corrections...")
             with open(json_file_path, 'w') as f:
                 json.dump(json_data, f, indent=4)

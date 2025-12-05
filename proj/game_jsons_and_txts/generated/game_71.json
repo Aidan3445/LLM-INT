@@ -1,0 +1,210 @@
+{
+  "theme": "Nanotech Cleanroom",
+  "title": "Nanotech Cleanroom Adventure #71",
+  "goal": "Solve the puzzles, achieve the main objective, and escape.",
+  "starting_room": "decontamination_chamber",
+  "rooms": [
+    {
+      "id": "decontamination_chamber",
+      "name": "Decontamination Chamber",
+      "description": "A sterile white chamber with UV lights mounted on the ceiling. The air smells of disinfectant and ozone. Warning signs about contamination protocols cover the walls. A sealed airlock door leads deeper into the facility. Equipment lockers line one wall.",
+      "items": [
+        {
+          "id": "equipment_locker",
+          "name": "equipment storage locker",
+          "description": "A tall metal locker containing cleanroom supplies and equipment",
+          "subcontainers": [
+            {
+              "id": "top_shelf",
+              "name": "top shelf",
+              "locked": false,
+              "contains": [
+                "safety_manual"
+              ]
+            },
+            {
+              "id": "middle_shelf",
+              "name": "middle shelf",
+              "locked": true,
+              "lock_type": "combination",
+              "combination": "100",
+              "contains": [
+                "access_keycard"
+              ]
+            },
+            {
+              "id": "bottom_shelf",
+              "name": "bottom shelf",
+              "locked": false,
+              "contains": []
+            }
+          ]
+        },
+        {
+          "id": "safety_manual",
+          "name": "cleanroom safety manual",
+          "description": "A laminated manual with safety protocols and procedures",
+          "readable": true,
+          "text": "CLEANROOM PROTOCOL: All personnel must maintain particle count below 100 particles per cubic meter. Access keycard required for airlock entry. Lead researcher: Dr Sarah Chen. Project: Nanobot Assembly. Location: Research Lab Alpha."
+        },
+        {
+          "id": "access_keycard",
+          "name": "security access keycard",
+          "description": "A white plastic keycard with a magnetic strip and security chip"
+        },
+        {
+          "id": "decon_station",
+          "name": "decontamination station",
+          "description": "A station with air jets and chemical sprayers for removing contaminants",
+          "searchable": true,
+          "contains": [
+            "maintenance_log"
+          ]
+        },
+        {
+          "id": "maintenance_log",
+          "name": "maintenance logbook",
+          "description": "A digital tablet showing recent maintenance records",
+          "readable": true,
+          "text": "Maintenance Log Entry: Airlock system serviced. Vault combination changed to match nanobot scale specifications: 1 nanometer, 50 nanometers, 25 nanometers. Remember the order for vault access."
+        },
+        {
+          "id": "pressurized_airlock_door",
+          "name": "pressurized airlock door",
+          "description": "A heavy airlock door with a card reader and pressure gauge. Red lights indicate it is sealed.",
+          "locked": true,
+          "key_required": "access_keycard",
+          "direction": "north",
+          "leads_to": "main_cleanroom",
+          "aliases": [
+            "airlock",
+            "north"
+          ]
+        }
+      ],
+      "exits": []
+    },
+    {
+      "id": "main_cleanroom",
+      "name": "Main Cleanroom Laboratory",
+      "description": "A vast laboratory with white walls and floors. HEPA filters hum overhead, maintaining positive air pressure. Workbenches hold microscopes and precision instruments. Robotic arms are frozen mid-assembly. A massive vault door dominates the far wall. Display screens show magnified views of nanoscale structures.",
+      "items": [
+        {
+          "id": "research_workbench",
+          "name": "primary research workbench",
+          "description": "A workbench covered with scientific instruments and research materials",
+          "searchable": true,
+          "contains": [
+            "research_notes"
+          ]
+        },
+        {
+          "id": "research_notes",
+          "name": "research notes from Dr Chen",
+          "description": "A bound notebook filled with technical diagrams and observations",
+          "readable": true,
+          "text": "Research Notes: Nanobot prototype complete! Specifications: 1nm core processor, 50nm propulsion system, 25nm sensor array. Storage location: Secure vault in Research Lab Alpha. Security questions based on project details."
+        },
+        {
+          "id": "computer_terminal",
+          "name": "laboratory computer terminal",
+          "description": "A workstation with multiple monitors displaying research data",
+          "readable": true,
+          "text": "PROJECT DATABASE: Lead Researcher - Dr Sarah Chen. Project Name: Nanobot Assembly Initiative. Funding Source: Advanced Materials Institute. Status: Prototype complete and secured in vault."
+        },
+        {
+          "id": "storage_cabinet",
+          "name": "chemical storage cabinet",
+          "description": "A locked cabinet containing various chemicals and materials",
+          "locked": true,
+          "lock_type": "combination",
+          "combination": "15025",
+          "contains": [
+            "vault_access_memo"
+          ]
+        },
+        {
+          "id": "vault_access_memo",
+          "name": "vault access memo",
+          "description": "An official memo about vault security procedures",
+          "readable": true,
+          "text": "CONFIDENTIAL MEMO: Vault access requires answering security questions. Q1: Who leads this research project? Q2: Where is the nanobot prototype stored? Q3: What organization funds this research?"
+        },
+        {
+          "id": "microscope_station",
+          "name": "electron microscope station",
+          "description": "A sophisticated microscope setup for viewing nanoscale structures",
+          "searchable": true,
+          "contains": [
+            "calibration_card"
+          ]
+        },
+        {
+          "id": "calibration_card",
+          "name": "microscope calibration card",
+          "description": "A reference card with measurement standards",
+          "readable": true,
+          "text": "Calibration Standards: 1 nanometer = 0.001 micrometers. Cabinet combination uses nanobot dimensions in nanometers: core (1), propulsion (50), sensors (25). Enter as continuous number."
+        },
+        {
+          "id": "nanotech_vault_door",
+          "name": "nanotech vault door",
+          "description": "A reinforced titanium vault door with biometric scanner and security terminal. Three security questions are displayed on the screen.",
+          "locked": true,
+          "lock_type": "password",
+          "password_questions": [
+            {
+              "question": "Who leads this research project?",
+              "answer": "dr sarah chen",
+              "hint": "Check the safety manual and computer terminal for the lead researcher"
+            },
+            {
+              "question": "Where is the nanobot prototype stored?",
+              "answer": "research lab alpha",
+              "hint": "The research notes mention the storage location"
+            },
+            {
+              "question": "What organization funds this research?",
+              "answer": "advanced materials institute",
+              "hint": "Look at the computer terminal database for funding information"
+            }
+          ],
+          "direction": "east",
+          "leads_to": "secure_vault",
+          "aliases": [
+            "vault",
+            "east"
+          ]
+        }
+      ],
+      "exits": []
+    },
+    {
+      "id": "secure_vault",
+      "name": "Nanotech Secure Vault",
+      "description": "You have reached the secure vault! A climate-controlled chamber with reinforced walls. In the center, on a magnetic levitation platform, floats a sealed containment unit holding the nanobot prototype. The microscopic machines shimmer with an iridescent glow. Monitors display real-time data on the nanobots. An emergency exit leads to the outside.",
+      "items": [
+        {
+          "id": "containment_unit",
+          "name": "nanobot containment unit",
+          "description": "A transparent sealed container holding billions of microscopic nanobots that glow with inner light"
+        },
+        {
+          "id": "levitation_platform",
+          "name": "magnetic levitation platform",
+          "description": "An advanced platform using magnetic fields to suspend the containment unit in mid-air"
+        },
+        {
+          "id": "monitoring_system",
+          "name": "nanobot monitoring system",
+          "description": "A bank of screens showing magnified views and data streams from the nanobots",
+          "readable": true,
+          "text": "MONITORING DATA: Nanobot Prototype Status - STABLE. Count: 10 billion units. Functionality: 100%. Applications: Medical repair, environmental cleanup, precision manufacturing. Project success confirmed."
+        }
+      ],
+      "exits": [],
+      "is_goal": true,
+      "win_message": "SUCCESS! You have accessed the nanotech vault and secured the revolutionary nanobot prototype. The microscopic machines represent a breakthrough in nanotechnology that will change the world. Mission accomplished! You win!"
+    }
+  ]
+}

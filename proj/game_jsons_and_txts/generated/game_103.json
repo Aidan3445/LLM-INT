@@ -1,0 +1,213 @@
+{
+    "theme": "Biohazard Quarantine Zone",
+    "title": "Biohazard Quarantine Zone Adventure #103",
+    "goal": "Solve the puzzles, achieve the main objective, and escape.",
+    "starting_room": "decontamination_chamber",
+    "rooms": [
+        {
+            "id": "decontamination_chamber",
+            "name": "Decontamination Chamber",
+            "description": "A sterile white chamber with harsh fluorescent lighting. Yellow and black biohazard symbols cover the walls. Chemical showers line one side, and a hazmat suit hangs on a rack. The air smells of disinfectant. Emergency lights flash red, and a computerized voice repeats: 'Quarantine Protocol Active.'",
+            "items": [
+                {
+                    "id": "supply_locker",
+                    "name": "emergency supply locker",
+                    "description": "A metal locker with medical supplies and equipment",
+                    "subcontainers": [
+                        {
+                            "id": "top_compartment",
+                            "name": "top compartment",
+                            "locked": false,
+                            "contains": [
+                                "facility_map"
+                            ]
+                        },
+                        {
+                            "id": "bottom_compartment",
+                            "name": "bottom compartment",
+                            "locked": true,
+                            "lock_type": "combination",
+                            "combination": "2847",
+                            "contains": [
+                                "access_keycard"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "facility_map",
+                    "name": "facility emergency map",
+                    "description": "A laminated map showing the quarantine facility layout",
+                    "readable": true,
+                    "text": "FACILITY MAP: Decontamination Chamber (Level 1) - Research Laboratory (Level 2) - Emergency Exit (Level 3). WARNING: Outbreak occurred in Sample Storage on 28-47. All personnel must evacuate."
+                },
+                {
+                    "id": "access_keycard",
+                    "name": "security access keycard",
+                    "description": "A magnetic keycard labeled 'Research Level Access'"
+                },
+                {
+                    "id": "hazmat_rack",
+                    "name": "hazmat equipment rack",
+                    "description": "A rack holding protective gear and equipment",
+                    "searchable": true,
+                    "contains": [
+                        "contamination_scanner"
+                    ]
+                },
+                {
+                    "id": "contamination_scanner",
+                    "name": "handheld contamination scanner",
+                    "description": "A device for detecting biohazard contamination levels"
+                },
+                {
+                    "id": "decon_terminal",
+                    "name": "decontamination terminal",
+                    "description": "A computer terminal displaying quarantine protocols",
+                    "readable": true,
+                    "text": "DECONTAMINATION PROTOCOL: Facility placed under quarantine by Chief Scientist Doctor Elena Reeves. Pathogen designation: Strain X-7. Containment breach in cold storage unit. All staff must report to emergency assembly point."
+                },
+                {
+                    "id": "sealed_laboratory_door",
+                    "name": "sealed laboratory door",
+                    "description": "A heavy reinforced door with a card reader and biohazard warning",
+                    "locked": true,
+                    "key_required": "access_keycard",
+                    "direction": "north",
+                    "leads_to": "research_laboratory",
+                    "aliases": [
+                        "door",
+                        "north"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "research_laboratory",
+            "name": "Research Laboratory",
+            "description": "A large laboratory filled with scientific equipment, microscopes, and containment units. Broken glass litters the floor. Research posters cover the walls showing various pathogen studies. Computer monitors display flashing error messages. A massive vault door dominates the far wall, leading to the emergency exit.",
+            "items": [
+                {
+                    "id": "research_poster_chen",
+                    "name": "research poster by Doctor Chen",
+                    "description": "A poster detailing viral mutation research",
+                    "readable": true,
+                    "text": "Pathogen Research - Doctor Chen, Virology Department. Study focus: Strain X-7 mutation rates. Key finding: Pathogen remains dormant in cold storage below -80 degrees Celsius."
+                },
+                {
+                    "id": "research_poster_malik",
+                    "name": "research poster by Doctor Malik",
+                    "description": "A poster about containment protocols",
+                    "readable": true,
+                    "text": "Containment Protocols - Doctor Malik, Safety Division. Primary containment location: Cold Storage Unit. Emergency protocol: Evacuate to the emergency assembly point on Level 3."
+                },
+                {
+                    "id": "research_poster_torres",
+                    "name": "research poster by Doctor Torres",
+                    "description": "A poster showing vaccine development progress",
+                    "readable": true,
+                    "text": "Vaccine Development - Doctor Torres, Immunology. Lead researcher: Doctor Elena Reeves. Current status: Phase 2 trials. Vaccine samples stored in secure refrigeration."
+                },
+                {
+                    "id": "lab_desk",
+                    "name": "research desk",
+                    "description": "A cluttered desk covered with papers, sample vials, and lab equipment",
+                    "searchable": true,
+                    "contains": [
+                        "research_notes",
+                        "sample_log"
+                    ]
+                },
+                {
+                    "id": "research_notes",
+                    "name": "research notes of Doctor Chen",
+                    "description": "A notebook filled with scientific observations",
+                    "readable": true,
+                    "text": "Research Log: Strain X-7 shows unprecedented mutation rate. Doctor Reeves has ordered enhanced containment. Sample X-7 must remain in cold storage. Temperature breach on 28-47 caused partial thaw. Immediate quarantine initiated."
+                },
+                {
+                    "id": "sample_log",
+                    "name": "sample tracking log",
+                    "description": "A document tracking biological samples",
+                    "readable": true,
+                    "text": "SAMPLE LOG: Strain X-7 stored in Cold Storage Unit. Responsible scientist: Doctor Elena Reeves. Storage date: February 28, 2047 (28-47). Status: CONTAINMENT BREACH DETECTED."
+                },
+                {
+                    "id": "filing_cabinet",
+                    "name": "secure filing cabinet",
+                    "description": "A locked cabinet containing confidential research files",
+                    "locked": true,
+                    "key_required": "access_keycard",
+                    "contains": [
+                        "personnel_file"
+                    ]
+                },
+                {
+                    "id": "personnel_file",
+                    "name": "personnel identification file",
+                    "description": "A file containing staff information and credentials",
+                    "readable": true,
+                    "text": "PERSONNEL FILE: Chief Scientist - Doctor Elena Reeves, ID Badge #ER-2047. Clearance Level: Maximum. Authorized for all facility areas including emergency exit protocols."
+                },
+                {
+                    "id": "id_badge",
+                    "name": "ID badge of Doctor Chen",
+                    "description": "An identification badge found on the desk",
+                    "searchable": false
+                },
+                {
+                    "id": "emergency_vault_door",
+                    "name": "emergency vault door",
+                    "description": "A massive reinforced door with a security terminal. Three verification questions are displayed on the screen.",
+                    "locked": true,
+                    "lock_type": "password",
+                    "password_questions": [
+                        {
+                            "question": "Who is the Chief Scientist?",
+                            "answer": "doctor elena reeves",
+                            "hint": "Check the decontamination terminal and personnel files"
+                        },
+                        {
+                            "question": "Where is the pathogen stored?",
+                            "answer": "cold storage unit",
+                            "hint": "Look at the research posters and sample logs"
+                        },
+                        {
+                            "question": "Where is the emergency assembly point?",
+                            "answer": "level 3",
+                            "hint": "The facility map and research posters mention this"
+                        }
+                    ],
+                    "direction": "east",
+                    "leads_to": "emergency_exit",
+                    "aliases": [
+                        "vault",
+                        "east"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "emergency_exit",
+            "name": "Emergency Exit Chamber",
+            "description": "You have reached the emergency exit! A decontamination airlock leads to the outside world. Through the reinforced window, you can see the night sky and emergency vehicles with flashing lights. A final decontamination shower activates automatically, washing away any contamination. The exit door opens, and fresh air rushes in.",
+            "items": [
+                {
+                    "id": "exit_terminal",
+                    "name": "exit control terminal",
+                    "description": "A terminal displaying evacuation status and all-clear signals"
+                },
+                {
+                    "id": "emergency_supplies",
+                    "name": "emergency evacuation supplies",
+                    "description": "A cache of supplies for evacuees including water, medical kits, and communication devices"
+                }
+            ],
+            "exits": [],
+            "is_goal": true,
+            "win_message": "SUCCESS! You have successfully navigated the quarantine facility and reached the emergency exit. The decontamination process is complete, and you are cleared to leave. Emergency response teams are waiting outside to ensure your safety. The facility will remain sealed until the biohazard is fully contained. You have escaped the Biohazard Quarantine Zone! You win!"
+        }
+    ]
+}

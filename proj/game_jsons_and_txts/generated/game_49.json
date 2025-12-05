@@ -1,0 +1,217 @@
+{
+    "theme": "Celestial Library",
+    "title": "Celestial Library Adventure #49",
+    "goal": "Solve the puzzles, achieve the main objective, and escape.",
+    "starting_room": "starlight_reading_room",
+    "rooms": [
+        {
+            "id": "starlight_reading_room",
+            "name": "Starlight Reading Room",
+            "description": "A magnificent chamber floating among the stars. Bookshelves made of crystallized starlight line the walls, and constellations shimmer across the domed ceiling. Ancient tomes rest on marble pedestals, and the air hums with celestial energy. A grand archway leads deeper into the library.",
+            "items": [
+                {
+                    "id": "marble_desk",
+                    "name": "marble writing desk",
+                    "description": "An elegant desk carved from white marble with silver inlay. Three drawers are built into its front.",
+                    "subcontainers": [
+                        {
+                            "id": "top_drawer",
+                            "name": "top drawer",
+                            "locked": false,
+                            "contains": [
+                                "astronomers_note"
+                            ]
+                        },
+                        {
+                            "id": "middle_drawer",
+                            "name": "middle drawer",
+                            "locked": true,
+                            "lock_type": "combination",
+                            "combination": "357",
+                            "contains": [
+                                "crystal_key"
+                            ]
+                        },
+                        {
+                            "id": "bottom_drawer",
+                            "name": "bottom drawer",
+                            "locked": false,
+                            "contains": []
+                        }
+                    ]
+                },
+                {
+                    "id": "astronomers_note",
+                    "name": "astronomer's journal",
+                    "description": "A leather-bound journal filled with star charts and observations",
+                    "readable": true,
+                    "text": "The constellations hold the key to unlocking the secrets of this library. Remember the sacred numbers: Orion the Hunter bears 3 stars in his belt, Cassiopeia the Queen displays 5 bright stars, and Ursa Major the Great Bear shows 7 stars in its form."
+                },
+                {
+                    "id": "crystal_key",
+                    "name": "starlight crystal key",
+                    "description": "A key carved from pure crystal that glows with inner starlight"
+                },
+                {
+                    "id": "constellation_tapestry",
+                    "name": "constellation tapestry",
+                    "description": "A magnificent tapestry depicting the night sky with labeled constellations",
+                    "readable": true,
+                    "text": "The tapestry shows three prominent constellations: Orion the Hunter with his distinctive belt, Cassiopeia the Queen in her throne, and Ursa Major the Great Bear. Each constellation is labeled with its traditional name."
+                },
+                {
+                    "id": "locked_bookcase",
+                    "name": "locked crystal bookcase",
+                    "description": "A tall bookcase made of transparent crystal, sealed with a star-shaped lock",
+                    "locked": true,
+                    "key_required": "crystal_key",
+                    "contains": [
+                        "librarians_chronicle",
+                        "ancient_scroll"
+                    ]
+                },
+                {
+                    "id": "librarians_chronicle",
+                    "name": "Librarian's Chronicle",
+                    "description": "A glowing book bound in silver with celestial symbols on its cover",
+                    "readable": true,
+                    "text": "I am Celestia, Guardian of the Celestial Library. For eons, I have tended these halls, preserving the wisdom of countless civilizations. The knowledge contained here rests upon the Infinite Shelves, where every book ever written and yet to be written exists simultaneously."
+                },
+                {
+                    "id": "ancient_scroll",
+                    "name": "scroll of purpose",
+                    "description": "A scroll sealed with a wax star emblem",
+                    "readable": true,
+                    "text": "The Purpose of the Celestial Library: To preserve wisdom across all time and space. Only those who understand the library's guardian, the location of its knowledge, and its sacred purpose may access the Observatory of Eternity."
+                },
+                {
+                    "id": "reading_table",
+                    "name": "circular reading table",
+                    "description": "A round table made of polished moonstone with books scattered across its surface",
+                    "searchable": true,
+                    "contains": [
+                        "bookmark"
+                    ]
+                },
+                {
+                    "id": "bookmark",
+                    "name": "silver bookmark",
+                    "description": "A delicate bookmark made of silver filigree shaped like a shooting star"
+                },
+                {
+                    "id": "grand_archway",
+                    "name": "grand archway",
+                    "description": "A towering archway carved with astronomical symbols, leading to the Celestial Archives",
+                    "locked": false,
+                    "direction": "north",
+                    "leads_to": "celestial_archives",
+                    "aliases": [
+                        "arch",
+                        "north"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "celestial_archives",
+            "name": "Celestial Archives",
+            "description": "An impossibly vast chamber where bookshelves stretch infinitely in all directions, defying the laws of space. Floating lanterns drift through the air, casting a warm golden glow. Spiral staircases lead to higher levels that seem to touch the cosmos itself. A magnificent door adorned with celestial symbols stands at the far end.",
+            "items": [
+                {
+                    "id": "floating_books",
+                    "name": "floating books",
+                    "description": "Several books hover in mid-air, their pages turning on their own",
+                    "readable": true,
+                    "text": "The books contain fragments of knowledge from across the universe: star maps, ancient prophecies, and the histories of forgotten worlds. One page mentions that the Infinite Shelves contain all knowledge that ever was or will be."
+                },
+                {
+                    "id": "card_catalog",
+                    "name": "celestial card catalog",
+                    "description": "An ornate cabinet with countless drawers, each labeled with cosmic coordinates",
+                    "searchable": true,
+                    "contains": [
+                        "catalog_card"
+                    ]
+                },
+                {
+                    "id": "catalog_card",
+                    "name": "index card",
+                    "description": "A card with elegant handwriting describing the library's organization",
+                    "readable": true,
+                    "text": "Celestial Library Index: Guardian - Celestia. Location - The Infinite Shelves. Purpose - To preserve wisdom. Access to the Observatory requires knowledge of these three truths."
+                },
+                {
+                    "id": "globe_stand",
+                    "name": "celestial globe stand",
+                    "description": "A stand holding a rotating globe showing the cosmos",
+                    "searchable": true,
+                    "contains": [
+                        "star_map"
+                    ]
+                },
+                {
+                    "id": "star_map",
+                    "name": "ancient star map",
+                    "description": "A map showing the location of the Celestial Library among the stars"
+                },
+                {
+                    "id": "observatory_door",
+                    "name": "observatory door",
+                    "description": "A massive door inlaid with precious gems forming constellation patterns. Three questions are inscribed in glowing script on a bronze plaque.",
+                    "locked": true,
+                    "lock_type": "password",
+                    "password_questions": [
+                        {
+                            "question": "Who guards this library?",
+                            "answer": "celestia",
+                            "hint": "Check the Librarian's Chronicle in the reading room"
+                        },
+                        {
+                            "question": "Where does the knowledge rest?",
+                            "answer": "infinite shelves",
+                            "hint": "The scroll of purpose and catalog card mention this location"
+                        },
+                        {
+                            "question": "What is the library's purpose?",
+                            "answer": "preserve wisdom",
+                            "hint": "Read the scroll of purpose carefully"
+                        }
+                    ],
+                    "direction": "east",
+                    "leads_to": "observatory_of_eternity",
+                    "aliases": [
+                        "door",
+                        "east"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "observatory_of_eternity",
+            "name": "Observatory of Eternity",
+            "description": "You have reached the heart of the Celestial Library! A breathtaking observatory where the walls are made of pure starlight, offering an unobstructed view of the entire universe. Galaxies spiral in magnificent colors, and nebulae paint the cosmos with ethereal beauty. In the center floats the Codex of Infinite Knowledge, a book containing all wisdom across time and space. You have achieved enlightenment.",
+            "items": [
+                {
+                    "id": "codex",
+                    "name": "Codex of Infinite Knowledge",
+                    "description": "A magnificent tome that contains all knowledge that ever was or will be, glowing with pure cosmic energy"
+                },
+                {
+                    "id": "telescope",
+                    "name": "cosmic telescope",
+                    "description": "A telescope that can see across dimensions and through time itself"
+                },
+                {
+                    "id": "star_throne",
+                    "name": "throne of stars",
+                    "description": "A throne woven from starlight where the Guardian Celestia once sat to watch over all creation"
+                }
+            ],
+            "exits": [],
+            "is_goal": true,
+            "win_message": "You have reached the Observatory of Eternity and gained access to the Codex of Infinite Knowledge! The secrets of the universe unfold before you as Celestia's spirit appears, smiling with approval. You have proven yourself worthy of the library's greatest treasures. The cosmos itself acknowledges your wisdom. You win!"
+        }
+    ]
+}

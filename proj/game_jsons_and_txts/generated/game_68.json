@@ -1,0 +1,201 @@
+{
+    "theme": "Quantum Prison",
+    "title": "Quantum Prison Adventure #68",
+    "goal": "Solve the puzzles, achieve the main objective, and escape.",
+    "starting_room": "quantum_cell_block",
+    "rooms": [
+        {
+            "id": "quantum_cell_block",
+            "name": "Quantum Cell Block",
+            "description": "A sterile cell with walls that shimmer and phase in and out of existence. Blue quantum energy fields crackle along the ceiling. A metal bunk is bolted to the wall, and a storage locker hums with strange energy. Through the transparent force field door, you can see a corridor leading to the research lab.",
+            "items": [
+                {
+                    "id": "metal_bunk",
+                    "name": "metal bunk bed",
+                    "description": "A cold steel bunk with a thin mattress",
+                    "searchable": true,
+                    "contains": [
+                        "hidden_note"
+                    ]
+                },
+                {
+                    "id": "hidden_note",
+                    "name": "smuggled note",
+                    "description": "A crumpled piece of paper hidden under the mattress",
+                    "readable": true,
+                    "text": "Prisoner log: They think we don't understand the quantum systems, but I've been watching. The storage locker code is based on Planck's constant: 6.626. Dr. Heisenberg runs this facility. The quantum core is in the lab."
+                },
+                {
+                    "id": "storage_locker",
+                    "name": "quantum storage locker",
+                    "description": "A metal locker with a digital combination pad displaying three digits",
+                    "subcontainers": [
+                        {
+                            "id": "top_compartment",
+                            "name": "top compartment",
+                            "locked": false,
+                            "contains": [
+                                "prisoner_journal"
+                            ]
+                        },
+                        {
+                            "id": "bottom_compartment",
+                            "name": "bottom compartment",
+                            "locked": true,
+                            "lock_type": "combination",
+                            "combination": "626",
+                            "contains": [
+                                "access_card"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "prisoner_journal",
+                    "name": "prisoner's journal",
+                    "description": "A small notebook with observations about the prison",
+                    "readable": true,
+                    "text": "Day 47: The quantum entanglement device is the key to everything. Dr. Heisenberg keeps it locked in the lab safe. I overheard the guards - the escape pods are in the bay beyond the lab. We just need to get past the security systems."
+                },
+                {
+                    "id": "access_card",
+                    "name": "security access card",
+                    "description": "A plastic card with a magnetic strip and quantum encryption chip"
+                },
+                {
+                    "id": "force_field_cell_door",
+                    "name": "force field cell door",
+                    "description": "A shimmering energy barrier with a card reader mounted beside it",
+                    "locked": true,
+                    "key_required": "access_card",
+                    "direction": "north",
+                    "leads_to": "quantum_research_lab",
+                    "aliases": [
+                        "door",
+                        "force field",
+                        "north"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "quantum_research_lab",
+            "name": "Quantum Research Laboratory",
+            "description": "A high-tech laboratory filled with humming equipment and holographic displays showing quantum equations. Particle accelerators line the walls, and a large quantum computer core pulses with blue light in the center. Research terminals display classified data, and a heavy security door leads to the escape pod bay.",
+            "items": [
+                {
+                    "id": "research_terminal_1",
+                    "name": "research terminal alpha",
+                    "description": "A computer terminal displaying quantum mechanics research",
+                    "readable": true,
+                    "text": "Research Log - Dr. Heisenberg: The quantum entanglement device allows instantaneous communication across any distance. Project codename: QUANTUM_CORE. Storage location: Lab safe, secured with facility protocols."
+                },
+                {
+                    "id": "research_terminal_2",
+                    "name": "research terminal beta",
+                    "description": "A terminal showing prisoner containment data",
+                    "readable": true,
+                    "text": "Containment Report: All prisoners are held in superposition states until observation. Escape pod bay requires authorization. Security question protocols reference facility director, core project name, and quantum storage location."
+                },
+                {
+                    "id": "lab_safe",
+                    "name": "quantum lab safe",
+                    "description": "A reinforced safe with quantum locks and biometric scanners",
+                    "locked": true,
+                    "key_required": "access_card",
+                    "contains": [
+                        "entanglement_device",
+                        "facility_manual"
+                    ]
+                },
+                {
+                    "id": "entanglement_device",
+                    "name": "quantum entanglement device",
+                    "description": "A handheld device that glows with quantum energy, capable of unlocking quantum-secured systems"
+                },
+                {
+                    "id": "facility_manual",
+                    "name": "facility operations manual",
+                    "description": "A classified document detailing prison operations",
+                    "readable": true,
+                    "text": "CLASSIFIED: Quantum Prison Facility #68 - Director: Dr. Heisenberg. All quantum devices stored in lab safe. Project QUANTUM_CORE enables prisoner containment through probability manipulation. Emergency protocols require director authorization."
+                },
+                {
+                    "id": "quantum_computer",
+                    "name": "quantum computer core",
+                    "description": "A massive computer system processing quantum calculations",
+                    "searchable": true,
+                    "contains": [
+                        "data_chip"
+                    ]
+                },
+                {
+                    "id": "data_chip",
+                    "name": "encrypted data chip",
+                    "description": "A small chip containing facility schematics and codes",
+                    "readable": true,
+                    "text": "Facility Schematic: Escape pod bay accessible via north corridor. Quantum entanglement device required for final security bypass. All systems monitored by central AI."
+                },
+                {
+                    "id": "reinforced_security_door",
+                    "name": "reinforced security door",
+                    "description": "A massive door with quantum encryption. A holographic panel displays three security questions.",
+                    "locked": true,
+                    "lock_type": "password",
+                    "password_questions": [
+                        {
+                            "question": "Who is the facility director?",
+                            "answer": "dr heisenberg",
+                            "hint": "Check the research terminals and facility manual"
+                        },
+                        {
+                            "question": "What is the core project codename?",
+                            "answer": "quantum_core",
+                            "hint": "Look at the research logs on the terminals"
+                        },
+                        {
+                            "question": "Where are quantum devices stored?",
+                            "answer": "lab safe",
+                            "hint": "The facility manual mentions storage locations"
+                        }
+                    ],
+                    "direction": "north",
+                    "leads_to": "escape_pod_bay",
+                    "aliases": [
+                        "door",
+                        "north"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "escape_pod_bay",
+            "name": "Escape Pod Bay",
+            "description": "You've made it to the escape pod bay! A sleek quantum-powered escape pod sits in its launch tube, humming with energy and ready for departure. Through the viewport, you can see the stars of deep space beckoning. Freedom is within reach. The pod's hatch stands open, waiting for you.",
+            "items": [
+                {
+                    "id": "escape_pod",
+                    "name": "quantum escape pod",
+                    "description": "A state-of-the-art escape vessel with quantum drive engines, capable of faster-than-light travel"
+                },
+                {
+                    "id": "launch_console",
+                    "name": "pod launch console",
+                    "description": "A control panel with launch sequence buttons glowing green and ready",
+                    "readable": true,
+                    "text": "LAUNCH SYSTEM READY - All systems nominal. Quantum drive charged. Destination: Nearest free colony. Press LAUNCH to initiate departure sequence."
+                },
+                {
+                    "id": "viewport",
+                    "name": "observation viewport",
+                    "description": "A large window showing the vast expanse of space and distant stars"
+                }
+            ],
+            "exits": [],
+            "is_goal": true,
+            "win_message": "SUCCESS! You board the escape pod and initiate the launch sequence. The quantum drive engages with a brilliant flash of blue light, and the prison facility shrinks behind you as you accelerate to faster-than-light speeds. You've escaped Quantum Prison #68 and are heading toward freedom among the stars. You win!"
+        }
+    ]
+}

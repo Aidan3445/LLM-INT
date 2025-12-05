@@ -1,0 +1,220 @@
+{
+  "theme": "Martian Terraforming Hub",
+  "title": "Martian Terraforming Hub Adventure #48",
+  "goal": "Solve the puzzles, achieve the main objective, and escape.",
+  "starting_room": "control_center",
+  "rooms": [
+    {
+      "id": "control_center",
+      "name": "Terraforming Control Center",
+      "description": "A high-tech command center with holographic displays showing Mars atmospheric data. Red dust covers some of the equipment. Through the reinforced windows, you see the rust-colored Martian landscape stretching to the horizon. Warning lights blink on several consoles.",
+      "items": [
+        {
+          "id": "main_console",
+          "name": "main control console",
+          "description": "A large console with multiple compartments and displays showing terraforming progress",
+          "subcontainers": [
+            {
+              "id": "console_top",
+              "name": "top compartment",
+              "locked": false,
+              "contains": [
+                "mission_log"
+              ]
+            },
+            {
+              "id": "console_secure",
+              "name": "secure compartment",
+              "locked": true,
+              "lock_type": "combination",
+              "combination": "2087",
+              "contains": [
+                "access_keycard"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "mission_log",
+          "name": "mission log datapad",
+          "description": "A digital log with recent entries from the station commander",
+          "readable": true,
+          "text": "Mission Log - Commander Sarah Chen: The terraforming project began in 2087. Dr. Marcus Webb leads the atmospheric research team. Remember: oxygen levels are stored in the research lab database, and the emergency shuttle requires proper authorization."
+        },
+        {
+          "id": "access_keycard",
+          "name": "security access keycard",
+          "description": "A magnetic keycard labeled 'Research Lab Access - Level 3'"
+        },
+        {
+          "id": "wall_monitor",
+          "name": "atmospheric monitoring display",
+          "description": "A screen showing current Mars atmospheric composition data",
+          "readable": true,
+          "text": "Current Atmospheric Composition: Oxygen: 15%, Nitrogen: 78%, CO2: 7%. Target oxygen level for human habitation: 21%. Project lead: Dr. Marcus Webb."
+        },
+        {
+          "id": "storage_locker",
+          "name": "equipment storage locker",
+          "description": "A tall metal locker containing various tools and supplies",
+          "searchable": true,
+          "contains": [
+            "maintenance_note"
+          ]
+        },
+        {
+          "id": "maintenance_note",
+          "name": "maintenance reminder",
+          "description": "A handwritten note stuck to a clipboard",
+          "readable": true,
+          "text": "Reminder: Vault combination is the target oxygen percentage followed by the current oxygen percentage. Don't forget! - Engineering Team"
+        },
+        {
+          "id": "research_lab_door",
+          "name": "research lab door",
+          "description": "A sealed door with a card reader leading to the research laboratory",
+          "locked": true,
+          "key_required": "access_keycard",
+          "direction": "east",
+          "leads_to": "research_lab",
+          "aliases": [
+            "lab",
+            "east"
+          ]
+        }
+      ],
+      "exits": []
+    },
+    {
+      "id": "research_lab",
+      "name": "Atmospheric Research Laboratory",
+      "description": "A pristine laboratory filled with scientific equipment, sample containers, and analysis stations. Holographic models of Mars float above workstations. The walls are lined with research notes and data charts. A large vault door dominates the north wall.",
+      "items": [
+        {
+          "id": "research_desk",
+          "name": "lead researcher's desk",
+          "description": "A desk covered with papers, data tablets, and personal items",
+          "searchable": true,
+          "contains": [
+            "personnel_file"
+          ]
+        },
+        {
+          "id": "personnel_file",
+          "name": "personnel identification file",
+          "description": "A file containing staff information and photos",
+          "readable": true,
+          "text": "PERSONNEL FILE - Station Commander: Sarah Chen, Chief Scientist: Dr. Marcus Webb, Lead Engineer: James Rodriguez. Emergency Protocol: Commander authorization required for shuttle bay access."
+        },
+        {
+          "id": "lab_cabinet",
+          "name": "laboratory cabinet",
+          "description": "A secure cabinet with multiple drawers for storing sensitive materials",
+          "subcontainers": [
+            {
+              "id": "drawer_a",
+              "name": "drawer A",
+              "locked": false,
+              "contains": [
+                "research_summary"
+              ]
+            },
+            {
+              "id": "drawer_b",
+              "name": "drawer B",
+              "locked": false,
+              "contains": []
+            },
+            {
+              "id": "biolab_safe",
+              "name": "biolab safe",
+              "locked": true,
+              "lock_type": "combination",
+              "combination": "2115",
+              "contains": [
+                "shuttle_authorization"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "research_summary",
+          "name": "research summary report",
+          "description": "A detailed report on the terraforming progress",
+          "readable": true,
+          "text": "Terraforming Progress Report: We have successfully raised oxygen levels from initial 0% to current 15%. Target remains 21% for full human habitation. The biolab safe combination is target oxygen (21) followed by current oxygen (15)."
+        },
+        {
+          "id": "shuttle_authorization",
+          "name": "shuttle authorization codes",
+          "description": "A document containing emergency shuttle access information",
+          "readable": true,
+          "text": "EMERGENCY SHUTTLE AUTHORIZATION: Access requires answering security questions. Authorized personnel only. Questions verify: Who commands this station? Who leads the science team? What is our mission location?"
+        },
+        {
+          "id": "sample_station",
+          "name": "sample analysis station",
+          "description": "A workstation with various Martian soil and atmosphere samples",
+          "readable": true,
+          "text": "Sample Analysis Notes: All samples collected from Mars surface. Primary mission: terraform Mars for human colonization. Station location: Mars Terraforming Hub Alpha."
+        },
+        {
+          "id": "shuttle_bay_vault_door",
+          "name": "shuttle bay vault door",
+          "description": "A massive reinforced door with a security terminal. Three authentication questions are displayed on the screen.",
+          "locked": true,
+          "lock_type": "password",
+          "password_questions": [
+            {
+              "question": "Who is the station commander?",
+              "answer": "sarah chen",
+              "hint": "Check the mission log and personnel files"
+            },
+            {
+              "question": "Who is the chief scientist?",
+              "answer": "dr marcus webb",
+              "hint": "Look at the personnel file and atmospheric displays"
+            },
+            {
+              "question": "What planet are we terraforming?",
+              "answer": "mars",
+              "hint": "Read the sample analysis notes and look around"
+            }
+          ],
+          "direction": "north",
+          "leads_to": "shuttle_bay",
+          "aliases": [
+            "vault",
+            "north"
+          ]
+        }
+      ],
+      "exits": []
+    },
+    {
+      "id": "shuttle_bay",
+      "name": "Emergency Shuttle Bay",
+      "description": "You've reached the shuttle bay! A sleek emergency shuttle sits on the launch pad, its engines humming with power. Through the massive bay doors, you can see Earth as a blue dot in the black sky. The shuttle's boarding ramp is extended and ready. Freedom awaits!",
+      "items": [
+        {
+          "id": "emergency_shuttle",
+          "name": "emergency escape shuttle",
+          "description": "A state-of-the-art spacecraft designed for rapid evacuation, fueled and ready for launch"
+        },
+        {
+          "id": "launch_console",
+          "name": "shuttle launch console",
+          "description": "A control panel showing all systems green and ready for departure"
+        },
+        {
+          "id": "viewing_window",
+          "name": "observation window",
+          "description": "A large window showing the Martian landscape and the distant Earth"
+        }
+      ],
+      "exits": [],
+      "is_goal": true,
+      "win_message": "SUCCESS! You board the emergency shuttle and initiate the launch sequence. The engines roar to life as the shuttle lifts off from the Martian surface. You watch through the window as the red planet grows smaller below you. You're heading home to Earth with valuable data about the terraforming project. Mission accomplished! You win!"
+    }
+  ]
+}

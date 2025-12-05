@@ -1,0 +1,202 @@
+{
+    "theme": "Cultivated Dream Orchard",
+    "title": "Cultivated Dream Orchard Adventure #37",
+    "goal": "Solve the puzzles, achieve the main objective, and escape.",
+    "starting_room": "orchard_entrance",
+    "rooms": [
+        {
+            "id": "orchard_entrance",
+            "name": "Dream Orchard Entrance",
+            "description": "You stand at the entrance to a mystical orchard bathed in twilight. Luminescent flowers line a cobblestone path, and the air smells of honey and starlight. Strange fruit trees with glowing blossoms stretch into the purple sky. A weathered gardener's shed stands beside an ornate iron gate leading deeper into the orchard.",
+            "items": [
+                {
+                    "id": "gardeners_shed",
+                    "name": "weathered gardener's shed",
+                    "description": "A small wooden shed with peeling paint and a rusty lock",
+                    "locked": true,
+                    "key_required": "copper_key",
+                    "contains": [
+                        "cultivation_manual"
+                    ]
+                },
+                {
+                    "id": "cultivation_manual",
+                    "name": "dream cultivation manual",
+                    "description": "An ancient book bound in silver thread with pressed flowers between the pages",
+                    "readable": true,
+                    "text": "The Art of Dream Cultivation: This orchard was founded in the year 1892 by the Master Gardener Morpheus. To tend dreams properly, one must understand the three keepers: Morpheus tends the seeds, Celeste harvests the blooms, and Oneiros guards the gate."
+                },
+                {
+                    "id": "tool_chest",
+                    "name": "gardener's tool chest",
+                    "description": "A wooden chest with brass fittings and three compartments",
+                    "subcontainers": [
+                        {
+                            "id": "top_compartment",
+                            "name": "top compartment",
+                            "locked": false,
+                            "contains": [
+                                "gardeners_journal"
+                            ]
+                        },
+                        {
+                            "id": "middle_compartment",
+                            "name": "middle compartment",
+                            "locked": true,
+                            "lock_type": "combination",
+                            "combination": "1892",
+                            "contains": [
+                                "copper_key"
+                            ]
+                        },
+                        {
+                            "id": "bottom_compartment",
+                            "name": "bottom compartment",
+                            "locked": false,
+                            "contains": []
+                        }
+                    ]
+                },
+                {
+                    "id": "gardeners_journal",
+                    "name": "gardener's journal",
+                    "description": "A leather journal with sketches of dream fruits and cultivation notes",
+                    "readable": true,
+                    "text": "Journal Entry: The orchard thrives! Remember the founding year - 1892 - it unlocks the middle compartment where I keep the shed key. The Master Gardener Morpheus taught me that dreams must be carefully cultivated in the Starlight Greenhouse before they can bloom."
+                },
+                {
+                    "id": "copper_key",
+                    "name": "copper key",
+                    "description": "A small copper key shaped like a crescent moon"
+                },
+                {
+                    "id": "flower_bed",
+                    "name": "luminescent flower bed",
+                    "description": "A bed of glowing flowers that pulse with soft light",
+                    "searchable": true,
+                    "contains": [
+                        "silver_acorn"
+                    ]
+                },
+                {
+                    "id": "silver_acorn",
+                    "name": "silver acorn",
+                    "description": "A perfectly smooth acorn made of polished silver, warm to the touch"
+                },
+                {
+                    "id": "ornate_iron_gate",
+                    "name": "ornate iron gate",
+                    "description": "A tall gate decorated with vines and dream symbols, leading into the heart of the orchard",
+                    "locked": false,
+                    "direction": "north",
+                    "leads_to": "orchard_grove",
+                    "aliases": [
+                        "gate",
+                        "north"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "orchard_grove",
+            "name": "Heart of the Dream Orchard",
+            "description": "The central grove of the orchard, where magnificent trees bear glowing fruit in impossible colors. Each tree is marked with a plaque bearing a name and description. Butterflies made of light flutter between the branches. A crystal fountain bubbles in the center, and a shimmering archway pulses with energy at the far end.",
+            "items": [
+                {
+                    "id": "plaque_morpheus",
+                    "name": "plaque for Morpheus Tree",
+                    "description": "A brass plaque beneath a tree bearing midnight-blue fruit",
+                    "readable": true,
+                    "text": "Morpheus Tree - Master Gardener. Planted the first dream seeds and tends them with wisdom. His dreams grow in the Starlight Greenhouse."
+                },
+                {
+                    "id": "plaque_celeste",
+                    "name": "plaque for Celeste Tree",
+                    "description": "A silver plaque beneath a tree with golden star-shaped fruit",
+                    "readable": true,
+                    "text": "Celeste Tree - Dream Harvester. Gathers ripe dreams at dawn and dusk. She stores her tools in the Moon Shed."
+                },
+                {
+                    "id": "plaque_oneiros",
+                    "name": "plaque for Oneiros Tree",
+                    "description": "A bronze plaque beneath a tree bearing fruit that shifts between colors",
+                    "readable": true,
+                    "text": "Oneiros Tree - Gate Guardian. Protects the orchard and guides dreamers to awakening. His post is at the Twilight Gate."
+                },
+                {
+                    "id": "crystal_fountain",
+                    "name": "crystal fountain",
+                    "description": "A fountain carved from a single piece of crystal, filled with water that reflects dreams",
+                    "searchable": true,
+                    "contains": [
+                        "dream_compass"
+                    ]
+                },
+                {
+                    "id": "dream_compass",
+                    "name": "dream compass",
+                    "description": "A compass that points toward awakening rather than north"
+                },
+                {
+                    "id": "stone_bench",
+                    "name": "carved stone bench",
+                    "description": "A bench beneath the Morpheus Tree with inscriptions along its surface",
+                    "readable": true,
+                    "text": "Rest here, dreamer, and remember: To pass through the Awakening Archway, you must answer three questions. Know who planted the seeds, where dreams are cultivated, and where the guardian stands watch."
+                },
+                {
+                    "id": "shimmering_awakening_archway",
+                    "name": "shimmering awakening archway",
+                    "description": "An archway made of woven light and morning mist. Three questions are inscribed in glowing letters across its surface.",
+                    "locked": true,
+                    "lock_type": "password",
+                    "password_questions": [
+                        {
+                            "question": "Who planted the first dream seeds?",
+                            "answer": "morpheus",
+                            "hint": "Check the cultivation manual and the tree plaques"
+                        },
+                        {
+                            "question": "Where are dreams cultivated?",
+                            "answer": "starlight greenhouse",
+                            "hint": "The gardener's journal and Morpheus's plaque mention this location"
+                        },
+                        {
+                            "question": "Where does the guardian stand watch?",
+                            "answer": "twilight gate",
+                            "hint": "Read Oneiros's plaque carefully"
+                        }
+                    ],
+                    "direction": "east",
+                    "leads_to": "awakening_garden",
+                    "aliases": [
+                        "archway",
+                        "east"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "awakening_garden",
+            "name": "Garden of Awakening",
+            "description": "You step through the archway into a garden bathed in golden sunrise light. The dream orchard fades behind you like morning mist. A path of white stones leads to a comfortable bed surrounded by blooming flowers. The scent of fresh morning air fills your lungs, and you feel the pull of waking consciousness.",
+            "items": [
+                {
+                    "id": "awakening_bed",
+                    "name": "bed of awakening",
+                    "description": "A comfortable bed with white linens, positioned in a circle of blooming flowers"
+                },
+                {
+                    "id": "sunrise_flowers",
+                    "name": "sunrise flowers",
+                    "description": "Flowers that bloom only at the moment of awakening, their petals catching the first light of dawn"
+                }
+            ],
+            "exits": [],
+            "is_goal": true,
+            "win_message": "You lie down in the bed of awakening, and the dream orchard dissolves around you. Your eyes open to the real world, but you carry with you the memory of the cultivated dreams and the wisdom of the mystical gardeners. You have successfully escaped the Cultivated Dream Orchard! You win!"
+        }
+    ]
+}

@@ -1,0 +1,227 @@
+{
+    "theme": "Cursed Mine Shaft",
+    "title": "Cursed Mine Shaft Adventure #87",
+    "goal": "Solve the puzzles, achieve the main objective, and escape.",
+    "starting_room": "mine_entrance",
+    "rooms": [
+        {
+            "id": "mine_entrance",
+            "name": "Abandoned Mine Entrance",
+            "description": "The entrance to an old mine shaft, long abandoned and covered in warning signs. Rusted mining equipment litters the ground. The wooden support beams creak ominously, and a cold wind carries whispers from deep within. A flickering lantern casts dancing shadows on the rock walls.",
+            "items": [
+                {
+                    "id": "warning_signs",
+                    "name": "weathered warning signs",
+                    "description": "Multiple signs nailed to the entrance posts, warning of danger",
+                    "readable": true,
+                    "text": "DANGER: Mine closed since 1849. Multiple cave-ins reported. DO NOT ENTER. Last crew: Foreman Sullivan, Miner Jackson, and Miner Chen never returned."
+                },
+                {
+                    "id": "tool_box",
+                    "name": "rusty tool box",
+                    "description": "An old metal tool box with two compartments, covered in dust and cobwebs",
+                    "subcontainers": [
+                        {
+                            "id": "top_compartment",
+                            "name": "top compartment",
+                            "locked": false,
+                            "contains": [
+                                "miners_journal"
+                            ]
+                        },
+                        {
+                            "id": "bottom_compartment",
+                            "name": "bottom compartment",
+                            "locked": true,
+                            "lock_type": "combination",
+                            "combination": "1849",
+                            "contains": [
+                                "brass_key"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "miners_journal",
+                    "name": "miner's journal",
+                    "description": "A leather-bound journal belonging to one of the lost miners",
+                    "readable": true,
+                    "text": "Journal of Miner Jackson, Year 1849: We struck gold deep in the shaft! But something's wrong. The crystals in the deep cavern glow with an unnatural light. Sullivan says we must leave an offering at the shrine. Chen found strange symbols carved into the walls. I fear we've disturbed something ancient."
+                },
+                {
+                    "id": "brass_key",
+                    "name": "tarnished brass key",
+                    "description": "A heavy brass key with mining symbols etched into its surface"
+                },
+                {
+                    "id": "equipment_pile",
+                    "name": "pile of mining equipment",
+                    "description": "A heap of old pickaxes, shovels, and other mining tools",
+                    "searchable": true,
+                    "contains": [
+                        "oil_lantern"
+                    ]
+                },
+                {
+                    "id": "oil_lantern",
+                    "name": "working oil lantern",
+                    "description": "A surprisingly functional lantern that still contains oil"
+                },
+                {
+                    "id": "locked_chest",
+                    "name": "miner's locked chest",
+                    "description": "A wooden chest with a brass lock, marked with Sullivan's name",
+                    "locked": true,
+                    "key_required": "brass_key",
+                    "contains": [
+                        "foreman_note",
+                        "gold_nugget"
+                    ]
+                },
+                {
+                    "id": "foreman_note",
+                    "name": "foreman's note",
+                    "description": "A hastily written note from Foreman Sullivan",
+                    "readable": true,
+                    "text": "Final instructions from Sullivan: If anyone finds this, know that the curse can only be broken in the crystal cavern. The shrine requires answers: Who led this crew? Where did we find the gold? What year did we dig too deep?"
+                },
+                {
+                    "id": "gold_nugget",
+                    "name": "cursed gold nugget",
+                    "description": "A large gold nugget that pulses with a faint, eerie glow"
+                },
+                {
+                    "id": "dark_mine_shaft_entrance",
+                    "name": "dark mine shaft entrance",
+                    "description": "A tunnel leading deeper into the mountain. The darkness seems to swallow all light.",
+                    "locked": false,
+                    "direction": "north",
+                    "leads_to": "deep_shaft",
+                    "aliases": [
+                        "tunnel",
+                        "shaft",
+                        "north"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "deep_shaft",
+            "name": "Deep Mine Shaft",
+            "description": "A narrow tunnel deep underground. The air is thick and stale. Ancient support beams groan under the weight of the mountain above. Strange symbols are carved into the rock walls, and ghostly whispers echo through the darkness. A faint blue glow emanates from a passage to the east.",
+            "items": [
+                {
+                    "id": "carved_symbols",
+                    "name": "ancient wall carvings",
+                    "description": "Mysterious symbols carved deep into the stone walls",
+                    "readable": true,
+                    "text": "The symbols appear to be warnings in an ancient language. Below them, someone has scratched in English: 'The crystal cavern holds the answer. The shrine demands truth.'"
+                },
+                {
+                    "id": "mining_cart",
+                    "name": "overturned mining cart",
+                    "description": "A rusty cart that has been knocked over, its contents spilled",
+                    "searchable": true,
+                    "contains": [
+                        "chens_note"
+                    ]
+                },
+                {
+                    "id": "chens_note",
+                    "name": "Chen's final message",
+                    "description": "A crumpled note written in shaky handwriting",
+                    "readable": true,
+                    "text": "Chen's last words: The gold came from the crystal cavern, but it was cursed. Sullivan tried to lead us out, but the mine wouldn't let us leave. The year was 1849 when we broke through to the cavern. Now we're trapped forever unless someone breaks the curse."
+                },
+                {
+                    "id": "skeleton",
+                    "name": "miner's skeleton",
+                    "description": "The remains of one of the lost miners, still clutching a pickaxe",
+                    "searchable": true,
+                    "contains": [
+                        "silver_key"
+                    ]
+                },
+                {
+                    "id": "silver_key",
+                    "name": "skeleton key",
+                    "description": "A silver key worn smooth by time, found clutched in a skeletal hand"
+                },
+                {
+                    "id": "support_beam",
+                    "name": "cracked support beam",
+                    "description": "A wooden beam with something carved into it",
+                    "readable": true,
+                    "text": "Carved message: 'Foreman Sullivan - If you're reading this, we're already gone. Remember: Sullivan, crystal cavern, 1849. These are the answers to break free.'"
+                },
+                {
+                    "id": "sealed_cavern_entrance",
+                    "name": "sealed cavern entrance",
+                    "description": "A heavy stone door blocking the entrance to the crystal cavern. Three questions are etched into the stone, glowing with blue light.",
+                    "locked": true,
+                    "lock_type": "password",
+                    "password_questions": [
+                        {
+                            "question": "Who led the mining crew?",
+                            "answer": "foreman sullivan",
+                            "hint": "Check the warning signs and the foreman's note"
+                        },
+                        {
+                            "question": "Where was the cursed gold found?",
+                            "answer": "crystal cavern",
+                            "hint": "Chen's note mentions where the gold came from"
+                        },
+                        {
+                            "question": "What year did the miners dig too deep?",
+                            "answer": "1849",
+                            "hint": "Multiple documents mention this significant year"
+                        }
+                    ],
+                    "direction": "east",
+                    "leads_to": "crystal_cavern",
+                    "aliases": [
+                        "door",
+                        "entrance",
+                        "east"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "crystal_cavern",
+            "name": "Cursed Crystal Cavern",
+            "description": "A breathtaking cavern filled with massive glowing blue crystals that pulse with supernatural energy. In the center stands an ancient stone shrine covered in the same symbols from the tunnel walls. The spirits of the lost miners appear as translucent figures, watching hopefully. A shaft of light from above shows the way to freedom.",
+            "items": [
+                {
+                    "id": "glowing_crystals",
+                    "name": "massive blue crystals",
+                    "description": "Enormous crystals that emit an otherworldly blue glow, the source of the mine's curse"
+                },
+                {
+                    "id": "ancient_shrine",
+                    "name": "ancient stone shrine",
+                    "description": "A weathered shrine with an altar that has a depression shaped like a gold nugget",
+                    "readable": true,
+                    "text": "Shrine inscription: 'To break the curse and free the trapped souls, return the cursed gold to its resting place. Only then may the living escape.'"
+                },
+                {
+                    "id": "miner_spirits",
+                    "name": "ghostly miner spirits",
+                    "description": "The translucent forms of Sullivan, Jackson, and Chen, waiting to be freed",
+                    "readable": true,
+                    "text": "The spirits mouth words silently: 'Thank you... we can finally rest... take the escape route... be free...'"
+                },
+                {
+                    "id": "gold_veins",
+                    "name": "veins of gold",
+                    "description": "Rich deposits of gold running through the cavern walls, untouched and gleaming"
+                }
+            ],
+            "exits": [],
+            "is_goal": true,
+            "win_message": "You place the cursed gold nugget on the ancient shrine. The crystals flare brilliantly, then fade to a gentle glow. The spirits of Sullivan, Jackson, and Chen smile peacefully before dissolving into light. The curse is broken! A rope ladder drops from the shaft above, and you climb to freedom, leaving the mine and its dark history behind. You win!"
+        }
+    ]
+}

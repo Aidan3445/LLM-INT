@@ -1,0 +1,214 @@
+{
+  "theme": "Astral Projection Chamber",
+  "title": "Astral Projection Chamber Adventure #76",
+  "goal": "Solve the puzzles, achieve the main objective, and escape.",
+  "starting_room": "meditation_chamber",
+  "rooms": [
+    {
+      "id": "meditation_chamber",
+      "name": "Meditation Chamber",
+      "description": "A dimly lit circular room with cushions arranged in a mandala pattern. Incense smoke curls through the air, and crystalline singing bowls line the walls. Strange symbols glow faintly on the floor. A heavy wooden chest sits in the corner, and an ornate cabinet stands against the wall. The air hums with spiritual energy.",
+      "items": [
+        {
+          "id": "wooden_chest",
+          "name": "carved wooden chest",
+          "description": "An ancient chest decorated with seven colored circles representing the chakras",
+          "subcontainers": [
+            {
+              "id": "upper_compartment",
+              "name": "upper compartment",
+              "locked": false,
+              "contains": [
+                "meditation_guide"
+              ]
+            },
+            {
+              "id": "lower_compartment",
+              "name": "lower compartment",
+              "locked": true,
+              "lock_type": "combination",
+              "combination": "7",
+              "contains": [
+                "silver_key"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "meditation_guide",
+          "name": "meditation instruction scroll",
+          "description": "A scroll with teachings about astral projection",
+          "readable": true,
+          "text": "The path to astral projection requires balance of the seven chakras. Master Shen teaches that the silver cord connects body to spirit. The astral traveler is known as the Wanderer. Remember: there are seven energy centers in the human body."
+        },
+        {
+          "id": "silver_key",
+          "name": "ethereal silver key",
+          "description": "A key that seems to shimmer between solid and transparent"
+        },
+        {
+          "id": "ornate_cabinet",
+          "name": "spirit cabinet",
+          "description": "A tall cabinet with intricate carvings of souls leaving their bodies",
+          "locked": true,
+          "key_required": "silver_key",
+          "contains": [
+            "astral_journal",
+            "crystal_pendant"
+          ]
+        },
+        {
+          "id": "astral_journal",
+          "name": "astral traveler's journal",
+          "description": "A journal documenting experiences in the astral plane",
+          "readable": true,
+          "text": "Journal of Master Shen: I have traveled the astral plane for decades. The silver cord always guides me home. To pass through the gateway, one must answer the questions of the guardians. Know what connects us, where consciousness travels, and who you are in the spirit realm."
+        },
+        {
+          "id": "crystal_pendant",
+          "name": "glowing crystal pendant",
+          "description": "A pendant that pulses with inner light, said to enhance astral abilities"
+        },
+        {
+          "id": "meditation_cushions",
+          "name": "silk meditation cushions",
+          "description": "Comfortable cushions arranged in a sacred pattern",
+          "searchable": true,
+          "contains": [
+            "hidden_note"
+          ]
+        },
+        {
+          "id": "hidden_note",
+          "name": "folded note",
+          "description": "A small note hidden beneath the cushions",
+          "readable": true,
+          "text": "Note from apprentice: Master Shen says the astral plane is where our consciousness goes during projection. I must remember this for the gateway test."
+        },
+        {
+          "id": "shimmering_astral_doorway",
+          "name": "shimmering astral doorway",
+          "description": "A doorway that ripples like water, leading to the astral plane. It seems to respond only to those carrying spiritual artifacts.",
+          "locked": true,
+          "key_required": "crystal_pendant",
+          "direction": "north",
+          "leads_to": "astral_plane",
+          "aliases": [
+            "doorway",
+            "north"
+          ]
+        }
+      ],
+      "exits": []
+    },
+    {
+      "id": "astral_plane",
+      "name": "Astral Plane",
+      "description": "You float in a vast space of swirling colors and ethereal mists. Ghostly forms drift past, and distant stars pulse with consciousness. The laws of physics seem optional here. Three luminous pillars stand in a triangle formation, each inscribed with ancient wisdom. A magnificent gateway of pure light hovers at the far end, guarded by spectral sentinels.",
+      "items": [
+        {
+          "id": "pillar_of_connection",
+          "name": "pillar of connection",
+          "description": "A glowing pillar covered in symbols of linked souls",
+          "readable": true,
+          "text": "Pillar inscription: 'The silver cord binds the astral body to the physical form. It is the lifeline that ensures safe return from the spirit realm.'"
+        },
+        {
+          "id": "pillar_of_travel",
+          "name": "pillar of travel",
+          "description": "A pillar depicting souls journeying through space",
+          "readable": true,
+          "text": "Pillar inscription: 'The astral plane is the realm where consciousness travels free from physical constraints. Here, thought becomes reality and distance has no meaning.'"
+        },
+        {
+          "id": "pillar_of_identity",
+          "name": "pillar of identity",
+          "description": "A pillar showing a figure split between physical and spiritual forms",
+          "readable": true,
+          "text": "Pillar inscription: 'In the astral realm, you are known as the Wanderer - one who walks between worlds, seeking enlightenment beyond the physical.'"
+        },
+        {
+          "id": "floating_sphere",
+          "name": "floating energy sphere",
+          "description": "A sphere of condensed spiritual energy hovering in the air",
+          "searchable": true,
+          "contains": [
+            "enlightenment_crystal"
+          ]
+        },
+        {
+          "id": "enlightenment_crystal",
+          "name": "crystal of enlightenment",
+          "description": "A radiant crystal containing concentrated spiritual wisdom"
+        },
+        {
+          "id": "ethereal_chest",
+          "name": "ethereal spirit chest",
+          "description": "A translucent chest that phases in and out of visibility",
+          "searchable": true,
+          "contains": [
+            "master_teachings"
+          ]
+        },
+        {
+          "id": "master_teachings",
+          "name": "Master Shen's teachings",
+          "description": "A scroll containing the master's final lessons",
+          "readable": true,
+          "text": "Final Teaching: The gateway to higher dimensions opens only to those who understand the nature of astral travel. Remember the silver cord, the astral plane, and your true identity as the Wanderer."
+        },
+        {
+          "id": "gateway_of_pure_light",
+          "name": "gateway of pure light",
+          "description": "A magnificent portal radiating divine energy. Three questions appear in glowing script before it.",
+          "locked": true,
+          "lock_type": "password",
+          "password_questions": [
+            {
+              "question": "What connects the astral body to the physical form?",
+              "answer": "silver cord",
+              "hint": "Check the pillar of connection and Master Shen's journal"
+            },
+            {
+              "question": "Where does consciousness travel during astral projection?",
+              "answer": "astral plane",
+              "hint": "The pillar of travel and the hidden note explain this"
+            },
+            {
+              "question": "What is your identity in the spirit realm?",
+              "answer": "wanderer",
+              "hint": "The pillar of identity reveals your spiritual name"
+            }
+          ],
+          "direction": "east",
+          "leads_to": "higher_dimension",
+          "aliases": [
+            "gateway",
+            "east"
+          ]
+        }
+      ],
+      "exits": []
+    },
+    {
+      "id": "higher_dimension",
+      "name": "Higher Dimension",
+      "description": "You have transcended! You float in a space of pure consciousness where time and space merge into infinite possibility. Beings of pure light welcome you. You have achieved the ultimate goal of astral projection - complete spiritual liberation. The crystal of enlightenment in your possession resonates with the energy of this realm, confirming your mastery.",
+      "items": [
+        {
+          "id": "beings_of_light",
+          "name": "enlightened beings",
+          "description": "Radiant entities of pure consciousness who have achieved ultimate transcendence"
+        },
+        {
+          "id": "infinity_pool",
+          "name": "pool of infinite consciousness",
+          "description": "A shimmering pool reflecting all possible realities simultaneously"
+        }
+      ],
+      "exits": [],
+      "is_goal": true,
+      "win_message": "You have successfully mastered astral projection and reached the higher dimension! Your consciousness expands beyond all physical limitations. Master Shen's teachings have guided you to enlightenment. You are now one with the infinite cosmos, a true master of the astral realm. You win!"
+    }
+  ]
+}

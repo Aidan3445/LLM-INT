@@ -1,0 +1,227 @@
+{
+    "theme": "Living Museum Exhibit",
+    "title": "Living Museum Exhibit Adventure #23",
+    "goal": "Solve the puzzles, achieve the main objective, and escape.",
+    "starting_room": "ancient_egypt_hall",
+    "rooms": [
+        {
+            "id": "ancient_egypt_hall",
+            "name": "Ancient Egypt Exhibit Hall",
+            "description": "A dimly lit hall filled with Egyptian artifacts. Stone statues of pharaohs line the walls, their eyes seeming to follow your movement. A massive sarcophagus stands in the center, and hieroglyphics glow faintly on the walls. The air smells of ancient dust and mystery.",
+            "items": [
+                {
+                    "id": "display_case",
+                    "name": "glass display case",
+                    "description": "A locked display case containing ancient Egyptian jewelry and artifacts",
+                    "locked": true,
+                    "key_required": "bronze_key",
+                    "contains": [
+                        "golden_scarab"
+                    ]
+                },
+                {
+                    "id": "golden_scarab",
+                    "name": "golden scarab amulet",
+                    "description": "A beautiful golden scarab beetle amulet, sacred to ancient Egyptians"
+                },
+                {
+                    "id": "sarcophagus",
+                    "name": "ornate sarcophagus",
+                    "description": "A large stone sarcophagus with intricate carvings. The lid appears to be slightly ajar.",
+                    "searchable": true,
+                    "contains": [
+                        "museum_map"
+                    ]
+                },
+                {
+                    "id": "museum_map",
+                    "name": "museum floor plan",
+                    "description": "A map showing the layout of the museum exhibits",
+                    "readable": true,
+                    "text": "Museum Layout: Ancient Egypt Hall (current location) connects to Natural History Hall via the north corridor. Security Office is accessible from Natural History. Main Exit is beyond Security Office."
+                },
+                {
+                    "id": "information_desk",
+                    "name": "exhibit information desk",
+                    "description": "A small desk with drawers containing educational materials about the exhibits",
+                    "subcontainers": [
+                        {
+                            "id": "top_drawer",
+                            "name": "top drawer",
+                            "locked": false,
+                            "contains": [
+                                "pharaoh_guide"
+                            ]
+                        },
+                        {
+                            "id": "middle_drawer",
+                            "name": "middle drawer",
+                            "locked": true,
+                            "lock_type": "combination",
+                            "combination": "2560",
+                            "contains": [
+                                "bronze_key"
+                            ]
+                        },
+                        {
+                            "id": "bottom_drawer",
+                            "name": "bottom drawer",
+                            "locked": false,
+                            "contains": []
+                        }
+                    ]
+                },
+                {
+                    "id": "pharaoh_guide",
+                    "name": "pharaoh information guide",
+                    "description": "An educational pamphlet about Egyptian pharaohs",
+                    "readable": true,
+                    "text": "Featured Pharaoh: Khufu, builder of the Great Pyramid. Construction began approximately 2560 BCE. The pyramid took 20 years to complete and required over 2 million stone blocks."
+                },
+                {
+                    "id": "bronze_key",
+                    "name": "small bronze key",
+                    "description": "A key with an Egyptian ankh symbol engraved on it"
+                },
+                {
+                    "id": "hieroglyphic_wall",
+                    "name": "wall of hieroglyphics",
+                    "description": "Ancient Egyptian writing covering the wall with translations below",
+                    "readable": true,
+                    "text": "Translation: 'The guardian of knowledge rests in the Hall of Bones. The keeper of time dwells in the Chamber of Clocks. The protector of this place is called Watchman Harris.'"
+                },
+                {
+                    "id": "statue_anubis",
+                    "name": "statue of Anubis",
+                    "description": "A black statue of the jackal-headed god of the afterlife",
+                    "readable": true,
+                    "text": "Plaque: Anubis - Egyptian god of mummification and the afterlife. Known as the guardian of the necropolis and protector of graves."
+                },
+                {
+                    "id": "corridor_door",
+                    "name": "corridor door",
+                    "description": "A door leading north to the Natural History Hall",
+                    "locked": false,
+                    "direction": "north",
+                    "leads_to": "natural_history_hall",
+                    "aliases": [
+                        "door",
+                        "north"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "natural_history_hall",
+            "name": "Natural History Hall",
+            "description": "A vast hall dominated by a towering dinosaur skeleton in the center. Display cases line the walls showing fossils, minerals, and taxidermied animals. A grandfather clock ticks loudly in the corner. Moonlight streams through skylights, casting eerie shadows across the prehistoric bones.",
+            "items": [
+                {
+                    "id": "dinosaur_skeleton",
+                    "name": "Tyrannosaurus Rex skeleton",
+                    "description": "A massive T-Rex skeleton looming over the hall",
+                    "readable": true,
+                    "text": "Plaque: Tyrannosaurus Rex - 'King of the Tyrant Lizards.' This fearsome predator lived 68-66 million years ago during the Late Cretaceous period. This specimen was discovered in Montana in 1990."
+                },
+                {
+                    "id": "fossil_display",
+                    "name": "fossil display case",
+                    "description": "A case containing various prehistoric fossils and ancient bones",
+                    "searchable": true,
+                    "contains": [
+                        "paleontology_notes"
+                    ]
+                },
+                {
+                    "id": "paleontology_notes",
+                    "name": "paleontologist's notes",
+                    "description": "Research notes about the fossil collection",
+                    "readable": true,
+                    "text": "Notes: The Hall of Bones (Natural History Hall) houses our most precious specimens. Our collection includes fossils from the Cretaceous period and minerals from around the world. Remember: knowledge is preserved here in the Hall of Bones."
+                },
+                {
+                    "id": "grandfather_clock",
+                    "name": "antique grandfather clock",
+                    "description": "A tall wooden clock with ornate carvings, still keeping time",
+                    "readable": true,
+                    "text": "The clock face shows it's 2:47 AM. A small brass plate reads: 'Donated by the Chamber of Clocks Historical Society. This timepiece has kept perfect time since 1887.'"
+                },
+                {
+                    "id": "mineral_cabinet",
+                    "name": "mineral specimen cabinet",
+                    "description": "A cabinet displaying colorful rocks and crystals",
+                    "searchable": true,
+                    "contains": [
+                        "security_note"
+                    ]
+                },
+                {
+                    "id": "security_note",
+                    "name": "security memo",
+                    "description": "A note from the museum security staff",
+                    "readable": true,
+                    "text": "Security Memo: Night Watchman Harris - Remember to check all exhibits before locking up. The main exit code is known only to authorized personnel. If you forget, answer the security questions at the exit terminal."
+                },
+                {
+                    "id": "mammoth_display",
+                    "name": "woolly mammoth display",
+                    "description": "A life-size model of a woolly mammoth with informational plaques",
+                    "readable": true,
+                    "text": "Plaque: The Woolly Mammoth roamed the Earth during the Ice Age. These magnificent creatures were hunted by early humans and went extinct approximately 4,000 years ago."
+                },
+                {
+                    "id": "security_office_door",
+                    "name": "security office door",
+                    "description": "A reinforced door leading to the security office and main exit. A digital panel displays three security questions.",
+                    "locked": true,
+                    "lock_type": "password",
+                    "password_questions": [
+                        {
+                            "question": "Where is knowledge preserved?",
+                            "answer": "hall of bones",
+                            "hint": "Check the hieroglyphic wall and paleontology notes"
+                        },
+                        {
+                            "question": "What society donated the timepiece?",
+                            "answer": "chamber of clocks",
+                            "hint": "Read the grandfather clock's brass plate"
+                        },
+                        {
+                            "question": "Who is the night watchman?",
+                            "answer": "watchman harris",
+                            "hint": "Look for security memos and hieroglyphic translations"
+                        }
+                    ],
+                    "direction": "east",
+                    "leads_to": "museum_exit",
+                    "aliases": [
+                        "door",
+                        "east"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "museum_exit",
+            "name": "Museum Main Entrance",
+            "description": "You've reached the grand entrance hall of the museum! Moonlight pours through the tall glass doors leading outside. The exhibits behind you have fallen silent, returning to their inanimate state. The main doors stand open, revealing the freedom of the night beyond.",
+            "items": [
+                {
+                    "id": "exit_doors",
+                    "name": "main entrance doors",
+                    "description": "Large glass doors leading out to the street and freedom"
+                },
+                {
+                    "id": "security_desk",
+                    "name": "security checkpoint desk",
+                    "description": "The night watchman's desk with monitors showing the now-quiet exhibit halls"
+                }
+            ],
+            "exits": [],
+            "is_goal": true,
+            "win_message": "You've successfully escaped the Living Museum Exhibit! As you step through the main doors into the cool night air, you hear the faint sound of the exhibits settling back into stillness behind you. The ancient artifacts and prehistoric bones return to their eternal rest. You're free, and you have an incredible story that no one will ever believe. You win!"
+        }
+    ]
+}

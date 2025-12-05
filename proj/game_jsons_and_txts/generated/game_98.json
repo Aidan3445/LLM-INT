@@ -1,0 +1,233 @@
+{
+    "theme": "Neon Noir Detective Office",
+    "title": "Neon Noir Detective Office Adventure #98",
+    "goal": "Solve the puzzles, achieve the main objective, and escape.",
+    "starting_room": "detective_office",
+    "rooms": [
+        {
+            "id": "detective_office",
+            "name": "Private Detective Office",
+            "description": "A dimly lit office bathed in neon pink and blue light from the window signs outside. Rain streaks down the glass. A cluttered desk sits in the center, surrounded by filing cabinets and a worn leather couch. The air smells of stale coffee and cigarette smoke. A flickering neon sign outside casts dancing shadows on the walls.",
+            "items": [
+                {
+                    "id": "desk",
+                    "name": "detective's desk",
+                    "description": "A heavy wooden desk covered in case files, coffee rings, and a vintage rotary phone. Three drawers are built into the front.",
+                    "subcontainers": [
+                        {
+                            "id": "top_drawer",
+                            "name": "top drawer",
+                            "locked": false,
+                            "contains": [
+                                "case_summary"
+                            ]
+                        },
+                        {
+                            "id": "middle_drawer",
+                            "name": "middle drawer",
+                            "locked": true,
+                            "lock_type": "combination",
+                            "combination": "1947",
+                            "contains": [
+                                "evidence_room_key"
+                            ]
+                        },
+                        {
+                            "id": "bottom_drawer",
+                            "name": "bottom drawer",
+                            "locked": false,
+                            "contains": []
+                        }
+                    ]
+                },
+                {
+                    "id": "case_summary",
+                    "name": "case file summary",
+                    "description": "A typed document summarizing the current investigation",
+                    "readable": true,
+                    "text": "CASE #1947 - The Neon Phantom. Client: Victoria Steele. Missing person case opened in 1947. Subject last seen near the Chrome District. Lead detective: Jack Marlowe. Evidence stored in secure room. Access restricted."
+                },
+                {
+                    "id": "evidence_room_key",
+                    "name": "brass evidence key",
+                    "description": "A worn brass key with an evidence tag attached"
+                },
+                {
+                    "id": "filing_cabinet",
+                    "name": "metal filing cabinet",
+                    "description": "A tall gray cabinet with multiple drawers, most locked or jammed",
+                    "searchable": true,
+                    "contains": [
+                        "detective_license"
+                    ]
+                },
+                {
+                    "id": "detective_license",
+                    "name": "private investigator license",
+                    "description": "A laminated license card",
+                    "readable": true,
+                    "text": "Licensed Private Investigator: Jack Marlowe. License #1947. Specialization: Missing Persons. Office Location: Chrome District, Floor 23."
+                },
+                {
+                    "id": "leather_couch",
+                    "name": "worn leather couch",
+                    "description": "A sagging couch with cracked leather and cigarette burns",
+                    "searchable": true,
+                    "contains": [
+                        "newspaper"
+                    ]
+                },
+                {
+                    "id": "newspaper",
+                    "name": "old newspaper",
+                    "description": "A yellowed newspaper from 1947",
+                    "readable": true,
+                    "text": "CHROME DISTRICT GAZETTE - 1947: Victoria Steele reported missing. Last seen at the Neon Lounge. Police have no leads. Family offers reward. Anyone with information should contact the authorities or private investigators in the Chrome District."
+                },
+                {
+                    "id": "whiskey_bottle",
+                    "name": "empty whiskey bottle",
+                    "description": "An empty bottle of cheap whiskey on the desk"
+                },
+                {
+                    "id": "evidence_room_door",
+                    "name": "evidence room door",
+                    "description": "A reinforced door with a keyhole and a small frosted glass window. A sign reads 'Evidence Storage'.",
+                    "locked": true,
+                    "key_required": "evidence_room_key",
+                    "direction": "east",
+                    "leads_to": "evidence_storage",
+                    "aliases": [
+                        "door",
+                        "east"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "evidence_storage",
+            "name": "Evidence Storage Room",
+            "description": "A cramped room lined with metal shelves holding evidence boxes, tagged items, and case files. A single bare bulb swings from the ceiling, casting harsh shadows. The walls are covered with photos, maps, and red string connecting various clues. A large vault door dominates the far wall, its surface gleaming under the light.",
+            "items": [
+                {
+                    "id": "evidence_box_a",
+                    "name": "evidence box labeled A",
+                    "description": "A cardboard box containing items from various cases",
+                    "searchable": true,
+                    "contains": [
+                        "witness_statement"
+                    ]
+                },
+                {
+                    "id": "witness_statement",
+                    "name": "witness testimony document",
+                    "description": "A typed statement from a witness",
+                    "readable": true,
+                    "text": "WITNESS STATEMENT: I saw Victoria Steele at the Neon Lounge on the night she disappeared. She was meeting someone, but I couldn't see who. She mentioned something about going to the Chrome District to meet her contact. Signed: Anonymous Witness, 1947."
+                },
+                {
+                    "id": "evidence_box_b",
+                    "name": "evidence box labeled B",
+                    "description": "A sealed box with a broken lock",
+                    "searchable": true,
+                    "contains": [
+                        "photograph"
+                    ]
+                },
+                {
+                    "id": "photograph",
+                    "name": "black and white photograph",
+                    "description": "A photo of a woman standing outside a building",
+                    "readable": true,
+                    "text": "Photo shows Victoria Steele outside the Neon Lounge. On the back is written: 'Victoria Steele - Last known photo. Case #1947. Detective Jack Marlowe investigating.'"
+                },
+                {
+                    "id": "wall_map",
+                    "name": "city map with markings",
+                    "description": "A large map of the city with red circles and notes",
+                    "readable": true,
+                    "text": "Map shows the Chrome District highlighted. Notes indicate: 'Victoria last seen here. Neon Lounge - starting point. Vault contains final evidence. Security protocol requires case knowledge.'"
+                },
+                {
+                    "id": "case_files",
+                    "name": "stack of case files",
+                    "description": "A pile of manila folders with various case numbers",
+                    "searchable": true,
+                    "contains": [
+                        "final_report"
+                    ]
+                },
+                {
+                    "id": "final_report",
+                    "name": "final case report",
+                    "description": "A confidential report marked 'Case Closed'",
+                    "readable": true,
+                    "text": "FINAL REPORT - Case #1947: Victoria Steele found safe. She had gone into hiding voluntarily. Case closed by Detective Jack Marlowe. Evidence secured in vault. Access requires verification: detective name, subject name, and last known location."
+                },
+                {
+                    "id": "secure_vault_door",
+                    "name": "secure vault door",
+                    "description": "A massive steel vault door with a digital keypad. Three security questions are displayed on a screen.",
+                    "locked": true,
+                    "lock_type": "password",
+                    "password_questions": [
+                        {
+                            "question": "Who is the lead detective on this case?",
+                            "answer": "jack marlowe",
+                            "hint": "Check the case summary and detective license"
+                        },
+                        {
+                            "question": "What is the name of the missing person?",
+                            "answer": "victoria steele",
+                            "hint": "The case files and newspaper mention her name"
+                        },
+                        {
+                            "question": "Where was the subject last seen?",
+                            "answer": "neon lounge",
+                            "hint": "Multiple documents reference this location"
+                        }
+                    ],
+                    "direction": "north",
+                    "leads_to": "secure_vault",
+                    "aliases": [
+                        "vault",
+                        "north"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "secure_vault",
+            "name": "Secure Evidence Vault",
+            "description": "You have accessed the secure vault! The room is pristine and climate controlled, filled with shelves of carefully preserved evidence from solved cases. In the center, on a pedestal under glass, sits the final piece of evidence from Case #1947: a handwritten letter from Victoria Steele explaining everything. A green exit light glows above a door marked 'Emergency Exit to Street Level'.",
+            "items": [
+                {
+                    "id": "glass_case",
+                    "name": "display case",
+                    "description": "A glass case containing the final evidence",
+                    "searchable": true,
+                    "contains": [
+                        "victoria_letter"
+                    ]
+                },
+                {
+                    "id": "victoria_letter",
+                    "name": "letter from Victoria Steele",
+                    "description": "A handwritten letter sealed in protective plastic",
+                    "readable": true,
+                    "text": "Dear Detective Marlowe, Thank you for your discretion. I needed to disappear for my own safety, but I am well. The case can be closed. I trust you will keep my location confidential. The truth is now in your hands. - Victoria Steele"
+                },
+                {
+                    "id": "evidence_shelves",
+                    "name": "organized evidence shelves",
+                    "description": "Rows of neatly labeled evidence from decades of solved cases"
+                }
+            ],
+            "exits": [],
+            "is_goal": true,
+            "win_message": "Case closed! You have successfully navigated the detective office, accessed the evidence room, and unlocked the secure vault. The mystery of Victoria Steele is solved, and you have proven yourself a worthy detective. The neon lights of the city await as you exit into the rain-soaked streets. You win!"
+        }
+    ]
+}

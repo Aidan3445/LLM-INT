@@ -1,0 +1,215 @@
+{
+    "theme": "Fairy Realm Crossing",
+    "title": "Fairy Realm Crossing Adventure #90",
+    "goal": "Solve the puzzles, achieve the main objective, and escape.",
+    "starting_room": "mushroom_grove",
+    "rooms": [
+        {
+            "id": "mushroom_grove",
+            "name": "Enchanted Mushroom Grove",
+            "description": "You find yourself in a mystical grove filled with giant glowing mushrooms of every color. Fireflies dance through the air, and soft chimes echo from unseen bells. A large toadstool serves as a table, and a hollow tree trunk stands nearby. The air smells of honey and wildflowers.",
+            "items": [
+                {
+                    "id": "toadstool_table",
+                    "name": "giant toadstool table",
+                    "description": "A massive red and white spotted mushroom serving as a natural table",
+                    "searchable": true,
+                    "contains": [
+                        "fairy_scroll"
+                    ]
+                },
+                {
+                    "id": "fairy_scroll",
+                    "name": "glowing fairy scroll",
+                    "description": "A delicate scroll that glimmers with magical light",
+                    "readable": true,
+                    "text": "Welcome, traveler! You have crossed into the Fairy Realm on the 365th day of the Pixie Calendar. To return home, you must seek the Fairy Queen Luminara in her garden court. Remember: Keeper of the Grove is Thornwick, Guardian of Seasons is Willowmist, and the Realm's heart lies in the Moonpetal Sanctuary."
+                },
+                {
+                    "id": "hollow_tree",
+                    "name": "hollow tree trunk",
+                    "description": "An ancient tree with a hollow interior containing small compartments",
+                    "subcontainers": [
+                        {
+                            "id": "upper_hollow",
+                            "name": "upper hollow",
+                            "locked": false,
+                            "contains": [
+                                "pixie_note"
+                            ]
+                        },
+                        {
+                            "id": "lower_hollow",
+                            "name": "lower hollow",
+                            "locked": true,
+                            "lock_type": "combination",
+                            "combination": "365",
+                            "contains": [
+                                "silver_acorn_key"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "pixie_note",
+                    "name": "pixie's message",
+                    "description": "A tiny note written in sparkling ink",
+                    "readable": true,
+                    "text": "Dear visitor, the magic number to unlock the lower hollow is the day you arrived - check the fairy scroll! The silver acorn key will help you on your journey. - Pip the Pixie"
+                },
+                {
+                    "id": "silver_acorn_key",
+                    "name": "silver acorn key",
+                    "description": "A key carved from a magical silver acorn, warm to the touch"
+                },
+                {
+                    "id": "flower_chest",
+                    "name": "flower petal chest",
+                    "description": "A beautiful chest woven from rose petals and morning glories",
+                    "locked": true,
+                    "key_required": "silver_acorn_key",
+                    "contains": [
+                        "realm_guide"
+                    ]
+                },
+                {
+                    "id": "realm_guide",
+                    "name": "Fairy Realm guidebook",
+                    "description": "A small book bound in leaves and spider silk",
+                    "readable": true,
+                    "text": "Guide to the Fairy Realm: Our beloved Queen Luminara rules from the garden court. The Keeper of the Grove, Thornwick, tends the mushrooms. Willowmist, Guardian of Seasons, controls the weather. The heart of our realm is the sacred Moonpetal Sanctuary where the portal home awaits."
+                },
+                {
+                    "id": "fairy_ring_archway",
+                    "name": "fairy ring archway",
+                    "description": "An archway formed by a circle of glowing mushrooms, leading north to the garden",
+                    "locked": false,
+                    "direction": "north",
+                    "leads_to": "fairy_garden",
+                    "aliases": [
+                        "archway",
+                        "ring",
+                        "north"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "fairy_garden",
+            "name": "Fairy Queen's Garden Court",
+            "description": "A breathtaking garden with flowers that sing soft melodies and trees with silver bark. Crystal fountains bubble with nectar, and butterflies the size of birds flutter past. In the center, a throne made of woven vines sits empty. Three statues of fairy guardians stand watch, and a shimmering gate blocks the path to the portal.",
+            "items": [
+                {
+                    "id": "statue_thornwick",
+                    "name": "statue of Thornwick",
+                    "description": "A statue of a stern fairy with a crown of mushrooms",
+                    "readable": true,
+                    "text": "Thornwick, Keeper of the Grove - Protector of the mushroom circles and guardian of the forest floor. His wisdom grows with the fungi."
+                },
+                {
+                    "id": "statue_willowmist",
+                    "name": "statue of Willowmist",
+                    "description": "A graceful statue of a fairy with flowing robes like mist",
+                    "readable": true,
+                    "text": "Willowmist, Guardian of Seasons - Controller of weather and keeper of the seasonal balance. She dances with the wind and rain."
+                },
+                {
+                    "id": "statue_luminara",
+                    "name": "statue of Queen Luminara",
+                    "description": "A regal statue of the fairy queen with a crown of stars",
+                    "readable": true,
+                    "text": "Queen Luminara - Beloved ruler of the Fairy Realm, bringer of light and joy. She holds court in this very garden."
+                },
+                {
+                    "id": "nectar_fountain",
+                    "name": "crystal nectar fountain",
+                    "description": "A fountain flowing with sweet, glowing nectar",
+                    "searchable": true,
+                    "contains": [
+                        "enchanted_lily"
+                    ]
+                },
+                {
+                    "id": "enchanted_lily",
+                    "name": "enchanted moonlily",
+                    "description": "A glowing white lily that pulses with soft light"
+                },
+                {
+                    "id": "vine_throne",
+                    "name": "woven vine throne",
+                    "description": "An elegant throne where the fairy queen sits during court",
+                    "searchable": true,
+                    "contains": [
+                        "queens_blessing"
+                    ]
+                },
+                {
+                    "id": "queens_blessing",
+                    "name": "Queen's blessing scroll",
+                    "description": "A royal decree written in golden ink",
+                    "readable": true,
+                    "text": "By decree of Queen Luminara: Any who seek passage home must prove their knowledge of our realm. Know who keeps the grove, who guards the seasons, and where the realm's heart beats strongest."
+                },
+                {
+                    "id": "shimmering_portal_gate",
+                    "name": "shimmering portal gate",
+                    "description": "A magnificent gate made of moonbeams and starlight. Three questions are inscribed on a plaque of polished amber.",
+                    "locked": true,
+                    "lock_type": "password",
+                    "password_questions": [
+                        {
+                            "question": "Who is the Keeper of the Grove?",
+                            "answer": "thornwick",
+                            "hint": "Check the fairy scroll and the statues in the garden"
+                        },
+                        {
+                            "question": "Who is the Guardian of Seasons?",
+                            "answer": "willowmist",
+                            "hint": "Read the inscriptions on the guardian statues"
+                        },
+                        {
+                            "question": "Where is the heart of the Fairy Realm?",
+                            "answer": "moonpetal sanctuary",
+                            "hint": "The realm guide and fairy scroll mention this sacred place"
+                        }
+                    ],
+                    "direction": "east",
+                    "leads_to": "portal_home",
+                    "aliases": [
+                        "gate",
+                        "east"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "portal_home",
+            "name": "Moonpetal Sanctuary Portal",
+            "description": "You have reached the sacred heart of the Fairy Realm! The Moonpetal Sanctuary is a circular clearing filled with luminous white flowers that bloom only in moonlight. In the center, a swirling portal of silver and blue light shows glimpses of your world. Queen Luminara appears as a shimmering spirit, smiling and gesturing toward the portal home.",
+            "items": [
+                {
+                    "id": "moonpetal_flowers",
+                    "name": "moonpetal flowers",
+                    "description": "Rare magical flowers that glow with the light of a thousand moons"
+                },
+                {
+                    "id": "home_portal",
+                    "name": "portal to home",
+                    "description": "A magnificent swirling portal showing your world beyond the fairy realm"
+                },
+                {
+                    "id": "queen_spirit",
+                    "name": "spirit of Queen Luminara",
+                    "description": "The shimmering, benevolent presence of the fairy queen",
+                    "readable": true,
+                    "text": "Queen Luminara's voice echoes softly: 'You have proven yourself worthy, dear traveler. May you carry the magic of our realm in your heart always. Safe journey home.'"
+                }
+            ],
+            "exits": [],
+            "is_goal": true,
+            "win_message": "You step through the portal as Queen Luminara and all the fairies wave farewell! The Fairy Realm fades behind you in a shower of pixie dust and flower petals. You find yourself back in your own world, forever changed by the magic you experienced. The enchanted moonlily in your pocket glows softly - a reminder of your incredible adventure. You win!"
+        }
+    ]
+}

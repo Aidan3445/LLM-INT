@@ -1,0 +1,240 @@
+{
+    "theme": "Doomsday Cult Sanctuary",
+    "title": "Doomsday Cult Sanctuary Adventure #44",
+    "goal": "Solve the puzzles, achieve the main objective, and escape.",
+    "starting_room": "initiates_chamber",
+    "rooms": [
+        {
+            "id": "initiates_chamber",
+            "name": "Initiate's Chamber",
+            "description": "A sparse room with stone walls covered in apocalyptic murals depicting fire and destruction. Candles flicker on a small altar, casting dancing shadows. The air smells of incense and old parchment. A single cot sits in the corner, and a wooden chest rests at the foot of the bed.",
+            "items": [
+                {
+                    "id": "wooden_chest",
+                    "name": "initiate's wooden chest",
+                    "description": "A plain wooden chest with iron bindings and a simple lock",
+                    "locked": true,
+                    "key_required": "iron_key",
+                    "contains": [
+                        "cult_handbook"
+                    ]
+                },
+                {
+                    "id": "cult_handbook",
+                    "name": "cult initiate handbook",
+                    "description": "A small book bound in dark leather with a sun symbol on the cover",
+                    "readable": true,
+                    "text": "Welcome, Initiate. You have joined the Children of the Crimson Dawn. Our founder, Prophet Ezekiel, received the vision at Mount Salvation. Remember: Only through purification can we enter the Eternal Sanctuary when the end comes."
+                },
+                {
+                    "id": "altar",
+                    "name": "small prayer altar",
+                    "description": "A stone altar with candles and offerings. A hidden compartment is visible in the base.",
+                    "searchable": true,
+                    "contains": [
+                        "iron_key"
+                    ]
+                },
+                {
+                    "id": "iron_key",
+                    "name": "tarnished iron key",
+                    "description": "A small iron key with a sun symbol etched into the handle"
+                },
+                {
+                    "id": "apocalypse_mural",
+                    "name": "apocalyptic mural",
+                    "description": "A disturbing painting showing the world ending in flames",
+                    "readable": true,
+                    "text": "The mural depicts the prophecy: 'In the year 2027, the Crimson Dawn shall rise and the faithful shall be saved.' Below it reads: 'The date of salvation: 2027.'"
+                },
+                {
+                    "id": "storage_cabinet",
+                    "name": "storage cabinet",
+                    "description": "A tall wooden cabinet with two compartments for storing personal items",
+                    "subcontainers": [
+                        {
+                            "id": "upper_shelf",
+                            "name": "upper shelf",
+                            "locked": false,
+                            "contains": [
+                                "prophecy_scroll"
+                            ]
+                        },
+                        {
+                            "id": "lower_shelf",
+                            "name": "lower shelf",
+                            "locked": true,
+                            "lock_type": "combination",
+                            "combination": "2027",
+                            "contains": [
+                                "brass_key"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "prophecy_scroll",
+                    "name": "prophecy scroll",
+                    "description": "A rolled parchment with ornate writing",
+                    "readable": true,
+                    "text": "The Great Prophecy: In the year two thousand and twenty-seven, the sky shall burn crimson. Only those who dwell in the Eternal Sanctuary shall survive. Prophet Ezekiel has shown us the way."
+                },
+                {
+                    "id": "brass_key",
+                    "name": "ornate brass key",
+                    "description": "A decorative brass key with intricate engravings of flames"
+                },
+                {
+                    "id": "heavy_wooden_door",
+                    "name": "heavy wooden door",
+                    "description": "A thick door leading to the main sanctuary. It has a brass lock mechanism.",
+                    "locked": true,
+                    "key_required": "brass_key",
+                    "direction": "north",
+                    "leads_to": "sanctuary_hall",
+                    "aliases": [
+                        "door",
+                        "north"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "sanctuary_hall",
+            "name": "Sanctuary Hall",
+            "description": "A vast hall with vaulted ceilings and rows of wooden pews facing a raised platform. Crimson banners hang from the walls, each bearing a golden sun symbol. Stained glass windows filter colored light across the stone floor. A massive bookshelf lines one wall, and a locked door behind the pulpit leads to the inner sanctum.",
+            "items": [
+                {
+                    "id": "pulpit",
+                    "name": "preacher's pulpit",
+                    "description": "An ornate wooden pulpit carved with religious symbols",
+                    "searchable": true,
+                    "contains": [
+                        "sermon_notes"
+                    ]
+                },
+                {
+                    "id": "sermon_notes",
+                    "name": "sermon notes",
+                    "description": "Handwritten notes for a sermon",
+                    "readable": true,
+                    "text": "Today's sermon: Remember the three pillars of our faith. Prophet Ezekiel founded our order. Mount Salvation is our holy site. The Eternal Sanctuary awaits the faithful. Purification through fire is our path."
+                },
+                {
+                    "id": "bookshelf",
+                    "name": "religious bookshelf",
+                    "description": "A tall shelf filled with religious texts and cult doctrine",
+                    "searchable": true,
+                    "contains": [
+                        "doctrine_book",
+                        "founders_biography"
+                    ]
+                },
+                {
+                    "id": "doctrine_book",
+                    "name": "book of doctrine",
+                    "description": "A thick tome outlining the cult's beliefs",
+                    "readable": true,
+                    "text": "The Sacred Doctrine: We believe in purification through fire. The world will end, but the faithful shall enter the Eternal Sanctuary. Prophet Ezekiel received his vision at Mount Salvation, our most holy place."
+                },
+                {
+                    "id": "founders_biography",
+                    "name": "biography of the founder",
+                    "description": "A book about the cult's founder",
+                    "readable": true,
+                    "text": "Prophet Ezekiel: Born in obscurity, he received a divine vision at Mount Salvation in 1995. He founded the Children of the Crimson Dawn to prepare humanity for the coming apocalypse. His teachings focus on purification and salvation."
+                },
+                {
+                    "id": "offering_box",
+                    "name": "offering collection box",
+                    "description": "A locked wooden box for collecting donations",
+                    "locked": true,
+                    "key_required": "brass_key",
+                    "contains": [
+                        "silver_key"
+                    ]
+                },
+                {
+                    "id": "silver_key",
+                    "name": "silver key",
+                    "description": "A silver key with a crimson ribbon attached"
+                },
+                {
+                    "id": "ceremonial_robes",
+                    "name": "ceremonial robes",
+                    "description": "Red and gold robes hanging on hooks",
+                    "searchable": true,
+                    "contains": [
+                        "hidden_note"
+                    ]
+                },
+                {
+                    "id": "hidden_note",
+                    "name": "hidden note",
+                    "description": "A crumpled note hidden in a robe pocket",
+                    "readable": true,
+                    "text": "Secret note: The leaders know the truth - there is no prophecy. The 'Eternal Sanctuary' is just the escape tunnel they built for themselves. If you want out, answer the questions at the sanctum door correctly."
+                },
+                {
+                    "id": "sanctum_door",
+                    "name": "sanctum door",
+                    "description": "A reinforced door with a security panel. Three questions are displayed on a screen.",
+                    "locked": true,
+                    "lock_type": "password",
+                    "password_questions": [
+                        {
+                            "question": "Who founded our order?",
+                            "answer": "prophet ezekiel",
+                            "hint": "Check the cult handbook and the founder's biography"
+                        },
+                        {
+                            "question": "Where did the founder receive his vision?",
+                            "answer": "mount salvation",
+                            "hint": "The doctrine book and biography mention the holy site"
+                        },
+                        {
+                            "question": "What is our path to salvation?",
+                            "answer": "purification through fire",
+                            "hint": "The sermon notes and doctrine book explain this"
+                        }
+                    ],
+                    "direction": "east",
+                    "leads_to": "escape_tunnel",
+                    "aliases": [
+                        "door",
+                        "east"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "escape_tunnel",
+            "name": "Hidden Escape Tunnel",
+            "description": "You've discovered the truth! A secret tunnel stretches before you, lit by electric lights - modern technology hidden behind the cult's primitive facade. Supply crates line the walls, filled with money and provisions. A ladder leads up to a hatch that opens to the outside world. Fresh air flows down from above.",
+            "items": [
+                {
+                    "id": "supply_crates",
+                    "name": "supply crates",
+                    "description": "Crates filled with cash, food, and survival gear - the leaders' escape supplies"
+                },
+                {
+                    "id": "evidence_folder",
+                    "name": "folder of evidence",
+                    "description": "Documents revealing the cult's financial fraud and manipulation",
+                    "readable": true,
+                    "text": "Bank statements, fake prophecies, and plans to flee with millions in donations. The 'apocalypse' was always a scam. The leaders planned to escape and leave the followers behind."
+                },
+                {
+                    "id": "exit_ladder",
+                    "name": "metal ladder",
+                    "description": "A sturdy ladder leading up to freedom and the outside world"
+                }
+            ],
+            "exits": [],
+            "is_goal": true,
+            "win_message": "You've escaped the Doomsday Cult Sanctuary! As you climb the ladder and emerge into the sunlight, you realize you've uncovered the truth behind the cult's lies. With the evidence folder in hand, you can expose the fraud and help free the other members. The 'prophecy' was nothing but a con, and you've broken free from their control. You win!"
+        }
+    ]
+}

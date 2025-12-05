@@ -1,0 +1,235 @@
+{
+    "theme": "Ancient Underworld Gate",
+    "title": "Ancient Underworld Gate Adventure #40",
+    "goal": "Solve the puzzles, achieve the main objective, and escape.",
+    "starting_room": "gate_entrance",
+    "rooms": [
+        {
+            "id": "gate_entrance",
+            "name": "Gate Entrance",
+            "description": "You stand before massive obsidian gates carved with scenes of the afterlife. Torches burn with cold blue flames along the stone walls. The air is thick with mist rising from an unseen river. Ancient Greek inscriptions cover every surface, and the sound of distant wailing echoes through the chamber.",
+            "items": [
+                {
+                    "id": "stone_altar",
+                    "name": "weathered stone altar",
+                    "description": "An ancient altar with three compartments carved into its base",
+                    "subcontainers": [
+                        {
+                            "id": "left_compartment",
+                            "name": "left compartment",
+                            "locked": false,
+                            "contains": [
+                                "mythology_scroll"
+                            ]
+                        },
+                        {
+                            "id": "center_compartment",
+                            "name": "center compartment",
+                            "locked": true,
+                            "lock_type": "combination",
+                            "combination": "753",
+                            "contains": [
+                                "bronze_key"
+                            ]
+                        },
+                        {
+                            "id": "right_compartment",
+                            "name": "right compartment",
+                            "locked": false,
+                            "contains": []
+                        }
+                    ]
+                },
+                {
+                    "id": "mythology_scroll",
+                    "name": "ancient mythology scroll",
+                    "description": "A papyrus scroll describing the founding of Rome",
+                    "readable": true,
+                    "text": "The great city of Rome was founded by Romulus in the year 753 BCE. The Romans adopted much from Greek mythology, including the concept of the underworld ruled by Pluto, known to the Greeks as Hades."
+                },
+                {
+                    "id": "bronze_key",
+                    "name": "tarnished bronze key",
+                    "description": "An ancient key with symbols of the underworld etched into its surface"
+                },
+                {
+                    "id": "offering_bowl",
+                    "name": "ceremonial offering bowl",
+                    "description": "A bronze bowl filled with ancient coins",
+                    "searchable": true,
+                    "contains": [
+                        "golden_obol"
+                    ]
+                },
+                {
+                    "id": "golden_obol",
+                    "name": "golden obol coin",
+                    "description": "A gold coin used to pay the ferryman Charon for passage across the River Styx"
+                },
+                {
+                    "id": "iron_chest",
+                    "name": "iron chest",
+                    "description": "A heavy chest bound with iron bands and secured with a bronze lock",
+                    "locked": true,
+                    "key_required": "bronze_key",
+                    "contains": [
+                        "ferryman_note"
+                    ]
+                },
+                {
+                    "id": "ferryman_note",
+                    "name": "note from Charon",
+                    "description": "A message written in ancient Greek script",
+                    "readable": true,
+                    "text": "I am Charon, ferryman of the River Styx. I transport souls to the Hall of Judgment where the three judges await: Minos, Rhadamanthus, and Aeacus. Only those who know the ways of the underworld may pass beyond."
+                },
+                {
+                    "id": "wall_inscription",
+                    "name": "carved wall inscription",
+                    "description": "Ancient text carved deep into the obsidian wall",
+                    "readable": true,
+                    "text": "Beyond these gates lies the realm of Hades. The River Styx flows eternal. Cerberus, the mighty guardian hound with three heads, watches all who enter. None may leave without permission from the lord of the underworld."
+                },
+                {
+                    "id": "massive_obsidian_gates",
+                    "name": "massive obsidian gates",
+                    "description": "Towering black gates that lead deeper into the underworld",
+                    "locked": true,
+                    "key_required": "golden_obol",
+                    "direction": "north",
+                    "leads_to": "hall_of_judgment",
+                    "aliases": [
+                        "gates",
+                        "north"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "hall_of_judgment",
+            "name": "Hall of Judgment",
+            "description": "A vast columned hall where three throne-like seats tower above a central platform. Ghostly figures drift through the shadows. The walls are covered with murals depicting the judgment of souls. A massive statue of a three headed hound guards the far end of the hall, and beyond it, golden light spills from an archway.",
+            "items": [
+                {
+                    "id": "throne_minos",
+                    "name": "throne of Minos",
+                    "description": "The first judge's throne, inscribed with his title and duties",
+                    "readable": true,
+                    "text": "Minos, King of Crete, first judge of the dead. He assigns souls to their proper realm based on their deeds in life."
+                },
+                {
+                    "id": "throne_rhadamanthus",
+                    "name": "throne of Rhadamanthus",
+                    "description": "The second judge's throne with ancient inscriptions",
+                    "readable": true,
+                    "text": "Rhadamanthus, judge of Asian souls, known for his wisdom and fairness. He presides over the souls of the east."
+                },
+                {
+                    "id": "throne_aeacus",
+                    "name": "throne of Aeacus",
+                    "description": "The third judge's throne bearing his name and role",
+                    "readable": true,
+                    "text": "Aeacus, judge of European souls, keeper of the keys to the underworld. He determines who may enter the Elysian Fields."
+                },
+                {
+                    "id": "judgment_platform",
+                    "name": "central judgment platform",
+                    "description": "A raised platform where souls stand to be judged",
+                    "searchable": true,
+                    "contains": [
+                        "ancient_tablet"
+                    ]
+                },
+                {
+                    "id": "ancient_tablet",
+                    "name": "stone tablet",
+                    "description": "A tablet listing the realms of the underworld",
+                    "readable": true,
+                    "text": "The Underworld contains many realms: Tartarus for the wicked, the Asphodel Meadows for ordinary souls, and the Elysian Fields for the heroic and virtuous. The River Styx separates the living from the dead."
+                },
+                {
+                    "id": "guardian_statue",
+                    "name": "statue of guardian hound",
+                    "description": "A massive statue depicting Cerberus, the three headed hound of Hades",
+                    "readable": true,
+                    "text": "Cerberus, loyal guardian of the underworld gates. With three heads to watch all directions, he ensures no living soul enters and no dead soul leaves without permission."
+                },
+                {
+                    "id": "mural_wall",
+                    "name": "painted mural wall",
+                    "description": "Elaborate murals showing scenes from Greek mythology",
+                    "searchable": true,
+                    "contains": [
+                        "hidden_scroll"
+                    ]
+                },
+                {
+                    "id": "hidden_scroll",
+                    "name": "concealed scroll",
+                    "description": "A scroll hidden behind a loose section of mural",
+                    "readable": true,
+                    "text": "Secret knowledge: To enter the Elysian Fields, one must prove their understanding. Know who ferries souls across the Styx, where heroes find eternal rest, and who rules all the underworld."
+                },
+                {
+                    "id": "golden_archway",
+                    "name": "golden archway",
+                    "description": "A radiant archway carved with three riddles that must be answered to pass",
+                    "locked": true,
+                    "lock_type": "password",
+                    "password_questions": [
+                        {
+                            "question": "Who ferries souls across the River Styx?",
+                            "answer": "charon",
+                            "hint": "Check the note found in the iron chest at the gate entrance"
+                        },
+                        {
+                            "question": "Where do heroes and the virtuous dwell?",
+                            "answer": "elysian fields",
+                            "hint": "The stone tablet on the judgment platform lists the realms"
+                        },
+                        {
+                            "question": "Who is the lord and ruler of the underworld?",
+                            "answer": "hades",
+                            "hint": "The wall inscription at the entrance names the ruler"
+                        }
+                    ],
+                    "direction": "east",
+                    "leads_to": "elysian_fields",
+                    "aliases": [
+                        "archway",
+                        "east"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "elysian_fields",
+            "name": "Elysian Fields",
+            "description": "You have reached the paradise of the underworld! Rolling meadows of eternal spring stretch before you under a perfect sky. The air is filled with the scent of flowers and the sound of distant music. Heroes of legend walk among groves of trees, and a sense of perfect peace pervades everything. You have proven yourself worthy to enter this blessed realm.",
+            "items": [
+                {
+                    "id": "eternal_meadow",
+                    "name": "meadow of eternal spring",
+                    "description": "Endless fields of flowers that never wilt, under skies that never darken"
+                },
+                {
+                    "id": "hero_grove",
+                    "name": "grove of heroes",
+                    "description": "A peaceful grove where the greatest heroes of myth rest in eternal contentment"
+                },
+                {
+                    "id": "crystal_fountain",
+                    "name": "fountain of memory",
+                    "description": "A fountain of crystal clear water that restores all memories of life",
+                    "readable": true,
+                    "text": "Those who drink from this fountain remember all the good they did in life and find peace in the knowledge that they earned their place in paradise."
+                }
+            ],
+            "exits": [],
+            "is_goal": true,
+            "win_message": "You have successfully navigated the Ancient Underworld Gate and reached the Elysian Fields! By solving the riddles of the judges and proving your knowledge of the underworld's mysteries, you have earned your place among the blessed. The heroes of old welcome you to eternal paradise. You win!"
+        }
+    ]
+}

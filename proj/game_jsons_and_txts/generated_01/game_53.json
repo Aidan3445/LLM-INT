@@ -1,0 +1,267 @@
+{
+    "theme": "Corporate Espionage Office",
+    "title": "Corporate Espionage Office Adventure #53",
+    "goal": "Solve the puzzles, achieve the main objective, and escape.",
+    "starting_room": "cubicle_floor",
+    "rooms": [
+        {
+            "id": "cubicle_floor",
+            "name": "Open Office Cubicle Floor",
+            "description": "A dimly lit office floor filled with rows of gray cubicles. Computer monitors glow with screensavers, and the hum of fluorescent lights fills the air. Papers are scattered across desks, and the smell of stale coffee lingers. Security cameras blink red in the corners. You need to find a way to the executive level before security discovers you.",
+            "items": [
+                {
+                    "id": "desk_cubicle_a",
+                    "name": "employee desk",
+                    "description": "A cluttered desk with a computer, papers, and personal items",
+                    "searchable": true,
+                    "contains": [
+                        "employee_id_badge"
+                    ]
+                },
+                {
+                    "id": "employee_id_badge",
+                    "name": "employee ID badge",
+                    "description": "An access badge belonging to a junior employee, grants basic access"
+                },
+                {
+                    "id": "filing_cabinet",
+                    "name": "metal filing cabinet",
+                    "description": "A standard office filing cabinet with three drawers",
+                    "subcontainers": [
+                        {
+                            "id": "top_drawer",
+                            "name": "top drawer",
+                            "locked": false,
+                            "contains": [
+                                "company_directory"
+                            ]
+                        },
+                        {
+                            "id": "middle_drawer",
+                            "name": "middle drawer",
+                            "locked": true,
+                            "lock_type": "combination",
+                            "combination": "1987",
+                            "contains": [
+                                "executive_keycard"
+                            ]
+                        },
+                        {
+                            "id": "bottom_drawer",
+                            "name": "bottom drawer",
+                            "locked": false,
+                            "contains": []
+                        }
+                    ]
+                },
+                {
+                    "id": "company_directory",
+                    "name": "company directory",
+                    "description": "A printed directory listing all employees and departments",
+                    "readable": true,
+                    "text": "SYNTECH INDUSTRIES DIRECTORY - Founded 1987. CEO: Victoria Blackwell. CFO: Robert Chen. Head of Security: Marcus Stone. Departments: Research & Development (3rd Floor), Executive Offices (5th Floor), Server Room (Basement Level)."
+                },
+                {
+                    "id": "executive_keycard",
+                    "name": "executive access keycard",
+                    "description": "A high-level keycard with 'EXECUTIVE ACCESS' printed in gold letters"
+                },
+                {
+                    "id": "break_room_table",
+                    "name": "break room table",
+                    "description": "A table in the corner break area with coffee mugs and newspapers",
+                    "searchable": true,
+                    "contains": [
+                        "newspaper_article"
+                    ]
+                },
+                {
+                    "id": "newspaper_article",
+                    "name": "business newspaper",
+                    "description": "A newspaper with an article about SynTech Industries",
+                    "readable": true,
+                    "text": "BUSINESS WEEKLY: SynTech Industries celebrates 36 years of innovation. CEO Victoria Blackwell states: 'Our proprietary data is stored in the most secure server room in the industry. Only authorized personnel with proper credentials can access it.'"
+                },
+                {
+                    "id": "locked_supply_closet",
+                    "name": "supply closet",
+                    "description": "A locked closet containing office supplies and equipment",
+                    "locked": true,
+                    "key_required": "employee_id_badge",
+                    "contains": [
+                        "maintenance_memo"
+                    ]
+                },
+                {
+                    "id": "maintenance_memo",
+                    "name": "maintenance memo",
+                    "description": "An internal memo about security systems",
+                    "readable": true,
+                    "text": "MEMO: Security Update - The middle drawer combination has been reset to the company founding year (1987). Executive offices require executive keycards. Remember: CEO Blackwell's office contains access to all secure areas."
+                },
+                {
+                    "id": "water_cooler",
+                    "name": "office water cooler",
+                    "description": "A standard water cooler with a bulletin board above it",
+                    "readable": true,
+                    "text": "Bulletin Board: 'Employee of the Month: Sarah Martinez - Research & Development. Reminder: All confidential documents must be stored in executive offices. Server room access restricted to C-level executives only.'"
+                },
+                {
+                    "id": "elevator_to_executive_floor",
+                    "name": "elevator to executive floor",
+                    "description": "A sleek elevator with a card reader. A sign reads 'Executive Level - Authorized Personnel Only'",
+                    "locked": true,
+                    "key_required": "executive_keycard",
+                    "direction": "north",
+                    "leads_to": "executive_office",
+                    "aliases": [
+                        "elevator",
+                        "north"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "executive_office",
+            "name": "Executive Office Suite",
+            "description": "A luxurious office suite with mahogany furniture and floor-to-ceiling windows overlooking the city. Abstract art hangs on the walls. A massive desk dominates the room, and a wall safe is visible behind a painting. The air smells of expensive leather and cologne. A secure door leads to the server room.",
+            "items": [
+                {
+                    "id": "executive_desk",
+                    "name": "CEO's desk",
+                    "description": "An imposing mahogany desk with a leather chair and multiple locked compartments",
+                    "subcontainers": [
+                        {
+                            "id": "desk_drawer_left",
+                            "name": "left drawer",
+                            "locked": false,
+                            "contains": [
+                                "ceo_calendar"
+                            ]
+                        },
+                        {
+                            "id": "desk_drawer_right",
+                            "name": "right drawer",
+                            "locked": true,
+                            "lock_type": "combination",
+                            "combination": "5309",
+                            "contains": [
+                                "server_room_key"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "ceo_calendar",
+                    "name": "executive calendar",
+                    "description": "A leather-bound planner with appointments and notes",
+                    "readable": true,
+                    "text": "Victoria Blackwell's Calendar - Meeting with Head of Security Marcus Stone at 3pm. Note to self: Server room access code is office extension (5309). Must review R&D reports from Research & Development department."
+                },
+                {
+                    "id": "server_room_key",
+                    "name": "server room access key",
+                    "description": "A high-security key labeled 'SERVER ROOM - AUTHORIZED ACCESS ONLY'"
+                },
+                {
+                    "id": "bookshelf",
+                    "name": "executive bookshelf",
+                    "description": "A tall bookshelf filled with business books and corporate awards",
+                    "searchable": true,
+                    "contains": [
+                        "annual_report"
+                    ]
+                },
+                {
+                    "id": "annual_report",
+                    "name": "annual report",
+                    "description": "SynTech Industries' latest annual report",
+                    "readable": true,
+                    "text": "SYNTECH INDUSTRIES ANNUAL REPORT: Under CEO Victoria Blackwell's leadership, our Research & Development division continues to innovate. Our secure data storage in the server room basement ensures all proprietary information remains protected."
+                },
+                {
+                    "id": "wall_painting",
+                    "name": "abstract painting",
+                    "description": "An expensive abstract painting that appears to hide something behind it",
+                    "searchable": true,
+                    "contains": [
+                        "security_note"
+                    ]
+                },
+                {
+                    "id": "security_note",
+                    "name": "handwritten security note",
+                    "description": "A note hidden behind the painting",
+                    "readable": true,
+                    "text": "CONFIDENTIAL: Server room security protocol requires three-factor authentication. Questions verify identity: 1) Who is the CEO? 2) What department handles innovation? 3) Where is secure data stored? - M. Stone, Head of Security"
+                },
+                {
+                    "id": "conference_table",
+                    "name": "conference table",
+                    "description": "A polished table with leather chairs and presentation materials",
+                    "readable": true,
+                    "text": "Presentation slides visible: 'SynTech Industries - Leading Innovation Since 1987. CEO Victoria Blackwell's vision drives our success. Our Research & Development team creates tomorrow's technology today.'"
+                },
+                {
+                    "id": "secure_server_room_door",
+                    "name": "secure server room door",
+                    "description": "A reinforced steel door with biometric scanner and security panel. Three verification questions are displayed on the screen.",
+                    "locked": true,
+                    "lock_type": "password",
+                    "password_questions": [
+                        {
+                            "question": "Who is the company CEO?",
+                            "answer": "victoria blackwell",
+                            "hint": "Check the company directory and executive documents"
+                        },
+                        {
+                            "question": "What department handles innovation?",
+                            "answer": "research and development",
+                            "hint": "Multiple documents mention which department creates new technology"
+                        },
+                        {
+                            "question": "Where is secure data stored?",
+                            "answer": "server room basement",
+                            "hint": "The annual report and newspaper article mention the location"
+                        }
+                    ],
+                    "direction": "east",
+                    "leads_to": "server_room",
+                    "aliases": [
+                        "door",
+                        "east"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "server_room",
+            "name": "Secure Server Room",
+            "description": "You've made it to the server room! Rows of humming servers line the walls, their lights blinking in synchronized patterns. The air is cool and dry, maintained by industrial air conditioning. Cables run across the ceiling like technological vines. At the far end, an emergency exit door glows green - your escape route to the parking garage and freedom.",
+            "items": [
+                {
+                    "id": "server_racks",
+                    "name": "server racks",
+                    "description": "Tall racks filled with powerful servers containing all company data"
+                },
+                {
+                    "id": "backup_terminal",
+                    "name": "backup terminal",
+                    "description": "A computer terminal for system administration",
+                    "readable": true,
+                    "text": "SYSTEM STATUS: All data secure. Backup complete. Emergency exit protocol: Exit leads to underground parking garage. You're almost free."
+                },
+                {
+                    "id": "emergency_exit_sign",
+                    "name": "illuminated emergency exit",
+                    "description": "A green exit sign pointing to the escape route"
+                }
+            ],
+            "exits": [],
+            "is_goal": true,
+            "win_message": "SUCCESS! You've accessed the server room and reached the emergency exit. As you push through the door into the parking garage, cool night air hits your face. You've successfully infiltrated SynTech Industries, gathered the intelligence you needed, and escaped undetected. Your mission is complete. You win!"
+        }
+    ]
+}

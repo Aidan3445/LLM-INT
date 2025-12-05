@@ -1,0 +1,268 @@
+{
+    "theme": "Shadow Market Bazaar",
+    "title": "Shadow Market Bazaar Adventure #24",
+    "goal": "Solve the puzzles, achieve the main objective, and escape.",
+    "starting_room": "merchant_stall",
+    "rooms": [
+        {
+            "id": "merchant_stall",
+            "name": "Abandoned Merchant Stall",
+            "description": "A cramped stall in the depths of the shadow market, lit by flickering oil lamps. Exotic fabrics hang from the ceiling, and the air smells of spices and secrets. Wooden crates and locked chests are stacked against the walls. The sounds of distant haggling echo through the tunnels. This underground bazaar has been your prison, but somewhere there must be a way out.",
+            "items": [
+                {
+                    "id": "merchant_counter",
+                    "name": "merchant's counter",
+                    "description": "A worn wooden counter covered in dust and abandoned ledgers",
+                    "searchable": true,
+                    "contains": [
+                        "brass_key"
+                    ]
+                },
+                {
+                    "id": "brass_key",
+                    "name": "tarnished brass key",
+                    "description": "A small brass key with a crescent moon symbol engraved on it"
+                },
+                {
+                    "id": "storage_cabinet",
+                    "name": "storage cabinet",
+                    "description": "A tall cabinet with three compartments, each marked with different symbols",
+                    "subcontainers": [
+                        {
+                            "id": "top_compartment",
+                            "name": "top compartment",
+                            "locked": false,
+                            "contains": [
+                                "market_charter"
+                            ]
+                        },
+                        {
+                            "id": "middle_compartment",
+                            "name": "middle compartment",
+                            "locked": true,
+                            "lock_type": "combination",
+                            "combination": "1847",
+                            "contains": [
+                                "silver_key"
+                            ]
+                        },
+                        {
+                            "id": "bottom_compartment",
+                            "name": "bottom compartment",
+                            "locked": false,
+                            "contains": []
+                        }
+                    ]
+                },
+                {
+                    "id": "market_charter",
+                    "name": "shadow market charter",
+                    "description": "An official document establishing the market",
+                    "readable": true,
+                    "text": "CHARTER OF THE SHADOW MARKET: Established in the year 1847 by the Merchant Lord Silas Blackwood. This underground bazaar operates beneath the city, trading in rare goods and forbidden knowledge. The Vault of Secrets holds the market's greatest treasures."
+                },
+                {
+                    "id": "silver_key",
+                    "name": "ornate silver key",
+                    "description": "A decorative silver key with intricate engravings of market scenes"
+                },
+                {
+                    "id": "locked_chest",
+                    "name": "merchant's locked chest",
+                    "description": "A heavy chest bound with iron and secured with a brass lock",
+                    "locked": true,
+                    "key_required": "brass_key",
+                    "contains": [
+                        "merchant_journal",
+                        "silk_pouch"
+                    ]
+                },
+                {
+                    "id": "merchant_journal",
+                    "name": "merchant's journal",
+                    "description": "A leather-bound journal with daily entries",
+                    "readable": true,
+                    "text": "Day 127: Business is good in the shadow market. Merchant Lord Blackwood's rules keep order among us. The Vault of Secrets is said to contain the exit to the surface, but only those who understand the market's three truths may pass through the Gatekeeper's Door."
+                },
+                {
+                    "id": "silk_pouch",
+                    "name": "silk coin pouch",
+                    "description": "A small pouch containing foreign coins"
+                },
+                {
+                    "id": "fabric_rolls",
+                    "name": "rolls of exotic fabric",
+                    "description": "Colorful fabrics from distant lands",
+                    "searchable": true,
+                    "contains": [
+                        "hidden_note"
+                    ]
+                },
+                {
+                    "id": "hidden_note",
+                    "name": "smuggler's note",
+                    "description": "A crumpled note hidden among the fabrics",
+                    "readable": true,
+                    "text": "The Gatekeeper's Door leads to freedom, but you must know the answers. Who rules this market? Where are the greatest treasures kept? What do we trade in these shadows? Only then can you escape to the surface."
+                },
+                {
+                    "id": "tunnel_entrance",
+                    "name": "tunnel entrance",
+                    "description": "A dark tunnel leading deeper into the shadow market, secured with a silver lock",
+                    "locked": true,
+                    "key_required": "silver_key",
+                    "direction": "north",
+                    "leads_to": "central_bazaar",
+                    "aliases": [
+                        "tunnel",
+                        "north"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "central_bazaar",
+            "name": "Central Bazaar",
+            "description": "The heart of the shadow market - a vast underground chamber with vaulted stone ceilings. Dozens of empty stalls line the walls, their goods long since sold or stolen. Lanterns cast dancing shadows on ancient pillars. A massive iron door dominates the far wall, covered in mysterious symbols. The air is thick with the memory of countless secret transactions.",
+            "items": [
+                {
+                    "id": "information_board",
+                    "name": "market information board",
+                    "description": "A wooden board with posted notices and market rules",
+                    "readable": true,
+                    "text": "SHADOW MARKET RULES: All merchants must obey Merchant Lord Silas Blackwood. Trading hours are midnight to dawn. Forbidden goods include: stolen artifacts, cursed items, and surface contraband. The Vault of Secrets is accessible only to the Merchant Lord and his trusted agents."
+                },
+                {
+                    "id": "wanted_poster",
+                    "name": "wanted poster",
+                    "description": "A poster warning about thieves and troublemakers",
+                    "readable": true,
+                    "text": "WANTED: The Shadow Thief - Stealing from honest merchants. Last seen near the Vault of Secrets. Reward offered by Merchant Lord Blackwood. Remember: we trade in forbidden knowledge and rare goods here."
+                },
+                {
+                    "id": "merchant_stall_table",
+                    "name": "abandoned stall table",
+                    "description": "A table with various items left behind",
+                    "searchable": true,
+                    "contains": [
+                        "market_map"
+                    ]
+                },
+                {
+                    "id": "market_map",
+                    "name": "shadow market map",
+                    "description": "A hand-drawn map of the underground bazaar",
+                    "readable": true,
+                    "text": "MAP OF THE SHADOW MARKET: The central bazaar connects all tunnels. The Vault of Secrets lies beyond the Gatekeeper's Door. Exit to surface is through the vault. Merchant Lord Blackwood's office overlooks the main chamber."
+                },
+                {
+                    "id": "stone_pedestal",
+                    "name": "stone pedestal",
+                    "description": "A pedestal with compartments for offerings or payments",
+                    "subcontainers": [
+                        {
+                            "id": "offering_box",
+                            "name": "offering box",
+                            "locked": false,
+                            "contains": [
+                                "ancient_coin"
+                            ]
+                        },
+                        {
+                            "id": "payment_box",
+                            "name": "payment box",
+                            "locked": false,
+                            "contains": [
+                                "trade_ledger"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "ancient_coin",
+                    "name": "ancient gold coin",
+                    "description": "A coin stamped with the shadow market's crescent moon symbol"
+                },
+                {
+                    "id": "trade_ledger",
+                    "name": "trade ledger",
+                    "description": "A book recording market transactions",
+                    "readable": true,
+                    "text": "TRADE LEDGER: The shadow market specializes in forbidden knowledge - ancient texts, secret maps, and occult wisdom. Merchant Lord Blackwood maintains strict control. All rare goods pass through the Vault of Secrets before sale."
+                },
+                {
+                    "id": "stone_pillar",
+                    "name": "carved stone pillar",
+                    "description": "An ancient pillar with inscriptions",
+                    "readable": true,
+                    "text": "Pillar inscription: 'Here in the depths, we trade what the surface forbids. Knowledge is power. Secrets are currency. The Merchant Lord protects all who dwell in shadow.'"
+                },
+                {
+                    "id": "Gatekeeper's_Door",
+                    "name": "Gatekeeper's Door",
+                    "description": "A massive iron door covered in mystical symbols and locks. Three questions are engraved on a bronze plate mounted at eye level.",
+                    "locked": true,
+                    "lock_type": "password",
+                    "password_questions": [
+                        {
+                            "question": "Who rules the shadow market?",
+                            "answer": "merchant lord blackwood",
+                            "hint": "Check the market charter and the posted rules"
+                        },
+                        {
+                            "question": "Where are the greatest treasures kept?",
+                            "answer": "vault of secrets",
+                            "hint": "Multiple documents mention where valuable items are stored"
+                        },
+                        {
+                            "question": "What does the shadow market trade?",
+                            "answer": "forbidden knowledge",
+                            "hint": "The trade ledger and smuggler's note reveal what is traded here"
+                        }
+                    ],
+                    "direction": "east",
+                    "leads_to": "vault_of_secrets",
+                    "aliases": [
+                        "door",
+                        "gate",
+                        "east"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "vault_of_secrets",
+            "name": "Vault of Secrets",
+            "description": "You've found the legendary Vault of Secrets! A magnificent chamber filled with shelves of ancient tomes, mysterious artifacts, and forbidden treasures. Golden light emanates from enchanted crystals mounted on the walls. At the far end, a stone staircase spirals upward, leading to a door that opens to the night sky above. Fresh air flows down from the surface. Freedom awaits!",
+            "items": [
+                {
+                    "id": "treasure_shelves",
+                    "name": "shelves of forbidden knowledge",
+                    "description": "Countless books and scrolls containing secrets from across the ages"
+                },
+                {
+                    "id": "artifact_display",
+                    "name": "display of rare artifacts",
+                    "description": "Pedestals holding mysterious objects of power and beauty"
+                },
+                {
+                    "id": "enchanted_crystals",
+                    "name": "glowing crystals",
+                    "description": "Magical crystals providing light without flame"
+                },
+                {
+                    "id": "spiral_staircase",
+                    "name": "spiral staircase to surface",
+                    "description": "Stone steps leading upward to freedom and the world above",
+                    "readable": true,
+                    "text": "The stairs wind upward through the rock. At the top, you can see stars through an open doorway. The surface world awaits your return."
+                }
+            ],
+            "exits": [],
+            "is_goal": true,
+            "win_message": "You've escaped the Shadow Market Bazaar! Climbing the spiral staircase, you emerge into the cool night air of the surface world. Behind you, the hidden entrance to the underground market seals itself shut. You are free at last, carrying with you the secrets of the shadow market. You win!"
+        }
+    ]
+}

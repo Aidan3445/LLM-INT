@@ -1,0 +1,234 @@
+{
+  "theme": "Tropical Storm Observatory",
+  "title": "Tropical Storm Observatory Adventure #50",
+  "goal": "Solve the puzzles, achieve the main objective, and escape.",
+  "starting_room": "observation_deck",
+  "rooms": [
+    {
+      "id": "observation_deck",
+      "name": "Storm Observation Deck",
+      "description": "A glass-walled observation deck high above the ocean. Dark storm clouds swirl outside as rain lashes against the windows. Wind howls around the structure. Lightning illuminates banks of weather monitoring equipment and computer screens showing satellite imagery. Emergency lights flash red. A warning klaxon sounds in the distance.",
+      "items": [
+        {
+          "id": "weather_station",
+          "name": "weather monitoring station",
+          "description": "A complex array of screens displaying storm data, wind speeds, and pressure readings",
+          "readable": true,
+          "text": "ALERT: Category 5 Hurricane approaching. Wind speed: 175 mph. Barometric pressure: 892 mb. Facility evacuation required. Storm designation: HURRICANE ZETA."
+        },
+        {
+          "id": "equipment_cabinet",
+          "name": "equipment storage cabinet",
+          "description": "A tall metal cabinet with three compartments for storing research equipment",
+          "subcontainers": [
+            {
+              "id": "top_compartment",
+              "name": "top compartment",
+              "locked": false,
+              "contains": [
+                "research_log"
+              ]
+            },
+            {
+              "id": "middle_compartment",
+              "name": "middle compartment",
+              "locked": true,
+              "lock_type": "combination",
+              "combination": "892",
+              "contains": [
+                "access_keycard"
+              ]
+            },
+            {
+              "id": "bottom_compartment",
+              "name": "bottom compartment",
+              "locked": false,
+              "contains": []
+            }
+          ]
+        },
+        {
+          "id": "research_log",
+          "name": "chief meteorologist log",
+          "description": "A digital tablet with research notes and observations",
+          "readable": true,
+          "text": "Research Log - Chief Meteorologist Torres: Hurricane Zeta is unprecedented. Remember the barometric pressure reading: 892 millibars. This unlocks the emergency supplies. The archive room contains critical evacuation protocols. Access code is based on our founding year."
+        },
+        {
+          "id": "access_keycard",
+          "name": "security access keycard",
+          "description": "A magnetic keycard labeled 'AUTHORIZED PERSONNEL - ARCHIVE ACCESS'"
+        },
+        {
+          "id": "desk_workspace",
+          "name": "meteorologist desk",
+          "description": "A cluttered desk covered with charts, graphs, and storm tracking maps",
+          "searchable": true,
+          "contains": [
+            "facility_handbook"
+          ]
+        },
+        {
+          "id": "facility_handbook",
+          "name": "facility operations handbook",
+          "description": "A worn manual with facility information and procedures",
+          "readable": true,
+          "text": "Tropical Storm Observatory - Established 1975. Staff: Chief Meteorologist Torres, Data Analyst Chen, Research Coordinator Reyes. Emergency Protocol: In case of Category 5 storm, evacuate to the reinforced shelter via the archive room."
+        },
+        {
+          "id": "reinforced_archive_door",
+          "name": "reinforced archive door",
+          "description": "A heavy steel door with a card reader and keypad. A sign reads 'ARCHIVE - RESTRICTED ACCESS'",
+          "locked": true,
+          "key_required": "access_keycard",
+          "direction": "south",
+          "leads_to": "archive_room",
+          "aliases": [
+            "door",
+            "south"
+          ]
+        }
+      ],
+      "exits": []
+    },
+    {
+      "id": "archive_room",
+      "name": "Data Archive Room",
+      "description": "A climate-controlled room lined with filing cabinets and server racks. Decades of storm research data are stored here. The walls are covered with framed photographs of past hurricanes and portraits of the research team. Emergency lighting casts long shadows. The sound of the storm is muffled but still ominous.",
+      "items": [
+        {
+          "id": "portrait_torres",
+          "name": "portrait of Marina Torres",
+          "description": "A professional photograph of the Chief Meteorologist",
+          "readable": true,
+          "text": "Marina Torres - Chief Meteorologist. Specializes in hurricane prediction and atmospheric pressure analysis. Responsible for facility operations and emergency protocols."
+        },
+        {
+          "id": "portrait_chen",
+          "name": "portrait of James Chen",
+          "description": "A photograph of a young data analyst at his workstation",
+          "readable": true,
+          "text": "James Chen - Senior Data Analyst. Expert in satellite imagery and storm tracking systems. Maintains the facility's computer infrastructure and data archives."
+        },
+        {
+          "id": "portrait_reyes",
+          "name": "portrait of Elena Reyes",
+          "description": "A photograph of a researcher holding weather instruments",
+          "readable": true,
+          "text": "Elena Reyes - Research Coordinator. Coordinates field observations and manages research equipment. Known for her work on storm surge prediction models."
+        },
+        {
+          "id": "filing_system",
+          "name": "historical data filing system",
+          "description": "A large filing cabinet system with drawers organized by year and storm designation",
+          "subcontainers": [
+            {
+              "id": "drawer_1975",
+              "name": "1975 records drawer",
+              "locked": false,
+              "contains": [
+                "founding_document"
+              ]
+            },
+            {
+              "id": "drawer_current",
+              "name": "current year drawer",
+              "locked": false,
+              "contains": [
+                "evacuation_protocol"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "founding_document",
+          "name": "facility founding document",
+          "description": "An official document commemorating the observatory's establishment",
+          "readable": true,
+          "text": "Tropical Storm Observatory - Founded 1975. Mission: To advance understanding of tropical cyclones and provide early warning systems for coastal communities. Original funding: $1,975,000."
+        },
+        {
+          "id": "evacuation_protocol",
+          "name": "emergency evacuation protocol",
+          "description": "A laminated document with detailed evacuation procedures",
+          "readable": true,
+          "text": "EVACUATION PROTOCOL: In extreme weather events, proceed to the emergency shelter. Access requires verification: Who leads this facility? Where was the first hurricane studied? What is the current storm designation?"
+        },
+        {
+          "id": "server_rack",
+          "name": "data server rack",
+          "description": "A humming rack of servers storing decades of meteorological data",
+          "searchable": true,
+          "contains": [
+            "research_notes"
+          ]
+        },
+        {
+          "id": "research_notes",
+          "name": "archived research notes",
+          "description": "Printed research notes from early observatory studies",
+          "readable": true,
+          "text": "Historical Note: The observatory's first major study was Hurricane Andrew in the Caribbean region. This storm helped establish our reputation for accurate forecasting and led to improved warning systems."
+        },
+        {
+          "id": "emergency_evacuation_door",
+          "name": "emergency evacuation door",
+          "description": "A blast-resistant door leading to the emergency shelter. A security terminal displays three verification questions.",
+          "locked": true,
+          "lock_type": "password",
+          "password_questions": [
+            {
+              "question": "Who leads this facility?",
+              "answer": "marina torres",
+              "hint": "Check the portraits and the research log"
+            },
+            {
+              "question": "Where was the first hurricane studied?",
+              "answer": "caribbean",
+              "hint": "Look at the archived research notes"
+            },
+            {
+              "question": "What is the current storm designation?",
+              "answer": "hurricane zeta",
+              "hint": "The weather monitoring station shows the current storm name"
+            }
+          ],
+          "direction": "east",
+          "leads_to": "emergency_shelter",
+          "aliases": [
+            "shelter door",
+            "east"
+          ]
+        }
+      ],
+      "exits": []
+    },
+    {
+      "id": "emergency_shelter",
+      "name": "Emergency Storm Shelter",
+      "description": "You've made it to safety! A reinforced concrete bunker designed to withstand Category 5 hurricanes. The walls are thick and solid. Emergency supplies line the shelves: water, food, medical kits, and communication equipment. A backup generator hums steadily. Through a small reinforced window, you can see the fury of Hurricane Zeta raging outside, but in here you are completely safe. A radio crackles with weather updates confirming the storm will pass in several hours.",
+      "items": [
+        {
+          "id": "emergency_supplies",
+          "name": "emergency supply shelves",
+          "description": "Well-stocked shelves with everything needed to survive the storm"
+        },
+        {
+          "id": "backup_generator",
+          "name": "backup power generator",
+          "description": "A reliable generator providing power and climate control to the shelter"
+        },
+        {
+          "id": "communication_radio",
+          "name": "emergency radio",
+          "description": "A radio receiving weather updates and emergency broadcasts",
+          "readable": true,
+          "text": "WEATHER SERVICE BROADCAST: Hurricane Zeta continues to impact the region with sustained winds of 175 mph. All personnel should remain in designated shelters. Storm expected to pass within 6-8 hours. You are safe."
+        }
+      ],
+      "exits": [],
+      "is_goal": true,
+      "win_message": "SUCCESS! You've reached the emergency shelter and secured yourself against Hurricane Zeta. The reinforced bunker will protect you until the storm passes. Thanks to your quick thinking and puzzle-solving skills, you've survived one of the most powerful hurricanes ever recorded. The research data is safe, and so are you. When the storm clears, you'll have incredible data to analyze. You win!"
+    }
+  ]
+}

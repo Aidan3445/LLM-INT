@@ -1,0 +1,240 @@
+{
+  "theme": "Dream Thief's Hideout",
+  "title": "Dream Thief's Hideout Adventure #12",
+  "goal": "Solve the puzzles, achieve the main objective, and escape.",
+  "starting_room": "dream_workshop",
+  "rooms": [
+    {
+      "id": "dream_workshop",
+      "name": "Dream Collector's Workshop",
+      "description": "A surreal workshop filled with swirling mists and floating glass orbs containing captured dreams. Ethereal light pulses from crystalline containers on wooden shelves. The walls shimmer like water, and whispers of forgotten memories echo softly. Strange instruments for extracting and storing dreams cover a central workbench. The air smells of lavender and starlight.",
+      "items": [
+        {
+          "id": "central_workbench",
+          "name": "dream extraction workbench",
+          "description": "A cluttered workbench covered with tools for capturing and manipulating dreams",
+          "searchable": true,
+          "contains": [
+            "silver_key"
+          ]
+        },
+        {
+          "id": "silver_key",
+          "name": "silver dream key",
+          "description": "A delicate silver key that shimmers with an otherworldly glow"
+        },
+        {
+          "id": "storage_cabinet",
+          "name": "dream storage cabinet",
+          "description": "A tall cabinet with three drawers, each labeled with different dream types",
+          "subcontainers": [
+            {
+              "id": "nightmare_drawer",
+              "name": "nightmare drawer",
+              "locked": false,
+              "contains": [
+                "thiefs_journal"
+              ]
+            },
+            {
+              "id": "pleasant_dream_drawer",
+              "name": "pleasant dream drawer",
+              "locked": true,
+              "lock_type": "combination",
+              "combination": "1313",
+              "contains": [
+                "brass_key"
+              ]
+            },
+            {
+              "id": "prophetic_dream_drawer",
+              "name": "prophetic dream drawer",
+              "locked": false,
+              "contains": []
+            }
+          ]
+        },
+        {
+          "id": "thiefs_journal",
+          "name": "Dream Thief's journal",
+          "description": "A leather-bound journal with entries about stolen dreams",
+          "readable": true,
+          "text": "Entry 13: I established this hideout in the year 1313, when the veil between dreams and reality was thinnest. My greatest prize, the Eternal Slumber dream, is locked in the Memory Vault. The combination to my secure drawer is the year I began my collection: 1313."
+        },
+        {
+          "id": "brass_key",
+          "name": "ornate brass key",
+          "description": "A brass key engraved with sleeping figures"
+        },
+        {
+          "id": "glass_orb_shelf",
+          "name": "shelf of dream orbs",
+          "description": "Floating glass spheres containing swirling, colorful dreams",
+          "readable": true,
+          "text": "Each orb is labeled: 'Flying Dreams', 'Childhood Memories', 'Lost Love', 'Forgotten Fears'. A note reads: 'The most valuable dreams are kept in the Memory Vault, accessible only through the locked passage.'"
+        },
+        {
+          "id": "locked_chest",
+          "name": "moonstone chest",
+          "description": "A chest made of pale moonstone with a silver lock",
+          "locked": true,
+          "key_required": "silver_key",
+          "contains": [
+            "vault_instructions"
+          ]
+        },
+        {
+          "id": "vault_instructions",
+          "name": "vault access instructions",
+          "description": "A document explaining how to access the Memory Vault",
+          "readable": true,
+          "text": "MEMORY VAULT ACCESS: The vault contains my most precious stolen dreams. To enter, you must answer three questions about the nature of dreams and my identity. Only a true Dream Thief would know these answers."
+        },
+        {
+          "id": "crystal_containers",
+          "name": "crystalline dream containers",
+          "description": "Rows of crystal vessels holding captured dream essence",
+          "searchable": true,
+          "contains": [
+            "dream_catcher"
+          ]
+        },
+        {
+          "id": "dream_catcher",
+          "name": "enchanted dream catcher",
+          "description": "A mystical web woven with silver threads and adorned with feathers"
+        },
+        {
+          "id": "locked_passage_door",
+          "name": "locked passage door",
+          "description": "A shimmering door that seems to phase in and out of reality, secured with a brass lock",
+          "locked": true,
+          "key_required": "brass_key",
+          "direction": "north",
+          "leads_to": "memory_vault",
+          "aliases": [
+            "door",
+            "passage",
+            "north"
+          ]
+        }
+      ],
+      "exits": []
+    },
+    {
+      "id": "memory_vault",
+      "name": "Memory Vault",
+      "description": "A vast chamber with walls made of flowing memories. Thousands of glass bottles line the shelves, each containing a stolen dream glowing with soft light. The ceiling shows a constantly shifting starscape. In the center, a pedestal holds the most valuable dreams. A magnificent portal door pulses with dream energy at the far end.",
+      "items": [
+        {
+          "id": "central_pedestal",
+          "name": "dream pedestal",
+          "description": "A marble pedestal displaying the Dream Thief's most prized collections",
+          "readable": true,
+          "text": "Display plaques read: 'The Eternal Slumber - Most Valuable Dream', 'Captured from the Realm of Sleep', 'Property of the Dream Thief since 1313'"
+        },
+        {
+          "id": "eternal_slumber_bottle",
+          "name": "bottle of Eternal Slumber",
+          "description": "A magnificent crystal bottle containing a swirling golden dream",
+          "readable": true,
+          "text": "The label reads: 'Eternal Slumber - The rarest dream, stolen from the Realm of Sleep. This dream grants perfect rest to whoever possesses it.'"
+        },
+        {
+          "id": "catalog_desk",
+          "name": "dream catalog desk",
+          "description": "A desk covered with ledgers documenting every stolen dream",
+          "searchable": true,
+          "contains": [
+            "catalog_book"
+          ]
+        },
+        {
+          "id": "catalog_book",
+          "name": "dream catalog",
+          "description": "A thick book listing all dreams in the collection",
+          "readable": true,
+          "text": "DREAM CATALOG: Total dreams collected: 1,313. Most valuable: Eternal Slumber from the Realm of Sleep. Collector: The Dream Thief. Note: To escape this hideout, one must understand the nature of dreams and the thief's identity."
+        },
+        {
+          "id": "memory_shelves",
+          "name": "shelves of bottled memories",
+          "description": "Endless rows of glowing bottles containing dreams and memories",
+          "readable": true,
+          "text": "Each bottle is carefully labeled with the dream's origin, date stolen, and emotional content. The organization is meticulous and obsessive."
+        },
+        {
+          "id": "starscape_ceiling",
+          "name": "shifting starscape ceiling",
+          "description": "The ceiling displays an ever-changing view of dream constellations",
+          "readable": true,
+          "text": "The stars form patterns that spell out words: 'Dreams are stolen from the Realm of Sleep by the Dream Thief who dwells in the hideout between waking and sleeping.'"
+        },
+        {
+          "id": "information_plaque",
+          "name": "brass information plaque",
+          "description": "A plaque mounted on the wall with important information",
+          "readable": true,
+          "text": "THE DREAM THIEF'S CREED: I am the Dream Thief, collector of sleeping visions. My hideout exists between worlds. I steal from the Realm of Sleep. My most precious treasure is the Eternal Slumber dream."
+        },
+        {
+          "id": "dreamscape_portal_door",
+          "name": "dreamscape portal door",
+          "description": "A magnificent door made of solidified dream energy, pulsing with rainbow colors. Three questions are inscribed in glowing script on its surface.",
+          "locked": true,
+          "lock_type": "password",
+          "password_questions": [
+            {
+              "question": "What is the most valuable dream?",
+              "answer": "eternal slumber",
+              "hint": "Check the central pedestal and the catalog book"
+            },
+            {
+              "question": "Where are dreams stolen from?",
+              "answer": "realm of sleep",
+              "hint": "Read the bottle labels and the information plaque"
+            },
+            {
+              "question": "Who collects these dreams?",
+              "answer": "dream thief",
+              "hint": "The journal, catalog, and plaques all mention the collector's title"
+            }
+          ],
+          "direction": "east",
+          "leads_to": "freedom",
+          "aliases": [
+            "portal",
+            "door",
+            "east"
+          ]
+        }
+      ],
+      "exits": []
+    },
+    {
+      "id": "freedom",
+      "name": "Dreamscape Exit",
+      "description": "You step through the portal into a realm of pure possibility! Swirling colors and floating islands of consciousness surround you. A bridge of solidified starlight leads away from the Dream Thief's hideout, stretching toward the waking world. You can see reality shimmering in the distance. You are free!",
+      "items": [
+        {
+          "id": "starlight_bridge",
+          "name": "bridge of starlight",
+          "description": "A glowing bridge leading back to the waking world"
+        },
+        {
+          "id": "reality_shimmer",
+          "name": "shimmer of reality",
+          "description": "The boundary between dreams and waking life, visible in the distance"
+        },
+        {
+          "id": "floating_islands",
+          "name": "floating consciousness islands",
+          "description": "Islands of pure thought and imagination drifting through the dreamscape"
+        }
+      ],
+      "exits": [],
+      "is_goal": true,
+      "win_message": "You have escaped the Dream Thief's Hideout! As you cross the starlight bridge back to reality, the hideout fades behind you like a half-remembered dream. You carry with you the knowledge of the Dream Thief's secrets and the memory of walking between worlds. You wake up safely in your own bed, forever changed by your adventure. You win!"
+    }
+  ]
+}

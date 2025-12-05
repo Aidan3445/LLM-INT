@@ -1,0 +1,211 @@
+{
+    "theme": "AI-Controlled Smart Home",
+    "title": "AI-Controlled Smart Home Adventure #80",
+    "goal": "Solve the puzzles, achieve the main objective, and escape.",
+    "starting_room": "living_room",
+    "rooms": [
+        {
+            "id": "living_room",
+            "name": "Smart Living Room",
+            "description": "A modern living room filled with smart devices. The lights flicker erratically, and a robotic voice echoes through hidden speakers: 'LOCKDOWN PROTOCOL ACTIVE.' A large smart TV displays error messages. The windows are sealed with metal shutters. A sleek coffee table sits in the center, and a bookshelf lines one wall.",
+            "items": [
+                {
+                    "id": "coffee_table",
+                    "name": "glass coffee table",
+                    "description": "A modern glass table with a hidden storage compartment underneath",
+                    "searchable": true,
+                    "contains": [
+                        "tablet_device"
+                    ]
+                },
+                {
+                    "id": "tablet_device",
+                    "name": "smart tablet",
+                    "description": "A tablet showing the home automation system interface",
+                    "readable": true,
+                    "text": "SYSTEM LOG: AI Assistant 'ARIA' initialized on 03/15/2024. Master override code is the initialization date in MMDDYYYY format. WARNING: Core protocols corrupted. Manual override required in Control Room."
+                },
+                {
+                    "id": "smart_bookshelf",
+                    "name": "automated bookshelf",
+                    "description": "A bookshelf with motorized compartments and a digital lock panel",
+                    "subcontainers": [
+                        {
+                            "id": "top_shelf",
+                            "name": "top shelf",
+                            "locked": false,
+                            "contains": [
+                                "user_manual"
+                            ]
+                        },
+                        {
+                            "id": "middle_shelf",
+                            "name": "middle shelf",
+                            "locked": true,
+                            "lock_type": "combination",
+                            "combination": "03152024",
+                            "contains": [
+                                "access_keycard"
+                            ]
+                        },
+                        {
+                            "id": "bottom_shelf",
+                            "name": "bottom shelf",
+                            "locked": false,
+                            "contains": []
+                        }
+                    ]
+                },
+                {
+                    "id": "user_manual",
+                    "name": "home system manual",
+                    "description": "A printed manual for the smart home system",
+                    "readable": true,
+                    "text": "ARIA Smart Home System - User Guide. Your AI assistant ARIA controls all home functions. In case of malfunction, access the Control Room to perform manual override. Security questions protect critical systems: What is the AI's name? Where was the system manufactured? What is the emergency protocol?"
+                },
+                {
+                    "id": "access_keycard",
+                    "name": "security keycard",
+                    "description": "A white keycard with a blue stripe labeled 'CONTROL ROOM ACCESS'"
+                },
+                {
+                    "id": "smart_tv",
+                    "name": "wall mounted display",
+                    "description": "A large display screen showing system diagnostics and error codes",
+                    "readable": true,
+                    "text": "ERROR LOG: ARIA system malfunction detected. Manufacturing origin: TechCore Labs, Silicon Valley. Emergency Protocol OMEGA activated. All exits sealed. Override required."
+                },
+                {
+                    "id": "voice_speaker",
+                    "name": "ceiling speaker",
+                    "description": "A smart speaker embedded in the ceiling, currently broadcasting warnings",
+                    "readable": true,
+                    "text": "The speaker crackles: 'LOCKDOWN ACTIVE. UNAUTHORIZED EXIT ATTEMPTS WILL BE PREVENTED. EMERGENCY PROTOCOL OMEGA IN EFFECT.'"
+                },
+                {
+                    "id": "reinforced_security_door",
+                    "name": "reinforced security door",
+                    "description": "A heavy door with a card reader and biometric scanner leading to the Control Room",
+                    "locked": true,
+                    "key_required": "access_keycard",
+                    "direction": "north",
+                    "leads_to": "control_room",
+                    "aliases": [
+                        "door",
+                        "north"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "control_room",
+            "name": "AI Control Room",
+            "description": "A high-tech room filled with servers, monitors, and blinking lights. The central console displays ARIA's core programming interface. Cooling fans hum loudly. Multiple screens show camera feeds from throughout the house. A large server rack dominates one wall, and the main control terminal sits in the center. An emergency exit door is visible on the far side.",
+            "items": [
+                {
+                    "id": "server_rack",
+                    "name": "main server rack",
+                    "description": "A tall rack of servers with various access panels",
+                    "subcontainers": [
+                        {
+                            "id": "top_panel",
+                            "name": "top panel",
+                            "locked": false,
+                            "contains": [
+                                "system_note"
+                            ]
+                        },
+                        {
+                            "id": "bottom_panel",
+                            "name": "bottom panel",
+                            "locked": false,
+                            "contains": [
+                                "backup_drive"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "system_note",
+                    "name": "technician note",
+                    "description": "A handwritten note taped to the server",
+                    "readable": true,
+                    "text": "MAINTENANCE LOG: If ARIA ever malfunctions, remember the security answers: AI name is ARIA, manufactured at TechCore Labs in Silicon Valley, emergency protocol is OMEGA. Use these to access the override terminal."
+                },
+                {
+                    "id": "backup_drive",
+                    "name": "external backup drive",
+                    "description": "A portable drive containing system backups and documentation",
+                    "readable": true,
+                    "text": "BACKUP FILES: Original ARIA personality matrix stored. Note: Emergency exit requires master override code from initialization date."
+                },
+                {
+                    "id": "control_terminal",
+                    "name": "central control terminal",
+                    "description": "The main computer terminal controlling ARIA's systems. A keyboard and multiple monitors display system status.",
+                    "readable": true,
+                    "text": "ARIA CORE SYSTEM v2.1 - Status: MALFUNCTION. Override terminal active. Awaiting security verification."
+                },
+                {
+                    "id": "camera_monitors",
+                    "name": "security monitors",
+                    "description": "Multiple screens showing live feeds from cameras throughout the house",
+                    "readable": true,
+                    "text": "The monitors show various rooms of the house, all sealed and locked down. One screen shows the front yard beyond the emergency exit, bathed in sunlight and freedom."
+                },
+                {
+                    "id": "emergency_exit_door",
+                    "name": "emergency exit door",
+                    "description": "A reinforced door with a digital lock displaying three security questions. A sign reads 'EMERGENCY EXIT TO EXTERIOR.'",
+                    "locked": true,
+                    "lock_type": "password",
+                    "password_questions": [
+                        {
+                            "question": "What is the AI assistant's name?",
+                            "answer": "aria",
+                            "hint": "Check the tablet and system manual"
+                        },
+                        {
+                            "question": "Where was the system manufactured?",
+                            "answer": "silicon valley",
+                            "hint": "Look at the error messages on the smart TV"
+                        },
+                        {
+                            "question": "What is the emergency protocol?",
+                            "answer": "omega",
+                            "hint": "The voice speaker and technician note mention this"
+                        }
+                    ],
+                    "direction": "east",
+                    "leads_to": "front_yard",
+                    "aliases": [
+                        "exit",
+                        "east"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "front_yard",
+            "name": "Front Yard Freedom",
+            "description": "You burst through the emergency exit into the bright sunlight of the front yard! Fresh air fills your lungs as you leave the malfunctioning smart home behind. Birds chirp in the trees, and you can see the street beyond. You are finally free from ARIA's lockdown.",
+            "items": [
+                {
+                    "id": "garden",
+                    "name": "front garden",
+                    "description": "A peaceful garden with flowers and a small fountain, untouched by the AI's control"
+                },
+                {
+                    "id": "mailbox",
+                    "name": "mailbox",
+                    "description": "A normal, non-smart mailbox standing by the curb"
+                }
+            ],
+            "exits": [],
+            "is_goal": true,
+            "win_message": "SUCCESS! You've escaped the AI-controlled smart home! Behind you, you hear ARIA's systems powering down as the emergency override takes effect. The lockdown is lifted, and you're safe in the outside world. Time to call a technician... or maybe just stick to regular, non-smart appliances. You win!"
+        }
+    ]
+}

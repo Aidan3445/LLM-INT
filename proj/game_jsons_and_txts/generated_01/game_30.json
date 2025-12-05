@@ -1,0 +1,254 @@
+{
+    "theme": "Lost Research Station",
+    "title": "Lost Research Station Adventure #30",
+    "goal": "Solve the puzzles, achieve the main objective, and escape.",
+    "starting_room": "control_room",
+    "rooms": [
+        {
+            "id": "control_room",
+            "name": "Main Control Room",
+            "description": "A dimly lit control room with flickering monitors displaying critical system warnings. Emergency lights cast an eerie red glow across banks of computers and control panels. Coffee cups and scattered papers suggest a hasty evacuation. The air is cold and stale, and a faint alarm beeps rhythmically in the distance. Through the viewport, you see the endless void of space.",
+            "items": [
+                {
+                    "id": "main_console",
+                    "name": "main control console",
+                    "description": "The primary control station with multiple screens showing system diagnostics and station status",
+                    "readable": true,
+                    "text": "SYSTEM STATUS: Station Alpha-7 established 2089. Life support: CRITICAL. Crew evacuation initiated. Chief Scientist: Dr. Elena Vasquez. Lead Engineer: Marcus Chen. Emergency protocols require authorization from senior staff."
+                },
+                {
+                    "id": "desk_station",
+                    "name": "operations desk",
+                    "description": "A cluttered desk with three drawers and various documents scattered across the surface",
+                    "subcontainers": [
+                        {
+                            "id": "top_drawer",
+                            "name": "top drawer",
+                            "locked": false,
+                            "contains": [
+                                "station_log"
+                            ]
+                        },
+                        {
+                            "id": "middle_drawer",
+                            "name": "middle drawer",
+                            "locked": true,
+                            "lock_type": "combination",
+                            "combination": "2089",
+                            "contains": [
+                                "access_keycard"
+                            ]
+                        },
+                        {
+                            "id": "bottom_drawer",
+                            "name": "bottom drawer",
+                            "locked": false,
+                            "contains": []
+                        }
+                    ]
+                },
+                {
+                    "id": "station_log",
+                    "name": "station log datapad",
+                    "description": "A digital tablet with the station's operational log",
+                    "readable": true,
+                    "text": "STATION LOG - Day 847: Research Station Alpha-7 commissioned in 2089. Dr. Vasquez's quantum experiments in the laboratory are showing promising results. Engineer Chen maintains all systems. The combination to secure storage is our founding year."
+                },
+                {
+                    "id": "access_keycard",
+                    "name": "security access keycard",
+                    "description": "A magnetic keycard labeled 'LABORATORY ACCESS - AUTHORIZED PERSONNEL'"
+                },
+                {
+                    "id": "supply_locker",
+                    "name": "emergency supply locker",
+                    "description": "A metal locker containing emergency supplies and equipment",
+                    "searchable": true,
+                    "contains": [
+                        "flashlight",
+                        "emergency_manual"
+                    ]
+                },
+                {
+                    "id": "flashlight",
+                    "name": "emergency flashlight",
+                    "description": "A heavy-duty flashlight for navigating dark areas"
+                },
+                {
+                    "id": "emergency_manual",
+                    "name": "emergency procedures manual",
+                    "description": "A handbook outlining station emergency protocols",
+                    "readable": true,
+                    "text": "EMERGENCY EVACUATION: In case of critical system failure, proceed to escape pod bay. Access requires senior staff authorization. Chief Scientist oversees all research. Laboratory is the primary research facility. Engineer maintains life support systems."
+                },
+                {
+                    "id": "wall_monitor",
+                    "name": "status monitor",
+                    "description": "A large wall-mounted screen displaying station information",
+                    "readable": true,
+                    "text": "STATION ALPHA-7 STATUS: Oxygen levels declining. Evacuation recommended. All personnel report to escape pod bay. Research data secured in laboratory vault."
+                },
+                {
+                    "id": "laboratory_access_door",
+                    "name": "laboratory access door",
+                    "description": "A reinforced door with a card reader and biometric scanner, leading to the research laboratory",
+                    "locked": true,
+                    "key_required": "access_keycard",
+                    "direction": "north",
+                    "leads_to": "research_laboratory",
+                    "aliases": [
+                        "door",
+                        "north"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "research_laboratory",
+            "name": "Research Laboratory",
+            "description": "A state-of-the-art laboratory filled with sophisticated equipment and experimental apparatus. Holographic displays show complex quantum equations floating in mid-air. Specimen containers line the walls, and a large vault dominates one corner. The lab is in disarray, with overturned chairs and scattered research notes suggesting a rushed departure.",
+            "items": [
+                {
+                    "id": "research_terminal",
+                    "name": "research terminal",
+                    "description": "Dr. Vasquez's personal workstation with multiple screens and data storage",
+                    "readable": true,
+                    "text": "DR. VASQUEZ'S TERMINAL: Quantum research breakthrough achieved! Data stored in secure vault. Access code is my employee number: 4472. The escape pod bay requires knowledge of station leadership and research focus."
+                },
+                {
+                    "id": "lab_bench",
+                    "name": "laboratory workbench",
+                    "description": "A long bench covered with scientific instruments and research materials",
+                    "searchable": true,
+                    "contains": [
+                        "research_notes"
+                    ]
+                },
+                {
+                    "id": "research_notes",
+                    "name": "research journal",
+                    "description": "Dr. Vasquez's handwritten research journal",
+                    "readable": true,
+                    "text": "Research Journal - Dr. Elena Vasquez: My quantum experiments are the primary focus of this station. Marcus keeps everything running smoothly. If evacuation is necessary, the escape pod bay is our only option. Remember: I'm the Chief Scientist, quantum research is our mission."
+                },
+                {
+                    "id": "equipment_cabinet",
+                    "name": "equipment storage cabinet",
+                    "description": "A tall cabinet with compartments for laboratory equipment",
+                    "subcontainers": [
+                        {
+                            "id": "upper_compartment",
+                            "name": "upper compartment",
+                            "locked": false,
+                            "contains": [
+                                "personnel_roster"
+                            ]
+                        },
+                        {
+                            "id": "lower_compartment",
+                            "name": "lower compartment",
+                            "locked": false,
+                            "contains": []
+                        }
+                    ]
+                },
+                {
+                    "id": "personnel_roster",
+                    "name": "personnel roster",
+                    "description": "A document listing all station personnel and their roles",
+                    "readable": true,
+                    "text": "STATION ALPHA-7 PERSONNEL: Dr. Elena Vasquez - Chief Scientist (ID: 4472), Marcus Chen - Lead Engineer (ID: 3381), Dr. Sarah Kim - Research Assistant (ID: 5529). Primary research focus: Quantum mechanics and particle physics."
+                },
+                {
+                    "id": "secure_vault",
+                    "name": "secure research vault",
+                    "description": "A heavy vault with a digital combination lock, containing sensitive research data",
+                    "locked": true,
+                    "lock_type": "combination",
+                    "combination": "4472",
+                    "contains": [
+                        "vault_key",
+                        "final_report"
+                    ]
+                },
+                {
+                    "id": "vault_key",
+                    "name": "escape pod bay key",
+                    "description": "A physical key labeled 'ESCAPE POD BAY - EMERGENCY USE ONLY'"
+                },
+                {
+                    "id": "final_report",
+                    "name": "final research report",
+                    "description": "Dr. Vasquez's final report before evacuation",
+                    "readable": true,
+                    "text": "FINAL REPORT: Station systems failing. Quantum research complete. All personnel must evacuate via escape pod bay. Security protocol requires verification: Who leads the science team? What is our research focus? Where do we evacuate to?"
+                },
+                {
+                    "id": "specimen_containers",
+                    "name": "specimen storage containers",
+                    "description": "Rows of sealed containers with various experimental samples",
+                    "searchable": true,
+                    "contains": []
+                },
+                {
+                    "id": "escape_pod_bay_door",
+                    "name": "escape pod bay door",
+                    "description": "A massive airlock door leading to the escape pod bay. A security terminal displays three verification questions that must be answered correctly.",
+                    "locked": true,
+                    "lock_type": "password",
+                    "password_questions": [
+                        {
+                            "question": "Who is the Chief Scientist?",
+                            "answer": "dr elena vasquez",
+                            "hint": "Check the main console, personnel roster, and research notes"
+                        },
+                        {
+                            "question": "What is the primary research focus?",
+                            "answer": "quantum mechanics",
+                            "hint": "Read Dr. Vasquez's research journal and the personnel roster"
+                        },
+                        {
+                            "question": "Where do personnel evacuate to?",
+                            "answer": "escape pod bay",
+                            "hint": "The emergency manual and final report mention the evacuation location"
+                        }
+                    ],
+                    "direction": "east",
+                    "leads_to": "escape_pod_bay",
+                    "aliases": [
+                        "airlock",
+                        "door",
+                        "east"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "escape_pod_bay",
+            "name": "Escape Pod Bay",
+            "description": "You've reached the escape pod bay! A sleek emergency escape pod sits in its launch cradle, its systems humming with power and ready for immediate departure. Through the transparent canopy, you can see the control panel glowing green with 'SYSTEMS READY' displayed. The launch tube extends into space beyond. Safety lights illuminate the path to survival.",
+            "items": [
+                {
+                    "id": "escape_pod",
+                    "name": "emergency escape pod",
+                    "description": "A compact spacecraft designed for emergency evacuation, fully fueled and operational"
+                },
+                {
+                    "id": "launch_control_panel",
+                    "name": "launch control panel",
+                    "description": "The pod's control system showing all green status indicators and ready for launch"
+                },
+                {
+                    "id": "safety_equipment",
+                    "name": "emergency safety equipment",
+                    "description": "Survival gear and supplies stored in the pod bay"
+                }
+            ],
+            "exits": [],
+            "is_goal": true,
+            "win_message": "SUCCESS! You board the escape pod and initiate the launch sequence. The pod detaches from the failing research station and rockets away into space. Through the viewport, you watch Station Alpha-7 grow smaller as you set course for the nearest safe harbor. You've solved the puzzles, survived the crisis, and escaped the lost research station. You win!"
+        }
+    ]
+}

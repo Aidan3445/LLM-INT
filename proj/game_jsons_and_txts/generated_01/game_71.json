@@ -1,0 +1,266 @@
+{
+    "theme": "Knight's Tournament Grounds",
+    "title": "Knight's Tournament Grounds Adventure #71",
+    "goal": "Solve the puzzles, achieve the main objective, and escape.",
+    "starting_room": "tournament_pavilion",
+    "rooms": [
+        {
+            "id": "tournament_pavilion",
+            "name": "Grand Tournament Pavilion",
+            "description": "A magnificent pavilion with colorful banners hanging from wooden beams. Shields bearing noble crests line the walls. The smell of leather and oil fills the air. Wooden benches surround a central display of tournament trophies. Through the entrance, you can hear the distant echo of cheering crowds from past tournaments.",
+            "items": [
+                {
+                    "id": "trophy_display",
+                    "name": "trophy display case",
+                    "description": "A glass case containing silver cups and golden laurels from past tournaments",
+                    "searchable": true,
+                    "contains": [
+                        "tournament_program"
+                    ]
+                },
+                {
+                    "id": "tournament_program",
+                    "name": "tournament program scroll",
+                    "description": "A parchment listing the events and history of the tournament grounds",
+                    "readable": true,
+                    "text": "Grand Tournament of 1347 - Founded by Lord Blackstone. Events: Jousting, Melee Combat, Archery. Champion: Sir Roland the Brave. Herald: Master Edmund. Remember: the combination to the storage chest is the founding year."
+                },
+                {
+                    "id": "banner_wall",
+                    "name": "wall of heraldic banners",
+                    "description": "Colorful banners displaying the coats of arms of noble houses",
+                    "readable": true,
+                    "text": "The banners represent the great houses: House Blackstone (black tower on silver), House Redmane (red lion), House Goldenshield (golden sun). Lord Blackstone's banner hangs highest as founder of these grounds."
+                },
+                {
+                    "id": "wooden_bench",
+                    "name": "carved wooden bench",
+                    "description": "A sturdy bench with tournament scenes carved into the wood",
+                    "searchable": true,
+                    "contains": [
+                        "brass_key"
+                    ]
+                },
+                {
+                    "id": "brass_key",
+                    "name": "small brass key",
+                    "description": "A key with a shield emblem engraved on the handle"
+                },
+                {
+                    "id": "storage_chest",
+                    "name": "tournament storage chest",
+                    "description": "A heavy wooden chest with iron bands and a four-digit combination lock",
+                    "locked": true,
+                    "lock_type": "combination",
+                    "combination": "1347",
+                    "contains": [
+                        "silver_key",
+                        "herald_journal"
+                    ]
+                },
+                {
+                    "id": "silver_key",
+                    "name": "ornate silver key",
+                    "description": "A decorative key with tournament symbols etched along its length"
+                },
+                {
+                    "id": "herald_journal",
+                    "name": "herald's journal",
+                    "description": "A leather-bound journal belonging to Master Edmund",
+                    "readable": true,
+                    "text": "Master Edmund's Records: As herald, I announce all champions and maintain the rolls of honor. Sir Roland won the grand championship in the jousting arena. The armory holds the weapons and armor of past champions. Only those who know the tournament's history may enter the champion's hall."
+                },
+                {
+                    "id": "equipment_cabinet",
+                    "name": "equipment cabinet",
+                    "description": "A tall cabinet with brass fittings and a keyhole",
+                    "locked": true,
+                    "key_required": "brass_key",
+                    "contains": [
+                        "tournament_rules"
+                    ]
+                },
+                {
+                    "id": "tournament_rules",
+                    "name": "tournament rules parchment",
+                    "description": "An official document outlining the rules and traditions",
+                    "readable": true,
+                    "text": "Official Tournament Rules: All contests held in the jousting arena. Lord Blackstone presides as judge. Master Edmund serves as herald. Champions receive glory and honor. The armory door requires the silver key for access."
+                },
+                {
+                    "id": "pavilion_door_to_armory",
+                    "name": "pavilion door to armory",
+                    "description": "A reinforced wooden door with metal studs, leading to the armory where weapons and armor are stored",
+                    "locked": true,
+                    "key_required": "silver_key",
+                    "direction": "north",
+                    "leads_to": "knights_armory",
+                    "aliases": [
+                        "door",
+                        "north"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "knights_armory",
+            "name": "Knights' Armory",
+            "description": "A spacious armory filled with suits of armor standing like silent sentinels. Weapon racks display swords, lances, and maces. The walls are decorated with shields bearing the marks of famous champions. A large table holds maintenance tools and oil for the equipment. The champion's hall entrance stands at the far end.",
+            "items": [
+                {
+                    "id": "armor_stands",
+                    "name": "row of armor stands",
+                    "description": "Five complete suits of plate armor, each belonging to a past champion",
+                    "readable": true,
+                    "text": "Plaques identify each suit: Sir Roland the Brave, Sir Marcus the Strong, Lady Catherine the Swift, Sir William the Just, Sir Geoffrey the Bold. Sir Roland's armor bears the most honors."
+                },
+                {
+                    "id": "weapon_rack",
+                    "name": "tournament weapon rack",
+                    "description": "A rack holding various tournament weapons, all blunted for safety",
+                    "searchable": true,
+                    "contains": [
+                        "champion_lance"
+                    ]
+                },
+                {
+                    "id": "champion_lance",
+                    "name": "champion's lance",
+                    "description": "A ceremonial lance with Sir Roland's crest painted on the shaft"
+                },
+                {
+                    "id": "maintenance_table",
+                    "name": "maintenance table",
+                    "description": "A workbench covered with tools, oil, and leather straps",
+                    "subcontainers": [
+                        {
+                            "id": "tool_drawer",
+                            "name": "tool drawer",
+                            "locked": false,
+                            "contains": [
+                                "armorer_note"
+                            ]
+                        },
+                        {
+                            "id": "supply_drawer",
+                            "name": "supply drawer",
+                            "locked": false,
+                            "contains": []
+                        }
+                    ]
+                },
+                {
+                    "id": "armorer_note",
+                    "name": "armorer's note",
+                    "description": "A note left by the armory keeper",
+                    "readable": true,
+                    "text": "Reminder: Sir Roland's armor needs polishing before the ceremony. The champion's hall can only be entered by those who understand our traditions. Lord Blackstone will preside, Master Edmund will announce, and the contests are held in the jousting arena."
+                },
+                {
+                    "id": "shield_wall",
+                    "name": "wall of champion shields",
+                    "description": "Shields mounted on the wall, each painted with unique heraldry",
+                    "readable": true,
+                    "text": "Each shield tells a story of valor. Sir Roland's shield shows a white eagle on blue, symbolizing his victory in the jousting arena. The inscription reads: 'Champion of the Grand Tournament, victor of the joust.'"
+                },
+                {
+                    "id": "trophy_case",
+                    "name": "glass trophy case",
+                    "description": "A locked case displaying the most prestigious tournament prizes",
+                    "searchable": true,
+                    "contains": [
+                        "golden_medallion"
+                    ]
+                },
+                {
+                    "id": "golden_medallion",
+                    "name": "golden champion medallion",
+                    "description": "A heavy gold medallion engraved with tournament symbols"
+                },
+                {
+                    "id": "record_book",
+                    "name": "tournament record book",
+                    "description": "A large tome recording all tournament results and champions",
+                    "readable": true,
+                    "text": "Tournament Records: Year 1347 - Grand Champion: Sir Roland the Brave, Event: Jousting. Herald: Master Edmund. Presiding Judge: Lord Blackstone, Founder. Location: Jousting Arena. All champions are honored in the champion's hall."
+                },
+                {
+                    "id": "entrance_to_champion's_hall",
+                    "name": "entrance to champion's hall",
+                    "description": "An impressive doorway carved with scenes of tournament glory. Three questions are inscribed on a bronze plaque beside the entrance.",
+                    "locked": true,
+                    "lock_type": "password",
+                    "password_questions": [
+                        {
+                            "question": "Who founded the tournament grounds?",
+                            "answer": "lord blackstone",
+                            "hint": "Check the tournament program and the record book for the founder's name"
+                        },
+                        {
+                            "question": "Where are the contests held?",
+                            "answer": "jousting arena",
+                            "hint": "Multiple documents mention the location of tournament events"
+                        },
+                        {
+                            "question": "Who was the grand champion?",
+                            "answer": "sir roland",
+                            "hint": "Look at the armor stands, shields, and tournament records"
+                        }
+                    ],
+                    "direction": "east",
+                    "leads_to": "champions_hall",
+                    "aliases": [
+                        "entrance",
+                        "hall",
+                        "east"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "champions_hall",
+            "name": "Champion's Hall of Glory",
+            "description": "You have entered the legendary Champion's Hall! A magnificent chamber with vaulted ceilings and stained glass windows depicting famous tournament victories. Golden plaques line the walls, each bearing the name of a champion. At the center, a raised platform holds the Champion's Throne. Sunlight streams through the windows, illuminating a grand archway that leads to freedom.",
+            "items": [
+                {
+                    "id": "champions_throne",
+                    "name": "champion's throne",
+                    "description": "An ornate throne carved from oak and decorated with gold leaf, where champions are honored"
+                },
+                {
+                    "id": "stained_glass_windows",
+                    "name": "stained glass windows",
+                    "description": "Beautiful windows showing knights in glorious combat",
+                    "readable": true,
+                    "text": "The windows depict the greatest moments in tournament history: Sir Roland's legendary joust, Lady Catherine's archery triumph, and Lord Blackstone presenting the first championship trophy."
+                },
+                {
+                    "id": "golden_plaques",
+                    "name": "wall of golden plaques",
+                    "description": "Dozens of plaques commemorating tournament champions through the ages",
+                    "readable": true,
+                    "text": "Each plaque honors a champion. The largest and most prominent reads: 'Sir Roland the Brave - Grand Champion of 1347 - Victor of the Joust - His courage and skill shall be remembered forever.'"
+                },
+                {
+                    "id": "ceremonial_table",
+                    "name": "ceremonial table",
+                    "description": "A table holding the championship regalia and ceremonial items",
+                    "searchable": true,
+                    "contains": [
+                        "victory_crown"
+                    ]
+                },
+                {
+                    "id": "victory_crown",
+                    "name": "champion's victory crown",
+                    "description": "A golden laurel crown awarded to the grand champion"
+                }
+            ],
+            "exits": [],
+            "is_goal": true,
+            "win_message": "You have reached the Champion's Hall and proven yourself worthy! As you stand in this hallowed space where legends are made, you feel the weight of history and honor. The grand archway opens before you, leading to the tournament grounds exit and your freedom. You have conquered the challenges of the Knight's Tournament Grounds! You win!"
+        }
+    ]
+}

@@ -1,0 +1,226 @@
+{
+    "theme": "Tropical Storm Observatory",
+    "title": "Tropical Storm Observatory Adventure #64",
+    "goal": "Solve the puzzles, achieve the main objective, and escape.",
+    "starting_room": "control_room",
+    "rooms": [
+        {
+            "id": "control_room",
+            "name": "Weather Station Control Room",
+            "description": "A high-tech control room filled with weather monitoring equipment and radar screens showing an approaching tropical storm. Red warning lights flash overhead. Computer terminals display real-time atmospheric data. The wind howls outside the reinforced windows. A heavy steel door leads to the observation deck.",
+            "items": [
+                {
+                    "id": "main_console",
+                    "name": "main weather console",
+                    "description": "A large console with multiple screens showing storm tracking data and satellite imagery",
+                    "subcontainers": [
+                        {
+                            "id": "console_drawer_top",
+                            "name": "top drawer",
+                            "locked": false,
+                            "contains": [
+                                "storm_log"
+                            ]
+                        },
+                        {
+                            "id": "console_drawer_bottom",
+                            "name": "bottom drawer",
+                            "locked": true,
+                            "lock_type": "combination",
+                            "combination": "354",
+                            "contains": [
+                                "steel_key"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "storm_log",
+                    "name": "storm tracking log",
+                    "description": "A digital log displaying recent storm data and classifications",
+                    "readable": true,
+                    "text": "STORM LOG: Hurricane Categories - Cat 3: winds 111-129 mph, Cat 5: winds 157+ mph, Cat 4: winds 130-156 mph. Current storm approaching: Category 3-5-4 pattern detected. Lead Meteorologist: Dr Elena Cortez. Station Chief: Commander Hayes."
+                },
+                {
+                    "id": "steel_key",
+                    "name": "steel access key",
+                    "description": "A heavy steel key with weather station markings engraved on it"
+                },
+                {
+                    "id": "equipment_locker",
+                    "name": "emergency equipment locker",
+                    "description": "A tall metal locker containing emergency supplies and weather instruments",
+                    "locked": true,
+                    "key_required": "steel_key",
+                    "contains": [
+                        "research_notes",
+                        "emergency_radio"
+                    ]
+                },
+                {
+                    "id": "research_notes",
+                    "name": "meteorology research notes",
+                    "description": "Detailed notes about tropical storm formation and safety protocols",
+                    "readable": true,
+                    "text": "RESEARCH NOTES by Dr Elena Cortez: Tropical storms form over warm ocean waters when sea surface temperatures exceed 26 degrees Celsius. The eye of the storm is the calmest part. Emergency shelter access requires knowledge of: storm formation location, safest storm location, and station authority."
+                },
+                {
+                    "id": "emergency_radio",
+                    "name": "portable emergency radio",
+                    "description": "A battery-powered radio for emergency communications"
+                },
+                {
+                    "id": "wall_charts",
+                    "name": "meteorological wall charts",
+                    "description": "Large charts showing storm patterns and atmospheric pressure systems",
+                    "searchable": true,
+                    "contains": [
+                        "safety_manual"
+                    ]
+                },
+                {
+                    "id": "safety_manual",
+                    "name": "station safety manual",
+                    "description": "A comprehensive manual detailing emergency procedures",
+                    "readable": true,
+                    "text": "SAFETY MANUAL: In case of Category 3+ storm, all personnel must evacuate to the emergency shelter. Station authority rests with Commander Hayes. Remember: storms form over warm ocean waters, and the eye is the safest location during passage."
+                },
+                {
+                    "id": "steel_observation_deck_door",
+                    "name": "steel observation deck door",
+                    "description": "A reinforced steel door leading to the observation deck with a card reader and keypad",
+                    "locked": true,
+                    "key_required": "steel_key",
+                    "direction": "north",
+                    "leads_to": "observation_deck",
+                    "aliases": [
+                        "door",
+                        "north"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "observation_deck",
+            "name": "Observation Deck",
+            "description": "A circular observation deck with floor-to-ceiling windows offering a 360-degree view of the darkening sky. Lightning flashes in the distance as the storm approaches. Wind gauges and barometers line the walls. A weather balloon launch station sits in one corner. The emergency shelter entrance is visible to the east.",
+            "items": [
+                {
+                    "id": "weather_station",
+                    "name": "automated weather station",
+                    "description": "A sophisticated instrument cluster measuring wind speed, pressure, and temperature",
+                    "readable": true,
+                    "text": "CURRENT READINGS: Wind speed increasing to 115 mph. Barometric pressure dropping rapidly. Storm surge warning in effect. Estimated time to landfall: 45 minutes."
+                },
+                {
+                    "id": "observation_telescope",
+                    "name": "storm observation telescope",
+                    "description": "A powerful telescope mounted on a rotating base for tracking storm systems",
+                    "searchable": true,
+                    "contains": [
+                        "brass_key"
+                    ]
+                },
+                {
+                    "id": "brass_key",
+                    "name": "brass shelter key",
+                    "description": "A brass key labeled for emergency shelter access"
+                },
+                {
+                    "id": "data_terminal",
+                    "name": "data analysis terminal",
+                    "description": "A computer terminal displaying real-time storm analysis and historical data",
+                    "readable": true,
+                    "text": "STORM ANALYSIS: Current system matches historical Category 3 hurricane patterns. Formation occurred over warm Atlantic waters 8 days ago. Eye diameter: 25 miles. All personnel must know: where storms form, where safety lies within a storm, and who commands this station."
+                },
+                {
+                    "id": "supply_cabinet",
+                    "name": "observation supply cabinet",
+                    "description": "A cabinet containing weather balloons, instruments, and emergency supplies",
+                    "subcontainers": [
+                        {
+                            "id": "top_shelf",
+                            "name": "top shelf",
+                            "locked": false,
+                            "contains": [
+                                "evacuation_notice"
+                            ]
+                        },
+                        {
+                            "id": "bottom_shelf",
+                            "name": "bottom shelf",
+                            "locked": false,
+                            "contains": []
+                        }
+                    ]
+                },
+                {
+                    "id": "evacuation_notice",
+                    "name": "emergency evacuation notice",
+                    "description": "An official notice posted by station command",
+                    "readable": true,
+                    "text": "EVACUATION ORDER by Commander Hayes: All personnel must proceed to emergency shelter immediately. Storm Category 3+ confirmed. Answer security questions to access shelter: storm formation location, safest storm area, commanding officer name."
+                },
+                {
+                    "id": "emergency_shelter_door",
+                    "name": "emergency shelter door",
+                    "description": "A massive reinforced door leading to the underground emergency shelter. A security panel displays three verification questions.",
+                    "locked": true,
+                    "lock_type": "password",
+                    "password_questions": [
+                        {
+                            "question": "Where do tropical storms form?",
+                            "answer": "warm ocean waters",
+                            "hint": "Check the research notes and data terminal for information about storm formation"
+                        },
+                        {
+                            "question": "What is the safest part of a storm?",
+                            "answer": "eye",
+                            "hint": "The safety manual and research notes mention the calmest location"
+                        },
+                        {
+                            "question": "Who commands this station?",
+                            "answer": "commander hayes",
+                            "hint": "Look for the station chief's name in the logs and notices"
+                        }
+                    ],
+                    "direction": "east",
+                    "leads_to": "emergency_shelter",
+                    "aliases": [
+                        "shelter",
+                        "east"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "emergency_shelter",
+            "name": "Underground Emergency Shelter",
+            "description": "You have reached safety! A reinforced underground bunker designed to withstand Category 5 hurricanes. The walls are lined with supplies, emergency equipment, and communication systems. Comfortable bunks and a well-stocked pantry ensure survival. Through a small periscope, you can see the storm raging above, but down here you are completely safe.",
+            "items": [
+                {
+                    "id": "supply_storage",
+                    "name": "emergency supply storage",
+                    "description": "Shelves stocked with food, water, medical supplies, and survival equipment"
+                },
+                {
+                    "id": "communication_system",
+                    "name": "emergency communication system",
+                    "description": "A radio system connecting to emergency services and other weather stations",
+                    "readable": true,
+                    "text": "SYSTEM STATUS: All emergency channels active. Storm tracking confirmed. Shelter integrity at 100 percent. You are safe. Well done on reaching the shelter in time."
+                },
+                {
+                    "id": "storm_periscope",
+                    "name": "observation periscope",
+                    "description": "A periscope allowing safe observation of the storm above"
+                }
+            ],
+            "exits": [],
+            "is_goal": true,
+            "win_message": "SUCCESS! You have successfully navigated the weather station and reached the emergency shelter just as the tropical storm makes landfall. The reinforced bunker protects you from the howling winds and torrential rain above. You solved all the meteorological puzzles and demonstrated your knowledge of storm safety. You will ride out the storm in complete safety. You win!"
+        }
+    ]
+}

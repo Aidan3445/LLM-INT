@@ -11,7 +11,6 @@ from dotenv import load_dotenv
 # Load environment variables
 load_dotenv()
 
-# need to change configuration
 lm = dspy.LM(
         model=os.getenv("MODEL", "claude-sonnet-4-5"),
         api_key=os.getenv("API_KEY"),
@@ -429,8 +428,8 @@ if __name__ == "__main__":
         }
         }
 
-    verified = 10
-    example_files = [f"game_jsons_and_txts/example_{v+1}.json" for v in range(verified)]
+    verified = 11
+    example_files = [f"game_jsons_and_txts/generated_batch_01/game_{v+1}.json" for v in range(verified)]
 
-    batch = BatchGameGenerator(output_dir="game_jsons_and_txts/generated", n=50, schema=GAME_SCHEMA, example_files=example_files)
+    batch = BatchGameGenerator(output_dir="game_jsons_and_txts/generated_01", n=100, schema=GAME_SCHEMA, example_files=example_files)
     batch.run()

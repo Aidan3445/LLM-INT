@@ -1,0 +1,225 @@
+{
+  "theme": "Space-Farm Biodome",
+  "title": "Space-Farm Biodome Adventure #69",
+  "goal": "Solve the puzzles, achieve the main objective, and escape.",
+  "starting_room": "biodome_control_room",
+  "rooms": [
+    {
+      "id": "biodome_control_room",
+      "name": "Biodome Control Room",
+      "description": "A compact control room with flickering monitors displaying plant growth data and atmospheric readings. Warning lights blink red across the main console. Through the reinforced window, you see rows of hydroponic crops stretching into the distance. The air smells of recycled oxygen and ozone.",
+      "items": [
+        {
+          "id": "main_console",
+          "name": "main control console",
+          "description": "A complex array of switches, screens, and indicator lights monitoring the biodome systems",
+          "searchable": true,
+          "contains": [
+            "maintenance_log"
+          ]
+        },
+        {
+          "id": "maintenance_log",
+          "name": "maintenance logbook",
+          "description": "A digital tablet showing recent maintenance records",
+          "readable": true,
+          "text": "MAINTENANCE LOG: System initialized 2157. Chief Engineer Rodriguez oversees all operations. Emergency protocol: Access code is the year of initialization. Remember: crops are stored in the Hydroponics Bay, and the shuttle is in the Emergency Dock."
+        },
+        {
+          "id": "supply_cabinet",
+          "name": "emergency supply cabinet",
+          "description": "A metal cabinet with three compartments labeled for different emergency supplies",
+          "subcontainers": [
+            {
+              "id": "top_compartment",
+              "name": "top compartment",
+              "locked": false,
+              "contains": [
+                "engineer_note"
+              ]
+            },
+            {
+              "id": "middle_compartment",
+              "name": "middle compartment",
+              "locked": true,
+              "lock_type": "combination",
+              "combination": "2157",
+              "contains": [
+                "access_keycard"
+              ]
+            },
+            {
+              "id": "bottom_compartment",
+              "name": "bottom compartment",
+              "locked": false,
+              "contains": []
+            }
+          ]
+        },
+        {
+          "id": "engineer_note",
+          "name": "engineer's note",
+          "description": "A handwritten note on official station letterhead",
+          "readable": true,
+          "text": "Note from Chief Engineer Rodriguez: If you're reading this, something has gone wrong. The biodome entrance requires your keycard. The shuttle bay needs proper authorization. Stay calm and follow protocols."
+        },
+        {
+          "id": "access_keycard",
+          "name": "security access keycard",
+          "description": "A magnetic keycard with Chief Engineer Rodriguez's name printed on it"
+        },
+        {
+          "id": "tool_rack",
+          "name": "tool storage rack",
+          "description": "A wall-mounted rack holding various maintenance tools",
+          "searchable": true,
+          "contains": [
+            "utility_tool"
+          ]
+        },
+        {
+          "id": "utility_tool",
+          "name": "multipurpose utility tool",
+          "description": "A versatile tool with multiple attachments for repairs and maintenance"
+        },
+        {
+          "id": "biodome_entrance_door",
+          "name": "biodome entrance door",
+          "description": "A sealed airlock door leading into the main biodome growing area. A card reader blinks beside it.",
+          "locked": true,
+          "key_required": "access_keycard",
+          "direction": "north",
+          "leads_to": "hydroponics_bay",
+          "aliases": [
+            "airlock",
+            "north"
+          ]
+        }
+      ],
+      "exits": []
+    },
+    {
+      "id": "hydroponics_bay",
+      "name": "Hydroponics Bay",
+      "description": "A vast chamber filled with vertical growing towers and nutrient mist. LED grow lights cast a purple glow over rows of lettuce, tomatoes, and wheat. The sound of water pumps and air circulators fills the space. A storage locker stands against the far wall, and information panels describe the various crops.",
+      "items": [
+        {
+          "id": "crop_info_panel_1",
+          "name": "lettuce information panel",
+          "description": "A digital display showing data about the lettuce crop",
+          "readable": true,
+          "text": "CROP: Hydroponic Lettuce - Primary food source for station crew. Grown in nutrient solution. Harvest cycle: 30 days."
+        },
+        {
+          "id": "crop_info_panel_2",
+          "name": "tomato information panel",
+          "description": "A screen displaying tomato growing information",
+          "readable": true,
+          "text": "CROP: Cherry Tomatoes - Vitamin C source. Requires careful pH monitoring. Chief Rodriguez personally tends these plants."
+        },
+        {
+          "id": "crop_info_panel_3",
+          "name": "wheat information panel",
+          "description": "A monitor showing wheat cultivation data",
+          "readable": true,
+          "text": "CROP: Dwarf Wheat - Grain production for bread and pasta. Experimental strain developed in 2157. Stored in the Hydroponics Bay after harvest."
+        },
+        {
+          "id": "storage_locker",
+          "name": "agricultural storage locker",
+          "description": "A large locker containing farming supplies and equipment",
+          "locked": true,
+          "key_required": "utility_tool",
+          "contains": [
+            "shuttle_authorization",
+            "oxygen_canister"
+          ]
+        },
+        {
+          "id": "shuttle_authorization",
+          "name": "shuttle authorization document",
+          "description": "An official document with emergency evacuation protocols",
+          "readable": true,
+          "text": "EMERGENCY SHUTTLE AUTHORIZATION: In case of biodome failure, proceed to Emergency Dock. Security verification required: Who is the chief engineer? Where are crops stored? What year was the system initialized?"
+        },
+        {
+          "id": "oxygen_canister",
+          "name": "emergency oxygen canister",
+          "description": "A portable oxygen supply for emergency situations"
+        },
+        {
+          "id": "growing_tower",
+          "name": "vertical growing tower",
+          "description": "A tall hydroponic tower with multiple plant levels",
+          "searchable": true,
+          "contains": [
+            "hidden_note"
+          ]
+        },
+        {
+          "id": "hidden_note",
+          "name": "hidden message",
+          "description": "A small note tucked behind a plant tray",
+          "readable": true,
+          "text": "Personal log: This biodome has been my life's work since 2157. If evacuation is necessary, remember that proper authorization is required. The answers are in the maintenance records and crop data. - Rodriguez"
+        },
+        {
+          "id": "emergency_shuttle_bay_door",
+          "name": "emergency shuttle bay door",
+          "description": "A reinforced door leading to the shuttle bay. A security terminal displays three verification questions.",
+          "locked": true,
+          "lock_type": "password",
+          "password_questions": [
+            {
+              "question": "Who is the chief engineer?",
+              "answer": "rodriguez",
+              "hint": "Check the maintenance log and various notes throughout the biodome"
+            },
+            {
+              "question": "Where are crops stored?",
+              "answer": "hydroponics bay",
+              "hint": "Look at the crop information panels and maintenance records"
+            },
+            {
+              "question": "What year was the system initialized?",
+              "answer": "2157",
+              "hint": "The maintenance log contains this information"
+            }
+          ],
+          "direction": "east",
+          "leads_to": "emergency_shuttle_bay",
+          "aliases": [
+            "shuttle bay",
+            "east"
+          ]
+        }
+      ],
+      "exits": []
+    },
+    {
+      "id": "emergency_shuttle_bay",
+      "name": "Emergency Shuttle Bay",
+      "description": "You've reached the emergency shuttle bay! A sleek escape shuttle sits on the launch pad, its engines humming with standby power. Through the bay windows, you can see the stars and the curve of the planet below. The shuttle's hatch is open, inviting you to safety.",
+      "items": [
+        {
+          "id": "escape_shuttle",
+          "name": "emergency escape shuttle",
+          "description": "A compact spacecraft designed for emergency evacuation, fully fueled and ready for launch"
+        },
+        {
+          "id": "launch_console",
+          "name": "shuttle launch console",
+          "description": "The control panel for initiating shuttle departure, all systems showing green"
+        },
+        {
+          "id": "viewport",
+          "name": "observation viewport",
+          "description": "A large window showing the beauty of space and the planet below"
+        }
+      ],
+      "exits": [],
+      "is_goal": true,
+      "win_message": "SUCCESS! You board the emergency shuttle and initiate the launch sequence. The engines roar to life as the biodome falls away behind you. You've successfully escaped the failing space farm and are heading to safety. The crops may be lost, but you survived to farm another day. You win!"
+    }
+  ]
+}

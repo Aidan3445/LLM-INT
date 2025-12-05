@@ -1,0 +1,275 @@
+{
+    "theme": "Medieval Dungeon",
+    "title": "Medieval Dungeon Adventure #75",
+    "goal": "Solve the puzzles, achieve the main objective, and escape.",
+    "starting_room": "dungeon_cell",
+    "rooms": [
+        {
+            "id": "dungeon_cell",
+            "name": "Dark Dungeon Cell",
+            "description": "A cold, damp cell deep beneath the castle. Water drips from the stone ceiling, and rats scurry in the shadows. Iron bars block the small window, allowing only a sliver of moonlight. The air smells of mold and despair. A skeleton lies slumped in the corner, still shackled to the wall.",
+            "items": [
+                {
+                    "id": "skeleton",
+                    "name": "prisoner's skeleton",
+                    "description": "The remains of a previous prisoner, wearing tattered clothes and rusted shackles",
+                    "searchable": true,
+                    "contains": [
+                        "prisoners_journal"
+                    ]
+                },
+                {
+                    "id": "prisoners_journal",
+                    "name": "prisoner's journal",
+                    "description": "A small, water-damaged book clutched in the skeleton's bony hand",
+                    "readable": true,
+                    "text": "Day 89: I have been here so long. This cursed dungeon was built in 1342 by Lord Blackwood. They say the treasure vault holds riches beyond measure, but I'll never see it. The combination to the chest is the year this prison was born. If anyone finds this, know that the dungeon master's name is Sir Grimwald."
+                },
+                {
+                    "id": "loose_stone",
+                    "name": "loose stone in wall",
+                    "description": "A stone in the wall that appears slightly out of place",
+                    "searchable": true,
+                    "contains": [
+                        "rusty_key"
+                    ]
+                },
+                {
+                    "id": "rusty_key",
+                    "name": "rusty iron key",
+                    "description": "An old key hidden behind the loose stone, covered in rust but still functional"
+                },
+                {
+                    "id": "wooden_chest",
+                    "name": "old wooden chest",
+                    "description": "A chest in the corner with a combination lock showing four rotating number wheels",
+                    "locked": true,
+                    "lock_type": "combination",
+                    "combination": "1342",
+                    "contains": [
+                        "guard_uniform",
+                        "escape_map"
+                    ]
+                },
+                {
+                    "id": "guard_uniform",
+                    "name": "guard's uniform",
+                    "description": "A stolen guard uniform, useful for blending in with the dungeon guards"
+                },
+                {
+                    "id": "escape_map",
+                    "name": "hand drawn dungeon map",
+                    "description": "A crude map showing the layout of the dungeon levels",
+                    "readable": true,
+                    "text": "The map shows three levels: Cell Block (where you are), Torture Chamber, and Treasure Vault. A note reads: 'The vault door requires three answers: Who rules this dungeon? Where do prisoners suffer? What awaits in the vault?'"
+                },
+                {
+                    "id": "straw_pile",
+                    "name": "pile of moldy straw",
+                    "description": "A heap of rotting straw that once served as bedding",
+                    "searchable": true,
+                    "contains": [
+                        "iron_nail"
+                    ]
+                },
+                {
+                    "id": "iron_nail",
+                    "name": "long iron nail",
+                    "description": "A sturdy nail that could be used as a makeshift tool"
+                },
+                {
+                    "id": "heavy_cell_door",
+                    "name": "heavy cell door",
+                    "description": "A thick wooden door reinforced with iron bands. A rusty lock secures it.",
+                    "locked": true,
+                    "key_required": "rusty_key",
+                    "direction": "north",
+                    "leads_to": "torture_chamber",
+                    "aliases": [
+                        "door",
+                        "north"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "torture_chamber",
+            "name": "Torture Chamber",
+            "description": "A grim chamber filled with instruments of pain. Chains hang from the ceiling, and a rack dominates the center of the room. Torches flicker on the walls, casting dancing shadows. The smell of blood and fear lingers in the air. A massive iron door to the east leads to the treasure vault.",
+            "items": [
+                {
+                    "id": "torture_rack",
+                    "name": "wooden torture rack",
+                    "description": "A sinister device used to extract confessions from prisoners",
+                    "searchable": true,
+                    "contains": [
+                        "brass_key"
+                    ]
+                },
+                {
+                    "id": "brass_key",
+                    "name": "small brass key",
+                    "description": "A brass key hidden beneath the torture rack"
+                },
+                {
+                    "id": "iron_maiden",
+                    "name": "iron maiden",
+                    "description": "A metal sarcophagus with spikes inside, mercifully empty",
+                    "searchable": true,
+                    "contains": []
+                },
+                {
+                    "id": "guards_desk",
+                    "name": "guard's desk",
+                    "description": "A sturdy oak desk with three drawers and various papers scattered on top",
+                    "subcontainers": [
+                        {
+                            "id": "top_drawer",
+                            "name": "top drawer",
+                            "locked": false,
+                            "contains": [
+                                "dungeon_log"
+                            ]
+                        },
+                        {
+                            "id": "middle_drawer",
+                            "name": "middle drawer",
+                            "locked": true,
+                            "lock_type": "combination",
+                            "combination": "666",
+                            "contains": [
+                                "vault_key"
+                            ]
+                        },
+                        {
+                            "id": "bottom_drawer",
+                            "name": "bottom drawer",
+                            "locked": false,
+                            "contains": []
+                        }
+                    ]
+                },
+                {
+                    "id": "dungeon_log",
+                    "name": "dungeon master's log",
+                    "description": "A leather-bound book with daily entries",
+                    "readable": true,
+                    "text": "Entry 47: Sir Grimwald continues his cruel reign over this dungeon. Another prisoner sent to the torture chamber today. The middle drawer combination is the number of the beast: 666. The treasure vault holds gold and jewels beyond counting."
+                },
+                {
+                    "id": "vault_key",
+                    "name": "ornate vault key",
+                    "description": "A beautifully crafted key with intricate engravings"
+                },
+                {
+                    "id": "wanted_poster",
+                    "name": "wanted poster",
+                    "description": "A poster showing various criminals",
+                    "readable": true,
+                    "text": "WANTED: Various thieves and murderers. All prisoners are brought to the torture chamber for interrogation before being sent to the cells or the gallows. By order of Sir Grimwald, Dungeon Master."
+                },
+                {
+                    "id": "weapon_rack",
+                    "name": "weapon rack",
+                    "description": "A rack holding swords, maces, and other implements",
+                    "searchable": true,
+                    "contains": [
+                        "torch"
+                    ]
+                },
+                {
+                    "id": "torch",
+                    "name": "lit torch",
+                    "description": "A burning torch that provides light in the darkness"
+                },
+                {
+                    "id": "locked_cabinet",
+                    "name": "locked supply cabinet",
+                    "description": "A metal cabinet with a brass lock, containing guard supplies",
+                    "locked": true,
+                    "key_required": "brass_key",
+                    "contains": [
+                        "healing_potion",
+                        "instruction_note"
+                    ]
+                },
+                {
+                    "id": "healing_potion",
+                    "name": "healing potion",
+                    "description": "A small vial of red liquid that can restore health"
+                },
+                {
+                    "id": "instruction_note",
+                    "name": "guard instructions",
+                    "description": "A note with instructions for the guards",
+                    "readable": true,
+                    "text": "GUARD INSTRUCTIONS: Sir Grimwald is the master of this dungeon. All prisoners must pass through the torture chamber. The treasure vault contains the lord's gold and must be protected at all costs. Only those who answer the three questions may enter."
+                },
+                {
+                    "id": "reinforced_vault_door",
+                    "name": "reinforced vault door",
+                    "description": "A massive iron door with elaborate locks and three questions engraved on a brass plate.",
+                    "locked": true,
+                    "lock_type": "password",
+                    "password_questions": [
+                        {
+                            "question": "Who is the master of this dungeon?",
+                            "answer": "sir grimwald",
+                            "hint": "Check the prisoner's journal and the dungeon log"
+                        },
+                        {
+                            "question": "Where do prisoners suffer?",
+                            "answer": "torture chamber",
+                            "hint": "Read the wanted poster and guard instructions"
+                        },
+                        {
+                            "question": "What awaits in the vault?",
+                            "answer": "gold and jewels",
+                            "hint": "The dungeon log mentions what the treasure vault contains"
+                        }
+                    ],
+                    "direction": "east",
+                    "leads_to": "treasure_vault",
+                    "aliases": [
+                        "vault",
+                        "east"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "treasure_vault",
+            "name": "Royal Treasure Vault",
+            "description": "You've made it! A magnificent chamber filled with chests overflowing with gold coins, jeweled crowns, and precious artifacts. Torches illuminate piles of treasure collected over centuries. At the far end, a secret passage leads up a spiral staircase to freedom. Fresh air flows down from above, carrying the scent of the outside world.",
+            "items": [
+                {
+                    "id": "treasure_chests",
+                    "name": "chests of gold",
+                    "description": "Multiple chests filled with gold coins, gems, and precious metals"
+                },
+                {
+                    "id": "jeweled_crown",
+                    "name": "jeweled crown",
+                    "description": "A magnificent crown encrusted with rubies, diamonds, and sapphires"
+                },
+                {
+                    "id": "golden_chalice",
+                    "name": "golden chalice",
+                    "description": "An ornate chalice made of pure gold and decorated with emeralds"
+                },
+                {
+                    "id": "secret_passage",
+                    "name": "secret passage",
+                    "description": "A hidden staircase leading up to freedom, revealed behind a moved tapestry",
+                    "readable": true,
+                    "text": "Stone steps wind upward, and you can see daylight at the top. Freedom awaits!"
+                }
+            ],
+            "exits": [],
+            "is_goal": true,
+            "win_message": "You've escaped the dungeon with your freedom and discovered the royal treasure! As you climb the secret passage, you emerge in the forest outside the castle walls. The fresh air fills your lungs as you leave your imprisonment behind forever. The treasure is yours, and so is your liberty. You win!"
+        }
+    ]
+}

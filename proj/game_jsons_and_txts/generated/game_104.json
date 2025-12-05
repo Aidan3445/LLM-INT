@@ -1,0 +1,262 @@
+{
+    "theme": "Dream Archive",
+    "title": "Dream Archive Adventure #104",
+    "goal": "Solve the puzzles, achieve the main objective, and escape.",
+    "starting_room": "sleeping_chamber",
+    "rooms": [
+        {
+            "id": "sleeping_chamber",
+            "name": "Sleeping Chamber",
+            "description": "You awaken in a dimly lit chamber with walls that pulse like breathing lungs. Soft blue light emanates from floating orbs that drift lazily through the air. A bed made of clouds sits in the center, and strange symbols glow on the floor. This is the entry point to the Dream Archive, where memories are stored and sorted.",
+            "items": [
+                {
+                    "id": "cloud_bed",
+                    "name": "bed of clouds",
+                    "description": "A soft, ethereal bed that seems to float slightly above the ground",
+                    "searchable": true,
+                    "contains": [
+                        "dreamer_token"
+                    ]
+                },
+                {
+                    "id": "dreamer_token",
+                    "name": "silver dreamer token",
+                    "description": "A coin-shaped token with your face etched on one side"
+                },
+                {
+                    "id": "memory_cabinet",
+                    "name": "memory storage cabinet",
+                    "description": "A tall cabinet with three compartments, each labeled with a different emotion",
+                    "subcontainers": [
+                        {
+                            "id": "joy_compartment",
+                            "name": "joy compartment",
+                            "locked": false,
+                            "contains": [
+                                "archive_guide"
+                            ]
+                        },
+                        {
+                            "id": "fear_compartment",
+                            "name": "fear compartment",
+                            "locked": true,
+                            "lock_type": "combination",
+                            "combination": "742",
+                            "contains": [
+                                "crystal_key"
+                            ]
+                        },
+                        {
+                            "id": "love_compartment",
+                            "name": "love compartment",
+                            "locked": false,
+                            "contains": []
+                        }
+                    ]
+                },
+                {
+                    "id": "archive_guide",
+                    "name": "archive guide scroll",
+                    "description": "A glowing scroll with instructions for navigating the Dream Archive",
+                    "readable": true,
+                    "text": "Welcome to Dream Archive #104. You are Dreamer 742. To escape, you must recover your Core Memory from the Awakening Chamber. The Archivist guards the way forward. Remember: You are Dreamer 742, your first dream was in the Garden of Beginnings, and your purpose is to Remember."
+                },
+                {
+                    "id": "crystal_key",
+                    "name": "translucent crystal key",
+                    "description": "A key made of solidified dream essence that glows with inner light"
+                },
+                {
+                    "id": "locked_chest",
+                    "name": "locked dream chest",
+                    "description": "A chest sealed with a crystal lock mechanism",
+                    "locked": true,
+                    "key_required": "crystal_key",
+                    "contains": [
+                        "memory_shard"
+                    ]
+                },
+                {
+                    "id": "memory_shard",
+                    "name": "Memory Shard of Truth",
+                    "description": "A glowing fragment of your core memory, pulsing with recognition"
+                },
+                {
+                    "id": "floating_orbs",
+                    "name": "floating light orbs",
+                    "description": "Glowing orbs that drift through the air, illuminating the chamber",
+                    "searchable": true,
+                    "contains": [
+                        "number_note"
+                    ]
+                },
+                {
+                    "id": "number_note",
+                    "name": "floating note",
+                    "description": "A small note attached to one of the orbs",
+                    "readable": true,
+                    "text": "Reminder for Dreamer 742: Your archive number is your key to the fear compartment."
+                },
+                {
+                    "id": "shimmering_archway",
+                    "name": "shimmering archway",
+                    "description": "An archway filled with rippling light, leading deeper into the archive",
+                    "locked": true,
+                    "key_required": "dreamer_token",
+                    "direction": "east",
+                    "leads_to": "hall_of_echoes",
+                    "aliases": [
+                        "archway",
+                        "east"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "hall_of_echoes",
+            "name": "Hall of Echoes",
+            "description": "A vast corridor where whispers of past dreams echo endlessly. The walls are lined with mirrors that show different versions of yourself from various dreams. Three large tapestries hang on the walls, each depicting a significant moment. At the far end, a door covered in questions blocks the path forward.",
+            "items": [
+                {
+                    "id": "tapestry_beginning",
+                    "name": "tapestry of first dreams",
+                    "description": "A woven image showing a beautiful garden filled with flowers",
+                    "readable": true,
+                    "text": "The First Dream: Every dreamer begins their journey in the Garden of Beginnings, where consciousness first learns to create."
+                },
+                {
+                    "id": "tapestry_nightmare",
+                    "name": "tapestry of shadows",
+                    "description": "A dark tapestry showing twisted shapes and forgotten fears",
+                    "readable": true,
+                    "text": "The Shadow Dreams: In the Void of Forgetting, memories go to fade. This is where dreamers lose themselves."
+                },
+                {
+                    "id": "tapestry_purpose",
+                    "name": "tapestry of awakening",
+                    "description": "A bright tapestry showing a figure reaching toward light",
+                    "readable": true,
+                    "text": "The Purpose: All dreamers share one purpose - to Remember who they are and wake to reality."
+                },
+                {
+                    "id": "mirror_wall",
+                    "name": "wall of infinite mirrors",
+                    "description": "Countless mirrors showing different versions of yourself",
+                    "searchable": true,
+                    "contains": [
+                        "reflection_note"
+                    ]
+                },
+                {
+                    "id": "reflection_note",
+                    "name": "note from your reflection",
+                    "description": "A message written in reverse that becomes clear in the mirror",
+                    "readable": true,
+                    "text": "You are Dreamer 742. Never forget this. The Archivist will test you. Know where you began, what you fear most, and why you are here."
+                },
+                {
+                    "id": "pedestal",
+                    "name": "central pedestal",
+                    "description": "A stone pedestal with a glowing indentation",
+                    "searchable": true,
+                    "contains": [
+                        "memory_shard_hope"
+                    ]
+                },
+                {
+                    "id": "memory_shard_hope",
+                    "name": "Memory Shard of Hope",
+                    "description": "Another fragment of your core memory, warm and bright"
+                },
+                {
+                    "id": "echo_wisps",
+                    "name": "floating echo wisps",
+                    "description": "Ghostly wisps that whisper fragments of forgotten dreams",
+                    "readable": true,
+                    "text": "The wisps whisper: 'Dreamer 742... Garden of Beginnings... Void of Forgetting... Remember... Remember...'"
+                },
+                {
+                    "id": "door_of_questions",
+                    "name": "door of questions",
+                    "description": "A massive door inscribed with three questions. A plaque reads: 'The Archivist demands proof of identity.'",
+                    "locked": true,
+                    "lock_type": "password",
+                    "password_questions": [
+                        {
+                            "question": "What is your designation?",
+                            "answer": "dreamer 742",
+                            "hint": "Check the archive guide and your token"
+                        },
+                        {
+                            "question": "Where did your dreams begin?",
+                            "answer": "garden of beginnings",
+                            "hint": "The tapestry of first dreams shows this location"
+                        },
+                        {
+                            "question": "What is your purpose?",
+                            "answer": "remember",
+                            "hint": "The tapestry of awakening reveals the purpose of all dreamers"
+                        }
+                    ],
+                    "direction": "north",
+                    "leads_to": "awakening_chamber",
+                    "aliases": [
+                        "door",
+                        "north"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "awakening_chamber",
+            "name": "Awakening Chamber",
+            "description": "You have reached the heart of the Dream Archive! A brilliant sphere of light hovers in the center of the room, containing your complete Core Memory. The walls shimmer with scenes from your entire life, both waking and dreaming. Two pedestals stand before the sphere, waiting for the memory shards you have collected. Beyond the sphere, a portal shows glimpses of the waking world.",
+            "items": [
+                {
+                    "id": "memory_sphere",
+                    "name": "sphere of core memory",
+                    "description": "A radiant sphere containing the essence of who you truly are",
+                    "readable": true,
+                    "text": "Your Core Memory pulses with recognition. Place both Memory Shards on the pedestals to reclaim your complete self and activate the portal home."
+                },
+                {
+                    "id": "twin_pedestals",
+                    "name": "memory pedestals",
+                    "description": "Two crystalline pedestals with sockets for the Memory Shards",
+                    "searchable": false
+                },
+                {
+                    "id": "portal_to_waking",
+                    "name": "portal to waking",
+                    "description": "A swirling gateway showing the real world beyond the Dream Archive",
+                    "locked": true,
+                    "key_required": "memory_shard_hope",
+                    "direction": "west",
+                    "leads_to": "consciousness",
+                    "aliases": [
+                        "portal",
+                        "west"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "consciousness",
+            "name": "Return to Consciousness",
+            "description": "Your eyes flutter open. You are lying in your own bed, morning sunlight streaming through familiar windows. The Dream Archive fades like mist, but you remember everything. You have successfully navigated Archive #104 and returned with your memories intact. You are awake. You are real. You are home.",
+            "items": [
+                {
+                    "id": "morning_light",
+                    "name": "warm sunlight",
+                    "description": "Real sunlight from the real world, warm and solid and true"
+                }
+            ],
+            "exits": [],
+            "is_goal": true,
+            "win_message": "You have successfully escaped Dream Archive #104! The Memory Shards merge back into your consciousness, and you wake with perfect clarity. You remember who you are, where you've been, and the journey through your own archived dreams. The adventure is complete. You win!"
+        }
+    ]
+}

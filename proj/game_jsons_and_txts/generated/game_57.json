@@ -1,0 +1,235 @@
+{
+    "theme": "Alien Embassy Negotiation Room",
+    "title": "Alien Embassy Negotiation Room Adventure #57",
+    "goal": "Solve the puzzles, achieve the main objective, and escape.",
+    "starting_room": "embassy_reception",
+    "rooms": [
+        {
+            "id": "embassy_reception",
+            "name": "Embassy Reception Hall",
+            "description": "A sleek reception area with walls that shimmer with holographic displays showing distant alien worlds. The air hums with a faint electromagnetic field. Bioluminescent plants from the Zephyr homeworld cast a soft purple glow. A reception desk stands before you, and diplomatic banners hang from the ceiling.",
+            "items": [
+                {
+                    "id": "reception_desk",
+                    "name": "diplomatic reception desk",
+                    "description": "A curved desk made of an unknown crystalline material with three secure compartments",
+                    "subcontainers": [
+                        {
+                            "id": "top_compartment",
+                            "name": "top compartment",
+                            "locked": false,
+                            "contains": [
+                                "welcome_protocol"
+                            ]
+                        },
+                        {
+                            "id": "middle_compartment",
+                            "name": "middle compartment",
+                            "locked": true,
+                            "lock_type": "combination",
+                            "combination": "742",
+                            "contains": [
+                                "security_keycard"
+                            ]
+                        },
+                        {
+                            "id": "bottom_compartment",
+                            "name": "bottom compartment",
+                            "locked": false,
+                            "contains": []
+                        }
+                    ]
+                },
+                {
+                    "id": "welcome_protocol",
+                    "name": "diplomatic welcome protocol",
+                    "description": "A holographic document with embassy guidelines",
+                    "readable": true,
+                    "text": "Welcome to the Zephyr Embassy. Today marks the 742nd cycle since first contact. Ambassador Vex'thar oversees all negotiations. Remember: All diplomats must present credentials at the Archives. The treaty signing occurs in the Negotiation Chamber."
+                },
+                {
+                    "id": "security_keycard",
+                    "name": "embassy security keycard",
+                    "description": "A translucent card that pulses with soft blue light"
+                },
+                {
+                    "id": "display_terminal",
+                    "name": "holographic display terminal",
+                    "description": "A floating screen showing information about the Zephyr species",
+                    "readable": true,
+                    "text": "SPECIES PROFILE: The Zephyr are a telepathic species from the Andromeda sector. They value honesty above all traits. Their homeworld is called Zephyria. First contact occurred 742 cycles ago."
+                },
+                {
+                    "id": "plant_display",
+                    "name": "bioluminescent plant display",
+                    "description": "A collection of alien plants in crystalline containers",
+                    "searchable": true,
+                    "contains": [
+                        "translator_device"
+                    ]
+                },
+                {
+                    "id": "translator_device",
+                    "name": "universal translator device",
+                    "description": "A small device that allows communication across species"
+                },
+                {
+                    "id": "waiting_area",
+                    "name": "diplomatic waiting area",
+                    "description": "Comfortable seating made from adaptive memory foam that adjusts to any species",
+                    "searchable": true,
+                    "contains": [
+                        "cultural_guide"
+                    ]
+                },
+                {
+                    "id": "cultural_guide",
+                    "name": "Zephyr cultural guide",
+                    "description": "A handbook for understanding Zephyr customs",
+                    "readable": true,
+                    "text": "CULTURAL NOTES: The Zephyr greet others by sharing thoughts. They consider honesty the highest virtue. Never lie to a Zephyr - their telepathy will detect it. The current ambassador, Vex'thar, has served for 200 cycles."
+                },
+                {
+                    "id": "archives_entrance",
+                    "name": "archives entrance",
+                    "description": "A sliding door made of polished metal with a card reader beside it",
+                    "locked": true,
+                    "key_required": "security_keycard",
+                    "direction": "north",
+                    "leads_to": "diplomatic_archives",
+                    "aliases": [
+                        "door",
+                        "north"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "diplomatic_archives",
+            "name": "Diplomatic Archives",
+            "description": "A vast library filled with floating data crystals and holographic records. Each crystal contains centuries of diplomatic history. The walls display a timeline of human-Zephyr relations. A secure vault stands in the corner, and the entrance to the Negotiation Chamber looms ahead with an imposing security panel.",
+            "items": [
+                {
+                    "id": "history_display",
+                    "name": "historical timeline display",
+                    "description": "An interactive hologram showing key moments in diplomatic history",
+                    "readable": true,
+                    "text": "TIMELINE: Year 2287 - First Contact with Zephyr species. Year 2289 - Ambassador Vex'thar appointed. Year 2290 - Trade agreement signed. Year 2291 - Cultural exchange program established. Current Year: 2295."
+                },
+                {
+                    "id": "treaty_records",
+                    "name": "treaty record database",
+                    "description": "A collection of past treaties and agreements",
+                    "readable": true,
+                    "text": "TREATY DATABASE: All agreements must be signed in the Negotiation Chamber. The Zephyr require three confirmations: identity of the ambassador, the virtue they value most, and their homeworld name."
+                },
+                {
+                    "id": "data_crystals",
+                    "name": "floating data crystals",
+                    "description": "Crystalline storage devices containing diplomatic records",
+                    "searchable": true,
+                    "contains": [
+                        "ambassador_profile"
+                    ]
+                },
+                {
+                    "id": "ambassador_profile",
+                    "name": "Ambassador Vex'thar profile",
+                    "description": "A detailed file on the current Zephyr ambassador",
+                    "readable": true,
+                    "text": "AMBASSADOR PROFILE: Vex'thar of Zephyria. Appointed 2289. Known for unwavering commitment to honesty and transparency. Has successfully negotiated 47 treaties. Considers honesty the foundation of all diplomacy."
+                },
+                {
+                    "id": "secure_vault",
+                    "name": "diplomatic credentials vault",
+                    "description": "A locked vault containing official credentials",
+                    "locked": true,
+                    "key_required": "translator_device",
+                    "contains": [
+                        "diplomatic_credentials"
+                    ]
+                },
+                {
+                    "id": "diplomatic_credentials",
+                    "name": "official diplomatic credentials",
+                    "description": "Your official papers authorizing you to negotiate on behalf of Earth"
+                },
+                {
+                    "id": "research_station",
+                    "name": "research station",
+                    "description": "A workstation with various alien artifacts and study materials",
+                    "searchable": true,
+                    "contains": [
+                        "negotiation_notes"
+                    ]
+                },
+                {
+                    "id": "negotiation_notes",
+                    "name": "negotiation preparation notes",
+                    "description": "Notes on proper diplomatic protocol",
+                    "readable": true,
+                    "text": "PREPARATION NOTES: The Zephyr will test your knowledge before allowing entry to negotiations. Be prepared to answer questions about their ambassador, their core values, and their homeworld. This demonstrates respect and preparation."
+                },
+                {
+                    "id": "negotiation_chamber_entrance",
+                    "name": "negotiation chamber entrance",
+                    "description": "A massive door with an advanced security system. Three verification questions glow on the panel in both human and Zephyr script.",
+                    "locked": true,
+                    "lock_type": "password",
+                    "password_questions": [
+                        {
+                            "question": "Who is the Zephyr ambassador?",
+                            "answer": "vexthar",
+                            "hint": "Check the ambassador's profile in the archives"
+                        },
+                        {
+                            "question": "What virtue do the Zephyr value most?",
+                            "answer": "honesty",
+                            "hint": "The cultural guide and other documents mention this repeatedly"
+                        },
+                        {
+                            "question": "What is the Zephyr homeworld called?",
+                            "answer": "zephyria",
+                            "hint": "Look at the species profile and ambassador information"
+                        }
+                    ],
+                    "direction": "east",
+                    "leads_to": "negotiation_chamber",
+                    "aliases": [
+                        "chamber",
+                        "east"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "negotiation_chamber",
+            "name": "Grand Negotiation Chamber",
+            "description": "You have reached the heart of the embassy! A magnificent circular chamber with a hovering conference table at its center. Ambassador Vex'thar, a tall being with luminescent skin and large telepathic eyes, stands waiting. Holographic displays show both Earth and Zephyria rotating peacefully. The treaty document glows on the table, ready for signing.",
+            "items": [
+                {
+                    "id": "conference_table",
+                    "name": "hovering conference table",
+                    "description": "A table that floats in mid-air, surrounded by comfortable seats for multiple species"
+                },
+                {
+                    "id": "treaty_document",
+                    "name": "peace treaty document",
+                    "description": "An official treaty establishing lasting peace and cooperation between Earth and Zephyria",
+                    "readable": true,
+                    "text": "TREATY OF COOPERATION: This document establishes formal alliance between Earth and Zephyria. Both parties agree to mutual defense, cultural exchange, and shared scientific advancement. Signed this day in the spirit of honesty and friendship."
+                },
+                {
+                    "id": "ambassador_vexthar",
+                    "name": "Ambassador Vex'thar",
+                    "description": "The Zephyr ambassador extends a telepathic greeting of warmth and respect"
+                }
+            ],
+            "exits": [],
+            "is_goal": true,
+            "win_message": "SUCCESS! You have reached the Negotiation Chamber and completed your diplomatic mission. Ambassador Vex'thar's telepathic voice fills your mind with gratitude: 'You have shown the honesty and dedication worthy of this alliance. The treaty is signed. Peace between our worlds is secured.' The holographic displays burst with celebratory light as Earth and Zephyria begin a new era of cooperation. You win!"
+        }
+    ]
+}

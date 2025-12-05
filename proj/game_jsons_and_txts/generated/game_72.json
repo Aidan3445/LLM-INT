@@ -1,0 +1,211 @@
+{
+    "theme": "Underground Catacombs",
+    "title": "Underground Catacombs Adventure #72",
+    "goal": "Solve the puzzles, achieve the main objective, and escape.",
+    "starting_room": "burial_chamber",
+    "rooms": [
+        {
+            "id": "burial_chamber",
+            "name": "Ancient Burial Chamber",
+            "description": "A dimly lit stone chamber deep beneath the earth. Flickering torches cast dancing shadows on walls lined with burial niches. Ancient bones rest in alcoves carved into the rock. The air is cold and smells of damp stone and age. Water drips somewhere in the darkness.",
+            "items": [
+                {
+                    "id": "stone_altar",
+                    "name": "stone altar",
+                    "description": "A weathered altar covered in dust and cobwebs. Strange symbols are carved into its surface.",
+                    "searchable": true,
+                    "contains": [
+                        "ancient_journal"
+                    ]
+                },
+                {
+                    "id": "ancient_journal",
+                    "name": "ancient journal",
+                    "description": "A leather-bound journal, remarkably preserved despite its age",
+                    "readable": true,
+                    "text": "Journal of Brother Marcus, Year 1523: We three founders built these catacombs - myself, Sister Helena, and Father Dominic. Sister Helena passed in 1489, Father Dominic in 1501, and I fear my time draws near. The combination to the relic box honors our deaths in order: Helena, Dominic, then myself."
+                },
+                {
+                    "id": "burial_niches",
+                    "name": "burial niches",
+                    "description": "Stone alcoves containing ancient skeletal remains wrapped in decaying cloth",
+                    "searchable": true,
+                    "contains": [
+                        "iron_key"
+                    ]
+                },
+                {
+                    "id": "iron_key",
+                    "name": "rusty iron key",
+                    "description": "A heavy iron key, corroded with age but still functional"
+                },
+                {
+                    "id": "relic_box",
+                    "name": "ornate relic box",
+                    "description": "A decorated stone box with a combination lock featuring three rotating number wheels",
+                    "locked": true,
+                    "lock_type": "combination",
+                    "combination": "14891501",
+                    "contains": [
+                        "bronze_key",
+                        "catacomb_map"
+                    ]
+                },
+                {
+                    "id": "bronze_key",
+                    "name": "bronze key",
+                    "description": "An ornate bronze key with religious symbols etched into its surface"
+                },
+                {
+                    "id": "catacomb_map",
+                    "name": "catacomb map",
+                    "description": "A faded map showing the layout of the underground passages",
+                    "readable": true,
+                    "text": "Map of the Sacred Catacombs: The three founders rest in the Hall of Remembrance. Sister Helena in the Chapel of Light, Father Dominic in the Sanctuary of Peace, Brother Marcus in the Chamber of Wisdom. The secret exit lies beyond the hall, accessible only to those who know our history."
+                },
+                {
+                    "id": "wooden_chest",
+                    "name": "wooden chest",
+                    "description": "A rotting wooden chest bound with iron bands",
+                    "locked": true,
+                    "key_required": "iron_key",
+                    "contains": [
+                        "torch"
+                    ]
+                },
+                {
+                    "id": "torch",
+                    "name": "lit torch",
+                    "description": "A torch that burns with an eternal flame, providing light in the darkness"
+                },
+                {
+                    "id": "heavy_stone_door",
+                    "name": "heavy stone door",
+                    "description": "A massive stone door with a bronze lock mechanism. Ancient script warns: 'Only the worthy may pass.'",
+                    "locked": true,
+                    "key_required": "bronze_key",
+                    "direction": "north",
+                    "leads_to": "catacombs_corridor",
+                    "aliases": [
+                        "door",
+                        "north",
+                        "passage"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "catacombs_corridor",
+            "name": "Hall of Remembrance",
+            "description": "A long corridor lined with elaborate tombs and memorial plaques. Carved stone pillars support the vaulted ceiling. Three grand tomb monuments dominate the hall, each dedicated to one of the founders. The walls are covered with inscriptions and religious imagery. A sealed doorway stands at the far end.",
+            "items": [
+                {
+                    "id": "helena_tomb",
+                    "name": "tomb of Sister Helena",
+                    "description": "An elegant marble tomb with an angel statue. Fresh flowers somehow still rest upon it.",
+                    "readable": true,
+                    "text": "Here lies Sister Helena (1420-1489), Keeper of the Chapel of Light. She brought illumination to the darkness and tended the sacred flames. Her wisdom guided all who sought the light."
+                },
+                {
+                    "id": "dominic_tomb",
+                    "name": "tomb of Father Dominic",
+                    "description": "A grand stone sarcophagus carved with scenes of prayer and devotion",
+                    "readable": true,
+                    "text": "Here rests Father Dominic (1435-1501), Guardian of the Sanctuary of Peace. He offered solace to troubled souls and maintained the sacred silence. His prayers echo still in these halls."
+                },
+                {
+                    "id": "marcus_tomb",
+                    "name": "tomb of Brother Marcus",
+                    "description": "A simple but dignified tomb with an open book carved into the stone",
+                    "readable": true,
+                    "text": "Here lies Brother Marcus (1438-1523), Master of the Chamber of Wisdom. He preserved knowledge and recorded our history. His words guide us even in death."
+                },
+                {
+                    "id": "memorial_wall",
+                    "name": "memorial wall",
+                    "description": "A wall covered in plaques commemorating those buried in the catacombs",
+                    "searchable": true,
+                    "contains": [
+                        "founders_scroll"
+                    ]
+                },
+                {
+                    "id": "founders_scroll",
+                    "name": "scroll of the founders",
+                    "description": "A preserved scroll detailing the history of the catacombs",
+                    "readable": true,
+                    "text": "The Three Founders: Sister Helena kept the Chapel of Light, Father Dominic guarded the Sanctuary of Peace, and Brother Marcus mastered the Chamber of Wisdom. Together they created these sacred catacombs as a final resting place for the faithful."
+                },
+                {
+                    "id": "offering_alcove",
+                    "name": "offering alcove",
+                    "description": "A small alcove containing ancient religious artifacts and offerings",
+                    "searchable": true,
+                    "contains": [
+                        "silver_cross"
+                    ]
+                },
+                {
+                    "id": "silver_cross",
+                    "name": "silver cross",
+                    "description": "A tarnished silver cross, a symbol of faith from centuries past"
+                },
+                {
+                    "id": "sealed_stone_doorway",
+                    "name": "sealed stone doorway",
+                    "description": "An imposing doorway sealed with ancient magic. Three questions are carved into the stone, glowing with faint blue light.",
+                    "locked": true,
+                    "lock_type": "password",
+                    "password_questions": [
+                        {
+                            "question": "Who kept the Chapel of Light?",
+                            "answer": "sister helena",
+                            "hint": "Read the tomb inscriptions to learn about each founder's role"
+                        },
+                        {
+                            "question": "Where did Father Dominic serve?",
+                            "answer": "sanctuary of peace",
+                            "hint": "Check Father Dominic's tomb for information about his sacred place"
+                        },
+                        {
+                            "question": "What did Brother Marcus master?",
+                            "answer": "chamber of wisdom",
+                            "hint": "Brother Marcus's tomb reveals what he was master of"
+                        }
+                    ],
+                    "direction": "east",
+                    "leads_to": "secret_exit",
+                    "aliases": [
+                        "doorway",
+                        "east",
+                        "exit"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "secret_exit",
+            "name": "Secret Exit Chamber",
+            "description": "You have found the hidden exit! A narrow stone staircase spirals upward, leading to the surface. Fresh air flows down from above, carrying the scent of grass and freedom. Sunlight filters through cracks in the ceiling, illuminating ancient inscriptions that read: 'Those who honor the past may walk into the future.'",
+            "items": [
+                {
+                    "id": "stone_staircase",
+                    "name": "spiral staircase",
+                    "description": "Ancient stone steps leading upward to freedom and daylight"
+                },
+                {
+                    "id": "exit_inscription",
+                    "name": "exit inscription",
+                    "description": "Final words carved by the founders",
+                    "readable": true,
+                    "text": "You have proven yourself worthy by honoring our memory and understanding our legacy. Go forth into the light, and remember those who rest in the darkness below."
+                }
+            ],
+            "exits": [],
+            "is_goal": true,
+            "win_message": "You have successfully navigated the ancient catacombs and discovered the secret exit! As you climb the stone staircase, the weight of centuries falls away. You emerge into sunlight, leaving the underground burial chambers behind. The spirits of the three founders rest peacefully, their history preserved and honored. You win!"
+        }
+    ]
+}

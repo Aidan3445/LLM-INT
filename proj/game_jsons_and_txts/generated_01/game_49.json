@@ -1,0 +1,256 @@
+{
+  "theme": "Alien Zoo",
+  "title": "Alien Zoo Adventure #49",
+  "goal": "Solve the puzzles, achieve the main objective, and escape.",
+  "starting_room": "observation_deck",
+  "rooms": [
+    {
+      "id": "observation_deck",
+      "name": "Observation Deck",
+      "description": "A curved viewing gallery with massive reinforced windows overlooking alien habitats. Bioluminescent creatures float in zero-gravity chambers while crystalline beings pulse with inner light. Control panels blink with status indicators. The air smells of ozone and recycled atmosphere. Emergency lighting casts an eerie blue glow across the deck.",
+      "items": [
+        {
+          "id": "viewing_console",
+          "name": "viewing console",
+          "description": "A sleek control station with multiple screens displaying habitat information",
+          "readable": true,
+          "text": "XENOZOOLOGICAL RESEARCH STATION - Established 2247. Director: Dr. Aria Vex. Chief Xenobiologist: Dr. Marcus Kane. Specimen habitats: Nebula creatures in zero-gravity chambers, crystal beings in thermal zones, shadow entities in dark containment."
+        },
+        {
+          "id": "information_kiosk",
+          "name": "information kiosk",
+          "description": "An interactive display terminal for visitors",
+          "searchable": true,
+          "contains": [
+            "visitor_guide"
+          ]
+        },
+        {
+          "id": "visitor_guide",
+          "name": "visitor guide datapad",
+          "description": "A digital guide to the alien zoo facility",
+          "readable": true,
+          "text": "Welcome to the Xenozoological Research Station! Founded in 2247, we house the galaxy's most fascinating alien lifeforms. Director Dr. Aria Vex oversees all operations. Emergency protocols require staff authorization. Remember: you are a xenobiologist studying these magnificent creatures."
+        },
+        {
+          "id": "specimen_display",
+          "name": "specimen information display",
+          "description": "A holographic display showing details about the alien creatures",
+          "readable": true,
+          "text": "CURRENT SPECIMENS: Nebula Drifters (zero-gravity chamber), Crystalline Singers (thermal zone), Shadow Wraiths (dark containment), Plasma Jellies (electromagnetic field). All specimens are contained in specialized habitats designed by Dr. Kane."
+        },
+        {
+          "id": "storage_locker",
+          "name": "emergency storage locker",
+          "description": "A metal locker with three compartments for emergency supplies",
+          "subcontainers": [
+            {
+              "id": "top_compartment",
+              "name": "top compartment",
+              "locked": false,
+              "contains": [
+                "research_notes"
+              ]
+            },
+            {
+              "id": "middle_compartment",
+              "name": "middle compartment",
+              "locked": true,
+              "lock_type": "combination",
+              "combination": "2247",
+              "contains": [
+                "access_card"
+              ]
+            },
+            {
+              "id": "bottom_compartment",
+              "name": "bottom compartment",
+              "locked": false,
+              "contains": []
+            }
+          ]
+        },
+        {
+          "id": "research_notes",
+          "name": "research journal",
+          "description": "A digital journal with scientific observations",
+          "readable": true,
+          "text": "Dr. Kane's Log: The specimens are thriving in their habitats. The zero-gravity chamber houses our nebula creatures perfectly. Director Vex has secured additional funding. The locker combination is the year we opened: 2247. In emergencies, containment control is the safest route to escape pods."
+        },
+        {
+          "id": "access_card",
+          "name": "security access card",
+          "description": "A magnetic card with clearance for restricted areas"
+        },
+        {
+          "id": "observation_window",
+          "name": "reinforced observation window",
+          "description": "A massive transparent barrier showing the alien habitats beyond",
+          "readable": true,
+          "text": "Through the window, you see the zero-gravity chamber where ethereal nebula creatures drift like living clouds. Their bioluminescence creates a mesmerizing light show."
+        },
+        {
+          "id": "containment_control_door",
+          "name": "containment control door",
+          "description": "A heavy security door leading to the containment control center. A card reader glows beside it.",
+          "locked": true,
+          "key_required": "access_card",
+          "direction": "north",
+          "leads_to": "containment_control",
+          "aliases": [
+            "door",
+            "north"
+          ]
+        }
+      ],
+      "exits": []
+    },
+    {
+      "id": "containment_control",
+      "name": "Containment Control Center",
+      "description": "A high-tech command center filled with monitoring stations and holographic displays. Screens show real-time feeds of alien habitats. Warning lights flash amber on several panels. The hum of life support systems fills the air. A sealed emergency door leads to the escape pod bay.",
+      "items": [
+        {
+          "id": "main_control_console",
+          "name": "main control console",
+          "description": "The primary control station for all facility operations",
+          "readable": true,
+          "text": "SYSTEM STATUS: All habitats stable. Zero-gravity chamber: Operational. Thermal zone: Optimal. Dark containment: Secure. Emergency evacuation protocols available. Facility Director: Dr. Aria Vex. Authorization required for escape pod access."
+        },
+        {
+          "id": "habitat_monitors",
+          "name": "habitat monitoring screens",
+          "description": "Multiple screens displaying live feeds from specimen habitats",
+          "readable": true,
+          "text": "Camera feeds show: Nebula creatures floating peacefully in the zero-gravity chamber. Crystal beings resonating in the thermal zone. Shadow entities contained in dark chambers. All specimens secure and healthy."
+        },
+        {
+          "id": "personnel_board",
+          "name": "personnel assignment board",
+          "description": "A digital display showing staff assignments and credentials",
+          "readable": true,
+          "text": "STAFF ROSTER: Dr. Aria Vex - Facility Director, All Operations. Dr. Marcus Kane - Chief Xenobiologist, Specimen Care. Dr. Sarah Chen - Habitat Engineer. All xenobiologists have emergency evacuation clearance."
+        },
+        {
+          "id": "equipment_cabinet",
+          "name": "equipment storage cabinet",
+          "description": "A secure cabinet containing emergency equipment and supplies",
+          "subcontainers": [
+            {
+              "id": "upper_shelf",
+              "name": "upper shelf",
+              "locked": false,
+              "contains": [
+                "emergency_beacon"
+              ]
+            },
+            {
+              "id": "lower_shelf",
+              "name": "lower shelf",
+              "locked": false,
+              "contains": [
+                "evacuation_manual"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "emergency_beacon",
+          "name": "emergency distress beacon",
+          "description": "A portable device for signaling rescue ships"
+        },
+        {
+          "id": "evacuation_manual",
+          "name": "emergency evacuation guide",
+          "description": "A manual detailing escape procedures",
+          "readable": true,
+          "text": "EMERGENCY EVACUATION PROTOCOL: In case of containment breach or facility emergency, proceed to escape pod bay. Security verification required. You must confirm: Who directs this facility? Where are nebula specimens housed? What is your role here?"
+        },
+        {
+          "id": "director_desk",
+          "name": "director's workstation",
+          "description": "Dr. Vex's personal desk with research materials and reports",
+          "searchable": true,
+          "contains": [
+            "director_log"
+          ]
+        },
+        {
+          "id": "director_log",
+          "name": "director's personal log",
+          "description": "A private journal belonging to Dr. Vex",
+          "readable": true,
+          "text": "Director's Log: As facility director, I'm proud of what we've accomplished. Our xenobiologists do incredible work. The zero-gravity chamber is my favorite - watching the nebula creatures drift is hypnotic. Remember: only authorized xenobiologists can access escape pods in emergencies."
+        },
+        {
+          "id": "specimen_database",
+          "name": "specimen database terminal",
+          "description": "A computer terminal with detailed records of all alien specimens",
+          "readable": true,
+          "text": "SPECIMEN DATABASE: Nebula Drifters - Location: Zero-Gravity Chamber. Crystalline Singers - Location: Thermal Zone. Shadow Wraiths - Location: Dark Containment. Plasma Jellies - Location: Electromagnetic Field. All specimens catalogued and monitored by xenobiology team."
+        },
+        {
+          "id": "emergency_escape_pod_door",
+          "name": "emergency escape pod door",
+          "description": "A reinforced door leading to the escape pod bay. A security terminal displays three verification questions in glowing text.",
+          "locked": true,
+          "lock_type": "password",
+          "password_questions": [
+            {
+              "question": "Who directs this facility?",
+              "answer": "dr aria vex",
+              "hint": "Check the control console and personnel board for the director's name"
+            },
+            {
+              "question": "Where are nebula specimens housed?",
+              "answer": "zero-gravity chamber",
+              "hint": "Look at the habitat monitors and specimen database"
+            },
+            {
+              "question": "What is your role?",
+              "answer": "xenobiologist",
+              "hint": "The visitor guide and evacuation manual mention your profession"
+            }
+          ],
+          "direction": "east",
+          "leads_to": "escape_pod_bay",
+          "aliases": [
+            "pod",
+            "escape",
+            "east"
+          ]
+        }
+      ],
+      "exits": []
+    },
+    {
+      "id": "escape_pod_bay",
+      "name": "Emergency Escape Pod Bay",
+      "description": "You've reached the escape pod bay! A sleek emergency vessel sits in its launch cradle, systems humming with readiness. Through the transparent launch tube, you can see the stars beyond. The pod's interior glows with soft blue light, and the control panel displays 'READY FOR LAUNCH' in bright green letters. Safety harnesses await inside.",
+      "items": [
+        {
+          "id": "escape_pod",
+          "name": "emergency escape pod",
+          "description": "A streamlined spacecraft designed for rapid evacuation to the nearest space station"
+        },
+        {
+          "id": "launch_control_panel",
+          "name": "launch control panel",
+          "description": "The pod's control system showing all systems operational and ready",
+          "readable": true,
+          "text": "ESCAPE POD STATUS: All systems green. Life support: Active. Navigation: Locked on nearest station. Propulsion: Ready. Launch sequence: Armed. Welcome aboard, xenobiologist."
+        },
+        {
+          "id": "viewport",
+          "name": "launch tube viewport",
+          "description": "A window showing the launch trajectory into space",
+          "readable": true,
+          "text": "Through the viewport, you see the vast expanse of space. Stars twinkle in the distance, and a space station is visible on the horizon. Freedom awaits."
+        }
+      ],
+      "exits": [],
+      "is_goal": true,
+      "win_message": "SUCCESS! You board the escape pod and initiate the launch sequence. The pod accelerates smoothly through the launch tube and into the void of space. Behind you, the alien zoo facility grows smaller as you speed toward the safety of the space station. You've escaped the Xenozoological Research Station and lived to tell the tale of the incredible alien creatures you studied. You win!"
+    }
+  ]
+}

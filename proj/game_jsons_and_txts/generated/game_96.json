@@ -1,0 +1,232 @@
+{
+    "theme": "Ghost Ship Deck",
+    "title": "Ghost Ship Deck Adventure #96",
+    "goal": "Solve the puzzles, achieve the main objective, and escape.",
+    "starting_room": "foggy_deck",
+    "rooms": [
+        {
+            "id": "foggy_deck",
+            "name": "Foggy Deck",
+            "description": "You stand on the weathered deck of an abandoned ghost ship. Thick fog swirls around the masts, and the wood creaks beneath your feet. Ghostly lanterns flicker with pale blue light. The ship's wheel stands at the helm, and various nautical equipment lies scattered about. An eerie silence hangs in the air, broken only by the distant sound of waves.",
+            "items": [
+                {
+                    "id": "ships_wheel",
+                    "name": "ship's wheel",
+                    "description": "An old wooden ship's wheel with brass fittings, covered in salt spray",
+                    "readable": true,
+                    "text": "Carved into the wheel's hub: 'Captain Graves commanded this vessel in 1692. Remember the year we sailed.'"
+                },
+                {
+                    "id": "coiled_rope",
+                    "name": "coiled rope",
+                    "description": "A thick nautical rope coiled on the deck",
+                    "searchable": true,
+                    "contains": [
+                        "brass_key"
+                    ]
+                },
+                {
+                    "id": "brass_key",
+                    "name": "brass key",
+                    "description": "A tarnished brass key with a ship emblem"
+                },
+                {
+                    "id": "supply_barrel",
+                    "name": "supply barrel",
+                    "description": "A wooden barrel that once held ship supplies",
+                    "searchable": true,
+                    "contains": [
+                        "captains_journal"
+                    ]
+                },
+                {
+                    "id": "captains_journal",
+                    "name": "captain's journal",
+                    "description": "A waterlogged journal with faded entries",
+                    "readable": true,
+                    "text": "Captain's Log: This vessel, The Phantom Maiden, has been cursed. My first mate, William Bones, and I are the last survivors. The treasure lies in the captain's quarters below. Only those who know our names and our fate may enter."
+                },
+                {
+                    "id": "sea_chest",
+                    "name": "sea chest",
+                    "description": "A sturdy wooden chest bound with iron straps",
+                    "locked": true,
+                    "key_required": "brass_key",
+                    "contains": [
+                        "navigation_chart"
+                    ]
+                },
+                {
+                    "id": "navigation_chart",
+                    "name": "navigation chart",
+                    "description": "An old sea chart with notes scribbled in the margins",
+                    "readable": true,
+                    "text": "Chart notation: 'We met our doom at the cursed reef. The ship ran aground and sank into the depths. All hands were lost to the sea.'"
+                },
+                {
+                    "id": "cargo_hatch",
+                    "name": "cargo hatch",
+                    "description": "A heavy wooden hatch leading down to the lower deck. It has a combination lock with four digits.",
+                    "locked": true,
+                    "lock_type": "combination",
+                    "combination": "1692",
+                    "direction": "south",
+                    "leads_to": "lower_deck",
+                    "aliases": [
+                        "hatch",
+                        "down"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "lower_deck",
+            "name": "Lower Deck",
+            "description": "The dim lower deck of the ghost ship. Water drips from the ceiling, and the smell of brine fills the air. Ghostly shadows dance on the walls. Hammocks sway gently despite the lack of wind. A large storage locker stands against one wall, and the door to the captain's quarters is visible at the far end.",
+            "items": [
+                {
+                    "id": "storage_locker",
+                    "name": "storage locker",
+                    "description": "A tall metal locker with two compartments",
+                    "subcontainers": [
+                        {
+                            "id": "top_compartment",
+                            "name": "top compartment",
+                            "locked": false,
+                            "contains": [
+                                "crew_manifest"
+                            ]
+                        },
+                        {
+                            "id": "bottom_compartment",
+                            "name": "bottom compartment",
+                            "locked": false,
+                            "contains": [
+                                "silver_coin"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "crew_manifest",
+                    "name": "crew manifest",
+                    "description": "A list of the ship's crew members",
+                    "readable": true,
+                    "text": "THE PHANTOM MAIDEN - Crew Roster: Captain Graves (Commander), First Mate William Bones, Quartermaster, Bosun, Cook, and 12 sailors. Total complement: 17 souls."
+                },
+                {
+                    "id": "silver_coin",
+                    "name": "silver coin",
+                    "description": "A Spanish silver coin from the 1600s"
+                },
+                {
+                    "id": "hammock",
+                    "name": "sailor's hammock",
+                    "description": "A ghostly hammock swaying in the darkness",
+                    "searchable": true,
+                    "contains": [
+                        "sailors_note"
+                    ]
+                },
+                {
+                    "id": "sailors_note",
+                    "name": "sailor's note",
+                    "description": "A crumpled note written in shaky handwriting",
+                    "readable": true,
+                    "text": "We're doomed! The captain says we'll all go down with the ship. First Mate Bones tried to save us, but it's too late. The cursed reef has claimed us all."
+                },
+                {
+                    "id": "water_barrel",
+                    "name": "water barrel",
+                    "description": "An old barrel that once held drinking water",
+                    "searchable": true,
+                    "contains": []
+                },
+                {
+                    "id": "captain's_door",
+                    "name": "captain's door",
+                    "description": "A heavy wooden door with brass fittings leading to the captain's quarters. A brass plaque displays three questions.",
+                    "locked": true,
+                    "lock_type": "password",
+                    "password_questions": [
+                        {
+                            "question": "What is the captain's name?",
+                            "answer": "captain graves",
+                            "hint": "Check the captain's journal and crew manifest"
+                        },
+                        {
+                            "question": "Who was the first mate?",
+                            "answer": "william bones",
+                            "hint": "The captain's journal mentions the first mate's name"
+                        },
+                        {
+                            "question": "What claimed the ship?",
+                            "answer": "cursed reef",
+                            "hint": "Read the navigation chart and sailor's note"
+                        }
+                    ],
+                    "direction": "east",
+                    "leads_to": "captains_quarters",
+                    "aliases": [
+                        "door",
+                        "east"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "captains_quarters",
+            "name": "Captain's Quarters",
+            "description": "You have entered the captain's private quarters! The room is surprisingly well-preserved. A large desk sits beneath a porthole showing the murky depths. On the desk lies an ornate chest overflowing with gold coins and jewels. A ghostly figure of Captain Graves appears briefly, nods in approval, and fades away. A shimmering portal of light has appeared on the far wall, offering escape from the cursed vessel.",
+            "items": [
+                {
+                    "id": "treasure_chest",
+                    "name": "treasure chest",
+                    "description": "An ornate chest filled with gold doubloons, precious gems, and ancient artifacts"
+                },
+                {
+                    "id": "captains_desk",
+                    "name": "captain's desk",
+                    "description": "A mahogany desk with nautical charts and instruments"
+                },
+                {
+                    "id": "ships_log",
+                    "name": "ship's log",
+                    "description": "The final log of The Phantom Maiden",
+                    "readable": true,
+                    "text": "Final Entry: We have run aground on the cursed reef. The ship is lost. I leave my treasure to whoever can solve the mysteries of The Phantom Maiden. May they have better fortune than we did. - Captain Graves"
+                },
+                {
+                    "id": "shimmering_portal",
+                    "name": "shimmering portal",
+                    "description": "A magical portal of swirling light offering escape from the ghost ship",
+                    "locked": false,
+                    "direction": "north",
+                    "leads_to": "safe_harbor",
+                    "aliases": [
+                        "portal",
+                        "north"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "safe_harbor",
+            "name": "Safe Harbor",
+            "description": "You emerge from the portal onto a sunny dock in a peaceful harbor. The ghost ship has vanished behind you, leaving only the treasure you carry and the memory of your adventure. Seagulls cry overhead, and the smell of salt air fills your lungs. You are safe, and you are rich!",
+            "items": [
+                {
+                    "id": "harbor_dock",
+                    "name": "wooden dock",
+                    "description": "A sturdy dock leading to the safety of land"
+                }
+            ],
+            "exits": [],
+            "is_goal": true,
+            "win_message": "You have successfully navigated the mysteries of the Ghost Ship Deck and escaped with Captain Graves' treasure! The curse is lifted, and the spirits of The Phantom Maiden can finally rest. You stand on solid ground with pockets full of gold, having survived an adventure few would believe. You win!"
+        }
+    ]
+}

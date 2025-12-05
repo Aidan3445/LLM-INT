@@ -1,0 +1,220 @@
+{
+    "theme": "Cultivated Dream Orchard",
+    "title": "Cultivated Dream Orchard Adventure #7",
+    "goal": "Solve the puzzles, achieve the main objective, and escape.",
+    "starting_room": "orchard_entrance",
+    "rooms": [
+        {
+            "id": "orchard_entrance",
+            "name": "Dream Orchard Entrance",
+            "description": "You stand at the entrance to a mystical orchard bathed in twilight. Luminescent trees with silver bark stretch before you, their branches heavy with glowing fruit that pulse like heartbeats. The air smells of jasmine and starlight. A weathered stone archway marks the entrance, and a small gardener's shed stands to one side.",
+            "items": [
+                {
+                    "id": "gardeners_shed",
+                    "name": "gardener's tool shed",
+                    "description": "A wooden shed with peeling paint and a rusty lock",
+                    "locked": true,
+                    "key_required": "copper_key",
+                    "contains": [
+                        "orchard_keeper_journal"
+                    ]
+                },
+                {
+                    "id": "orchard_keeper_journal",
+                    "name": "Orchard Keeper's journal",
+                    "description": "A leather-bound journal with pressed flowers between the pages",
+                    "readable": true,
+                    "text": "I am Silas Moonwhisper, keeper of this sacred orchard. I planted the first dream tree in the year 1893, and I have tended these magical groves ever since. The dreams grow in the Crystal Arbor, where moonlight feeds their roots. Only starlight can awaken the sleeping trees."
+                },
+                {
+                    "id": "stone_bench",
+                    "name": "weathered stone bench",
+                    "description": "An old bench with carved symbols and a hollow compartment underneath",
+                    "searchable": true,
+                    "contains": [
+                        "copper_key"
+                    ]
+                },
+                {
+                    "id": "copper_key",
+                    "name": "tarnished copper key",
+                    "description": "A small key with a leaf pattern etched into its surface"
+                },
+                {
+                    "id": "supply_cabinet",
+                    "name": "gardening supply cabinet",
+                    "description": "A tall cabinet with three drawers containing various gardening tools and supplies",
+                    "subcontainers": [
+                        {
+                            "id": "top_drawer",
+                            "name": "top drawer",
+                            "locked": false,
+                            "contains": [
+                                "planting_instructions"
+                            ]
+                        },
+                        {
+                            "id": "middle_drawer",
+                            "name": "middle drawer",
+                            "locked": true,
+                            "lock_type": "combination",
+                            "combination": "1893",
+                            "contains": [
+                                "silver_pruning_shears"
+                            ]
+                        },
+                        {
+                            "id": "bottom_drawer",
+                            "name": "bottom drawer",
+                            "locked": false,
+                            "contains": []
+                        }
+                    ]
+                },
+                {
+                    "id": "planting_instructions",
+                    "name": "planting guide",
+                    "description": "A faded document with instructions for cultivating dream trees",
+                    "readable": true,
+                    "text": "Dream Tree Cultivation Guide: Plant seeds in soil blessed by moonlight. Water with morning dew collected in the Crystal Arbor. The orchard was established in 1893 by the founding keeper. Remember these numbers to access the sacred tools."
+                },
+                {
+                    "id": "silver_pruning_shears",
+                    "name": "enchanted silver shears",
+                    "description": "Magical pruning shears that glow with a soft silver light"
+                },
+                {
+                    "id": "ornate_wooden_gate",
+                    "name": "ornate wooden gate",
+                    "description": "A beautifully carved gate leading deeper into the orchard. Vines have grown over the lock.",
+                    "locked": true,
+                    "key_required": "silver_pruning_shears",
+                    "direction": "north",
+                    "leads_to": "moonlit_grove",
+                    "aliases": [
+                        "gate",
+                        "north"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "moonlit_grove",
+            "name": "Moonlit Grove",
+            "description": "A circular clearing where ancient dream trees form a perfect circle. Their branches intertwine overhead, creating a canopy that filters moonlight into dancing patterns on the ground. In the center stands a stone fountain filled with shimmering liquid. Memory stones are arranged in a spiral pattern around the fountain. A massive tree with golden bark dominates the far side of the grove.",
+            "items": [
+                {
+                    "id": "memory_stone_1",
+                    "name": "memory stone of beginnings",
+                    "description": "A smooth stone with glowing runes",
+                    "readable": true,
+                    "text": "Memory Stone: The keeper's name was Silas Moonwhisper, and he devoted his life to nurturing dreams into reality."
+                },
+                {
+                    "id": "memory_stone_2",
+                    "name": "memory stone of growth",
+                    "description": "A crystalline stone that pulses with inner light",
+                    "readable": true,
+                    "text": "Memory Stone: The dreams are stored in the Crystal Arbor, where they ripen under the care of the moon and stars."
+                },
+                {
+                    "id": "memory_stone_3",
+                    "name": "memory stone of awakening",
+                    "description": "A star-shaped stone that sparkles",
+                    "readable": true,
+                    "text": "Memory Stone: Only starlight can awaken the sleeping trees and allow them to bear their precious fruit."
+                },
+                {
+                    "id": "moonlight_fountain",
+                    "name": "fountain of moonlight",
+                    "description": "A fountain filled with liquid moonlight that never stops flowing",
+                    "searchable": true,
+                    "contains": [
+                        "dream_seed"
+                    ]
+                },
+                {
+                    "id": "dream_seed",
+                    "name": "luminous dream seed",
+                    "description": "A seed that glows with potential and possibility"
+                },
+                {
+                    "id": "hollow_log",
+                    "name": "hollow tree log",
+                    "description": "A fallen log with a cavity inside",
+                    "searchable": true,
+                    "contains": [
+                        "keeper_note"
+                    ]
+                },
+                {
+                    "id": "keeper_note",
+                    "name": "keeper's final note",
+                    "description": "A note written in elegant script",
+                    "readable": true,
+                    "text": "To whoever finds this: I have hidden the key to the Heart of the Orchard within the Crystal Arbor itself. Seek the ancient tree and answer the questions of the guardians. Only one who understands the orchard's secrets may enter."
+                },
+                {
+                    "id": "door_within_the_golden_tree",
+                    "name": "door within the golden tree",
+                    "description": "A door carved into the trunk of the massive golden tree. Three questions are inscribed on a bronze plaque beside it.",
+                    "locked": true,
+                    "lock_type": "password",
+                    "password_questions": [
+                        {
+                            "question": "Who was the orchard's keeper?",
+                            "answer": "silas moonwhisper",
+                            "hint": "Check the keeper's journal and the memory stones"
+                        },
+                        {
+                            "question": "Where are the dreams stored?",
+                            "answer": "crystal arbor",
+                            "hint": "The memory stones and journal mention this location"
+                        },
+                        {
+                            "question": "What awakens the sleeping trees?",
+                            "answer": "starlight",
+                            "hint": "Read the memory stone of awakening"
+                        }
+                    ],
+                    "direction": "east",
+                    "leads_to": "heart_of_orchard",
+                    "aliases": [
+                        "door",
+                        "tree door",
+                        "east"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "heart_of_orchard",
+            "name": "Heart of the Orchard",
+            "description": "You have entered the Crystal Arbor, the sacred heart of the Dream Orchard! The chamber inside the golden tree is filled with crystalline branches that refract light into rainbow patterns. In the center, suspended in mid-air, hangs a single perfect fruit that glows with all the colors of dreams. This is the Eternal Dream Fruit, the culmination of all the orchard's magic. A spiral staircase of light leads upward to freedom.",
+            "items": [
+                {
+                    "id": "eternal_dream_fruit",
+                    "name": "Eternal Dream Fruit",
+                    "description": "A magnificent fruit that contains the essence of every dream ever cultivated in the orchard. It radiates warmth, hope, and infinite possibility."
+                },
+                {
+                    "id": "crystal_branches",
+                    "name": "crystalline branches",
+                    "description": "Branches made of living crystal that hum with magical energy"
+                },
+                {
+                    "id": "light_staircase",
+                    "name": "staircase of light",
+                    "description": "A spiral staircase made of pure starlight leading upward",
+                    "readable": true,
+                    "text": "The staircase shimmers with invitation, ready to carry you back to the waking world with your prize."
+                }
+            ],
+            "exits": [],
+            "is_goal": true,
+            "win_message": "You have successfully navigated the Cultivated Dream Orchard and claimed the Eternal Dream Fruit! As you grasp the magical fruit, it fills you with the warmth of a thousand beautiful dreams. The staircase of light carries you gently upward, and you emerge from the orchard with the precious fruit in hand. Silas Moonwhisper's legacy is complete, and the dreams of the orchard will live on through you. You win!"
+        }
+    ]
+}

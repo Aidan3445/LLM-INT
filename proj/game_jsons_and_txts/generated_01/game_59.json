@@ -1,0 +1,194 @@
+{
+    "theme": "Giant's Kitchen",
+    "title": "Giant's Kitchen Adventure #59",
+    "goal": "Solve the puzzles, achieve the main objective, and escape.",
+    "starting_room": "kitchen_floor",
+    "rooms": [
+        {
+            "id": "kitchen_floor",
+            "name": "Giant Kitchen Floor",
+            "description": "You stand on the vast tiled floor of an enormous kitchen. Everything is scaled to giant proportions - a table leg towers above you like a tree trunk, and a dropped spoon looks like a metal canoe. Crumbs the size of boulders are scattered about. The air smells of bread and herbs. A mouse hole in the baseboard offers shelter, and a rope dangles from the counter above.",
+            "items": [
+                {
+                    "id": "mouse_hole",
+                    "name": "mouse hole",
+                    "description": "A small opening in the baseboard, just your size",
+                    "searchable": true,
+                    "contains": [
+                        "tiny_key"
+                    ]
+                },
+                {
+                    "id": "tiny_key",
+                    "name": "tiny brass key",
+                    "description": "A small key that fits your scale perfectly"
+                },
+                {
+                    "id": "bread_crumb",
+                    "name": "giant bread crumb",
+                    "description": "A crumb the size of a boulder, still fresh and soft",
+                    "searchable": true,
+                    "contains": [
+                        "recipe_scrap"
+                    ]
+                },
+                {
+                    "id": "recipe_scrap",
+                    "name": "torn recipe paper",
+                    "description": "A piece of paper with writing on it",
+                    "readable": true,
+                    "text": "Recipe fragment: '...Giant Greta's Famous Stew, created in the year 1847. The secret ingredient is kept in the spice cabinet. Remember: 1-8-4-7 opens the special drawer.'"
+                },
+                {
+                    "id": "matchbox",
+                    "name": "fallen matchbox",
+                    "description": "A giant matchbox that fell from the counter. It has a small compartment with a combination lock.",
+                    "locked": true,
+                    "lock_type": "combination",
+                    "combination": "1847",
+                    "contains": [
+                        "copper_key"
+                    ]
+                },
+                {
+                    "id": "copper_key",
+                    "name": "copper key",
+                    "description": "A key made of copper with a spoon symbol engraved on it"
+                },
+                {
+                    "id": "dropped_spoon",
+                    "name": "giant dropped spoon",
+                    "description": "An enormous spoon lying on the floor like a metal boat",
+                    "searchable": true,
+                    "contains": [
+                        "kitchen_note"
+                    ]
+                },
+                {
+                    "id": "kitchen_note",
+                    "name": "kitchen note",
+                    "description": "A note written in giant handwriting",
+                    "readable": true,
+                    "text": "Reminder to self: Giant Greta - Don't forget to check the pantry for supplies. The counter drawer has my special tools. The window latch key is in the locked tin on the counter."
+                },
+                {
+                    "id": "rope_hanging_from_counter",
+                    "name": "rope hanging from counter",
+                    "description": "A rope or string hanging down from the counter above, climbable to reach the higher level",
+                    "locked": false,
+                    "direction": "north",
+                    "leads_to": "kitchen_counter",
+                    "aliases": [
+                        "rope",
+                        "up",
+                        "north"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "kitchen_counter",
+            "name": "Kitchen Counter",
+            "description": "You've climbed up to the giant's kitchen counter. Massive jars of flour and sugar loom like silos. A cutting board stretches out like a wooden plaza. A locked tin sits near the edge, and a drawer is built into the counter. Through a nearby window, you can see the outside world - freedom is so close!",
+            "items": [
+                {
+                    "id": "flour_jar",
+                    "name": "giant flour jar",
+                    "description": "An enormous glass jar filled with white flour",
+                    "searchable": true,
+                    "contains": []
+                },
+                {
+                    "id": "cutting_board",
+                    "name": "massive cutting board",
+                    "description": "A wooden cutting board with knife marks and vegetable scraps",
+                    "searchable": true,
+                    "contains": [
+                        "pantry_note"
+                    ]
+                },
+                {
+                    "id": "pantry_note",
+                    "name": "shopping list",
+                    "description": "A list written by the giant",
+                    "readable": true,
+                    "text": "Shopping List: Need more ingredients for my famous stew. Giant Greta's recipe has been in the family since 1847. Must organize the pantry better - it's getting cluttered!"
+                },
+                {
+                    "id": "counter_drawer",
+                    "name": "counter drawer",
+                    "description": "A drawer built into the counter with a copper lock",
+                    "locked": true,
+                    "key_required": "copper_key",
+                    "contains": [
+                        "silver_key",
+                        "giant_diary"
+                    ]
+                },
+                {
+                    "id": "silver_key",
+                    "name": "silver key",
+                    "description": "A silver key with a window symbol etched into it"
+                },
+                {
+                    "id": "giant_diary",
+                    "name": "Giant Greta's diary",
+                    "description": "A diary with entries from the giant",
+                    "readable": true,
+                    "text": "Diary Entry: My name is Giant Greta, and I've lived in this cottage since I was young. My famous stew recipe is my pride and joy. I keep the window locked for safety, but the key is in my special tin on the counter."
+                },
+                {
+                    "id": "locked_tin",
+                    "name": "locked tin container",
+                    "description": "A decorative tin with a small keyhole",
+                    "locked": true,
+                    "key_required": "tiny_key",
+                    "contains": [
+                        "window_key"
+                    ]
+                },
+                {
+                    "id": "window_key",
+                    "name": "window latch key",
+                    "description": "A key specifically designed to unlock the window latch"
+                },
+                {
+                    "id": "kitchen_window",
+                    "name": "kitchen window",
+                    "description": "A large window overlooking the garden outside. The latch is locked, but there's a keyhole. Beyond lies freedom!",
+                    "locked": true,
+                    "key_required": "window_key",
+                    "direction": "east",
+                    "leads_to": "window_ledge",
+                    "aliases": [
+                        "window",
+                        "outside",
+                        "east"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "window_ledge",
+            "name": "Window Ledge Outside",
+            "description": "You've made it outside! You're standing on the window ledge of the giant's cottage. Fresh air fills your lungs, and the sun warms your face. Below, you can see a vine growing up the wall - an easy climb down to the garden and freedom. You've escaped the Giant's Kitchen!",
+            "items": [
+                {
+                    "id": "climbing_vine",
+                    "name": "thick climbing vine",
+                    "description": "A sturdy vine growing up the cottage wall, perfect for climbing down to safety"
+                },
+                {
+                    "id": "garden_view",
+                    "name": "view of the garden",
+                    "description": "A beautiful garden stretches below, with flowers and vegetables growing in neat rows"
+                }
+            ],
+            "exits": [],
+            "is_goal": true,
+            "win_message": "Success! You've escaped from the Giant's Kitchen! You climb down the vine to the garden below and make your way to safety. The giant's cottage grows smaller behind you as you journey toward home. Your adventure in the land of giants is over - you've solved the puzzles and won your freedom. You win!"
+        }
+    ]
+}

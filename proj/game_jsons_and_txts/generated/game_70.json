@@ -1,0 +1,201 @@
+{
+    "theme": "Golem Foundry",
+    "title": "Golem Foundry Adventure #70",
+    "goal": "Solve the puzzles, achieve the main objective, and escape.",
+    "starting_room": "foundry_workshop",
+    "rooms": [
+        {
+            "id": "foundry_workshop",
+            "name": "Golem Foundry Workshop",
+            "description": "A vast workshop filled with the smell of clay, metal, and arcane energy. Half-finished golems stand frozen in various poses. Workbenches are cluttered with tools, runes, and glowing crystals. The walls are lined with shelves holding clay molds and enchanted components. A massive forge burns with blue flames in the corner.",
+            "items": [
+                {
+                    "id": "main_workbench",
+                    "name": "master workbench",
+                    "description": "A large workbench covered in golem-crafting tools and scattered notes",
+                    "searchable": true,
+                    "contains": [
+                        "bronze_key"
+                    ]
+                },
+                {
+                    "id": "bronze_key",
+                    "name": "bronze workshop key",
+                    "description": "A key shaped like a golem's hand, warm to the touch"
+                },
+                {
+                    "id": "tool_cabinet",
+                    "name": "enchanted tool cabinet",
+                    "description": "A tall cabinet with three drawers, each marked with a different rune",
+                    "subcontainers": [
+                        {
+                            "id": "top_drawer",
+                            "name": "top drawer",
+                            "locked": false,
+                            "contains": [
+                                "foundry_journal"
+                            ]
+                        },
+                        {
+                            "id": "middle_drawer",
+                            "name": "middle drawer",
+                            "locked": true,
+                            "lock_type": "combination",
+                            "combination": "347",
+                            "contains": [
+                                "activation_crystal"
+                            ]
+                        },
+                        {
+                            "id": "bottom_drawer",
+                            "name": "bottom drawer",
+                            "locked": false,
+                            "contains": []
+                        }
+                    ]
+                },
+                {
+                    "id": "foundry_journal",
+                    "name": "master artificer's journal",
+                    "description": "A leather-bound journal with burn marks and clay stains",
+                    "readable": true,
+                    "text": "Day 347 of operation: Today I completed my masterwork - Golem Prime, serial number 347. Master Artificer Theron Ironforge, that's me. My greatest creations guard the Archive Chamber. Remember: golems serve, the archive preserves knowledge, and I am the founder of this foundry."
+                },
+                {
+                    "id": "activation_crystal",
+                    "name": "golem activation crystal",
+                    "description": "A pulsing blue crystal that hums with magical energy"
+                },
+                {
+                    "id": "clay_tablet",
+                    "name": "ancient clay tablet",
+                    "description": "A tablet covered in runic inscriptions mounted on the wall",
+                    "readable": true,
+                    "text": "Foundry Protocols: The Archive Chamber holds all golem blueprints and the master control runes. Access requires knowledge of the founder, the purpose of golems, and the location of preserved wisdom."
+                },
+                {
+                    "id": "locked_chest",
+                    "name": "reinforced iron chest",
+                    "description": "A heavy chest sealed with bronze locks and protective runes",
+                    "locked": true,
+                    "key_required": "bronze_key",
+                    "contains": [
+                        "golem_schematic"
+                    ]
+                },
+                {
+                    "id": "golem_schematic",
+                    "name": "golem construction schematic",
+                    "description": "A detailed blueprint showing golem design and activation sequences",
+                    "readable": true,
+                    "text": "Schematic Notes: All golems are programmed to serve their creators. The Archive Chamber contains the complete knowledge repository. Emergency exit requires master control runes from the archive."
+                },
+                {
+                    "id": "heavy_bronze_door",
+                    "name": "heavy bronze door",
+                    "description": "A door inscribed with protective runes leading to the archive. A stone panel beside it displays three questions.",
+                    "locked": true,
+                    "lock_type": "password",
+                    "password_questions": [
+                        {
+                            "question": "Who founded this foundry?",
+                            "answer": "theron ironforge",
+                            "hint": "Check the master artificer's journal"
+                        },
+                        {
+                            "question": "What is the purpose of golems?",
+                            "answer": "serve",
+                            "hint": "The clay tablet and schematic mention this"
+                        },
+                        {
+                            "question": "Where is knowledge preserved?",
+                            "answer": "archive chamber",
+                            "hint": "Multiple documents reference this location"
+                        }
+                    ],
+                    "direction": "north",
+                    "leads_to": "archive_chamber",
+                    "aliases": [
+                        "door",
+                        "north"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "archive_chamber",
+            "name": "Archive Chamber",
+            "description": "A circular chamber with walls lined floor to ceiling with shelves holding scrolls, tablets, and glowing crystals. In the center stands a massive stone golem, dormant but imposing. Runic circles are carved into the floor, pulsing with faint light. A sealed exit portal shimmers on the far wall.",
+            "items": [
+                {
+                    "id": "scroll_shelves",
+                    "name": "ancient scroll shelves",
+                    "description": "Shelves containing centuries of golem-crafting knowledge",
+                    "searchable": true,
+                    "contains": [
+                        "master_scroll"
+                    ]
+                },
+                {
+                    "id": "master_scroll",
+                    "name": "master control scroll",
+                    "description": "A scroll containing the master control runes for the foundry",
+                    "readable": true,
+                    "text": "Master Control Runes: These runes grant authority over all golems in the foundry. The exit portal requires the activation crystal to power it and these runes to unlock it. Place the crystal in the control pedestal."
+                },
+                {
+                    "id": "stone_golem",
+                    "name": "guardian golem",
+                    "description": "A massive stone golem standing motionless, its eyes dark and lifeless",
+                    "readable": true,
+                    "text": "Inscription on chest: 'Guardian Golem - Protector of Knowledge. Dormant unless archive is threatened.'"
+                },
+                {
+                    "id": "control_pedestal",
+                    "name": "crystal control pedestal",
+                    "description": "A pedestal with a socket designed to hold an activation crystal",
+                    "searchable": true,
+                    "contains": []
+                },
+                {
+                    "id": "runic_circles",
+                    "name": "floor runic circles",
+                    "description": "Intricate magical circles carved into the stone floor",
+                    "readable": true,
+                    "text": "The runes form a power distribution network connecting the control pedestal to the exit portal."
+                },
+                {
+                    "id": "sealed_exit_portal",
+                    "name": "sealed exit portal",
+                    "description": "A shimmering portal that leads out of the foundry. It requires the activation crystal to power it.",
+                    "locked": true,
+                    "key_required": "activation_crystal",
+                    "direction": "east",
+                    "leads_to": "freedom",
+                    "aliases": [
+                        "portal",
+                        "exit",
+                        "east"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "freedom",
+            "name": "Outside the Foundry",
+            "description": "You step through the portal and emerge into fresh air and sunlight. The foundry entrance seals behind you with a rumble of stone. You've successfully escaped the Golem Foundry with knowledge of ancient golem-crafting secrets!",
+            "items": [
+                {
+                    "id": "foundry_entrance",
+                    "name": "sealed foundry entrance",
+                    "description": "The massive stone doors of the foundry, now sealed shut"
+                }
+            ],
+            "exits": [],
+            "is_goal": true,
+            "win_message": "Success! You've solved the puzzles of the Golem Foundry and escaped with your life. The activation crystal in your hand pulses warmly, a reminder of the ancient magic you've mastered. The secrets of golem-crafting are yours, and the foundry's guardian golems remain dormant. You win!"
+        }
+    ]
+}

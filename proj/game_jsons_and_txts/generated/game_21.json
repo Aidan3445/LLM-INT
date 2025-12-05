@@ -1,0 +1,219 @@
+{
+    "theme": "Mystic Puppet Theatre",
+    "title": "Mystic Puppet Theatre Adventure #21",
+    "goal": "Solve the puzzles, achieve the main objective, and escape.",
+    "starting_room": "backstage_dressing_room",
+    "rooms": [
+        {
+            "id": "backstage_dressing_room",
+            "name": "Backstage Dressing Room",
+            "description": "A dimly lit dressing room filled with puppet costumes hanging on racks. Strings dangle from the ceiling like spider webs. Painted masks stare from the walls with hollow eyes. A musty smell of old fabric and greasepaint fills the air. Shadows seem to move on their own.",
+            "items": [
+                {
+                    "id": "costume_rack",
+                    "name": "wooden costume rack",
+                    "description": "A tall rack holding various puppet costumes and theatrical outfits",
+                    "searchable": true,
+                    "contains": [
+                        "brass_key"
+                    ]
+                },
+                {
+                    "id": "brass_key",
+                    "name": "small brass key",
+                    "description": "A tarnished brass key with a puppet face engraved on the handle"
+                },
+                {
+                    "id": "makeup_vanity",
+                    "name": "antique makeup vanity",
+                    "description": "An ornate vanity with a cracked mirror and three drawers decorated with theatrical masks",
+                    "subcontainers": [
+                        {
+                            "id": "top_vanity_drawer",
+                            "name": "top drawer",
+                            "locked": false,
+                            "contains": [
+                                "theatre_program"
+                            ]
+                        },
+                        {
+                            "id": "middle_vanity_drawer",
+                            "name": "middle drawer",
+                            "locked": true,
+                            "lock_type": "combination",
+                            "combination": "1893",
+                            "contains": [
+                                "stage_key"
+                            ]
+                        },
+                        {
+                            "id": "bottom_vanity_drawer",
+                            "name": "bottom drawer",
+                            "locked": false,
+                            "contains": []
+                        }
+                    ]
+                },
+                {
+                    "id": "theatre_program",
+                    "name": "old theatre program",
+                    "description": "A yellowed program from an ancient puppet show",
+                    "readable": true,
+                    "text": "THE MYSTIC PUPPET THEATRE - Grand Opening 1893. Tonight's Performance: 'The Three Guardians' featuring Pierrot the Sad Clown, Columbina the Dancer, and Harlequin the Trickster. Puppetmaster: Maestro Vincenzo."
+                },
+                {
+                    "id": "stage_key",
+                    "name": "silver stage key",
+                    "description": "A silver key shaped like a miniature stage curtain"
+                },
+                {
+                    "id": "locked_trunk",
+                    "name": "performer's trunk",
+                    "description": "A large steamer trunk covered in faded travel stickers and locked with a brass mechanism",
+                    "locked": true,
+                    "key_required": "brass_key",
+                    "contains": [
+                        "puppetmaster_diary",
+                        "enchanted_string"
+                    ]
+                },
+                {
+                    "id": "puppetmaster_diary",
+                    "name": "Maestro's diary",
+                    "description": "A leather-bound diary with gilt edges",
+                    "readable": true,
+                    "text": "My dear puppets have come alive! Pierrot guards the music box in the orchestra pit. Columbina dances eternally in the grand ballroom. Harlequin's laughter echoes from the rafters above the stage. Only I, Maestro Vincenzo, can command them to release those who wander into my theatre."
+                },
+                {
+                    "id": "enchanted_string",
+                    "name": "glowing puppet string",
+                    "description": "A length of string that glows with an otherworldly blue light"
+                },
+                {
+                    "id": "velvet_curtain_door",
+                    "name": "velvet curtain door",
+                    "description": "A doorway covered by heavy velvet curtains leading to the main stage",
+                    "locked": true,
+                    "key_required": "stage_key",
+                    "direction": "north",
+                    "leads_to": "main_stage",
+                    "aliases": [
+                        "curtain",
+                        "north"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "main_stage",
+            "name": "Main Stage",
+            "description": "The grand stage of the Mystic Puppet Theatre stretches before you. Dusty spotlights hang from above, and painted backdrops depict fantastical scenes. Three life-sized puppet figures stand frozen in theatrical poses - a sad clown, an elegant dancer, and a mischievous harlequin. Their glass eyes seem to follow your movement. A ornate door at the back of the stage leads to the exit.",
+            "items": [
+                {
+                    "id": "pierrot_puppet",
+                    "name": "Pierrot puppet statue",
+                    "description": "A life-sized puppet of a sad clown in white costume with a single tear painted on its cheek",
+                    "readable": true,
+                    "text": "Pierrot the Sad Clown - Guardian of Melancholy. 'I weep in the orchestra pit where music once played.'"
+                },
+                {
+                    "id": "columbina_puppet",
+                    "name": "Columbina puppet statue",
+                    "description": "An elegant puppet dressed as a dancer in flowing silks, frozen mid-pirouette",
+                    "readable": true,
+                    "text": "Columbina the Dancer - Guardian of Grace. 'I dance forever in the grand ballroom where nobles once waltzed.'"
+                },
+                {
+                    "id": "harlequin_puppet",
+                    "name": "Harlequin puppet statue",
+                    "description": "A colorful puppet in a diamond-patterned costume with a mischievous grin",
+                    "readable": true,
+                    "text": "Harlequin the Trickster - Guardian of Laughter. 'I laugh from the rafters high above the stage where acrobats once performed.'"
+                },
+                {
+                    "id": "prop_table",
+                    "name": "stage prop table",
+                    "description": "A table cluttered with theatrical props and forgotten items",
+                    "searchable": true,
+                    "contains": [
+                        "theatre_history"
+                    ]
+                },
+                {
+                    "id": "theatre_history",
+                    "name": "theatre history placard",
+                    "description": "A small informational placard about the theatre",
+                    "readable": true,
+                    "text": "The Mystic Puppet Theatre was founded by the legendary Maestro Vincenzo in 1893. His three most famous puppets - Pierrot, Columbina, and Harlequin - are said to guard the theatre even in death. Legend says only those who know the Maestro's name, where each guardian resides, can escape the theatre's enchantment."
+                },
+                {
+                    "id": "stage_trapdoor",
+                    "name": "wooden trapdoor",
+                    "description": "A trapdoor in the stage floor, partially hidden by dust",
+                    "searchable": true,
+                    "contains": [
+                        "control_rod"
+                    ]
+                },
+                {
+                    "id": "control_rod",
+                    "name": "puppet control rod",
+                    "description": "A wooden rod used to control marionettes, carved with mystical symbols"
+                },
+                {
+                    "id": "ornate_exit_door",
+                    "name": "ornate exit door",
+                    "description": "A magnificent door carved with scenes from famous puppet shows. Three questions are inscribed on a brass plate.",
+                    "locked": true,
+                    "lock_type": "password",
+                    "password_questions": [
+                        {
+                            "question": "Who is the Puppetmaster?",
+                            "answer": "maestro vincenzo",
+                            "hint": "Check the theatre program and the Maestro's diary"
+                        },
+                        {
+                            "question": "Where does Pierrot guard?",
+                            "answer": "orchestra pit",
+                            "hint": "Read the inscription on Pierrot's statue"
+                        },
+                        {
+                            "question": "Where does Columbina dance?",
+                            "answer": "grand ballroom",
+                            "hint": "The dancer's statue tells where she performs eternally"
+                        }
+                    ],
+                    "direction": "east",
+                    "leads_to": "freedom",
+                    "aliases": [
+                        "door",
+                        "exit",
+                        "east"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "freedom",
+            "name": "Theatre Lobby",
+            "description": "You burst through the exit door into the theatre lobby. Sunlight streams through the windows, and the oppressive atmosphere of the enchanted theatre fades away. The puppet strings that seemed to pull at you dissolve into mist. You are free!",
+            "items": [
+                {
+                    "id": "lobby_window",
+                    "name": "large window",
+                    "description": "A window showing the normal world outside - people walking, cars passing, reality restored"
+                },
+                {
+                    "id": "exit_doors",
+                    "name": "lobby exit doors",
+                    "description": "Glass doors leading out to the street and freedom"
+                }
+            ],
+            "exits": [],
+            "is_goal": true,
+            "win_message": "You have escaped the Mystic Puppet Theatre! As you step into the sunlight, you hear faint applause from within - the three guardian puppets acknowledging your success. The enchanted strings release their hold, and you are free to return to the real world. The theatre's mysteries are solved, and its magic can no longer trap you. You win!"
+        }
+    ]
+}

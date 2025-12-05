@@ -1,0 +1,271 @@
+{
+    "theme": "Time Traveler Workshop",
+    "title": "Time Traveler Workshop Adventure #91",
+    "goal": "Solve the puzzles, achieve the main objective, and escape.",
+    "starting_room": "workshop_floor",
+    "rooms": [
+        {
+            "id": "workshop_floor",
+            "name": "Time Traveler Workshop Floor",
+            "description": "A cluttered workshop filled with strange machinery and glowing temporal devices. Gears and clockwork mechanisms cover the walls. In the center stands a partially assembled time machine surrounded by tools and blueprints. Blue energy crackles from various contraptions. A workbench and storage cabinet line the walls.",
+            "items": [
+                {
+                    "id": "workbench",
+                    "name": "cluttered workbench",
+                    "description": "A long wooden bench covered with tools, wires, and temporal components",
+                    "searchable": true,
+                    "contains": [
+                        "temporal_wrench"
+                    ]
+                },
+                {
+                    "id": "temporal_wrench",
+                    "name": "glowing temporal wrench",
+                    "description": "A specialized wrench that phases in and out of time, useful for opening temporal locks"
+                },
+                {
+                    "id": "storage_cabinet",
+                    "name": "workshop storage cabinet",
+                    "description": "A metal cabinet with three drawers labeled with temporal coordinates",
+                    "subcontainers": [
+                        {
+                            "id": "top_drawer",
+                            "name": "top drawer",
+                            "locked": false,
+                            "contains": [
+                                "workshop_journal"
+                            ]
+                        },
+                        {
+                            "id": "middle_drawer",
+                            "name": "middle drawer",
+                            "locked": true,
+                            "lock_type": "combination",
+                            "combination": "1885",
+                            "contains": [
+                                "bronze_key"
+                            ]
+                        },
+                        {
+                            "id": "bottom_drawer",
+                            "name": "bottom drawer",
+                            "locked": false,
+                            "contains": []
+                        }
+                    ]
+                },
+                {
+                    "id": "workshop_journal",
+                    "name": "workshop logbook",
+                    "description": "A leather journal filled with temporal calculations and notes",
+                    "readable": true,
+                    "text": "Workshop Log: The temporal stabilizer was completed in 1885, the same year the first successful time jump occurred. Remember: Inventor Chronos created this workshop. The Flux Capacitor and Temporal Crystal are needed to activate the portal. The archives hold the key to everything."
+                },
+                {
+                    "id": "bronze_key",
+                    "name": "ornate bronze key",
+                    "description": "An antique key with temporal engravings and a faint blue glow"
+                },
+                {
+                    "id": "time_machine",
+                    "name": "incomplete time machine",
+                    "description": "A large brass and copper machine with exposed gears and a missing power core",
+                    "readable": true,
+                    "text": "Control panel reads: 'WARNING: Temporal displacement requires proper authorization. Only the inventor may access the portal chamber.'"
+                },
+                {
+                    "id": "blueprint_table",
+                    "name": "blueprint table",
+                    "description": "A drafting table covered with technical drawings of time machines",
+                    "searchable": true,
+                    "contains": [
+                        "temporal_note"
+                    ]
+                },
+                {
+                    "id": "temporal_note",
+                    "name": "crumpled blueprint note",
+                    "description": "A note scrawled in the margin of a blueprint",
+                    "readable": true,
+                    "text": "Note to self: The archives contain the Flux Capacitor in the locked display case. The combination is the year of the Great Exhibition in London when time travel theory was first conceived: 1851."
+                },
+                {
+                    "id": "reinforced_archive_door",
+                    "name": "reinforced archive door",
+                    "description": "A heavy steel door with a temporal lock mechanism that requires a special tool",
+                    "locked": true,
+                    "key_required": "temporal_wrench",
+                    "direction": "north",
+                    "leads_to": "temporal_archives",
+                    "aliases": [
+                        "door",
+                        "north"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "temporal_archives",
+            "name": "Temporal Archives",
+            "description": "A vast library filled with books from every era of human history. Shelves stretch impossibly high, filled with journals, artifacts, and temporal relics. Display cases showcase important historical items. A large portrait gallery lines one wall, and a massive vault door dominates the far end of the room.",
+            "items": [
+                {
+                    "id": "portrait_chronos",
+                    "name": "portrait of Inventor Chronos",
+                    "description": "A painting of a brilliant scientist in Victorian attire",
+                    "readable": true,
+                    "text": "Plaque reads: 'Inventor Chronos - Founder of Temporal Sciences. Creator of the first working time machine and this workshop.'"
+                },
+                {
+                    "id": "portrait_tesla",
+                    "name": "portrait of Nikola Tesla",
+                    "description": "A painting of the famous inventor and electrical engineer",
+                    "readable": true,
+                    "text": "Plaque reads: 'Nikola Tesla - Electrical Pioneer. Contributed electromagnetic theories essential to temporal displacement.'"
+                },
+                {
+                    "id": "portrait_curie",
+                    "name": "portrait of Marie Curie",
+                    "description": "A painting of the renowned physicist and chemist",
+                    "readable": true,
+                    "text": "Plaque reads: 'Marie Curie - Radiation Research. Her work on radioactive elements enabled temporal energy storage.'"
+                },
+                {
+                    "id": "display_case",
+                    "name": "locked display case",
+                    "description": "A glass case containing a glowing device with a combination lock",
+                    "locked": true,
+                    "lock_type": "combination",
+                    "combination": "1851",
+                    "contains": [
+                        "flux_capacitor"
+                    ]
+                },
+                {
+                    "id": "flux_capacitor",
+                    "name": "Flux Capacitor",
+                    "description": "A Y-shaped device that glows with temporal energy, one of the artifacts needed to activate the portal"
+                },
+                {
+                    "id": "archive_chest",
+                    "name": "temporal archive chest",
+                    "description": "An ornate chest sealed with a bronze lock mechanism",
+                    "locked": true,
+                    "key_required": "bronze_key",
+                    "contains": [
+                        "temporal_crystal",
+                        "archive_scroll"
+                    ]
+                },
+                {
+                    "id": "temporal_crystal",
+                    "name": "Temporal Crystal",
+                    "description": "A crystalline artifact that pulses with blue energy, the second artifact needed for the portal"
+                },
+                {
+                    "id": "archive_scroll",
+                    "name": "ancient temporal scroll",
+                    "description": "A preserved document containing critical information",
+                    "readable": true,
+                    "text": "Temporal Archives Security Protocol: To access the Portal Chamber, answer these questions: Who founded this workshop? Where was time travel theory first conceived? What powers temporal displacement?"
+                },
+                {
+                    "id": "bookshelf",
+                    "name": "historical bookshelf",
+                    "description": "Shelves packed with books about history and science",
+                    "searchable": true,
+                    "contains": [
+                        "history_book"
+                    ]
+                },
+                {
+                    "id": "history_book",
+                    "name": "history of innovation",
+                    "description": "A thick book about scientific achievements",
+                    "readable": true,
+                    "text": "Chapter 5: The Great Exhibition of 1851 in London showcased revolutionary ideas. It was here that early temporal theorists first proposed the possibility of time travel. The exhibition was held at the Crystal Palace, a marvel of Victorian engineering."
+                },
+                {
+                    "id": "temporal_vault_door",
+                    "name": "temporal vault door",
+                    "description": "A massive circular door with three security questions etched into a brass panel",
+                    "locked": true,
+                    "lock_type": "password",
+                    "password_questions": [
+                        {
+                            "question": "Who founded this workshop?",
+                            "answer": "inventor chronos",
+                            "hint": "Check the portrait gallery for the founder's name"
+                        },
+                        {
+                            "question": "Where was time travel theory first conceived?",
+                            "answer": "crystal palace",
+                            "hint": "The history book mentions where early temporal theorists met"
+                        },
+                        {
+                            "question": "What powers temporal displacement?",
+                            "answer": "temporal energy",
+                            "hint": "Look at the workshop journal and archive descriptions"
+                        }
+                    ],
+                    "direction": "east",
+                    "leads_to": "portal_chamber",
+                    "aliases": [
+                        "vault",
+                        "east"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "portal_chamber",
+            "name": "Portal Chamber",
+            "description": "You have reached the heart of the workshop! A massive swirling portal of blue and white energy dominates the center of the room, crackling with temporal power. Two pedestals stand before the portal, each with a socket waiting for a temporal artifact. The walls are covered with temporal equations and star charts. The portal shows glimpses of different time periods swirling within.",
+            "items": [
+                {
+                    "id": "artifact_pedestals",
+                    "name": "twin temporal pedestals",
+                    "description": "Two brass pedestals with sockets shaped for the Flux Capacitor and Temporal Crystal",
+                    "readable": true,
+                    "text": "Inscription: 'Insert both temporal artifacts to stabilize the portal and enable safe passage through time.'"
+                },
+                {
+                    "id": "swirling_time_portal",
+                    "name": "swirling time portal",
+                    "description": "A magnificent portal showing different eras of history. It requires both temporal artifacts to fully stabilize.",
+                    "locked": true,
+                    "key_required": "temporal_crystal",
+                    "direction": "north",
+                    "leads_to": "temporal_freedom",
+                    "aliases": [
+                        "portal",
+                        "north"
+                    ]
+                },
+                {
+                    "id": "control_console",
+                    "name": "portal control console",
+                    "description": "A complex control panel with dials, switches, and temporal readouts"
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "temporal_freedom",
+            "name": "Temporal Freedom",
+            "description": "You step through the portal and emerge in a beautiful garden outside the workshop, but something is different. The sky shimmers with aurora-like colors as multiple timelines converge. You have successfully mastered the temporal technology and can now travel freely through time. The workshop behind you fades as you step into infinite possibilities.",
+            "items": [
+                {
+                    "id": "time_stream",
+                    "name": "visible time stream",
+                    "description": "Shimmering ribbons of light showing different moments in history flowing around you"
+                }
+            ],
+            "exits": [],
+            "is_goal": true,
+            "win_message": "Congratulations! You have successfully navigated the Time Traveler Workshop, gathered the temporal artifacts, and activated the portal! The Flux Capacitor and Temporal Crystal merge into a single device that you now wear as a pendant. You are now a master of time itself, free to explore any era in human history. The workshop's secrets are yours, and all of time awaits your exploration. You win!"
+        }
+    ]
+}

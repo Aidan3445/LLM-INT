@@ -1,0 +1,234 @@
+{
+    "theme": "Shadow Assassin Dojo",
+    "title": "Shadow Assassin Dojo Adventure #82",
+    "goal": "Solve the puzzles, achieve the main objective, and escape.",
+    "starting_room": "training_hall",
+    "rooms": [
+        {
+            "id": "training_hall",
+            "name": "Shadow Training Hall",
+            "description": "A dimly lit training hall with wooden floors worn smooth by centuries of practice. Training dummies line the walls, and weapon racks hold various ninja tools. Moonlight filters through paper screens, casting long shadows. The air smells of incense and old wood.",
+            "items": [
+                {
+                    "id": "weapon_rack",
+                    "name": "wooden weapon rack",
+                    "description": "A rack holding various training weapons and tools",
+                    "searchable": true,
+                    "contains": [
+                        "training_manual"
+                    ]
+                },
+                {
+                    "id": "training_manual",
+                    "name": "ancient training manual",
+                    "description": "A worn scroll containing the teachings of the dojo",
+                    "readable": true,
+                    "text": "The Five Principles of Shadow: Master Kurogane teaches that a true assassin must master five arts. The first principle was established in the year 1582, when our order was founded. Remember: stealth, precision, patience, honor, and shadow."
+                },
+                {
+                    "id": "storage_chest",
+                    "name": "training equipment chest",
+                    "description": "A large chest with three compartments for storing training gear",
+                    "subcontainers": [
+                        {
+                            "id": "top_compartment",
+                            "name": "top compartment",
+                            "locked": false,
+                            "contains": [
+                                "masters_note"
+                            ]
+                        },
+                        {
+                            "id": "middle_compartment",
+                            "name": "middle compartment",
+                            "locked": true,
+                            "lock_type": "combination",
+                            "combination": "1582",
+                            "contains": [
+                                "iron_shuriken"
+                            ]
+                        },
+                        {
+                            "id": "bottom_compartment",
+                            "name": "bottom compartment",
+                            "locked": false,
+                            "contains": []
+                        }
+                    ]
+                },
+                {
+                    "id": "masters_note",
+                    "name": "Master's instruction scroll",
+                    "description": "A scroll sealed with the master's personal seal",
+                    "readable": true,
+                    "text": "To my student: You have trained well. To proceed to the Meditation Chamber, you must prove your knowledge. The iron shuriken will open the way. Remember who you are - you are Kage, Shadow Blade of the Obsidian Moon Clan."
+                },
+                {
+                    "id": "iron_shuriken",
+                    "name": "ceremonial iron shuriken",
+                    "description": "A perfectly balanced throwing star with the dojo's symbol etched into it"
+                },
+                {
+                    "id": "training_dummy",
+                    "name": "practice training dummy",
+                    "description": "A wooden dummy wrapped in straw and cloth, used for strike training",
+                    "searchable": true,
+                    "contains": []
+                },
+                {
+                    "id": "reinforced_sliding_door",
+                    "name": "reinforced sliding door",
+                    "description": "A heavy door with a circular lock mechanism designed to accept a shuriken-shaped key",
+                    "locked": true,
+                    "key_required": "iron_shuriken",
+                    "direction": "north",
+                    "leads_to": "meditation_chamber",
+                    "aliases": [
+                        "door",
+                        "north"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "meditation_chamber",
+            "name": "Chamber of Silent Meditation",
+            "description": "A serene room with tatami mats covering the floor. Three stone statues of legendary assassins stand in alcoves along the walls. A small fountain trickles peacefully in the corner. Calligraphy scrolls hang from the ceiling, swaying gently. The room radiates an aura of focused calm.",
+            "items": [
+                {
+                    "id": "statue_shadowblade",
+                    "name": "statue of Shadowblade",
+                    "description": "A stone statue of a hooded figure holding twin daggers",
+                    "readable": true,
+                    "text": "Shadowblade - First Master of Stealth. Known for moving unseen through the Imperial Palace. His techniques are preserved in the Sacred Scroll Vault."
+                },
+                {
+                    "id": "statue_nightwhisper",
+                    "name": "statue of Nightwhisper",
+                    "description": "A statue depicting a lithe assassin in a striking pose",
+                    "readable": true,
+                    "text": "Nightwhisper - Master of Poison. She eliminated targets without ever being seen. Her victims simply fell asleep and never woke. Her legacy lives in the shadows."
+                },
+                {
+                    "id": "statue_kurogane",
+                    "name": "statue of Master Kurogane",
+                    "description": "The central statue showing a stern master in meditation pose",
+                    "readable": true,
+                    "text": "Master Kurogane - Founder of the Obsidian Moon Clan. He established the dojo in 1582 and trained generations of shadow assassins. His wisdom guides us still."
+                },
+                {
+                    "id": "fountain",
+                    "name": "stone meditation fountain",
+                    "description": "A small fountain with crystal clear water flowing over smooth stones",
+                    "searchable": true,
+                    "contains": [
+                        "jade_token"
+                    ]
+                },
+                {
+                    "id": "jade_token",
+                    "name": "jade meditation token",
+                    "description": "A smooth jade disc with the clan symbol carved into it"
+                },
+                {
+                    "id": "scroll_cabinet",
+                    "name": "scroll storage cabinet",
+                    "description": "A lacquered cabinet with multiple drawers for storing sacred texts",
+                    "subcontainers": [
+                        {
+                            "id": "upper_drawer",
+                            "name": "upper drawer",
+                            "locked": false,
+                            "contains": [
+                                "philosophy_scroll"
+                            ]
+                        },
+                        {
+                            "id": "lower_drawer",
+                            "name": "lower drawer",
+                            "locked": true,
+                            "key_required": "jade_token",
+                            "contains": [
+                                "secret_passage_scroll"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "philosophy_scroll",
+                    "name": "scroll of shadow philosophy",
+                    "description": "A scroll containing the philosophical teachings of the clan",
+                    "readable": true,
+                    "text": "The assassin must know three truths: Where is wisdom kept? In the Sacred Scroll Vault. Who founded our order? Master Kurogane. What is your true name? Only you can answer this, shadow warrior."
+                },
+                {
+                    "id": "secret_passage_scroll",
+                    "name": "secret passage instructions",
+                    "description": "A scroll revealing the location of hidden passages",
+                    "readable": true,
+                    "text": "The path to the Master's Vault is protected by three questions. Only one who has studied the teachings and knows their own identity may pass. Seek the hidden door behind the eastern tapestry."
+                },
+                {
+                    "id": "concealed_vault_door",
+                    "name": "concealed vault door",
+                    "description": "A hidden door behind a tapestry, marked with three questions carved into the wood",
+                    "locked": true,
+                    "lock_type": "password",
+                    "password_questions": [
+                        {
+                            "question": "Where is wisdom kept?",
+                            "answer": "sacred scroll vault",
+                            "hint": "Check the statue of Shadowblade and the philosophy scroll"
+                        },
+                        {
+                            "question": "Who founded the Obsidian Moon Clan?",
+                            "answer": "master kurogane",
+                            "hint": "Read the statues carefully, especially the central one"
+                        },
+                        {
+                            "question": "What is your assassin name?",
+                            "answer": "kage",
+                            "hint": "The Master's note in the training hall reveals your identity"
+                        }
+                    ],
+                    "direction": "east",
+                    "leads_to": "masters_vault",
+                    "aliases": [
+                        "door",
+                        "east",
+                        "hidden door"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "masters_vault",
+            "name": "Master's Sacred Vault",
+            "description": "You have reached the inner sanctum of the Shadow Assassin Dojo! The vault is filled with legendary weapons, ancient scrolls, and priceless artifacts from centuries of assassin history. In the center, on a black silk cushion, rests the Obsidian Blade - the legendary weapon of Master Kurogane himself. Moonlight streams through a skylight above, illuminating your achievement.",
+            "items": [
+                {
+                    "id": "obsidian_blade",
+                    "name": "legendary Obsidian Blade",
+                    "description": "A perfectly crafted katana with a blade as black as midnight, said to cut through shadows themselves"
+                },
+                {
+                    "id": "artifact_display",
+                    "name": "display of legendary artifacts",
+                    "description": "Shelves holding masks, weapons, and tools used by the greatest assassins in history"
+                },
+                {
+                    "id": "master_scroll",
+                    "name": "Master Kurogane's final scroll",
+                    "description": "The master's last teachings, preserved for worthy students",
+                    "readable": true,
+                    "text": "To the one who reaches this vault: You have proven yourself worthy. You have mastered the trials, remembered the teachings, and discovered your true identity. The Obsidian Blade is yours. Use it with honor, Shadow Blade Kage."
+                }
+            ],
+            "exits": [],
+            "is_goal": true,
+            "win_message": "You have completed the trials of the Shadow Assassin Dojo! As you grasp the Obsidian Blade, you feel the weight of centuries of tradition and the power of the shadow assassins flowing through you. Master Kurogane's spirit appears briefly, nodding in approval before fading into the moonlight. You are now a true master of the Obsidian Moon Clan. You win!"
+        }
+    ]
+}

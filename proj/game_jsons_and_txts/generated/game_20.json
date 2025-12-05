@@ -1,0 +1,192 @@
+{
+    "theme": "Submarine Lab",
+    "title": "Submarine Lab Adventure #20",
+    "goal": "Solve the puzzles, achieve the main objective, and escape.",
+    "starting_room": "flooded_research_lab",
+    "rooms": [
+        {
+            "id": "flooded_research_lab",
+            "name": "Flooded Research Lab",
+            "description": "Emergency lights cast an eerie red glow through knee-deep water in the damaged research laboratory. Sparks fly from exposed wiring overhead. Computer monitors flicker with error messages. The submarine has taken critical damage and is slowly sinking. You need to reach the escape pod before it's too late.",
+            "items": [
+                {
+                    "id": "research_terminal",
+                    "name": "damaged research terminal",
+                    "description": "A waterlogged computer terminal still displaying some data",
+                    "readable": true,
+                    "text": "RESEARCH LOG - Dr. Chen, Lead Scientist. Project depth: 8000 meters. Emergency protocol: Access code based on maximum operational depth. Remember: 8-0-0-0."
+                },
+                {
+                    "id": "supply_cabinet",
+                    "name": "metal supply cabinet",
+                    "description": "A tall cabinet with emergency supplies, partially submerged in water",
+                    "subcontainers": [
+                        {
+                            "id": "top_shelf",
+                            "name": "top shelf",
+                            "locked": false,
+                            "contains": [
+                                "emergency_manual"
+                            ]
+                        },
+                        {
+                            "id": "locked_compartment",
+                            "name": "locked compartment",
+                            "locked": true,
+                            "lock_type": "combination",
+                            "combination": "8000",
+                            "contains": [
+                                "access_keycard"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "emergency_manual",
+                    "name": "emergency procedures manual",
+                    "description": "A waterproof manual with safety protocols",
+                    "readable": true,
+                    "text": "EMERGENCY PROCEDURES: In case of hull breach, proceed to Control Room. Lead scientist Dr. Chen has override authority. All personnel must know: Research station designation is Deep Sea Station Mariana."
+                },
+                {
+                    "id": "access_keycard",
+                    "name": "security access keycard",
+                    "description": "A magnetic keycard labeled 'Control Room Access'"
+                },
+                {
+                    "id": "workbench",
+                    "name": "laboratory workbench",
+                    "description": "A metal workbench covered with research equipment and scattered papers",
+                    "searchable": true,
+                    "contains": [
+                        "research_notes"
+                    ]
+                },
+                {
+                    "id": "research_notes",
+                    "name": "scattered research notes",
+                    "description": "Waterlogged papers with scientific observations",
+                    "readable": true,
+                    "text": "Notes: Specimen collection from Mariana Trench successful. Dr. Chen approved all protocols. Storage location: Biological samples kept in secure freezer in control room."
+                },
+                {
+                    "id": "pressure_sealed_door",
+                    "name": "pressure sealed door",
+                    "description": "A heavy reinforced door with a card reader, leading to the control room",
+                    "locked": true,
+                    "key_required": "access_keycard",
+                    "direction": "north",
+                    "leads_to": "control_room",
+                    "aliases": [
+                        "door",
+                        "north"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "control_room",
+            "name": "Submarine Control Room",
+            "description": "The nerve center of the submarine, filled with blinking control panels and navigation equipment. Warning klaxons blare intermittently. A large viewport shows the dark ocean depths outside. Personal lockers line one wall, and the escape pod access hatch is visible on the far side of the room.",
+            "items": [
+                {
+                    "id": "navigation_console",
+                    "name": "main navigation console",
+                    "description": "The primary control station with depth gauges and position displays",
+                    "readable": true,
+                    "text": "CURRENT POSITION: Mariana Trench, 8000 meters depth. HULL INTEGRITY: 23% and falling. RECOMMENDATION: Immediate evacuation required."
+                },
+                {
+                    "id": "crew_roster",
+                    "name": "crew roster board",
+                    "description": "A board listing all submarine personnel",
+                    "readable": true,
+                    "text": "CREW MANIFEST: Captain Rodriguez (Commander), Dr. Chen (Lead Scientist), Engineer Park (Systems), Dr. Okafor (Biology), Pilot Santos (Navigation). MISSION: Deep sea research expedition."
+                },
+                {
+                    "id": "personal_locker",
+                    "name": "crew locker",
+                    "description": "A metal locker with a nameplate reading 'Dr Chen'",
+                    "locked": true,
+                    "key_required": "access_keycard",
+                    "contains": [
+                        "personal_journal"
+                    ]
+                },
+                {
+                    "id": "personal_journal",
+                    "name": "personal log journal",
+                    "description": "A private journal belonging to the lead scientist",
+                    "readable": true,
+                    "text": "Personal Log - Dr. Chen: This mission to the Mariana Trench has been incredible. As lead scientist, I'm proud of our work. The specimens we've collected will revolutionize marine biology. My security clearance allows me access to all systems."
+                },
+                {
+                    "id": "storage_freezer",
+                    "name": "biological storage freezer",
+                    "description": "A secure freezer unit for storing research specimens",
+                    "searchable": true,
+                    "contains": [
+                        "emergency_beacon"
+                    ]
+                },
+                {
+                    "id": "emergency_beacon",
+                    "name": "emergency locator beacon",
+                    "description": "A bright orange emergency beacon device"
+                },
+                {
+                    "id": "escape_pod_access_hatch",
+                    "name": "escape pod access hatch",
+                    "description": "A sealed hatch leading to the emergency escape pod. A security terminal displays three verification questions.",
+                    "locked": true,
+                    "lock_type": "password",
+                    "password_questions": [
+                        {
+                            "question": "Who has override authority?",
+                            "answer": "dr chen",
+                            "hint": "Check the emergency procedures manual"
+                        },
+                        {
+                            "question": "What is the station designation?",
+                            "answer": "deep sea station mariana",
+                            "hint": "The emergency manual contains this information"
+                        },
+                        {
+                            "question": "Where are biological samples stored?",
+                            "answer": "secure freezer",
+                            "hint": "Look at the research notes from the lab"
+                        }
+                    ],
+                    "direction": "east",
+                    "leads_to": "escape_pod",
+                    "aliases": [
+                        "hatch",
+                        "east"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "escape_pod",
+            "name": "Emergency Escape Pod",
+            "description": "You've made it to the escape pod! A small spherical chamber with a single seat and emergency controls. Through the viewport, you can see the damaged submarine falling away into the darkness below. The pod's engines hum to life, ready to carry you to the surface.",
+            "items": [
+                {
+                    "id": "pod_controls",
+                    "name": "escape pod controls",
+                    "description": "A simple control panel with a large red launch button"
+                },
+                {
+                    "id": "emergency_supplies",
+                    "name": "emergency survival kit",
+                    "description": "A kit containing food, water, and first aid supplies"
+                }
+            ],
+            "exits": [],
+            "is_goal": true,
+            "win_message": "SUCCESS! You launch the escape pod and rocket toward the surface. The damaged submarine disappears into the abyssal depths below. After what feels like an eternity, you break through the waves into sunlight. A rescue ship spots your emergency beacon and moves to pick you up. You've survived the disaster at Deep Sea Station Mariana! You win!"
+        }
+    ]
+}

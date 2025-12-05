@@ -1,0 +1,262 @@
+{
+    "theme": "Floating Sky Temple",
+    "title": "Floating Sky Temple Adventure #40",
+    "goal": "Solve the puzzles, achieve the main objective, and escape.",
+    "starting_room": "temple_entrance",
+    "rooms": [
+        {
+            "id": "temple_entrance",
+            "name": "Temple Entrance Hall",
+            "description": "A magnificent entrance hall carved from white marble that seems to glow with inner light. Through arched windows, you see clouds drifting past at eye level - the temple truly floats among the peaks. Wind chimes sing softly in the breeze. Ancient pillars support a vaulted ceiling painted with celestial maps. Prayer flags flutter near the doorways.",
+            "items": [
+                {
+                    "id": "stone_pedestal",
+                    "name": "stone pedestal",
+                    "description": "A marble pedestal with an offering bowl and carved inscriptions",
+                    "searchable": true,
+                    "contains": [
+                        "bronze_key"
+                    ]
+                },
+                {
+                    "id": "bronze_key",
+                    "name": "bronze key",
+                    "description": "A key engraved with cloud patterns and wind symbols"
+                },
+                {
+                    "id": "prayer_cabinet",
+                    "name": "prayer cabinet",
+                    "description": "A wooden cabinet with three compartments for sacred items",
+                    "subcontainers": [
+                        {
+                            "id": "upper_compartment",
+                            "name": "upper compartment",
+                            "locked": false,
+                            "contains": [
+                                "temple_history"
+                            ]
+                        },
+                        {
+                            "id": "middle_compartment",
+                            "name": "middle compartment",
+                            "locked": true,
+                            "lock_type": "combination",
+                            "combination": "888",
+                            "contains": [
+                                "silver_key"
+                            ]
+                        },
+                        {
+                            "id": "lower_compartment",
+                            "name": "lower compartment",
+                            "locked": false,
+                            "contains": []
+                        }
+                    ]
+                },
+                {
+                    "id": "temple_history",
+                    "name": "temple history scroll",
+                    "description": "An ancient scroll describing the temple's origins",
+                    "readable": true,
+                    "text": "The Floating Sky Temple was built in the year 888 by the wind monks of the Sky Peaks. Master Zephyr, the first Guardian, channeled the power of wind to lift the temple into the clouds. Here, seekers come to find enlightenment above the mortal world."
+                },
+                {
+                    "id": "silver_key",
+                    "name": "silver key",
+                    "description": "A polished silver key with feather engravings"
+                },
+                {
+                    "id": "offering_bowl",
+                    "name": "offering bowl",
+                    "description": "A bronze bowl containing incense and small tokens",
+                    "searchable": true,
+                    "contains": [
+                        "wind_token"
+                    ]
+                },
+                {
+                    "id": "wind_token",
+                    "name": "wind token",
+                    "description": "A small jade token carved with swirling wind patterns"
+                },
+                {
+                    "id": "locked_shrine",
+                    "name": "locked shrine",
+                    "description": "A small shrine with a bronze lock, dedicated to the temple's founder",
+                    "locked": true,
+                    "key_required": "bronze_key",
+                    "contains": [
+                        "guardian_journal"
+                    ]
+                },
+                {
+                    "id": "guardian_journal",
+                    "name": "Guardian's journal",
+                    "description": "A leather-bound journal belonging to Master Zephyr",
+                    "readable": true,
+                    "text": "I, Master Zephyr, have dedicated my life to maintaining this sacred temple. The Hall of Winds contains our most precious teachings. Only those who understand the temple's nature may enter the Sky Sanctuary - they must know where we dwell, what element we command, and who guards this place."
+                },
+                {
+                    "id": "celestial_map",
+                    "name": "celestial ceiling map",
+                    "description": "A painted map on the ceiling showing stars and mountain peaks",
+                    "readable": true,
+                    "text": "The map depicts the Sky Peaks mountain range with the temple floating above the highest summit. Constellations of the wind spirits are painted around it."
+                },
+                {
+                    "id": "carved_wooden_door",
+                    "name": "carved wooden door",
+                    "description": "A door carved with images of clouds and flying birds, leading to the Hall of Winds",
+                    "locked": true,
+                    "key_required": "silver_key",
+                    "direction": "north",
+                    "leads_to": "hall_of_winds",
+                    "aliases": [
+                        "door",
+                        "north"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "hall_of_winds",
+            "name": "Hall of Winds",
+            "description": "A breathtaking hall where wind flows freely through open archways on all sides. Silk banners ripple and dance in the constant breeze. The floor is polished stone inlaid with patterns of swirling air currents. Meditation cushions are arranged in circles. Through the archways, you see nothing but sky and distant clouds. A magnificent door to the east leads to the Sky Sanctuary.",
+            "items": [
+                {
+                    "id": "wind_altar",
+                    "name": "altar of winds",
+                    "description": "A stone altar where wind seems to spiral upward in a visible column of air",
+                    "readable": true,
+                    "text": "Inscription: 'Here the sacred wind rises eternal. Master Zephyr taught that wind is the breath of the heavens, the element that lifts us above earthly concerns. In the Sky Peaks, we float between earth and sky.'"
+                },
+                {
+                    "id": "meditation_cushions",
+                    "name": "circle of meditation cushions",
+                    "description": "Cushions arranged for group meditation practice",
+                    "searchable": true,
+                    "contains": [
+                        "teaching_scroll"
+                    ]
+                },
+                {
+                    "id": "teaching_scroll",
+                    "name": "scroll of teachings",
+                    "description": "A scroll containing the temple's core teachings",
+                    "readable": true,
+                    "text": "The Three Truths of the Sky Temple: First - We dwell in the Sky Peaks, above the world. Second - We command the element of wind, which gives us freedom. Third - Master Zephyr guards this sacred place as the eternal Guardian."
+                },
+                {
+                    "id": "silk_banners",
+                    "name": "flowing silk banners",
+                    "description": "Long banners of blue and white silk that dance in the wind",
+                    "readable": true,
+                    "text": "The banners are inscribed with prayers: 'May the winds carry us to enlightenment. May Master Zephyr guide our path. May the Sky Peaks shelter us always.'"
+                },
+                {
+                    "id": "stone_bookcase",
+                    "name": "stone bookcase",
+                    "description": "A carved bookcase holding sacred texts about wind meditation",
+                    "searchable": true,
+                    "contains": [
+                        "wind_meditation_text"
+                    ]
+                },
+                {
+                    "id": "wind_meditation_text",
+                    "name": "wind meditation manual",
+                    "description": "A manual teaching wind meditation techniques",
+                    "readable": true,
+                    "text": "To master wind meditation, one must understand that wind is our sacred element. It flows through the Sky Peaks and lifts our temple. Master Zephyr achieved perfect harmony with wind, becoming the Guardian of this floating sanctuary."
+                },
+                {
+                    "id": "offering_table",
+                    "name": "offering table",
+                    "description": "A low table with incense and small statues",
+                    "subcontainers": [
+                        {
+                            "id": "table_drawer",
+                            "name": "table drawer",
+                            "locked": false,
+                            "contains": [
+                                "sanctuary_note"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "sanctuary_note",
+                    "name": "note about the sanctuary",
+                    "description": "A handwritten note from a senior monk",
+                    "readable": true,
+                    "text": "Reminder to novices: The Sky Sanctuary is the holiest place in our temple. To enter, you must prove your understanding by answering the three sacred questions. Know where we are, what we command, and who protects us."
+                },
+                {
+                    "id": "sanctuary_door",
+                    "name": "sanctuary door",
+                    "description": "An ornate door carved with images of Master Zephyr and wind spirits. Three questions are inscribed on a jade plaque beside it.",
+                    "locked": true,
+                    "lock_type": "password",
+                    "password_questions": [
+                        {
+                            "question": "Where does the temple dwell?",
+                            "answer": "sky peaks",
+                            "hint": "Check the temple history scroll and the altar inscription"
+                        },
+                        {
+                            "question": "What is the sacred element?",
+                            "answer": "wind",
+                            "hint": "The scroll of teachings and meditation texts mention this"
+                        },
+                        {
+                            "question": "Who is the Guardian?",
+                            "answer": "master zephyr",
+                            "hint": "Multiple texts throughout the temple name the Guardian"
+                        }
+                    ],
+                    "direction": "east",
+                    "leads_to": "sky_sanctuary",
+                    "aliases": [
+                        "door",
+                        "east"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "sky_sanctuary",
+            "name": "Sky Sanctuary",
+            "description": "You have reached the Sky Sanctuary! The holiest chamber of the floating temple opens before you. The room has no walls - only pillars supporting a golden dome. You stand on a platform of white marble suspended in the open sky. Clouds drift past on all sides. A gentle wind swirls around you, and you feel weightless. At the center, a glowing portal of swirling air offers passage to safety below.",
+            "items": [
+                {
+                    "id": "golden_dome",
+                    "name": "golden dome",
+                    "description": "A magnificent dome that seems to capture and reflect sunlight"
+                },
+                {
+                    "id": "wind_portal",
+                    "name": "portal of winds",
+                    "description": "A swirling vortex of gentle wind that glows with ethereal light",
+                    "readable": true,
+                    "text": "The portal hums with power. You sense it will carry you safely down from the floating temple to the world below."
+                },
+                {
+                    "id": "marble_platform",
+                    "name": "sacred marble platform",
+                    "description": "The platform where monks achieve the highest level of enlightenment"
+                },
+                {
+                    "id": "guardian_statue",
+                    "name": "statue of Master Zephyr",
+                    "description": "A serene statue of the temple's founder, his robes seeming to billow in an eternal breeze"
+                }
+            ],
+            "exits": [],
+            "is_goal": true,
+            "win_message": "You have reached the Sky Sanctuary and proven yourself worthy! The wind portal activates, and gentle currents of air lift you up. You float through the swirling vortex, and it carries you safely down from the floating temple to the mountain below. As you descend through the clouds, you look back to see the magnificent Sky Temple gleaming in the sunlight above. You have solved its mysteries and escaped. You win!"
+        }
+    ]
+}

@@ -1,0 +1,270 @@
+{
+    "theme": "Alien Embassy Negotiation Room",
+    "title": "Alien Embassy Negotiation Room Adventure #11",
+    "goal": "Solve the puzzles, achieve the main objective, and escape.",
+    "starting_room": "diplomatic_antechamber",
+    "rooms": [
+        {
+            "id": "diplomatic_antechamber",
+            "name": "Diplomatic Antechamber",
+            "description": "A sleek waiting area with walls of polished obsidian and floating holographic displays showing alien star systems. Comfortable seating pods hover above the floor. The air has a faint ozone smell from the advanced technology. Diplomatic credentials and cultural artifacts are displayed in secure cases. Soft bioluminescent lighting pulses gently from the ceiling.",
+            "items": [
+                {
+                    "id": "reception_desk",
+                    "name": "reception desk",
+                    "description": "A curved desk made of an unknown crystalline material with embedded touch panels",
+                    "searchable": true,
+                    "contains": [
+                        "visitor_badge"
+                    ]
+                },
+                {
+                    "id": "visitor_badge",
+                    "name": "diplomatic visitor badge",
+                    "description": "A metallic badge that grants access to restricted areas"
+                },
+                {
+                    "id": "filing_console",
+                    "name": "diplomatic filing console",
+                    "description": "A console with three compartments containing embassy records",
+                    "subcontainers": [
+                        {
+                            "id": "top_compartment",
+                            "name": "top compartment",
+                            "locked": false,
+                            "contains": [
+                                "embassy_charter"
+                            ]
+                        },
+                        {
+                            "id": "middle_compartment",
+                            "name": "middle compartment",
+                            "locked": true,
+                            "lock_type": "combination",
+                            "combination": "2157",
+                            "contains": [
+                                "access_card"
+                            ]
+                        },
+                        {
+                            "id": "bottom_compartment",
+                            "name": "bottom compartment",
+                            "locked": false,
+                            "contains": []
+                        }
+                    ]
+                },
+                {
+                    "id": "embassy_charter",
+                    "name": "embassy charter document",
+                    "description": "An official document establishing the embassy",
+                    "readable": true,
+                    "text": "GALACTIC EMBASSY CHARTER: Established in the year 2157 by Ambassador Zyx'thor of the Andromedan Collective. This embassy serves as neutral ground for diplomatic negotiations between Earth and the Andromedan species. Chief Translator: Dr. Sarah Chen. Cultural Liaison: Ambassador Zyx'thor."
+                },
+                {
+                    "id": "access_card",
+                    "name": "security access card",
+                    "description": "A card with holographic encoding for secure areas"
+                },
+                {
+                    "id": "display_case",
+                    "name": "cultural artifact display case",
+                    "description": "A transparent case containing alien artifacts and information plaques",
+                    "readable": true,
+                    "text": "Display: Andromedan Cultural Artifacts. The Andromedans communicate through a combination of sound and bioluminescent patterns. Their homeworld is Zyx Prime, a planet orbiting a binary star system. These peaceful beings value harmony and mutual understanding above all."
+                },
+                {
+                    "id": "holographic_display",
+                    "name": "holographic star map",
+                    "description": "A floating display showing the Andromedan home system",
+                    "readable": true,
+                    "text": "Star Map: Andromedan Collective Territory. Homeworld: Zyx Prime. The Andromedans have been spacefaring for over 10,000 years. Their embassy on Earth represents the first official contact between our species."
+                },
+                {
+                    "id": "secure_cabinet",
+                    "name": "secure diplomatic cabinet",
+                    "description": "A locked cabinet with a biometric scanner and keyhole",
+                    "locked": true,
+                    "key_required": "visitor_badge",
+                    "contains": [
+                        "protocol_manual"
+                    ]
+                },
+                {
+                    "id": "protocol_manual",
+                    "name": "diplomatic protocol manual",
+                    "description": "A comprehensive guide to embassy procedures",
+                    "readable": true,
+                    "text": "DIPLOMATIC PROTOCOLS: All visitors must understand basic Andromedan culture before entering the Ambassador's Chamber. The Translation Archive contains essential cultural and linguistic information. Remember: Ambassador Zyx'thor values respect and knowledge of Andromedan customs."
+                },
+                {
+                    "id": "security_door_to_archive",
+                    "name": "security door to archive",
+                    "description": "A sliding door with a card reader and glowing alien symbols",
+                    "locked": true,
+                    "key_required": "access_card",
+                    "direction": "north",
+                    "leads_to": "translation_archive",
+                    "aliases": [
+                        "door",
+                        "north"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "translation_archive",
+            "name": "Translation Archive",
+            "description": "A circular room filled with holographic language displays and cultural databases. Alien script flows across transparent screens in mesmerizing patterns. Translation devices and linguistic reference materials are organized on floating shelves. The walls display images of Andromedan society and their homeworld. A soft humming emanates from the translation computers.",
+            "items": [
+                {
+                    "id": "translation_terminal",
+                    "name": "main translation terminal",
+                    "description": "A sophisticated computer system for translating between human and Andromedan languages",
+                    "readable": true,
+                    "text": "TRANSLATION DATABASE: The Andromedan language combines vocal tones with light patterns. Key phrases: 'Zyx' means harmony or peace. Common greeting: 'Zyx'ka' (We come in peace). The Andromedans are known as the Peaceful Ones throughout the galaxy."
+                },
+                {
+                    "id": "cultural_database",
+                    "name": "cultural database console",
+                    "description": "A console containing extensive information about Andromedan society",
+                    "readable": true,
+                    "text": "ANDROMEDAN CULTURE: The Andromedans are a peaceful species that has never engaged in warfare. They are called 'The Peaceful Ones' by other galactic civilizations. Their society is built on principles of harmony, cooperation, and mutual respect. Ambassador Zyx'thor is their most experienced diplomat."
+                },
+                {
+                    "id": "reference_shelf",
+                    "name": "linguistic reference shelf",
+                    "description": "A floating shelf with various translation guides and cultural texts",
+                    "searchable": true,
+                    "contains": [
+                        "language_guide"
+                    ]
+                },
+                {
+                    "id": "language_guide",
+                    "name": "Andromedan language guide",
+                    "description": "A comprehensive guide to Andromedan communication",
+                    "readable": true,
+                    "text": "LANGUAGE GUIDE: Andromedan names often contain the syllable 'Zyx' which represents their core value of peace. Ambassador Zyx'thor's name literally translates to 'Bringer of Harmony.' Understanding their language is key to successful diplomatic relations."
+                },
+                {
+                    "id": "archive_cabinet",
+                    "name": "archive storage cabinet",
+                    "description": "A cabinet with drawers containing historical records and diplomatic files",
+                    "subcontainers": [
+                        {
+                            "id": "historical_drawer",
+                            "name": "historical records drawer",
+                            "locked": false,
+                            "contains": [
+                                "first_contact_report"
+                            ]
+                        },
+                        {
+                            "id": "diplomatic_drawer",
+                            "name": "diplomatic files drawer",
+                            "locked": false,
+                            "contains": [
+                                "ambassador_profile"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "first_contact_report",
+                    "name": "first contact report",
+                    "description": "A document describing humanity's first contact with the Andromedans",
+                    "readable": true,
+                    "text": "FIRST CONTACT REPORT: Initial contact with the Andromedan Collective occurred in 2157. The Andromedans approached peacefully, seeking to establish diplomatic relations. Their representative, Ambassador Zyx'thor, demonstrated remarkable patience and cultural sensitivity. Dr. Sarah Chen was appointed as Chief Translator to facilitate communication."
+                },
+                {
+                    "id": "ambassador_profile",
+                    "name": "Ambassador Zyx'thor profile",
+                    "description": "A detailed profile of the Andromedan ambassador",
+                    "readable": true,
+                    "text": "AMBASSADOR PROFILE: Zyx'thor has served as the Andromedan ambassador to Earth since first contact. Known for wisdom, patience, and deep commitment to peaceful coexistence. To gain audience with the Ambassador, one must demonstrate understanding of Andromedan culture and values."
+                },
+                {
+                    "id": "holographic_library",
+                    "name": "holographic cultural library",
+                    "description": "A collection of holographic recordings showing Andromedan life and customs",
+                    "readable": true,
+                    "text": "CULTURAL RECORDINGS: These holos show daily life on Zyx Prime, the Andromedan homeworld. The Andromedans live in harmony with their environment and each other. Their society has achieved what they call 'Perfect Peace' - a state of complete cooperation and understanding."
+                },
+                {
+                    "id": "Ambassador's_Chamber_door",
+                    "name": "Ambassador's Chamber door",
+                    "description": "An impressive door made of alien metal with bioluminescent patterns. Three security questions are displayed on a holographic panel beside it.",
+                    "locked": true,
+                    "lock_type": "password",
+                    "password_questions": [
+                        {
+                            "question": "What is the Andromedan homeworld called?",
+                            "answer": "zyx prime",
+                            "hint": "Check the star map and cultural database for information about their planet"
+                        },
+                        {
+                            "question": "What are the Andromedans known as?",
+                            "answer": "the peaceful ones",
+                            "hint": "Multiple sources mention their reputation throughout the galaxy"
+                        },
+                        {
+                            "question": "Who is the Andromedan ambassador?",
+                            "answer": "ambassador zyxthor",
+                            "hint": "The embassy charter and various documents mention the ambassador's name"
+                        }
+                    ],
+                    "direction": "east",
+                    "leads_to": "ambassador_chamber",
+                    "aliases": [
+                        "chamber",
+                        "east"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "ambassador_chamber",
+            "name": "Ambassador's Negotiation Chamber",
+            "description": "You have entered the Ambassador's Chamber! A magnificent circular room with a domed ceiling displaying a real-time view of the stars. In the center, a negotiation table made of crystallized starlight hovers above the floor. Ambassador Zyx'thor's holographic presence materializes, their form shimmering with peaceful bioluminescence. Behind them, a portal of swirling energy leads back to the embassy exit and your successful completion of the diplomatic mission.",
+            "items": [
+                {
+                    "id": "negotiation_table",
+                    "name": "crystallized starlight table",
+                    "description": "A beautiful table that seems to be made of solidified light, used for the most important diplomatic negotiations"
+                },
+                {
+                    "id": "ambassador_hologram",
+                    "name": "Ambassador Zyx'thor hologram",
+                    "description": "The shimmering holographic form of the Andromedan ambassador",
+                    "readable": true,
+                    "text": "Ambassador Zyx'thor speaks: 'Zyx'ka, honored guest. You have demonstrated the wisdom and cultural understanding necessary for true diplomatic relations. Your knowledge of our people and our ways brings hope for lasting peace between our worlds. You have completed your mission with honor.'"
+                },
+                {
+                    "id": "star_dome",
+                    "name": "celestial dome ceiling",
+                    "description": "A transparent dome showing the actual night sky and distant galaxies"
+                },
+                {
+                    "id": "peace_monument",
+                    "name": "monument to galactic peace",
+                    "description": "A sculpture representing the alliance between Earth and the Andromedan Collective",
+                    "searchable": true,
+                    "contains": [
+                        "treaty_crystal"
+                    ]
+                },
+                {
+                    "id": "treaty_crystal",
+                    "name": "diplomatic treaty crystal",
+                    "description": "A crystal containing the encoded treaty between Earth and the Andromedans"
+                }
+            ],
+            "exits": [],
+            "is_goal": true,
+            "win_message": "Congratulations! You have successfully navigated the Alien Embassy, learned about Andromedan culture, and gained an audience with Ambassador Zyx'thor. Your diplomatic mission is complete. The ambassador's blessing and the knowledge you've gained will help forge a lasting peace between humanity and the Andromedan Collective. The portal opens, and you step through, having achieved your objective. You win!"
+        }
+    ]
+}

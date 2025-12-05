@@ -1,0 +1,282 @@
+{
+  "theme": "Medieval Dungeon",
+  "title": "Medieval Dungeon Adventure #36",
+  "goal": "Solve the puzzles, achieve the main objective, and escape.",
+  "starting_room": "torture_chamber",
+  "rooms": [
+    {
+      "id": "torture_chamber",
+      "name": "Torture Chamber",
+      "description": "A grim stone chamber filled with rusted torture devices and chains hanging from the ceiling. The walls are stained with centuries of suffering. A single torch flickers, casting dancing shadows across iron maidens and stretching racks. The air is cold and damp, carrying the faint echo of past screams. Water drips steadily from cracks in the stone ceiling.",
+      "items": [
+        {
+          "id": "iron_maiden",
+          "name": "iron maiden",
+          "description": "A tall iron torture device shaped like a sarcophagus with spikes inside",
+          "searchable": true,
+          "contains": [
+            "rusty_dagger"
+          ]
+        },
+        {
+          "id": "rusty_dagger",
+          "name": "rusty dagger",
+          "description": "A corroded dagger that could pry open weak locks"
+        },
+        {
+          "id": "torture_rack",
+          "name": "stretching rack",
+          "description": "A wooden rack with chains and wheels used for extracting confessions",
+          "searchable": true,
+          "contains": [
+            "prisoner_note"
+          ]
+        },
+        {
+          "id": "prisoner_note",
+          "name": "prisoner's note",
+          "description": "A scrap of parchment hidden in the rack's mechanism",
+          "readable": true,
+          "text": "Day 89: They brought me to this cursed place built in 1347 by Lord Blackthorne. The warden, Sir Grimwald, keeps all records in the armory. I heard guards say the vault holds the castle's treasure and a secret passage to freedom. The combination to the executioner's box is the year this hell was built."
+        },
+        {
+          "id": "executioners_box",
+          "name": "executioner's lockbox",
+          "description": "A heavy iron box with a four-digit combination lock, covered in dried blood",
+          "locked": true,
+          "lock_type": "combination",
+          "combination": "1347",
+          "contains": [
+            "brass_key",
+            "execution_log"
+          ]
+        },
+        {
+          "id": "brass_key",
+          "name": "brass key",
+          "description": "A brass key engraved with the symbol of a sword and shield"
+        },
+        {
+          "id": "execution_log",
+          "name": "execution log",
+          "description": "A blood-stained ledger recording executions",
+          "readable": true,
+          "text": "EXECUTION RECORDS - Warden Sir Grimwald presiding. All condemned prisoners are held in the torture chamber before being taken to the gallows courtyard. Lord Blackthorne demands detailed records of all executions. Note: Vault access requires knowledge of the warden's name, the location of condemned prisoners, and the lord's title."
+        },
+        {
+          "id": "wall_chains",
+          "name": "wall chains",
+          "description": "Heavy chains bolted to the stone walls, still bearing manacles",
+          "searchable": true,
+          "contains": []
+        },
+        {
+          "id": "wooden_table",
+          "name": "interrogation table",
+          "description": "A bloodstained wooden table with leather straps and a locked drawer",
+          "subcontainers": [
+            {
+              "id": "table_drawer",
+              "name": "table drawer",
+              "locked": true,
+              "key_required": "rusty_dagger",
+              "contains": [
+                "dungeon_map"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "dungeon_map",
+          "name": "dungeon map",
+          "description": "A crude map of the dungeon layout",
+          "readable": true,
+          "text": "MAP OF LORD BLACKTHORNE'S DUNGEON: Torture Chamber (lower level) connects to Guard's Armory (main level). The Castle Vault lies beyond the armory, protected by Lord Blackthorne's personal security. Only those who know the warden and the dungeon's secrets may enter."
+        },
+        {
+          "id": "heavy_iron_door",
+          "name": "heavy iron door",
+          "description": "A reinforced iron door with a brass lock, leading to the guard's armory",
+          "locked": true,
+          "key_required": "brass_key",
+          "direction": "north",
+          "leads_to": "guards_armory",
+          "aliases": [
+            "door",
+            "north"
+          ]
+        }
+      ],
+      "exits": []
+    },
+    {
+      "id": "guards_armory",
+      "name": "Guard's Armory",
+      "description": "A well-organized armory lined with weapon racks and armor stands. Swords, spears, and crossbows hang on the walls. A large wooden desk sits in the corner, covered with duty rosters and official documents. Shields bearing Lord Blackthorne's coat of arms are mounted above the doorway. The smell of oil and metal fills the air.",
+      "items": [
+        {
+          "id": "weapon_rack",
+          "name": "weapon rack",
+          "description": "A rack holding various medieval weapons - swords, maces, and axes",
+          "searchable": true,
+          "contains": [
+            "silver_key"
+          ]
+        },
+        {
+          "id": "silver_key",
+          "name": "silver key",
+          "description": "A polished silver key with intricate engravings"
+        },
+        {
+          "id": "guards_desk",
+          "name": "guard captain's desk",
+          "description": "A sturdy oak desk with multiple drawers and scattered papers",
+          "subcontainers": [
+            {
+              "id": "top_desk_drawer",
+              "name": "top drawer",
+              "locked": false,
+              "contains": [
+                "duty_roster"
+              ]
+            },
+            {
+              "id": "middle_desk_drawer",
+              "name": "middle drawer",
+              "locked": true,
+              "lock_type": "combination",
+              "combination": "666",
+              "contains": [
+                "vault_instructions"
+              ]
+            },
+            {
+              "id": "bottom_desk_drawer",
+              "name": "bottom drawer",
+              "locked": false,
+              "contains": []
+            }
+          ]
+        },
+        {
+          "id": "duty_roster",
+          "name": "guard duty roster",
+          "description": "A schedule of guard assignments and duties",
+          "readable": true,
+          "text": "GUARD DUTY ROSTER - All guards report to Warden Sir Grimwald. Morning shift: Patrol torture chamber and check condemned prisoners. Evening shift: Guard the vault entrance. Lord Blackthorne requires 666 gold pieces monthly for dungeon operations. Remember: Only knights and nobles are imprisoned in the high tower."
+        },
+        {
+          "id": "vault_instructions",
+          "name": "vault access instructions",
+          "description": "Official instructions for accessing the castle vault",
+          "readable": true,
+          "text": "VAULT SECURITY PROTOCOL: To access Lord Blackthorne's vault, answer three security questions correctly. Q1: Who is the warden of this dungeon? Q2: Where are condemned prisoners held? Q3: What is your noble title? Only those of noble rank may access the treasure."
+        },
+        {
+          "id": "armor_stand",
+          "name": "suit of armor",
+          "description": "A complete set of plate armor on a wooden stand",
+          "searchable": true,
+          "contains": [
+            "warden_letter"
+          ]
+        },
+        {
+          "id": "warden_letter",
+          "name": "letter from the warden",
+          "description": "An official letter sealed with the warden's seal",
+          "readable": true,
+          "text": "From Warden Sir Grimwald to Lord Blackthorne: My lord, the dungeon operates efficiently. All condemned prisoners are secured in the torture chamber awaiting your judgment. The vault remains secure with your personal security questions. Your loyal servant, Sir Grimwald."
+        },
+        {
+          "id": "supply_cabinet",
+          "name": "supply cabinet",
+          "description": "A locked cabinet containing guard supplies and equipment",
+          "locked": true,
+          "key_required": "silver_key",
+          "contains": [
+            "guard_manual"
+          ]
+        },
+        {
+          "id": "guard_manual",
+          "name": "guard training manual",
+          "description": "A manual for training new dungeon guards",
+          "readable": true,
+          "text": "GUARD TRAINING MANUAL: All guards serve under Warden Sir Grimwald in Lord Blackthorne's dungeon. Condemned prisoners are held in the torture chamber. Knights captured in battle are treated with respect according to their noble title. The vault contains Lord Blackthorne's wealth and a secret escape tunnel."
+        },
+        {
+          "id": "shield_display",
+          "name": "shield with coat of arms",
+          "description": "A ceremonial shield bearing Lord Blackthorne's heraldry",
+          "readable": true,
+          "text": "The shield displays Lord Blackthorne's coat of arms: a black tower on a red field. Beneath it reads: 'Lord Blackthorne - Master of the Castle, Keeper of Justice.'"
+        },
+        {
+          "id": "vault_door",
+          "name": "vault door",
+          "description": "A massive reinforced door with elaborate locks and a security panel. Three questions are engraved on a brass plate.",
+          "locked": true,
+          "lock_type": "password",
+          "password_questions": [
+            {
+              "question": "Who is the warden of this dungeon?",
+              "answer": "sir grimwald",
+              "hint": "Check the execution log, duty roster, and warden's letter"
+            },
+            {
+              "question": "Where are condemned prisoners held?",
+              "answer": "torture chamber",
+              "hint": "Multiple documents mention where condemned prisoners are kept"
+            },
+            {
+              "question": "What is your noble title?",
+              "answer": "knight",
+              "hint": "The guard manual mentions what title imprisoned nobles hold"
+            }
+          ],
+          "direction": "east",
+          "leads_to": "castle_vault",
+          "aliases": [
+            "vault",
+            "east"
+          ]
+        }
+      ],
+      "exits": []
+    },
+    {
+      "id": "castle_vault",
+      "name": "Castle Vault",
+      "description": "You've reached the castle vault! A magnificent chamber filled with chests overflowing with gold coins, jeweled crowns, and precious artifacts. Torches illuminate piles of treasure accumulated over generations. At the far end, a hidden passage has been revealed behind a moved tapestry - stone steps lead upward to daylight and freedom. Fresh air flows down from above, carrying the scent of the outside world.",
+      "items": [
+        {
+          "id": "treasure_chests",
+          "name": "chests of gold",
+          "description": "Multiple wooden chests filled with gold coins, gems, and precious metals"
+        },
+        {
+          "id": "jeweled_crown",
+          "name": "royal crown",
+          "description": "A magnificent crown encrusted with rubies, emeralds, and diamonds"
+        },
+        {
+          "id": "golden_chalice",
+          "name": "golden chalice",
+          "description": "An ornate chalice made of pure gold with intricate engravings"
+        },
+        {
+          "id": "secret_passage",
+          "name": "secret passage",
+          "description": "A hidden stairway leading upward through the castle walls to freedom",
+          "readable": true,
+          "text": "Stone steps wind upward through a narrow passage. You can see daylight at the top and hear birds singing. Freedom awaits!"
+        }
+      ],
+      "exits": [],
+      "is_goal": true,
+      "win_message": "You've escaped the medieval dungeon and discovered Lord Blackthorne's treasure! As you climb the secret passage, you emerge in the forest outside the castle walls. The fresh air fills your lungs as you leave your imprisonment behind forever. With your newfound wealth and freedom, a new life awaits. You win!"
+    }
+  ]
+}

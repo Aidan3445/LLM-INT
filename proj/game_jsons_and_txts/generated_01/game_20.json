@@ -1,0 +1,269 @@
+{
+    "theme": "Abandoned Theme Park",
+    "title": "Abandoned Theme Park Adventure #20",
+    "goal": "Solve the puzzles, achieve the main objective, and escape.",
+    "starting_room": "carousel_plaza",
+    "rooms": [
+        {
+            "id": "carousel_plaza",
+            "name": "Carousel Plaza",
+            "description": "A circular plaza dominated by a rusted carousel with faded painted horses frozen mid-gallop. Peeling paint reveals layers of bright colors from decades past. Carnival music boxes sit silent and broken. Weeds push through cracked pavement, and faded banners flutter in the breeze. A ticket booth stands to one side, its windows clouded with grime.",
+            "items": [
+                {
+                    "id": "carousel_platform",
+                    "name": "old carousel",
+                    "description": "A once-magnificent carousel now covered in rust and bird droppings. The horses still wear their tarnished brass poles.",
+                    "searchable": true,
+                    "contains": [
+                        "brass_key"
+                    ]
+                },
+                {
+                    "id": "brass_key",
+                    "name": "tarnished brass key",
+                    "description": "A small brass key hidden beneath one of the carousel horses"
+                },
+                {
+                    "id": "ticket_booth",
+                    "name": "abandoned ticket booth",
+                    "description": "A wooden booth with a cash register and filing system. It has three drawers.",
+                    "subcontainers": [
+                        {
+                            "id": "top_drawer",
+                            "name": "top drawer",
+                            "locked": false,
+                            "contains": [
+                                "park_brochure"
+                            ]
+                        },
+                        {
+                            "id": "middle_drawer",
+                            "name": "middle drawer",
+                            "locked": true,
+                            "lock_type": "combination",
+                            "combination": "1987",
+                            "contains": [
+                                "silver_key"
+                            ]
+                        },
+                        {
+                            "id": "bottom_drawer",
+                            "name": "bottom drawer",
+                            "locked": false,
+                            "contains": []
+                        }
+                    ]
+                },
+                {
+                    "id": "park_brochure",
+                    "name": "faded park brochure",
+                    "description": "A weathered brochure advertising the theme park's attractions",
+                    "readable": true,
+                    "text": "Welcome to Wonderland Park! Established 1987. Manager: Mr. Sullivan. Featured Attractions: The Giant Ferris Wheel, Haunted Mansion, Carousel Plaza, and the Amazing Funhouse Mirror Maze. Come create memories that last forever!"
+                },
+                {
+                    "id": "silver_key",
+                    "name": "silver key",
+                    "description": "A silver key with 'STORAGE' engraved on the handle"
+                },
+                {
+                    "id": "information_board",
+                    "name": "park information board",
+                    "description": "A large board with park maps and safety information",
+                    "readable": true,
+                    "text": "PARK INFORMATION: Wonderland Park opened its gates in 1987 under the management of Mr. Sullivan. The Ferris wheel stands as our crown jewel, visible from every corner of the park. All visitors must check in at the ticket booth. Emergency exits located in the control tower."
+                },
+                {
+                    "id": "storage_locker",
+                    "name": "metal storage locker",
+                    "description": "A rusted metal locker with a brass padlock",
+                    "locked": true,
+                    "key_required": "brass_key",
+                    "contains": [
+                        "maintenance_log"
+                    ]
+                },
+                {
+                    "id": "maintenance_log",
+                    "name": "maintenance log book",
+                    "description": "A water-stained logbook with maintenance records",
+                    "readable": true,
+                    "text": "MAINTENANCE LOG: Mr. Sullivan requires daily inspections of all rides. The Ferris wheel needs constant monitoring. Funhouse mirror maze cleaned weekly. Note: Control tower access restricted to management only. Combination to secure drawer is the year we opened - never forget 1987!"
+                },
+                {
+                    "id": "trash_bin",
+                    "name": "overflowing trash bin",
+                    "description": "A bin filled with old tickets and wrappers",
+                    "searchable": true,
+                    "contains": [
+                        "visitor_ticket"
+                    ]
+                },
+                {
+                    "id": "visitor_ticket",
+                    "name": "old admission ticket",
+                    "description": "A faded ticket stub from the park's opening year",
+                    "readable": true,
+                    "text": "WONDERLAND PARK - Admit One Visitor. Date: Summer 1987. Thank you for visiting! Remember, you are a valued park visitor!"
+                },
+                {
+                    "id": "funhouse_entrance_gate",
+                    "name": "funhouse entrance gate",
+                    "description": "A colorful archway leading to the mirror maze, decorated with faded clown faces. The gate requires a key.",
+                    "locked": true,
+                    "key_required": "silver_key",
+                    "direction": "east",
+                    "leads_to": "mirror_maze",
+                    "aliases": [
+                        "gate",
+                        "entrance",
+                        "east"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "mirror_maze",
+            "name": "Funhouse Mirror Maze",
+            "description": "A disorienting maze of mirrors and distorted reflections. Some mirrors are cracked, others clouded with age. Your reflection stretches, shrinks, and warps as you move through the space. Painted clowns and carnival characters peer from the walls. A control panel and filing cabinet suggest this area once had staff oversight.",
+            "items": [
+                {
+                    "id": "distorted_mirrors",
+                    "name": "wall of distorted mirrors",
+                    "description": "A series of funhouse mirrors creating bizarre reflections",
+                    "readable": true,
+                    "text": "Behind one cracked mirror, you can see a faded inscription: 'The Ferris wheel watches over all. Mr. Sullivan's vision brought joy to every visitor.'"
+                },
+                {
+                    "id": "control_panel",
+                    "name": "lighting control panel",
+                    "description": "A panel that once controlled the maze's special effects and lighting",
+                    "searchable": true,
+                    "contains": [
+                        "staff_memo"
+                    ]
+                },
+                {
+                    "id": "staff_memo",
+                    "name": "staff memorandum",
+                    "description": "A memo pinned to the control panel",
+                    "readable": true,
+                    "text": "STAFF MEMO: From Mr. Sullivan - The mirror maze is our second most popular attraction after the Ferris wheel. All staff must remember: visitors are our priority. Control tower access requires security verification. Questions will test knowledge of park operations."
+                },
+                {
+                    "id": "filing_cabinet",
+                    "name": "staff filing cabinet",
+                    "description": "A dented cabinet with employee records and park documents",
+                    "subcontainers": [
+                        {
+                            "id": "personnel_drawer",
+                            "name": "personnel drawer",
+                            "locked": false,
+                            "contains": [
+                                "employee_roster"
+                            ]
+                        },
+                        {
+                            "id": "operations_drawer",
+                            "name": "operations drawer",
+                            "locked": false,
+                            "contains": [
+                                "operations_manual"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "employee_roster",
+                    "name": "employee roster",
+                    "description": "A list of park employees and their positions",
+                    "readable": true,
+                    "text": "WONDERLAND PARK EMPLOYEES: Park Manager - Mr. Sullivan (oversees all operations). Ride Operators - Various. Maintenance Crew - Reports to Mr. Sullivan. Security - Control tower access restricted to management."
+                },
+                {
+                    "id": "operations_manual",
+                    "name": "park operations manual",
+                    "description": "A thick binder with operational procedures",
+                    "readable": true,
+                    "text": "OPERATIONS MANUAL: Wonderland Park's main attraction is the Giant Ferris Wheel, visible from every area. Mr. Sullivan manages all park operations. Emergency evacuation procedures require control tower access. Security protocol: verify manager name, main attraction, and visitor status."
+                },
+                {
+                    "id": "clown_statue",
+                    "name": "creepy clown statue",
+                    "description": "A life-sized clown statue with a frozen smile",
+                    "searchable": true,
+                    "contains": [
+                        "hidden_note"
+                    ]
+                },
+                {
+                    "id": "hidden_note",
+                    "name": "hidden note",
+                    "description": "A note stuffed inside the clown statue's pocket",
+                    "readable": true,
+                    "text": "Personal reminder: If you need to reach the control tower, remember the three security questions. Who runs this place? Mr. Sullivan. What's our pride and joy? The Ferris wheel. And never forget - every person here is a park visitor, including you!"
+                },
+                {
+                    "id": "control_tower_access_door",
+                    "name": "control tower access door",
+                    "description": "A heavy steel door with a security keypad. Three questions are displayed on a digital screen.",
+                    "locked": true,
+                    "lock_type": "password",
+                    "password_questions": [
+                        {
+                            "question": "Who is the park manager?",
+                            "answer": "mr sullivan",
+                            "hint": "Check the park brochure and employee roster"
+                        },
+                        {
+                            "question": "What is the main attraction?",
+                            "answer": "ferris wheel",
+                            "hint": "Multiple documents mention the park's crown jewel"
+                        },
+                        {
+                            "question": "What is your status at the park?",
+                            "answer": "park visitor",
+                            "hint": "Your admission ticket and the hidden note remind you of your role"
+                        }
+                    ],
+                    "direction": "north",
+                    "leads_to": "control_tower",
+                    "aliases": [
+                        "door",
+                        "tower",
+                        "north"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "control_tower",
+            "name": "Control Tower",
+            "description": "You've reached the control tower! A glass-walled room overlooking the entire abandoned theme park. The Ferris wheel looms large through the windows, its rusted frame silhouetted against the sky. Control panels line the walls, and a large red emergency exit button glows invitingly. Fresh air flows through an open door leading to the outside world.",
+            "items": [
+                {
+                    "id": "control_panels",
+                    "name": "park control panels",
+                    "description": "Banks of switches and monitors that once controlled the entire park"
+                },
+                {
+                    "id": "observation_window",
+                    "name": "panoramic observation window",
+                    "description": "Floor-to-ceiling windows offering a view of the entire abandoned park",
+                    "readable": true,
+                    "text": "Through the window, you can see the entire park: the carousel where you started, the mirror maze you navigated, and the giant Ferris wheel standing sentinel over it all. The exit path is clear."
+                },
+                {
+                    "id": "emergency_exit_button",
+                    "name": "emergency exit button",
+                    "description": "A large red button labeled 'EMERGENCY EXIT - UNLOCKS ALL GATES'"
+                }
+            ],
+            "exits": [],
+            "is_goal": true,
+            "win_message": "You've reached the control tower and found your way out! As you press the emergency exit button, you hear the grinding of gates opening throughout the park. The exit path is clear. You descend the tower stairs and walk through the main gates, leaving Wonderland Park behind. The abandoned rides stand silent as you escape into the fading sunlight. You win!"
+        }
+    ]
+}

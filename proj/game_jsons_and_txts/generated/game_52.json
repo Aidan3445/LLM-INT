@@ -1,0 +1,204 @@
+{
+    "theme": "Invisible City Marketplace",
+    "title": "Invisible City Marketplace Adventure #52",
+    "goal": "Solve the puzzles, achieve the main objective, and escape.",
+    "starting_room": "shimmer_gate",
+    "rooms": [
+        {
+            "id": "shimmer_gate",
+            "name": "The Shimmer Gate",
+            "description": "You stand at the threshold between worlds - a shimmering archway that flickers in and out of existence. The air ripples like heat waves, and you catch glimpses of market stalls that vanish when you look directly at them. A stone pedestal holds an ancient registry, and a locked cabinet is built into the archway itself.",
+            "items": [
+                {
+                    "id": "stone_pedestal",
+                    "name": "stone pedestal",
+                    "description": "An ancient pedestal carved with symbols of commerce and trade",
+                    "searchable": true,
+                    "contains": [
+                        "gatekeeper_scroll"
+                    ]
+                },
+                {
+                    "id": "gatekeeper_scroll",
+                    "name": "gatekeeper's scroll",
+                    "description": "A scroll explaining the rules of the Invisible Marketplace",
+                    "readable": true,
+                    "text": "Welcome to the Invisible City Marketplace, where only those with the Spectral Lens may see the true wares. The market was founded by Merchant Queen Aria in the year of three merchants: Stall 7, Stall 3, and Stall 9. Remember these numbers well."
+                },
+                {
+                    "id": "archway_cabinet",
+                    "name": "archway cabinet",
+                    "description": "A cabinet built into the stone archway with three compartments",
+                    "subcontainers": [
+                        {
+                            "id": "top_compartment",
+                            "name": "top compartment",
+                            "locked": false,
+                            "contains": [
+                                "merchant_guide"
+                            ]
+                        },
+                        {
+                            "id": "middle_compartment",
+                            "name": "middle compartment",
+                            "locked": true,
+                            "lock_type": "combination",
+                            "combination": "739",
+                            "contains": [
+                                "spectral_lens"
+                            ]
+                        },
+                        {
+                            "id": "bottom_compartment",
+                            "name": "bottom compartment",
+                            "locked": false,
+                            "contains": []
+                        }
+                    ]
+                },
+                {
+                    "id": "merchant_guide",
+                    "name": "merchant's guide",
+                    "description": "A handbook for navigating the invisible marketplace",
+                    "readable": true,
+                    "text": "The Spectral Lens reveals what is hidden. It is kept in the middle compartment, locked by the founding stalls' numbers in order. Beyond the gate, seek the Phantom Coin Purse - it holds the key to the Vault of Echoes where the Aetheric Compass awaits."
+                },
+                {
+                    "id": "spectral_lens",
+                    "name": "spectral lens",
+                    "description": "A crystalline monocle that reveals invisible objects and pathways"
+                },
+                {
+                    "id": "shimmering_barrier",
+                    "name": "shimmering barrier",
+                    "description": "A wall of rippling energy that blocks passage deeper into the marketplace. It requires the Spectral Lens to pass through.",
+                    "locked": true,
+                    "key_required": "spectral_lens",
+                    "direction": "east",
+                    "leads_to": "invisible_bazaar",
+                    "aliases": [
+                        "barrier",
+                        "east"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "invisible_bazaar",
+            "name": "The Invisible Bazaar",
+            "description": "Through the Spectral Lens, the marketplace comes alive! Dozens of stalls materialize, selling impossible goods - bottled starlight, crystallized memories, and woven dreams. Phantom merchants call out in whispers. Three prominent stalls catch your eye, each with a sign. A massive vault door stands at the far end, covered in glowing questions.",
+            "items": [
+                {
+                    "id": "stall_aria",
+                    "name": "Merchant Queen Aria's stall",
+                    "description": "The grandest stall, draped in ethereal silk",
+                    "readable": true,
+                    "text": "Sign reads: 'Merchant Queen Aria - Founder of the Invisible City Marketplace. Purveyor of the finest spectral goods since time immemorial.'"
+                },
+                {
+                    "id": "stall_whispers",
+                    "name": "Stall of Whispers",
+                    "description": "A mysterious stall selling bottled secrets",
+                    "readable": true,
+                    "text": "Sign reads: 'The Stall of Whispers - Where secrets are currency. The most valuable items are kept in the Vault of Echoes, accessible only to those who understand our ways.'"
+                },
+                {
+                    "id": "stall_memories",
+                    "name": "Memory Merchant's stall",
+                    "description": "A stall displaying glowing orbs of captured memories",
+                    "readable": true,
+                    "text": "Sign reads: 'Memory Merchant - Trading in nostalgia and forgotten moments. Remember: the Aetheric Compass in the vault can guide you home from any dimension.'"
+                },
+                {
+                    "id": "phantom_chest",
+                    "name": "phantom merchant's chest",
+                    "description": "A translucent chest that phases in and out of visibility",
+                    "searchable": true,
+                    "contains": [
+                        "phantom_coin_purse"
+                    ]
+                },
+                {
+                    "id": "phantom_coin_purse",
+                    "name": "phantom coin purse",
+                    "description": "A small purse containing coins that exist between dimensions",
+                    "locked": false,
+                    "contains": [
+                        "vault_key"
+                    ]
+                },
+                {
+                    "id": "vault_key",
+                    "name": "ethereal vault key",
+                    "description": "A key made of solidified moonlight and shadow"
+                },
+                {
+                    "id": "market_ledger",
+                    "name": "marketplace ledger",
+                    "description": "A book recording all transactions in the invisible marketplace",
+                    "readable": true,
+                    "text": "Ledger Entry: The Aetheric Compass is the marketplace's greatest treasure, stored in the Vault of Echoes. Only those who know the founder's name, the location of secrets, and the compass's purpose may enter."
+                },
+                {
+                    "id": "vault_of_echoes_door",
+                    "name": "vault of echoes door",
+                    "description": "A massive door that seems to exist in multiple dimensions at once. Three questions glow on its surface in shifting script.",
+                    "locked": true,
+                    "lock_type": "password",
+                    "password_questions": [
+                        {
+                            "question": "Who founded the Invisible City Marketplace?",
+                            "answer": "merchant queen aria",
+                            "hint": "Check the gatekeeper's scroll and the prominent stall signs"
+                        },
+                        {
+                            "question": "Where are the most valuable items kept?",
+                            "answer": "vault of echoes",
+                            "hint": "Read the signs at the Stall of Whispers and check the ledger"
+                        },
+                        {
+                            "question": "What does the Aetheric Compass do?",
+                            "answer": "guide you home",
+                            "hint": "The Memory Merchant's stall and the ledger mention this"
+                        }
+                    ],
+                    "direction": "north",
+                    "leads_to": "vault_of_echoes",
+                    "aliases": [
+                        "vault",
+                        "north"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "vault_of_echoes",
+            "name": "Vault of Echoes",
+            "description": "You have entered the legendary Vault of Echoes! The chamber exists in all dimensions simultaneously, creating infinite reflections of itself. In the center, on a pedestal of pure light, rests the Aetheric Compass - a device that glows with the power to navigate between any world or dimension. A portal home shimmers behind it.",
+            "items": [
+                {
+                    "id": "aetheric_compass",
+                    "name": "Aetheric Compass",
+                    "description": "A magnificent compass that points not to north, but to home - any home, in any dimension"
+                },
+                {
+                    "id": "light_pedestal",
+                    "name": "pedestal of pure light",
+                    "description": "A pedestal made of solidified starlight, holding the legendary compass"
+                },
+                {
+                    "id": "dimensional_mirrors",
+                    "name": "dimensional mirrors",
+                    "description": "Mirrors showing infinite versions of the vault across countless realities",
+                    "readable": true,
+                    "text": "The mirrors reflect the vault across all dimensions. You see versions of yourself in each one, all reaching for the compass. In every reflection, you succeed."
+                }
+            ],
+            "exits": [],
+            "is_goal": true,
+            "win_message": "You grasp the Aetheric Compass and feel its power surge through you! The device glows brilliantly and shows you the way home. The Invisible City Marketplace fades around you as the compass guides you back to your own dimension. You have successfully navigated the marketplace between worlds and claimed its greatest treasure. You win!"
+        }
+    ]
+}

@@ -1,0 +1,309 @@
+{
+    "theme": "Biohazard Quarantine Zone",
+    "title": "Biohazard Quarantine Zone Adventure #73",
+    "goal": "Solve the puzzles, achieve the main objective, and escape.",
+    "starting_room": "decontamination_chamber",
+    "rooms": [
+        {
+            "id": "decontamination_chamber",
+            "name": "Decontamination Chamber",
+            "description": "A sterile white chamber with flickering fluorescent lights. Warning signs cover the walls showing biohazard symbols. Chemical showers line one wall, and the air smells of disinfectant. A hazmat suit hangs on a hook. Through a reinforced window, you can see the contaminated research lab beyond.",
+            "items": [
+                {
+                    "id": "supply_locker",
+                    "name": "emergency supply locker",
+                    "description": "A metal locker with medical supplies and emergency equipment",
+                    "subcontainers": [
+                        {
+                            "id": "top_shelf",
+                            "name": "top shelf",
+                            "locked": false,
+                            "contains": [
+                                "incident_report"
+                            ]
+                        },
+                        {
+                            "id": "bottom_shelf",
+                            "name": "bottom shelf",
+                            "locked": true,
+                            "lock_type": "combination",
+                            "combination": "0347",
+                            "contains": [
+                                "level_one_keycard"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "incident_report",
+                    "name": "incident report document",
+                    "description": "An official report about the containment breach",
+                    "readable": true,
+                    "text": "INCIDENT REPORT: Containment breach occurred on March 47th (03/47) in Lab Sector 7. Dr. Sarah Chen was the lead researcher. The pathogen designation is Omega Strain. All personnel must evacuate through the emergency exit in the safe room."
+                },
+                {
+                    "id": "level_one_keycard",
+                    "name": "level one security keycard",
+                    "description": "A white keycard with a single red stripe and security clearance level one"
+                },
+                {
+                    "id": "hazmat_suit",
+                    "name": "protective hazmat suit",
+                    "description": "A full body protective suit hanging on the wall",
+                    "searchable": true,
+                    "contains": [
+                        "research_notes"
+                    ]
+                },
+                {
+                    "id": "research_notes",
+                    "name": "folded research notes",
+                    "description": "Handwritten notes stuffed in the hazmat suit pocket",
+                    "readable": true,
+                    "text": "Dr. Chen's notes: The cure samples are stored in the biosecure containment locker in the research lab. Remember: only authorized personnel with level two clearance can access the quarantine corridor. The master override keycard is in my office safe."
+                },
+                {
+                    "id": "reinforced_laboratory_door",
+                    "name": "reinforced laboratory door",
+                    "description": "A heavy door with a card reader leading into the contaminated research lab",
+                    "locked": true,
+                    "key_required": "level_one_keycard",
+                    "direction": "north",
+                    "leads_to": "research_laboratory",
+                    "aliases": [
+                        "lab door",
+                        "north"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "research_laboratory",
+            "name": "Contaminated Research Laboratory",
+            "description": "A large laboratory with overturned equipment and shattered glass. Biohazard warnings flash on computer screens. Microscopes and centrifuges sit abandoned on lab benches. A sealed containment locker stands against the far wall. Papers are scattered everywhere, and an office door leads to a side room.",
+            "items": [
+                {
+                    "id": "lab_computer",
+                    "name": "laboratory computer terminal",
+                    "description": "A computer screen displaying security protocols and warnings",
+                    "readable": true,
+                    "text": "SECURITY ALERT: Pathogen Omega Strain has breached containment. Lead researcher Dr. Sarah Chen initiated emergency protocols. Evacuation route: Proceed to quarantine corridor, then access the safe room for emergency exit."
+                },
+                {
+                    "id": "scattered_papers",
+                    "name": "scattered research papers",
+                    "description": "Papers and documents strewn across the floor",
+                    "searchable": true,
+                    "contains": [
+                        "safe_combination_note"
+                    ]
+                },
+                {
+                    "id": "safe_combination_note",
+                    "name": "sticky note with numbers",
+                    "description": "A yellow sticky note with numbers written on it",
+                    "readable": true,
+                    "text": "Office safe combo: 7391. Don't forget!"
+                },
+                {
+                    "id": "biosecure_containment_locker",
+                    "name": "biosecure containment locker",
+                    "description": "A reinforced storage locker with biohazard markings and a heavy lock",
+                    "locked": true,
+                    "key_required": "level_two_keycard",
+                    "contains": [
+                        "cure_sample"
+                    ]
+                },
+                {
+                    "id": "cure_sample",
+                    "name": "experimental cure sample",
+                    "description": "A vial containing the experimental cure for the Omega Strain pathogen"
+                },
+                {
+                    "id": "office_door",
+                    "name": "office door",
+                    "description": "A door leading to the lead researcher's private office",
+                    "locked": false,
+                    "direction": "west",
+                    "leads_to": "researcher_office",
+                    "aliases": [
+                        "west",
+                        "office"
+                    ]
+                },
+                {
+                    "id": "quarantine_corridor_door",
+                    "name": "quarantine corridor door",
+                    "description": "A sealed door with a card reader requiring level two security clearance",
+                    "locked": true,
+                    "key_required": "level_two_keycard",
+                    "direction": "east",
+                    "leads_to": "quarantine_corridor",
+                    "aliases": [
+                        "east",
+                        "corridor door"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "researcher_office",
+            "name": "Lead Researcher Office",
+            "description": "A small office with a desk covered in research journals and coffee cups. Diplomas hang on the wall showing Dr. Sarah Chen's credentials. A wall safe is partially hidden behind a filing cabinet. Family photos sit on the desk.",
+            "items": [
+                {
+                    "id": "desk_drawer",
+                    "name": "desk drawer",
+                    "description": "A drawer in the researcher's desk",
+                    "searchable": true,
+                    "contains": [
+                        "personal_journal"
+                    ]
+                },
+                {
+                    "id": "personal_journal",
+                    "name": "personal journal",
+                    "description": "Dr. Chen's personal research journal",
+                    "readable": true,
+                    "text": "Journal Entry: The Omega Strain is more dangerous than we thought. I've secured the level two keycard in my wall safe. The master override keycard can open any door in the facility in case of emergency. I pray we never need it."
+                },
+                {
+                    "id": "wall_safe",
+                    "name": "wall safe",
+                    "description": "A small safe mounted in the wall with a combination lock",
+                    "locked": true,
+                    "lock_type": "combination",
+                    "combination": "7391",
+                    "contains": [
+                        "level_two_keycard",
+                        "master_override_keycard"
+                    ]
+                },
+                {
+                    "id": "level_two_keycard",
+                    "name": "level two security keycard",
+                    "description": "A blue keycard with two red stripes and security clearance level two"
+                },
+                {
+                    "id": "master_override_keycard",
+                    "name": "master override keycard",
+                    "description": "A black keycard with gold stripes that can override any lock in the facility"
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "quarantine_corridor",
+            "name": "Quarantine Corridor",
+            "description": "A long corridor with red emergency lighting. Containment doors line both sides. Warning klaxons echo through the hallway. At the end of the corridor, a massive security door blocks access to the safe room. A security terminal displays three verification questions.",
+            "items": [
+                {
+                    "id": "emergency_kit",
+                    "name": "emergency medical kit",
+                    "description": "A red medical kit mounted on the wall",
+                    "searchable": true,
+                    "contains": [
+                        "evacuation_instructions"
+                    ]
+                },
+                {
+                    "id": "evacuation_instructions",
+                    "name": "evacuation procedure document",
+                    "description": "Official instructions for emergency evacuation",
+                    "readable": true,
+                    "text": "EVACUATION PROTOCOL: In case of containment breach, proceed to safe room. Security verification required. Personnel must confirm: lead researcher identity, pathogen designation, and evacuation destination."
+                },
+                {
+                    "id": "security_terminal",
+                    "name": "wall mounted security terminal",
+                    "description": "A computer terminal displaying facility information",
+                    "readable": true,
+                    "text": "FACILITY STATUS: Critical containment breach. All personnel must evacuate. Safe room access requires security verification. Emergency exit leads to external decontamination area."
+                },
+                {
+                    "id": "reinforced_safe_room_door",
+                    "name": "reinforced safe room door",
+                    "description": "A massive steel door with a security verification system. Three questions must be answered correctly.",
+                    "locked": true,
+                    "lock_type": "password",
+                    "password_questions": [
+                        {
+                            "question": "Who was the lead researcher?",
+                            "answer": "dr sarah chen",
+                            "hint": "Check the incident report and office credentials"
+                        },
+                        {
+                            "question": "What is the pathogen designation?",
+                            "answer": "omega strain",
+                            "hint": "The incident report and computer terminal mention this"
+                        },
+                        {
+                            "question": "Where does the emergency exit lead?",
+                            "answer": "external decontamination area",
+                            "hint": "Read the security terminal information carefully"
+                        }
+                    ],
+                    "direction": "north",
+                    "leads_to": "safe_room",
+                    "aliases": [
+                        "safe room",
+                        "north"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "safe_room",
+            "name": "Emergency Safe Room",
+            "description": "You have reached the safe room! A clean, pressurized chamber with green lighting indicating safe air quality. Emergency supplies line the walls. A large airlock door with a glowing green exit sign leads to freedom. Through the window, you can see the outside world waiting.",
+            "items": [
+                {
+                    "id": "emergency_supplies",
+                    "name": "emergency supply cache",
+                    "description": "Shelves stocked with food, water, and medical supplies for survivors"
+                },
+                {
+                    "id": "communication_panel",
+                    "name": "emergency communication panel",
+                    "description": "A radio system for contacting rescue teams",
+                    "readable": true,
+                    "text": "AUTOMATED MESSAGE: Rescue teams have been notified. Decontamination complete. You are clear to exit through the emergency airlock."
+                },
+                {
+                    "id": "emergency_exit_airlock",
+                    "name": "emergency exit airlock",
+                    "description": "A secure airlock leading to the outside. The master override keycard can open it immediately.",
+                    "locked": true,
+                    "key_required": "master_override_keycard",
+                    "direction": "north",
+                    "leads_to": "freedom",
+                    "aliases": [
+                        "airlock",
+                        "exit",
+                        "north"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "freedom",
+            "name": "External Decontamination Area",
+            "description": "You step out into fresh air and sunlight! The quarantine facility stands behind you, sealed and contained. Emergency vehicles and hazmat teams are arriving. You made it out safely with the cure sample. The nightmare is over.",
+            "items": [
+                {
+                    "id": "rescue_team",
+                    "name": "hazmat rescue team",
+                    "description": "Emergency responders in protective gear ready to help survivors"
+                }
+            ],
+            "exits": [],
+            "is_goal": true,
+            "win_message": "SUCCESS! You have escaped the biohazard quarantine zone with the experimental cure sample! The facility is now sealed, and the Omega Strain will be contained. Thanks to your quick thinking and puzzle-solving skills, the cure can be mass-produced and the outbreak stopped. You are a hero! You win!"
+        }
+    ]
+}

@@ -1,0 +1,268 @@
+{
+    "theme": "Runaway Nano-Swarm Zone",
+    "title": "Runaway Nano-Swarm Zone Adventure #18",
+    "goal": "Solve the puzzles, achieve the main objective, and escape.",
+    "starting_room": "containment_lab",
+    "rooms": [
+        {
+            "id": "containment_lab",
+            "name": "Nano Containment Laboratory",
+            "description": "A sterile white laboratory filled with humming equipment and flickering warning lights. Through reinforced glass windows, you see swirling clouds of metallic nano-particles consuming everything in their path. Emergency sirens wail as containment fields flicker. A workstation and storage lockers line the walls.",
+            "items": [
+                {
+                    "id": "research_terminal",
+                    "name": "research terminal",
+                    "description": "A computer terminal displaying critical research data and warnings",
+                    "readable": true,
+                    "text": "CRITICAL ALERT: Nano-swarm breach imminent. Containment field at 23% integrity. Dr Chen's final log: The swarm activation code was the year of the first nanotech breakthrough - 2045. Only authorized personnel can access the security systems."
+                },
+                {
+                    "id": "storage_lockers",
+                    "name": "equipment storage lockers",
+                    "description": "A set of metal lockers containing lab equipment and supplies",
+                    "subcontainers": [
+                        {
+                            "id": "locker_a",
+                            "name": "locker A",
+                            "locked": false,
+                            "contains": [
+                                "hazmat_gloves"
+                            ]
+                        },
+                        {
+                            "id": "locker_b",
+                            "name": "locker B",
+                            "locked": true,
+                            "lock_type": "combination",
+                            "combination": "2045",
+                            "contains": [
+                                "level_3_keycard"
+                            ]
+                        },
+                        {
+                            "id": "locker_c",
+                            "name": "locker C",
+                            "locked": false,
+                            "contains": []
+                        }
+                    ]
+                },
+                {
+                    "id": "hazmat_gloves",
+                    "name": "hazmat gloves",
+                    "description": "Protective gloves for handling hazardous materials"
+                },
+                {
+                    "id": "level_3_keycard",
+                    "name": "level 3 security keycard",
+                    "description": "A high-level security card with Dr Chen's authorization code"
+                },
+                {
+                    "id": "lab_desk",
+                    "name": "laboratory desk",
+                    "description": "A cluttered desk covered with research papers and data tablets",
+                    "searchable": true,
+                    "contains": [
+                        "research_notes"
+                    ]
+                },
+                {
+                    "id": "research_notes",
+                    "name": "Dr Chen research notes",
+                    "description": "Handwritten notes about the nano-swarm project",
+                    "readable": true,
+                    "text": "Project Log: The nano-swarms were designed by Lead Scientist Dr Chen at the Prometheus Research Facility. If containment fails, the emergency shutdown requires three security answers. Remember: my name, our location, and what stops the swarms - electromagnetic pulse."
+                },
+                {
+                    "id": "containment_window",
+                    "name": "reinforced observation window",
+                    "description": "A thick glass window showing the nano-swarm containment chamber beyond",
+                    "readable": true,
+                    "text": "Through the window you see millions of microscopic machines forming shifting metallic clouds. A display panel shows: SWARM DENSITY CRITICAL. CONTAINMENT BREACH IN 10 MINUTES."
+                },
+                {
+                    "id": "reinforced_containment_door",
+                    "name": "reinforced containment door",
+                    "description": "A heavy security door with a card reader and biometric scanner",
+                    "locked": true,
+                    "key_required": "level_3_keycard",
+                    "direction": "north",
+                    "leads_to": "control_room",
+                    "aliases": [
+                        "door",
+                        "north"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "control_room",
+            "name": "Security Control Room",
+            "description": "A dimly lit control room filled with monitors displaying facility schematics and security feeds. Multiple screens show the nano-swarms spreading through sealed sections. A large control console dominates the center, and personnel files are scattered across workstations. The blast door to the shuttle bay is sealed tight.",
+            "items": [
+                {
+                    "id": "security_monitors",
+                    "name": "security monitor array",
+                    "description": "Multiple screens showing different areas of the facility",
+                    "readable": true,
+                    "text": "Monitor feeds show: Containment Lab - CRITICAL. Research Wing - COMPROMISED. Shuttle Bay - SECURE. A sticky note on the monitor reads: 'Shuttle bay override code is in the personnel files.'"
+                },
+                {
+                    "id": "personnel_files",
+                    "name": "personnel file cabinet",
+                    "description": "A filing cabinet containing employee records and security clearances",
+                    "searchable": true,
+                    "contains": [
+                        "dr_chen_file",
+                        "override_codes"
+                    ]
+                },
+                {
+                    "id": "dr_chen_file",
+                    "name": "personnel file for Dr Chen",
+                    "description": "An employee record with photo and details",
+                    "readable": true,
+                    "text": "Dr. Sarah Chen - Lead Scientist, Nanotechnology Division. Clearance Level: 5. Project: Adaptive Nano-Swarm Development. Emergency Contact: Prometheus Research Facility Main Office."
+                },
+                {
+                    "id": "override_codes",
+                    "name": "emergency override document",
+                    "description": "A classified document with emergency access codes",
+                    "readable": true,
+                    "text": "EMERGENCY PROTOCOLS: Shuttle bay override code: 7734. Use only in case of facility-wide evacuation. This code bypasses all security locks on the blast door."
+                },
+                {
+                    "id": "control_console",
+                    "name": "main control console",
+                    "description": "A complex console with multiple screens and input terminals",
+                    "subcontainers": [
+                        {
+                            "id": "console_drawer",
+                            "name": "console drawer",
+                            "locked": false,
+                            "contains": [
+                                "emp_device"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "emp_device",
+                    "name": "portable EMP device",
+                    "description": "An electromagnetic pulse generator capable of disabling nano-swarms"
+                },
+                {
+                    "id": "warning_display",
+                    "name": "display showing Dr Chen",
+                    "description": "A large display screen showing a pre-recorded warning message",
+                    "readable": true,
+                    "text": "Dr Chen's recorded message: 'If you're seeing this, containment has failed. The nano-swarms will consume the entire facility within the hour. You must reach the shuttle bay and evacuate immediately. Good luck.'"
+                },
+                {
+                    "id": "security_blast_door",
+                    "name": "security blast door",
+                    "description": "A massive reinforced door leading to the shuttle bay. A keypad and security terminal block access.",
+                    "locked": true,
+                    "lock_type": "password",
+                    "password_questions": [
+                        {
+                            "question": "Who designed the nano-swarms?",
+                            "answer": "dr chen",
+                            "hint": "Check the research notes and personnel files"
+                        },
+                        {
+                            "question": "What is the name of this facility?",
+                            "answer": "prometheus research facility",
+                            "hint": "Look at Dr Chen's personnel file and research notes"
+                        },
+                        {
+                            "question": "What can stop the nano-swarms?",
+                            "answer": "electromagnetic pulse",
+                            "hint": "Dr Chen's research notes mention the shutdown method"
+                        }
+                    ],
+                    "direction": "east",
+                    "leads_to": "shuttle_bay",
+                    "aliases": [
+                        "door",
+                        "east"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "shuttle_bay",
+            "name": "Emergency Shuttle Bay",
+            "description": "A cavernous hangar bay with a sleek emergency shuttle sitting on the launch pad. Warning lights flash as automated systems prepare for emergency departure. Through the bay doors, you can see the facility exterior being consumed by spreading nano-swarms. A final security terminal guards the shuttle access.",
+            "items": [
+                {
+                    "id": "shuttle_terminal",
+                    "name": "shuttle bay override terminal",
+                    "description": "The final security terminal controlling shuttle launch authorization",
+                    "locked": true,
+                    "lock_type": "combination",
+                    "combination": "7734",
+                    "contains": [
+                        "launch_authorization"
+                    ]
+                },
+                {
+                    "id": "launch_authorization",
+                    "name": "shuttle launch codes",
+                    "description": "Authorization codes needed to activate the emergency shuttle"
+                },
+                {
+                    "id": "emergency_shuttle",
+                    "name": "emergency evacuation shuttle",
+                    "description": "A small but fast spacecraft designed for emergency evacuations. Its engines are already warming up.",
+                    "readable": true,
+                    "text": "Shuttle status: READY FOR LAUNCH. Destination: Orbital Station Alpha. Flight time: 15 minutes. All systems nominal."
+                },
+                {
+                    "id": "observation_window",
+                    "name": "bay observation window",
+                    "description": "A large window showing the facility exterior",
+                    "readable": true,
+                    "text": "Through the window you see the nano-swarms spreading like a metallic plague, consuming walls, equipment, and everything in their path. The containment breach is total. You have minutes at most."
+                },
+                {
+                    "id": "shuttle_access_hatch",
+                    "name": "shuttle access hatch",
+                    "description": "The entrance to the emergency shuttle, now unlocked and ready for boarding",
+                    "locked": true,
+                    "key_required": "launch_authorization",
+                    "direction": "north",
+                    "leads_to": "escape",
+                    "aliases": [
+                        "hatch",
+                        "shuttle",
+                        "north"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "escape",
+            "name": "Orbital Safety",
+            "description": "You're strapped into the shuttle as it blasts away from the doomed facility. Through the viewport, you watch the Prometheus Research Facility disappear beneath a writhing mass of nano-swarms. The shuttle's autopilot guides you safely to Orbital Station Alpha. You've survived the nano-swarm catastrophe!",
+            "items": [
+                {
+                    "id": "shuttle_viewport",
+                    "name": "shuttle viewport",
+                    "description": "A reinforced window showing the view of space and the facility below"
+                },
+                {
+                    "id": "communication_panel",
+                    "name": "communication system",
+                    "description": "The shuttle's comm system crackles to life with a message from Orbital Station Alpha welcoming you to safety"
+                }
+            ],
+            "exits": [],
+            "is_goal": true,
+            "win_message": "SUCCESS! You've escaped the Runaway Nano-Swarm Zone! As your shuttle docks with Orbital Station Alpha, you look back at the Prometheus Research Facility, now completely consumed by the rogue nano-swarms. Thanks to Dr Chen's notes and your quick thinking, you're the sole survivor. The facility will be sterilized from orbit, but you made it out alive. You win!"
+        }
+    ]
+}

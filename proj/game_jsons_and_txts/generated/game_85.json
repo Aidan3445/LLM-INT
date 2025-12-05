@@ -1,0 +1,268 @@
+{
+    "theme": "Ghost Ship Deck",
+    "title": "Ghost Ship Deck Adventure #85",
+    "goal": "Solve the puzzles, achieve the main objective, and escape.",
+    "starting_room": "foggy_deck",
+    "rooms": [
+        {
+            "id": "foggy_deck",
+            "name": "Foggy Ship Deck",
+            "description": "You stand on the weathered deck of an abandoned ship shrouded in thick fog. The wood creaks beneath your feet, and ghostly whispers drift on the salty air. Tattered sails hang from broken masts, and barnacles cover every surface. A ship's wheel stands at the helm, and various nautical equipment lies scattered about. A heavy wooden hatch leads below deck.",
+            "items": [
+                {
+                    "id": "ships_wheel",
+                    "name": "ship's wheel",
+                    "description": "An old wooden wheel with brass fittings. Strange markings are carved into the handles.",
+                    "readable": true,
+                    "text": "Carved into the wheel: 'The Phantom Maiden - Launched 1692 - Captain Silas Graves commanding'"
+                },
+                {
+                    "id": "barrel_stack",
+                    "name": "stack of old barrels",
+                    "description": "Several weathered barrels lashed together near the mast",
+                    "searchable": true,
+                    "contains": [
+                        "rusty_key"
+                    ]
+                },
+                {
+                    "id": "rusty_key",
+                    "name": "rusty iron key",
+                    "description": "A corroded key with a skull emblem on the handle"
+                },
+                {
+                    "id": "captains_log_box",
+                    "name": "captain's log box",
+                    "description": "A locked wooden box mounted near the helm, designed to protect the ship's log",
+                    "locked": true,
+                    "key_required": "rusty_key",
+                    "contains": [
+                        "ships_log"
+                    ]
+                },
+                {
+                    "id": "ships_log",
+                    "name": "ship's log",
+                    "description": "A leather-bound logbook with water-stained pages",
+                    "readable": true,
+                    "text": "Final Entry: The curse has taken hold. First Mate Blackwood, Quartermaster Flint, and Bosun Graves - all lost to the fog. Only I, Captain Silas Graves, remain. The combination to my quarters: the year we set sail. The crew rests in the galley below."
+                },
+                {
+                    "id": "coiled_rope",
+                    "name": "coiled rope",
+                    "description": "A thick rope coiled near the railing",
+                    "searchable": true,
+                    "contains": [
+                        "brass_compass"
+                    ]
+                },
+                {
+                    "id": "brass_compass",
+                    "name": "tarnished brass compass",
+                    "description": "An old compass that still points north, engraved with initials 'S.G.'"
+                },
+                {
+                    "id": "wooden_deck_hatch",
+                    "name": "wooden deck hatch",
+                    "description": "A heavy hatch leading down into the ship's interior. The wood is swollen from moisture.",
+                    "locked": true,
+                    "key_required": "brass_compass",
+                    "direction": "south",
+                    "leads_to": "ships_galley",
+                    "aliases": [
+                        "hatch",
+                        "down",
+                        "south"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "ships_galley",
+            "name": "Ship's Galley",
+            "description": "The ship's galley and crew quarters below deck. Dim light filters through cracks in the hull. Hammocks sway gently despite no breeze. A long wooden table is set with rotting food, as if the crew vanished mid-meal. Ghostly shadows flicker across the walls. A locked door to the captain's quarters stands at the far end.",
+            "items": [
+                {
+                    "id": "galley_table",
+                    "name": "wooden galley table",
+                    "description": "A long table with pewter plates and cups still arranged as if for a meal",
+                    "searchable": true,
+                    "contains": [
+                        "crew_manifest"
+                    ]
+                },
+                {
+                    "id": "crew_manifest",
+                    "name": "crew manifest",
+                    "description": "A document listing the ship's crew members",
+                    "readable": true,
+                    "text": "THE PHANTOM MAIDEN - Crew Roster: Captain Silas Graves, First Mate Blackwood, Quartermaster Flint, Bosun Graves, Cook Morrison. Departed Port Royal bound for Tortuga. All souls lost to the curse of the fog."
+                },
+                {
+                    "id": "hanging_hammocks",
+                    "name": "crew hammocks",
+                    "description": "Several hammocks hanging from the ceiling beams",
+                    "searchable": true,
+                    "contains": [
+                        "sailors_letter"
+                    ]
+                },
+                {
+                    "id": "sailors_letter",
+                    "name": "sailor's letter",
+                    "description": "A personal letter tucked into one of the hammocks",
+                    "readable": true,
+                    "text": "Dear Brother, We sail from Port Royal on the Phantom Maiden. Captain Graves says we'll make our fortune in Tortuga. First Mate Blackwood keeps muttering about a curse, but I pay him no mind. Your loving brother, Morrison"
+                },
+                {
+                    "id": "storage_chest",
+                    "name": "crew storage chest",
+                    "description": "A large chest with multiple compartments for crew belongings",
+                    "subcontainers": [
+                        {
+                            "id": "top_compartment",
+                            "name": "top compartment",
+                            "locked": false,
+                            "contains": [
+                                "navigation_chart"
+                            ]
+                        },
+                        {
+                            "id": "bottom_compartment",
+                            "name": "bottom compartment",
+                            "locked": true,
+                            "lock_type": "combination",
+                            "combination": "1692",
+                            "contains": [
+                                "silver_key"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "navigation_chart",
+                    "name": "navigation chart",
+                    "description": "A map showing the route from Port Royal to Tortuga",
+                    "readable": true,
+                    "text": "Chart notation: 'Route from Port Royal to Tortuga. Beware the cursed waters. Captain's orders: Remember the launch year for emergency access.'"
+                },
+                {
+                    "id": "silver_key",
+                    "name": "ornate silver key",
+                    "description": "A decorative key with the captain's insignia"
+                },
+                {
+                    "id": "galley_stove",
+                    "name": "old cooking stove",
+                    "description": "A cast iron stove with pots still sitting on top",
+                    "searchable": true,
+                    "contains": [
+                        "cooks_note"
+                    ]
+                },
+                {
+                    "id": "cooks_note",
+                    "name": "cook's note",
+                    "description": "A scrap of paper with cooking notes",
+                    "readable": true,
+                    "text": "Cook's reminder: Captain wants his meals in his quarters. The door answers to those who know: Where did we depart? Where were we bound? Who commands this vessel?"
+                },
+                {
+                    "id": "captain's_quarters_door",
+                    "name": "captain's quarters door",
+                    "description": "A reinforced door with brass fittings. Three questions are etched into a brass plate mounted on the door.",
+                    "locked": true,
+                    "lock_type": "password",
+                    "password_questions": [
+                        {
+                            "question": "Where did the Phantom Maiden depart from?",
+                            "answer": "port royal",
+                            "hint": "Check the crew manifest and sailor's letter"
+                        },
+                        {
+                            "question": "Where was the ship bound?",
+                            "answer": "tortuga",
+                            "hint": "The navigation chart and letters mention the destination"
+                        },
+                        {
+                            "question": "Who commands this vessel?",
+                            "answer": "captain silas graves",
+                            "hint": "The ship's log and wheel both name the captain"
+                        }
+                    ],
+                    "direction": "east",
+                    "leads_to": "captains_quarters",
+                    "aliases": [
+                        "door",
+                        "east"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "captains_quarters",
+            "name": "Captain's Quarters",
+            "description": "You've entered the captain's private quarters! The room is surprisingly well-preserved. A large desk sits beneath a porthole showing nothing but swirling fog. Maps and charts cover the walls. In the corner, a ghostly figure of Captain Graves appears briefly, nodding toward a hidden door that leads to a lifeboat. The curse is lifting!",
+            "items": [
+                {
+                    "id": "captains_desk",
+                    "name": "captain's desk",
+                    "description": "An ornate desk covered with navigation instruments and papers",
+                    "searchable": true,
+                    "contains": [
+                        "captains_journal"
+                    ]
+                },
+                {
+                    "id": "captains_journal",
+                    "name": "captain's personal journal",
+                    "description": "A private journal with the captain's final thoughts",
+                    "readable": true,
+                    "text": "I, Captain Silas Graves, have failed my crew. The curse of the fog claimed them all. If anyone finds this, know that the Phantom Maiden was a good ship with a loyal crew. May you escape where we could not."
+                },
+                {
+                    "id": "wall_maps",
+                    "name": "nautical charts",
+                    "description": "Detailed maps of Caribbean waters pinned to the walls"
+                },
+                {
+                    "id": "concealed_lifeboat_hatch",
+                    "name": "concealed lifeboat hatch",
+                    "description": "A hidden door revealed by the captain's ghost, leading to a lifeboat",
+                    "locked": true,
+                    "key_required": "silver_key",
+                    "direction": "north",
+                    "leads_to": "freedom",
+                    "aliases": [
+                        "hatch",
+                        "door",
+                        "north"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "freedom",
+            "name": "Lifeboat to Safety",
+            "description": "You've made it to the lifeboat! As you push away from the Phantom Maiden, the fog begins to clear. The ghost ship fades into mist behind you, finally at peace. The spirits of Captain Graves and his crew appear one last time, waving farewell before vanishing. You row toward the distant shore and safety.",
+            "items": [
+                {
+                    "id": "lifeboat",
+                    "name": "sturdy lifeboat",
+                    "description": "A small but seaworthy boat with oars and supplies"
+                },
+                {
+                    "id": "distant_shore",
+                    "name": "distant shoreline",
+                    "description": "Land visible on the horizon, promising safety and escape"
+                }
+            ],
+            "exits": [],
+            "is_goal": true,
+            "win_message": "You have escaped the cursed Ghost Ship Deck! By solving the mysteries of the Phantom Maiden and honoring the memory of Captain Silas Graves and his crew, you've lifted the curse and found your way to freedom. The ghost ship can finally rest. You win!"
+        }
+    ]
+}

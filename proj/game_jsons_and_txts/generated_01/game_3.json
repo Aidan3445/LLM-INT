@@ -1,0 +1,284 @@
+{
+  "theme": "Ancient Temple",
+  "title": "Ancient Temple Adventure #3",
+  "goal": "Solve the puzzles, achieve the main objective, and escape.",
+  "starting_room": "temple_entrance",
+  "rooms": [
+    {
+      "id": "temple_entrance",
+      "name": "Temple Entrance Hall",
+      "description": "A grand entrance hall with towering stone columns covered in ancient hieroglyphs. Dust particles float in shafts of light streaming through cracks in the ceiling. Weathered statues of forgotten gods line the walls, their faces worn smooth by time. The air is cool and smells of earth and stone. Offerings of dried flowers and incense lie scattered on the floor.",
+      "items": [
+        {
+          "id": "stone_pedestal",
+          "name": "stone pedestal",
+          "description": "A carved pedestal in the center of the hall with a shallow basin on top",
+          "searchable": true,
+          "contains": [
+            "jade_key"
+          ]
+        },
+        {
+          "id": "jade_key",
+          "name": "jade key",
+          "description": "A small key carved from green jade with temple symbols"
+        },
+        {
+          "id": "offering_table",
+          "name": "offering table",
+          "description": "A low table with three compartments for sacred offerings",
+          "subcontainers": [
+            {
+              "id": "left_compartment",
+              "name": "left compartment",
+              "locked": false,
+              "contains": [
+                "temple_inscription"
+              ]
+            },
+            {
+              "id": "center_compartment",
+              "name": "center compartment",
+              "locked": true,
+              "lock_type": "combination",
+              "combination": "1428",
+              "contains": [
+                "bronze_key"
+              ]
+            },
+            {
+              "id": "right_compartment",
+              "name": "right compartment",
+              "locked": false,
+              "contains": []
+            }
+          ]
+        },
+        {
+          "id": "temple_inscription",
+          "name": "temple inscription tablet",
+          "description": "A clay tablet with ancient writing",
+          "readable": true,
+          "text": "This sacred temple was consecrated in the year 1428 by High Priest Amun-Ra. The eternal flame burns in the sacred chamber, tended by the priests. Only those who understand the three sacred truths may approach the altar of the gods."
+        },
+        {
+          "id": "bronze_key",
+          "name": "bronze key",
+          "description": "A heavy bronze key with hieroglyphic engravings"
+        },
+        {
+          "id": "statue_alcove",
+          "name": "statue alcove",
+          "description": "A recessed alcove containing a statue of a jackal-headed god",
+          "searchable": true,
+          "contains": [
+            "priests_scroll"
+          ]
+        },
+        {
+          "id": "priests_scroll",
+          "name": "priest's scroll",
+          "description": "An ancient papyrus scroll",
+          "readable": true,
+          "text": "Sacred duties of the temple: The High Priest Amun-Ra guards the inner sanctum. The eternal flame must never be extinguished in the sacred chamber. The treasure vault holds our most precious relics. Remember: the year of consecration unlocks the offerings."
+        },
+        {
+          "id": "locked_chest",
+          "name": "ceremonial chest",
+          "description": "An ornate chest decorated with gold leaf and precious stones",
+          "locked": true,
+          "key_required": "jade_key",
+          "contains": [
+            "ritual_mask",
+            "ancient_map"
+          ]
+        },
+        {
+          "id": "ritual_mask",
+          "name": "golden ritual mask",
+          "description": "A ceremonial mask worn by temple priests during sacred rites"
+        },
+        {
+          "id": "ancient_map",
+          "name": "temple map",
+          "description": "A map showing the layout of the temple complex",
+          "readable": true,
+          "text": "Temple Layout: Entrance Hall leads to the Treasure Chamber. Beyond lies the Sacred Altar where the gods dwell. The eternal flame illuminates the path to enlightenment."
+        },
+        {
+          "id": "hieroglyphic_wall",
+          "name": "wall of hieroglyphs",
+          "description": "A wall covered in carved symbols and ancient writing",
+          "readable": true,
+          "text": "The hieroglyphs tell the story of the temple's founding and the wisdom of High Priest Amun-Ra. They speak of sacred offerings made in the treasure chamber and the eternal flame that burns at the altar."
+        },
+        {
+          "id": "heavy_stone_door",
+          "name": "heavy stone door",
+          "description": "A massive door carved with images of priests and gods, leading deeper into the temple",
+          "locked": true,
+          "key_required": "bronze_key",
+          "direction": "north",
+          "leads_to": "treasure_chamber",
+          "aliases": [
+            "door",
+            "north"
+          ]
+        }
+      ],
+      "exits": []
+    },
+    {
+      "id": "treasure_chamber",
+      "name": "Treasure Chamber",
+      "description": "A magnificent chamber filled with golden artifacts, jeweled statues, and ancient relics. Torches mounted in bronze sconces cast flickering light across walls painted with scenes of religious ceremonies. Clay jars and wooden chests line the perimeter. The scent of myrrh and frankincense hangs in the air. A sealed doorway to the north leads to the sacred altar.",
+      "items": [
+        {
+          "id": "golden_statue",
+          "name": "golden statue of Ra",
+          "description": "A life-sized statue of the sun god covered in gold leaf",
+          "readable": true,
+          "text": "Inscription at base: 'Ra, the eternal sun, whose light illuminates all. The sacred flame burns in his honor at the altar, tended by High Priest Amun-Ra.'"
+        },
+        {
+          "id": "clay_jars",
+          "name": "row of clay jars",
+          "description": "Large jars sealed with wax, containing offerings and supplies",
+          "searchable": true,
+          "contains": [
+            "papyrus_document"
+          ]
+        },
+        {
+          "id": "papyrus_document",
+          "name": "sacred papyrus",
+          "description": "A well-preserved document with ritual instructions",
+          "readable": true,
+          "text": "Sacred Ritual Instructions: To enter the presence of the gods at the altar, one must answer the three questions of wisdom. Know the name of our High Priest, know where the eternal flame burns, and know what offerings we make to the gods."
+        },
+        {
+          "id": "treasure_chest",
+          "name": "jeweled treasure chest",
+          "description": "A chest overflowing with gold coins, precious gems, and sacred artifacts",
+          "searchable": true,
+          "contains": [
+            "silver_ankh"
+          ]
+        },
+        {
+          "id": "silver_ankh",
+          "name": "silver ankh",
+          "description": "A sacred symbol of eternal life made from pure silver"
+        },
+        {
+          "id": "offering_shelf",
+          "name": "offering shelf",
+          "description": "A shelf displaying various offerings to the gods",
+          "subcontainers": [
+            {
+              "id": "upper_shelf",
+              "name": "upper shelf",
+              "locked": false,
+              "contains": [
+                "incense_bundle"
+              ]
+            },
+            {
+              "id": "lower_shelf",
+              "name": "lower shelf",
+              "locked": false,
+              "contains": [
+                "wisdom_tablet"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "incense_bundle",
+          "name": "bundle of sacred incense",
+          "description": "Dried herbs and resins used in temple ceremonies"
+        },
+        {
+          "id": "wisdom_tablet",
+          "name": "tablet of wisdom",
+          "description": "A stone tablet with teachings inscribed upon it",
+          "readable": true,
+          "text": "The Three Sacred Truths: First - Our temple is guided by High Priest Amun-Ra. Second - The eternal flame burns forever in the sacred chamber. Third - We offer gold and incense to honor the gods."
+        },
+        {
+          "id": "painted_wall",
+          "name": "ceremonial wall painting",
+          "description": "A detailed mural showing priests making offerings at an altar",
+          "readable": true,
+          "text": "The painting depicts priests carrying gold and incense to the sacred altar where the eternal flame burns. High Priest Amun-Ra stands before the flame, arms raised in prayer."
+        },
+        {
+          "id": "sealed_altar_door",
+          "name": "sealed altar door",
+          "description": "An imposing door sealed with divine magic. Three questions are carved into the stone surface in ancient script.",
+          "locked": true,
+          "lock_type": "password",
+          "password_questions": [
+            {
+              "question": "Who is the High Priest of this temple?",
+              "answer": "amun-ra",
+              "hint": "Check the temple inscription and the wisdom tablet"
+            },
+            {
+              "question": "Where does the eternal flame burn?",
+              "answer": "sacred chamber",
+              "hint": "Multiple texts mention where the flame is located"
+            },
+            {
+              "question": "What offerings do we make to the gods?",
+              "answer": "gold and incense",
+              "hint": "The wisdom tablet and wall painting show what is offered"
+            }
+          ],
+          "direction": "north",
+          "leads_to": "sacred_altar",
+          "aliases": [
+            "door",
+            "altar",
+            "north"
+          ]
+        }
+      ],
+      "exits": []
+    },
+    {
+      "id": "sacred_altar",
+      "name": "Sacred Altar of the Gods",
+      "description": "You have reached the heart of the ancient temple! A magnificent altar stands before you, carved from a single block of white marble. The eternal flame burns in a golden brazier, casting dancing shadows on walls covered in sacred hieroglyphs. Shafts of sunlight pour through an opening in the ceiling, illuminating a hidden stairway that leads up to freedom. The presence of the divine fills this sacred space.",
+      "items": [
+        {
+          "id": "marble_altar",
+          "name": "sacred marble altar",
+          "description": "A pristine white altar where offerings are made to the gods"
+        },
+        {
+          "id": "eternal_flame",
+          "name": "eternal flame",
+          "description": "A flame that has burned for centuries, never extinguishing",
+          "readable": true,
+          "text": "The flame burns with a pure, golden light. It is said that as long as this flame burns, the temple and its wisdom will endure."
+        },
+        {
+          "id": "golden_brazier",
+          "name": "golden brazier",
+          "description": "An ornate brazier holding the eternal flame, decorated with images of the sun god"
+        },
+        {
+          "id": "sacred_hieroglyphs",
+          "name": "wall of sacred hieroglyphs",
+          "description": "The final teachings of the temple, carved into the walls",
+          "readable": true,
+          "text": "You who have reached this sacred place have proven your wisdom and devotion. The gods smile upon you. May you carry the light of knowledge into the world beyond."
+        }
+      ],
+      "exits": [],
+      "is_goal": true,
+      "win_message": "You have reached the Sacred Altar and proven yourself worthy! The eternal flame blazes brightly in recognition of your achievement. As you climb the hidden stairway revealed by the sunlight, you emerge from the ancient temple into the fresh air and freedom. The wisdom of the ancients is now yours to keep. You win!"
+    }
+  ]
+}

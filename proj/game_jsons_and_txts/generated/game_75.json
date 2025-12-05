@@ -1,0 +1,211 @@
+{
+    "theme": "Mythical Beast Sanctuary",
+    "title": "Mythical Beast Sanctuary Adventure #75",
+    "goal": "Solve the puzzles, achieve the main objective, and escape.",
+    "starting_room": "keepers_lodge",
+    "rooms": [
+        {
+            "id": "keepers_lodge",
+            "name": "Keeper's Lodge",
+            "description": "A cozy wooden lodge filled with the scent of herbs and hay. Maps of the sanctuary cover the walls, showing enclosures for various mythical creatures. A large desk sits near the fireplace, and shelves hold books about beast care. Through the window, you can see the silhouettes of magnificent creatures in the distance.",
+            "items": [
+                {
+                    "id": "keepers_desk",
+                    "name": "keeper's desk",
+                    "description": "A sturdy oak desk covered with feeding schedules and care instructions for the sanctuary's creatures",
+                    "subcontainers": [
+                        {
+                            "id": "top_drawer",
+                            "name": "top drawer",
+                            "locked": false,
+                            "contains": [
+                                "feeding_schedule"
+                            ]
+                        },
+                        {
+                            "id": "middle_drawer",
+                            "name": "middle drawer",
+                            "locked": true,
+                            "lock_type": "combination",
+                            "combination": "312",
+                            "contains": [
+                                "brass_key"
+                            ]
+                        },
+                        {
+                            "id": "bottom_drawer",
+                            "name": "bottom drawer",
+                            "locked": false,
+                            "contains": []
+                        }
+                    ]
+                },
+                {
+                    "id": "feeding_schedule",
+                    "name": "creature feeding schedule",
+                    "description": "A detailed chart showing when each creature eats",
+                    "readable": true,
+                    "text": "FEEDING TIMES: Phoenix - 3:00 AM (3rd hour), Unicorn - 12:00 PM (12th hour), Griffin - 1:00 AM (1st hour). Remember: The combination is the order they were discovered - Phoenix first, then Unicorn, then Griffin."
+                },
+                {
+                    "id": "brass_key",
+                    "name": "brass enclosure key",
+                    "description": "A key with a griffin emblem engraved on it"
+                },
+                {
+                    "id": "bookshelf",
+                    "name": "creature lore bookshelf",
+                    "description": "Tall shelves filled with ancient texts about mythical beasts",
+                    "searchable": true,
+                    "contains": [
+                        "beast_encyclopedia"
+                    ]
+                },
+                {
+                    "id": "beast_encyclopedia",
+                    "name": "encyclopedia of mythical beasts",
+                    "description": "A leather-bound tome with detailed entries about sanctuary creatures",
+                    "readable": true,
+                    "text": "SANCTUARY RECORDS: Head Keeper is Master Aldric Thornwood. The rarest creature is the Phoenix, which nests in the Sacred Grove. All keepers must know: What do phoenixes rise from? Where do unicorns dwell? Who leads this sanctuary?"
+                },
+                {
+                    "id": "supply_cabinet",
+                    "name": "supply cabinet",
+                    "description": "A locked cabinet containing important sanctuary supplies",
+                    "locked": true,
+                    "key_required": "brass_key",
+                    "contains": [
+                        "sanctuary_journal"
+                    ]
+                },
+                {
+                    "id": "sanctuary_journal",
+                    "name": "keeper's journal",
+                    "description": "A personal journal belonging to the head keeper",
+                    "readable": true,
+                    "text": "Journal Entry: Master Aldric Thornwood here. The unicorns prefer the Moonlit Meadow above all places. I've hidden the Sacred Grove key in the enclosures. Only those who truly understand our creatures may enter the grove where the phoenix nests."
+                },
+                {
+                    "id": "heavy_wooden_door",
+                    "name": "heavy wooden door",
+                    "description": "A reinforced door leading to the beast enclosures",
+                    "locked": false,
+                    "direction": "north",
+                    "leads_to": "beast_enclosures",
+                    "aliases": [
+                        "door",
+                        "north"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "beast_enclosures",
+            "name": "Beast Enclosures",
+            "description": "A vast open area with multiple enclosures housing magnificent mythical creatures. A majestic unicorn grazes in one pen, its horn glowing softly. In another, a griffin preens its golden feathers. The air is filled with magical energy and the sounds of extraordinary beasts. Stone markers provide information about each creature.",
+            "items": [
+                {
+                    "id": "unicorn_marker",
+                    "name": "unicorn information marker",
+                    "description": "A stone plaque describing the unicorn",
+                    "readable": true,
+                    "text": "UNICORN: A pure white horse with a spiraling horn. Habitat: Moonlit Meadow. Diet: Enchanted flowers and moonbeams. Known for healing powers and grace."
+                },
+                {
+                    "id": "griffin_marker",
+                    "name": "griffin information marker",
+                    "description": "A carved stone describing the griffin",
+                    "readable": true,
+                    "text": "GRIFFIN: Half eagle, half lion. Habitat: Mountain Peaks. Diet: Blessed meat. Guardian creature known for loyalty and strength."
+                },
+                {
+                    "id": "phoenix_marker",
+                    "name": "phoenix information marker",
+                    "description": "An ornate plaque about the phoenix",
+                    "readable": true,
+                    "text": "PHOENIX: A magnificent bird of flame. Habitat: Sacred Grove. Diet: Cinnamon and myrrh. Rises from ashes to be reborn. The rarest creature in our sanctuary."
+                },
+                {
+                    "id": "feed_storage",
+                    "name": "feed storage chest",
+                    "description": "A large chest containing various types of creature food",
+                    "searchable": true,
+                    "contains": [
+                        "silver_key"
+                    ]
+                },
+                {
+                    "id": "silver_key",
+                    "name": "silver grove key",
+                    "description": "An ornate silver key with phoenix feathers attached"
+                },
+                {
+                    "id": "water_trough",
+                    "name": "enchanted water trough",
+                    "description": "A stone trough filled with shimmering magical water",
+                    "searchable": true,
+                    "contains": []
+                },
+                {
+                    "id": "Sacred_Grove_gate",
+                    "name": "Sacred Grove gate",
+                    "description": "An elaborate gate covered in mystical runes. A stone tablet beside it poses three questions that only a true keeper could answer.",
+                    "locked": true,
+                    "lock_type": "password",
+                    "password_questions": [
+                        {
+                            "question": "What do phoenixes rise from?",
+                            "answer": "ashes",
+                            "hint": "Check the phoenix information marker"
+                        },
+                        {
+                            "question": "Where do unicorns dwell?",
+                            "answer": "moonlit meadow",
+                            "hint": "Read the unicorn marker and the keeper's journal"
+                        },
+                        {
+                            "question": "Who leads this sanctuary?",
+                            "answer": "master aldric thornwood",
+                            "hint": "The beast encyclopedia and keeper's journal mention the head keeper"
+                        }
+                    ],
+                    "direction": "east",
+                    "leads_to": "sacred_grove",
+                    "aliases": [
+                        "gate",
+                        "east"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "sacred_grove",
+            "name": "Sacred Grove",
+            "description": "You have entered the most sacred place in the sanctuary! A magnificent phoenix perches on a golden nest in the center of a clearing surrounded by ancient trees. The bird's feathers shimmer with flames of red, gold, and orange. As you approach, the phoenix spreads its wings and sings a beautiful melody. A shimmering portal of light appears behind the nest, offering passage to freedom.",
+            "items": [
+                {
+                    "id": "phoenix_nest",
+                    "name": "golden phoenix nest",
+                    "description": "A nest woven from golden branches and lined with cinnamon bark, where the phoenix rests"
+                },
+                {
+                    "id": "phoenix",
+                    "name": "magnificent phoenix",
+                    "description": "The legendary phoenix, a bird of living flame with eyes like molten gold"
+                },
+                {
+                    "id": "ancient_trees",
+                    "name": "ancient grove trees",
+                    "description": "Trees that have stood for thousands of years, their bark covered in glowing runes",
+                    "readable": true,
+                    "text": "The runes tell the story of the sanctuary: 'Here the mythical beasts find refuge. Here they are protected and cherished. Those who prove themselves worthy may pass through the phoenix's portal to freedom.'"
+                }
+            ],
+            "exits": [],
+            "is_goal": true,
+            "win_message": "The phoenix acknowledges your worthiness! It spreads its magnificent wings and the portal behind it blazes with brilliant light. You have proven yourself a true keeper of mythical beasts. As you step through the portal, the phoenix's song follows you, a blessing for your journey. You have successfully completed your sanctuary adventure and earned your freedom! You win!"
+        }
+    ]
+}

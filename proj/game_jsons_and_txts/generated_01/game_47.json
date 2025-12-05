@@ -1,0 +1,261 @@
+{
+    "theme": "Haunted Carnival",
+    "title": "Haunted Carnival Adventure #47",
+    "goal": "Solve the puzzles, achieve the main objective, and escape.",
+    "starting_room": "ticket_booth",
+    "rooms": [
+        {
+            "id": "ticket_booth",
+            "name": "Abandoned Ticket Booth",
+            "description": "A decrepit ticket booth stands at the entrance to the abandoned carnival. Faded posters peel from the walls, advertising acts from decades past. The wooden counter is covered in dust and cobwebs. Rusted carnival tokens litter the floor. Through the grimy windows, you can see the dark silhouettes of rides against the night sky. The air smells of mildew and old popcorn.",
+            "items": [
+                {
+                    "id": "ticket_counter",
+                    "name": "dusty ticket counter",
+                    "description": "An old wooden counter with a cash register and scattered papers",
+                    "searchable": true,
+                    "contains": [
+                        "brass_key"
+                    ]
+                },
+                {
+                    "id": "brass_key",
+                    "name": "tarnished brass key",
+                    "description": "A small brass key with a clown face engraved on it"
+                },
+                {
+                    "id": "filing_cabinet",
+                    "name": "rusted filing cabinet",
+                    "description": "A metal cabinet with three drawers, covered in rust and carnival stickers",
+                    "subcontainers": [
+                        {
+                            "id": "top_drawer",
+                            "name": "top drawer",
+                            "locked": false,
+                            "contains": [
+                                "carnival_poster"
+                            ]
+                        },
+                        {
+                            "id": "middle_drawer",
+                            "name": "middle drawer",
+                            "locked": true,
+                            "lock_type": "combination",
+                            "combination": "1923",
+                            "contains": [
+                                "iron_key"
+                            ]
+                        },
+                        {
+                            "id": "bottom_drawer",
+                            "name": "bottom drawer",
+                            "locked": false,
+                            "contains": []
+                        }
+                    ]
+                },
+                {
+                    "id": "carnival_poster",
+                    "name": "faded carnival poster",
+                    "description": "A weathered poster advertising the carnival's grand opening",
+                    "readable": true,
+                    "text": "GRAND OPENING 1923! Mephisto's Magnificent Carnival of Wonders! Owner and Ringmaster: The Great Mephisto. Featuring death-defying acts, mysterious attractions, and the world-famous Funhouse Mirror Maze! Final performances held in the Grand Tent under the big top!"
+                },
+                {
+                    "id": "iron_key",
+                    "name": "heavy iron key",
+                    "description": "A large iron key with 'FUNHOUSE' stamped on it"
+                },
+                {
+                    "id": "locked_box",
+                    "name": "locked ticket box",
+                    "description": "A metal box with a brass lock, used for storing ticket money",
+                    "locked": true,
+                    "key_required": "brass_key",
+                    "contains": [
+                        "employee_journal"
+                    ]
+                },
+                {
+                    "id": "employee_journal",
+                    "name": "ticket seller's journal",
+                    "description": "A worn journal belonging to a former carnival employee",
+                    "readable": true,
+                    "text": "Last Entry: Something terrible happened at the final show in the Grand Tent. The Great Mephisto vanished during his act, and the carnival was abandoned overnight. They say his spirit still haunts the grounds. The only way out is through the Ringmaster's private tent, but you'll need to prove you belong here."
+                },
+                {
+                    "id": "old_cash_register",
+                    "name": "antique cash register",
+                    "description": "A dusty cash register with carnival tokens scattered around it",
+                    "searchable": true,
+                    "contains": [
+                        "carnival_token"
+                    ]
+                },
+                {
+                    "id": "carnival_token",
+                    "name": "brass carnival token",
+                    "description": "A token stamped with 'Mephisto's Carnival - 1923'"
+                },
+                {
+                    "id": "funhouse_entrance_gate",
+                    "name": "funhouse entrance gate",
+                    "description": "A creaking metal gate leading to the Funhouse Mirror Maze, secured with a heavy lock",
+                    "locked": true,
+                    "key_required": "iron_key",
+                    "direction": "north",
+                    "leads_to": "funhouse_maze",
+                    "aliases": [
+                        "gate",
+                        "north"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "funhouse_maze",
+            "name": "Funhouse Mirror Maze",
+            "description": "A disorienting maze of distorted mirrors reflecting endless versions of yourself. Some mirrors are cracked, others clouded with age. Painted clown faces leer from the walls between mirrors. The floor tilts at odd angles, making it hard to keep your balance. Carnival music plays faintly from hidden speakers, the melody warped and unsettling.",
+            "items": [
+                {
+                    "id": "center_pedestal",
+                    "name": "central pedestal",
+                    "description": "A round pedestal in the maze's center with a locked compartment",
+                    "subcontainers": [
+                        {
+                            "id": "pedestal_compartment",
+                            "name": "pedestal compartment",
+                            "locked": true,
+                            "lock_type": "combination",
+                            "combination": "1923",
+                            "contains": [
+                                "silver_key"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "silver_key",
+                    "name": "ornate silver key",
+                    "description": "A decorative silver key with a star pattern"
+                },
+                {
+                    "id": "cracked_mirror",
+                    "name": "large cracked mirror",
+                    "description": "A tall mirror with a spiderweb of cracks across its surface",
+                    "searchable": true,
+                    "contains": [
+                        "hidden_note"
+                    ]
+                },
+                {
+                    "id": "hidden_note",
+                    "name": "crumpled note",
+                    "description": "A note stuffed behind the cracked mirror",
+                    "readable": true,
+                    "text": "I was a performer here, one of Mephisto's acts. The final show was in the Grand Tent - that's where everything went wrong. If you want to escape, you need to reach the Ringmaster's private tent. Only carnival performers can enter. The combination to the pedestal is the year this cursed place opened."
+                },
+                {
+                    "id": "prop_trunk",
+                    "name": "performer's prop trunk",
+                    "description": "A large trunk filled with old carnival props and costumes",
+                    "locked": true,
+                    "key_required": "silver_key",
+                    "contains": [
+                        "performer_costume",
+                        "mephisto_diary"
+                    ]
+                },
+                {
+                    "id": "performer_costume",
+                    "name": "carnival performer costume",
+                    "description": "A sequined costume worn by carnival performers"
+                },
+                {
+                    "id": "mephisto_diary",
+                    "name": "Mephisto's diary",
+                    "description": "The personal diary of the carnival's owner and ringmaster",
+                    "readable": true,
+                    "text": "I am The Great Mephisto, owner and ringmaster of this magnificent carnival. Tonight is our final performance in the Grand Tent. I've prepared something special - a trick that will astound them all. But I fear I may have delved too deep into the dark arts. If something goes wrong, only a true performer of this carnival will be able to leave through my private tent."
+                },
+                {
+                    "id": "painted_clown",
+                    "name": "painted clown face",
+                    "description": "A disturbing clown face painted on the wall, its eyes seem to follow you",
+                    "readable": true,
+                    "text": "Beneath the clown's grin, someone has scratched: 'Mephisto owned us all. The Grand Tent was our stage. We were his performers, bound to this place forever.'"
+                },
+                {
+                    "id": "information_board",
+                    "name": "carnival information board",
+                    "description": "A board with faded maps and schedules",
+                    "readable": true,
+                    "text": "CARNIVAL MAP: Ticket Booth (Entrance), Funhouse Mirror Maze, Game Booths, Rides, Grand Tent (Main Stage), Ringmaster's Private Tent (Staff Only). All final performances held in the Grand Tent under the big top!"
+                },
+                {
+                    "id": "entrance_to_ringmaster's_tent",
+                    "name": "entrance to ringmaster's tent",
+                    "description": "A velvet curtain leading to Mephisto's private tent. A brass plaque displays three questions that must be answered.",
+                    "locked": true,
+                    "lock_type": "password",
+                    "password_questions": [
+                        {
+                            "question": "Who owned this carnival?",
+                            "answer": "the great mephisto",
+                            "hint": "Check the carnival poster and Mephisto's diary"
+                        },
+                        {
+                            "question": "Where was the final show held?",
+                            "answer": "grand tent",
+                            "hint": "Multiple sources mention where the final performance took place"
+                        },
+                        {
+                            "question": "What are you?",
+                            "answer": "performer",
+                            "hint": "The diary and notes explain who can enter the ringmaster's tent"
+                        }
+                    ],
+                    "direction": "east",
+                    "leads_to": "ringmaster_tent",
+                    "aliases": [
+                        "curtain",
+                        "tent",
+                        "east"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "ringmaster_tent",
+            "name": "Ringmaster's Private Tent",
+            "description": "You've reached Mephisto's private sanctuary! A luxurious tent with red velvet walls and golden tassels. The ringmaster's desk sits in the center, covered with mysterious artifacts and spell books. Through an open flap at the back, you can see the exit - a path leading away from the carnival grounds into the safety of the night. Fresh air flows in, dispelling the oppressive atmosphere.",
+            "items": [
+                {
+                    "id": "ringmaster_desk",
+                    "name": "ornate ringmaster's desk",
+                    "description": "An elaborate desk covered with mystical objects and papers"
+                },
+                {
+                    "id": "spell_books",
+                    "name": "ancient spell books",
+                    "description": "Leather-bound books filled with arcane symbols and rituals"
+                },
+                {
+                    "id": "top_hat",
+                    "name": "Mephisto's top hat",
+                    "description": "The Great Mephisto's signature black top hat with a red band"
+                },
+                {
+                    "id": "exit_path",
+                    "name": "exit path",
+                    "description": "A clear path leading away from the carnival to freedom"
+                }
+            ],
+            "exits": [],
+            "is_goal": true,
+            "win_message": "You've escaped the Haunted Carnival! As you step through the tent flap and onto the path leading away, you hear the faint sound of applause and carnival music fading behind you. The spirits of Mephisto's carnival acknowledge your success. You've solved the mysteries and earned your freedom. You win!"
+        }
+    ]
+}

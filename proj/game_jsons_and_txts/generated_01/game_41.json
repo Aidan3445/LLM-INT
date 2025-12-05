@@ -1,0 +1,258 @@
+{
+    "theme": "Mythical Beast Sanctuary",
+    "title": "Mythical Beast Sanctuary Adventure #41",
+    "goal": "Solve the puzzles, achieve the main objective, and escape.",
+    "starting_room": "beast_keepers_lodge",
+    "rooms": [
+        {
+            "id": "beast_keepers_lodge",
+            "name": "Beast Keeper's Lodge",
+            "description": "A rustic wooden lodge filled with the scent of hay and exotic herbs. Maps of the sanctuary cover the walls, showing various beast enclosures. A large fireplace dominates one wall, its embers still glowing faintly. Shelves are lined with journals, feeding schedules, and veterinary supplies. Through the window, you can see the vast sanctuary grounds with their magical barriers shimmering in the distance.",
+            "items": [
+                {
+                    "id": "keeper_desk",
+                    "name": "keeper's desk",
+                    "description": "A sturdy oak desk covered with papers, maps, and beast care manuals",
+                    "subcontainers": [
+                        {
+                            "id": "top_drawer",
+                            "name": "top drawer",
+                            "locked": false,
+                            "contains": [
+                                "sanctuary_charter"
+                            ]
+                        },
+                        {
+                            "id": "middle_drawer",
+                            "name": "middle drawer",
+                            "locked": true,
+                            "lock_type": "combination",
+                            "combination": "1847",
+                            "contains": [
+                                "bronze_key"
+                            ]
+                        },
+                        {
+                            "id": "bottom_drawer",
+                            "name": "bottom drawer",
+                            "locked": false,
+                            "contains": []
+                        }
+                    ]
+                },
+                {
+                    "id": "sanctuary_charter",
+                    "name": "sanctuary charter",
+                    "description": "An official document establishing the sanctuary",
+                    "readable": true,
+                    "text": "CHARTER OF THE MYTHICAL BEAST SANCTUARY - Established 1847 by Master Keeper Aldric Thornwood. Purpose: To provide safe haven for endangered mythical creatures. Primary residents: Phoenix (fire enclosure), Griffin (mountain enclosure), Dragon (cavern enclosure). All keepers must know the sanctuary's history and purpose."
+                },
+                {
+                    "id": "bronze_key",
+                    "name": "bronze key",
+                    "description": "A bronze key with a griffin emblem engraved on it"
+                },
+                {
+                    "id": "bookshelf",
+                    "name": "tall bookshelf",
+                    "description": "Shelves packed with beast care manuals and journals",
+                    "searchable": true,
+                    "contains": [
+                        "keeper_journal"
+                    ]
+                },
+                {
+                    "id": "keeper_journal",
+                    "name": "keeper's personal journal",
+                    "description": "A leather-bound journal with daily entries",
+                    "readable": true,
+                    "text": "Day 127: The beasts are restless. Master Keeper Aldric would know what to do, but he's been gone for weeks. The phoenix in the fire enclosure seems agitated. I've secured the emergency supplies in the locked cabinet. If anyone needs to evacuate, they must understand what we protect here and who founded this sanctuary."
+                },
+                {
+                    "id": "supply_cabinet",
+                    "name": "locked supply cabinet",
+                    "description": "A tall metal cabinet with a bronze lock and a griffin symbol",
+                    "locked": true,
+                    "key_required": "bronze_key",
+                    "contains": [
+                        "protective_gear",
+                        "evacuation_map"
+                    ]
+                },
+                {
+                    "id": "protective_gear",
+                    "name": "beast handler's protective gear",
+                    "description": "Enchanted leather gear that protects against fire, claws, and magic"
+                },
+                {
+                    "id": "evacuation_map",
+                    "name": "emergency evacuation map",
+                    "description": "A detailed map showing escape routes",
+                    "readable": true,
+                    "text": "EMERGENCY EVACUATION PROCEDURES: In case of barrier failure or beast escape, proceed through sanctuary grounds to the Freedom Gate. Gate requires keeper authorization. You must confirm: Who founded the sanctuary? What is our purpose? Where does the phoenix reside?"
+                },
+                {
+                    "id": "wall_map",
+                    "name": "sanctuary wall map",
+                    "description": "A large map showing all beast enclosures and facilities",
+                    "readable": true,
+                    "text": "SANCTUARY LAYOUT: Fire Enclosure (Phoenix) - Northeast section. Mountain Enclosure (Griffin) - Western cliffs. Cavern Enclosure (Dragon) - Southern caves. Freedom Gate - Northern exit. All enclosures protected by magical barriers."
+                },
+                {
+                    "id": "fireplace",
+                    "name": "stone fireplace",
+                    "description": "A large fireplace with embers still glowing",
+                    "searchable": true,
+                    "contains": [
+                        "hidden_note"
+                    ]
+                },
+                {
+                    "id": "hidden_note",
+                    "name": "hidden note",
+                    "description": "A note tucked behind a loose stone in the fireplace",
+                    "readable": true,
+                    "text": "Emergency note from Aldric: If you're reading this, something has gone wrong. The sanctuary was built to provide safe haven for mythical beasts. Remember our purpose. The combination to my desk is the year we opened - 1847."
+                },
+                {
+                    "id": "heavy_wooden_door",
+                    "name": "heavy wooden door",
+                    "description": "A reinforced door leading out to the sanctuary grounds",
+                    "locked": false,
+                    "direction": "north",
+                    "leads_to": "sanctuary_grounds",
+                    "aliases": [
+                        "door",
+                        "north"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "sanctuary_grounds",
+            "name": "Sanctuary Grounds",
+            "description": "A vast open area with multiple beast enclosures visible in different directions. Magical barriers shimmer around each enclosure, containing the powerful creatures within. To the northeast, flames dance in the phoenix's fire enclosure. To the west, a griffin perches majestically on mountain rocks. To the south, you hear the rumbling of a dragon in its cavern. The Freedom Gate stands to the north, sealed with powerful enchantments.",
+            "items": [
+                {
+                    "id": "phoenix_enclosure",
+                    "name": "fire enclosure",
+                    "description": "A blazing enclosure where a magnificent phoenix spreads its flaming wings",
+                    "readable": true,
+                    "text": "PHOENIX ENCLOSURE: Species - Immortal Phoenix. Habitat - Fire enclosure with eternal flames. Status - Healthy. Note: Phoenix feathers have healing properties. This majestic bird has been with us since the sanctuary's founding."
+                },
+                {
+                    "id": "griffin_enclosure",
+                    "name": "mountain enclosure",
+                    "description": "A rocky mountain habitat where a proud griffin surveys its territory",
+                    "readable": true,
+                    "text": "GRIFFIN ENCLOSURE: Species - Noble Griffin. Habitat - Mountain enclosure with high perches. Status - Alert. Note: Griffins are fiercely loyal and protective. This one was rescued from poachers by Master Keeper Aldric himself."
+                },
+                {
+                    "id": "dragon_enclosure",
+                    "name": "cavern enclosure",
+                    "description": "A deep cavern where a dragon's golden eyes gleam in the darkness",
+                    "readable": true,
+                    "text": "DRAGON ENCLOSURE: Species - Ancient Dragon. Habitat - Cavern enclosure with treasure hoard. Status - Sleeping. Note: Dragons are highly intelligent and long-lived. Handle with extreme caution and respect."
+                },
+                {
+                    "id": "information_board",
+                    "name": "sanctuary information board",
+                    "description": "A wooden board with posted notices and information",
+                    "readable": true,
+                    "text": "SANCTUARY MISSION: We provide safe haven for endangered mythical creatures. Founded by Master Keeper Aldric Thornwood in 1847. Our purpose is to protect and preserve these magnificent beings for future generations. All staff must understand and honor this sacred duty."
+                },
+                {
+                    "id": "feeding_station",
+                    "name": "central feeding station",
+                    "description": "A stone structure with supplies for feeding the various beasts",
+                    "searchable": true,
+                    "contains": [
+                        "keeper_badge"
+                    ]
+                },
+                {
+                    "id": "keeper_badge",
+                    "name": "master keeper's badge",
+                    "description": "A silver badge bearing Aldric Thornwood's name and the sanctuary seal"
+                },
+                {
+                    "id": "observation_post",
+                    "name": "observation post",
+                    "description": "A raised platform for monitoring the beast enclosures",
+                    "searchable": true,
+                    "contains": [
+                        "monitoring_log"
+                    ]
+                },
+                {
+                    "id": "monitoring_log",
+                    "name": "beast monitoring log",
+                    "description": "A logbook tracking the health and behavior of all sanctuary beasts",
+                    "readable": true,
+                    "text": "MONITORING LOG: Phoenix (Fire Enclosure) - Molting cycle normal. Griffin (Mountain Enclosure) - Hunting skills excellent. Dragon (Cavern Enclosure) - Hibernation period ending soon. All beasts are thriving under our care. Master Keeper Aldric's dedication to providing safe haven has made this sanctuary a success."
+                },
+                {
+                    "id": "memorial_stone",
+                    "name": "memorial stone",
+                    "description": "A carved stone honoring the sanctuary's founder",
+                    "readable": true,
+                    "text": "IN MEMORY OF MASTER KEEPER ALDRIC THORNWOOD - Founder and protector of mythical beasts. His vision: to provide safe haven where these magnificent creatures could live free from persecution. His legacy endures in every beast we shelter."
+                },
+                {
+                    "id": "Freedom_Gate",
+                    "name": "Freedom Gate",
+                    "description": "A massive enchanted gate leading to freedom beyond the sanctuary. Three glowing questions appear on its surface, requiring keeper authorization to open.",
+                    "locked": true,
+                    "lock_type": "password",
+                    "password_questions": [
+                        {
+                            "question": "Who founded this sanctuary?",
+                            "answer": "aldric thornwood",
+                            "hint": "Check the sanctuary charter and memorial stone"
+                        },
+                        {
+                            "question": "What is the sanctuary's purpose?",
+                            "answer": "provide safe haven",
+                            "hint": "The charter and information board explain the sanctuary's mission"
+                        },
+                        {
+                            "question": "Where does the phoenix reside?",
+                            "answer": "fire enclosure",
+                            "hint": "Look at the enclosure signs and the evacuation map"
+                        }
+                    ],
+                    "direction": "north",
+                    "leads_to": "beyond_sanctuary",
+                    "aliases": [
+                        "gate",
+                        "north"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "beyond_sanctuary",
+            "name": "Beyond the Sanctuary",
+            "description": "You've passed through the Freedom Gate! You stand on a hillside overlooking the sanctuary below, where the mythical beasts continue their peaceful existence behind the shimmering barriers. The phoenix's flames glow in the distance, the griffin soars above its mountain perch, and the dragon's cavern rumbles softly. A path leads down the hill to civilization and safety. You've escaped while ensuring the sanctuary's secrets remain protected.",
+            "items": [
+                {
+                    "id": "hillside_path",
+                    "name": "winding path",
+                    "description": "A clear path leading away from the sanctuary to safety"
+                },
+                {
+                    "id": "sanctuary_view",
+                    "name": "view of the sanctuary",
+                    "description": "A breathtaking view of the mythical beast sanctuary spread out below",
+                    "readable": true,
+                    "text": "From here, you can see the entire sanctuary - a testament to Aldric Thornwood's vision. The beasts are safe, and so are you."
+                }
+            ],
+            "exits": [],
+            "is_goal": true,
+            "win_message": "Congratulations! You've successfully escaped the Mythical Beast Sanctuary while honoring its sacred purpose. You solved the puzzles, learned the sanctuary's history, and proved yourself worthy of passing through the Freedom Gate. The mythical beasts remain safe in their haven, and you carry the knowledge of this magical place with you. You win!"
+        }
+    ]
+}

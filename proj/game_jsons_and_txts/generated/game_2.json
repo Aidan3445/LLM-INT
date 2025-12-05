@@ -1,0 +1,219 @@
+{
+    "theme": "Wizard Academy Exam",
+    "title": "Wizard Academy Exam Adventure #2",
+    "goal": "Solve the puzzles, achieve the main objective, and escape.",
+    "starting_room": "exam_preparation_room",
+    "rooms": [
+        {
+            "id": "exam_preparation_room",
+            "name": "Exam Preparation Room",
+            "description": "A cozy study room filled with floating candles and shelves of spell components. Magical runes glow softly on the stone walls. A large wooden desk sits in the center, covered with parchments and quills. Through the window, you can see the academy's towers reaching toward the starry sky. This is where students prepare for their final wizard examination.",
+            "items": [
+                {
+                    "id": "wooden_desk",
+                    "name": "enchanted wooden desk",
+                    "description": "A sturdy oak desk with three drawers, each marked with a different magical symbol",
+                    "subcontainers": [
+                        {
+                            "id": "star_drawer",
+                            "name": "star drawer",
+                            "locked": false,
+                            "contains": [
+                                "headmaster_note"
+                            ]
+                        },
+                        {
+                            "id": "moon_drawer",
+                            "name": "moon drawer",
+                            "locked": true,
+                            "lock_type": "combination",
+                            "combination": "777",
+                            "contains": [
+                                "silver_wand_key"
+                            ]
+                        },
+                        {
+                            "id": "sun_drawer",
+                            "name": "sun drawer",
+                            "locked": false,
+                            "contains": []
+                        }
+                    ]
+                },
+                {
+                    "id": "headmaster_note",
+                    "name": "letter from Headmaster Aldric",
+                    "description": "A formal letter sealed with the academy's crest",
+                    "readable": true,
+                    "text": "Dear Student, your final examination awaits. Remember the sacred number of our academy: seven times seven times seven equals 777. This number has protected our school for centuries. You are Apprentice Elara Moonwhisper, and you must prove your worth. Good luck! - Headmaster Aldric"
+                },
+                {
+                    "id": "bookshelf",
+                    "name": "tall bookshelf",
+                    "description": "A bookshelf filled with ancient tomes and magical texts",
+                    "searchable": true,
+                    "contains": [
+                        "spell_theory_book"
+                    ]
+                },
+                {
+                    "id": "spell_theory_book",
+                    "name": "book of spell theory",
+                    "description": "A leather-bound textbook with gold lettering",
+                    "readable": true,
+                    "text": "Chapter 7: The Three Pillars of Magic. All spells require three components: Intent (the wizard's will), Focus (the wand or staff), and Power (magical energy from the Crystal Sanctum). Master these, and you shall pass any examination."
+                },
+                {
+                    "id": "locked_chest",
+                    "name": "ornate spell chest",
+                    "description": "A beautiful chest decorated with silver stars and moons",
+                    "locked": true,
+                    "key_required": "silver_wand_key",
+                    "contains": [
+                        "apprentice_wand"
+                    ]
+                },
+                {
+                    "id": "silver_wand_key",
+                    "name": "silver wand shaped key",
+                    "description": "A small key carved to look like a miniature wand"
+                },
+                {
+                    "id": "apprentice_wand",
+                    "name": "apprentice wand",
+                    "description": "A slender wand made of willow wood with a crystal core, required for the examination"
+                },
+                {
+                    "id": "carved_library_door",
+                    "name": "carved library door",
+                    "description": "A heavy wooden door carved with images of spell books and scrolls. It leads to the Spell Library.",
+                    "locked": true,
+                    "key_required": "silver_wand_key",
+                    "direction": "north",
+                    "leads_to": "spell_library",
+                    "aliases": [
+                        "door",
+                        "north"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "spell_library",
+            "name": "Spell Library",
+            "description": "A magnificent library with towering shelves that reach up into darkness. Books float through the air, organizing themselves. Magical portraits of famous wizards line the walls, their eyes seeming to follow you. A grand archway to the east leads to the examination hall. Crystal orbs provide soft, colorful light throughout the space.",
+            "items": [
+                {
+                    "id": "portrait_merlin",
+                    "name": "portrait of Archmage Merlin",
+                    "description": "A painting of a wise wizard with a long white beard",
+                    "readable": true,
+                    "text": "Archmage Merlin - Founder of the Academy. Known for teaching that Intent is the first pillar of all magic. His wisdom guides us still."
+                },
+                {
+                    "id": "portrait_morgana",
+                    "name": "portrait of Sorceress Morgana",
+                    "description": "A painting of an elegant woman holding a staff",
+                    "readable": true,
+                    "text": "Sorceress Morgana - Master of Enchantments. She discovered that magical Power flows from the Crystal Sanctum deep beneath the academy."
+                },
+                {
+                    "id": "portrait_gandalf",
+                    "name": "portrait of Wizard Gandalf",
+                    "description": "A painting of a stern wizard in grey robes",
+                    "readable": true,
+                    "text": "Wizard Gandalf - Guardian of Knowledge. He taught that Focus through one's wand is essential for channeling magic properly."
+                },
+                {
+                    "id": "reading_table",
+                    "name": "ancient reading table",
+                    "description": "A table covered with open books and scrolls",
+                    "searchable": true,
+                    "contains": [
+                        "academy_history"
+                    ]
+                },
+                {
+                    "id": "academy_history",
+                    "name": "academy history scroll",
+                    "description": "A scroll detailing the history of the wizard academy",
+                    "readable": true,
+                    "text": "The Academy was founded in the Age of Magic by Archmage Merlin. Students who complete their training earn the title of Wizard. The final examination tests knowledge, skill, and character. Only those who know themselves and the three pillars of magic may enter the Grand Examination Hall."
+                },
+                {
+                    "id": "floating_books",
+                    "name": "cluster of floating books",
+                    "description": "Several books hovering in mid-air, glowing with magical energy",
+                    "searchable": true,
+                    "contains": [
+                        "crystal_orb"
+                    ]
+                },
+                {
+                    "id": "crystal_orb",
+                    "name": "glowing crystal orb",
+                    "description": "A magical orb that pulses with inner light, one of the artifacts needed for the examination"
+                },
+                {
+                    "id": "grand_examination_archway",
+                    "name": "grand examination archway",
+                    "description": "A magnificent stone archway inscribed with three questions. Only those who answer correctly may pass to take their final exam.",
+                    "locked": true,
+                    "lock_type": "password",
+                    "password_questions": [
+                        {
+                            "question": "What is the first pillar of magic?",
+                            "answer": "intent",
+                            "hint": "Check Archmage Merlin's portrait for information about the pillars"
+                        },
+                        {
+                            "question": "Where does magical power flow from?",
+                            "answer": "crystal sanctum",
+                            "hint": "Sorceress Morgana's portrait mentions the source of power"
+                        },
+                        {
+                            "question": "What is your name, apprentice?",
+                            "answer": "elara moonwhisper",
+                            "hint": "The Headmaster's letter addresses you by name"
+                        }
+                    ],
+                    "direction": "east",
+                    "leads_to": "grand_examination_hall",
+                    "aliases": [
+                        "archway",
+                        "east"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "grand_examination_hall",
+            "name": "Grand Examination Hall",
+            "description": "You have reached the Grand Examination Hall! A vast circular chamber with a domed ceiling showing constellations that move and shimmer. In the center stands a pedestal holding the Tome of Mastery. Magical energy swirls around you. The Headmaster's voice echoes: 'You have proven yourself worthy. Take the tome and claim your title as a true wizard!'",
+            "items": [
+                {
+                    "id": "tome_of_mastery",
+                    "name": "Tome of Mastery",
+                    "description": "An ancient book bound in dragon leather, glowing with powerful magic. This tome grants the title of Wizard to those who complete the examination."
+                },
+                {
+                    "id": "crystal_pedestal",
+                    "name": "crystal pedestal",
+                    "description": "A pedestal made of pure crystal, holding the legendary Tome of Mastery"
+                },
+                {
+                    "id": "constellation_ceiling",
+                    "name": "magical constellation ceiling",
+                    "description": "The domed ceiling displays moving stars and constellations",
+                    "readable": true,
+                    "text": "The constellations spell out a message: 'Knowledge, Courage, and Wisdom - these are the marks of a true wizard. You have demonstrated all three. Congratulations, Wizard Elara Moonwhisper.'"
+                }
+            ],
+            "exits": [],
+            "is_goal": true,
+            "win_message": "Congratulations! You have passed the final examination and earned the title of Wizard! As you touch the Tome of Mastery, magical energy flows through you, and your apprentice wand transforms into a true wizard's staff. The academy's bells ring out in celebration. You are now Wizard Elara Moonwhisper, graduate of the Academy of Magic. You win!"
+        }
+    ]
+}

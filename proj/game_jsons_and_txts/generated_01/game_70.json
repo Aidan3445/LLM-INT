@@ -1,0 +1,224 @@
+{
+    "theme": "Meteor Impact Crater Base",
+    "title": "Meteor Impact Crater Base Adventure #70",
+    "goal": "Solve the puzzles, achieve the main objective, and escape.",
+    "starting_room": "observation_deck",
+    "rooms": [
+        {
+            "id": "observation_deck",
+            "name": "Crater Observation Deck",
+            "description": "A circular observation deck with panoramic windows overlooking the massive meteor impact crater. Scientific equipment and monitoring stations line the walls. Red emergency lights pulse overhead. The crater floor far below glows with strange bioluminescent minerals. Control panels blink with warnings about system failures.",
+            "items": [
+                {
+                    "id": "control_station",
+                    "name": "main control station",
+                    "description": "A complex array of monitors and control panels showing base systems",
+                    "readable": true,
+                    "text": "SYSTEM STATUS: Base established 2089. Director: Dr. Elena Vasquez. Chief Geologist: Dr. Marcus Webb. Crater designation: Impact Site Omega. WARNING: Life support critical. Evacuation protocols active."
+                },
+                {
+                    "id": "equipment_locker",
+                    "name": "equipment locker",
+                    "description": "A metal locker containing research equipment and supplies",
+                    "subcontainers": [
+                        {
+                            "id": "top_compartment",
+                            "name": "top compartment",
+                            "locked": false,
+                            "contains": [
+                                "research_log"
+                            ]
+                        },
+                        {
+                            "id": "bottom_compartment",
+                            "name": "bottom compartment",
+                            "locked": true,
+                            "lock_type": "combination",
+                            "combination": "2089",
+                            "contains": [
+                                "access_card"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "research_log",
+                    "name": "research log datapad",
+                    "description": "A digital tablet with research entries",
+                    "readable": true,
+                    "text": "Day 147: The meteor brought something extraordinary. Dr. Webb discovered crystalline formations in the crater core. Base established in 2089 to study the impact site. The specimens are stored in the research laboratory for analysis."
+                },
+                {
+                    "id": "access_card",
+                    "name": "security access card",
+                    "description": "A magnetic card labeled 'AUTHORIZED PERSONNEL'"
+                },
+                {
+                    "id": "wall_monitor",
+                    "name": "wall mounted monitor",
+                    "description": "A large display screen showing base schematics and alerts",
+                    "readable": true,
+                    "text": "FACILITY MAP: Observation Deck (current location) connects to Research Laboratory. Emergency escape pods located in Launch Bay. Director Vasquez has override authority for all systems."
+                },
+                {
+                    "id": "emergency_kit",
+                    "name": "emergency supply kit",
+                    "description": "A red case mounted on the wall containing emergency supplies",
+                    "searchable": true,
+                    "contains": [
+                        "flashlight"
+                    ]
+                },
+                {
+                    "id": "flashlight",
+                    "name": "emergency flashlight",
+                    "description": "A heavy-duty flashlight with fresh batteries"
+                },
+                {
+                    "id": "telescope_station",
+                    "name": "observation telescope",
+                    "description": "A powerful telescope pointed at the crater floor",
+                    "readable": true,
+                    "text": "Through the telescope, you can see the glowing crystalline formations at the crater core. They pulse with an otherworldly light, unlike anything found on Earth."
+                },
+                {
+                    "id": "laboratory_access_door",
+                    "name": "laboratory access door",
+                    "description": "A reinforced door with a card reader leading to the research laboratory",
+                    "locked": true,
+                    "key_required": "access_card",
+                    "direction": "north",
+                    "leads_to": "research_laboratory",
+                    "aliases": [
+                        "door",
+                        "north"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "research_laboratory",
+            "name": "Research Laboratory",
+            "description": "A state-of-the-art laboratory filled with scientific equipment and specimen containers. Glowing meteor samples are secured in containment fields. Computer terminals display complex data. The walls are lined with research notes and analysis reports. A sealed door leads to the launch bay.",
+            "items": [
+                {
+                    "id": "specimen_container",
+                    "name": "meteor specimen container",
+                    "description": "A reinforced containment unit holding glowing crystalline samples",
+                    "readable": true,
+                    "text": "SPECIMEN ANALYSIS: Crystalline formations from crater core. Composition unknown. Energy signature off the charts. Dr. Webb recommends immediate evacuation if containment fails."
+                },
+                {
+                    "id": "research_desk",
+                    "name": "research desk",
+                    "description": "A desk covered with papers, samples, and a locked drawer",
+                    "subcontainers": [
+                        {
+                            "id": "desk_drawer",
+                            "name": "desk drawer",
+                            "locked": true,
+                            "key_required": "flashlight",
+                            "contains": [
+                                "director_notes"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "director_notes",
+                    "name": "director's personal notes",
+                    "description": "Handwritten notes from Dr. Vasquez",
+                    "readable": true,
+                    "text": "Personal Log - Dr. Elena Vasquez: The meteor crystals are destabilizing. I've initiated evacuation protocols. Only I can authorize launch bay access. Security questions verify identity: Who directs this base? Where are specimens stored? Who studies the crater geology?"
+                },
+                {
+                    "id": "computer_terminal",
+                    "name": "analysis computer terminal",
+                    "description": "A workstation displaying research data and reports",
+                    "readable": true,
+                    "text": "RESEARCH DATABASE: Director Dr. Elena Vasquez oversees all operations. Chief Geologist Dr. Marcus Webb leads crater exploration. All meteor specimens stored in research laboratory. Evacuation route: Launch Bay contains emergency escape pods."
+                },
+                {
+                    "id": "filing_cabinet",
+                    "name": "filing cabinet",
+                    "description": "A cabinet with personnel files and research documentation",
+                    "searchable": true,
+                    "contains": [
+                        "personnel_roster"
+                    ]
+                },
+                {
+                    "id": "personnel_roster",
+                    "name": "personnel roster",
+                    "description": "A document listing all base personnel",
+                    "readable": true,
+                    "text": "CRATER BASE PERSONNEL: Dr. Elena Vasquez - Base Director, Dr. Marcus Webb - Chief Geologist, Dr. Sarah Chen - Biologist, Tech Rodriguez - Systems Engineer. Dr. Webb specializes in impact crater geology and mineral analysis."
+                },
+                {
+                    "id": "safety_poster",
+                    "name": "safety procedures poster",
+                    "description": "A poster outlining emergency protocols",
+                    "readable": true,
+                    "text": "EMERGENCY EVACUATION: In case of containment breach or system failure, proceed immediately to Launch Bay. Director authorization required. Escape pods are fueled and ready for immediate departure."
+                },
+                {
+                    "id": "launch_bay_access_door",
+                    "name": "launch bay access door",
+                    "description": "A heavy blast door with a security terminal displaying three verification questions",
+                    "locked": true,
+                    "lock_type": "password",
+                    "password_questions": [
+                        {
+                            "question": "Who is the base director?",
+                            "answer": "dr elena vasquez",
+                            "hint": "Check the control station, director's notes, and personnel roster"
+                        },
+                        {
+                            "question": "Where are meteor specimens stored?",
+                            "answer": "research laboratory",
+                            "hint": "The research log and computer terminal mention specimen storage"
+                        },
+                        {
+                            "question": "Who studies crater geology?",
+                            "answer": "dr marcus webb",
+                            "hint": "Look at the personnel roster and research database"
+                        }
+                    ],
+                    "direction": "east",
+                    "leads_to": "launch_bay",
+                    "aliases": [
+                        "door",
+                        "east"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "launch_bay",
+            "name": "Emergency Launch Bay",
+            "description": "You've reached the launch bay! A sleek escape pod sits in its launch cradle, ready for immediate departure. Through the open bay doors, you can see the stars above the crater rim. The pod's systems hum to life as you approach. Warning lights flash as the base systems continue to fail behind you. Freedom is just one launch away!",
+            "items": [
+                {
+                    "id": "escape_pod",
+                    "name": "emergency escape pod",
+                    "description": "A streamlined spacecraft designed for emergency evacuation from the crater base"
+                },
+                {
+                    "id": "launch_controls",
+                    "name": "launch control panel",
+                    "description": "The pod's control system showing all green status indicators"
+                },
+                {
+                    "id": "bay_doors",
+                    "name": "open bay doors",
+                    "description": "Massive doors revealing the crater rim and the sky beyond"
+                }
+            ],
+            "exits": [],
+            "is_goal": true,
+            "win_message": "SUCCESS! You board the escape pod and initiate the launch sequence. The pod rockets upward, carrying you safely away from the unstable crater base. As you ascend above the rim, you look back to see the glowing meteor crystals pulsing far below. You've escaped the Meteor Impact Crater Base and survived to tell the tale of the mysterious discovery. You win!"
+        }
+    ]
+}

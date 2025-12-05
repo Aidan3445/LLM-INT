@@ -1,0 +1,241 @@
+{
+    "theme": "Magic Carpet Port",
+    "title": "Magic Carpet Port Adventure #30",
+    "goal": "Solve the puzzles, achieve the main objective, and escape.",
+    "starting_room": "merchant_stall",
+    "rooms": [
+        {
+            "id": "merchant_stall",
+            "name": "Merchant's Spice Stall",
+            "description": "A colorful market stall overflowing with exotic spices, silks, and trinkets. The air is thick with the scent of cinnamon and cardamom. Brass lanterns hang from the canopy, casting dancing shadows. A large wooden counter displays various goods, and a locked chest sits beneath it. Through the back, you can see the entrance to the carpet warehouse.",
+            "items": [
+                {
+                    "id": "spice_counter",
+                    "name": "merchant's counter",
+                    "description": "A wooden counter covered with bowls of colorful spices and a brass scale",
+                    "searchable": true,
+                    "contains": [
+                        "price_list"
+                    ]
+                },
+                {
+                    "id": "price_list",
+                    "name": "merchant's price list",
+                    "description": "A parchment scroll listing prices for various goods",
+                    "readable": true,
+                    "text": "MERCHANT PRICES - Saffron: 45 gold per ounce. Silk carpet (small): 120 gold. Flying carpet (enchanted): 888 gold. Note: Master Merchant Rashid keeps the warehouse key in the locked chest. Combination is the price of our finest flying carpet."
+                },
+                {
+                    "id": "storage_cabinet",
+                    "name": "spice storage cabinet",
+                    "description": "A tall cabinet with three drawers for storing valuable spices",
+                    "subcontainers": [
+                        {
+                            "id": "top_drawer",
+                            "name": "top drawer",
+                            "locked": false,
+                            "contains": [
+                                "merchant_journal"
+                            ]
+                        },
+                        {
+                            "id": "middle_drawer",
+                            "name": "middle drawer",
+                            "locked": false,
+                            "contains": []
+                        },
+                        {
+                            "id": "bottom_drawer",
+                            "name": "bottom drawer",
+                            "locked": true,
+                            "lock_type": "combination",
+                            "combination": "888",
+                            "contains": [
+                                "brass_key"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "merchant_journal",
+                    "name": "merchant's journal",
+                    "description": "A leather-bound journal with daily entries",
+                    "readable": true,
+                    "text": "Journal Entry: Business is good at the Magic Carpet Port! Master Merchant Rashid oversees all carpet sales. The carpets are stored in the Grand Warehouse. Young apprentice Farah helps with deliveries. Remember: only Rashid can authorize the use of the royal flying carpet for escape."
+                },
+                {
+                    "id": "brass_key",
+                    "name": "ornate brass key",
+                    "description": "A decorative brass key with carpet patterns engraved on it"
+                },
+                {
+                    "id": "locked_chest",
+                    "name": "merchant's locked chest",
+                    "description": "A heavy wooden chest bound with brass fittings and a keyhole",
+                    "locked": true,
+                    "key_required": "brass_key",
+                    "contains": [
+                        "warehouse_key",
+                        "merchant_note"
+                    ]
+                },
+                {
+                    "id": "warehouse_key",
+                    "name": "iron warehouse key",
+                    "description": "A large iron key labeled 'Warehouse Access'"
+                },
+                {
+                    "id": "merchant_note",
+                    "name": "note from Rashid",
+                    "description": "A note written in elegant script",
+                    "readable": true,
+                    "text": "To my fellow merchants: The warehouse contains our most valuable carpets. The royal flying carpet is kept in the launch platform beyond. Only those who know the port's secrets may access it. - Master Merchant Rashid"
+                },
+                {
+                    "id": "warehouse_entrance",
+                    "name": "warehouse entrance",
+                    "description": "A sturdy wooden door with iron reinforcements leading to the carpet warehouse",
+                    "locked": true,
+                    "key_required": "warehouse_key",
+                    "direction": "east",
+                    "leads_to": "carpet_warehouse",
+                    "aliases": [
+                        "door",
+                        "east"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "carpet_warehouse",
+            "name": "Grand Carpet Warehouse",
+            "description": "A vast warehouse filled with rolled carpets of every size and color stacked on wooden shelves reaching to the ceiling. Magical carpets hover slightly above their racks, glowing with enchantment. Dust motes dance in shafts of light from high windows. The walls are decorated with tapestries showing flying carpets soaring over desert landscapes. A magnificent door at the far end leads to the launch platform.",
+            "items": [
+                {
+                    "id": "carpet_rack_a",
+                    "name": "carpet display rack A",
+                    "description": "A rack holding various decorative carpets with information tags",
+                    "readable": true,
+                    "text": "Carpet Collection A - Woven by Master Weaver Farah in the Grand Warehouse. Each carpet tells a story of the desert winds and starlit skies."
+                },
+                {
+                    "id": "carpet_rack_b",
+                    "name": "carpet display rack B",
+                    "description": "A rack with enchanted flying carpets that shimmer with magic",
+                    "searchable": true,
+                    "contains": [
+                        "enchantment_scroll"
+                    ]
+                },
+                {
+                    "id": "enchantment_scroll",
+                    "name": "carpet enchantment scroll",
+                    "description": "A magical scroll describing carpet enchantments",
+                    "readable": true,
+                    "text": "ENCHANTMENT GUIDE: Flying carpets are enchanted in the Moonlight Tower by our master enchanters. Each carpet is tested for safety before sale. The royal carpet awaits on the launch platform for emergency escapes."
+                },
+                {
+                    "id": "shipping_crate",
+                    "name": "shipping crate",
+                    "description": "A large wooden crate with shipping labels and documents",
+                    "searchable": true,
+                    "contains": [
+                        "shipping_manifest"
+                    ]
+                },
+                {
+                    "id": "shipping_manifest",
+                    "name": "shipping manifest",
+                    "description": "A document listing carpet shipments and destinations",
+                    "readable": true,
+                    "text": "SHIPPING MANIFEST: Carpets shipped to: Moonlight Tower (enchantment facility), Desert Oasis (retail), Mountain Palace (royal orders). Warehouse Manager: Master Merchant Rashid. Assistant: Farah the Weaver."
+                },
+                {
+                    "id": "workbench",
+                    "name": "carpet repair workbench",
+                    "description": "A workbench with tools and carpet samples",
+                    "subcontainers": [
+                        {
+                            "id": "tool_drawer",
+                            "name": "tool drawer",
+                            "locked": false,
+                            "contains": [
+                                "repair_note"
+                            ]
+                        },
+                        {
+                            "id": "sample_drawer",
+                            "name": "sample drawer",
+                            "locked": false,
+                            "contains": []
+                        }
+                    ]
+                },
+                {
+                    "id": "repair_note",
+                    "name": "repair instructions",
+                    "description": "A note about carpet maintenance",
+                    "readable": true,
+                    "text": "REPAIR LOG: All damaged carpets sent to Moonlight Tower for re-enchantment. Farah handles minor repairs here in the warehouse. Major work requires Rashid's approval."
+                },
+                {
+                    "id": "ornate_launch_platform_door",
+                    "name": "ornate launch platform door",
+                    "description": "A magnificent door carved with flying carpets and clouds. A brass plaque displays three security questions.",
+                    "locked": true,
+                    "lock_type": "password",
+                    "password_questions": [
+                        {
+                            "question": "Who is the Master Merchant of this port?",
+                            "answer": "rashid",
+                            "hint": "Check the merchant's journal and notes throughout the warehouse"
+                        },
+                        {
+                            "question": "Where are carpets enchanted?",
+                            "answer": "moonlight tower",
+                            "hint": "The enchantment scroll and shipping manifest mention this location"
+                        },
+                        {
+                            "question": "Who weaves the carpets?",
+                            "answer": "farah",
+                            "hint": "Look at the carpet rack labels and repair notes"
+                        }
+                    ],
+                    "direction": "north",
+                    "leads_to": "flying_carpet_platform",
+                    "aliases": [
+                        "door",
+                        "north"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "flying_carpet_platform",
+            "name": "Royal Flying Carpet Launch Platform",
+            "description": "You've reached the launch platform! An open-air terrace high above the port city, with a breathtaking view of minarets, domes, and the sparkling harbor below. In the center floats a magnificent royal flying carpet, woven with gold thread and glowing with powerful enchantments. The carpet hovers gently, ready to carry you to freedom. Stars twinkle in the evening sky above.",
+            "items": [
+                {
+                    "id": "royal_carpet",
+                    "name": "royal flying carpet",
+                    "description": "A magnificent carpet of deep blue silk embroidered with golden stars and crescent moons, radiating magical energy"
+                },
+                {
+                    "id": "launch_pedestal",
+                    "name": "carpet control pedestal",
+                    "description": "A marble pedestal with magical controls for directing the flying carpet"
+                },
+                {
+                    "id": "viewing_telescope",
+                    "name": "brass telescope",
+                    "description": "A telescope pointed toward the horizon, showing distant lands and adventures"
+                }
+            ],
+            "exits": [],
+            "is_goal": true,
+            "win_message": "You step onto the royal flying carpet and it rises smoothly into the air! The carpet responds to your thoughts, soaring over the Magic Carpet Port as the city lights twinkle below. The warm desert wind rushes past as you fly toward freedom and new adventures. The merchants wave farewell from below. You have successfully escaped the Magic Carpet Port! You win!"
+        }
+    ]
+}

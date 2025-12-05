@@ -1,0 +1,280 @@
+{
+    "theme": "Cursed Pirate Lagoon",
+    "title": "Cursed Pirate Lagoon Adventure #102",
+    "goal": "Solve the puzzles, achieve the main objective, and escape.",
+    "starting_room": "cursed_cove",
+    "rooms": [
+        {
+            "id": "cursed_cove",
+            "name": "Cursed Pirate Cove",
+            "description": "A misty cove shrouded in an eerie green fog. The skeletal remains of a pirate camp litter the rocky shore. Ghostly whispers echo across the water, and the air smells of brine and decay. A weathered wooden sign warns of a terrible curse. Moonlight reflects off the dark waves.",
+            "items": [
+                {
+                    "id": "warning_sign",
+                    "name": "weathered warning sign",
+                    "description": "A rotting wooden sign with carved letters",
+                    "readable": true,
+                    "text": "BEWARE! Captain Redbeard's curse claims all who seek his treasure. Only those who know his story may pass. He died in the year 1692, taking his secrets to a watery grave."
+                },
+                {
+                    "id": "supply_barrel",
+                    "name": "old supply barrel",
+                    "description": "A barnacle-covered barrel that once held provisions",
+                    "searchable": true,
+                    "contains": [
+                        "rusty_cutlass"
+                    ]
+                },
+                {
+                    "id": "rusty_cutlass",
+                    "name": "rusty cutlass",
+                    "description": "A corroded pirate sword, still sharp enough to cut through rope"
+                },
+                {
+                    "id": "pirate_chest",
+                    "name": "locked pirate chest",
+                    "description": "A small chest bound with heavy rope and secured with a combination lock",
+                    "locked": true,
+                    "lock_type": "combination",
+                    "combination": "1692",
+                    "contains": [
+                        "brass_key",
+                        "captains_letter"
+                    ]
+                },
+                {
+                    "id": "brass_key",
+                    "name": "tarnished brass key",
+                    "description": "A brass key with a skull emblem, green with age"
+                },
+                {
+                    "id": "captains_letter",
+                    "name": "Captain's sealed letter",
+                    "description": "A letter sealed with red wax bearing Redbeard's mark",
+                    "readable": true,
+                    "text": "To whoever finds this: I am Captain Redbeard, and I have hidden my greatest treasure in the grotto beyond the ship graveyard. My first mate was Bones McGraw. My ship was the Crimson Revenge. The treasure lies in Skull Rock Grotto. Beware the curse!"
+                },
+                {
+                    "id": "campfire_remains",
+                    "name": "cold campfire",
+                    "description": "The remains of an old campfire with charred wood",
+                    "searchable": true,
+                    "contains": [
+                        "treasure_map_fragment"
+                    ]
+                },
+                {
+                    "id": "treasure_map_fragment",
+                    "name": "burned map fragment",
+                    "description": "A partially burned piece of parchment showing part of a map",
+                    "readable": true,
+                    "text": "The map shows a path from the cove through the ship graveyard to a hidden grotto. A note reads: 'The grotto gate opens only to those who prove they know Redbeard's tale.'"
+                },
+                {
+                    "id": "thick_rope_barrier",
+                    "name": "thick rope barrier",
+                    "description": "Heavy ropes blocking the path to the ship graveyard, covered in seaweed",
+                    "locked": true,
+                    "key_required": "rusty_cutlass",
+                    "direction": "north",
+                    "leads_to": "ship_graveyard",
+                    "aliases": [
+                        "ropes",
+                        "barrier",
+                        "north"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "ship_graveyard",
+            "name": "Haunted Ship Graveyard",
+            "description": "A nightmarish scene of wrecked ships jutting from the shallow waters. Broken masts reach toward the sky like skeletal fingers. Ghostly lights flicker in the fog. The hulls of three ships are visible: the Crimson Revenge, the Sea Serpent, and the Black Pearl. A cave entrance glows with an unnatural light to the east.",
+            "items": [
+                {
+                    "id": "crimson_revenge_hull",
+                    "name": "hull of the Crimson Revenge",
+                    "description": "The remains of Captain Redbeard's flagship, listing heavily to one side",
+                    "readable": true,
+                    "text": "The nameplate reads: 'Crimson Revenge - Captained by the infamous Redbeard. First Mate: Bones McGraw. Lost to the curse in 1692.'"
+                },
+                {
+                    "id": "sea_serpent_wreck",
+                    "name": "wreck of the Sea Serpent",
+                    "description": "A merchant vessel that met its doom in these waters",
+                    "searchable": true,
+                    "contains": [
+                        "ships_log"
+                    ]
+                },
+                {
+                    "id": "ships_log",
+                    "name": "waterlogged ship's log",
+                    "description": "A journal from the Sea Serpent's captain",
+                    "readable": true,
+                    "text": "Final entry: We encountered the ghost ship Crimson Revenge. Captain Redbeard's spirit guards his treasure in Skull Rock Grotto. They say only gold can break a pirate's curse. We tried to flee but the curse took us too."
+                },
+                {
+                    "id": "black_pearl_cabin",
+                    "name": "cabin of the Black Pearl",
+                    "description": "A partially intact captain's cabin with a locked strongbox",
+                    "subcontainers": [
+                        {
+                            "id": "upper_compartment",
+                            "name": "upper compartment",
+                            "locked": false,
+                            "contains": [
+                                "navigation_charts"
+                            ]
+                        },
+                        {
+                            "id": "locked_strongbox",
+                            "name": "locked strongbox",
+                            "locked": true,
+                            "key_required": "brass_key",
+                            "contains": [
+                                "cursed_medallion"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "navigation_charts",
+                    "name": "old navigation charts",
+                    "description": "Sea charts marking the location of Skull Rock Grotto",
+                    "readable": true,
+                    "text": "These charts show the exact location of Skull Rock Grotto, marked with a skull symbol. A note reads: 'Redbeard's first mate Bones McGraw knew the way. The treasure can only be claimed by breaking the curse with gold.'"
+                },
+                {
+                    "id": "cursed_medallion",
+                    "name": "cursed silver medallion",
+                    "description": "A tarnished silver medallion that pulses with dark energy"
+                },
+                {
+                    "id": "floating_debris",
+                    "name": "floating debris pile",
+                    "description": "A collection of broken planks and barrels floating in the water",
+                    "searchable": true,
+                    "contains": [
+                        "golden_doubloon"
+                    ]
+                },
+                {
+                    "id": "golden_doubloon",
+                    "name": "Spanish gold doubloon",
+                    "description": "A gleaming gold coin that radiates warmth and seems to repel the curse"
+                },
+                {
+                    "id": "glowing_cave_entrance",
+                    "name": "glowing cave entrance",
+                    "description": "A cave entrance carved into the cliff face, emanating an eerie green glow. Ancient symbols are carved around the opening, and three questions are etched into a stone tablet.",
+                    "locked": true,
+                    "lock_type": "password",
+                    "password_questions": [
+                        {
+                            "question": "What was the name of Redbeard's ship?",
+                            "answer": "crimson revenge",
+                            "hint": "Check the hull of Redbeard's flagship in the graveyard"
+                        },
+                        {
+                            "question": "Who was Redbeard's first mate?",
+                            "answer": "bones mcgraw",
+                            "hint": "The captain's letter mentions this name"
+                        },
+                        {
+                            "question": "Where does the treasure lie?",
+                            "answer": "skull rock grotto",
+                            "hint": "Multiple sources mention the treasure's location"
+                        }
+                    ],
+                    "direction": "east",
+                    "leads_to": "treasure_grotto",
+                    "aliases": [
+                        "cave",
+                        "entrance",
+                        "grotto",
+                        "east"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "treasure_grotto",
+            "name": "Skull Rock Grotto",
+            "description": "You have found Captain Redbeard's legendary treasure chamber! The cavern is filled with piles of gold coins, jeweled goblets, and precious artifacts. In the center, on a stone altar, sits an ornate chest overflowing with treasure. The ghostly figure of Captain Redbeard appears, his spectral form watching you. A shimmering portal of light offers escape from the cursed lagoon.",
+            "items": [
+                {
+                    "id": "treasure_altar",
+                    "name": "stone treasure altar",
+                    "description": "An ancient altar holding Redbeard's greatest treasures",
+                    "readable": true,
+                    "text": "Inscription: 'To break the curse and claim the treasure, place the cursed silver and blessed gold together. Only then may you escape with your prize.'"
+                },
+                {
+                    "id": "treasure_hoard",
+                    "name": "pirate treasure hoard",
+                    "description": "Mountains of gold coins, jewels, and precious artifacts",
+                    "searchable": true,
+                    "contains": [
+                        "ruby_necklace",
+                        "emerald_ring"
+                    ]
+                },
+                {
+                    "id": "ruby_necklace",
+                    "name": "ruby necklace",
+                    "description": "A stunning necklace with blood-red rubies"
+                },
+                {
+                    "id": "emerald_ring",
+                    "name": "emerald ring",
+                    "description": "A golden ring set with a large emerald"
+                },
+                {
+                    "id": "redbeard_ghost",
+                    "name": "ghost of Captain Redbeard",
+                    "description": "The spectral form of the legendary pirate captain",
+                    "readable": true,
+                    "text": "The ghost speaks: 'You have proven yourself worthy by knowing my story. Take the treasure, but remember - only by combining the cursed silver with blessed gold can you break my curse and escape this place.'"
+                },
+                {
+                    "id": "shimmering_escape_portal",
+                    "name": "shimmering escape portal",
+                    "description": "A magical portal that leads away from the cursed lagoon. It requires both the cursed medallion and the gold doubloon to activate fully.",
+                    "locked": true,
+                    "key_required": "golden_doubloon",
+                    "direction": "north",
+                    "leads_to": "freedom",
+                    "aliases": [
+                        "portal",
+                        "exit",
+                        "north"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "freedom",
+            "name": "Safe Harbor",
+            "description": "You emerge on a peaceful beach bathed in warm sunlight. The curse is broken! Captain Redbeard's ghost appears one final time, nodding gratefully before fading into the morning light. A merchant ship waits at anchor, ready to take you and your treasure to safety.",
+            "items": [
+                {
+                    "id": "merchant_vessel",
+                    "name": "friendly merchant ship",
+                    "description": "A sturdy vessel with a crew ready to help you"
+                },
+                {
+                    "id": "treasure_chest_final",
+                    "name": "chest of treasure",
+                    "description": "The treasure you claimed from Redbeard's grotto, now safely yours"
+                }
+            ],
+            "exits": [],
+            "is_goal": true,
+            "win_message": "You have broken Captain Redbeard's curse and escaped the haunted lagoon with his legendary treasure! The cursed silver medallion crumbles to dust as the golden doubloon glows brightly. Redbeard's spirit is finally at peace, and you sail away a wealthy adventurer with an incredible tale of the Cursed Pirate Lagoon. You win!"
+        }
+    ]
+}

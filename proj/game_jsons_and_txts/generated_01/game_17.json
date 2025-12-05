@@ -1,0 +1,247 @@
+{
+    "theme": "Forbidden Forest Ritual Site",
+    "title": "Forbidden Forest Ritual Site Adventure #17",
+    "goal": "Solve the puzzles, achieve the main objective, and escape.",
+    "starting_room": "ritual_clearing",
+    "rooms": [
+        {
+            "id": "ritual_clearing",
+            "name": "Ancient Ritual Clearing",
+            "description": "A circular clearing deep in the forbidden forest where moonlight filters through twisted branches. Ancient standing stones form a perfect circle around a weathered altar. Carved totems watch from the shadows, their eyes seeming to follow your movements. The air is thick with the scent of pine and something older, more primal. Moss and vines cover everything.",
+            "items": [
+                {
+                    "id": "stone_altar",
+                    "name": "weathered stone altar",
+                    "description": "A flat stone altar covered in ancient runes and dried herbs",
+                    "readable": true,
+                    "text": "Inscription: 'Here the Forest Keeper performed the binding ritual in the year 1692. The sacred flame burns eternal in the Heart Oak. Only moonwater can break the forest's seal.'"
+                },
+                {
+                    "id": "hollow_log",
+                    "name": "hollow fallen log",
+                    "description": "A massive rotting log covered in mushrooms and thick moss",
+                    "searchable": true,
+                    "contains": [
+                        "ritual_journal"
+                    ]
+                },
+                {
+                    "id": "ritual_journal",
+                    "name": "weathered journal",
+                    "description": "Ancient pages bound in leather, barely readable",
+                    "readable": true,
+                    "text": "Journal of the Forest Keeper: I completed the binding ceremony in 1692 during the dark times. The power is sealed within the sacred grove at the Heart Oak. Three truths guard the inner sanctum where the ritual was completed."
+                },
+                {
+                    "id": "carved_totem",
+                    "name": "wooden totem pole",
+                    "description": "A tall totem carved with animal spirits and forest symbols",
+                    "searchable": true,
+                    "contains": [
+                        "brass_key"
+                    ]
+                },
+                {
+                    "id": "brass_key",
+                    "name": "tarnished brass key",
+                    "description": "An old brass key with a leaf pattern engraved on it"
+                },
+                {
+                    "id": "stone_box",
+                    "name": "carved stone box",
+                    "description": "A heavy box carved with forest symbols and a four digit combination lock",
+                    "locked": true,
+                    "lock_type": "combination",
+                    "combination": "1692",
+                    "contains": [
+                        "silver_key"
+                    ]
+                },
+                {
+                    "id": "silver_key",
+                    "name": "ancient silver key",
+                    "description": "A silver key with a wolf head carved into the handle"
+                },
+                {
+                    "id": "ritual_chest",
+                    "name": "wooden ritual chest",
+                    "description": "A chest bound with iron bands and a brass lock",
+                    "locked": true,
+                    "key_required": "brass_key",
+                    "contains": [
+                        "sacred_herbs",
+                        "keeper_notes"
+                    ]
+                },
+                {
+                    "id": "sacred_herbs",
+                    "name": "bundle of sacred herbs",
+                    "description": "Dried herbs tied with braided grass, used in ancient rituals"
+                },
+                {
+                    "id": "keeper_notes",
+                    "name": "Forest Keeper's notes",
+                    "description": "Detailed notes about the ritual site",
+                    "readable": true,
+                    "text": "I am the Forest Keeper, guardian of these woods. The ritual site's power flows from the Heart Oak at the grove's center. I have sealed the inner sanctum with three questions. Only one who understands the forest's secrets may enter."
+                },
+                {
+                    "id": "standing_stones",
+                    "name": "circle of standing stones",
+                    "description": "Twelve ancient stones arranged in a perfect circle, each carved with symbols",
+                    "readable": true,
+                    "text": "Each stone bears a different symbol: moon, oak, wolf, raven, serpent, stag, bear, owl, fox, boar, crow, and thorn. They mark the boundary of the sacred space."
+                },
+                {
+                    "id": "overgrown_forest_path",
+                    "name": "overgrown forest path",
+                    "description": "A narrow path leading deeper into the sacred grove, barely visible through the undergrowth",
+                    "locked": false,
+                    "direction": "north",
+                    "leads_to": "sacred_grove",
+                    "aliases": [
+                        "path",
+                        "north"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "sacred_grove",
+            "name": "Sacred Grove",
+            "description": "A mystical grove dominated by an enormous ancient oak tree known as the Heart Oak. Its gnarled roots spread across the forest floor like veins of the earth itself. Fireflies dance in the air, and the sound of distant chanting echoes through the trees. A stone shrine sits at the base of the oak, and vines cover a carved archway to the east.",
+            "items": [
+                {
+                    "id": "heart_oak",
+                    "name": "Heart Oak tree",
+                    "description": "A massive oak tree that must be thousands of years old, its trunk carved with countless symbols",
+                    "readable": true,
+                    "text": "The carvings tell a story: 'Here burns the sacred flame, eternal heart of the forest. The Forest Keeper tends the fire. The Heart Oak holds all power. Moonwater cleanses and releases.'"
+                },
+                {
+                    "id": "root_hollow",
+                    "name": "hollow in the oak roots",
+                    "description": "A dark hollow between the massive roots of the Heart Oak",
+                    "searchable": true,
+                    "contains": [
+                        "moonwater_vial"
+                    ]
+                },
+                {
+                    "id": "moonwater_vial",
+                    "name": "vial of moonwater",
+                    "description": "A small glass vial containing water that glows with silvery light"
+                },
+                {
+                    "id": "stone_shrine",
+                    "name": "moss covered shrine",
+                    "description": "A small shrine with offerings of flowers and stones at the base of the Heart Oak",
+                    "readable": true,
+                    "text": "Offerings to the forest spirits. A plaque reads: 'The Forest Keeper protects us. The Heart Oak gives us life. Moonwater purifies our souls.'"
+                },
+                {
+                    "id": "ritual_circle",
+                    "name": "ritual circle",
+                    "description": "A circle of stones with ash from ancient fires",
+                    "searchable": true,
+                    "contains": [
+                        "bone_talisman"
+                    ]
+                },
+                {
+                    "id": "bone_talisman",
+                    "name": "bone talisman",
+                    "description": "A talisman carved from bone and hung on a leather cord"
+                },
+                {
+                    "id": "locked_offering_box",
+                    "name": "locked offering box",
+                    "description": "A wooden box at the shrine with a silver lock",
+                    "locked": true,
+                    "key_required": "silver_key",
+                    "contains": [
+                        "final_prophecy"
+                    ]
+                },
+                {
+                    "id": "final_prophecy",
+                    "name": "prophecy scroll",
+                    "description": "A scroll describing the ritual's purpose",
+                    "readable": true,
+                    "text": "The Final Prophecy: When the forest is threatened, the Forest Keeper shall seal its power within the Heart Oak. The sacred flame shall burn eternal in the inner sanctum, protected by three truths that only the worthy may answer."
+                },
+                {
+                    "id": "vine_covered_stone_archway",
+                    "name": "vine covered stone archway",
+                    "description": "An ancient archway leading to the inner sanctum, covered in thick vines. Three questions are carved into the stone.",
+                    "locked": true,
+                    "lock_type": "password",
+                    "password_questions": [
+                        {
+                            "question": "Who guards the forest?",
+                            "answer": "forest keeper",
+                            "hint": "Check the journal and notes found around the ritual site"
+                        },
+                        {
+                            "question": "Where does the sacred flame burn?",
+                            "answer": "heart oak",
+                            "hint": "Read the altar inscription and the Heart Oak carvings"
+                        },
+                        {
+                            "question": "What breaks the binding?",
+                            "answer": "moonwater",
+                            "hint": "The altar inscription mentions what can break the forest's seal"
+                        }
+                    ],
+                    "direction": "east",
+                    "leads_to": "inner_sanctum",
+                    "aliases": [
+                        "archway",
+                        "east"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "inner_sanctum",
+            "name": "Inner Sanctum",
+            "description": "You have entered the heart of the ritual site! A sacred flame burns in a stone basin at the center of a circular chamber carved from living wood. The walls are covered in glowing runes that pulse with ancient power. Roots from the Heart Oak above form a natural ceiling. The air hums with magical energy. A shaft of moonlight illuminates a path leading upward to freedom.",
+            "items": [
+                {
+                    "id": "sacred_flame",
+                    "name": "eternal sacred flame",
+                    "description": "A flame that burns without fuel, glowing with green and silver light"
+                },
+                {
+                    "id": "stone_basin",
+                    "name": "ritual stone basin",
+                    "description": "The basin holding the sacred flame, carved with protective symbols"
+                },
+                {
+                    "id": "glowing_runes",
+                    "name": "ancient glowing runes",
+                    "description": "Magical inscriptions covering every surface of the chamber",
+                    "readable": true,
+                    "text": "The runes tell of the forest's power: 'Here lies the heart of the ancient wood. The ritual is complete. The binding is sealed. The forest endures eternal. The Forest Keeper's work is done.'"
+                },
+                {
+                    "id": "root_ceiling",
+                    "name": "ceiling of oak roots",
+                    "description": "Massive roots from the Heart Oak forming a natural dome overhead, pulsing with life energy"
+                },
+                {
+                    "id": "moonlight_path",
+                    "name": "moonlight path",
+                    "description": "A shaft of pure moonlight creating a path upward through the roots",
+                    "readable": true,
+                    "text": "The moonlight forms a stairway leading up through the Heart Oak and out to freedom above."
+                }
+            ],
+            "exits": [],
+            "is_goal": true,
+            "win_message": "You have reached the inner sanctum and witnessed the sacred flame! The ancient ritual site has accepted your presence. The forest's power flows through you as the moonlight guides you safely up through the Heart Oak and out of the forbidden woods. The mysteries of the ritual site are now yours to keep. You win!"
+        }
+    ]
+}

@@ -1,0 +1,259 @@
+{
+    "theme": "Forbidden Forest Ritual Site",
+    "title": "Forbidden Forest Ritual Site Adventure #67",
+    "goal": "Solve the puzzles, achieve the main objective, and escape.",
+    "starting_room": "forest_entrance",
+    "rooms": [
+        {
+            "id": "forest_entrance",
+            "name": "Forbidden Forest Entrance",
+            "description": "You stand at the edge of a dark, ancient forest. Twisted trees loom overhead, their branches forming a canopy that blocks out most of the sunlight. Strange symbols are carved into the bark of nearby trees. A narrow path leads deeper into the woods, and the air is thick with the scent of moss and decay. Animal bones hang from branches, swaying in an unfelt breeze.",
+            "items": [
+                {
+                    "id": "carved_tree",
+                    "name": "symbol carved tree",
+                    "description": "A massive oak with deep carvings covering its trunk",
+                    "readable": true,
+                    "text": "The carvings depict a ritual performed by the Forest Warden in the year 1666. The symbols show a circle of stones and a sacred flame. At the bottom is carved: 'The binding was sealed when darkness fell upon the land.'"
+                },
+                {
+                    "id": "bone_chimes",
+                    "name": "hanging bone chimes",
+                    "description": "Animal bones tied with leather cord, creating an eerie wind chime",
+                    "searchable": true,
+                    "contains": [
+                        "tarnished_key"
+                    ]
+                },
+                {
+                    "id": "tarnished_key",
+                    "name": "tarnished brass key",
+                    "description": "An old brass key covered in verdigris and forest grime"
+                },
+                {
+                    "id": "stone_marker",
+                    "name": "ancient stone marker",
+                    "description": "A weathered stone with faded inscriptions",
+                    "readable": true,
+                    "text": "Warning: Beyond lies the ritual site of the Forest Warden. The sacred grove holds power beyond mortal understanding. Only those who know the three truths may enter the inner circle."
+                },
+                {
+                    "id": "hollow_stump",
+                    "name": "hollow tree stump",
+                    "description": "A rotting stump with a hollow interior and a combination lock mechanism carved into it",
+                    "locked": true,
+                    "lock_type": "combination",
+                    "combination": "1666",
+                    "contains": [
+                        "ritual_dagger",
+                        "warden_journal"
+                    ]
+                },
+                {
+                    "id": "ritual_dagger",
+                    "name": "ceremonial dagger",
+                    "description": "A silver dagger with runes etched along the blade"
+                },
+                {
+                    "id": "warden_journal",
+                    "name": "Forest Warden's journal",
+                    "description": "A leather bound journal with water stained pages",
+                    "readable": true,
+                    "text": "I am the Forest Warden, keeper of the ancient ways. In 1666, I performed the binding ritual at the stone circle. The sacred flame burns eternal at the heart of the grove. Three truths guard the inner sanctum: who guards this place, where the flame burns, and what seals the binding."
+                },
+                {
+                    "id": "wooden_chest",
+                    "name": "moss covered chest",
+                    "description": "A wooden chest bound with iron bands and a brass lock",
+                    "locked": true,
+                    "key_required": "tarnished_key",
+                    "contains": [
+                        "forest_map",
+                        "moonstone"
+                    ]
+                },
+                {
+                    "id": "forest_map",
+                    "name": "hand drawn map",
+                    "description": "A map showing the layout of the ritual site",
+                    "readable": true,
+                    "text": "The map shows a path leading from the entrance to a stone circle, and from there to the sacred grove where the eternal flame burns. Notes indicate: 'The Forest Warden's power flows from the sacred flame. Moonstone seals the binding.'"
+                },
+                {
+                    "id": "moonstone",
+                    "name": "glowing moonstone",
+                    "description": "A pale stone that glows with silvery light"
+                },
+                {
+                    "id": "narrow_forest_path",
+                    "name": "narrow forest path",
+                    "description": "A winding path leading deeper into the forbidden forest toward the ritual site",
+                    "locked": false,
+                    "direction": "north",
+                    "leads_to": "stone_circle",
+                    "aliases": [
+                        "path",
+                        "north"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "stone_circle",
+            "name": "Ancient Stone Circle",
+            "description": "A clearing dominated by a circle of twelve standing stones, each taller than a man. The stones are covered in moss and ancient runes that glow faintly in the dim light. In the center of the circle is a flat altar stone stained dark with age. The ground is bare earth, and no plants grow within the circle. An oppressive energy fills the air.",
+            "items": [
+                {
+                    "id": "altar_stone",
+                    "name": "central altar stone",
+                    "description": "A flat stone altar in the center of the circle, covered in carved symbols",
+                    "readable": true,
+                    "text": "The altar is inscribed with ritual instructions: 'The Forest Warden commands the power of this place. The sacred flame burns eternal in the grove beyond. The moonstone seals what must not be released.'"
+                },
+                {
+                    "id": "standing_stones",
+                    "name": "circle of standing stones",
+                    "description": "Twelve massive stones arranged in a perfect circle",
+                    "readable": true,
+                    "text": "Each stone bears a different rune: wolf, raven, bear, stag, owl, serpent, boar, fox, crow, thorn, moon, and flame. The runes pulse with a faint green light."
+                },
+                {
+                    "id": "ritual_bowl",
+                    "name": "stone ritual bowl",
+                    "description": "A bowl carved from black stone, sitting on the altar",
+                    "searchable": true,
+                    "contains": [
+                        "silver_key"
+                    ]
+                },
+                {
+                    "id": "silver_key",
+                    "name": "ornate silver key",
+                    "description": "A key decorated with forest symbols and a wolf's head"
+                },
+                {
+                    "id": "offering_pile",
+                    "name": "pile of offerings",
+                    "description": "A collection of bones, feathers, and stones left by ancient worshippers",
+                    "searchable": true,
+                    "contains": [
+                        "ancient_scroll"
+                    ]
+                },
+                {
+                    "id": "ancient_scroll",
+                    "name": "weathered scroll",
+                    "description": "A scroll protected by a leather case",
+                    "readable": true,
+                    "text": "Ritual Instructions: The binding ceremony requires three elements - the Forest Warden's authority, the sacred flame's power, and the moonstone's seal. To enter the sacred grove, one must answer the three questions of truth."
+                },
+                {
+                    "id": "stone_chest",
+                    "name": "carved stone chest",
+                    "description": "A heavy chest carved from a single piece of granite with a silver lock",
+                    "locked": true,
+                    "key_required": "silver_key",
+                    "contains": [
+                        "sacred_herbs",
+                        "binding_text"
+                    ]
+                },
+                {
+                    "id": "sacred_herbs",
+                    "name": "bundle of dried herbs",
+                    "description": "Herbs used in ancient forest rituals, still potent after centuries"
+                },
+                {
+                    "id": "binding_text",
+                    "name": "binding ritual text",
+                    "description": "A stone tablet with the complete binding ritual inscribed on it",
+                    "readable": true,
+                    "text": "The Binding Ritual: Performed by the Forest Warden at the stone circle, channeling power from the sacred flame in the grove. The moonstone was used to seal the binding, trapping the ancient evil within the earth. The grove lies beyond, where the eternal flame still burns."
+                },
+                {
+                    "id": "vine_covered_archway",
+                    "name": "vine covered archway",
+                    "description": "A natural archway formed by intertwined trees and vines, leading to the sacred grove. Three questions are carved into the living wood.",
+                    "locked": true,
+                    "lock_type": "password",
+                    "password_questions": [
+                        {
+                            "question": "Who guards this ritual site?",
+                            "answer": "forest warden",
+                            "hint": "Check the journal and inscriptions throughout the site"
+                        },
+                        {
+                            "question": "Where does the sacred flame burn?",
+                            "answer": "sacred grove",
+                            "hint": "The map and ritual texts mention where the eternal flame is located"
+                        },
+                        {
+                            "question": "What seals the binding?",
+                            "answer": "moonstone",
+                            "hint": "Read the binding ritual text and the map carefully"
+                        }
+                    ],
+                    "direction": "east",
+                    "leads_to": "sacred_grove",
+                    "aliases": [
+                        "archway",
+                        "entrance",
+                        "east"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "sacred_grove",
+            "name": "Sacred Grove",
+            "description": "You have entered the heart of the ritual site! A small clearing surrounded by ancient trees whose roots glow with ethereal light. In the center, a sacred flame burns in a stone basin without any fuel, casting dancing shadows. The flame burns with colors that shift between green, silver, and gold. The air hums with power, and you can feel the weight of centuries of ritual magic. A path of moonlight leads through the trees to freedom.",
+            "items": [
+                {
+                    "id": "eternal_flame",
+                    "name": "sacred eternal flame",
+                    "description": "A flame that burns without consuming anything, the source of the ritual site's power",
+                    "readable": true,
+                    "text": "The flame dances with otherworldly colors. As you watch, images form in the fire - the Forest Warden performing the binding ritual, sealing away an ancient darkness with the power of the moonstone."
+                },
+                {
+                    "id": "flame_basin",
+                    "name": "stone flame basin",
+                    "description": "The basin holding the eternal flame, carved with protective runes"
+                },
+                {
+                    "id": "glowing_roots",
+                    "name": "luminescent tree roots",
+                    "description": "The roots of the ancient trees glow with absorbed magical energy",
+                    "readable": true,
+                    "text": "The roots pulse with life force, drawing power from the sacred flame and spreading it throughout the forest. This is the source of the forest's forbidden nature."
+                },
+                {
+                    "id": "ritual_circle",
+                    "name": "inner ritual circle",
+                    "description": "A smaller circle of stones surrounding the flame",
+                    "searchable": true,
+                    "contains": [
+                        "warden_staff"
+                    ]
+                },
+                {
+                    "id": "warden_staff",
+                    "name": "Forest Warden's staff",
+                    "description": "An ancient wooden staff topped with a moonstone, left behind by the warden"
+                },
+                {
+                    "id": "moonlight_path",
+                    "name": "path of moonlight",
+                    "description": "A shimmering path of silvery light leading through the trees to safety",
+                    "readable": true,
+                    "text": "The moonlight path appears to be a gift from the forest itself, acknowledging your respect for the ancient ritual site and granting you safe passage."
+                }
+            ],
+            "exits": [],
+            "is_goal": true,
+            "win_message": "You have reached the sacred grove and witnessed the eternal flame! The Forest Warden's ancient magic recognizes your worthiness. The moonlight path opens before you, leading safely out of the forbidden forest. You have solved the mysteries of the ritual site and escaped with your life and newfound knowledge of the ancient ways. You win!"
+        }
+    ]
+}

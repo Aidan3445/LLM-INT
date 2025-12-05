@@ -1,0 +1,282 @@
+{
+    "theme": "Gladiator's Arena Tunnels",
+    "title": "Gladiator's Arena Tunnels Adventure #21",
+    "goal": "Solve the puzzles, achieve the main objective, and escape.",
+    "starting_room": "gladiators_cell",
+    "rooms": [
+        {
+            "id": "gladiators_cell",
+            "name": "Gladiator's Cell",
+            "description": "A cramped stone cell deep beneath the arena. The walls are covered with scratched tallies marking countless days of captivity. Rusted chains hang from iron rings bolted to the walls. Through a small barred window high above, you can hear the distant roar of the crowd. The air is damp and smells of sweat and blood. A heavy wooden door is the only exit.",
+            "items": [
+                {
+                    "id": "stone_bench",
+                    "name": "stone sleeping bench",
+                    "description": "A crude stone bench where gladiators rest between battles",
+                    "searchable": true,
+                    "contains": [
+                        "hidden_chisel"
+                    ]
+                },
+                {
+                    "id": "hidden_chisel",
+                    "name": "iron chisel",
+                    "description": "A small chisel hidden beneath the bench, used to carve messages into stone"
+                },
+                {
+                    "id": "wall_carvings",
+                    "name": "wall carvings",
+                    "description": "Messages and symbols scratched into the stone walls by previous prisoners",
+                    "readable": true,
+                    "text": "Among the tallies and prayers, one message stands out: 'The Colosseum was completed in the year 80 AD. Emperor Titus opened it with 100 days of games. Remember this - it is the key to freedom. - Maximus'"
+                },
+                {
+                    "id": "wooden_crate",
+                    "name": "supply crate",
+                    "description": "A wooden crate containing basic supplies and personal belongings",
+                    "subcontainers": [
+                        {
+                            "id": "top_compartment",
+                            "name": "top compartment",
+                            "locked": false,
+                            "contains": [
+                                "gladiator_scroll"
+                            ]
+                        },
+                        {
+                            "id": "bottom_compartment",
+                            "name": "bottom compartment",
+                            "locked": true,
+                            "lock_type": "combination",
+                            "combination": "0080",
+                            "contains": [
+                                "bronze_key"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "gladiator_scroll",
+                    "name": "gladiator's journal",
+                    "description": "A worn scroll containing the writings of a former gladiator",
+                    "readable": true,
+                    "text": "Day 47: I have fought in the arena for three years. Arena Master Marcus Flavius controls everything - our training, our fights, our lives. They say the great champion Maximus once escaped through the beast tunnels. The combination to my hidden compartment is the year this cursed arena was built."
+                },
+                {
+                    "id": "bronze_key",
+                    "name": "bronze key",
+                    "description": "A bronze key with the imperial eagle engraved on it"
+                },
+                {
+                    "id": "iron_chains",
+                    "name": "rusted chains",
+                    "description": "Heavy chains that once bound prisoners",
+                    "searchable": true,
+                    "contains": []
+                },
+                {
+                    "id": "locked_chest",
+                    "name": "wooden chest",
+                    "description": "A sturdy chest bound with iron bands and a bronze lock",
+                    "locked": true,
+                    "key_required": "bronze_key",
+                    "contains": [
+                        "access_token",
+                        "arena_notice"
+                    ]
+                },
+                {
+                    "id": "access_token",
+                    "name": "gladiator access token",
+                    "description": "A bronze token that grants access to restricted areas of the tunnels"
+                },
+                {
+                    "id": "arena_notice",
+                    "name": "official arena notice",
+                    "description": "A notice posted by the arena administration",
+                    "readable": true,
+                    "text": "NOTICE: All gladiators must report to the Armory for weapon assignment before combat. Arena Master Marcus Flavius oversees all operations. Champions are housed in special quarters. The beast tunnels are strictly forbidden to all personnel."
+                },
+                {
+                    "id": "heavy_cell_door",
+                    "name": "heavy cell door",
+                    "description": "A thick wooden door reinforced with iron bands. A slot for an access token is built into the lock mechanism.",
+                    "locked": true,
+                    "key_required": "access_token",
+                    "direction": "north",
+                    "leads_to": "armory_tunnel",
+                    "aliases": [
+                        "door",
+                        "north"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "armory_tunnel",
+            "name": "Armory Tunnel",
+            "description": "A long stone corridor lined with weapon racks and armor stands. Torches flicker in wall sconces, casting dancing shadows. The walls are decorated with faded murals depicting famous gladiatorial battles. Training dummies stand in alcoves, scarred from countless practice strikes. A massive iron door at the far end leads to the Arena Master's private chambers.",
+            "items": [
+                {
+                    "id": "weapon_rack",
+                    "name": "weapon rack",
+                    "description": "A rack holding various gladiatorial weapons - swords, tridents, and nets",
+                    "searchable": true,
+                    "contains": [
+                        "gladius"
+                    ]
+                },
+                {
+                    "id": "gladius",
+                    "name": "gladius sword",
+                    "description": "A short Roman sword, standard weapon of the gladiator"
+                },
+                {
+                    "id": "armor_stand",
+                    "name": "armor stand",
+                    "description": "A wooden stand displaying a gladiator's protective gear",
+                    "searchable": true,
+                    "contains": [
+                        "helmet"
+                    ]
+                },
+                {
+                    "id": "helmet",
+                    "name": "bronze helmet",
+                    "description": "A gladiator's helmet with a distinctive crest"
+                },
+                {
+                    "id": "battle_mural",
+                    "name": "battle mural",
+                    "description": "A large mural depicting a legendary gladiatorial combat",
+                    "readable": true,
+                    "text": "The mural shows the great champion Maximus defeating three opponents in a single day. An inscription reads: 'Maximus, Champion of Champions, victor of 50 battles. His legend lives eternal. He alone knew the secret path through the beast tunnels to freedom.'"
+                },
+                {
+                    "id": "training_dummy",
+                    "name": "practice training dummy",
+                    "description": "A wooden dummy used for combat training, heavily scarred",
+                    "searchable": true,
+                    "contains": [
+                        "training_schedule"
+                    ]
+                },
+                {
+                    "id": "training_schedule",
+                    "name": "training schedule",
+                    "description": "A parchment listing training times and assignments",
+                    "readable": true,
+                    "text": "TRAINING SCHEDULE: All gladiators report to Arena Master Marcus Flavius at dawn. Champions receive special training. Remember: discipline, strength, and honor. The beast tunnels are maintained by the beast master and are off-limits to gladiators."
+                },
+                {
+                    "id": "supply_cabinet",
+                    "name": "supply cabinet",
+                    "description": "A tall cabinet with compartments for storing equipment and supplies",
+                    "subcontainers": [
+                        {
+                            "id": "upper_shelf",
+                            "name": "upper shelf",
+                            "locked": false,
+                            "contains": [
+                                "oil_lamp"
+                            ]
+                        },
+                        {
+                            "id": "lower_shelf",
+                            "name": "lower shelf",
+                            "locked": false,
+                            "contains": [
+                                "escape_map"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "oil_lamp",
+                    "name": "oil lamp",
+                    "description": "A small lamp for lighting dark tunnels"
+                },
+                {
+                    "id": "escape_map",
+                    "name": "tunnel map",
+                    "description": "A hand-drawn map of the underground tunnels",
+                    "readable": true,
+                    "text": "TUNNEL MAP: The beast tunnels run beneath the arena floor, connecting to the outside. Only the Arena Master has official access. Legend says Maximus used these tunnels to escape. The path leads to freedom for those brave enough to take it."
+                },
+                {
+                    "id": "champions_plaque",
+                    "name": "champions plaque",
+                    "description": "A bronze plaque listing the arena's greatest champions",
+                    "readable": true,
+                    "text": "HALL OF CHAMPIONS: Maximus - 50 victories, Spartacus - 42 victories, Priscus - 38 victories, Verus - 35 victories. These warriors brought glory to the arena and honor to Rome."
+                },
+                {
+                    "id": "iron_door_to_master's_chamber",
+                    "name": "iron door to master's chamber",
+                    "description": "A massive iron door with three security questions engraved on a bronze plate. This door leads to the Arena Master's private chambers.",
+                    "locked": true,
+                    "lock_type": "password",
+                    "password_questions": [
+                        {
+                            "question": "Who controls the arena?",
+                            "answer": "marcus flavius",
+                            "hint": "Check the arena notice and training schedule for the Arena Master's name"
+                        },
+                        {
+                            "question": "What is the path to freedom?",
+                            "answer": "beast tunnels",
+                            "hint": "Multiple texts mention how to escape the arena"
+                        },
+                        {
+                            "question": "Who was the greatest champion?",
+                            "answer": "maximus",
+                            "hint": "The wall carvings, mural, and champions plaque all mention this legendary gladiator"
+                        }
+                    ],
+                    "direction": "east",
+                    "leads_to": "arena_masters_chamber",
+                    "aliases": [
+                        "door",
+                        "east"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "arena_masters_chamber",
+            "name": "Arena Master's Chamber",
+            "description": "You've reached the Arena Master's private chamber! A luxurious room in stark contrast to the cells below. Rich tapestries hang on the walls, and a large desk holds scrolls and documents. Through an open archway, you can see the beast tunnels - dark passages that lead beneath the arena floor to the outside world. The sound of freedom echoes from beyond. Fresh air flows through the tunnel entrance.",
+            "items": [
+                {
+                    "id": "masters_desk",
+                    "name": "Arena Master's desk",
+                    "description": "An ornate desk covered with administrative documents and arena records"
+                },
+                {
+                    "id": "rich_tapestries",
+                    "name": "decorative tapestries",
+                    "description": "Expensive tapestries depicting Roman military victories"
+                },
+                {
+                    "id": "tunnel_entrance",
+                    "name": "beast tunnel entrance",
+                    "description": "A dark stone archway leading into the beast tunnels - the path to freedom",
+                    "readable": true,
+                    "text": "The tunnel stretches into darkness, but you can see daylight far in the distance. This is the legendary escape route used by Maximus. Freedom awaits!"
+                },
+                {
+                    "id": "victory_scroll",
+                    "name": "scroll of liberation",
+                    "description": "A scroll left on the desk, as if waiting for you",
+                    "readable": true,
+                    "text": "To whoever reads this: You have proven yourself worthy by solving the puzzles of the arena. The beast tunnels will lead you to freedom. Go now, and may the gods favor your journey. - A Friend"
+                }
+            ],
+            "exits": [],
+            "is_goal": true,
+            "win_message": "You have escaped the Gladiator's Arena! Following the beast tunnels through the darkness, you emerge into the bright Roman sunlight outside the Colosseum. The roar of the crowd fades behind you as you run toward freedom. Like the legendary Maximus before you, you have solved the puzzles and escaped captivity. You are free! You win!"
+        }
+    ]
+}

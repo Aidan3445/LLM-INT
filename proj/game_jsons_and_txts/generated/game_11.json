@@ -1,0 +1,227 @@
+{
+    "theme": "Crystal Cavern Nexus",
+    "title": "Crystal Cavern Nexus Adventure #11",
+    "goal": "Solve the puzzles, achieve the main objective, and escape.",
+    "starting_room": "crystal_chamber",
+    "rooms": [
+        {
+            "id": "crystal_chamber",
+            "name": "Crystal Chamber",
+            "description": "A vast underground chamber illuminated by thousands of glowing crystals embedded in the walls. The crystals pulse with different colors: red, blue, and green. The air hums with a strange energy. Water drips from stalactites above, creating an echoing rhythm. A stone pedestal stands in the center of the room.",
+            "items": [
+                {
+                    "id": "stone_pedestal",
+                    "name": "ancient stone pedestal",
+                    "description": "A weathered pedestal with three crystal slots arranged in a triangle pattern",
+                    "readable": true,
+                    "text": "Inscription: The order of light reveals the path. Red comes first in the spectrum of power, Blue follows in harmony, Green completes the trinity."
+                },
+                {
+                    "id": "crystal_cabinet",
+                    "name": "crystal storage cabinet",
+                    "description": "A cabinet carved from solid crystal with three compartments",
+                    "subcontainers": [
+                        {
+                            "id": "top_compartment",
+                            "name": "top compartment",
+                            "locked": false,
+                            "contains": [
+                                "research_journal"
+                            ]
+                        },
+                        {
+                            "id": "middle_compartment",
+                            "name": "middle compartment",
+                            "locked": true,
+                            "lock_type": "combination",
+                            "combination": "137",
+                            "contains": [
+                                "crystal_key"
+                            ]
+                        },
+                        {
+                            "id": "bottom_compartment",
+                            "name": "bottom compartment",
+                            "locked": false,
+                            "contains": []
+                        }
+                    ]
+                },
+                {
+                    "id": "research_journal",
+                    "name": "research journal",
+                    "description": "A leather bound journal with notes about crystal frequencies",
+                    "readable": true,
+                    "text": "Day 137: We have discovered the resonance pattern! The crystals vibrate at specific frequencies. Red crystal resonates at 1 Hz, Blue at 3 Hz, Green at 7 Hz. Together they form the combination 137. The Nexus Core awaits beyond the Resonance Hall."
+                },
+                {
+                    "id": "crystal_key",
+                    "name": "glowing crystal key",
+                    "description": "A key carved from pure crystal that emits a soft blue light"
+                },
+                {
+                    "id": "locked_chest",
+                    "name": "sealed crystal chest",
+                    "description": "A chest made of translucent crystal with a keyhole shaped like a crystal",
+                    "locked": true,
+                    "key_required": "crystal_key",
+                    "contains": [
+                        "red_crystal_shard",
+                        "ancient_tablet"
+                    ]
+                },
+                {
+                    "id": "red_crystal_shard",
+                    "name": "red crystal shard",
+                    "description": "A fragment of red crystal that pulses with warm energy"
+                },
+                {
+                    "id": "ancient_tablet",
+                    "name": "stone tablet",
+                    "description": "A tablet with ancient inscriptions about the cavern",
+                    "readable": true,
+                    "text": "The Crystal Cavern Nexus was built by the Ancients. To reach the Nexus Core, one must pass through the Resonance Hall. Answer the three questions of knowledge: Who built this place? What powers the crystals? Where does the energy flow?"
+                },
+                {
+                    "id": "crystal_formation",
+                    "name": "large crystal formation",
+                    "description": "A massive cluster of blue crystals growing from the floor",
+                    "searchable": true,
+                    "contains": [
+                        "blue_crystal_shard"
+                    ]
+                },
+                {
+                    "id": "blue_crystal_shard",
+                    "name": "blue crystal shard",
+                    "description": "A fragment of blue crystal that hums with a steady frequency"
+                },
+                {
+                    "id": "wall_crystals",
+                    "name": "wall embedded crystals",
+                    "description": "Green crystals embedded in the cavern wall, one appears loose",
+                    "searchable": true,
+                    "contains": [
+                        "green_crystal_shard"
+                    ]
+                },
+                {
+                    "id": "green_crystal_shard",
+                    "name": "green crystal shard",
+                    "description": "A fragment of green crystal that vibrates with natural energy"
+                },
+                {
+                    "id": "northern_passage",
+                    "name": "northern passage",
+                    "description": "A tunnel leading north, carved through solid rock and lined with glowing crystals",
+                    "locked": false,
+                    "direction": "north",
+                    "leads_to": "resonance_hall",
+                    "aliases": [
+                        "tunnel",
+                        "north"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "resonance_hall",
+            "name": "Resonance Hall",
+            "description": "A long hall with crystalline pillars that emit harmonic tones. The walls are covered in ancient murals depicting the history of the Crystal Cavern. Three large inscriptions dominate the walls, each telling part of the story. At the far end, a massive door made entirely of crystal blocks the way to the Nexus Core.",
+            "items": [
+                {
+                    "id": "mural_builders",
+                    "name": "mural of the Ancients",
+                    "description": "A detailed painting showing robed figures constructing the cavern",
+                    "readable": true,
+                    "text": "Mural depicts the Ancients, master builders who created the Crystal Cavern Nexus thousands of years ago. They harnessed the power of resonance to channel energy through the crystals."
+                },
+                {
+                    "id": "mural_power",
+                    "name": "mural of crystal power",
+                    "description": "A painting showing crystals glowing with inner light",
+                    "readable": true,
+                    "text": "The crystals are powered by resonance, a harmonic frequency that flows through the earth itself. The Ancients discovered how to amplify this natural energy."
+                },
+                {
+                    "id": "mural_nexus",
+                    "name": "mural of the Nexus",
+                    "description": "A painting showing energy flowing toward a central point",
+                    "readable": true,
+                    "text": "All energy in the cavern flows to the Nexus Core, the heart of the entire system. It is the convergence point where all crystal frequencies unite."
+                },
+                {
+                    "id": "crystal_pillars",
+                    "name": "resonating crystal pillars",
+                    "description": "Tall pillars that vibrate and create musical tones when touched",
+                    "readable": true,
+                    "text": "The pillars resonate at different frequencies, creating a symphony of harmonic tones that echo through the hall."
+                },
+                {
+                    "id": "information_plaque",
+                    "name": "information plaque",
+                    "description": "A metal plaque mounted on the wall with engraved text",
+                    "readable": true,
+                    "text": "Welcome to the Resonance Hall. This chamber amplifies crystal frequencies and channels them to the Nexus Core. Built by the Ancients using principles of harmonic resonance."
+                },
+                {
+                    "id": "massive_crystal_door",
+                    "name": "massive crystal door",
+                    "description": "An enormous door made of layered crystal that shimmers with rainbow colors. Three questions are etched into its surface in glowing letters.",
+                    "locked": true,
+                    "lock_type": "password",
+                    "password_questions": [
+                        {
+                            "question": "Who built the Crystal Cavern Nexus?",
+                            "answer": "the ancients",
+                            "hint": "Check the murals and plaques in the Resonance Hall"
+                        },
+                        {
+                            "question": "What powers the crystals?",
+                            "answer": "resonance",
+                            "hint": "The mural of crystal power explains the energy source"
+                        },
+                        {
+                            "question": "Where does the energy flow?",
+                            "answer": "nexus core",
+                            "hint": "Look at the mural showing the convergence point"
+                        }
+                    ],
+                    "direction": "east",
+                    "leads_to": "nexus_core",
+                    "aliases": [
+                        "door",
+                        "east"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "nexus_core",
+            "name": "Nexus Core",
+            "description": "You have reached the heart of the Crystal Cavern! The Nexus Core is a spherical chamber where all the crystal energy converges. A massive crystal formation in the center pulses with brilliant light, cycling through all colors of the spectrum. The walls are covered in intricate patterns of smaller crystals that glow in perfect harmony. The air thrums with power and possibility.",
+            "items": [
+                {
+                    "id": "central_crystal",
+                    "name": "central nexus crystal",
+                    "description": "A magnificent crystal formation the size of a small building, radiating pure energy in waves of color and light"
+                },
+                {
+                    "id": "energy_conduits",
+                    "name": "crystal energy conduits",
+                    "description": "Channels carved into the floor where crystal energy flows like rivers of light toward the central crystal"
+                },
+                {
+                    "id": "observation_platform",
+                    "name": "observation platform",
+                    "description": "A raised platform offering a perfect view of the Nexus Core and its magnificent crystal formation"
+                }
+            ],
+            "exits": [],
+            "is_goal": true,
+            "win_message": "You have successfully reached the Nexus Core! The central crystal pulses with acknowledgment of your presence, and the entire cavern resonates with a triumphant harmonic chord. The mysteries of the Crystal Cavern Nexus are now yours to behold. The ancient knowledge of the resonance flows through you. You win!"
+        }
+    ]
+}

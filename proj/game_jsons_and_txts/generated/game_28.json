@@ -1,0 +1,242 @@
+{
+  "theme": "Ghostly Ballroom",
+  "title": "Ghostly Ballroom Adventure #28",
+  "goal": "Solve the puzzles, achieve the main objective, and escape.",
+  "starting_room": "grand_ballroom",
+  "rooms": [
+    {
+      "id": "grand_ballroom",
+      "name": "Grand Ballroom",
+      "description": "A magnificent ballroom frozen in time. Crystal chandeliers cast flickering light across the polished marble floor. Translucent figures in elegant gowns and tailcoats waltz endlessly to music only they can hear. The air is cold, and the scent of roses mingles with smoke. Portraits line the walls, and ornate furniture sits along the edges.",
+      "items": [
+        {
+          "id": "grand_piano",
+          "name": "grand piano",
+          "description": "A beautiful black piano covered in a layer of dust. Sheet music rests on the stand.",
+          "searchable": true,
+          "contains": [
+            "brass_key"
+          ]
+        },
+        {
+          "id": "brass_key",
+          "name": "tarnished brass key",
+          "description": "An old brass key with an ornate rose design on the handle"
+        },
+        {
+          "id": "velvet_settee",
+          "name": "velvet settee",
+          "description": "A luxurious red velvet couch with carved wooden legs",
+          "searchable": true,
+          "contains": []
+        },
+        {
+          "id": "display_cabinet",
+          "name": "glass display cabinet",
+          "description": "A tall cabinet with three shelves behind locked glass doors",
+          "locked": true,
+          "key_required": "brass_key",
+          "contains": [
+            "invitation_card",
+            "newspaper_clipping"
+          ]
+        },
+        {
+          "id": "invitation_card",
+          "name": "gilded invitation",
+          "description": "An elegant invitation card with gold lettering",
+          "readable": true,
+          "text": "You are cordially invited to the Grand Masquerade Ball at The Silver Rose Ballroom on December 31st, 1889. Join us for an evening of elegance and enchantment. - Lord and Lady Ashworth"
+        },
+        {
+          "id": "newspaper_clipping",
+          "name": "yellowed newspaper article",
+          "description": "A brittle newspaper clipping from 1890",
+          "readable": true,
+          "text": "TRAGEDY AT THE SILVER ROSE: Fire Claims Dozens at New Year's Ball. The blaze began in the east wing during the final waltz. Among the victims was the celebrated Lady Victoria Ashworth, who was the last to dance before the flames erupted."
+        },
+        {
+          "id": "portrait_victoria",
+          "name": "portrait of Lady Victoria",
+          "description": "A large oil painting of a beautiful woman in a white ball gown holding a silver rose",
+          "readable": true,
+          "text": "Lady Victoria Ashworth (1865-1889). Beloved daughter and gracious hostess. 'She who dances last shall be remembered first.'"
+        },
+        {
+          "id": "portrait_lord",
+          "name": "portrait of Lord Ashworth",
+          "description": "A stern-looking gentleman in formal attire",
+          "readable": true,
+          "text": "Lord Edmund Ashworth (1840-1889). Master of The Silver Rose Ballroom. A devoted father and patron of the arts."
+        },
+        {
+          "id": "ornate_desk",
+          "name": "ornate writing desk",
+          "description": "A mahogany desk with intricate carvings and multiple drawers",
+          "subcontainers": [
+            {
+              "id": "top_drawer",
+              "name": "top drawer",
+              "locked": false,
+              "contains": [
+                "victoria_diary"
+              ]
+            },
+            {
+              "id": "middle_drawer",
+              "name": "middle drawer",
+              "locked": true,
+              "lock_type": "combination",
+              "combination": "1889",
+              "contains": [
+                "silver_locket"
+              ]
+            },
+            {
+              "id": "bottom_drawer",
+              "name": "bottom drawer",
+              "locked": false,
+              "contains": []
+            }
+          ]
+        },
+        {
+          "id": "victoria_diary",
+          "name": "Lady Victoria's diary",
+          "description": "A leather-bound diary with a silver rose embossed on the cover",
+          "readable": true,
+          "text": "December 30th, 1889: Tomorrow is the grand ball! Father has spared no expense. The Silver Rose Ballroom will shine like never before. I've hidden my precious locket in the desk - the combination is the year of our grand celebration. I do hope the evening will be magical!"
+        },
+        {
+          "id": "silver_locket",
+          "name": "silver rose locket",
+          "description": "A delicate locket shaped like a rose, warm to the touch despite the cold air"
+        },
+        {
+          "id": "spiral_staircase",
+          "name": "spiral staircase",
+          "description": "A grand staircase leading up to the musicians' gallery",
+          "locked": false,
+          "direction": "north",
+          "leads_to": "musicians_gallery",
+          "aliases": [
+            "stairs",
+            "staircase",
+            "up"
+          ]
+        }
+      ],
+      "exits": []
+    },
+    {
+      "id": "musicians_gallery",
+      "name": "Musicians' Gallery",
+      "description": "A balcony overlooking the ballroom where the orchestra once played. Music stands and instruments remain in place, covered in cobwebs. The ghostly music seems to emanate from here. Large windows show the moonlit gardens beyond, and a door leads to the terrace. Scorch marks on the walls hint at the fire's path.",
+      "items": [
+        {
+          "id": "music_stand",
+          "name": "conductor's music stand",
+          "description": "An ornate stand with sheet music still attached",
+          "readable": true,
+          "text": "Final piece of the evening: 'The Last Waltz' - dedicated to Lady Victoria, who requested this be played as the clock strikes midnight."
+        },
+        {
+          "id": "violin_case",
+          "name": "violin case",
+          "description": "A weathered case containing a violin and some papers",
+          "searchable": true,
+          "contains": [
+            "musicians_note"
+          ]
+        },
+        {
+          "id": "musicians_note",
+          "name": "musician's note",
+          "description": "A hastily written note on scorched paper",
+          "readable": true,
+          "text": "The fire started in the east wing just as Lady Victoria finished her dance. They say her spirit cannot rest until someone remembers her name and honors her as the last dancer. Only then will the curse be lifted and the doors to freedom open."
+        },
+        {
+          "id": "memorial_plaque",
+          "name": "memorial plaque",
+          "description": "A brass plaque mounted on the wall",
+          "readable": true,
+          "text": "In Memory of Those Lost in the Fire of 1889 at The Silver Rose Ballroom. May they find peace in the dance eternal."
+        },
+        {
+          "id": "window_seat",
+          "name": "cushioned window seat",
+          "description": "A built-in seat beneath the large windows",
+          "searchable": true,
+          "contains": [
+            "servant_letter"
+          ]
+        },
+        {
+          "id": "servant_letter",
+          "name": "servant's letter",
+          "description": "A letter written in simple handwriting",
+          "readable": true,
+          "text": "To whoever finds this: The tragedy began in the east wing when a candelabra fell. Lady Victoria was the last dancer that night. The ballroom was called The Silver Rose, named after Lady Victoria's favorite flower. Remember these things, for they are the key to freeing the trapped souls."
+        },
+        {
+          "id": "terrace_door",
+          "name": "terrace door",
+          "description": "A set of French doors leading to the moonlit terrace. A brass panel beside the door displays three questions etched in elegant script.",
+          "locked": true,
+          "lock_type": "password",
+          "password_questions": [
+            {
+              "question": "What was the name of this ballroom?",
+              "answer": "the silver rose",
+              "hint": "Check the invitation and the memorial plaque"
+            },
+            {
+              "question": "Where did the tragedy begin?",
+              "answer": "east wing",
+              "hint": "The newspaper clipping and musician's note mention this"
+            },
+            {
+              "question": "Who was the last dancer?",
+              "answer": "lady victoria",
+              "hint": "Multiple sources mention who danced last that fateful night"
+            }
+          ],
+          "direction": "east",
+          "leads_to": "moonlit_terrace",
+          "aliases": [
+            "door",
+            "french doors",
+            "east"
+          ]
+        }
+      ],
+      "exits": []
+    },
+    {
+      "id": "moonlit_terrace",
+      "name": "Moonlit Terrace",
+      "description": "You step onto a beautiful stone terrace bathed in silvery moonlight. The ghostly music fades behind you, replaced by peaceful silence. Rose bushes bloom impossibly in the night, their silver petals glowing softly. A spectral figure appears before you - Lady Victoria herself, smiling with gratitude. She places a ghostly hand over her heart, bows gracefully, and dissolves into silver light. The curse is broken. A path through the gardens leads to freedom.",
+      "items": [
+        {
+          "id": "rose_bushes",
+          "name": "silver rose bushes",
+          "description": "Magnificent roses that glow with an ethereal silver light, blooming in eternal beauty"
+        },
+        {
+          "id": "stone_bench",
+          "name": "marble bench",
+          "description": "A pristine white bench overlooking the gardens, peaceful and inviting"
+        },
+        {
+          "id": "garden_path",
+          "name": "garden path",
+          "description": "A moonlit path leading through the roses to the world beyond"
+        }
+      ],
+      "exits": [],
+      "is_goal": true,
+      "win_message": "You have freed the spirits of The Silver Rose Ballroom! By remembering Lady Victoria and honoring her as the last dancer, you've broken the curse that bound the souls to their eternal waltz. The ghostly figures fade away peacefully, finally able to rest. You walk down the garden path into the moonlight, leaving the haunted ballroom behind forever. You win!"
+    }
+  ]
+}

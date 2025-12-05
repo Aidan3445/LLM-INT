@@ -1,0 +1,265 @@
+{
+  "theme": "Crystal-Powered Train Station",
+  "title": "Crystal-Powered Train Station Adventure #16",
+  "goal": "Solve the puzzles, achieve the main objective, and escape.",
+  "starting_room": "control_room",
+  "rooms": [
+    {
+      "id": "control_room",
+      "name": "Station Control Room",
+      "description": "A dimly lit control room filled with brass gauges and glowing crystal displays. The walls are lined with pipes that pulse with blue energy. A large control panel dominates the center, and through the window you can see the empty train platform below. The air hums with crystalline power.",
+      "items": [
+        {
+          "id": "control_panel",
+          "name": "main control panel",
+          "description": "A complex panel with three compartments and various crystal-powered switches",
+          "subcontainers": [
+            {
+              "id": "top_panel",
+              "name": "top compartment",
+              "locked": false,
+              "contains": [
+                "station_manual"
+              ]
+            },
+            {
+              "id": "middle_panel",
+              "name": "middle compartment",
+              "locked": true,
+              "lock_type": "combination",
+              "combination": "528",
+              "contains": [
+                "brass_key"
+              ]
+            },
+            {
+              "id": "bottom_panel",
+              "name": "bottom compartment",
+              "locked": false,
+              "contains": []
+            }
+          ]
+        },
+        {
+          "id": "station_manual",
+          "name": "station operations manual",
+          "description": "A leather-bound manual with technical specifications",
+          "readable": true,
+          "text": "Station Manual: This facility was built on May 28th (5/28). Chief Engineer Marcus Stone oversees all operations. The crystal resonance chamber powers the entire station. Remember: only authorized personnel may access the power crystals."
+        },
+        {
+          "id": "brass_key",
+          "name": "small brass key",
+          "description": "A key with a crystal emblem engraved on the handle"
+        },
+        {
+          "id": "filing_cabinet",
+          "name": "metal filing cabinet",
+          "description": "A tall cabinet filled with station records and blueprints",
+          "searchable": true,
+          "contains": [
+            "engineer_notes"
+          ]
+        },
+        {
+          "id": "engineer_notes",
+          "name": "engineering logbook",
+          "description": "A notebook filled with technical diagrams and notes",
+          "readable": true,
+          "text": "Engineer's Log: The blue crystals provide power to the entire station. The train requires a fully charged power crystal to operate. Chief Engineer Stone keeps the master crystal in the secure chamber. The platform access code is based on our founding date."
+        },
+        {
+          "id": "locked_cabinet",
+          "name": "secure storage cabinet",
+          "description": "A reinforced cabinet with a brass lock",
+          "locked": true,
+          "key_required": "brass_key",
+          "contains": [
+            "platform_access_card"
+          ]
+        },
+        {
+          "id": "platform_access_card",
+          "name": "platform access card",
+          "description": "A metal card that grants access to the train platform"
+        },
+        {
+          "id": "door_to_platform",
+          "name": "door to platform",
+          "description": "A heavy metal door with a card reader leading down to the platform",
+          "locked": true,
+          "key_required": "platform_access_card",
+          "direction": "south",
+          "leads_to": "train_platform",
+          "aliases": [
+            "door",
+            "south"
+          ]
+        }
+      ],
+      "exits": []
+    },
+    {
+      "id": "train_platform",
+      "name": "Crystal Train Platform",
+      "description": "A vast platform with gleaming rails that glow with blue crystal energy. A magnificent steam train sits at the platform, its boiler powered by a large crystal chamber. The walls are decorated with murals showing the history of crystal technology. A reinforced door to the east leads to the power chamber.",
+      "items": [
+        {
+          "id": "steam_train",
+          "name": "crystal powered steam train",
+          "description": "A beautiful locomotive with brass fittings and a crystal power core visible through glass panels",
+          "readable": true,
+          "text": "The train's nameplate reads: 'Aurora Express - Powered by Crystal Technology'. A notice states: 'Requires fully charged master crystal to operate.'"
+        },
+        {
+          "id": "mural_one",
+          "name": "historical mural about Marcus Stone",
+          "description": "A painting depicting the station's construction",
+          "readable": true,
+          "text": "Mural inscription: 'Chief Engineer Marcus Stone - Founder of the Crystal Railway System. His vision brought power to the rails.'"
+        },
+        {
+          "id": "mural_two",
+          "name": "historical mural about crystal discovery",
+          "description": "A painting showing the discovery of power crystals",
+          "readable": true,
+          "text": "Mural inscription: 'The crystals were discovered deep in the resonance chamber beneath the station, where they continue to power our world.'"
+        },
+        {
+          "id": "mural_three",
+          "name": "historical mural about the first journey",
+          "description": "A painting of the first train departure",
+          "readable": true,
+          "text": "Mural inscription: 'The first journey departed to the city of New Haven, marking a new era of transportation.'"
+        },
+        {
+          "id": "platform_bench",
+          "name": "wooden platform bench",
+          "description": "A worn bench where passengers once waited",
+          "searchable": true,
+          "contains": [
+            "forgotten_newspaper"
+          ]
+        },
+        {
+          "id": "forgotten_newspaper",
+          "name": "old newspaper",
+          "description": "A yellowed newspaper from the station's opening day",
+          "readable": true,
+          "text": "HEADLINE: Crystal Railway Opens! Chief Engineer Marcus Stone celebrates as the first train departs for New Haven. The revolutionary crystal power system promises unlimited clean energy."
+        },
+        {
+          "id": "ticket_booth",
+          "name": "abandoned ticket booth",
+          "description": "A small booth with a locked drawer",
+          "subcontainers": [
+            {
+              "id": "booth_drawer",
+              "name": "ticket drawer",
+              "locked": false,
+              "contains": [
+                "security_memo"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "security_memo",
+          "name": "security memorandum",
+          "description": "An official document about chamber access",
+          "readable": true,
+          "text": "SECURITY MEMO: Access to the crystal resonance chamber requires answering three security questions. Only Chief Engineer Stone and authorized personnel may enter. Questions verify knowledge of station history and purpose."
+        },
+        {
+          "id": "reinforced_chamber_door",
+          "name": "reinforced chamber door",
+          "description": "A massive door with crystal-powered locks. A brass panel displays three security questions.",
+          "locked": true,
+          "lock_type": "password",
+          "password_questions": [
+            {
+              "question": "Who founded the Crystal Railway System?",
+              "answer": "marcus stone",
+              "hint": "Check the station manual and the murals on the platform"
+            },
+            {
+              "question": "Where are the power crystals located?",
+              "answer": "resonance chamber",
+              "hint": "The engineer's notes and murals mention this location"
+            },
+            {
+              "question": "What city did the first train travel to?",
+              "answer": "new haven",
+              "hint": "Read the newspaper and the mural about the first journey"
+            }
+          ],
+          "direction": "east",
+          "leads_to": "crystal_chamber",
+          "aliases": [
+            "chamber door",
+            "east"
+          ]
+        }
+      ],
+      "exits": []
+    },
+    {
+      "id": "crystal_chamber",
+      "name": "Crystal Resonance Chamber",
+      "description": "You have entered the heart of the station! A magnificent chamber filled with towering blue crystals that pulse with energy. In the center, on a pedestal of polished stone, rests the master power crystal - a flawless gem the size of a human head, glowing with intense blue light. The crystals hum in harmony, and you can feel the power flowing through the station. A passage leads back to the platform, and the train awaits.",
+      "items": [
+        {
+          "id": "master_crystal",
+          "name": "master power crystal",
+          "description": "A magnificent crystal radiating pure energy, the key to powering the escape train"
+        },
+        {
+          "id": "crystal_pedestal",
+          "name": "stone pedestal",
+          "description": "A pedestal of carved stone holding the master crystal"
+        },
+        {
+          "id": "crystal_formations",
+          "name": "towering crystal formations",
+          "description": "Massive blue crystals growing from floor to ceiling",
+          "readable": true,
+          "text": "The crystals resonate with a deep hum. Inscribed at their base: 'These crystals have powered the station since its founding. May they light the way for all travelers.'"
+        },
+        {
+          "id": "passage_back_to_platform",
+          "name": "passage back to platform",
+          "description": "A glowing passage leading back to the train platform",
+          "locked": false,
+          "direction": "west",
+          "leads_to": "escape_train",
+          "aliases": [
+            "passage",
+            "west",
+            "back"
+          ]
+        }
+      ],
+      "exits": []
+    },
+    {
+      "id": "escape_train",
+      "name": "Departing Train",
+      "description": "You have successfully powered the crystal train! The master crystal now glows brilliantly in the engine's power chamber. Steam hisses from the valves as the train comes to life. The whistle blows, and the train begins to move along the glowing rails. Through the windows, you see the station falling away as you speed toward freedom and adventure.",
+      "items": [
+        {
+          "id": "train_interior",
+          "name": "luxurious train interior",
+          "description": "Plush seats and crystal-powered lamps create a warm, inviting atmosphere"
+        },
+        {
+          "id": "engine_room",
+          "name": "crystal engine room",
+          "description": "The master crystal pulses with energy, driving the train forward"
+        }
+      ],
+      "exits": [],
+      "is_goal": true,
+      "win_message": "SUCCESS! You have restored power to the crystal train and escaped the abandoned station! The Aurora Express carries you away from the mysterious facility, powered by the ancient crystal technology. As the station disappears behind you, you wonder what other secrets the crystal railway system holds. You win!"
+    }
+  ]
+}

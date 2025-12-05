@@ -1,0 +1,309 @@
+{
+    "theme": "Time-Traveler's Workshop",
+    "title": "Time-Traveler's Workshop Adventure #45",
+    "goal": "Solve the puzzles, achieve the main objective, and escape.",
+    "starting_room": "temporal_workshop",
+    "rooms": [
+        {
+            "id": "temporal_workshop",
+            "name": "Temporal Workshop",
+            "description": "A cluttered workshop filled with strange devices and ticking clocks. Gears and springs litter the workbenches. Blue lightning crackles between copper coils mounted on the walls. The air smells of ozone and machine oil. Blueprints and temporal equations cover every surface. A massive time machine dominates the center of the room.",
+            "items": [
+                {
+                    "id": "main_workbench",
+                    "name": "main workbench",
+                    "description": "A sturdy workbench covered in tools and half-assembled temporal devices",
+                    "searchable": true,
+                    "contains": [
+                        "brass_key"
+                    ]
+                },
+                {
+                    "id": "brass_key",
+                    "name": "brass key",
+                    "description": "A small brass key with temporal symbols etched into it"
+                },
+                {
+                    "id": "tool_cabinet",
+                    "name": "tool cabinet",
+                    "description": "A metal cabinet with three drawers containing various tools and components",
+                    "subcontainers": [
+                        {
+                            "id": "top_drawer",
+                            "name": "top drawer",
+                            "locked": false,
+                            "contains": [
+                                "workshop_journal"
+                            ]
+                        },
+                        {
+                            "id": "middle_drawer",
+                            "name": "middle drawer",
+                            "locked": true,
+                            "lock_type": "combination",
+                            "combination": "1885",
+                            "contains": [
+                                "silver_key"
+                            ]
+                        },
+                        {
+                            "id": "bottom_drawer",
+                            "name": "bottom drawer",
+                            "locked": false,
+                            "contains": []
+                        }
+                    ]
+                },
+                {
+                    "id": "workshop_journal",
+                    "name": "workshop journal",
+                    "description": "A leather-bound journal with daily work notes",
+                    "readable": true,
+                    "text": "Day 47: The temporal displacement device is nearly complete! I began this project in 1885 after my breakthrough discovery. The combination to secure my tools is the year I started. Remember: the Chronos Device powers everything, the Temporal Archive holds my research, and I am Professor Thaddeus Chronos."
+                },
+                {
+                    "id": "silver_key",
+                    "name": "silver key",
+                    "description": "A silver key with intricate clockwork patterns"
+                },
+                {
+                    "id": "blueprint_table",
+                    "name": "blueprint table",
+                    "description": "A drafting table covered with technical drawings and schematics",
+                    "readable": true,
+                    "text": "Blueprints for the Chronos Device: This temporal engine generates the power needed for time travel. Warning: Only activate in the Temporal Archive where safety protocols are in place. The device must be calibrated to the correct temporal frequency."
+                },
+                {
+                    "id": "locked_safe",
+                    "name": "locked safe",
+                    "description": "A heavy iron safe built into the wall with a brass lock",
+                    "locked": true,
+                    "key_required": "brass_key",
+                    "contains": [
+                        "temporal_notes"
+                    ]
+                },
+                {
+                    "id": "temporal_notes",
+                    "name": "temporal research notes",
+                    "description": "Detailed notes on time travel theory and practice",
+                    "readable": true,
+                    "text": "Temporal Research Notes: The key to stable time travel lies in understanding three fundamental principles. First, identify the power source. Second, locate the research repository. Third, know the identity of the inventor. Only then can the portal be safely activated."
+                },
+                {
+                    "id": "time_machine",
+                    "name": "large time machine",
+                    "description": "A massive brass and copper machine with spinning gyroscopes and glowing tubes. It hums with barely contained energy.",
+                    "readable": true,
+                    "text": "The time machine bears a nameplate: 'Chronos Temporal Displacement Engine - Patent Pending - Professor Thaddeus Chronos, Inventor'"
+                },
+                {
+                    "id": "wall_clock",
+                    "name": "wall clock",
+                    "description": "An ornate clock showing multiple time zones and temporal coordinates",
+                    "searchable": true,
+                    "contains": [
+                        "hidden_note"
+                    ]
+                },
+                {
+                    "id": "hidden_note",
+                    "name": "hidden note",
+                    "description": "A note tucked behind the clock face",
+                    "readable": true,
+                    "text": "Reminder to self: The Temporal Archive door key is in the component chest. The archive contains all my life's work and the portal activation sequence."
+                },
+                {
+                    "id": "component_chest",
+                    "name": "component chest",
+                    "description": "A wooden chest filled with temporal components and spare parts",
+                    "locked": true,
+                    "key_required": "silver_key",
+                    "contains": [
+                        "archive_key",
+                        "chronometer"
+                    ]
+                },
+                {
+                    "id": "archive_key",
+                    "name": "archive key",
+                    "description": "A large iron key labeled 'Temporal Archive'"
+                },
+                {
+                    "id": "chronometer",
+                    "name": "temporal chronometer",
+                    "description": "A precise timepiece that measures temporal fluctuations"
+                },
+                {
+                    "id": "archive_door",
+                    "name": "archive door",
+                    "description": "A reinforced door leading to the Temporal Archive. Warning signs about temporal radiation are posted on it.",
+                    "locked": true,
+                    "key_required": "archive_key",
+                    "direction": "north",
+                    "leads_to": "temporal_archive",
+                    "aliases": [
+                        "door",
+                        "north"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "temporal_archive",
+            "name": "Temporal Archive",
+            "description": "A vast library filled with journals, books, and filing cabinets containing decades of temporal research. Glass cases display artifacts from different time periods. A large viewing screen shows swirling temporal vortexes. The Chronos Device sits on a pedestal, glowing with blue energy. A sealed portal door dominates the far wall.",
+            "items": [
+                {
+                    "id": "research_desk",
+                    "name": "research desk",
+                    "description": "A massive oak desk covered with open journals and research papers",
+                    "searchable": true,
+                    "contains": [
+                        "personal_journal"
+                    ]
+                },
+                {
+                    "id": "personal_journal",
+                    "name": "personal journal",
+                    "description": "The personal journal of Professor Thaddeus Chronos",
+                    "readable": true,
+                    "text": "Personal Journal: I, Professor Thaddeus Chronos, have dedicated my life to mastering time travel. This archive contains everything I have learned. The Chronos Device is my greatest achievement. Only someone who understands my work can safely use the temporal portal."
+                },
+                {
+                    "id": "filing_cabinet",
+                    "name": "filing cabinet",
+                    "description": "A tall cabinet with drawers organized by year and subject",
+                    "subcontainers": [
+                        {
+                            "id": "drawer_1880s",
+                            "name": "drawer labeled 1880s",
+                            "locked": false,
+                            "contains": [
+                                "early_research"
+                            ]
+                        },
+                        {
+                            "id": "drawer_1890s",
+                            "name": "drawer labeled 1890s",
+                            "locked": false,
+                            "contains": [
+                                "device_manual"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "early_research",
+                    "name": "early research papers",
+                    "description": "Papers from the beginning of the temporal research project",
+                    "readable": true,
+                    "text": "Research began in 1885 with the discovery of temporal energy fields. The Chronos Device was designed to harness this energy. All research is stored here in the Temporal Archive for safekeeping."
+                },
+                {
+                    "id": "device_manual",
+                    "name": "Chronos Device manual",
+                    "description": "An instruction manual for operating the Chronos Device",
+                    "readable": true,
+                    "text": "CHRONOS DEVICE OPERATION MANUAL: This device generates the temporal energy required for portal activation. Location: Temporal Archive. Inventor: Professor Thaddeus Chronos. Warning: Improper use may cause temporal paradoxes."
+                },
+                {
+                    "id": "chronos_device_pedestal",
+                    "name": "Chronos Device pedestal",
+                    "description": "A pedestal holding the glowing Chronos Device, pulsing with temporal energy",
+                    "readable": true,
+                    "text": "The Chronos Device hums with power. A plaque reads: 'Chronos Temporal Energy Generator - Powers all temporal operations in this facility.'"
+                },
+                {
+                    "id": "display_cases",
+                    "name": "artifact display cases",
+                    "description": "Glass cases containing objects from various time periods",
+                    "readable": true,
+                    "text": "Artifacts collected during temporal expeditions: Roman coins, medieval manuscripts, Victorian pocket watches, and futuristic devices. Each labeled with its time period and acquisition date."
+                },
+                {
+                    "id": "viewing_screen",
+                    "name": "temporal viewing screen",
+                    "description": "A large screen displaying real-time views of temporal vortexes",
+                    "readable": true,
+                    "text": "The screen shows swirling portals to different time periods. A message scrolls across: 'Portal activation requires authorization. Answer security questions to proceed.'"
+                },
+                {
+                    "id": "bookshelf",
+                    "name": "bookshelf",
+                    "description": "Shelves filled with books on physics, temporal mechanics, and history",
+                    "searchable": true,
+                    "contains": [
+                        "temporal_theory_book"
+                    ]
+                },
+                {
+                    "id": "temporal_theory_book",
+                    "name": "temporal theory book",
+                    "description": "A comprehensive textbook on time travel theory",
+                    "readable": true,
+                    "text": "Chapter 12: The Three Questions of Temporal Travel. Before activating any portal, one must know: What powers the system? Where is the knowledge stored? Who created the technology? These answers ensure safe passage through time."
+                },
+                {
+                    "id": "temporal_portal_door",
+                    "name": "temporal portal door",
+                    "description": "A massive circular door with glowing blue runes and a control panel displaying three security questions. Beyond it, you can see swirling temporal energy.",
+                    "locked": true,
+                    "lock_type": "password",
+                    "password_questions": [
+                        {
+                            "question": "What device powers the temporal systems?",
+                            "answer": "chronos device",
+                            "hint": "Check the blueprints, manual, and the device itself in the archive"
+                        },
+                        {
+                            "question": "Where is the temporal research stored?",
+                            "answer": "temporal archive",
+                            "hint": "Multiple documents mention where all research is kept"
+                        },
+                        {
+                            "question": "Who is the inventor?",
+                            "answer": "professor thaddeus chronos",
+                            "hint": "The journals and nameplates identify the creator of this technology"
+                        }
+                    ],
+                    "direction": "east",
+                    "leads_to": "temporal_gateway",
+                    "aliases": [
+                        "portal",
+                        "east"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "temporal_gateway",
+            "name": "Temporal Gateway",
+            "description": "You have activated the temporal portal! A swirling vortex of blue and white energy fills the chamber. The Chronos Device hums at maximum power. Through the portal, you can see glimpses of different time periods flashing by. A stable pathway has formed, leading to safety and freedom. The workshop's mysteries are solved!",
+            "items": [
+                {
+                    "id": "active_portal",
+                    "name": "active temporal portal",
+                    "description": "A stable portal showing a safe destination in normal time"
+                },
+                {
+                    "id": "control_console",
+                    "name": "portal control console",
+                    "description": "A console displaying green lights indicating successful portal activation",
+                    "readable": true,
+                    "text": "PORTAL STATUS: STABLE. DESTINATION: SAFE TIMELINE. TEMPORAL COORDINATES: LOCKED. You may proceed through the portal."
+                },
+                {
+                    "id": "energy_field",
+                    "name": "temporal energy field",
+                    "description": "Shimmering waves of temporal energy creating a safe passage"
+                }
+            ],
+            "exits": [],
+            "is_goal": true,
+            "win_message": "SUCCESS! You step through the temporal portal and feel the rush of time flowing around you. The workshop fades away as you travel through the timestream to safety. You have mastered the puzzles of the Time-Traveler's Workshop and escaped through time itself! Professor Chronos would be proud. You win!"
+        }
+    ]
+}

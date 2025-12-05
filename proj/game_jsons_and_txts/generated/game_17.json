@@ -1,0 +1,240 @@
+{
+    "theme": "Magic Lantern Workshop",
+    "title": "Magic Lantern Workshop Adventure #17",
+    "goal": "Solve the puzzles, achieve the main objective, and escape.",
+    "starting_room": "workshop_floor",
+    "rooms": [
+        {
+            "id": "workshop_floor",
+            "name": "Magic Lantern Workshop Floor",
+            "description": "A cluttered Victorian workshop filled with brass fittings, glass lenses, and wooden lantern frames. Workbenches line the walls, covered with tools and half-assembled magic lanterns. The smell of oil and wood polish fills the air. Painted glass slides hang on display racks, casting colorful shadows in the gaslight. A locked cabinet stands against the far wall, and a heavy door leads north to the projection theater.",
+            "items": [
+                {
+                    "id": "main_workbench",
+                    "name": "master workbench",
+                    "description": "A large wooden workbench covered with brass tools, lenses, and lantern components",
+                    "searchable": true,
+                    "contains": [
+                        "brass_key"
+                    ]
+                },
+                {
+                    "id": "brass_key",
+                    "name": "small brass key",
+                    "description": "A delicate brass key with an ornate handle shaped like a lantern"
+                },
+                {
+                    "id": "tool_cabinet",
+                    "name": "locked tool cabinet",
+                    "description": "A tall wooden cabinet with glass doors, secured with a brass lock",
+                    "locked": true,
+                    "key_required": "brass_key",
+                    "contains": [
+                        "workshop_ledger"
+                    ]
+                },
+                {
+                    "id": "workshop_ledger",
+                    "name": "workshop ledger book",
+                    "description": "A leather-bound ledger with records of lantern orders and repairs",
+                    "readable": true,
+                    "text": "Workshop Ledger - Proprietor: Master Cornelius Blackwood. Established 1842. Specializes in hand-painted slides and precision optical instruments. Note: The finest optical glass comes from the Bavarian Mountains, imported at great expense."
+                },
+                {
+                    "id": "storage_chest",
+                    "name": "storage chest with drawers",
+                    "description": "A wooden chest with three drawers for storing lantern slides and components",
+                    "subcontainers": [
+                        {
+                            "id": "top_drawer",
+                            "name": "top drawer",
+                            "locked": false,
+                            "contains": [
+                                "apprentice_note"
+                            ]
+                        },
+                        {
+                            "id": "middle_drawer",
+                            "name": "middle drawer",
+                            "locked": true,
+                            "lock_type": "combination",
+                            "combination": "1842",
+                            "contains": [
+                                "master_key"
+                            ]
+                        },
+                        {
+                            "id": "bottom_drawer",
+                            "name": "bottom drawer",
+                            "locked": false,
+                            "contains": []
+                        }
+                    ]
+                },
+                {
+                    "id": "apprentice_note",
+                    "name": "apprentice's note",
+                    "description": "A handwritten note on yellowed paper",
+                    "readable": true,
+                    "text": "Reminder to self: Master Blackwood keeps the theater key in the middle drawer. The combination is the year he founded this workshop - check the painted slide commemorating our opening day!"
+                },
+                {
+                    "id": "master_key",
+                    "name": "iron theater key",
+                    "description": "A heavy iron key labeled 'Projection Theater'"
+                },
+                {
+                    "id": "slide_rack",
+                    "name": "display rack of painted slides",
+                    "description": "A wooden rack holding colorful hand-painted glass slides for magic lanterns",
+                    "readable": true,
+                    "text": "The slides show various scenes: landscapes, fairy tales, and historical events. One slide is labeled 'Grand Opening - Blackwood's Magic Lantern Workshop - 1842' and shows a painting of the workshop's facade."
+                },
+                {
+                    "id": "half_finished_lantern",
+                    "name": "partially assembled lantern",
+                    "description": "A beautiful brass lantern in mid-construction, missing its lens assembly"
+                },
+                {
+                    "id": "theater_entrance_door",
+                    "name": "theater entrance door",
+                    "description": "A heavy wooden door with frosted glass panels etched with images of magic lanterns. A keyhole sits beneath the brass handle.",
+                    "locked": true,
+                    "key_required": "master_key",
+                    "direction": "north",
+                    "leads_to": "projection_theater",
+                    "aliases": [
+                        "door",
+                        "north"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "projection_theater",
+            "name": "Projection Theater",
+            "description": "A small intimate theater with rows of velvet seats facing a white projection screen. A magnificent brass magic lantern sits on a table in the center, its polished surfaces gleaming. The walls are decorated with framed certificates and awards. A portrait of Master Blackwood hangs prominently. The master's private studio door is visible to the east, secured with an elaborate lock mechanism.",
+            "items": [
+                {
+                    "id": "magic_lantern",
+                    "name": "demonstration magic lantern",
+                    "description": "An exquisite brass lantern with intricate engravings and a set of painted slides loaded in the carousel",
+                    "readable": true,
+                    "text": "The lantern is set up with a series of slides telling a story. The title slide reads: 'The Master Craftsman's Journey - A Tale of Light and Shadow by Cornelius Blackwood'"
+                },
+                {
+                    "id": "portrait_blackwood",
+                    "name": "portrait of Master Blackwood",
+                    "description": "An oil painting of a distinguished gentleman with a white beard, holding a magic lantern",
+                    "readable": true,
+                    "text": "Portrait of Cornelius Blackwood, Master Lantern Maker. The brass plaque reads: 'Founder and proprietor, creator of the finest optical instruments in all of England.'"
+                },
+                {
+                    "id": "award_certificates",
+                    "name": "framed certificates",
+                    "description": "Several certificates and awards mounted on the wall",
+                    "readable": true,
+                    "text": "Awards from the Royal Society of Arts, the Crystal Palace Exhibition, and various trade guilds. One certificate notes: 'For excellence in optical craftsmanship using the finest Bavarian glass.'"
+                },
+                {
+                    "id": "velvet_seats",
+                    "name": "theater seating",
+                    "description": "Rows of comfortable velvet-upholstered seats for viewing lantern shows",
+                    "searchable": true,
+                    "contains": [
+                        "hidden_journal"
+                    ]
+                },
+                {
+                    "id": "hidden_journal",
+                    "name": "Master Blackwood's private journal",
+                    "description": "A small leather journal tucked between the seat cushions",
+                    "readable": true,
+                    "text": "Private Journal: My life's work culminates in the masterpiece lantern I'm completing in my studio. To protect it, I've secured the studio door with questions only I can answer. Who am I? Where does my finest glass originate? What is my life's passion?"
+                },
+                {
+                    "id": "projection_table",
+                    "name": "projection table",
+                    "description": "A sturdy table holding the demonstration lantern and various accessories",
+                    "searchable": true,
+                    "contains": []
+                },
+                {
+                    "id": "master's_studio_door",
+                    "name": "master's studio door",
+                    "description": "An ornate door with brass fittings and a complex lock mechanism. A brass panel displays three questions engraved in elegant script.",
+                    "locked": true,
+                    "lock_type": "password",
+                    "password_questions": [
+                        {
+                            "question": "Who is the master of this workshop?",
+                            "answer": "cornelius blackwood",
+                            "hint": "Check the workshop ledger and the portrait in the theater"
+                        },
+                        {
+                            "question": "Where does the finest optical glass come from?",
+                            "answer": "bavarian mountains",
+                            "hint": "The workshop ledger and award certificates mention the source of the glass"
+                        },
+                        {
+                            "question": "What is the master craftsman's passion?",
+                            "answer": "magic lanterns",
+                            "hint": "Look at what the workshop creates and what Master Blackwood holds in his portrait"
+                        }
+                    ],
+                    "direction": "east",
+                    "leads_to": "masters_studio",
+                    "aliases": [
+                        "studio",
+                        "east"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "masters_studio",
+            "name": "Master Blackwood's Private Studio",
+            "description": "You have entered the master craftsman's private sanctuary! The studio is bathed in soft light filtering through stained glass windows. In the center, on a velvet-covered pedestal, sits the most magnificent magic lantern you have ever seen - a masterpiece of brass, crystal, and hand-painted glass. Its lenses catch the light and project dancing rainbows across the walls. This is the culmination of a lifetime of craftsmanship. A door to the outside world stands open, beckoning you to freedom.",
+            "items": [
+                {
+                    "id": "masterpiece_lantern",
+                    "name": "Master Blackwood's Masterpiece Lantern",
+                    "description": "An absolutely stunning magic lantern crafted from polished brass, crystal lenses, and featuring hand-painted slides of breathtaking beauty. It represents the pinnacle of the lantern maker's art."
+                },
+                {
+                    "id": "velvet_pedestal",
+                    "name": "display pedestal",
+                    "description": "A pedestal covered in rich burgundy velvet, designed to showcase the masterpiece lantern"
+                },
+                {
+                    "id": "stained_glass_windows",
+                    "name": "stained glass windows",
+                    "description": "Beautiful windows depicting scenes of light, art, and craftsmanship",
+                    "readable": true,
+                    "text": "The windows show various scenes: a craftsman at work, light breaking through darkness, and the magic of projected images bringing stories to life."
+                },
+                {
+                    "id": "workbench_studio",
+                    "name": "master's private workbench",
+                    "description": "An immaculately organized workbench with the finest tools and materials",
+                    "searchable": true,
+                    "contains": [
+                        "final_note"
+                    ]
+                },
+                {
+                    "id": "final_note",
+                    "name": "Master Blackwood's final note",
+                    "description": "A letter addressed 'To whoever finds this'",
+                    "readable": true,
+                    "text": "My dear finder, if you have reached this studio, you have proven yourself worthy of understanding the magic of light and shadow. This lantern is my legacy - may it inspire you as the craft has inspired me. Go forth and share the wonder of projected light with the world. - Cornelius Blackwood"
+                }
+            ],
+            "exits": [],
+            "is_goal": true,
+            "win_message": "You have discovered Master Blackwood's legendary masterpiece lantern! As you carefully lift the magnificent device, its crystal lenses catch the light and project a final message on the wall: 'The magic of light lives on.' You have successfully navigated the workshop, solved its mysteries, and earned the right to carry on the master craftsman's legacy. You win!"
+        }
+    ]
+}

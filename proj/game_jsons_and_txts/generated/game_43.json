@@ -1,0 +1,248 @@
+{
+    "theme": "Meteor Mining Colony",
+    "title": "Meteor Mining Colony Adventure #43",
+    "goal": "Solve the puzzles, achieve the main objective, and escape.",
+    "starting_room": "crew_quarters",
+    "rooms": [
+        {
+            "id": "crew_quarters",
+            "name": "Crew Quarters",
+            "description": "A cramped living space with metal bunks bolted to the walls. Red emergency lights cast an ominous glow. Through the porthole window, you see the barren surface of the meteor and distant stars. The air recycler hums weakly. Warning klaxons echo from somewhere in the colony.",
+            "items": [
+                {
+                    "id": "storage_locker",
+                    "name": "personal storage locker",
+                    "description": "A metal locker with two compartments and a digital lock panel",
+                    "subcontainers": [
+                        {
+                            "id": "top_compartment",
+                            "name": "top compartment",
+                            "locked": false,
+                            "contains": [
+                                "crew_manifest"
+                            ]
+                        },
+                        {
+                            "id": "bottom_compartment",
+                            "name": "bottom compartment",
+                            "locked": true,
+                            "lock_type": "combination",
+                            "combination": "2187",
+                            "contains": [
+                                "access_keycard"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "crew_manifest",
+                    "name": "crew assignment manifest",
+                    "description": "A digital tablet showing crew assignments and schedules",
+                    "readable": true,
+                    "text": "CREW MANIFEST - Colony Station M2187. Chief Engineer: Marcus Chen. Medical Officer: Dr Sarah Patel. Mining Supervisor: James Rodriguez. Remember: Emergency protocols require knowledge of crew roles and locations."
+                },
+                {
+                    "id": "access_keycard",
+                    "name": "security access keycard",
+                    "description": "A magnetic keycard labeled Security Level 2"
+                },
+                {
+                    "id": "bunk_bed",
+                    "name": "metal bunk bed",
+                    "description": "A sturdy bunk with storage underneath",
+                    "searchable": true,
+                    "contains": [
+                        "personal_datapad"
+                    ]
+                },
+                {
+                    "id": "personal_datapad",
+                    "name": "personal datapad",
+                    "description": "A small tablet with personal notes and messages",
+                    "readable": true,
+                    "text": "Personal Log: The colony was established in year 2187. Chief Engineer Chen is brilliant but keeps the reactor codes to himself. Dr Patel mentioned the medical bay has emergency supplies. Rodriguez oversees all mining operations in the excavation zone."
+                },
+                {
+                    "id": "emergency_cryopod",
+                    "name": "emergency cryopod",
+                    "description": "A sealed cryogenic sleep pod for emergencies, currently locked",
+                    "locked": true,
+                    "key_required": "access_keycard",
+                    "contains": [
+                        "survival_kit"
+                    ]
+                },
+                {
+                    "id": "survival_kit",
+                    "name": "emergency survival kit",
+                    "description": "A kit containing basic survival supplies and a maintenance tool"
+                },
+                {
+                    "id": "reinforced_door",
+                    "name": "reinforced door",
+                    "description": "A heavy door leading to the main corridor, secured with a keycard reader",
+                    "locked": true,
+                    "key_required": "access_keycard",
+                    "direction": "north",
+                    "leads_to": "main_corridor",
+                    "aliases": [
+                        "door",
+                        "north"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "main_corridor",
+            "name": "Main Corridor",
+            "description": "A long metal corridor with flickering overhead lights. Warning signs line the walls. Display screens show various colony systems in critical status. To the east is the medical bay, and to the west is the control room. The shuttle bay access is at the far end.",
+            "items": [
+                {
+                    "id": "wall_display_chen",
+                    "name": "display showing Chief Chen",
+                    "description": "A memorial display with a photo and information plaque",
+                    "readable": true,
+                    "text": "Chief Engineer Marcus Chen - Responsible for reactor maintenance, life support systems, and power distribution. Station hero and technical genius."
+                },
+                {
+                    "id": "wall_display_patel",
+                    "name": "display showing Dr Patel",
+                    "description": "A memorial display honoring the medical officer",
+                    "readable": true,
+                    "text": "Dr Sarah Patel - Medical Officer. Maintained crew health and managed the medical bay supplies. Known for her dedication to crew welfare."
+                },
+                {
+                    "id": "wall_display_rodriguez",
+                    "name": "display showing Supervisor Rodriguez",
+                    "description": "A display commemorating the mining supervisor",
+                    "readable": true,
+                    "text": "James Rodriguez - Mining Supervisor. Oversaw all excavation operations and mineral extraction in the mining zone. Expert in asteroid geology."
+                },
+                {
+                    "id": "emergency_panel",
+                    "name": "emergency access panel",
+                    "description": "A wall panel with emergency supplies and documentation",
+                    "searchable": true,
+                    "contains": [
+                        "evacuation_protocol"
+                    ]
+                },
+                {
+                    "id": "evacuation_protocol",
+                    "name": "evacuation protocol document",
+                    "description": "Official emergency evacuation procedures",
+                    "readable": true,
+                    "text": "EVACUATION PROTOCOL: In case of colony emergency, proceed to shuttle bay. Access requires security clearance. Questions verify identity: Who maintains the reactor? Where are medical supplies kept? Where does mining occur?"
+                },
+                {
+                    "id": "medical_bay_door",
+                    "name": "medical bay door",
+                    "description": "A door marked with a red cross symbol, leading east",
+                    "locked": false,
+                    "direction": "east",
+                    "leads_to": "medical_bay",
+                    "aliases": [
+                        "east",
+                        "medical"
+                    ]
+                },
+                {
+                    "id": "shuttle_bay_access_door",
+                    "name": "shuttle bay access door",
+                    "description": "A reinforced door leading to the shuttle bay. A security terminal displays three verification questions.",
+                    "locked": true,
+                    "lock_type": "password",
+                    "password_questions": [
+                        {
+                            "question": "Who maintains the reactor?",
+                            "answer": "marcus chen",
+                            "hint": "Check the crew manifest and memorial displays"
+                        },
+                        {
+                            "question": "Where are medical supplies kept?",
+                            "answer": "medical bay",
+                            "hint": "Look at the evacuation protocol and crew assignments"
+                        },
+                        {
+                            "question": "Where does mining occur?",
+                            "answer": "excavation zone",
+                            "hint": "Read about Rodriguez's responsibilities"
+                        }
+                    ],
+                    "direction": "north",
+                    "leads_to": "shuttle_bay",
+                    "aliases": [
+                        "shuttle",
+                        "north"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "medical_bay",
+            "name": "Medical Bay",
+            "description": "A sterile white room with medical equipment and supply cabinets. Examination tables line one wall. A large medicine cabinet dominates the back wall. The air smells of antiseptic.",
+            "items": [
+                {
+                    "id": "medicine_cabinet",
+                    "name": "locked medicine cabinet",
+                    "description": "A secure cabinet containing medical supplies and important documents",
+                    "locked": true,
+                    "key_required": "access_keycard",
+                    "contains": [
+                        "medical_log"
+                    ]
+                },
+                {
+                    "id": "medical_log",
+                    "name": "medical officer log",
+                    "description": "Dr Patel's personal medical log and notes",
+                    "readable": true,
+                    "text": "Medical Log - Dr Sarah Patel: Crew health remains stable. Note: Chief Chen requested I keep backup reactor codes in case of emergency. Code sequence matches colony founding year: 2187. All supplies properly stored in medical bay as per protocol."
+                },
+                {
+                    "id": "examination_table",
+                    "name": "medical examination table",
+                    "description": "A standard examination table with storage drawers",
+                    "searchable": true,
+                    "contains": [
+                        "first_aid_supplies"
+                    ]
+                },
+                {
+                    "id": "first_aid_supplies",
+                    "name": "first aid kit",
+                    "description": "Basic medical supplies for emergencies"
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "shuttle_bay",
+            "name": "Emergency Shuttle Bay",
+            "description": "A large hangar containing a small emergency shuttle. The shuttle's engines glow with ready power. Through the massive bay doors, you can see the starfield beyond. A control console blinks with green ready lights. This is your way home!",
+            "items": [
+                {
+                    "id": "emergency_shuttle",
+                    "name": "emergency escape shuttle",
+                    "description": "A compact spacecraft designed for emergency evacuation, fueled and ready for launch"
+                },
+                {
+                    "id": "launch_console",
+                    "name": "shuttle launch console",
+                    "description": "The control panel for launching the shuttle, showing all systems green"
+                },
+                {
+                    "id": "bay_window",
+                    "name": "observation window",
+                    "description": "A large reinforced window showing the meteor surface and the vast expanse of space beyond"
+                }
+            ],
+            "exits": [],
+            "is_goal": true,
+            "win_message": "You board the emergency shuttle and initiate the launch sequence. The engines roar to life as the bay doors open to space. The shuttle lifts off, leaving the doomed mining colony behind. You set course for the nearest space station, safe at last. You win!"
+        }
+    ]
+}

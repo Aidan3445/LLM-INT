@@ -1,0 +1,258 @@
+{
+  "theme": "Dwarven Forge",
+  "title": "Dwarven Forge Adventure #65",
+  "goal": "Solve the puzzles, achieve the main objective, and escape.",
+  "starting_room": "forge_workshop",
+  "rooms": [
+    {
+      "id": "forge_workshop",
+      "name": "Ancient Forge Workshop",
+      "description": "A massive underground workshop carved from solid stone. The great forge still radiates warmth, its embers glowing faintly in the darkness. Anvils and hammers lie scattered about, covered in centuries of dust. The walls are lined with weapon racks and tool chests. Runes carved into the stone pillars pulse with a faint blue light. The air smells of coal, metal, and ancient magic.",
+      "items": [
+        {
+          "id": "great_forge",
+          "name": "great forge",
+          "description": "A massive stone forge with intricate dwarven carvings and still-warm embers",
+          "readable": true,
+          "text": "Carved above the forge: 'Here Thrain Ironhammer forged the legendary weapons of Clan Ironhammer. Established in the year 1247 of the Third Age. May our fires never die.'"
+        },
+        {
+          "id": "tool_chest",
+          "name": "master tool chest",
+          "description": "A heavy iron chest with three compartments, each marked with a different dwarven rune",
+          "subcontainers": [
+            {
+              "id": "hammer_compartment",
+              "name": "hammer compartment",
+              "locked": false,
+              "contains": [
+                "forge_journal"
+              ]
+            },
+            {
+              "id": "anvil_compartment",
+              "name": "anvil compartment",
+              "locked": true,
+              "lock_type": "combination",
+              "combination": "1247",
+              "contains": [
+                "bronze_key"
+              ]
+            },
+            {
+              "id": "tongs_compartment",
+              "name": "tongs compartment",
+              "locked": false,
+              "contains": []
+            }
+          ]
+        },
+        {
+          "id": "forge_journal",
+          "name": "master smith's journal",
+          "description": "A leather-bound journal with singed edges",
+          "readable": true,
+          "text": "Master Thrain's Log: The forge was lit in 1247, and we have worked these halls for generations. Our greatest treasures lie in the vault beyond the mines. Only those who know our clan name, our sacred metal, and our home mountain may enter."
+        },
+        {
+          "id": "bronze_key",
+          "name": "bronze mine key",
+          "description": "A sturdy bronze key with a pickaxe symbol engraved on it"
+        },
+        {
+          "id": "weapon_rack",
+          "name": "ancient weapon rack",
+          "description": "A rack holding rusted weapons and shields bearing the clan symbol",
+          "searchable": true,
+          "contains": [
+            "clan_banner"
+          ]
+        },
+        {
+          "id": "clan_banner",
+          "name": "Clan Ironhammer banner",
+          "description": "A tattered banner showing a hammer striking an anvil",
+          "readable": true,
+          "text": "The banner of Clan Ironhammer, proudest of all dwarven clans. Our symbol: the hammer and anvil. Our metal: mithril, the silver steel. Our home: the peaks of Mount Khazad."
+        },
+        {
+          "id": "locked_cabinet",
+          "name": "locked supply cabinet",
+          "description": "A tall cabinet with iron bands and a bronze lock",
+          "locked": true,
+          "key_required": "bronze_key",
+          "contains": [
+            "mining_map",
+            "mithril_ore"
+          ]
+        },
+        {
+          "id": "mining_map",
+          "name": "mine tunnel map",
+          "description": "A detailed map showing the tunnel system",
+          "readable": true,
+          "text": "Map of the Ironhammer Mines beneath Mount Khazad. The main tunnel leads to the deepest veins of mithril ore. The treasure vault lies beyond, accessible only to true members of Clan Ironhammer."
+        },
+        {
+          "id": "mithril_ore",
+          "name": "chunk of mithril ore",
+          "description": "A piece of silvery metal that gleams even in the dim light"
+        },
+        {
+          "id": "stone_workbench",
+          "name": "stone workbench",
+          "description": "A massive workbench carved from a single piece of granite",
+          "searchable": true,
+          "contains": [
+            "smithing_hammer"
+          ]
+        },
+        {
+          "id": "smithing_hammer",
+          "name": "master smithing hammer",
+          "description": "A perfectly balanced hammer with runes etched into its head"
+        },
+        {
+          "id": "mine_tunnel_entrance",
+          "name": "mine tunnel entrance",
+          "description": "A dark tunnel leading deeper into the mountain, carved with dwarven runes",
+          "locked": false,
+          "direction": "north",
+          "leads_to": "ancient_mine_tunnel",
+          "aliases": [
+            "tunnel",
+            "north"
+          ]
+        }
+      ],
+      "exits": []
+    },
+    {
+      "id": "ancient_mine_tunnel",
+      "name": "Ancient Mine Tunnel",
+      "description": "A vast tunnel system carved through solid rock by generations of dwarven miners. Mine carts sit on rusty rails, and pickaxes lean against the walls. Veins of precious metals glitter in the stone. Support beams creak overhead. The tunnel opens into a larger chamber ahead where the vault entrance stands. Lanterns hanging from the ceiling cast dancing shadows.",
+      "items": [
+        {
+          "id": "mine_cart",
+          "name": "old mine cart",
+          "description": "A sturdy iron cart once used to haul ore from the deep mines",
+          "searchable": true,
+          "contains": [
+            "miners_note"
+          ]
+        },
+        {
+          "id": "miners_note",
+          "name": "miner's note",
+          "description": "A note scrawled on a piece of slate",
+          "readable": true,
+          "text": "Day 847: We've struck the richest vein of mithril yet! Master Thrain says this silver steel will make the finest weapons in all the land. The vault is nearly full of treasures. Only Clan Ironhammer knows the way in."
+        },
+        {
+          "id": "ore_deposit",
+          "name": "exposed ore vein",
+          "description": "A rich vein of silvery mithril ore running through the rock wall",
+          "readable": true,
+          "text": "The vein sparkles with mithril, the legendary silver steel prized by dwarves above all other metals. This is what made Clan Ironhammer wealthy and powerful."
+        },
+        {
+          "id": "support_beam",
+          "name": "carved support beam",
+          "description": "A massive wooden beam with dwarven inscriptions",
+          "readable": true,
+          "text": "Inscription: 'These mines of Mount Khazad have served Clan Ironhammer for generations. May our pickaxes strike true and our forges burn bright.'"
+        },
+        {
+          "id": "tool_rack",
+          "name": "mining tool rack",
+          "description": "A rack holding various mining tools and equipment",
+          "searchable": true,
+          "contains": [
+            "rusty_pickaxe"
+          ]
+        },
+        {
+          "id": "rusty_pickaxe",
+          "name": "rusty pickaxe",
+          "description": "An old pickaxe with the Ironhammer clan symbol stamped on it"
+        },
+        {
+          "id": "stone_memorial",
+          "name": "memorial stone",
+          "description": "A carved stone honoring fallen miners",
+          "readable": true,
+          "text": "In memory of the brave miners of Clan Ironhammer who delved too deep. They sought mithril in the darkness beneath Mount Khazad and found eternal rest. Their sacrifice enriched our clan."
+        },
+        {
+          "id": "vault_entrance",
+          "name": "vault entrance",
+          "description": "A massive door of solid mithril, gleaming silver in the lantern light. Three questions are carved into the stone archway surrounding it.",
+          "locked": true,
+          "lock_type": "password",
+          "password_questions": [
+            {
+              "question": "What is the name of our clan?",
+              "answer": "clan ironhammer",
+              "hint": "Check the forge inscription, banner, and various notes throughout the forge"
+            },
+            {
+              "question": "What is our sacred metal?",
+              "answer": "mithril",
+              "hint": "The clan banner and mining notes mention the silver steel they prize"
+            },
+            {
+              "question": "What mountain is our home?",
+              "answer": "mount khazad",
+              "hint": "Multiple inscriptions and the mining map reference the mountain"
+            }
+          ],
+          "direction": "east",
+          "leads_to": "treasure_vault",
+          "aliases": [
+            "vault",
+            "door",
+            "east"
+          ]
+        }
+      ],
+      "exits": []
+    },
+    {
+      "id": "treasure_vault",
+      "name": "Dwarven Treasure Vault",
+      "description": "You have reached the legendary treasure vault of Clan Ironhammer! The chamber is filled with mountains of gold coins, chests overflowing with gems, and racks of masterwork weapons and armor. Mithril ingots are stacked like cordwood along the walls. In the center, a shaft of light from above illuminates a spiral staircase leading up to the surface and freedom. The wealth of generations surrounds you.",
+      "items": [
+        {
+          "id": "gold_piles",
+          "name": "piles of gold coins",
+          "description": "Enormous heaps of gold coins stamped with the Ironhammer symbol"
+        },
+        {
+          "id": "gem_chests",
+          "name": "chests of gems",
+          "description": "Multiple chests filled with rubies, emeralds, sapphires, and diamonds"
+        },
+        {
+          "id": "mithril_ingots",
+          "name": "stacks of mithril ingots",
+          "description": "Perfectly forged ingots of silvery mithril, the pride of the clan"
+        },
+        {
+          "id": "masterwork_weapons",
+          "name": "rack of masterwork weapons",
+          "description": "Legendary weapons forged by Master Thrain himself, each a work of art"
+        },
+        {
+          "id": "escape_staircase",
+          "name": "spiral staircase",
+          "description": "A stone staircase winding upward toward daylight and freedom",
+          "readable": true,
+          "text": "The stairs lead up through the mountain to a hidden exit. Fresh air flows down from above."
+        }
+      ],
+      "exits": [],
+      "is_goal": true,
+      "win_message": "You have discovered the legendary treasure vault of Clan Ironhammer! As you climb the spiral staircase, you emerge on the mountainside with the wealth and knowledge of the ancient dwarves. The secrets of the forge are yours, and you have successfully escaped the depths of Mount Khazad. You win!"
+    }
+  ]
+}

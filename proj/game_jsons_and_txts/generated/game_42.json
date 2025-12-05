@@ -1,0 +1,232 @@
+{
+    "theme": "Parallel Universe Apartment",
+    "title": "Parallel Universe Apartment Adventure #42",
+    "goal": "Solve the puzzles, achieve the main objective, and escape.",
+    "starting_room": "living_room_alpha",
+    "rooms": [
+        {
+            "id": "living_room_alpha",
+            "name": "Living Room Alpha",
+            "description": "Your familiar living room, but something feels off. The furniture is arranged normally, but there's a strange shimmer in the air. A glowing portal pulses on the east wall, and another crackles with energy on the west wall. Your coffee table has a locked drawer, and a bookshelf stands against the north wall.",
+            "items": [
+                {
+                    "id": "coffee_table_alpha",
+                    "name": "glass coffee table",
+                    "description": "A modern coffee table with a single locked drawer",
+                    "subcontainers": [
+                        {
+                            "id": "coffee_drawer",
+                            "name": "drawer",
+                            "locked": true,
+                            "lock_type": "combination",
+                            "combination": "142",
+                            "contains": [
+                                "universe_journal"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "universe_journal",
+                    "name": "quantum journal",
+                    "description": "A journal with notes about parallel universes",
+                    "readable": true,
+                    "text": "Journal Entry: I've discovered portals to parallel universes in my apartment! Universe Alpha (mine), Universe Beta (east portal), and Universe Gamma (west portal). The Reality Stabilizer in Universe Beta needs three codes: my apartment number, the number of universes, and the year I moved in. My apartment is #142, I've found 3 universes so far."
+                },
+                {
+                    "id": "bookshelf_alpha",
+                    "name": "wooden bookshelf",
+                    "description": "A tall bookshelf filled with books and trinkets",
+                    "searchable": true,
+                    "contains": [
+                        "photo_album"
+                    ]
+                },
+                {
+                    "id": "photo_album",
+                    "name": "old photo album",
+                    "description": "A photo album with pictures from when you moved in",
+                    "readable": true,
+                    "text": "Photos from 2019 when I first moved into apartment 142. So many memories here!"
+                },
+                {
+                    "id": "shimmering_portal",
+                    "name": "shimmering portal",
+                    "description": "A glowing blue portal that leads to Universe Beta",
+                    "locked": false,
+                    "direction": "east",
+                    "leads_to": "living_room_beta",
+                    "aliases": [
+                        "blue portal",
+                        "east portal"
+                    ]
+                },
+                {
+                    "id": "crackling_portal",
+                    "name": "crackling portal",
+                    "description": "A red crackling portal that leads to Universe Gamma",
+                    "locked": false,
+                    "direction": "west",
+                    "leads_to": "living_room_gamma",
+                    "aliases": [
+                        "red portal",
+                        "west portal"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "living_room_beta",
+            "name": "Living Room Beta",
+            "description": "A parallel version of your living room, but everything is slightly different. The furniture is the same but in different colors. A strange device labeled 'Reality Stabilizer' sits on a pedestal in the center of the room. The portal back to Universe Alpha shimmers on the west wall.",
+            "items": [
+                {
+                    "id": "reality_stabilizer",
+                    "name": "Reality Stabilizer device",
+                    "description": "A complex device with a digital display and keypad. A note is attached to it.",
+                    "readable": true,
+                    "text": "REALITY STABILIZER - Emergency Protocol: To stabilize reality and create an escape portal, enter three numbers: [Apartment Number][Universe Count][Move-in Year]. Warning: Incorrect code will cause dimensional collapse!"
+                },
+                {
+                    "id": "pedestal_beta",
+                    "name": "metal pedestal",
+                    "description": "A sleek pedestal holding the Reality Stabilizer",
+                    "searchable": true,
+                    "contains": [
+                        "beta_note"
+                    ]
+                },
+                {
+                    "id": "beta_note",
+                    "name": "sticky note",
+                    "description": "A note in your handwriting from this universe",
+                    "readable": true,
+                    "text": "Reminder to self: The stabilizer needs apartment #, universe count, and year. Check Universe Alpha for apartment number and move-in year. Count all the universes you can access!"
+                },
+                {
+                    "id": "couch_beta",
+                    "name": "blue velvet couch",
+                    "description": "A couch that's blue instead of your normal gray one",
+                    "searchable": true,
+                    "contains": [
+                        "remote_control"
+                    ]
+                },
+                {
+                    "id": "remote_control",
+                    "name": "TV remote",
+                    "description": "A standard TV remote, nothing special"
+                },
+                {
+                    "id": "control_panel",
+                    "name": "stabilizer control panel",
+                    "description": "The control panel of the Reality Stabilizer with a numeric keypad",
+                    "locked": true,
+                    "lock_type": "combination",
+                    "combination": "14232019",
+                    "contains": [
+                        "escape_portal_key"
+                    ]
+                },
+                {
+                    "id": "escape_portal_key",
+                    "name": "dimensional key",
+                    "description": "A glowing key that can activate the escape portal in Universe Gamma"
+                },
+                {
+                    "id": "return_portal",
+                    "name": "return portal",
+                    "description": "The shimmering portal back to Universe Alpha",
+                    "locked": false,
+                    "direction": "west",
+                    "leads_to": "living_room_alpha",
+                    "aliases": [
+                        "portal",
+                        "west portal"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "living_room_gamma",
+            "name": "Living Room Gamma",
+            "description": "Another parallel version of your living room, this one darker and more mysterious. The furniture is arranged in mirror image to your normal apartment. A large ornate door marked 'ESCAPE' stands on the north wall, but it's locked tight. The portal back to Universe Alpha crackles on the east wall.",
+            "items": [
+                {
+                    "id": "mirror_coffee_table",
+                    "name": "black coffee table",
+                    "description": "A dark coffee table, the mirror image of your normal one",
+                    "searchable": true,
+                    "contains": [
+                        "gamma_note"
+                    ]
+                },
+                {
+                    "id": "gamma_note",
+                    "name": "warning note",
+                    "description": "A hastily written warning",
+                    "readable": true,
+                    "text": "WARNING: This universe is unstable! The escape door requires the dimensional key from Universe Beta. Only by stabilizing reality can you escape safely!"
+                },
+                {
+                    "id": "dark_bookshelf",
+                    "name": "black bookshelf",
+                    "description": "A bookshelf made of dark wood, filled with mysterious books",
+                    "searchable": true,
+                    "contains": []
+                },
+                {
+                    "id": "ornate_escape_door",
+                    "name": "ornate escape door",
+                    "description": "A magnificent door glowing with otherworldly energy. It requires the dimensional key to unlock.",
+                    "locked": true,
+                    "key_required": "escape_portal_key",
+                    "direction": "north",
+                    "leads_to": "stable_reality",
+                    "aliases": [
+                        "door",
+                        "escape",
+                        "north"
+                    ]
+                },
+                {
+                    "id": "return_portal",
+                    "name": "return portal",
+                    "description": "The crackling portal back to Universe Alpha",
+                    "locked": false,
+                    "direction": "east",
+                    "leads_to": "living_room_alpha",
+                    "aliases": [
+                        "portal",
+                        "east portal"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "stable_reality",
+            "name": "Stabilized Reality",
+            "description": "You step through the escape door into a bright, peaceful space. The walls shimmer with all the colors of the multiverse before solidifying into your true reality. You've successfully navigated the parallel universes and stabilized your existence. A door ahead leads to freedom.",
+            "items": [
+                {
+                    "id": "reality_anchor",
+                    "name": "Reality Anchor",
+                    "description": "A glowing crystal that keeps you anchored to your true reality"
+                },
+                {
+                    "id": "multiverse_display",
+                    "name": "dimensional display",
+                    "description": "A screen showing all three universes you visited, now stable and separate",
+                    "readable": true,
+                    "text": "REALITY STATUS: STABLE. All parallel universes have been properly separated. You are now anchored to your true reality. Dimensional travel is no longer possible, but you are safe."
+                }
+            ],
+            "exits": [],
+            "is_goal": true,
+            "win_message": "Congratulations! You've successfully navigated through parallel universes, solved the quantum puzzles, and stabilized reality. The Reality Stabilizer has anchored you to your true universe, and the dangerous portals have closed. You're finally home, in the right reality. You win!"
+        }
+    ]
+}

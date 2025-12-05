@@ -1,0 +1,248 @@
+{
+    "theme": "Underground River Temple",
+    "title": "Underground River Temple Adventure #8",
+    "goal": "Solve the puzzles, achieve the main objective, and escape.",
+    "starting_room": "flooded_antechamber",
+    "rooms": [
+        {
+            "id": "flooded_antechamber",
+            "name": "Flooded Antechamber",
+            "description": "You stand in a partially flooded chamber where an underground river flows through ancient stone channels. Phosphorescent moss clings to the damp walls, casting an eerie green glow. Water drips from stalactites above, echoing through the darkness. Carved pillars rise from the shallow water, covered in mysterious symbols. The air is cool and smells of minerals and age.",
+            "items": [
+                {
+                    "id": "stone_altar",
+                    "name": "weathered stone altar",
+                    "description": "An ancient altar carved with flowing water patterns and celestial symbols",
+                    "readable": true,
+                    "text": "Altar inscription: 'The River Temple was consecrated in the year 1156, when the three moons aligned. The High Priest Meridian blessed these waters in the name of the River Goddess Aquaria.'"
+                },
+                {
+                    "id": "supply_pack",
+                    "name": "explorer's supply pack",
+                    "description": "A waterproof pack left by a previous explorer, partially submerged in the water",
+                    "searchable": true,
+                    "contains": [
+                        "waterproof_torch"
+                    ]
+                },
+                {
+                    "id": "waterproof_torch",
+                    "name": "waterproof torch",
+                    "description": "A sealed torch that burns even in damp conditions"
+                },
+                {
+                    "id": "stone_cabinet",
+                    "name": "carved stone cabinet",
+                    "description": "A cabinet built into the wall with three compartments, decorated with wave patterns",
+                    "subcontainers": [
+                        {
+                            "id": "upper_compartment",
+                            "name": "upper compartment",
+                            "locked": false,
+                            "contains": [
+                                "archaeologist_journal"
+                            ]
+                        },
+                        {
+                            "id": "middle_compartment",
+                            "name": "middle compartment",
+                            "locked": true,
+                            "lock_type": "combination",
+                            "combination": "1156",
+                            "contains": [
+                                "copper_key"
+                            ]
+                        },
+                        {
+                            "id": "lower_compartment",
+                            "name": "lower compartment",
+                            "locked": false,
+                            "contains": []
+                        }
+                    ]
+                },
+                {
+                    "id": "archaeologist_journal",
+                    "name": "archaeologist's journal",
+                    "description": "A leather journal protected in a waterproof case",
+                    "readable": true,
+                    "text": "Journal Entry: I've discovered the legendary River Temple! According to my research, it was built in 1156 during the reign of High Priest Meridian. The temple honors Aquaria, goddess of flowing waters. The inner sanctum contains the sacred Aquamarine Crown, but only those who understand the temple's history may enter."
+                },
+                {
+                    "id": "copper_key",
+                    "name": "ancient copper key",
+                    "description": "A key shaped like a flowing river, green with age"
+                },
+                {
+                    "id": "sealed_chest",
+                    "name": "sealed stone chest",
+                    "description": "A chest carved from a single block of stone, sealed with a copper lock mechanism",
+                    "locked": true,
+                    "key_required": "copper_key",
+                    "contains": [
+                        "temple_map",
+                        "ceremonial_chalice"
+                    ]
+                },
+                {
+                    "id": "temple_map",
+                    "name": "ancient temple map",
+                    "description": "A stone tablet showing the temple layout with annotations",
+                    "readable": true,
+                    "text": "Temple Map: The Hall of River Guardians lies beyond this chamber. Three guardian statues watch over the path to the Inner Sanctum. The statues represent the three sacred aspects: The Source (where rivers begin), The Flow (the journey of water), and The Delta (where rivers meet the sea)."
+                },
+                {
+                    "id": "ceremonial_chalice",
+                    "name": "silver ceremonial chalice",
+                    "description": "A tarnished silver cup engraved with water symbols, one of the temple's sacred artifacts"
+                },
+                {
+                    "id": "carved_stone_archway",
+                    "name": "carved stone archway",
+                    "description": "An archway decorated with flowing water motifs, leading deeper into the temple",
+                    "locked": false,
+                    "direction": "north",
+                    "leads_to": "guardian_hall",
+                    "aliases": [
+                        "archway",
+                        "north"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "guardian_hall",
+            "name": "Hall of River Guardians",
+            "description": "A grand hall with a shallow river flowing down its center. Three massive stone statues stand along the walls, each depicting a different aspect of water. The ceiling is painted with constellations and moon phases. Ancient braziers flicker with eternal flames. At the far end, an ornate door blocks the way to the inner sanctum.",
+            "items": [
+                {
+                    "id": "statue_source",
+                    "name": "statue of The Source",
+                    "description": "A statue showing water springing from mountain stone",
+                    "readable": true,
+                    "text": "Inscription: 'I am The Source, where all rivers begin. In the mountains high, water springs eternal. The sacred springs are found in the Peaks of Origin.'"
+                },
+                {
+                    "id": "statue_flow",
+                    "name": "statue of The Flow",
+                    "description": "A statue depicting water cascading and flowing",
+                    "readable": true,
+                    "text": "Inscription: 'I am The Flow, the eternal journey. Through valleys and canyons, I carve the earth. My power is found in constant motion.'"
+                },
+                {
+                    "id": "statue_delta",
+                    "name": "statue of The Delta",
+                    "description": "A statue showing water spreading into many channels",
+                    "readable": true,
+                    "text": "Inscription: 'I am The Delta, where rivers meet the sea. In the Coastal Plains, I spread my waters wide and bring life to all.'"
+                },
+                {
+                    "id": "offering_basin",
+                    "name": "stone offering basin",
+                    "description": "A basin filled with clear water, surrounded by niches for offerings",
+                    "searchable": true,
+                    "contains": [
+                        "jade_amulet"
+                    ]
+                },
+                {
+                    "id": "jade_amulet",
+                    "name": "jade water amulet",
+                    "description": "A green jade amulet carved in the shape of a water droplet"
+                },
+                {
+                    "id": "wall_mural",
+                    "name": "painted wall mural",
+                    "description": "A faded mural showing the history of the temple",
+                    "readable": true,
+                    "text": "The mural depicts High Priest Meridian performing the consecration ceremony. He stands before the goddess Aquaria, offering the ceremonial chalice. Text below reads: 'Meridian, servant of Aquaria, keeper of the sacred waters, guardian of the Aquamarine Crown.'"
+                },
+                {
+                    "id": "stone_pedestal",
+                    "name": "ceremonial stone pedestal",
+                    "description": "A pedestal with three carved symbols representing the guardian aspects",
+                    "subcontainers": [
+                        {
+                            "id": "source_niche",
+                            "name": "source niche",
+                            "locked": false,
+                            "contains": [
+                                "crystal_vial"
+                            ]
+                        },
+                        {
+                            "id": "flow_niche",
+                            "name": "flow niche",
+                            "locked": false,
+                            "contains": []
+                        }
+                    ]
+                },
+                {
+                    "id": "crystal_vial",
+                    "name": "crystal vial of spring water",
+                    "description": "A vial containing pure water from a sacred spring"
+                },
+                {
+                    "id": "ornate_sanctum_door",
+                    "name": "ornate sanctum door",
+                    "description": "A magnificent door carved with images of the goddess Aquaria. Three questions are inscribed on a bronze plaque.",
+                    "locked": true,
+                    "lock_type": "password",
+                    "password_questions": [
+                        {
+                            "question": "Who was the High Priest of this temple?",
+                            "answer": "meridian",
+                            "hint": "Check the altar inscription and the wall mural"
+                        },
+                        {
+                            "question": "Where do the sacred springs originate?",
+                            "answer": "peaks of origin",
+                            "hint": "Read the inscription on The Source statue"
+                        },
+                        {
+                            "question": "What does the Delta bring to the land?",
+                            "answer": "life",
+                            "hint": "The Delta statue's inscription mentions what it brings"
+                        }
+                    ],
+                    "direction": "east",
+                    "leads_to": "inner_sanctum",
+                    "aliases": [
+                        "door",
+                        "east"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "inner_sanctum",
+            "name": "Sacred Inner Sanctum",
+            "description": "You have entered the heart of the River Temple! The sanctum is a circular chamber with a domed ceiling painted to resemble the night sky. In the center, a crystal-clear pool reflects the painted stars above. On a marble pedestal rising from the pool sits the legendary Aquamarine Crown, glowing with an inner blue light. The sound of flowing water creates a peaceful melody. Ancient magic fills the air.",
+            "items": [
+                {
+                    "id": "aquamarine_crown",
+                    "name": "Aquamarine Crown",
+                    "description": "A magnificent crown crafted from aquamarine crystals and silver, radiating divine power. The crown of the River Goddess herself."
+                },
+                {
+                    "id": "sacred_pool",
+                    "name": "sacred pool",
+                    "description": "A pool of perfectly clear water that seems to glow from within"
+                },
+                {
+                    "id": "goddess_statue",
+                    "name": "statue of Aquaria",
+                    "description": "A beautiful statue of the River Goddess, carved from white marble",
+                    "readable": true,
+                    "text": "Inscription: 'Aquaria, Goddess of Rivers and Flowing Waters, blesses all who honor the sacred flow. May your journey be as eternal as the rivers themselves.'"
+                }
+            ],
+            "exits": [],
+            "is_goal": true,
+            "win_message": "You have discovered the legendary Aquamarine Crown! As you lift the sacred artifact from its pedestal, the pool begins to glow brighter. The spirit of the goddess Aquaria appears briefly, nodding in approval. The temple's magic recognizes you as worthy. With the crown in hand, you have completed your quest and uncovered one of archaeology's greatest treasures. You win!"
+        }
+    ]
+}

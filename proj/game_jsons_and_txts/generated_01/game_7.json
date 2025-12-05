@@ -1,0 +1,250 @@
+{
+    "theme": "Space-Farm Biodome",
+    "title": "Space-Farm Biodome Adventure #7",
+    "goal": "Solve the puzzles, achieve the main objective, and escape.",
+    "starting_room": "hydroponics_bay",
+    "rooms": [
+        {
+            "id": "hydroponics_bay",
+            "name": "Hydroponics Bay",
+            "description": "A vast chamber filled with rows of vertical growing towers bathed in purple LED light. Plants of all kinds grow in nutrient-rich water solutions. The air is humid and smells of fresh vegetation mixed with recycled oxygen. Through the transparent dome ceiling, you can see the stars and the curve of Earth below. Warning lights blink on several control panels.",
+            "items": [
+                {
+                    "id": "work_station",
+                    "name": "botanist work station",
+                    "description": "A cluttered desk with plant samples, data tablets, and growing charts scattered across its surface",
+                    "searchable": true,
+                    "contains": [
+                        "research_log"
+                    ]
+                },
+                {
+                    "id": "research_log",
+                    "name": "research log tablet",
+                    "description": "A digital tablet containing the botanist's research notes",
+                    "readable": true,
+                    "text": "Dr. Sarah Kim's Log - Day 847: The biodome has been operational since 2089. Our wheat crop yield is up 23%! Chief Engineer Rodriguez maintains the life support systems perfectly. Remember: emergency protocols require knowledge of key personnel and systems. The supply locker code is our founding year."
+                },
+                {
+                    "id": "storage_locker",
+                    "name": "supply storage locker",
+                    "description": "A metal locker with a four-digit combination lock and biohazard warning labels",
+                    "locked": true,
+                    "lock_type": "combination",
+                    "combination": "2089",
+                    "contains": [
+                        "access_card",
+                        "maintenance_guide"
+                    ]
+                },
+                {
+                    "id": "access_card",
+                    "name": "security access card",
+                    "description": "A magnetic keycard labeled 'ENVIRONMENTAL CONTROL ACCESS'"
+                },
+                {
+                    "id": "maintenance_guide",
+                    "name": "maintenance manual",
+                    "description": "A technical manual for biodome systems",
+                    "readable": true,
+                    "text": "BIODOME MAINTENANCE MANUAL: All atmospheric systems controlled from Environmental Control Center. Chief Engineer: Carlos Rodriguez. Lead Botanist: Dr. Sarah Kim. Emergency evacuation via airlock requires proper authorization. Oxygen is generated through photosynthesis in the hydroponics bay."
+                },
+                {
+                    "id": "growing_tower_alpha",
+                    "name": "growing tower alpha",
+                    "description": "A tall vertical tower with wheat plants growing in hydroponic solution",
+                    "readable": true,
+                    "text": "Tower Alpha Status: Wheat crop - 98% healthy. Nutrient levels optimal. This tower produces oxygen for the entire biodome through photosynthesis."
+                },
+                {
+                    "id": "tool_cabinet",
+                    "name": "tool cabinet",
+                    "description": "A cabinet containing gardening and maintenance tools",
+                    "searchable": true,
+                    "contains": [
+                        "small_key"
+                    ]
+                },
+                {
+                    "id": "small_key",
+                    "name": "small brass key",
+                    "description": "A key labeled 'SAMPLE STORAGE'"
+                },
+                {
+                    "id": "sample_storage_box",
+                    "name": "locked sample storage box",
+                    "description": "A refrigerated box for storing plant samples and seeds",
+                    "locked": true,
+                    "key_required": "small_key",
+                    "contains": [
+                        "crew_roster"
+                    ]
+                },
+                {
+                    "id": "crew_roster",
+                    "name": "crew assignment roster",
+                    "description": "A document listing all biodome personnel and their roles",
+                    "readable": true,
+                    "text": "BIODOME CREW ROSTER: Chief Engineer Carlos Rodriguez - Life Support Systems. Lead Botanist Dr. Sarah Kim - Agricultural Operations. Technician James Park - Maintenance. All emergency procedures coordinated by Chief Engineer Rodriguez."
+                },
+                {
+                    "id": "pressure_door_to_control_center",
+                    "name": "pressure door to control center",
+                    "description": "A reinforced door with a card reader leading to the Environmental Control Center",
+                    "locked": true,
+                    "key_required": "access_card",
+                    "direction": "north",
+                    "leads_to": "environmental_control",
+                    "aliases": [
+                        "door",
+                        "north"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "environmental_control",
+            "name": "Environmental Control Center",
+            "description": "The nerve center of the biodome's life support systems. Banks of monitors display atmospheric composition, temperature, pressure, and crop health data. A large window overlooks the hydroponics bay below. Control panels line the walls, their screens glowing with real-time telemetry. The hum of air processors fills the room.",
+            "items": [
+                {
+                    "id": "main_console",
+                    "name": "main control console",
+                    "description": "The primary control station with multiple displays showing biodome systems",
+                    "readable": true,
+                    "text": "SYSTEM STATUS: Oxygen generation: OPTIMAL. Temperature: 22\u00b0C. Pressure: 101.3 kPa. All systems nominal. Emergency airlock accessible from this level. Chief Engineer Rodriguez last logged in 6 hours ago."
+                },
+                {
+                    "id": "atmospheric_monitor",
+                    "name": "atmospheric monitoring station",
+                    "description": "A specialized console tracking air quality and composition",
+                    "readable": true,
+                    "text": "ATMOSPHERIC ANALYSIS: O2: 21%, N2: 78%, CO2: 0.04%. Oxygen production source: Hydroponics Bay photosynthesis. Air quality: EXCELLENT. System has maintained perfect balance since 2089."
+                },
+                {
+                    "id": "engineer_desk",
+                    "name": "chief engineer's desk",
+                    "description": "A desk covered with technical schematics and system reports",
+                    "subcontainers": [
+                        {
+                            "id": "top_drawer",
+                            "name": "top drawer",
+                            "locked": false,
+                            "contains": [
+                                "personal_note"
+                            ]
+                        },
+                        {
+                            "id": "bottom_drawer",
+                            "name": "bottom drawer",
+                            "locked": false,
+                            "contains": [
+                                "emergency_procedures"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "personal_note",
+                    "name": "handwritten note",
+                    "description": "A note in Chief Engineer Rodriguez's handwriting",
+                    "readable": true,
+                    "text": "Reminder to self: The emergency airlock security system requires verification of three critical facts: Who manages life support? Where is oxygen generated? Who coordinates emergencies? Only authorized personnel should know these answers. - C.R."
+                },
+                {
+                    "id": "emergency_procedures",
+                    "name": "emergency protocol manual",
+                    "description": "A red binder containing emergency evacuation procedures",
+                    "readable": true,
+                    "text": "EMERGENCY EVACUATION PROTOCOL: In case of critical system failure, proceed to emergency airlock on this level. Airlock access requires security verification. All emergency operations coordinated by Chief Engineer Carlos Rodriguez. Ensure all personnel are accounted for before evacuation."
+                },
+                {
+                    "id": "supply_cabinet",
+                    "name": "emergency supply cabinet",
+                    "description": "A cabinet stocked with emergency equipment and supplies",
+                    "searchable": true,
+                    "contains": [
+                        "space_suit_helmet",
+                        "oxygen_tank"
+                    ]
+                },
+                {
+                    "id": "space_suit_helmet",
+                    "name": "EVA suit helmet",
+                    "description": "A helmet for extravehicular activity, required for airlock use"
+                },
+                {
+                    "id": "oxygen_tank",
+                    "name": "portable oxygen tank",
+                    "description": "A backup oxygen supply for emergencies"
+                },
+                {
+                    "id": "wall_schematic",
+                    "name": "biodome schematic",
+                    "description": "A large diagram showing the biodome's layout and systems",
+                    "readable": true,
+                    "text": "BIODOME SCHEMATIC: Level 1 - Hydroponics Bay (Oxygen Generation). Level 2 - Environmental Control Center (Life Support Management). Emergency Airlock - East Wing. All systems interconnected and monitored from central control."
+                },
+                {
+                    "id": "emergency_airlock_door",
+                    "name": "emergency airlock door",
+                    "description": "A heavy airlock door with a security terminal displaying three verification questions. Red emergency lighting frames the entrance.",
+                    "locked": true,
+                    "lock_type": "password",
+                    "password_questions": [
+                        {
+                            "question": "Who manages the life support systems?",
+                            "answer": "chief engineer rodriguez",
+                            "hint": "Check the crew roster and maintenance manual"
+                        },
+                        {
+                            "question": "Where is oxygen generated?",
+                            "answer": "hydroponics bay",
+                            "hint": "The atmospheric monitor and maintenance guide explain the oxygen source"
+                        },
+                        {
+                            "question": "Who coordinates emergency operations?",
+                            "answer": "chief engineer rodriguez",
+                            "hint": "The emergency procedures manual identifies who leads evacuations"
+                        }
+                    ],
+                    "direction": "east",
+                    "leads_to": "escape_airlock",
+                    "aliases": [
+                        "airlock",
+                        "east"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "escape_airlock",
+            "name": "Emergency Escape Airlock",
+            "description": "You've reached the emergency airlock! A small chamber with a rescue pod docked on the other side of the outer door. Through the porthole, you can see the rescue vessel's lights blinking, ready for departure. The airlock's systems show green across the board. Safety harnesses hang on the wall, and the evacuation checklist is complete.",
+            "items": [
+                {
+                    "id": "rescue_pod",
+                    "name": "emergency rescue pod",
+                    "description": "A small spacecraft designed for emergency evacuation to the nearest space station"
+                },
+                {
+                    "id": "airlock_controls",
+                    "name": "airlock control panel",
+                    "description": "The panel controlling the airlock cycle, showing all systems ready",
+                    "readable": true,
+                    "text": "AIRLOCK STATUS: Inner door sealed. Outer door ready. Rescue pod docked and pressurized. All systems GO for evacuation."
+                },
+                {
+                    "id": "porthole",
+                    "name": "observation porthole",
+                    "description": "A thick window showing the rescue pod and the stars beyond"
+                }
+            ],
+            "exits": [],
+            "is_goal": true,
+            "win_message": "SUCCESS! You board the rescue pod and initiate the departure sequence. The airlock cycles, and the pod detaches from the biodome. As you pilot away, you look back at the biodome floating against Earth's blue curve - a testament to human ingenuity in space. You've successfully escaped and are heading to safety. You win!"
+        }
+    ]
+}

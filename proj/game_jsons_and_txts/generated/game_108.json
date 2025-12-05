@@ -1,0 +1,213 @@
+{
+    "theme": "Haunted Subway Terminal",
+    "title": "Haunted Subway Terminal Adventure #108",
+    "goal": "Solve the puzzles, achieve the main objective, and escape.",
+    "starting_room": "abandoned_platform",
+    "rooms": [
+        {
+            "id": "abandoned_platform",
+            "name": "Abandoned Platform",
+            "description": "A decaying subway platform lit by flickering fluorescent lights. Graffiti covers the tiled walls, and the air smells of rust and mildew. An old train car sits motionless on the tracks, its doors rusted shut. Water drips from cracks in the ceiling, echoing through the empty station. A maintenance tunnel entrance is visible to the north.",
+            "items": [
+                {
+                    "id": "ticket_booth",
+                    "name": "old ticket booth",
+                    "description": "A dusty ticket booth with a broken window and scattered papers inside",
+                    "searchable": true,
+                    "contains": [
+                        "station_map"
+                    ]
+                },
+                {
+                    "id": "station_map",
+                    "name": "faded station map",
+                    "description": "A yellowed map of the subway system with handwritten notes",
+                    "readable": true,
+                    "text": "Terminal Station - Opened 1904. Note scrawled in margin: 'The maintenance supervisor was always Thomas Gray. He kept the emergency key in the locked cabinet. The combination is the year this station opened.'"
+                },
+                {
+                    "id": "metal_cabinet",
+                    "name": "metal storage cabinet",
+                    "description": "A tall metal cabinet with two compartments, covered in rust and old stickers",
+                    "subcontainers": [
+                        {
+                            "id": "top_compartment",
+                            "name": "top compartment",
+                            "locked": false,
+                            "contains": [
+                                "maintenance_log"
+                            ]
+                        },
+                        {
+                            "id": "bottom_compartment",
+                            "name": "bottom compartment",
+                            "locked": true,
+                            "lock_type": "combination",
+                            "combination": "1904",
+                            "contains": [
+                                "brass_key"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "maintenance_log",
+                    "name": "maintenance logbook",
+                    "description": "A water-damaged logbook with maintenance records",
+                    "readable": true,
+                    "text": "Last Entry: Strange sounds coming from the tunnels at night. Workers refuse to go down there anymore. The old storage room beyond the maintenance tunnel holds our emergency supplies. Remember: this terminal serves the downtown district."
+                },
+                {
+                    "id": "brass_key",
+                    "name": "brass key",
+                    "description": "A tarnished brass key with a tag reading 'Storage Room'"
+                },
+                {
+                    "id": "locked_trunk",
+                    "name": "locked storage trunk",
+                    "description": "A heavy trunk with a brass lock, sitting near the platform edge",
+                    "locked": true,
+                    "key_required": "brass_key",
+                    "contains": [
+                        "newspaper_clipping",
+                        "flashlight"
+                    ]
+                },
+                {
+                    "id": "newspaper_clipping",
+                    "name": "old newspaper article",
+                    "description": "A brittle newspaper clipping from decades ago",
+                    "readable": true,
+                    "text": "DAILY NEWS - 1952: Terminal Station supervisor Thomas Gray reported missing after investigating strange occurrences in the maintenance tunnels. His spirit is said to still haunt the abandoned platform where he spent his career."
+                },
+                {
+                    "id": "flashlight",
+                    "name": "working flashlight",
+                    "description": "A heavy-duty flashlight that still works"
+                },
+                {
+                    "id": "graffiti_wall",
+                    "name": "graffiti covered wall",
+                    "description": "A wall covered in layers of spray paint and chalk markings",
+                    "readable": true,
+                    "text": "Among the graffiti, one message stands out in glowing paint: 'To escape the haunted terminal, you must know: Who watches over this place? What district does it serve? Where do the spirits dwell?'"
+                },
+                {
+                    "id": "maintenance_tunnel_entrance",
+                    "name": "maintenance tunnel entrance",
+                    "description": "A dark tunnel entrance with a rusty gate partially blocking the way",
+                    "locked": true,
+                    "key_required": "flashlight",
+                    "direction": "north",
+                    "leads_to": "maintenance_tunnel",
+                    "aliases": [
+                        "tunnel",
+                        "north"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "maintenance_tunnel",
+            "name": "Maintenance Tunnel",
+            "description": "A narrow concrete tunnel with exposed pipes running along the ceiling. Your flashlight beam cuts through the darkness, revealing old tools and equipment scattered on the floor. The walls are damp and covered in moss. Strange whispers seem to echo from deeper in the tunnel. A heavy emergency exit door stands at the far end.",
+            "items": [
+                {
+                    "id": "tool_bench",
+                    "name": "old tool bench",
+                    "description": "A workbench covered in rusty tools and spare parts",
+                    "searchable": true,
+                    "contains": [
+                        "supervisor_note"
+                    ]
+                },
+                {
+                    "id": "supervisor_note",
+                    "name": "supervisor's note",
+                    "description": "A handwritten note on official station letterhead",
+                    "readable": true,
+                    "text": "From the desk of Thomas Gray, Terminal Supervisor. Reminder: The emergency exit leads to street level freedom. The code is known only to those who understand this station's history."
+                },
+                {
+                    "id": "electrical_box",
+                    "name": "electrical junction box",
+                    "description": "An old electrical box with warning labels and a small compartment",
+                    "searchable": true,
+                    "contains": [
+                        "warning_sign"
+                    ]
+                },
+                {
+                    "id": "warning_sign",
+                    "name": "warning notice",
+                    "description": "A faded safety notice posted inside the box",
+                    "readable": true,
+                    "text": "SAFETY NOTICE: In case of supernatural activity, evacuate to street level immediately. The spirits are known to dwell in the tunnels beneath the platform. This terminal was built to serve the downtown district."
+                },
+                {
+                    "id": "pipe_cluster",
+                    "name": "cluster of old pipes",
+                    "description": "A tangle of corroded pipes with something wedged between them",
+                    "searchable": true,
+                    "contains": [
+                        "identification_badge"
+                    ]
+                },
+                {
+                    "id": "identification_badge",
+                    "name": "supervisor badge",
+                    "description": "A tarnished badge with a name engraved on it",
+                    "readable": true,
+                    "text": "TERMINAL STATION - Supervisor: Thomas Gray - Since 1948"
+                },
+                {
+                    "id": "emergency_exit_door",
+                    "name": "emergency exit door",
+                    "description": "A heavy steel door with an electronic keypad. Three security questions are displayed on a cracked screen above the keypad.",
+                    "locked": true,
+                    "lock_type": "password",
+                    "password_questions": [
+                        {
+                            "question": "Who watches over this place?",
+                            "answer": "thomas gray",
+                            "hint": "Check the maintenance log and the supervisor's badge"
+                        },
+                        {
+                            "question": "What district does it serve?",
+                            "answer": "downtown",
+                            "hint": "The maintenance log and warning notice mention this"
+                        },
+                        {
+                            "question": "Where do the spirits dwell?",
+                            "answer": "tunnels",
+                            "hint": "The warning notice explains where supernatural activity occurs"
+                        }
+                    ],
+                    "direction": "north",
+                    "leads_to": "street_level",
+                    "aliases": [
+                        "exit",
+                        "north"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "street_level",
+            "name": "Street Level Freedom",
+            "description": "You burst through the emergency exit into the cool night air! You're standing on a quiet city street, far above the haunted subway terminal. The sounds of the city replace the eerie whispers of the tunnels. Street lights illuminate your path to safety. Behind you, the emergency door slams shut with a final, echoing clang.",
+            "items": [
+                {
+                    "id": "city_street",
+                    "name": "city street",
+                    "description": "A normal city street with cars passing by and people walking. You're finally free from the haunted terminal."
+                }
+            ],
+            "exits": [],
+            "is_goal": true,
+            "win_message": "You've escaped the Haunted Subway Terminal! The supernatural whispers fade behind you as you emerge into the safety of the city above. The spirit of Thomas Gray can finally rest, knowing someone made it out. You win!"
+        }
+    ]
+}

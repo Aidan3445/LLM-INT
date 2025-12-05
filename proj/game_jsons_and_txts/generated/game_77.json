@@ -1,0 +1,228 @@
+{
+    "theme": "Cursed Painting Gallery",
+    "title": "Cursed Painting Gallery Adventure #77",
+    "goal": "Solve the puzzles, achieve the main objective, and escape.",
+    "starting_room": "gallery_entrance",
+    "rooms": [
+        {
+            "id": "gallery_entrance",
+            "name": "Gallery Entrance Hall",
+            "description": "A dimly lit entrance hall of an abandoned art gallery. Dust motes float in beams of moonlight streaming through tall windows. The walls are lined with ornate frames containing dark, unsettling paintings. The eyes in the portraits seem to follow your every move. A heavy wooden desk sits near the entrance, and an iron gate blocks the way deeper into the gallery.",
+            "items": [
+                {
+                    "id": "reception_desk",
+                    "name": "curator's reception desk",
+                    "description": "An antique wooden desk covered in papers and art catalogs. It has three drawers.",
+                    "subcontainers": [
+                        {
+                            "id": "top_drawer",
+                            "name": "top drawer",
+                            "locked": false,
+                            "contains": [
+                                "gallery_brochure"
+                            ]
+                        },
+                        {
+                            "id": "middle_drawer",
+                            "name": "middle drawer",
+                            "locked": true,
+                            "lock_type": "combination",
+                            "combination": "16881893",
+                            "contains": [
+                                "iron_gate_key"
+                            ]
+                        },
+                        {
+                            "id": "bottom_drawer",
+                            "name": "bottom drawer",
+                            "locked": false,
+                            "contains": []
+                        }
+                    ]
+                },
+                {
+                    "id": "gallery_brochure",
+                    "name": "gallery information brochure",
+                    "description": "A glossy brochure about the gallery's history",
+                    "readable": true,
+                    "text": "Welcome to the Blackwood Gallery, established 1893. Curator: Dr. Helena Blackwood. Our collection features masterworks from the Romantic era. Featured: 'The Widow' by Vincent Moreau (1688-1745) and 'Eternal Sorrow' by Isabelle Crane (1701-1768). The gallery's prized possession rests in the Vault of Masterpieces."
+                },
+                {
+                    "id": "painting_widow",
+                    "name": "painting titled The Widow",
+                    "description": "A haunting portrait of a woman in black mourning clothes, her face pale and sorrowful",
+                    "readable": true,
+                    "text": "The Widow by Vincent Moreau. Born 1688, Died 1745. The artist's masterpiece, painted the year of his birth and death combined: 1688."
+                },
+                {
+                    "id": "painting_sorrow",
+                    "name": "painting titled Eternal Sorrow",
+                    "description": "A dark landscape showing a graveyard under storm clouds",
+                    "readable": true,
+                    "text": "Eternal Sorrow by Isabelle Crane. Born 1701, Died 1768. This piece captures the essence of loss. The year it was completed: 1893, the same year this gallery opened."
+                },
+                {
+                    "id": "guest_book",
+                    "name": "visitor guest book",
+                    "description": "A leather-bound book with visitor signatures and comments",
+                    "searchable": true,
+                    "contains": [
+                        "curator_note"
+                    ]
+                },
+                {
+                    "id": "curator_note",
+                    "name": "curator's personal note",
+                    "description": "A handwritten note tucked between pages",
+                    "readable": true,
+                    "text": "Dr. Helena Blackwood's Note: The paintings are more than art\u2014they are vessels. The curse began when I acquired 'The Phantom Portrait' from the Shadow Market. Only by reaching the vault and destroying the source can the curse be lifted. The combination to my desk: birth year of Moreau, then the gallery's founding year."
+                },
+                {
+                    "id": "iron_gate_key",
+                    "name": "ornate iron key",
+                    "description": "A heavy iron key with decorative scrollwork"
+                },
+                {
+                    "id": "wrought_iron_gate",
+                    "name": "wrought iron gate",
+                    "description": "A tall gate with intricate metalwork blocking access to the rest of the gallery. A keyhole glints in the dim light.",
+                    "locked": true,
+                    "key_required": "iron_gate_key",
+                    "direction": "north",
+                    "leads_to": "restoration_studio",
+                    "aliases": [
+                        "gate",
+                        "north"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "restoration_studio",
+            "name": "Restoration Studio",
+            "description": "A cluttered workshop filled with easels, paint supplies, and half-restored canvases. The smell of turpentine and linseed oil hangs heavy in the air. Paintings in various states of repair lean against the walls. A large workbench dominates the center of the room, and a reinforced vault door stands at the far end, covered in arcane symbols.",
+            "items": [
+                {
+                    "id": "painting_phantom",
+                    "name": "painting titled The Phantom Portrait",
+                    "description": "An unfinished portrait of a figure shrouded in darkness. The face seems to shift when you look away.",
+                    "readable": true,
+                    "text": "The Phantom Portrait - Artist Unknown. Acquired from the Shadow Market. Warning written in margin: 'This painting is the source of the curse. It must be contained in the vault where cursed artifacts are sealed.'"
+                },
+                {
+                    "id": "painting_dancer",
+                    "name": "painting titled The Midnight Dancer",
+                    "description": "A portrait of a ballet dancer frozen mid-pirouette",
+                    "readable": true,
+                    "text": "The Midnight Dancer by Marie Dubois. The dancer's name was Celeste Noir, who performed at the Shadow Market theater before it burned down."
+                },
+                {
+                    "id": "painting_scholar",
+                    "name": "painting titled The Scholar",
+                    "description": "A portrait of an elderly man surrounded by books",
+                    "readable": true,
+                    "text": "The Scholar by Thomas Grey. This depicts the famous occultist who studied cursed objects and founded the vault system for containing dangerous artifacts."
+                },
+                {
+                    "id": "workbench",
+                    "name": "restoration workbench",
+                    "description": "A large wooden table covered with brushes, solvents, and restoration tools",
+                    "searchable": true,
+                    "contains": [
+                        "restoration_journal"
+                    ]
+                },
+                {
+                    "id": "restoration_journal",
+                    "name": "restoration journal",
+                    "description": "Dr. Blackwood's detailed notes on her restoration work",
+                    "readable": true,
+                    "text": "Journal Entry: I've been restoring paintings for 30 years, but nothing prepared me for The Phantom Portrait. It emanates malevolence. I must seal it in the vault where all cursed artifacts belong. The vault requires knowledge of: my name, where the cursed painting came from, and where such dangerous items must be kept."
+                },
+                {
+                    "id": "supply_cabinet",
+                    "name": "supply cabinet",
+                    "description": "A tall cabinet with glass doors containing art supplies",
+                    "subcontainers": [
+                        {
+                            "id": "top_shelf",
+                            "name": "top shelf",
+                            "locked": false,
+                            "contains": [
+                                "silver_brush"
+                            ]
+                        },
+                        {
+                            "id": "bottom_shelf",
+                            "name": "bottom shelf",
+                            "locked": false,
+                            "contains": []
+                        }
+                    ]
+                },
+                {
+                    "id": "silver_brush",
+                    "name": "silver paintbrush",
+                    "description": "An antique paintbrush with a silver handle, used for sealing curses"
+                },
+                {
+                    "id": "reinforced_vault_door",
+                    "name": "reinforced vault door",
+                    "description": "A massive door covered in protective symbols and sigils. A brass panel displays three security questions.",
+                    "locked": true,
+                    "lock_type": "password",
+                    "password_questions": [
+                        {
+                            "question": "Who is the curator of this gallery?",
+                            "answer": "dr helena blackwood",
+                            "hint": "Check the gallery brochure and the curator's notes"
+                        },
+                        {
+                            "question": "Where was the cursed painting acquired?",
+                            "answer": "shadow market",
+                            "hint": "Read The Phantom Portrait's description carefully"
+                        },
+                        {
+                            "question": "Where must cursed artifacts be kept?",
+                            "answer": "vault",
+                            "hint": "The restoration journal and painting notes mention this"
+                        }
+                    ],
+                    "direction": "east",
+                    "leads_to": "vault_of_masterpieces",
+                    "aliases": [
+                        "vault",
+                        "east"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "vault_of_masterpieces",
+            "name": "Vault of Masterpieces",
+            "description": "You have entered the secret vault! A circular chamber with walls lined with sealed paintings, each contained within protective glass cases. In the center stands an ornate pedestal with a slot for The Phantom Portrait. As you place the cursed painting into its containment case, the oppressive atmosphere lifts. The paintings' eyes stop following you. A hidden door slides open, revealing moonlight and freedom beyond.",
+            "items": [
+                {
+                    "id": "containment_pedestal",
+                    "name": "containment pedestal",
+                    "description": "A marble pedestal designed to seal cursed artifacts. Arcane symbols glow faintly around its base."
+                },
+                {
+                    "id": "sealed_paintings",
+                    "name": "sealed cursed paintings",
+                    "description": "Dozens of dangerous paintings safely contained behind protective glass"
+                },
+                {
+                    "id": "freedom_door",
+                    "name": "hidden exit door",
+                    "description": "A door that has opened now that the curse is contained, leading to freedom"
+                }
+            ],
+            "exits": [],
+            "is_goal": true,
+            "win_message": "You have successfully contained The Phantom Portrait in the vault! The curse that plagued the Blackwood Gallery is finally broken. The paintings return to being mere art, no longer vessels of malevolent energy. Dr. Blackwood's spirit appears briefly, nodding in gratitude before fading into light. You exit through the hidden door into the cool night air, free at last. You win!"
+        }
+    ]
+}

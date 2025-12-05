@@ -1,0 +1,235 @@
+{
+  "theme": "Quantum Maze Core",
+  "title": "Quantum Maze Core Adventure #55",
+  "goal": "Solve the puzzles, achieve the main objective, and escape.",
+  "starting_room": "observation_deck",
+  "rooms": [
+    {
+      "id": "observation_deck",
+      "name": "Observation Deck",
+      "description": "A sterile observation room overlooking the quantum reactor core through reinforced glass. Warning lights flash red, and alarm klaxons echo through the facility. Emergency protocols have sealed all exits. A control console blinks urgently, and research equipment is scattered across workstations.",
+      "items": [
+        {
+          "id": "control_console",
+          "name": "emergency control console",
+          "description": "A computer terminal displaying critical system warnings and locked compartments",
+          "subcontainers": [
+            {
+              "id": "console_top_panel",
+              "name": "top panel",
+              "locked": false,
+              "contains": [
+                "evacuation_protocol"
+              ]
+            },
+            {
+              "id": "console_secure_panel",
+              "name": "secure panel",
+              "locked": true,
+              "lock_type": "combination",
+              "combination": "1927",
+              "contains": [
+                "magnetic_keycard"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "evacuation_protocol",
+          "name": "evacuation protocol document",
+          "description": "An emergency procedure document with critical information",
+          "readable": true,
+          "text": "EVACUATION PROTOCOL: In case of quantum containment failure, all personnel must exit through the decontamination chamber. Lead Scientist Doctor Heisenberg established this facility in 1927. Access requires knowledge of: the founding year, the particle we study, and the lead scientist's name."
+        },
+        {
+          "id": "magnetic_keycard",
+          "name": "level 3 magnetic keycard",
+          "description": "A security card with magnetic strip and quantum facility logo"
+        },
+        {
+          "id": "research_desk",
+          "name": "research workstation",
+          "description": "A desk covered with papers, quantum calculations, and lab equipment",
+          "searchable": true,
+          "contains": [
+            "lab_notebook"
+          ]
+        },
+        {
+          "id": "lab_notebook",
+          "name": "quantum research notebook",
+          "description": "A notebook filled with equations and experimental notes",
+          "readable": true,
+          "text": "Research Log: Our experiments focus on quantum entanglement and superposition. The particle we study most is the electron. Doctor Heisenberg leads our team. Today we achieved a breakthrough in quantum tunneling, but the containment field is unstable."
+        },
+        {
+          "id": "equipment_locker",
+          "name": "equipment storage locker",
+          "description": "A metal locker containing safety equipment and tools",
+          "locked": true,
+          "key_required": "magnetic_keycard",
+          "contains": [
+            "radiation_badge",
+            "facility_map"
+          ]
+        },
+        {
+          "id": "radiation_badge",
+          "name": "radiation detection badge",
+          "description": "A badge that monitors radiation exposure levels"
+        },
+        {
+          "id": "facility_map",
+          "name": "facility layout map",
+          "description": "A schematic showing the layout of the quantum research facility",
+          "readable": true,
+          "text": "FACILITY MAP: Observation Deck connects to Laboratory Wing (south). Laboratory Wing connects to Quantum Core Chamber (east). Emergency exit through decontamination requires proper authorization."
+        },
+        {
+          "id": "reinforced_lab_door",
+          "name": "reinforced lab door",
+          "description": "A heavy security door leading to the laboratory wing, sealed by magnetic lock",
+          "locked": true,
+          "key_required": "magnetic_keycard",
+          "direction": "south",
+          "leads_to": "laboratory_wing",
+          "aliases": [
+            "door",
+            "south"
+          ]
+        }
+      ],
+      "exits": []
+    },
+    {
+      "id": "laboratory_wing",
+      "name": "Laboratory Wing",
+      "description": "A long corridor lined with laboratory equipment, particle accelerator components, and quantum measurement devices. Screens display wave functions and probability distributions. The air hums with electromagnetic energy. Research stations line both walls, and a massive vault door dominates the eastern wall.",
+      "items": [
+        {
+          "id": "particle_detector",
+          "name": "quantum particle detector",
+          "description": "A sophisticated device for measuring quantum states",
+          "readable": true,
+          "text": "Detector Display: Currently detecting high-energy electron emissions from the quantum core. Warning: Containment field at 23% integrity."
+        },
+        {
+          "id": "research_terminal",
+          "name": "research computer terminal",
+          "description": "A workstation with multiple monitors showing quantum simulations",
+          "readable": true,
+          "text": "Terminal Log: Doctor Heisenberg's final entry - The quantum core is destabilizing. I've locked the vault with security questions only the research team can answer. The core must be stabilized or we must evacuate immediately."
+        },
+        {
+          "id": "filing_cabinet",
+          "name": "research filing cabinet",
+          "description": "A cabinet containing classified research documents",
+          "subcontainers": [
+            {
+              "id": "drawer_a",
+              "name": "drawer A",
+              "locked": false,
+              "contains": [
+                "personnel_file"
+              ]
+            },
+            {
+              "id": "drawer_b",
+              "name": "drawer B",
+              "locked": false,
+              "contains": [
+                "quantum_theory_paper"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "personnel_file",
+          "name": "personnel records",
+          "description": "Files containing information about facility staff",
+          "readable": true,
+          "text": "PERSONNEL FILE: Lead Scientist - Doctor Werner Heisenberg. Specialization: Quantum mechanics and uncertainty principle. Founded this facility to study electron behavior and quantum phenomena."
+        },
+        {
+          "id": "quantum_theory_paper",
+          "name": "quantum mechanics paper",
+          "description": "A published research paper on quantum theory",
+          "readable": true,
+          "text": "Abstract: This paper explores the fundamental nature of the electron and its wave-particle duality. Our research demonstrates that electrons exhibit both particle and wave properties, a cornerstone of quantum mechanics."
+        },
+        {
+          "id": "safety_cabinet",
+          "name": "emergency safety cabinet",
+          "description": "A red cabinet containing emergency equipment",
+          "searchable": true,
+          "contains": [
+            "hazmat_gloves"
+          ]
+        },
+        {
+          "id": "hazmat_gloves",
+          "name": "protective hazmat gloves",
+          "description": "Heavy-duty gloves for handling radioactive materials"
+        },
+        {
+          "id": "quantum_core_vault_door",
+          "name": "quantum core vault door",
+          "description": "A massive reinforced door leading to the quantum core chamber. A security panel displays three authentication questions.",
+          "locked": true,
+          "lock_type": "password",
+          "password_questions": [
+            {
+              "question": "What year was this facility founded?",
+              "answer": "1927",
+              "hint": "Check the evacuation protocol document in the observation deck"
+            },
+            {
+              "question": "What particle do we study?",
+              "answer": "electron",
+              "hint": "The research notebook and quantum theory paper mention this"
+            },
+            {
+              "question": "Who is the lead scientist?",
+              "answer": "doctor heisenberg",
+              "hint": "Multiple documents reference the facility leader"
+            }
+          ],
+          "direction": "east",
+          "leads_to": "quantum_core_chamber",
+          "aliases": [
+            "vault",
+            "east"
+          ]
+        }
+      ],
+      "exits": []
+    },
+    {
+      "id": "quantum_core_chamber",
+      "name": "Quantum Core Chamber",
+      "description": "You have reached the heart of the facility! The quantum core pulses with brilliant blue light in the center of the chamber, contained within a spherical energy field. Holographic displays show stabilizing quantum states. An emergency decontamination exit glows green on the far wall, leading to safety. The core's energy readings are returning to normal.",
+      "items": [
+        {
+          "id": "quantum_core",
+          "name": "quantum reactor core",
+          "description": "A magnificent sphere of pure quantum energy, now stabilized and safely contained"
+        },
+        {
+          "id": "stabilization_console",
+          "name": "core stabilization console",
+          "description": "The main control system showing all quantum parameters returning to safe levels",
+          "readable": true,
+          "text": "SYSTEM STATUS: Quantum core stabilized. Containment field at 100%. All safety protocols restored. Emergency evacuation route now accessible."
+        },
+        {
+          "id": "holographic_display",
+          "name": "holographic status display",
+          "description": "A 3D projection showing the quantum field in perfect harmony"
+        }
+      ],
+      "exits": [],
+      "is_goal": true,
+      "win_message": "SUCCESS! You have navigated through the quantum facility, solved the security protocols, and reached the quantum core chamber. The containment field is stable, the crisis is averted, and the emergency exit is now open. You can evacuate safely with the knowledge that you've saved the facility from a catastrophic quantum breach. You win!"
+    }
+  ]
+}

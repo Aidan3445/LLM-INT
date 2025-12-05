@@ -1,0 +1,273 @@
+{
+  "theme": "Underground Resistance Bunker",
+  "title": "Underground Resistance Bunker Adventure #23",
+  "goal": "Solve the puzzles, achieve the main objective, and escape.",
+  "starting_room": "communications_room",
+  "rooms": [
+    {
+      "id": "communications_room",
+      "name": "Communications Room",
+      "description": "A cramped underground room filled with radio equipment and blinking monitors. Maps of the city are pinned to concrete walls. Emergency lights cast a red glow over everything. The air smells of ozone and stale coffee. Cables snake across the floor, and a heavy steel door leads deeper into the bunker.",
+      "items": [
+        {
+          "id": "radio_desk",
+          "name": "radio operator's desk",
+          "description": "A metal desk covered with radio equipment, code books, and scattered papers",
+          "subcontainers": [
+            {
+              "id": "top_drawer",
+              "name": "top drawer",
+              "locked": false,
+              "contains": [
+                "resistance_journal"
+              ]
+            },
+            {
+              "id": "bottom_drawer",
+              "name": "bottom drawer",
+              "locked": true,
+              "lock_type": "combination",
+              "combination": "1944",
+              "contains": [
+                "brass_key"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "resistance_journal",
+          "name": "resistance journal",
+          "description": "A worn notebook with daily entries from the resistance fighters",
+          "readable": true,
+          "text": "Day 47: Our bunker was established in 1944 when the occupation began. Commander Sarah leads us with courage. The armory holds our weapons, secured by those who know our mission. Remember: we fight for freedom, we hide in the underground, and our leader is Commander Sarah."
+        },
+        {
+          "id": "brass_key",
+          "name": "brass key",
+          "description": "A small brass key with resistance symbols etched into it"
+        },
+        {
+          "id": "wall_maps",
+          "name": "tactical wall maps",
+          "description": "Maps showing enemy positions and resistance safe houses",
+          "readable": true,
+          "text": "Strategic maps marked with red pins for enemy locations and blue pins for resistance cells. A note reads: 'Commander Sarah coordinates all operations from the command center. The underground network is our lifeline.'"
+        },
+        {
+          "id": "supply_locker",
+          "name": "metal supply locker",
+          "description": "A tall locker containing supplies and equipment",
+          "locked": true,
+          "key_required": "brass_key",
+          "contains": [
+            "flashlight",
+            "mission_briefing"
+          ]
+        },
+        {
+          "id": "flashlight",
+          "name": "battery powered flashlight",
+          "description": "A heavy flashlight that still works"
+        },
+        {
+          "id": "mission_briefing",
+          "name": "mission briefing document",
+          "description": "A classified document outlining resistance operations",
+          "readable": true,
+          "text": "MISSION BRIEFING: Our resistance cell operates from this underground bunker. Commander Sarah has authorized access to the armory for trusted members. The steel door requires the silver key kept in the radio equipment cabinet."
+        },
+        {
+          "id": "radio_equipment",
+          "name": "radio equipment cabinet",
+          "description": "A cabinet filled with radio gear and spare parts",
+          "searchable": true,
+          "contains": [
+            "silver_key"
+          ]
+        },
+        {
+          "id": "silver_key",
+          "name": "silver key",
+          "description": "A silver key labeled 'ARMORY ACCESS'"
+        },
+        {
+          "id": "code_book",
+          "name": "encryption code book",
+          "description": "A book containing codes and ciphers used by the resistance",
+          "readable": true,
+          "text": "Resistance Code Book: All messages encrypted using standard protocols. Emergency code: 1944. Commander Sarah holds final authority on all operations. Our cause: freedom from tyranny."
+        },
+        {
+          "id": "reinforced_steel_door",
+          "name": "reinforced steel door",
+          "description": "A heavy steel door with a keyhole, leading to the armory. Resistance symbols are welded onto its surface.",
+          "locked": true,
+          "key_required": "silver_key",
+          "direction": "north",
+          "leads_to": "armory",
+          "aliases": [
+            "door",
+            "north"
+          ]
+        }
+      ],
+      "exits": []
+    },
+    {
+      "id": "armory",
+      "name": "Armory",
+      "description": "A secure room lined with weapon racks and ammunition crates. The walls are reinforced concrete. Dim lights illuminate rows of rifles and supplies. A large safe sits in the corner. Beyond, a security door with an electronic keypad leads to the command center.",
+      "items": [
+        {
+          "id": "weapon_rack",
+          "name": "weapon rack",
+          "description": "A rack holding various rifles and equipment",
+          "searchable": true,
+          "contains": [
+            "cleaning_kit"
+          ]
+        },
+        {
+          "id": "cleaning_kit",
+          "name": "weapon cleaning kit",
+          "description": "A kit for maintaining firearms"
+        },
+        {
+          "id": "ammunition_crate",
+          "name": "ammunition crate",
+          "description": "A wooden crate stenciled with military markings",
+          "searchable": true,
+          "contains": [
+            "inventory_list"
+          ]
+        },
+        {
+          "id": "inventory_list",
+          "name": "weapons inventory list",
+          "description": "A detailed list of armory contents",
+          "readable": true,
+          "text": "ARMORY INVENTORY: 15 rifles, 200 rounds ammunition, 8 grenades, medical supplies. All equipment maintained by Sergeant Torres. Commander Sarah inspects weekly. Note: Command center access requires knowledge of our mission and leadership."
+        },
+        {
+          "id": "bulletin_board",
+          "name": "bulletin board",
+          "description": "A board with photos and documents pinned to it",
+          "readable": true,
+          "text": "Photos of resistance members with names: Commander Sarah (Leader), Sergeant Torres (Armory), Maria (Communications), Josef (Explosives). Mission statement: 'We fight for freedom.' Location: Underground bunker network."
+        },
+        {
+          "id": "supply_cabinet",
+          "name": "supply cabinet",
+          "description": "A locked cabinet containing medical and survival supplies",
+          "subcontainers": [
+            {
+              "id": "medical_compartment",
+              "name": "medical compartment",
+              "locked": false,
+              "contains": [
+                "first_aid_manual"
+              ]
+            },
+            {
+              "id": "secure_compartment",
+              "name": "secure compartment",
+              "locked": true,
+              "lock_type": "combination",
+              "combination": "1944",
+              "contains": [
+                "access_card"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "first_aid_manual",
+          "name": "first aid manual",
+          "description": "A medical reference guide",
+          "readable": true,
+          "text": "Emergency medical procedures for resistance fighters. Remember: we operate underground, we fight for freedom, and Commander Sarah leads us all."
+        },
+        {
+          "id": "access_card",
+          "name": "command center access card",
+          "description": "A keycard for the command center security door"
+        },
+        {
+          "id": "large_safe",
+          "name": "large safe",
+          "description": "A heavy safe with resistance documents and supplies",
+          "locked": true,
+          "key_required": "access_card",
+          "contains": [
+            "commander_orders"
+          ]
+        },
+        {
+          "id": "commander_orders",
+          "name": "commander's orders",
+          "description": "Official orders from Commander Sarah",
+          "readable": true,
+          "text": "ORDERS FROM COMMANDER SARAH: The command center is our final refuge. Access requires verification of three truths: What do we fight for? Where do we operate? Who leads the resistance? Only those who know these answers may enter."
+        },
+        {
+          "id": "command_center_security_door",
+          "name": "command center security door",
+          "description": "A reinforced door with an electronic security panel displaying three verification questions.",
+          "locked": true,
+          "lock_type": "password",
+          "password_questions": [
+            {
+              "question": "What do we fight for?",
+              "answer": "freedom",
+              "hint": "Check the resistance journal and mission documents"
+            },
+            {
+              "question": "Where do we operate?",
+              "answer": "underground",
+              "hint": "Multiple documents mention the location of the bunker"
+            },
+            {
+              "question": "Who leads the resistance?",
+              "answer": "commander sarah",
+              "hint": "The journal, bulletin board, and orders all mention the leader"
+            }
+          ],
+          "direction": "east",
+          "leads_to": "command_center",
+          "aliases": [
+            "door",
+            "east"
+          ]
+        }
+      ],
+      "exits": []
+    },
+    {
+      "id": "command_center",
+      "name": "Command Center",
+      "description": "You've reached the command center! A sophisticated room with multiple monitors showing city surveillance feeds. A large tactical table displays a map of the entire resistance network. Emergency exit signs glow green above a tunnel leading to safety. Fresh air flows from the escape route. You've made it to the heart of the resistance.",
+      "items": [
+        {
+          "id": "tactical_table",
+          "name": "tactical planning table",
+          "description": "A large table with maps and strategic planning materials"
+        },
+        {
+          "id": "surveillance_monitors",
+          "name": "surveillance monitors",
+          "description": "Multiple screens showing live feeds from across the city"
+        },
+        {
+          "id": "escape_tunnel",
+          "name": "emergency escape tunnel",
+          "description": "A tunnel leading to safety outside the city",
+          "readable": true,
+          "text": "The tunnel is clear and leads to freedom. You can see daylight at the far end."
+        }
+      ],
+      "exits": [],
+      "is_goal": true,
+      "win_message": "You've successfully reached the command center and secured the resistance bunker! The escape tunnel leads you safely out of the city. Your knowledge of the resistance's mission and leadership has proven your loyalty. The fight for freedom continues, but today you've won this battle. You win!"
+    }
+  ]
+}

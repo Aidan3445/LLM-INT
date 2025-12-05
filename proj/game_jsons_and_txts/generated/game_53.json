@@ -1,0 +1,279 @@
+{
+    "theme": "Kaiju Alert Command Center",
+    "title": "Kaiju Alert Command Center Adventure #53",
+    "goal": "Solve the puzzles, achieve the main objective, and escape.",
+    "starting_room": "control_room",
+    "rooms": [
+        {
+            "id": "control_room",
+            "name": "Main Control Room",
+            "description": "A high-tech command center with wall-sized monitors displaying seismic activity and radar sweeps. Red emergency lights flash overhead. Workstations are covered with papers and equipment. An alarm blares intermittently. The air smells of ozone and burnt circuits.",
+            "items": [
+                {
+                    "id": "main_console",
+                    "name": "main control console",
+                    "description": "A large console with multiple screens and a locked compartment panel",
+                    "subcontainers": [
+                        {
+                            "id": "console_top",
+                            "name": "top panel",
+                            "locked": false,
+                            "contains": [
+                                "evacuation_protocol"
+                            ]
+                        },
+                        {
+                            "id": "console_secure",
+                            "name": "secure compartment",
+                            "locked": true,
+                            "lock_type": "combination",
+                            "combination": "2054",
+                            "contains": [
+                                "security_keycard"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "evacuation_protocol",
+                    "name": "evacuation protocol manual",
+                    "description": "A red binder with emergency procedures",
+                    "readable": true,
+                    "text": "EVACUATION PROTOCOL: In case of Category 5 kaiju threat, activate the emergency defense system. Commander Tanaka established this facility in 2054. Access requires security clearance from the armory."
+                },
+                {
+                    "id": "security_keycard",
+                    "name": "level 2 security keycard",
+                    "description": "A magnetic keycard with blue stripe labeled Security Level 2"
+                },
+                {
+                    "id": "desk_clutter",
+                    "name": "cluttered desk",
+                    "description": "A desk covered with reports and coffee cups",
+                    "searchable": true,
+                    "contains": [
+                        "research_notes"
+                    ]
+                },
+                {
+                    "id": "research_notes",
+                    "name": "Dr Sato research notes",
+                    "description": "A notebook filled with kaiju behavioral analysis",
+                    "readable": true,
+                    "text": "Research Log: The kaiju designated Titan-7 first appeared in Tokyo Bay. Our defense mechs are stored in the underground hangar. The armory contains the activation codes we need."
+                },
+                {
+                    "id": "wall_monitors",
+                    "name": "monitoring screens",
+                    "description": "Multiple screens showing kaiju movement patterns and city maps",
+                    "readable": true,
+                    "text": "ALERT: Category 5 kaiju approaching. Estimated time to impact: 45 minutes. All personnel report to stations. Defense systems offline."
+                },
+                {
+                    "id": "reinforced_armory_door",
+                    "name": "reinforced armory door",
+                    "description": "A heavy steel door with a card reader and warning signs",
+                    "locked": true,
+                    "key_required": "security_keycard",
+                    "direction": "west",
+                    "leads_to": "armory",
+                    "aliases": [
+                        "armory",
+                        "west"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "armory",
+            "name": "Weapons Armory",
+            "description": "A secure room lined with weapon racks and equipment lockers. Emergency lighting casts long shadows. A large weapons cabinet dominates one wall. Tactical gear hangs on hooks. The room smells of gun oil and metal.",
+            "items": [
+                {
+                    "id": "weapons_cabinet",
+                    "name": "locked weapons cabinet",
+                    "description": "A reinforced cabinet with a digital lock",
+                    "locked": true,
+                    "key_required": "cabinet_key",
+                    "contains": [
+                        "activation_codes",
+                        "plasma_rifle"
+                    ]
+                },
+                {
+                    "id": "activation_codes",
+                    "name": "defense system codes",
+                    "description": "A sealed envelope marked TOP SECRET",
+                    "readable": true,
+                    "text": "DEFENSE ACTIVATION CODES: To activate the mech defense system, answer the security questions at the hangar terminal. Q1: Who founded this facility? Q2: Where did Titan-7 first appear? Q3: What is your designation?"
+                },
+                {
+                    "id": "plasma_rifle",
+                    "name": "experimental plasma rifle",
+                    "description": "A high-tech weapon designed for kaiju combat"
+                },
+                {
+                    "id": "equipment_locker",
+                    "name": "equipment storage locker",
+                    "description": "A tall locker with multiple compartments",
+                    "subcontainers": [
+                        {
+                            "id": "top_shelf",
+                            "name": "top shelf",
+                            "locked": false,
+                            "contains": [
+                                "personnel_file"
+                            ]
+                        },
+                        {
+                            "id": "middle_shelf",
+                            "name": "middle shelf",
+                            "locked": false,
+                            "contains": [
+                                "cabinet_key"
+                            ]
+                        },
+                        {
+                            "id": "bottom_shelf",
+                            "name": "bottom shelf",
+                            "locked": false,
+                            "contains": []
+                        }
+                    ]
+                },
+                {
+                    "id": "personnel_file",
+                    "name": "personnel identification file",
+                    "description": "A folder with staff information",
+                    "readable": true,
+                    "text": "PERSONNEL RECORD: You are Captain Reeves, Defense Coordinator. Clearance Level: Alpha. Assigned to Kaiju Alert Command Center under Commander Tanaka. Authorized to activate all defense systems."
+                },
+                {
+                    "id": "cabinet_key",
+                    "name": "small cabinet key",
+                    "description": "A key labeled Weapons Cabinet Master Key"
+                },
+                {
+                    "id": "tactical_gear",
+                    "name": "tactical equipment rack",
+                    "description": "Shelves holding helmets, vests, and communication devices",
+                    "searchable": true,
+                    "contains": [
+                        "hangar_access_card"
+                    ]
+                },
+                {
+                    "id": "hangar_access_card",
+                    "name": "hangar access card",
+                    "description": "A red keycard marked Hangar Bay Access"
+                },
+                {
+                    "id": "hangar_access_door",
+                    "name": "hangar access door",
+                    "description": "A door with a red card reader leading to the underground hangar",
+                    "locked": true,
+                    "key_required": "hangar_access_card",
+                    "direction": "south",
+                    "leads_to": "mech_hangar",
+                    "aliases": [
+                        "hangar",
+                        "south"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "mech_hangar",
+            "name": "Underground Mech Hangar",
+            "description": "A massive underground hangar housing three towering defense mechs. The robots stand dormant, their metal frames gleaming under harsh fluorescent lights. A central control terminal blinks with standby indicators. Hydraulic systems hiss softly. The ceiling opens to a launch shaft leading to the surface.",
+            "items": [
+                {
+                    "id": "defense_mech_alpha",
+                    "name": "defense mech Alpha",
+                    "description": "A 200-foot tall combat robot armed with plasma cannons and missile pods"
+                },
+                {
+                    "id": "defense_mech_beta",
+                    "name": "defense mech Beta",
+                    "description": "A heavily armored mech equipped with energy shields and rail guns"
+                },
+                {
+                    "id": "defense_mech_gamma",
+                    "name": "defense mech Gamma",
+                    "description": "A fast-attack mech with blade weapons and jump jets"
+                },
+                {
+                    "id": "mech_control_terminal",
+                    "name": "mech control terminal",
+                    "description": "The main activation terminal for the defense mech system. Three security questions are displayed on the screen.",
+                    "locked": true,
+                    "lock_type": "password",
+                    "password_questions": [
+                        {
+                            "question": "Who founded this facility?",
+                            "answer": "commander tanaka",
+                            "hint": "Check the evacuation protocol manual in the control room"
+                        },
+                        {
+                            "question": "Where did Titan-7 first appear?",
+                            "answer": "tokyo bay",
+                            "hint": "Dr Sato research notes mention this location"
+                        },
+                        {
+                            "question": "What is your designation?",
+                            "answer": "captain reeves",
+                            "hint": "Your personnel file in the armory has this information"
+                        }
+                    ],
+                    "direction": "north",
+                    "leads_to": "launch_sequence",
+                    "aliases": [
+                        "terminal",
+                        "north"
+                    ]
+                },
+                {
+                    "id": "maintenance_station",
+                    "name": "maintenance workstation",
+                    "description": "A station with tools and diagnostic equipment",
+                    "searchable": true,
+                    "contains": [
+                        "technical_manual"
+                    ]
+                },
+                {
+                    "id": "technical_manual",
+                    "name": "mech operations manual",
+                    "description": "A thick manual with operating procedures",
+                    "readable": true,
+                    "text": "MECH OPERATIONS: Once activated, the defense mechs will launch automatically to engage the kaiju threat. Estimated combat effectiveness: 87%. Good luck, Captain."
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "launch_sequence",
+            "name": "Mech Launch Bay",
+            "description": "The hangar erupts with activity as the three defense mechs power up with a thunderous roar. Lights blaze to life across their hulls. The ceiling opens, revealing the sky above. Hydraulics hiss as the mechs move into launch position. Through the opening, you can see the massive silhouette of the approaching kaiju. The mechs launch upward in a blast of rocket fire, soaring toward the threat. Sirens wail as the defense system comes fully online.",
+            "items": [
+                {
+                    "id": "launch_control",
+                    "name": "launch control panel",
+                    "description": "A panel showing all systems green and mechs deploying successfully"
+                },
+                {
+                    "id": "observation_screen",
+                    "name": "tactical observation screen",
+                    "description": "A screen showing the mechs engaging the kaiju in real-time combat",
+                    "readable": true,
+                    "text": "COMBAT STATUS: Defense mechs engaging target. Kaiju threat level decreasing. City evacuation proceeding. Mission success probability: 94%."
+                }
+            ],
+            "exits": [],
+            "is_goal": true,
+            "win_message": "SUCCESS! You have activated the defense mech system and launched the robots to protect the city. Through the observation screens, you watch as the three mechs engage the kaiju in an epic battle. The creature is driven back into the ocean, and the city is saved. Commander Tanaka's voice crackles over the radio: 'Outstanding work, Captain Reeves. The city owes you its survival.' You win!"
+        }
+    ]
+}
