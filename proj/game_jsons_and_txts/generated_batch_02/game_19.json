@@ -1,0 +1,238 @@
+{
+    "theme": "Ghost Ship Deck",
+    "title": "Ghost Ship Deck Adventure #19",
+    "goal": "Solve the puzzles, achieve the main objective, and escape.",
+    "starting_room": "main_deck",
+    "rooms": [
+        {
+            "id": "main_deck",
+            "name": "Ghost Ship Main Deck",
+            "description": "You stand on the weathered deck of an abandoned ship shrouded in thick fog. The wood creaks beneath your feet, and ghostly whispers echo across the deck. Tattered sails hang from broken masts, and a pale green light emanates from below deck. The ship's wheel stands at the helm, and various nautical equipment lies scattered about.",
+            "items": [
+                {
+                    "id": "ships_wheel",
+                    "name": "ship's wheel",
+                    "description": "An old wooden ship's wheel with strange carvings around its rim",
+                    "readable": true,
+                    "text": "Carved into the wheel: 'The Phantom Maiden - Launched 1692 - Captain Mordecai Graves commanding'"
+                },
+                {
+                    "id": "barrel_stack",
+                    "name": "stack of barrels",
+                    "description": "Several weathered barrels lashed together near the mast",
+                    "searchable": true,
+                    "contains": [
+                        "rusty_crowbar"
+                    ]
+                },
+                {
+                    "id": "rusty_crowbar",
+                    "name": "rusty crowbar",
+                    "description": "A heavy iron crowbar, still sturdy despite the rust"
+                },
+                {
+                    "id": "navigation_table",
+                    "name": "navigation table",
+                    "description": "A table with nautical charts and instruments, featuring two drawers",
+                    "subcontainers": [
+                        {
+                            "id": "top_drawer",
+                            "name": "top drawer",
+                            "locked": false,
+                            "contains": [
+                                "first_mates_log"
+                            ]
+                        },
+                        {
+                            "id": "bottom_drawer",
+                            "name": "bottom drawer",
+                            "locked": true,
+                            "lock_type": "combination",
+                            "combination": "1692",
+                            "contains": [
+                                "brass_key"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "first_mates_log",
+                    "name": "first mate's log",
+                    "description": "A water-stained journal belonging to the first mate",
+                    "readable": true,
+                    "text": "First Mate's Log: Captain Graves has gone mad with greed. The cursed treasure from Devil's Cove has doomed us all. The ship was launched in 1692, the same year this nightmare began. May God have mercy on our souls."
+                },
+                {
+                    "id": "brass_key",
+                    "name": "brass key",
+                    "description": "A tarnished brass key with a skull emblem"
+                },
+                {
+                    "id": "wooden_hatch",
+                    "name": "wooden hatch",
+                    "description": "A heavy hatch leading below deck, secured with a rusty lock",
+                    "locked": true,
+                    "key_required": "rusty_crowbar",
+                    "direction": "south",
+                    "leads_to": "captains_quarters",
+                    "aliases": [
+                        "hatch",
+                        "down",
+                        "south"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "captains_quarters",
+            "name": "Captain's Quarters",
+            "description": "A dimly lit cabin filled with the remnants of a captain's life at sea. A large desk dominates the room, covered in maps and documents. A portrait of a stern-faced captain hangs on the wall, his eyes seeming to follow your movement. The air is thick with the smell of salt and decay. A locked door to the west leads deeper into the ship.",
+            "items": [
+                {
+                    "id": "captains_portrait",
+                    "name": "portrait of Captain Graves",
+                    "description": "An oil painting of a bearded man in a captain's uniform",
+                    "readable": true,
+                    "text": "Brass nameplate reads: 'Captain Mordecai Graves - Master of the Phantom Maiden - Lost at Devil's Cove'"
+                },
+                {
+                    "id": "captains_desk",
+                    "name": "captain's desk",
+                    "description": "An ornate wooden desk with intricate carvings and multiple compartments",
+                    "subcontainers": [
+                        {
+                            "id": "left_drawer",
+                            "name": "left drawer",
+                            "locked": false,
+                            "contains": [
+                                "captains_journal"
+                            ]
+                        },
+                        {
+                            "id": "right_drawer",
+                            "name": "right drawer",
+                            "locked": true,
+                            "key_required": "brass_key",
+                            "contains": [
+                                "silver_key",
+                                "treasure_map"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "captains_journal",
+                    "name": "captain's journal",
+                    "description": "A leather-bound journal with the captain's personal entries",
+                    "readable": true,
+                    "text": "Final Entry: The crew whispers of mutiny. They blame me for the curse, but I only sought fortune at Devil's Cove. The treasure is hidden in the cargo hold, protected by questions only I can answer. First: my name. Second: where we found our doom. Third: the name of my cursed vessel."
+                },
+                {
+                    "id": "treasure_map",
+                    "name": "old treasure map",
+                    "description": "A map showing Devil's Cove and the location of cursed treasure",
+                    "readable": true,
+                    "text": "The map shows Devil's Cove marked with an X. A note reads: 'Here we found the cursed gold that doomed the Phantom Maiden and all who sail upon her.'"
+                },
+                {
+                    "id": "silver_key",
+                    "name": "silver key",
+                    "description": "A small silver key with intricate engravings"
+                },
+                {
+                    "id": "sea_chest",
+                    "name": "captain's sea chest",
+                    "description": "A large wooden chest bound with iron bands",
+                    "locked": true,
+                    "key_required": "silver_key",
+                    "contains": [
+                        "spectral_compass"
+                    ]
+                },
+                {
+                    "id": "spectral_compass",
+                    "name": "glowing compass",
+                    "description": "A compass that glows with an eerie green light, its needle pointing toward escape"
+                },
+                {
+                    "id": "reinforced_door",
+                    "name": "reinforced door",
+                    "description": "A heavy door leading to the cargo hold. Three questions are carved into the wood, glowing with ghostly light.",
+                    "locked": true,
+                    "lock_type": "password",
+                    "password_questions": [
+                        {
+                            "question": "What is the captain's name?",
+                            "answer": "mordecai graves",
+                            "hint": "Check the ship's wheel and the portrait"
+                        },
+                        {
+                            "question": "Where was the cursed treasure found?",
+                            "answer": "devils cove",
+                            "hint": "Read the captain's journal and examine the treasure map"
+                        },
+                        {
+                            "question": "What is the name of this ship?",
+                            "answer": "phantom maiden",
+                            "hint": "The ship's wheel has the vessel's name carved into it"
+                        }
+                    ],
+                    "direction": "west",
+                    "leads_to": "cargo_hold",
+                    "aliases": [
+                        "door",
+                        "west"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "cargo_hold",
+            "name": "Cargo Hold",
+            "description": "You've reached the ship's cargo hold! The room is filled with crates and barrels, but in the center sits an open chest overflowing with cursed gold coins that glow with an unnatural light. Ghostly figures of the crew materialize around you, but they seem at peace now. A rope ladder leads up through an opening to a lifeboat on the deck above.",
+            "items": [
+                {
+                    "id": "cursed_treasure",
+                    "name": "chest of cursed gold",
+                    "description": "An overflowing chest of gold coins, jewels, and artifacts from Devil's Cove"
+                },
+                {
+                    "id": "ghostly_crew",
+                    "name": "spectral crew members",
+                    "description": "The translucent forms of the ship's crew, finally at rest now that someone has solved the captain's riddles"
+                },
+                {
+                    "id": "rope_ladder",
+                    "name": "rope ladder",
+                    "description": "A sturdy rope ladder leading up to freedom",
+                    "locked": false,
+                    "direction": "north",
+                    "leads_to": "lifeboat",
+                    "aliases": [
+                        "ladder",
+                        "up",
+                        "north"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "lifeboat",
+            "name": "Lifeboat",
+            "description": "You climb into a small lifeboat that has miraculously remained seaworthy. As you push off from the ghost ship, the fog begins to lift. The Phantom Maiden fades into mist behind you, finally released from its curse. The spectral compass in your hand points toward home.",
+            "items": [
+                {
+                    "id": "oars",
+                    "name": "wooden oars",
+                    "description": "A pair of sturdy oars to row yourself to safety"
+                }
+            ],
+            "exits": [],
+            "is_goal": true,
+            "win_message": "You have escaped the Ghost Ship Deck! As you row away, you hear the grateful whispers of Captain Graves and his crew fading into the mist. The curse is broken, and you are free. The spectral compass will guide you safely home. You win!"
+        }
+    ]
+}

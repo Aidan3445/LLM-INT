@@ -1,0 +1,241 @@
+{
+    "theme": "Dwarven Forge",
+    "title": "Dwarven Forge Adventure #5",
+    "goal": "Solve the puzzles, achieve the main objective, and escape.",
+    "starting_room": "forge_workshop",
+    "rooms": [
+        {
+            "id": "forge_workshop",
+            "name": "Forge Workshop",
+            "description": "A vast stone chamber filled with the remnants of ancient dwarven craftsmanship. Cold anvils stand silent, and the great forge fire has long since died. Stone pillars carved with runic patterns support the vaulted ceiling. The air smells of old metal and coal dust. Tools hang on the walls, and workbenches are covered with half-finished projects.",
+            "items": [
+                {
+                    "id": "tool_rack",
+                    "name": "iron tool rack",
+                    "description": "A sturdy rack holding various blacksmithing tools and hammers",
+                    "searchable": true,
+                    "contains": [
+                        "forge_hammer"
+                    ]
+                },
+                {
+                    "id": "forge_hammer",
+                    "name": "heavy forge hammer",
+                    "description": "A well-balanced hammer with runes etched into the handle"
+                },
+                {
+                    "id": "workbench",
+                    "name": "stone workbench",
+                    "description": "A massive workbench with three storage compartments built into its base",
+                    "subcontainers": [
+                        {
+                            "id": "left_compartment",
+                            "name": "left compartment",
+                            "locked": false,
+                            "contains": [
+                                "master_journal"
+                            ]
+                        },
+                        {
+                            "id": "center_compartment",
+                            "name": "center compartment",
+                            "locked": true,
+                            "lock_type": "combination",
+                            "combination": "1200",
+                            "contains": [
+                                "bronze_key"
+                            ]
+                        },
+                        {
+                            "id": "right_compartment",
+                            "name": "right compartment",
+                            "locked": false,
+                            "contains": []
+                        }
+                    ]
+                },
+                {
+                    "id": "master_journal",
+                    "name": "forge master journal",
+                    "description": "A leather bound journal with singed edges",
+                    "readable": true,
+                    "text": "Journal of Forge Master Thorin Ironbeard: The forge burns at exactly 1200 degrees when properly stoked. Only at this sacred temperature can true dwarven steel be born. Remember the three pillars of our craft: Strength, Honor, and Fire."
+                },
+                {
+                    "id": "bronze_key",
+                    "name": "ornate bronze key",
+                    "description": "A key decorated with flame patterns and dwarven runes"
+                },
+                {
+                    "id": "locked_chest",
+                    "name": "reinforced iron chest",
+                    "description": "A heavy chest bound with iron bands and a bronze lock",
+                    "locked": true,
+                    "key_required": "bronze_key",
+                    "contains": [
+                        "clan_chronicle"
+                    ]
+                },
+                {
+                    "id": "clan_chronicle",
+                    "name": "clan chronicle",
+                    "description": "An ancient tome recording the history of the forge clan",
+                    "readable": true,
+                    "text": "Chronicle of the Ironbeard Clan: Founded by Thorin Ironbeard in the Age of Stone. Our greatest treasure, the Hammer of Ancestors, rests in the Master Vault. The vault opens only to those who know: the founder's name, where our strength comes from, and what element we command."
+                },
+                {
+                    "id": "cold_forge",
+                    "name": "great forge pit",
+                    "description": "The massive central forge, now cold and dark. Ash covers the bottom.",
+                    "searchable": true,
+                    "contains": [
+                        "soot_covered_note"
+                    ]
+                },
+                {
+                    "id": "soot_covered_note",
+                    "name": "soot covered note",
+                    "description": "A note blackened by soot and ash",
+                    "readable": true,
+                    "text": "Note from Apprentice Grimli: Master Thorin always said our strength comes from the mountain itself. The stone gives us iron, the iron gives us strength. Fire is our element, the heart of all we create."
+                },
+                {
+                    "id": "carved_stone_archway",
+                    "name": "carved stone archway",
+                    "description": "An archway leading north, decorated with images of hammers and anvils",
+                    "locked": false,
+                    "direction": "north",
+                    "leads_to": "runic_library",
+                    "aliases": [
+                        "archway",
+                        "north"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "runic_library",
+            "name": "Runic Library",
+            "description": "A chamber lined with stone shelves holding ancient tablets and scrolls. Glowing runes on the walls provide dim illumination. A large stone table dominates the center of the room, covered with maps and diagrams. The eastern wall features a massive vault door inscribed with three questions in the old dwarven tongue.",
+            "items": [
+                {
+                    "id": "stone_shelves",
+                    "name": "library stone shelves",
+                    "description": "Shelves carved directly from the mountain stone, holding countless records",
+                    "searchable": true,
+                    "contains": [
+                        "history_tablet"
+                    ]
+                },
+                {
+                    "id": "history_tablet",
+                    "name": "stone history tablet",
+                    "description": "A tablet recording important clan history",
+                    "readable": true,
+                    "text": "Historical Record: Thorin Ironbeard, first of his name, established this forge in the heart of the mountain. He taught that the mountain is our source of strength, providing ore and stone. He mastered fire above all elements, bending flame to his will."
+                },
+                {
+                    "id": "stone_table",
+                    "name": "central stone table",
+                    "description": "A massive table with compartments for storing important documents",
+                    "subcontainers": [
+                        {
+                            "id": "table_drawer_one",
+                            "name": "first drawer",
+                            "locked": false,
+                            "contains": [
+                                "forge_diagram"
+                            ]
+                        },
+                        {
+                            "id": "table_drawer_two",
+                            "name": "second drawer",
+                            "locked": false,
+                            "contains": []
+                        }
+                    ]
+                },
+                {
+                    "id": "forge_diagram",
+                    "name": "forge blueprint",
+                    "description": "A detailed diagram of the forge layout and vault system",
+                    "readable": true,
+                    "text": "Blueprint Notes: The Master Vault contains the Hammer of Ancestors, forged by Thorin Ironbeard himself. Access requires knowledge of our founder, our source of power, and our chosen element. Only true clan members may enter."
+                },
+                {
+                    "id": "rune_wall",
+                    "name": "glowing rune wall",
+                    "description": "A wall covered in luminescent dwarven runes",
+                    "readable": true,
+                    "text": "The runes tell the story of the forge: 'From mountain stone we draw our strength. Through sacred fire we shape our destiny. By the will of Thorin Ironbeard, we endure.'"
+                },
+                {
+                    "id": "master_vault_door",
+                    "name": "master vault door",
+                    "description": "A massive door of carved stone and iron, inscribed with three questions that glow with inner light",
+                    "locked": true,
+                    "lock_type": "password",
+                    "password_questions": [
+                        {
+                            "question": "Who founded this forge?",
+                            "answer": "thorin ironbeard",
+                            "hint": "Check the forge master's journal and the clan chronicle"
+                        },
+                        {
+                            "question": "What is the source of our strength?",
+                            "answer": "mountain",
+                            "hint": "The apprentice's note and history tablet mention this"
+                        },
+                        {
+                            "question": "What element do we command?",
+                            "answer": "fire",
+                            "hint": "Look at what the dwarves mastered in their craft"
+                        }
+                    ],
+                    "direction": "east",
+                    "leads_to": "master_vault",
+                    "aliases": [
+                        "vault",
+                        "east"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "master_vault",
+            "name": "Master Vault",
+            "description": "You have entered the sacred Master Vault! The chamber glows with an ethereal light emanating from the center pedestal. Upon it rests the legendary Hammer of Ancestors, a magnificent weapon with a head of pure mithril and a handle wrapped in ancient dragon leather. Runes of power pulse along its surface. The walls are lined with other treasures: gems, gold, and artifacts of immense historical value.",
+            "items": [
+                {
+                    "id": "hammer_of_ancestors",
+                    "name": "Hammer of Ancestors",
+                    "description": "The legendary hammer forged by Thorin Ironbeard, radiating power and history"
+                },
+                {
+                    "id": "crystal_pedestal",
+                    "name": "mithril pedestal",
+                    "description": "A pedestal of pure mithril holding the sacred hammer"
+                },
+                {
+                    "id": "treasure_alcoves",
+                    "name": "treasure alcoves",
+                    "description": "Alcoves filled with gold, gems, and ancient dwarven artifacts",
+                    "searchable": true,
+                    "contains": []
+                },
+                {
+                    "id": "victory_inscription",
+                    "name": "wall inscription",
+                    "description": "An inscription carved above the pedestal",
+                    "readable": true,
+                    "text": "Here rests the Hammer of Ancestors, symbol of our clan's strength and heritage. May it serve the worthy who prove themselves through wisdom and perseverance. The forge endures eternal."
+                }
+            ],
+            "exits": [],
+            "is_goal": true,
+            "win_message": "You have proven yourself worthy and claimed the legendary Hammer of Ancestors! The weapon thrums with ancient power as you lift it from its pedestal. The spirits of the forge masters past seem to nod in approval. You have solved the mysteries of the Dwarven Forge and earned the right to wield this sacred artifact. The legacy of Thorin Ironbeard lives on through you. You win!"
+        }
+    ]
+}

@@ -1,0 +1,242 @@
+{
+  "theme": "Bio-Android Nursery",
+  "title": "Bio-Android Nursery Adventure #66",
+  "goal": "Solve the puzzles, achieve the main objective, and escape.",
+  "starting_room": "incubation_lab",
+  "rooms": [
+    {
+      "id": "incubation_lab",
+      "name": "Incubation Laboratory",
+      "description": "A sterile white laboratory filled with rows of glowing incubation pods. Inside each pod, partially formed bio-android bodies float in nutrient solution. Monitors display vital signs and growth percentages. The air is cool and smells of antiseptic. Warning lights blink on several control panels, and a soft humming fills the space.",
+      "items": [
+        {
+          "id": "workstation",
+          "name": "research workstation",
+          "description": "A sleek desk with holographic displays and data terminals",
+          "searchable": true,
+          "contains": [
+            "research_log"
+          ]
+        },
+        {
+          "id": "research_log",
+          "name": "research log datapad",
+          "description": "A digital tablet containing research notes",
+          "readable": true,
+          "text": "Research Log - Day 2157: The nursery facility was established in the year 2157 to create the next generation of bio-androids. Dr. Helena Voss leads the project. Chief Engineer Marcus Kane maintains all systems. The neural programming is conducted in the Control Center."
+        },
+        {
+          "id": "supply_cabinet",
+          "name": "medical supply cabinet",
+          "description": "A tall cabinet with three compartments containing medical equipment",
+          "subcontainers": [
+            {
+              "id": "top_compartment",
+              "name": "top compartment",
+              "locked": false,
+              "contains": [
+                "facility_manual"
+              ]
+            },
+            {
+              "id": "middle_compartment",
+              "name": "middle compartment",
+              "locked": true,
+              "lock_type": "combination",
+              "combination": "2157",
+              "contains": [
+                "access_keycard"
+              ]
+            },
+            {
+              "id": "bottom_compartment",
+              "name": "bottom compartment",
+              "locked": false,
+              "contains": []
+            }
+          ]
+        },
+        {
+          "id": "facility_manual",
+          "name": "facility operations manual",
+          "description": "A manual detailing facility procedures",
+          "readable": true,
+          "text": "Bio-Android Nursery Operations Manual: This facility creates advanced bio-androids through a three-stage process. Stage 1: Physical incubation. Stage 2: Neural programming in the Control Center. Stage 3: Final activation. Access code to secure storage is the facility founding year: 2157."
+        },
+        {
+          "id": "access_keycard",
+          "name": "security access keycard",
+          "description": "A magnetic keycard with blue security clearance"
+        },
+        {
+          "id": "incubation_pod_alpha",
+          "name": "incubation pod alpha",
+          "description": "A large cylindrical pod containing a developing bio-android",
+          "readable": true,
+          "text": "Pod Status: Subject Alpha-7. Growth: 87%. Neural pathways forming. Estimated completion: 48 hours. Note: All bio-androids receive programming in the Control Center before activation."
+        },
+        {
+          "id": "storage_locker",
+          "name": "secure storage locker",
+          "description": "A locked metal locker with a keycard reader",
+          "locked": true,
+          "key_required": "access_keycard",
+          "contains": [
+            "personnel_roster",
+            "maintenance_tool"
+          ]
+        },
+        {
+          "id": "personnel_roster",
+          "name": "personnel roster",
+          "description": "A document listing facility staff",
+          "readable": true,
+          "text": "PERSONNEL ROSTER: Dr. Helena Voss - Project Director, Neural Programming. Chief Engineer Marcus Kane - Systems Maintenance and Security. Dr. Sarah Chen - Biological Development. All emergency protocols require Director authorization."
+        },
+        {
+          "id": "maintenance_tool",
+          "name": "electronic maintenance tool",
+          "description": "A multi-purpose tool for facility repairs"
+        },
+        {
+          "id": "control_center_door",
+          "name": "control center door",
+          "description": "A reinforced door with a security panel leading to the Control Center",
+          "locked": false,
+          "direction": "north",
+          "leads_to": "control_center",
+          "aliases": [
+            "door",
+            "north"
+          ]
+        }
+      ],
+      "exits": []
+    },
+    {
+      "id": "control_center",
+      "name": "Neural Programming Control Center",
+      "description": "A high-tech command center with banks of computers and holographic displays showing neural network diagrams. Large screens display bio-android consciousness patterns. The room hums with processing power. A master control console dominates the center, and emergency evacuation protocols are displayed on a wall screen.",
+      "items": [
+        {
+          "id": "master_console",
+          "name": "master control console",
+          "description": "The primary control station for all nursery operations",
+          "readable": true,
+          "text": "SYSTEM STATUS: Neural programming active. Bio-android development on schedule. Emergency evacuation bay accessible via east corridor. Warning: Evacuation requires Director authorization and proper security clearance."
+        },
+        {
+          "id": "neural_display",
+          "name": "neural network display",
+          "description": "A holographic display showing complex neural patterns",
+          "readable": true,
+          "text": "Neural Programming Interface: All bio-androids receive their core programming here in the Control Center. Dr. Voss personally oversees each neural imprint to ensure optimal cognitive function."
+        },
+        {
+          "id": "engineering_desk",
+          "name": "engineering workstation",
+          "description": "Chief Engineer Kane's desk with technical manuals and tools",
+          "subcontainers": [
+            {
+              "id": "desk_drawer",
+              "name": "locked drawer",
+              "locked": true,
+              "key_required": "maintenance_tool",
+              "contains": [
+                "evacuation_protocol"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "evacuation_protocol",
+          "name": "emergency evacuation protocol",
+          "description": "A document outlining emergency procedures",
+          "readable": true,
+          "text": "EMERGENCY EVACUATION PROTOCOL: In case of facility emergency, proceed to evacuation bay. Access requires security verification. Questions: 1) Who directs neural programming? 2) Where is neural programming conducted? 3) Who authorizes emergency protocols?"
+        },
+        {
+          "id": "data_terminal",
+          "name": "data access terminal",
+          "description": "A terminal with access to facility records",
+          "searchable": true,
+          "contains": [
+            "project_summary"
+          ]
+        },
+        {
+          "id": "project_summary",
+          "name": "project summary report",
+          "description": "A comprehensive report on the bio-android project",
+          "readable": true,
+          "text": "PROJECT SUMMARY: Under the leadership of Dr. Helena Voss, the Bio-Android Nursery has successfully created 66 advanced bio-androids. Neural programming conducted in the Control Center ensures each unit has optimal cognitive abilities. Director Voss maintains final authority over all operations."
+        },
+        {
+          "id": "wall_screen",
+          "name": "emergency information screen",
+          "description": "A large screen displaying emergency procedures",
+          "readable": true,
+          "text": "EMERGENCY PROCEDURES: All evacuations must be authorized by the Project Director. Neural programming is the critical phase conducted in this Control Center. Follow all security protocols during evacuation."
+        },
+        {
+          "id": "evacuation_bay_door",
+          "name": "evacuation bay door",
+          "description": "A heavy security door leading to the emergency evacuation bay. A biometric panel displays three security questions.",
+          "locked": true,
+          "lock_type": "password",
+          "password_questions": [
+            {
+              "question": "Who directs neural programming?",
+              "answer": "dr helena voss",
+              "hint": "Check the personnel roster and project summary"
+            },
+            {
+              "question": "Where is neural programming conducted?",
+              "answer": "control center",
+              "hint": "Multiple documents mention where this critical process takes place"
+            },
+            {
+              "question": "Who authorizes emergency protocols?",
+              "answer": "director",
+              "hint": "The evacuation protocol and personnel roster explain the chain of command"
+            }
+          ],
+          "direction": "east",
+          "leads_to": "evacuation_bay",
+          "aliases": [
+            "door",
+            "east"
+          ]
+        }
+      ],
+      "exits": []
+    },
+    {
+      "id": "evacuation_bay",
+      "name": "Emergency Evacuation Bay",
+      "description": "You have reached the emergency evacuation bay! A sleek escape shuttle sits on its launch platform, engines humming with readiness. Through the transparent launch tube, you can see the stars beyond the facility. Control panels show all systems green. The shuttle door stands open, inviting you to safety.",
+      "items": [
+        {
+          "id": "escape_shuttle",
+          "name": "emergency escape shuttle",
+          "description": "A compact spacecraft designed for rapid evacuation"
+        },
+        {
+          "id": "launch_platform",
+          "name": "shuttle launch platform",
+          "description": "The platform holding the escape shuttle, ready for immediate departure"
+        },
+        {
+          "id": "control_panel",
+          "name": "launch control panel",
+          "description": "Controls showing all systems ready for launch",
+          "readable": true,
+          "text": "LAUNCH SYSTEMS: All green. Shuttle fueled and ready. Destination: Orbital Station Gamma. Launch sequence can be initiated immediately."
+        }
+      ],
+      "exits": [],
+      "is_goal": true,
+      "win_message": "SUCCESS! You board the escape shuttle and initiate the launch sequence. The engines roar to life as the shuttle lifts off from the Bio-Android Nursery facility. Through the viewport, you watch the nursery shrink below as you accelerate toward the safety of Orbital Station Gamma. You have successfully escaped! You win!"
+    }
+  ]
+}

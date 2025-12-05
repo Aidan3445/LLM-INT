@@ -1,0 +1,224 @@
+{
+    "theme": "Dragon's Hoard Cavern",
+    "title": "Dragon's Hoard Cavern Adventure #17",
+    "goal": "Solve the puzzles, achieve the main objective, and escape.",
+    "starting_room": "dragons_chamber",
+    "rooms": [
+        {
+            "id": "dragons_chamber",
+            "name": "Dragon's Sleeping Chamber",
+            "description": "A massive cavern lit by glowing crystals embedded in the walls. In the center, an enormous red dragon sleeps atop a pile of gold coins, its chest rising and falling with deep, rumbling breaths. The air is hot and smells of sulfur. Ancient tapestries hang on the walls, and a large stone chest sits in the corner. You must move quietly to avoid waking the beast.",
+            "items": [
+                {
+                    "id": "stone_chest",
+                    "name": "ancient stone chest",
+                    "description": "A heavy chest carved with dragon symbols and runes",
+                    "subcontainers": [
+                        {
+                            "id": "top_compartment",
+                            "name": "top compartment",
+                            "locked": false,
+                            "contains": [
+                                "dragon_chronicle"
+                            ]
+                        },
+                        {
+                            "id": "bottom_compartment",
+                            "name": "bottom compartment",
+                            "locked": true,
+                            "lock_type": "combination",
+                            "combination": "350",
+                            "contains": [
+                                "iron_key"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "dragon_chronicle",
+                    "name": "chronicle of dragons",
+                    "description": "An ancient book with dragon lore written in gold ink",
+                    "readable": true,
+                    "text": "The Great Red Dragon Ignathor has lived for 350 years in these mountains. He guards 3 dragon eggs and hoards treasures from 5 kingdoms. His favorite treasure is gold, which he values above all else."
+                },
+                {
+                    "id": "iron_key",
+                    "name": "heavy iron key",
+                    "description": "A large key with a dragon head carved into the handle"
+                },
+                {
+                    "id": "tapestry_wall",
+                    "name": "ancient tapestries",
+                    "description": "Faded tapestries depicting dragon history and battles",
+                    "readable": true,
+                    "text": "The tapestries show the dragon Ignathor conquering kingdoms and gathering treasure. One panel shows him making his lair in the Crimson Peak Mountains, specifically in the Ember Caverns beneath the volcano."
+                },
+                {
+                    "id": "gold_pile",
+                    "name": "pile of gold coins",
+                    "description": "A massive mound of gold coins that the dragon sleeps upon",
+                    "searchable": true,
+                    "contains": [
+                        "treasure_map"
+                    ]
+                },
+                {
+                    "id": "treasure_map",
+                    "name": "treasure vault map",
+                    "description": "A map showing the layout of the dragon's treasure chambers",
+                    "readable": true,
+                    "text": "Map of Dragon's Hoard: The main treasure vault lies beyond the sleeping chamber. To enter, one must answer the guardian questions: What is the dragon's name? What treasure does he value most? Where is his lair located?"
+                },
+                {
+                    "id": "locked_cabinet",
+                    "name": "ornate cabinet",
+                    "description": "A tall wooden cabinet decorated with jewels and dragon scales",
+                    "locked": true,
+                    "key_required": "iron_key",
+                    "contains": [
+                        "dragon_journal"
+                    ]
+                },
+                {
+                    "id": "dragon_journal",
+                    "name": "dragon's personal journal",
+                    "description": "A massive book written in the dragon's own claw-writing",
+                    "readable": true,
+                    "text": "Journal of Ignathor: I have lived 350 years and my hoard grows ever larger. My 3 precious eggs will hatch soon. I have claimed treasures from 5 kingdoms. Gold is my greatest love - more valuable than any gem or artifact."
+                },
+                {
+                    "id": "narrow_passage",
+                    "name": "narrow passage",
+                    "description": "A dark passage leading deeper into the cavern system",
+                    "locked": false,
+                    "direction": "east",
+                    "leads_to": "treasure_hall",
+                    "aliases": [
+                        "passage",
+                        "east"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "treasure_hall",
+            "name": "Treasure Hoard Hall",
+            "description": "An enormous hall filled with mountains of treasure - gold coins, jeweled crowns, ancient weapons, and magical artifacts. Torches burn with eternal flames along the walls. Suits of armor from conquered kingdoms stand as silent sentinels. A massive vault door dominates the far wall, and several treasure chests are scattered throughout the room.",
+            "items": [
+                {
+                    "id": "armor_display",
+                    "name": "suits of armor",
+                    "description": "Five complete suits of armor from different kingdoms",
+                    "readable": true,
+                    "text": "Each suit bears the crest of a conquered kingdom: The Silver Kingdom, The Emerald Realm, The Golden Empire, The Ruby Dynasty, and The Sapphire Dominion. All fell before Ignathor's might."
+                },
+                {
+                    "id": "jeweled_chest",
+                    "name": "jewel-encrusted chest",
+                    "description": "A chest overflowing with precious gems and jewelry",
+                    "searchable": true,
+                    "contains": [
+                        "ruby_key"
+                    ]
+                },
+                {
+                    "id": "ruby_key",
+                    "name": "ruby dragon key",
+                    "description": "A key made of ruby carved in the shape of a dragon"
+                },
+                {
+                    "id": "weapon_rack",
+                    "name": "ancient weapon rack",
+                    "description": "A rack holding legendary swords and axes from fallen heroes",
+                    "searchable": true,
+                    "contains": [
+                        "hero_note"
+                    ]
+                },
+                {
+                    "id": "hero_note",
+                    "name": "hero's final note",
+                    "description": "A note written by a hero who tried to defeat the dragon",
+                    "readable": true,
+                    "text": "My final words: I came to slay Ignathor of the Ember Caverns, but I have failed. The dragon's power is too great. If anyone finds this, know that the secret exit lies beyond the vault. Only those who truly know the dragon can pass."
+                },
+                {
+                    "id": "scroll_pedestal",
+                    "name": "marble pedestal",
+                    "description": "A pedestal holding an ancient scroll",
+                    "locked": true,
+                    "key_required": "ruby_key",
+                    "contains": [
+                        "dragon_lore_scroll"
+                    ]
+                },
+                {
+                    "id": "dragon_lore_scroll",
+                    "name": "scroll of dragon lore",
+                    "description": "A scroll containing detailed information about Ignathor",
+                    "readable": true,
+                    "text": "Complete Dragon Profile - Name: Ignathor the Terrible. Preferred Treasure: Gold above all other riches. Lair Location: Ember Caverns in the Crimson Peak Mountains. Age: 350 years. Eggs: 3. Conquered Kingdoms: 5."
+                },
+                {
+                    "id": "coin_mountain",
+                    "name": "mountain of coins",
+                    "description": "A massive pile of gold and silver coins",
+                    "searchable": true,
+                    "contains": []
+                },
+                {
+                    "id": "massive_vault_door",
+                    "name": "massive vault door",
+                    "description": "An enormous door made of dragon-forged steel. Three questions are engraved in the metal, glowing with magical fire.",
+                    "locked": true,
+                    "lock_type": "password",
+                    "password_questions": [
+                        {
+                            "question": "What is the dragon's name?",
+                            "answer": "ignathor",
+                            "hint": "Check the chronicle and journal in the sleeping chamber"
+                        },
+                        {
+                            "question": "What treasure does the dragon value most?",
+                            "answer": "gold",
+                            "hint": "The dragon's journal and chronicle mention his favorite treasure"
+                        },
+                        {
+                            "question": "Where is the dragon's lair located?",
+                            "answer": "ember caverns",
+                            "hint": "Look at the tapestries and the hero's note for the specific location"
+                        }
+                    ],
+                    "direction": "north",
+                    "leads_to": "secret_exit",
+                    "aliases": [
+                        "vault",
+                        "north"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "secret_exit",
+            "name": "Secret Exit Tunnel",
+            "description": "You've discovered the dragon's secret escape tunnel! A long passage carved through the mountain leads upward toward fresh air and freedom. Sunlight streams in from the exit far above. Behind you, you hear the dragon beginning to stir, but you're already too far away to be caught.",
+            "items": [
+                {
+                    "id": "tunnel_exit",
+                    "name": "tunnel opening",
+                    "description": "A natural opening in the mountain leading to freedom and daylight"
+                },
+                {
+                    "id": "treasure_sack",
+                    "name": "sack of treasure",
+                    "description": "A small sack of gold coins and gems - enough to make you wealthy without angering the dragon too much"
+                }
+            ],
+            "exits": [],
+            "is_goal": true,
+            "win_message": "You've successfully navigated the Dragon's Hoard Cavern and found the secret exit! You emerge into the sunlight with a sack of treasure, having outsmarted the great dragon Ignathor. Behind you, a mighty roar echoes from the cavern, but you're already safely away. The adventure is complete, and you're rich beyond your wildest dreams! You win!"
+        }
+    ]
+}

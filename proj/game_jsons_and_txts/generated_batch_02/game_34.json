@@ -1,0 +1,248 @@
+{
+    "theme": "Invisible City Marketplace",
+    "title": "Invisible City Marketplace Adventure #34",
+    "goal": "Solve the puzzles, achieve the main objective, and escape.",
+    "starting_room": "hidden_bazaar_entrance",
+    "rooms": [
+        {
+            "id": "hidden_bazaar_entrance",
+            "name": "Hidden Bazaar Entrance",
+            "description": "You stand in a swirling mist at the edge of an otherworldly marketplace. Translucent stalls flicker in and out of view, and the air shimmers with magic. Ghostly merchants call out in languages you almost understand. A weathered signpost points deeper into the bazaar, and a locked merchant's cart sits abandoned nearby.",
+            "items": [
+                {
+                    "id": "weathered_signpost",
+                    "name": "weathered signpost",
+                    "description": "A wooden sign with faded writing in multiple languages",
+                    "readable": true,
+                    "text": "Welcome to the Invisible City Marketplace - Est. Year 777. Merchant Stalls: Stall 3 (Timekeeper), Stall 9 (Dreamweaver), Stall 2 (Shadowsmith). Remember: Only those who know the order may proceed."
+                },
+                {
+                    "id": "abandoned_cart",
+                    "name": "abandoned merchant's cart",
+                    "description": "A wooden cart with three compartments, partially visible in the mist",
+                    "subcontainers": [
+                        {
+                            "id": "top_compartment",
+                            "name": "top compartment",
+                            "locked": false,
+                            "contains": [
+                                "marketplace_guide"
+                            ]
+                        },
+                        {
+                            "id": "middle_compartment",
+                            "name": "middle compartment",
+                            "locked": true,
+                            "lock_type": "combination",
+                            "combination": "392",
+                            "contains": [
+                                "brass_key"
+                            ]
+                        },
+                        {
+                            "id": "bottom_compartment",
+                            "name": "bottom compartment",
+                            "locked": false,
+                            "contains": []
+                        }
+                    ]
+                },
+                {
+                    "id": "marketplace_guide",
+                    "name": "marketplace visitor's guide",
+                    "description": "A translucent pamphlet that shifts between visibility",
+                    "readable": true,
+                    "text": "Guide to the Invisible City: Founded by the Merchant Queen Mirabelle in the year 777. To navigate safely, remember the stall numbers in order: Timekeeper first, then Dreamweaver, then Shadowsmith. The Gatekeeper guards the way forward."
+                },
+                {
+                    "id": "brass_key",
+                    "name": "shimmering brass key",
+                    "description": "A key that phases between solid and ethereal states"
+                },
+                {
+                    "id": "locked_chest",
+                    "name": "invisible merchant's chest",
+                    "description": "A chest that appears only when you focus on it directly",
+                    "locked": true,
+                    "key_required": "brass_key",
+                    "contains": [
+                        "silver_token",
+                        "merchant_ledger"
+                    ]
+                },
+                {
+                    "id": "silver_token",
+                    "name": "silver marketplace token",
+                    "description": "A coin marked with strange symbols, required for passage through the marketplace"
+                },
+                {
+                    "id": "merchant_ledger",
+                    "name": "old merchant ledger",
+                    "description": "A book recording transactions in the invisible marketplace",
+                    "readable": true,
+                    "text": "Ledger Entry: The Gatekeeper, Marcus Veil, controls access to the Merchant's Quarter. He accepts only those who can answer his questions. The Portal of Return lies in the Chamber of Echoes, accessible only to those bearing the silver token and the crystal compass."
+                },
+                {
+                    "id": "misty_archway",
+                    "name": "misty archway",
+                    "description": "An archway made of solidified fog, leading deeper into the marketplace",
+                    "locked": true,
+                    "key_required": "silver_token",
+                    "direction": "north",
+                    "leads_to": "merchants_quarter",
+                    "aliases": [
+                        "archway",
+                        "north"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "merchants_quarter",
+            "name": "Merchant's Quarter",
+            "description": "A bustling square filled with semi-transparent stalls selling impossible goods. Merchants flicker like candle flames, their voices echoing from multiple directions at once. Floating lanterns cast shifting shadows. Three prominent stalls line the square, and a grand gateway stands at the far end, guarded by a shimmering figure.",
+            "items": [
+                {
+                    "id": "timekeeper_stall",
+                    "name": "Timekeeper's stall",
+                    "description": "A stall selling hourglasses that run backwards and clocks with too many hands",
+                    "readable": true,
+                    "text": "Stall 3 - The Timekeeper: 'I sell moments and memories. The Gatekeeper's name is Marcus Veil, and he has guarded this marketplace since its founding.'"
+                },
+                {
+                    "id": "dreamweaver_stall",
+                    "name": "Dreamweaver's stall",
+                    "description": "A stall draped in silk that changes color, selling bottled dreams and nightmares",
+                    "readable": true,
+                    "text": "Stall 9 - The Dreamweaver: 'I weave the fabric of sleep. The Portal of Return rests in the Chamber of Echoes, where all voices converge.'"
+                },
+                {
+                    "id": "shadowsmith_stall",
+                    "name": "Shadowsmith's stall",
+                    "description": "A dark stall where a figure hammers shadows into solid objects",
+                    "readable": true,
+                    "text": "Stall 2 - The Shadowsmith: 'I forge darkness into form. To escape this place, you must reach the Chamber of Echoes and activate the Portal of Return.'"
+                },
+                {
+                    "id": "fountain",
+                    "name": "fountain of reflections",
+                    "description": "A fountain that shows reflections of places that don't exist",
+                    "searchable": true,
+                    "contains": [
+                        "crystal_compass"
+                    ]
+                },
+                {
+                    "id": "crystal_compass",
+                    "name": "crystal compass",
+                    "description": "A compass that points toward the way home, essential for activating the portal"
+                },
+                {
+                    "id": "market_board",
+                    "name": "marketplace notice board",
+                    "description": "A board covered in shifting announcements and notices",
+                    "readable": true,
+                    "text": "NOTICE: The Invisible City Marketplace was founded by Merchant Queen Mirabelle. All visitors must register with Gatekeeper Marcus Veil. The Chamber of Echoes is restricted to authorized personnel only."
+                },
+                {
+                    "id": "vendor_table",
+                    "name": "abandoned vendor table",
+                    "description": "A table with various mysterious items scattered across it",
+                    "searchable": true,
+                    "contains": [
+                        "faded_map"
+                    ]
+                },
+                {
+                    "id": "faded_map",
+                    "name": "map of invisible paths",
+                    "description": "A map showing the hidden routes through the marketplace",
+                    "readable": true,
+                    "text": "Map notation: The Chamber of Echoes lies beyond the Gatekeeper's Gate. Only those who prove their knowledge may pass. The founder's name and the portal's location are keys to passage."
+                },
+                {
+                    "id": "Gatekeeper's_Gate",
+                    "name": "Gatekeeper's Gate",
+                    "description": "A magnificent gate guarded by a translucent figure. Three questions are inscribed on a floating tablet beside it.",
+                    "locked": true,
+                    "lock_type": "password",
+                    "password_questions": [
+                        {
+                            "question": "Who founded the Invisible City Marketplace?",
+                            "answer": "merchant queen mirabelle",
+                            "hint": "Check the marketplace guide and notice board"
+                        },
+                        {
+                            "question": "What is the Gatekeeper's name?",
+                            "answer": "marcus veil",
+                            "hint": "The Timekeeper and the merchant ledger mention this"
+                        },
+                        {
+                            "question": "Where is the Portal of Return located?",
+                            "answer": "chamber of echoes",
+                            "hint": "Multiple merchants and the ledger reference this location"
+                        }
+                    ],
+                    "direction": "east",
+                    "leads_to": "portal_chamber",
+                    "aliases": [
+                        "gate",
+                        "east"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "portal_chamber",
+            "name": "Chamber of Echoes",
+            "description": "You have reached the Chamber of Echoes! A vast circular room where every sound repeats infinitely in perfect harmony. In the center, a swirling portal of light and shadow pulses with energy - the Portal of Return. Two pedestals flank the portal, waiting for the silver token and crystal compass. The way home shimmers before you.",
+            "items": [
+                {
+                    "id": "portal_pedestals",
+                    "name": "twin pedestals",
+                    "description": "Two marble pedestals with indentations for the silver token and crystal compass",
+                    "readable": true,
+                    "text": "Inscription: 'Place the token of passage and the compass of home to activate the Portal of Return. Only then may you escape the Invisible City.'"
+                },
+                {
+                    "id": "Portal_of_Return",
+                    "name": "Portal of Return",
+                    "description": "A magnificent swirling gateway showing glimpses of the visible world beyond",
+                    "locked": true,
+                    "key_required": "crystal_compass",
+                    "direction": "north",
+                    "leads_to": "visible_world",
+                    "aliases": [
+                        "portal",
+                        "north"
+                    ]
+                },
+                {
+                    "id": "echo_walls",
+                    "name": "walls of echoes",
+                    "description": "Walls that capture and replay every sound ever made in the marketplace",
+                    "readable": true,
+                    "text": "The walls whisper: 'You have done well, traveler. The Invisible City releases you. May you remember us in your dreams.'"
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "visible_world",
+            "name": "The Visible World",
+            "description": "You step through the portal and find yourself back in the ordinary world. The marketplace fades behind you like morning mist. You stand on a normal city street, solid and real. The silver token in your pocket has turned to ordinary metal, but the crystal compass still glows faintly - a reminder of your journey through the Invisible City.",
+            "items": [
+                {
+                    "id": "city_street",
+                    "name": "ordinary city street",
+                    "description": "A normal street with normal people going about their normal day, blissfully unaware of the invisible marketplace that exists alongside their world"
+                }
+            ],
+            "exits": [],
+            "is_goal": true,
+            "win_message": "You have successfully escaped the Invisible City Marketplace! The portal closes behind you with a whisper of gratitude from Merchant Queen Mirabelle herself. You are back in the visible world, but you will never forget the wonders you saw in the marketplace between dimensions. The crystal compass grows warm in your hand - perhaps one day you'll return. You win!"
+        }
+    ]
+}

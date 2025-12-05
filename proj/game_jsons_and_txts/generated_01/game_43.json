@@ -1,0 +1,232 @@
+{
+    "theme": "Giant's Kitchen",
+    "title": "Giant's Kitchen Adventure #43",
+    "goal": "Solve the puzzles, achieve the main objective, and escape.",
+    "starting_room": "pantry_shelf",
+    "rooms": [
+        {
+            "id": "pantry_shelf",
+            "name": "Giant's Pantry Shelf",
+            "description": "You find yourself on an enormous wooden shelf in a giant's pantry. Massive jars of preserves tower above you like buildings. A huge sack of flour creates a mountain to your left. The air smells of cinnamon and dried herbs. Far below, you can see the kitchen floor. A gap between jars leads east toward the kitchen counter.",
+            "items": [
+                {
+                    "id": "flour_sack",
+                    "name": "giant flour sack",
+                    "description": "A massive burlap sack with 'GIANT'S BEST FLOUR - Est. 1847' printed on it",
+                    "searchable": true,
+                    "contains": [
+                        "brass_key"
+                    ]
+                },
+                {
+                    "id": "brass_key",
+                    "name": "small brass key",
+                    "description": "A tiny brass key that must have fallen from somewhere"
+                },
+                {
+                    "id": "spice_rack",
+                    "name": "wooden spice rack",
+                    "description": "A rack holding enormous spice jars, each the size of a barrel to you. It has three compartments.",
+                    "subcontainers": [
+                        {
+                            "id": "cinnamon_jar",
+                            "name": "cinnamon jar",
+                            "locked": false,
+                            "contains": [
+                                "recipe_card"
+                            ]
+                        },
+                        {
+                            "id": "pepper_jar",
+                            "name": "pepper jar",
+                            "locked": true,
+                            "lock_type": "combination",
+                            "combination": "1847",
+                            "contains": [
+                                "silver_key"
+                            ]
+                        },
+                        {
+                            "id": "salt_jar",
+                            "name": "salt jar",
+                            "locked": false,
+                            "contains": []
+                        }
+                    ]
+                },
+                {
+                    "id": "recipe_card",
+                    "name": "giant's recipe card",
+                    "description": "A stained recipe card written in enormous letters",
+                    "readable": true,
+                    "text": "GIANT GROK'S FAMOUS STEW - Family recipe since 1847. Ingredients: 500 potatoes, 200 carrots, 100 onions. Cook in the great cauldron on the stove. Grok always says: the best meals are made on the stove, and the secret ingredient is kept in the locked cupboard!"
+                },
+                {
+                    "id": "silver_key",
+                    "name": "tarnished silver key",
+                    "description": "A silver key with a carrot symbol engraved on it"
+                },
+                {
+                    "id": "preserve_jar",
+                    "name": "enormous preserve jar",
+                    "description": "A glass jar filled with preserved fruits, sealed with a brass lock",
+                    "locked": true,
+                    "key_required": "brass_key",
+                    "contains": [
+                        "pantry_note"
+                    ]
+                },
+                {
+                    "id": "pantry_note",
+                    "name": "handwritten note",
+                    "description": "A note tucked inside the preserve jar",
+                    "readable": true,
+                    "text": "Reminder to self: Giant Grok keeps forgetting where things are! The stove is where all the cooking happens. The cupboard holds the secret ingredients. And remember - you're just a tiny mouse trying to escape this kitchen!"
+                },
+                {
+                    "id": "shelf_edge",
+                    "name": "shelf edge",
+                    "description": "The edge of the shelf where a wooden plank bridges to the kitchen counter",
+                    "locked": false,
+                    "direction": "east",
+                    "leads_to": "kitchen_counter",
+                    "aliases": [
+                        "plank",
+                        "bridge",
+                        "east"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "kitchen_counter",
+            "name": "Giant's Kitchen Counter",
+            "description": "You've reached the vast expanse of the kitchen counter. A massive cutting board serves as a platform. Enormous knives stick out of a knife block like steel towers. A giant cookbook lies open, and a locked cupboard is built into the wall. The giant's stove dominates one side with its huge burners. A small crack in the wall to the north might lead to safety.",
+            "items": [
+                {
+                    "id": "cutting_board",
+                    "name": "massive cutting board",
+                    "description": "A wooden cutting board scarred with knife marks, each groove deep enough to hide in",
+                    "searchable": true,
+                    "contains": [
+                        "vegetable_scrap"
+                    ]
+                },
+                {
+                    "id": "vegetable_scrap",
+                    "name": "carrot scrap",
+                    "description": "A piece of carrot that fell during the giant's cooking"
+                },
+                {
+                    "id": "giant_cookbook",
+                    "name": "giant's cookbook",
+                    "description": "An enormous cookbook opened to a well-worn page",
+                    "readable": true,
+                    "text": "GIANT GROK'S COOKBOOK - Page 347: 'My favorite cooking spot is the stove - that's where the magic happens! I keep my secret spice blend locked in the cupboard. The combination is the number of ingredients in my famous stew recipe: potatoes, carrots, and onions combined!'"
+                },
+                {
+                    "id": "knife_block",
+                    "name": "knife block",
+                    "description": "A wooden block holding several enormous knives",
+                    "searchable": true,
+                    "contains": [
+                        "copper_key"
+                    ]
+                },
+                {
+                    "id": "copper_key",
+                    "name": "small copper key",
+                    "description": "A copper key wedged behind the knife block"
+                },
+                {
+                    "id": "locked_cupboard",
+                    "name": "locked wall cupboard",
+                    "description": "A cupboard built into the wall with a silver lock shaped like a carrot",
+                    "locked": true,
+                    "key_required": "silver_key",
+                    "contains": [
+                        "spice_blend",
+                        "escape_note"
+                    ]
+                },
+                {
+                    "id": "spice_blend",
+                    "name": "secret spice blend",
+                    "description": "A small pouch of the giant's secret spices"
+                },
+                {
+                    "id": "escape_note",
+                    "name": "old mouse note",
+                    "description": "A tiny note written by another mouse who escaped",
+                    "readable": true,
+                    "text": "If you're reading this, you're trying to escape too! I made it to the mouse hole in the wall. To get through, you need to answer the giant's security questions. Remember: the giant's name is Grok, he cooks on the stove, and you're a mouse - never forget what you are!"
+                },
+                {
+                    "id": "stove",
+                    "name": "giant's stove",
+                    "description": "An enormous cast-iron stove with multiple burners. A great cauldron sits on one burner.",
+                    "readable": true,
+                    "text": "The stove is Giant Grok's pride and joy. A plaque on the front reads: 'Where Giant Grok creates his legendary meals. The stove is the heart of every kitchen!'"
+                },
+                {
+                    "id": "crack_in_the_wall",
+                    "name": "crack in the wall",
+                    "description": "A small opening in the wall that looks like it leads to a mouse hole. A tiny door with three questions blocks the entrance.",
+                    "locked": true,
+                    "lock_type": "password",
+                    "password_questions": [
+                        {
+                            "question": "What is the giant's name?",
+                            "answer": "grok",
+                            "hint": "Check the recipe card and cookbook for the giant's name"
+                        },
+                        {
+                            "question": "Where does the giant cook his meals?",
+                            "answer": "stove",
+                            "hint": "Multiple notes mention where the cooking happens"
+                        },
+                        {
+                            "question": "What are you?",
+                            "answer": "mouse",
+                            "hint": "The pantry note and escape note remind you of your true nature"
+                        }
+                    ],
+                    "direction": "north",
+                    "leads_to": "mouse_hole",
+                    "aliases": [
+                        "crack",
+                        "hole",
+                        "north"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "mouse_hole",
+            "name": "Safe Mouse Hole",
+            "description": "You've made it to safety! A cozy mouse hole hidden in the wall, far from the giant's reach. Soft nest materials line the floor, and you can see daylight streaming in from a tunnel that leads outside. The sounds of the giant's kitchen are muffled and distant now. You're finally free!",
+            "items": [
+                {
+                    "id": "nest_materials",
+                    "name": "soft nesting materials",
+                    "description": "Comfortable bedding made from cloth scraps and dried grass"
+                },
+                {
+                    "id": "food_cache",
+                    "name": "stored food",
+                    "description": "A small cache of seeds and crumbs - provisions for your journey"
+                },
+                {
+                    "id": "escape_tunnel",
+                    "name": "tunnel to outside",
+                    "description": "A narrow tunnel leading to freedom and the outside world"
+                }
+            ],
+            "exits": [],
+            "is_goal": true,
+            "win_message": "Success! You've escaped the Giant's Kitchen and reached the safety of the mouse hole! Through clever puzzle-solving and careful exploration, you navigated the dangerous world of Giant Grok's kitchen and found your way to freedom. The tunnel ahead leads to the outside world where you can live safely. You win!"
+        }
+    ]
+}

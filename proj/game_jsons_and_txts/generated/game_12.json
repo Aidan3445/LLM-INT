@@ -1,0 +1,249 @@
+{
+    "theme": "Architect's Impossible House",
+    "title": "Architect's Impossible House Adventure #12",
+    "goal": "Solve the puzzles, achieve the main objective, and escape.",
+    "starting_room": "entrance_hall",
+    "rooms": [
+        {
+            "id": "entrance_hall",
+            "name": "Entrance Hall of Impossible Angles",
+            "description": "You stand in a grand entrance hall where the laws of physics seem negotiable. Staircases lead upward and downward simultaneously, meeting at impossible angles. The floor tiles form an Escher-like pattern that hurts to look at too long. A grandfather clock ticks backwards, and shadows fall in directions that defy the light sources.",
+            "items": [
+                {
+                    "id": "grandfather_clock",
+                    "name": "backwards ticking clock",
+                    "description": "An ornate clock that runs in reverse, its pendulum swinging against time itself",
+                    "readable": true,
+                    "text": "The clock face shows strange symbols instead of numbers. A brass plate reads: 'Time flows differently here. The architect was born in year 1879, the same year Einstein entered this world.'"
+                },
+                {
+                    "id": "entrance_desk",
+                    "name": "reception desk",
+                    "description": "A mahogany desk that appears to have five sides despite being rectangular",
+                    "subcontainers": [
+                        {
+                            "id": "top_drawer",
+                            "name": "top drawer",
+                            "locked": false,
+                            "contains": [
+                                "architects_note"
+                            ]
+                        },
+                        {
+                            "id": "middle_drawer",
+                            "name": "middle drawer",
+                            "locked": true,
+                            "lock_type": "combination",
+                            "combination": "1879",
+                            "contains": [
+                                "brass_key"
+                            ]
+                        },
+                        {
+                            "id": "bottom_drawer",
+                            "name": "bottom drawer",
+                            "locked": false,
+                            "contains": []
+                        }
+                    ]
+                },
+                {
+                    "id": "architects_note",
+                    "name": "architect's welcome letter",
+                    "description": "A letter written in elegant script on impossible paper that seems to have three sides",
+                    "readable": true,
+                    "text": "Welcome to my impossible house. I am Architect Penrose, and I have built what should not exist. To reach my study, you must understand: What is the shape that cannot be? Where do parallel lines meet? Who designed the impossible?"
+                },
+                {
+                    "id": "brass_key",
+                    "name": "geometric brass key",
+                    "description": "A key shaped like a tesseract, somehow existing in three dimensions"
+                },
+                {
+                    "id": "display_case",
+                    "name": "glass display case",
+                    "description": "A case containing architectural models and blueprints",
+                    "locked": true,
+                    "key_required": "brass_key",
+                    "contains": [
+                        "blueprint_scroll"
+                    ]
+                },
+                {
+                    "id": "blueprint_scroll",
+                    "name": "impossible blueprint",
+                    "description": "Architectural drawings that show rooms connecting in ways that violate spatial logic",
+                    "readable": true,
+                    "text": "Blueprint notes: 'The Penrose Triangle is the key shape. Parallel lines meet at infinity. I, Penrose, designed this house to challenge reality itself.'"
+                },
+                {
+                    "id": "escher_painting",
+                    "name": "painting of endless stairs",
+                    "description": "A framed artwork showing staircases that loop impossibly back on themselves",
+                    "searchable": true,
+                    "contains": [
+                        "silver_key"
+                    ]
+                },
+                {
+                    "id": "silver_key",
+                    "name": "klein bottle key",
+                    "description": "A key that seems to be inside and outside itself simultaneously"
+                },
+                {
+                    "id": "door_to_paradox_corridor",
+                    "name": "door to paradox corridor",
+                    "description": "A doorway that appears to be both open and closed until you approach it",
+                    "locked": true,
+                    "key_required": "silver_key",
+                    "direction": "north",
+                    "leads_to": "paradox_corridor",
+                    "aliases": [
+                        "door",
+                        "north"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "paradox_corridor",
+            "name": "Corridor of Spatial Paradoxes",
+            "description": "A hallway that seems to stretch infinitely in both directions despite being only twenty feet long. Doors line the walls, some leading to rooms that are larger on the inside than outside. Mirrors reflect spaces that don't exist. The corridor itself appears to twist through four dimensions.",
+            "items": [
+                {
+                    "id": "mirror_wall",
+                    "name": "hyperbolic mirror",
+                    "description": "A mirror that reflects impossible geometries and spaces that shouldn't exist",
+                    "readable": true,
+                    "text": "Etched into the mirror frame: 'In non-Euclidean space, the shortest distance between two points is a curve. The architect's study lies beyond the impossible.'"
+                },
+                {
+                    "id": "floating_bookshelf",
+                    "name": "gravity defying bookshelf",
+                    "description": "A bookshelf mounted on the wall at a ninety degree angle to reality",
+                    "searchable": true,
+                    "contains": [
+                        "geometry_textbook"
+                    ]
+                },
+                {
+                    "id": "geometry_textbook",
+                    "name": "book on non Euclidean geometry",
+                    "description": "A heavy textbook that discusses impossible spaces and hyperbolic geometry",
+                    "readable": true,
+                    "text": "Chapter 7: The Penrose Triangle is an impossible object that appears to be a solid triangle but cannot exist in three-dimensional space. It was popularized by Roger Penrose and his father, Lionel Penrose."
+                },
+                {
+                    "id": "mobius_table",
+                    "name": "mobius strip table",
+                    "description": "A table whose surface loops back on itself with only one side",
+                    "searchable": true,
+                    "contains": [
+                        "architects_journal"
+                    ]
+                },
+                {
+                    "id": "architects_journal",
+                    "name": "personal journal",
+                    "description": "The architect's private journal detailing the construction of the impossible house",
+                    "readable": true,
+                    "text": "Journal Entry: My name is Penrose, and I have achieved what others said was impossible. Parallel lines DO meet - at infinity. The triangle that cannot be IS. My study awaits those who understand these truths."
+                },
+                {
+                    "id": "dimensional_cabinet",
+                    "name": "four dimensional cabinet",
+                    "description": "A cabinet that seems to contain more space than its exterior suggests",
+                    "subcontainers": [
+                        {
+                            "id": "front_compartment",
+                            "name": "front compartment",
+                            "locked": false,
+                            "contains": [
+                                "compass_tool"
+                            ]
+                        },
+                        {
+                            "id": "back_compartment",
+                            "name": "back compartment",
+                            "locked": false,
+                            "contains": []
+                        }
+                    ]
+                },
+                {
+                    "id": "compass_tool",
+                    "name": "architectural compass",
+                    "description": "A compass for drawing circles, but this one draws impossible shapes"
+                },
+                {
+                    "id": "entrance_to_architect's_study",
+                    "name": "entrance to architect's study",
+                    "description": "A grand doorway that seems to lead to a room that cannot possibly fit in this space. Three questions are carved into the door frame in elegant script.",
+                    "locked": true,
+                    "lock_type": "password",
+                    "password_questions": [
+                        {
+                            "question": "What is the shape that cannot be?",
+                            "answer": "penrose triangle",
+                            "hint": "Check the geometry textbook and the blueprint scroll"
+                        },
+                        {
+                            "question": "Where do parallel lines meet?",
+                            "answer": "infinity",
+                            "hint": "The architect's journal and welcome letter mention this"
+                        },
+                        {
+                            "question": "Who designed the impossible?",
+                            "answer": "penrose",
+                            "hint": "Look at the architect's name in the notes and journal"
+                        }
+                    ],
+                    "direction": "east",
+                    "leads_to": "architects_study",
+                    "aliases": [
+                        "study",
+                        "east"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "architects_study",
+            "name": "Architect's Impossible Study",
+            "description": "You have entered the heart of the impossible house! The study is a masterpiece of paradoxical architecture. The room is simultaneously cubic and spherical. Windows show views of places that don't exist. A magnificent desk sits in the center, covered with blueprints of impossible structures. Behind it, a shimmering portal leads back to normal reality.",
+            "items": [
+                {
+                    "id": "architects_desk",
+                    "name": "master architect's desk",
+                    "description": "A desk made of wood that appears to be from a tree that grows in four dimensions",
+                    "searchable": true,
+                    "contains": [
+                        "completion_certificate"
+                    ]
+                },
+                {
+                    "id": "completion_certificate",
+                    "name": "certificate of understanding",
+                    "description": "A document certifying that you have mastered the impossible",
+                    "readable": true,
+                    "text": "Congratulations! You have navigated the Impossible House and proven your understanding of non-Euclidean geometry. You are now free to return to the mundane world of normal physics. - Architect Penrose"
+                },
+                {
+                    "id": "impossible_models",
+                    "name": "collection of impossible objects",
+                    "description": "Physical models of Penrose triangles, Klein bottles, and other paradoxical shapes"
+                },
+                {
+                    "id": "reality_portal",
+                    "name": "portal to normal space",
+                    "description": "A shimmering doorway that leads back to the world where physics makes sense"
+                }
+            ],
+            "exits": [],
+            "is_goal": true,
+            "win_message": "You have successfully navigated the Architect's Impossible House! Your understanding of non-Euclidean geometry and spatial paradoxes has allowed you to reach the study and escape back to normal reality. The impossible has become possible through your wit and determination. You win!"
+        }
+    ]
+}

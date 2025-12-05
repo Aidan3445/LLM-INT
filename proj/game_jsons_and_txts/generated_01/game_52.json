@@ -1,0 +1,253 @@
+{
+    "theme": "Nanotech Cleanroom",
+    "title": "Nanotech Cleanroom Adventure #52",
+    "goal": "Solve the puzzles, achieve the main objective, and escape.",
+    "starting_room": "decontamination_airlock",
+    "rooms": [
+        {
+            "id": "decontamination_airlock",
+            "name": "Decontamination Airlock",
+            "description": "A sterile white chamber with gleaming metal walls and bright LED lighting. Air filtration systems hum quietly overhead. Hazmat suits hang on hooks beside a decontamination shower. Warning signs about particle contamination cover the walls. A security terminal blinks on a desk, and storage lockers line one wall.",
+            "items": [
+                {
+                    "id": "security_desk",
+                    "name": "security desk",
+                    "description": "A metal desk with a computer terminal and several drawers",
+                    "subcontainers": [
+                        {
+                            "id": "top_drawer",
+                            "name": "top drawer",
+                            "locked": false,
+                            "contains": [
+                                "facility_manual"
+                            ]
+                        },
+                        {
+                            "id": "bottom_drawer",
+                            "name": "bottom drawer",
+                            "locked": true,
+                            "lock_type": "combination",
+                            "combination": "2045",
+                            "contains": [
+                                "access_keycard"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "facility_manual",
+                    "name": "facility operations manual",
+                    "description": "A thick binder with operational procedures",
+                    "readable": true,
+                    "text": "NANOTECH RESEARCH FACILITY - Established 2045. Chief Scientist: Dr. Sarah Chen. Lead Engineer: Dr. Marcus Webb. All nanobot research conducted in the Main Cleanroom. Security protocols require knowledge of key personnel and research areas."
+                },
+                {
+                    "id": "access_keycard",
+                    "name": "security access keycard",
+                    "description": "A magnetic keycard labeled 'CLEANROOM ACCESS - AUTHORIZED PERSONNEL ONLY'"
+                },
+                {
+                    "id": "computer_terminal",
+                    "name": "security terminal",
+                    "description": "A computer displaying facility information",
+                    "readable": true,
+                    "text": "SYSTEM STATUS: Facility lockdown initiated. Emergency evacuation protocols active. Access to Control Center requires security verification. Bottom drawer combination is facility establishment year."
+                },
+                {
+                    "id": "storage_locker",
+                    "name": "equipment storage locker",
+                    "description": "A tall locker containing safety equipment and supplies",
+                    "searchable": true,
+                    "contains": [
+                        "safety_notice"
+                    ]
+                },
+                {
+                    "id": "safety_notice",
+                    "name": "safety procedures notice",
+                    "description": "A laminated safety document",
+                    "readable": true,
+                    "text": "SAFETY PROTOCOLS: All personnel must wear protective gear in cleanroom environments. Dr. Chen oversees all nanobot experiments. Emergency evacuation through Control Center requires authorization verification."
+                },
+                {
+                    "id": "hazmat_suits",
+                    "name": "hazmat suits on hooks",
+                    "description": "Several protective suits hanging ready for use",
+                    "searchable": true,
+                    "contains": [
+                        "id_badge"
+                    ]
+                },
+                {
+                    "id": "id_badge",
+                    "name": "facility ID badge",
+                    "description": "An ID badge with a photo and clearance level",
+                    "readable": true,
+                    "text": "Dr. Sarah Chen - Chief Scientist - Level 5 Clearance. Specialization: Nanobot Development and Applications."
+                },
+                {
+                    "id": "cleanroom_access_door",
+                    "name": "cleanroom access door",
+                    "description": "A heavy airlock door with a card reader and pressure seals. Warning lights indicate the cleanroom beyond.",
+                    "locked": true,
+                    "key_required": "access_keycard",
+                    "direction": "north",
+                    "leads_to": "main_cleanroom",
+                    "aliases": [
+                        "door",
+                        "airlock",
+                        "north"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "main_cleanroom",
+            "name": "Main Cleanroom",
+            "description": "A vast sterile chamber with white walls and floors that gleam under intense lighting. Electron microscopes and nanotech fabrication equipment fill the space. Robotic arms hang motionless over workstations. Through observation windows, you can see the control center above. The air is perfectly filtered and temperature controlled.",
+            "items": [
+                {
+                    "id": "workstation_alpha",
+                    "name": "primary research workstation",
+                    "description": "A sophisticated workstation with multiple monitors and precision instruments",
+                    "searchable": true,
+                    "contains": [
+                        "research_log"
+                    ]
+                },
+                {
+                    "id": "research_log",
+                    "name": "research log datapad",
+                    "description": "A digital tablet with Dr. Chen's research notes",
+                    "readable": true,
+                    "text": "Research Log - Dr. Sarah Chen: Nanobot prototype testing proceeding successfully. All experiments conducted here in the Main Cleanroom. Dr. Webb assists with engineering challenges. Emergency protocols require verification of chief scientist identity and research location."
+                },
+                {
+                    "id": "electron_microscope",
+                    "name": "electron microscope",
+                    "description": "A massive microscope for viewing nanoscale structures",
+                    "readable": true,
+                    "text": "Display shows magnified nanobots - tiny machines designed to perform precise tasks at the molecular level. Status: INACTIVE."
+                },
+                {
+                    "id": "fabrication_chamber",
+                    "name": "nanotech fabrication chamber",
+                    "description": "A sealed chamber where nanobots are assembled",
+                    "readable": true,
+                    "text": "FABRICATION CHAMBER: Used for precise assembly of nanobot components. Current project: Medical nanobots for targeted drug delivery. Lead researcher: Dr. Sarah Chen."
+                },
+                {
+                    "id": "storage_cabinet",
+                    "name": "sample storage cabinet",
+                    "description": "A climate-controlled cabinet with multiple compartments",
+                    "subcontainers": [
+                        {
+                            "id": "upper_compartment",
+                            "name": "upper compartment",
+                            "locked": false,
+                            "contains": [
+                                "personnel_roster"
+                            ]
+                        },
+                        {
+                            "id": "lower_compartment",
+                            "name": "lower compartment",
+                            "locked": false,
+                            "contains": []
+                        }
+                    ]
+                },
+                {
+                    "id": "personnel_roster",
+                    "name": "personnel directory",
+                    "description": "A document listing facility staff",
+                    "readable": true,
+                    "text": "FACILITY PERSONNEL: Dr. Sarah Chen - Chief Scientist, Nanobot Research. Dr. Marcus Webb - Lead Engineer, Systems Integration. Lab Technician Rodriguez - Equipment Maintenance. All nanobot research conducted in Main Cleanroom."
+                },
+                {
+                    "id": "robotic_arm_station",
+                    "name": "robotic manipulation station",
+                    "description": "Precision robotic arms for handling nanoscale materials",
+                    "searchable": true,
+                    "contains": [
+                        "evacuation_procedures"
+                    ]
+                },
+                {
+                    "id": "evacuation_procedures",
+                    "name": "emergency evacuation guide",
+                    "description": "A red folder with emergency protocols",
+                    "readable": true,
+                    "text": "EMERGENCY EVACUATION: In case of containment breach or facility emergency, proceed to Control Center. Security verification required: Who is the chief scientist? Where are nanobots researched? What is being developed?"
+                },
+                {
+                    "id": "observation_window",
+                    "name": "observation window",
+                    "description": "A large window showing the control center above",
+                    "readable": true,
+                    "text": "Through the window, you can see the control center with its banks of monitors and the emergency exit door glowing green."
+                },
+                {
+                    "id": "stairway_to_control_center",
+                    "name": "stairway to control center",
+                    "description": "Metal stairs leading up to the control center. A security door at the top displays three verification questions on a screen.",
+                    "locked": true,
+                    "lock_type": "password",
+                    "password_questions": [
+                        {
+                            "question": "Who is the chief scientist?",
+                            "answer": "dr sarah chen",
+                            "hint": "Check the facility manual, research logs, and personnel directory"
+                        },
+                        {
+                            "question": "Where are nanobots researched?",
+                            "answer": "main cleanroom",
+                            "hint": "Multiple documents mention where nanobot research takes place"
+                        },
+                        {
+                            "question": "What is being developed?",
+                            "answer": "nanobots",
+                            "hint": "The research logs and fabrication chamber describe the main project"
+                        }
+                    ],
+                    "direction": "east",
+                    "leads_to": "control_center",
+                    "aliases": [
+                        "stairs",
+                        "up",
+                        "east"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "control_center",
+            "name": "Control Center",
+            "description": "You've reached the facility control center! A sophisticated command room with wall-to-wall monitors displaying facility systems, nanobot simulations, and security feeds. The emergency exit door stands open, revealing a corridor leading to safety. Fresh air flows in from outside. You've successfully navigated the nanotech facility!",
+            "items": [
+                {
+                    "id": "control_console",
+                    "name": "main control console",
+                    "description": "A massive console controlling all facility systems",
+                    "readable": true,
+                    "text": "SYSTEM CONTROL: All facility systems nominal. Emergency evacuation route active. Exit corridor leads to external decontamination and safety zone."
+                },
+                {
+                    "id": "monitor_wall",
+                    "name": "monitoring displays",
+                    "description": "Multiple screens showing facility status and research data"
+                },
+                {
+                    "id": "emergency_exit",
+                    "name": "emergency exit door",
+                    "description": "An open door with green lighting, leading to the evacuation corridor and freedom"
+                }
+            ],
+            "exits": [],
+            "is_goal": true,
+            "win_message": "SUCCESS! You've reached the control center and accessed the emergency exit. The evacuation corridor leads you safely out of the nanotech facility. Your knowledge of the facility's personnel and research operations allowed you to bypass the security systems. You've escaped the cleanroom and solved all the puzzles. You win!"
+        }
+    ]
+}

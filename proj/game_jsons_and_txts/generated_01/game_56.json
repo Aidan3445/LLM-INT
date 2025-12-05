@@ -1,0 +1,248 @@
+{
+    "theme": "Submarine Lab",
+    "title": "Submarine Lab Adventure #56",
+    "goal": "Solve the puzzles, achieve the main objective, and escape.",
+    "starting_room": "research_lab",
+    "rooms": [
+        {
+            "id": "research_lab",
+            "name": "Deep Sea Research Laboratory",
+            "description": "A cramped laboratory filled with scientific equipment and specimen tanks. The walls are lined with pressure gauges and depth indicators showing you're 2000 meters below the surface. Emergency lights cast an eerie red glow. Water drips from a crack in the ceiling. Research stations are cluttered with notes and equipment.",
+            "items": [
+                {
+                    "id": "main_workstation",
+                    "name": "research workstation",
+                    "description": "A metal desk covered with papers, sample containers, and scientific instruments",
+                    "searchable": true,
+                    "contains": [
+                        "research_log"
+                    ]
+                },
+                {
+                    "id": "research_log",
+                    "name": "research log",
+                    "description": "A waterproof notebook with daily research entries",
+                    "readable": true,
+                    "text": "Research Log - Deep Sea Station Alpha, established 2019. Lead Scientist: Dr. Sarah Morrison. Chief Engineer: Commander James Park. Mission: Study deep sea organisms. The specimen freezer combination is our founding year. Emergency protocols stored in the control room."
+                },
+                {
+                    "id": "filing_cabinet",
+                    "name": "metal filing cabinet",
+                    "description": "A waterproof filing cabinet with three drawers, each labeled with different departments",
+                    "subcontainers": [
+                        {
+                            "id": "biology_drawer",
+                            "name": "biology drawer",
+                            "locked": false,
+                            "contains": [
+                                "mission_brief"
+                            ]
+                        },
+                        {
+                            "id": "engineering_drawer",
+                            "name": "engineering drawer",
+                            "locked": true,
+                            "lock_type": "combination",
+                            "combination": "2019",
+                            "contains": [
+                                "access_card"
+                            ]
+                        },
+                        {
+                            "id": "admin_drawer",
+                            "name": "admin drawer",
+                            "locked": false,
+                            "contains": []
+                        }
+                    ]
+                },
+                {
+                    "id": "mission_brief",
+                    "name": "mission briefing document",
+                    "description": "An official document outlining the submarine lab's mission",
+                    "readable": true,
+                    "text": "MISSION BRIEF: Deep Sea Station Alpha - Conduct research on extremophile organisms in the Mariana Trench. Personnel: Dr. Sarah Morrison (Lead Scientist), Commander James Park (Chief Engineer), Dr. Lisa Chen (Marine Biologist). Emergency evacuation via escape pods located in the pod bay."
+                },
+                {
+                    "id": "access_card",
+                    "name": "security access card",
+                    "description": "A magnetic keycard labeled 'CONTROL ROOM ACCESS'"
+                },
+                {
+                    "id": "specimen_freezer",
+                    "name": "specimen storage freezer",
+                    "description": "A large freezer unit containing biological samples and research materials",
+                    "searchable": true,
+                    "contains": [
+                        "emergency_manual"
+                    ]
+                },
+                {
+                    "id": "emergency_manual",
+                    "name": "emergency procedures manual",
+                    "description": "A red binder with emergency protocols",
+                    "readable": true,
+                    "text": "EMERGENCY PROCEDURES: In case of hull breach or system failure, proceed to escape pod bay. Access requires authorization from Chief Engineer. Know your station: research is conducted in the lab, systems are monitored in the control room, escape pods are in the pod bay."
+                },
+                {
+                    "id": "specimen_tanks",
+                    "name": "specimen containment tanks",
+                    "description": "Glass tanks containing bioluminescent deep sea creatures",
+                    "readable": true,
+                    "text": "Tank labels: Various extremophile organisms collected from depths exceeding 10,000 meters. Specimens glow with natural bioluminescence, adapted to survive in complete darkness and extreme pressure."
+                },
+                {
+                    "id": "reinforced_pressure_door",
+                    "name": "reinforced pressure door",
+                    "description": "A heavy steel door with a card reader, leading to the control room. Warning lights flash around the frame.",
+                    "locked": true,
+                    "key_required": "access_card",
+                    "direction": "north",
+                    "leads_to": "control_room",
+                    "aliases": [
+                        "door",
+                        "north"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "control_room",
+            "name": "Submarine Control Room",
+            "description": "The nerve center of the submarine lab. Banks of monitors display depth readings, oxygen levels, and system diagnostics. A large viewport shows the dark abyss outside. Red warning lights flash on several consoles. The hum of life support systems fills the air. A sealed hatch leads to the escape pod bay.",
+            "items": [
+                {
+                    "id": "main_console",
+                    "name": "main control console",
+                    "description": "The primary control station with multiple screens and input terminals",
+                    "readable": true,
+                    "text": "SYSTEM STATUS: Hull integrity: 87%. Oxygen: 6 hours remaining. Depth: 2000 meters. WARNING: Pressure leak detected in research lab. Recommend immediate evacuation to escape pod bay."
+                },
+                {
+                    "id": "communications_station",
+                    "name": "communications station",
+                    "description": "A radio and computer terminal for external communications",
+                    "readable": true,
+                    "text": "LAST TRANSMISSION: 'This is Deep Sea Station Alpha. Experiencing critical systems failure. Commander Park initiating emergency protocols. All personnel evacuate to pod bay. Morrison out.'"
+                },
+                {
+                    "id": "engineering_locker",
+                    "name": "engineering equipment locker",
+                    "description": "A tall locker containing tools and emergency equipment",
+                    "subcontainers": [
+                        {
+                            "id": "top_compartment",
+                            "name": "top compartment",
+                            "locked": false,
+                            "contains": [
+                                "flashlight"
+                            ]
+                        },
+                        {
+                            "id": "bottom_compartment",
+                            "name": "bottom compartment",
+                            "locked": false,
+                            "contains": [
+                                "station_manual"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "flashlight",
+                    "name": "waterproof flashlight",
+                    "description": "A heavy-duty flashlight for emergency situations"
+                },
+                {
+                    "id": "station_manual",
+                    "name": "station operations manual",
+                    "description": "A comprehensive guide to the submarine lab's operations",
+                    "readable": true,
+                    "text": "STATION OPERATIONS: Deep Sea Station Alpha conducts research in the research lab. All systems monitored from the control room. Emergency evacuation via escape pod bay. Chief Engineer Commander James Park oversees all technical operations and emergency procedures."
+                },
+                {
+                    "id": "crew_roster",
+                    "name": "crew assignment roster",
+                    "description": "A board displaying crew photos and assignments",
+                    "readable": true,
+                    "text": "CREW ROSTER: Dr. Sarah Morrison - Lead Scientist (Research Lab), Commander James Park - Chief Engineer (Control Room), Dr. Lisa Chen - Marine Biologist (Research Lab). Emergency Contact: Commander Park authorizes all evacuations."
+                },
+                {
+                    "id": "viewport",
+                    "name": "reinforced viewport",
+                    "description": "A thick glass window showing the dark ocean depths outside",
+                    "readable": true,
+                    "text": "Through the viewport, you see nothing but darkness and occasional bioluminescent creatures drifting past. The pressure at this depth would crush an unprotected human instantly."
+                },
+                {
+                    "id": "escape_pod_bay_hatch",
+                    "name": "escape pod bay hatch",
+                    "description": "A sealed hatch with a security terminal displaying three verification questions. Red emergency lights pulse around it.",
+                    "locked": true,
+                    "lock_type": "password",
+                    "password_questions": [
+                        {
+                            "question": "Where is research conducted?",
+                            "answer": "research lab",
+                            "hint": "Check the mission brief and station operations manual"
+                        },
+                        {
+                            "question": "Where are escape pods located?",
+                            "answer": "pod bay",
+                            "hint": "The emergency procedures manual mentions this location"
+                        },
+                        {
+                            "question": "Who authorizes evacuation?",
+                            "answer": "commander james park",
+                            "hint": "Check the crew roster and communications logs"
+                        }
+                    ],
+                    "direction": "east",
+                    "leads_to": "escape_pod_bay",
+                    "aliases": [
+                        "hatch",
+                        "east"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "escape_pod_bay",
+            "name": "Emergency Escape Pod Bay",
+            "description": "You've reached the escape pod bay! A small chamber with a single-person escape pod secured in its launch cradle. The pod's systems glow green, indicating full readiness. Through the launch tube window, you can see the faint light of the surface far above. Emergency oxygen tanks line the walls.",
+            "items": [
+                {
+                    "id": "escape_pod",
+                    "name": "emergency escape pod",
+                    "description": "A spherical submersible designed for rapid ascent to the surface. All systems show green."
+                },
+                {
+                    "id": "launch_controls",
+                    "name": "pod launch controls",
+                    "description": "A control panel with a large red launch button and status displays",
+                    "readable": true,
+                    "text": "ESCAPE POD STATUS: All systems operational. Oxygen: Full. Ballast: Ready. Ascent time to surface: 45 minutes. Press launch button to initiate emergency ascent sequence."
+                },
+                {
+                    "id": "emergency_supplies",
+                    "name": "emergency supply locker",
+                    "description": "A locker containing survival gear and supplies",
+                    "searchable": true,
+                    "contains": [
+                        "survival_kit"
+                    ]
+                },
+                {
+                    "id": "survival_kit",
+                    "name": "survival kit",
+                    "description": "A waterproof kit with emergency rations, flares, and first aid supplies"
+                }
+            ],
+            "exits": [],
+            "is_goal": true,
+            "win_message": "SUCCESS! You climb into the escape pod and seal the hatch. With a press of the launch button, the pod detaches and begins its rapid ascent. Through the viewport, you watch the submarine lab disappear into the darkness below. Forty-five minutes later, the pod breaks the surface. You're safe! Rescue ships are already approaching. You've escaped the failing submarine lab and survived the deep sea crisis. You win!"
+        }
+    ]
+}

@@ -11,7 +11,7 @@
         {
           "id": "stone_pedestal",
           "name": "stone pedestal",
-          "description": "A pedestal with faint carvings depicting Sun, Moon, and Star.",
+          "description": "A pedestal with faint carvings depicting Sun, Moon, and Star: 1, 2, and 3.",
           "searchable": false
         },
         {
@@ -34,11 +34,12 @@
               "contains": ["note_riddle"]
             },
             {
-              "id": "bottom_compartment",
+              "id": "rune_compartment",
               "name": "rune compartment",
+              "description": "A compartment with a combination lock featuring symbols from left to right: moon, star, sun.",
               "locked": true,
               "lock_type": "combination",
-              "combination": "sun-moon-star",
+              "combination": "231",
               "contains": ["leaf_key"]
             }
           ]
@@ -87,14 +88,8 @@
             {"question": "What guides the tides?", "answer": "moon"},
             {"question": "What shines beyond all else?", "answer": "star"}
           ],
-          "contains": ["forest_amulet"],
           "direction": "south",
           "leads_to": "portal_glade"
-        },
-        {
-          "id": "forest_amulet",
-          "name": "Forest Guardian’s Amulet",
-          "description": "A powerful amulet granted by the Owl Guardian."
         }
       ],
       "exits": []
@@ -105,11 +100,36 @@
       "description": "A magical glade containing a dormant portal.",
       "items": [
         {
+          "id": "amulet_pedestal",
+          "name": "amulet pedestal",
+          "description": "A pedestal with an amulet on it.",
+          "locked": true,
+          "key_required": "forest_charm",
+          "contains": ["forest_amulet"]
+        },
+        {
+          "id": "forest_amulet",
+          "name": "Forest Guardian’s Amulet",
+          "description": "A powerful amulet granted by the Owl Guardian."
+        },
+        {
           "id": "portal",
           "name": "magical portal",
-          "description": "A portal that activates with combined forest magic."
+          "description": "A portal that activates with combined forest magic.",
+          "locked": true,
+          "key_required": "forest_amulet",
+          "leads_to": "home_gateway",
+          "direction": "east",
+          "aliases": ["portal", "exit portal", "portal"]
         }
       ],
+      "exits": []
+    },
+    {
+      "id": "home_gateway",
+      "name": "Home Gateway",
+      "description": "A shimmering portal that leads back to your home, glowing with familiar magic.",
+      "items": [],
       "exits": [],
       "is_goal": true,
       "win_message": "You have restored the forest’s magic and found your way home. You win!"

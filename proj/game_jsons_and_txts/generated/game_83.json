@@ -1,0 +1,282 @@
+{
+    "theme": "Mythical Beast Sanctuary",
+    "title": "Mythical Beast Sanctuary Adventure #83",
+    "goal": "Solve the puzzles, achieve the main objective, and escape.",
+    "starting_room": "sanctuary_entrance",
+    "rooms": [
+        {
+            "id": "sanctuary_entrance",
+            "name": "Sanctuary Entrance Hall",
+            "description": "A grand stone hall with vaulted ceilings covered in ancient carvings of mythical beasts. Torches flicker along the walls, casting dancing shadows. Three massive tapestries hang on the walls, each depicting a different legendary creature. A heavy wooden desk sits near the entrance, and an ornate chest rests in the corner.",
+            "items": [
+                {
+                    "id": "keeper_desk",
+                    "name": "keeper's wooden desk",
+                    "description": "A sturdy oak desk covered with scrolls and beast care records. It has three drawers.",
+                    "subcontainers": [
+                        {
+                            "id": "top_drawer",
+                            "name": "top drawer",
+                            "locked": false,
+                            "contains": [
+                                "keeper_journal"
+                            ]
+                        },
+                        {
+                            "id": "middle_drawer",
+                            "name": "middle drawer",
+                            "locked": true,
+                            "lock_type": "combination",
+                            "combination": "365",
+                            "contains": [
+                                "brass_key"
+                            ]
+                        },
+                        {
+                            "id": "bottom_drawer",
+                            "name": "bottom drawer",
+                            "locked": false,
+                            "contains": []
+                        }
+                    ]
+                },
+                {
+                    "id": "keeper_journal",
+                    "name": "sanctuary keeper's journal",
+                    "description": "A leather bound journal with detailed notes about the sanctuary",
+                    "readable": true,
+                    "text": "Journal Entry: The Phoenix molts every 365 days. The Dragon hoards exactly 1000 gold pieces. The Unicorn was born in the Moonlight Glade. Remember: I am Keeper Aldric, guardian of these sacred beasts. The Crystal of Harmony in the Inner Sanctum is the key to maintaining peace among all creatures."
+                },
+                {
+                    "id": "brass_key",
+                    "name": "ornate brass key",
+                    "description": "A brass key engraved with phoenix feathers"
+                },
+                {
+                    "id": "ornate_chest",
+                    "name": "ironbound chest",
+                    "description": "A heavy wooden chest reinforced with iron bands and a brass lock",
+                    "locked": true,
+                    "key_required": "brass_key",
+                    "contains": [
+                        "feeding_schedule",
+                        "silver_medallion"
+                    ]
+                },
+                {
+                    "id": "feeding_schedule",
+                    "name": "beast feeding schedule",
+                    "description": "A parchment listing feeding times and dietary needs",
+                    "readable": true,
+                    "text": "Feeding Schedule: Phoenix - sunrise, prefers cinnamon and myrrh. Dragon - noon, requires 50 pounds of meat. Unicorn - sunset, only eats flowers from the Moonlight Glade. Griffin - midnight, fish and small game."
+                },
+                {
+                    "id": "silver_medallion",
+                    "name": "silver sanctuary medallion",
+                    "description": "A medallion bearing the sanctuary's seal, needed to access restricted areas"
+                },
+                {
+                    "id": "tapestry_phoenix",
+                    "name": "tapestry of the Phoenix",
+                    "description": "A magnificent tapestry showing a phoenix rising from flames",
+                    "readable": true,
+                    "text": "Inscription below: 'The Phoenix - Immortal bird of fire, reborn every 365 days in a burst of flame and glory.'"
+                },
+                {
+                    "id": "tapestry_dragon",
+                    "name": "tapestry of the Dragon",
+                    "description": "A tapestry depicting a majestic dragon atop a mountain of gold",
+                    "readable": true,
+                    "text": "Inscription below: 'The Dragon - Ancient wyrm of wisdom, guardian of exactly 1000 gold pieces, keeper of ancient secrets.'"
+                },
+                {
+                    "id": "tapestry_unicorn",
+                    "name": "tapestry of the Unicorn",
+                    "description": "A tapestry showing a unicorn in a moonlit forest clearing",
+                    "readable": true,
+                    "text": "Inscription below: 'The Unicorn - Pure spirit of the forest, born in the sacred Moonlight Glade under the full moon.'"
+                },
+                {
+                    "id": "heavy_oak_door",
+                    "name": "heavy oak door",
+                    "description": "A massive door carved with images of various mythical beasts. It leads deeper into the sanctuary.",
+                    "locked": true,
+                    "key_required": "silver_medallion",
+                    "direction": "north",
+                    "leads_to": "creature_habitat",
+                    "aliases": [
+                        "door",
+                        "north"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "creature_habitat",
+            "name": "Creature Habitat Chamber",
+            "description": "A vast chamber with multiple habitat enclosures visible through reinforced crystal windows. You can see a phoenix perched on a golden branch, a dragon sleeping on a pile of treasure, and a unicorn grazing in a magical meadow. Stone pedestals hold information plaques, and a supply cabinet stands against the wall. A sealed door to the east leads to the Inner Sanctum.",
+            "items": [
+                {
+                    "id": "phoenix_plaque",
+                    "name": "phoenix information plaque",
+                    "description": "A bronze plaque with details about the phoenix",
+                    "readable": true,
+                    "text": "Phoenix Facts: This magnificent bird lives for 365 days before being reborn in flames. Its tears have healing properties. Current phoenix name: Ember."
+                },
+                {
+                    "id": "dragon_plaque",
+                    "name": "dragon information plaque",
+                    "description": "A bronze plaque with details about the dragon",
+                    "readable": true,
+                    "text": "Dragon Facts: This ancient dragon guards exactly 1000 gold pieces. Dragons are highly intelligent and can speak all languages. Current dragon name: Scales."
+                },
+                {
+                    "id": "unicorn_plaque",
+                    "name": "unicorn information plaque",
+                    "description": "A bronze plaque with details about the unicorn",
+                    "readable": true,
+                    "text": "Unicorn Facts: This pure creature was born in the Moonlight Glade. Unicorns can only be approached by those with pure hearts. Current unicorn name: Starlight."
+                },
+                {
+                    "id": "supply_cabinet",
+                    "name": "supply storage cabinet",
+                    "description": "A tall cabinet containing various sanctuary supplies and equipment",
+                    "subcontainers": [
+                        {
+                            "id": "upper_shelf",
+                            "name": "upper shelf",
+                            "locked": false,
+                            "contains": [
+                                "care_manual"
+                            ]
+                        },
+                        {
+                            "id": "lower_shelf",
+                            "name": "lower shelf",
+                            "locked": false,
+                            "contains": [
+                                "crystal_key"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "care_manual",
+                    "name": "beast care manual",
+                    "description": "A comprehensive guide to caring for mythical creatures",
+                    "readable": true,
+                    "text": "Chapter 7: The Inner Sanctum houses the Crystal of Harmony, which maintains peace among all sanctuary creatures. Only Keeper Aldric may enter. The crystal must be recharged annually using the sacred ritual."
+                },
+                {
+                    "id": "crystal_key",
+                    "name": "crystal sanctuary key",
+                    "description": "A key made of pure crystal that glows with inner light"
+                },
+                {
+                    "id": "observation_window",
+                    "name": "reinforced crystal window",
+                    "description": "A large window allowing safe viewing of the creature habitats",
+                    "searchable": true,
+                    "contains": [
+                        "hidden_note"
+                    ]
+                },
+                {
+                    "id": "hidden_note",
+                    "name": "keeper's hidden note",
+                    "description": "A note tucked behind the window frame",
+                    "readable": true,
+                    "text": "Personal reminder: The Inner Sanctum security questions are about the creatures' key attributes. Phoenix cycle days, Dragon's hoard count, and Unicorn's birthplace. Don't forget!"
+                },
+                {
+                    "id": "sealed_sanctum_door",
+                    "name": "sealed sanctum door",
+                    "description": "An imposing door made of enchanted stone, covered in glowing runes. Three questions are inscribed on a crystal panel beside it.",
+                    "locked": true,
+                    "lock_type": "password",
+                    "password_questions": [
+                        {
+                            "question": "How many days in the Phoenix cycle?",
+                            "answer": "365",
+                            "hint": "Check the keeper's journal and the phoenix plaque"
+                        },
+                        {
+                            "question": "How many gold pieces does the Dragon guard?",
+                            "answer": "1000",
+                            "hint": "The dragon plaque and tapestry mention this exact number"
+                        },
+                        {
+                            "question": "Where was the Unicorn born?",
+                            "answer": "moonlight glade",
+                            "hint": "Look at the unicorn tapestry and the keeper's journal"
+                        }
+                    ],
+                    "direction": "east",
+                    "leads_to": "inner_sanctum",
+                    "aliases": [
+                        "door",
+                        "east"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "inner_sanctum",
+            "name": "Inner Sanctum",
+            "description": "You have entered the heart of the Mythical Beast Sanctuary! The circular chamber glows with ethereal light emanating from a massive crystal floating in the center - the legendary Crystal of Harmony. The crystal pulses with rainbow colors, and you can feel the peaceful energy radiating from it. Ancient runes cover the walls, and a portal of shimmering light has appeared, offering passage to freedom.",
+            "items": [
+                {
+                    "id": "crystal_of_harmony",
+                    "name": "Crystal of Harmony",
+                    "description": "A magnificent floating crystal that maintains peace and balance among all mythical creatures in the sanctuary. It radiates pure magical energy."
+                },
+                {
+                    "id": "crystal_pedestal",
+                    "name": "ancient stone pedestal",
+                    "description": "A pedestal beneath the floating crystal, covered in protective runes",
+                    "readable": true,
+                    "text": "Inscription: 'The Crystal of Harmony binds all creatures in peace. Keeper Aldric, guardian of beasts, protector of magic, maintains this sacred trust. May harmony reign eternal.'"
+                },
+                {
+                    "id": "wall_runes",
+                    "name": "glowing wall runes",
+                    "description": "Ancient magical writing covering the sanctum walls",
+                    "readable": true,
+                    "text": "The runes tell the history of the sanctuary: Founded centuries ago to protect mythical beasts from extinction. The Crystal of Harmony ensures no creature harms another within these walls. Phoenix, Dragon, Unicorn, and Griffin live together in peace."
+                },
+                {
+                    "id": "shimmering_exit_portal",
+                    "name": "shimmering exit portal",
+                    "description": "A magical portal that has appeared, showing glimpses of the outside world. The crystal key resonates with its energy.",
+                    "locked": true,
+                    "key_required": "crystal_key",
+                    "direction": "north",
+                    "leads_to": "sanctuary_exit",
+                    "aliases": [
+                        "portal",
+                        "exit",
+                        "north"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "sanctuary_exit",
+            "name": "Sanctuary Gardens",
+            "description": "You emerge into beautiful gardens surrounding the sanctuary. Mythical creatures roam freely in the distance - a phoenix soars overhead, a dragon basks in the sun, and a unicorn drinks from a crystal stream. You have successfully completed your mission and can now leave the sanctuary in peace.",
+            "items": [
+                {
+                    "id": "garden_fountain",
+                    "name": "magical fountain",
+                    "description": "A fountain with water that sparkles with magical energy, blessed by the Crystal of Harmony"
+                }
+            ],
+            "exits": [],
+            "is_goal": true,
+            "win_message": "Congratulations! You have successfully navigated the Mythical Beast Sanctuary, learned about its magnificent creatures, and reached the Crystal of Harmony. The sanctuary's magic has blessed your journey, and you leave with newfound knowledge of these legendary beasts. The creatures call out in farewell as you depart. You win!"
+        }
+    ]
+}

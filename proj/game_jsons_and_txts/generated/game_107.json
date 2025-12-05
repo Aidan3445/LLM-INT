@@ -1,0 +1,219 @@
+{
+    "theme": "Hall of Forgotten Toys",
+    "title": "Hall of Forgotten Toys Adventure #107",
+    "goal": "Solve the puzzles, achieve the main objective, and escape.",
+    "starting_room": "dusty_playroom",
+    "rooms": [
+        {
+            "id": "dusty_playroom",
+            "name": "Dusty Playroom",
+            "description": "A dimly lit playroom filled with forgotten toys covered in dust and cobwebs. Moonlight filters through a cracked window, casting eerie shadows on the walls. A rocking horse sits motionless in the corner, and shelves overflow with abandoned playthings. The air smells of old wood and faded memories.",
+            "items": [
+                {
+                    "id": "toy_chest",
+                    "name": "old toy chest",
+                    "description": "A large wooden chest painted with faded circus animals. Three drawers are built into its side.",
+                    "subcontainers": [
+                        {
+                            "id": "top_drawer",
+                            "name": "top drawer",
+                            "locked": false,
+                            "contains": [
+                                "childhood_note"
+                            ]
+                        },
+                        {
+                            "id": "middle_drawer",
+                            "name": "middle drawer",
+                            "locked": true,
+                            "lock_type": "combination",
+                            "combination": "1955",
+                            "contains": [
+                                "brass_windup_key"
+                            ]
+                        },
+                        {
+                            "id": "bottom_drawer",
+                            "name": "bottom drawer",
+                            "locked": false,
+                            "contains": []
+                        }
+                    ]
+                },
+                {
+                    "id": "childhood_note",
+                    "name": "faded letter",
+                    "description": "A yellowed letter written in childish handwriting",
+                    "readable": true,
+                    "text": "Dear Future Me, I buried my favorite toys here in 1955, the year I turned 10. Remember: Mr Buttons was my first toy, the Jack in the Box scared me at night, and the Music Box played my favorite lullaby. Love, Little Emma"
+                },
+                {
+                    "id": "brass_windup_key",
+                    "name": "brass windup key",
+                    "description": "A small brass key used for winding up mechanical toys"
+                },
+                {
+                    "id": "dollhouse",
+                    "name": "Victorian dollhouse",
+                    "description": "An elaborate dollhouse with tiny furniture and porcelain dolls inside",
+                    "searchable": true,
+                    "contains": [
+                        "silver_locket"
+                    ]
+                },
+                {
+                    "id": "silver_locket",
+                    "name": "tiny silver locket",
+                    "description": "A delicate locket small enough to fit a doll, but it opens to reveal a real keyhole"
+                },
+                {
+                    "id": "rocking_horse",
+                    "name": "wooden rocking horse",
+                    "description": "A weathered rocking horse with a hollow compartment in its base",
+                    "locked": true,
+                    "key_required": "silver_locket",
+                    "contains": [
+                        "toy_diary"
+                    ]
+                },
+                {
+                    "id": "toy_diary",
+                    "name": "toy diary",
+                    "description": "A small diary with entries about favorite toys",
+                    "readable": true,
+                    "text": "Emma's Toy Diary: My three most special toys are Mr Buttons the teddy bear who sits on the shelf, my Jack in the Box who lives in the music room, and my precious Music Box that plays Twinkle Twinkle Little Star."
+                },
+                {
+                    "id": "playroom_door",
+                    "name": "playroom door",
+                    "description": "A wooden door leading to the music room, slightly ajar",
+                    "locked": false,
+                    "direction": "north",
+                    "leads_to": "music_room",
+                    "aliases": [
+                        "door",
+                        "north"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "music_room",
+            "name": "Toy Music Room",
+            "description": "A room filled with musical toys and instruments. A large mechanical music box dominates the center of the room. Toy drums, xylophones, and tiny pianos line the walls. Dusty sheet music is scattered across the floor. The atmosphere feels frozen in time, waiting for someone to bring the music back to life.",
+            "items": [
+                {
+                    "id": "mr_buttons_bear",
+                    "name": "Mr Buttons the teddy bear",
+                    "description": "A worn teddy bear with button eyes sitting on a high shelf",
+                    "searchable": true,
+                    "contains": [
+                        "music_box_key"
+                    ]
+                },
+                {
+                    "id": "music_box_key",
+                    "name": "ornate music box key",
+                    "description": "A decorative key designed to unlock music boxes"
+                },
+                {
+                    "id": "jack_in_the_box",
+                    "name": "Jack in the Box",
+                    "description": "A colorful box with a crank handle. A creepy clown face peers from inside.",
+                    "readable": true,
+                    "text": "A tag on the bottom reads: 'Jack knows the secret! The Gallery holds the way out. Count the toys: bears, dolls, and trains!'"
+                },
+                {
+                    "id": "sheet_music",
+                    "name": "scattered sheet music",
+                    "description": "Old sheet music for various children's songs",
+                    "readable": true,
+                    "text": "The top sheet shows 'Twinkle Twinkle Little Star' with a note: 'Emma's favorite song. The music box in the gallery plays this tune.'"
+                },
+                {
+                    "id": "large_mechanical_music_box",
+                    "name": "large mechanical music box",
+                    "description": "An ornate music box with intricate gears and a winding mechanism. It needs a key to unlock.",
+                    "locked": true,
+                    "key_required": "music_box_key",
+                    "contains": [
+                        "gallery_note"
+                    ]
+                },
+                {
+                    "id": "gallery_note",
+                    "name": "hidden note",
+                    "description": "A note hidden inside the music box",
+                    "readable": true,
+                    "text": "To open the Gallery Door: You must know which toys were most loved. Answer with their names in the order they were cherished."
+                },
+                {
+                    "id": "toy_piano",
+                    "name": "toy piano",
+                    "description": "A small wooden piano with dusty keys",
+                    "searchable": true,
+                    "contains": []
+                },
+                {
+                    "id": "gallery_entrance_door",
+                    "name": "gallery entrance door",
+                    "description": "An elegant door with three questions carved into a brass plate",
+                    "locked": true,
+                    "lock_type": "password",
+                    "password_questions": [
+                        {
+                            "question": "What was Emma's first toy?",
+                            "answer": "mr buttons",
+                            "hint": "Check the childhood letter in the playroom"
+                        },
+                        {
+                            "question": "What toy scared Emma at night?",
+                            "answer": "jack in the box",
+                            "hint": "The letter mentions which toy was frightening"
+                        },
+                        {
+                            "question": "What toy played Emma's favorite song?",
+                            "answer": "music box",
+                            "hint": "The diary and sheet music reveal this"
+                        }
+                    ],
+                    "direction": "east",
+                    "leads_to": "toy_gallery",
+                    "aliases": [
+                        "door",
+                        "east"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "toy_gallery",
+            "name": "Gallery of Remembered Toys",
+            "description": "You have entered the heart of the Hall of Forgotten Toys! A magnificent gallery where the most beloved toys are displayed in glass cases, each glowing with a soft, warm light. The walls are lined with photographs of children playing, laughing, and growing up. In the center, a grand archway shimmers with golden light, leading to freedom. The toys here are not forgotten at all, but cherished forever in memory.",
+            "items": [
+                {
+                    "id": "display_cases",
+                    "name": "illuminated display cases",
+                    "description": "Beautiful glass cases containing the most treasured toys, each with a small plaque"
+                },
+                {
+                    "id": "memory_wall",
+                    "name": "wall of memories",
+                    "description": "A wall covered in photographs showing happy moments of childhood",
+                    "readable": true,
+                    "text": "The photographs show Emma growing up with her toys, from age 5 to 15. The final photo shows her as an adult, smiling, with the caption: 'Toys are never truly forgotten. They live forever in our hearts.'"
+                },
+                {
+                    "id": "golden_archway",
+                    "name": "golden archway of memories",
+                    "description": "A shimmering archway that leads back to the real world, glowing with the warmth of cherished memories"
+                }
+            ],
+            "exits": [],
+            "is_goal": true,
+            "win_message": "You have reached the Gallery of Remembered Toys and discovered the truth: these toys were never truly forgotten. They live on in the memories and hearts of those who loved them. As you step through the golden archway, you carry with you the reminder that childhood joy never truly fades. You win!"
+        }
+    ]
+}

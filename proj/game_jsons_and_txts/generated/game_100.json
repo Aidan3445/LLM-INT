@@ -1,0 +1,257 @@
+{
+    "theme": "Crystal Cavern Nexus",
+    "title": "Crystal Cavern Nexus Adventure #100",
+    "goal": "Solve the puzzles, achieve the main objective, and escape.",
+    "starting_room": "crystal_antechamber",
+    "rooms": [
+        {
+            "id": "crystal_antechamber",
+            "name": "Crystal Antechamber",
+            "description": "A shimmering chamber carved from living crystal. Veins of luminescent blue and purple crystals pulse with inner light, casting dancing shadows on the walls. The air hums with ancient energy. Crystalline formations jut from the floor and ceiling like frozen lightning. A stone pedestal stands in the center, and a locked crystal cabinet glows against the far wall.",
+            "items": [
+                {
+                    "id": "stone_pedestal",
+                    "name": "ancient stone pedestal",
+                    "description": "A weathered pedestal with three crystal slots arranged in a triangle pattern",
+                    "readable": true,
+                    "text": "Inscription carved in ancient script: 'The Nexus was sealed in the year of three crystals and seven stars: 377. Only the Keeper may pass beyond.'"
+                },
+                {
+                    "id": "crystal_cabinet",
+                    "name": "crystal cabinet",
+                    "description": "A cabinet made of translucent crystal with two compartments visible inside",
+                    "subcontainers": [
+                        {
+                            "id": "upper_compartment",
+                            "name": "upper compartment",
+                            "locked": false,
+                            "contains": [
+                                "nexus_journal"
+                            ]
+                        },
+                        {
+                            "id": "lower_compartment",
+                            "name": "lower compartment",
+                            "locked": true,
+                            "lock_type": "combination",
+                            "combination": "377",
+                            "contains": [
+                                "prismatic_key"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "nexus_journal",
+                    "name": "Keeper's journal",
+                    "description": "A book bound in crystallized leather, its pages shimmer with preserved text",
+                    "readable": true,
+                    "text": "Journal of the Nexus Keeper: I am Keeper Crystallis, guardian of the Nexus Core. The year 377 marks the sealing of this sacred place. The three sacred crystals - Sapphire, Emerald, and Ruby - must be united to access the inner sanctum. The resonance chamber holds secrets for those who listen."
+                },
+                {
+                    "id": "prismatic_key",
+                    "name": "prismatic key",
+                    "description": "A key carved from rainbow crystal that refracts light into countless colors"
+                },
+                {
+                    "id": "crystal_formations",
+                    "name": "jutting crystal formations",
+                    "description": "Sharp crystalline spikes growing from the cavern floor",
+                    "searchable": true,
+                    "contains": [
+                        "sapphire_crystal"
+                    ]
+                },
+                {
+                    "id": "sapphire_crystal",
+                    "name": "sapphire crystal shard",
+                    "description": "A brilliant blue crystal shard, one of the three sacred crystals"
+                },
+                {
+                    "id": "locked_chest",
+                    "name": "ornate crystal chest",
+                    "description": "A chest made of interlocking crystal plates with a prismatic lock",
+                    "locked": true,
+                    "key_required": "prismatic_key",
+                    "contains": [
+                        "emerald_crystal",
+                        "ancient_scroll"
+                    ]
+                },
+                {
+                    "id": "emerald_crystal",
+                    "name": "emerald crystal shard",
+                    "description": "A vibrant green crystal shard, the second of the three sacred crystals"
+                },
+                {
+                    "id": "ancient_scroll",
+                    "name": "preserved scroll",
+                    "description": "A scroll sealed in a crystal tube, perfectly preserved",
+                    "readable": true,
+                    "text": "Scroll of the Nexus: To enter the Luminous Gallery, one must know the answers. Where does the Keeper dwell? What powers the ancient machines? Who guards the threshold?"
+                },
+                {
+                    "id": "crystal_archway",
+                    "name": "crystal archway",
+                    "description": "An archway carved from solid crystal, leading deeper into the cavern system",
+                    "locked": false,
+                    "direction": "east",
+                    "leads_to": "luminous_gallery",
+                    "aliases": [
+                        "archway",
+                        "east"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "luminous_gallery",
+            "name": "Luminous Gallery",
+            "description": "A vast gallery where thousands of crystals grow from every surface, creating a forest of light. Each crystal resonates with a different tone, filling the air with harmonic music. Ancient murals are etched into the smooth sections of wall between crystal clusters. A massive door made of interlocking crystal plates blocks the northern passage, and a resonance chamber sits embedded in the eastern wall.",
+            "items": [
+                {
+                    "id": "mural_keeper",
+                    "name": "mural of the Keeper",
+                    "description": "An etched mural showing a robed figure standing before the Nexus",
+                    "readable": true,
+                    "text": "Mural inscription: 'Keeper Crystallis, eternal guardian, dwells within the Nexus Core where all paths converge.'"
+                },
+                {
+                    "id": "mural_power",
+                    "name": "mural of power",
+                    "description": "An etched mural depicting energy flowing through crystal networks",
+                    "readable": true,
+                    "text": "Mural inscription: 'The Nexus draws power from the Heart of the Mountain, an eternal wellspring of crystal energy that never fades.'"
+                },
+                {
+                    "id": "mural_guardian",
+                    "name": "mural of the guardian",
+                    "description": "An etched mural showing a crystalline sentinel",
+                    "readable": true,
+                    "text": "Mural inscription: 'The threshold is guarded by the Crystal Sentinel, an ancient construct of living stone and light.'"
+                },
+                {
+                    "id": "resonance_chamber",
+                    "name": "resonance chamber",
+                    "description": "A hollow in the wall filled with perfectly tuned crystal chimes",
+                    "searchable": true,
+                    "contains": [
+                        "ruby_crystal"
+                    ]
+                },
+                {
+                    "id": "ruby_crystal",
+                    "name": "ruby crystal shard",
+                    "description": "A deep red crystal shard, the final of the three sacred crystals"
+                },
+                {
+                    "id": "crystal_fountain",
+                    "name": "crystal fountain",
+                    "description": "A fountain where liquid light flows over crystal formations",
+                    "searchable": true,
+                    "contains": [
+                        "keeper_note"
+                    ]
+                },
+                {
+                    "id": "keeper_note",
+                    "name": "Keeper's message",
+                    "description": "A crystallized note left by the ancient Keeper",
+                    "readable": true,
+                    "text": "Final message: I am Keeper Crystallis. I have sealed myself within the Nexus Core to protect it for eternity. Only one who knows where I dwell, what powers this place, and who guards it may enter. The Crystal Sentinel awaits."
+                },
+                {
+                    "id": "Nexus_Core_entrance",
+                    "name": "Nexus Core entrance",
+                    "description": "A magnificent door of interlocking crystal plates. Three questions are etched into a crystal panel beside it, glowing with inner light.",
+                    "locked": true,
+                    "lock_type": "password",
+                    "password_questions": [
+                        {
+                            "question": "Where does the Keeper dwell?",
+                            "answer": "nexus core",
+                            "hint": "Check the mural of the Keeper in the gallery"
+                        },
+                        {
+                            "question": "What powers the Nexus?",
+                            "answer": "heart of the mountain",
+                            "hint": "The mural of power explains the energy source"
+                        },
+                        {
+                            "question": "Who guards the threshold?",
+                            "answer": "crystal sentinel",
+                            "hint": "Read the mural of the guardian carefully"
+                        }
+                    ],
+                    "direction": "north",
+                    "leads_to": "nexus_core",
+                    "aliases": [
+                        "gate",
+                        "door",
+                        "north"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "nexus_core",
+            "name": "Nexus Core",
+            "description": "You have reached the heart of the Crystal Cavern Nexus! A massive chamber where all the crystal veins converge into a single point of brilliant light. In the center, a crystalline throne holds the preserved form of Keeper Crystallis, transformed into living crystal. Three pedestals surround the throne, each with a socket for a sacred crystal. Above, a portal of pure light swirls, showing glimpses of the world beyond. The Crystal Sentinel, a towering construct of animated crystal, stands guard but does not move - it recognizes you as worthy.",
+            "items": [
+                {
+                    "id": "crystal_throne",
+                    "name": "crystalline throne",
+                    "description": "A throne of pure crystal where Keeper Crystallis sits in eternal vigil, transformed into a living statue of light"
+                },
+                {
+                    "id": "sacred_pedestals",
+                    "name": "three sacred pedestals",
+                    "description": "Three pedestals arranged in a triangle, each with a socket for one of the sacred crystal shards",
+                    "readable": true,
+                    "text": "Inscription on the pedestals: 'Unite the three sacred crystals - Sapphire, Emerald, and Ruby - to activate the portal and complete your journey.'"
+                },
+                {
+                    "id": "crystal_sentinel",
+                    "name": "Crystal Sentinel",
+                    "description": "A massive construct of animated crystal and stone, standing motionless in recognition of your worthiness"
+                },
+                {
+                    "id": "portal_of_light",
+                    "name": "portal of light",
+                    "description": "A swirling vortex of pure radiant energy that leads to freedom. It requires all three sacred crystals to fully activate.",
+                    "locked": true,
+                    "key_required": "ruby_crystal",
+                    "direction": "north",
+                    "leads_to": "freedom",
+                    "aliases": [
+                        "portal",
+                        "north"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "freedom",
+            "name": "Crystal Gateway",
+            "description": "You emerge from the portal into a beautiful crystal garden bathed in natural sunlight. The caverns are behind you, and ahead lies a path leading back to the surface world. The three sacred crystals in your possession glow warmly, a gift from the ancient Nexus.",
+            "items": [
+                {
+                    "id": "crystal_garden",
+                    "name": "crystal garden",
+                    "description": "A magnificent garden where crystals grow naturally in the sunlight, creating rainbows everywhere"
+                },
+                {
+                    "id": "surface_path",
+                    "name": "path to surface",
+                    "description": "A clear path leading upward to the world above"
+                }
+            ],
+            "exits": [],
+            "is_goal": true,
+            "win_message": "You have successfully navigated the Crystal Cavern Nexus and united the three sacred crystals! The ancient Keeper Crystallis's spirit appears briefly in the light, nodding in approval before fading away. The portal has granted you safe passage, and you emerge with the sacred crystals as proof of your worthy journey. The Nexus Core is at peace, and you are free. You win!"
+        }
+    ]
+}

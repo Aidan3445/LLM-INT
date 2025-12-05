@@ -1,0 +1,200 @@
+{
+    "theme": "Alien Zoo",
+    "title": "Alien Zoo Adventure #39",
+    "goal": "Solve the puzzles, achieve the main objective, and escape.",
+    "starting_room": "observation_deck",
+    "rooms": [
+        {
+            "id": "observation_deck",
+            "name": "Observation Deck",
+            "description": "A circular viewing platform overlooking alien habitats below. Strange bioluminescent creatures move behind reinforced glass walls. Emergency lights cast an eerie red glow. Control panels flicker with alien symbols. The air smells of ozone and something distinctly otherworldly.",
+            "items": [
+                {
+                    "id": "supply_locker",
+                    "name": "emergency supply locker",
+                    "description": "A metal locker with compartments for emergency equipment",
+                    "subcontainers": [
+                        {
+                            "id": "top_compartment",
+                            "name": "top compartment",
+                            "locked": false,
+                            "contains": [
+                                "facility_manual"
+                            ]
+                        },
+                        {
+                            "id": "bottom_compartment",
+                            "name": "bottom compartment",
+                            "locked": true,
+                            "lock_type": "combination",
+                            "combination": "742",
+                            "contains": [
+                                "access_keycard"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "facility_manual",
+                    "name": "facility operations manual",
+                    "description": "A worn handbook with facility protocols and procedures",
+                    "readable": true,
+                    "text": "XENOZOOLOGICAL RESEARCH STATION 39 - Operations Manual. Director: Dr. Kira Voss. Security Chief: Commander Rex Thorne. Remember: Specimen 7 arrived in year 742 of the Galactic Calendar. All staff must know emergency protocols."
+                },
+                {
+                    "id": "access_keycard",
+                    "name": "security access keycard",
+                    "description": "A plastic keycard with a magnetic strip and security clearance level 2"
+                },
+                {
+                    "id": "observation_terminal",
+                    "name": "observation terminal",
+                    "description": "A computer terminal displaying alien specimen data",
+                    "searchable": true,
+                    "contains": [
+                        "specimen_report"
+                    ]
+                },
+                {
+                    "id": "specimen_report",
+                    "name": "specimen analysis report",
+                    "description": "A digital report about the alien creatures in containment",
+                    "readable": true,
+                    "text": "SPECIMEN LOG: Specimen 7 (Nebula Serpent) - Highly intelligent, telepathic abilities. Specimen 12 (Void Crawler) - Aggressive, contained in habitat 3. Specimen 23 (Star Moth) - Docile, feeds on cosmic radiation. All specimens secured in the habitat wing."
+                },
+                {
+                    "id": "viewing_glass",
+                    "name": "reinforced viewing glass",
+                    "description": "Thick transparent material separating you from the alien habitats below. Strange creatures move in the shadows."
+                },
+                {
+                    "id": "security_door",
+                    "name": "security door",
+                    "description": "A heavy door with a card reader leading to the research lab",
+                    "locked": true,
+                    "key_required": "access_keycard",
+                    "direction": "east",
+                    "leads_to": "research_lab",
+                    "aliases": [
+                        "door",
+                        "east"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "research_lab",
+            "name": "Xenobiology Research Lab",
+            "description": "A sterile laboratory filled with alien specimens in containment tubes. Holographic displays show rotating 3D models of bizarre life forms. Research stations line the walls, covered in notes and data tablets. A large containment unit dominates one corner. The escape shuttle bay door is visible to the north.",
+            "items": [
+                {
+                    "id": "research_station_alpha",
+                    "name": "research station alpha",
+                    "description": "A workstation covered in notes about Specimen 7",
+                    "readable": true,
+                    "text": "Research Notes - Dr. Voss: Specimen 7 shows remarkable intelligence. It seems to understand our language. During tests, it kept pointing to the habitat wing, as if trying to communicate something important."
+                },
+                {
+                    "id": "research_station_beta",
+                    "name": "research station beta",
+                    "description": "A workstation with security protocols and staff information",
+                    "readable": true,
+                    "text": "Security Memo - Commander Thorne: All personnel must memorize emergency questions for shuttle access. Q1: Who leads this facility? Q2: Where are the specimens kept? Q3: Who maintains security?"
+                },
+                {
+                    "id": "containment_unit",
+                    "name": "large containment unit",
+                    "description": "A cylindrical tank containing a glowing alien organism suspended in fluid",
+                    "searchable": true,
+                    "contains": [
+                        "data_tablet"
+                    ]
+                },
+                {
+                    "id": "data_tablet",
+                    "name": "research data tablet",
+                    "description": "A tablet with encrypted research files and personal logs",
+                    "readable": true,
+                    "text": "Personal Log - Dr. Voss: The specimens are not just animals. They're intelligent beings. We've been keeping them prisoner. I've programmed the shuttle to accept anyone who can prove they understand what we've done. The habitat wing holds the truth."
+                },
+                {
+                    "id": "specimen_tubes",
+                    "name": "specimen containment tubes",
+                    "description": "Glass tubes containing various small alien creatures in stasis"
+                },
+                {
+                    "id": "lab_cabinet",
+                    "name": "laboratory cabinet",
+                    "description": "A locked cabinet with biohazard warnings",
+                    "locked": true,
+                    "key_required": "access_keycard",
+                    "contains": [
+                        "powerful_flashlight"
+                    ]
+                },
+                {
+                    "id": "powerful_flashlight",
+                    "name": "powerful flashlight",
+                    "description": "A heavy duty flashlight with an intense beam"
+                },
+                {
+                    "id": "shuttle_bay_access_door",
+                    "name": "shuttle bay access door",
+                    "description": "A reinforced door leading to the escape shuttle. A security terminal displays three verification questions.",
+                    "locked": true,
+                    "lock_type": "password",
+                    "password_questions": [
+                        {
+                            "question": "Who leads this facility?",
+                            "answer": "dr kira voss",
+                            "hint": "Check the facility operations manual"
+                        },
+                        {
+                            "question": "Where are the specimens kept?",
+                            "answer": "habitat wing",
+                            "hint": "Look at the specimen report and research notes"
+                        },
+                        {
+                            "question": "Who maintains security?",
+                            "answer": "commander rex thorne",
+                            "hint": "The facility manual lists the security chief"
+                        }
+                    ],
+                    "direction": "north",
+                    "leads_to": "shuttle_bay",
+                    "aliases": [
+                        "door",
+                        "north"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "shuttle_bay",
+            "name": "Emergency Shuttle Bay",
+            "description": "You've made it to the shuttle bay! A sleek escape shuttle sits on the launch pad, its engines humming with power. Through the bay windows, you can see the stars and the promise of freedom. The shuttle door is open, inviting you to safety. Warning lights flash as the automated launch sequence begins.",
+            "items": [
+                {
+                    "id": "escape_shuttle",
+                    "name": "emergency escape shuttle",
+                    "description": "A small but sturdy spacecraft designed for emergency evacuations. The cockpit glows with ready indicators."
+                },
+                {
+                    "id": "launch_console",
+                    "name": "launch control console",
+                    "description": "A terminal showing the shuttle is ready for immediate departure"
+                },
+                {
+                    "id": "bay_windows",
+                    "name": "observation windows",
+                    "description": "Large windows showing the vast expanse of space beyond the station"
+                }
+            ],
+            "exits": [],
+            "is_goal": true,
+            "win_message": "You board the escape shuttle and initiate launch! The engines roar to life as the station falls away behind you. Through the viewport, you see the alien zoo facility growing smaller. You've escaped Xenozoological Research Station 39! As you set course for the nearest inhabited system, you can't help but think about Dr. Voss's words - those weren't just specimens, they were prisoners too. But that's a problem for another day. Right now, you're free. You win!"
+        }
+    ]
+}

@@ -1,0 +1,229 @@
+{
+  "theme": "Biohazard Quarantine Zone",
+  "title": "Biohazard Quarantine Zone Adventure #19",
+  "goal": "Solve the puzzles, achieve the main objective, and escape.",
+  "starting_room": "decontamination_chamber",
+  "rooms": [
+    {
+      "id": "decontamination_chamber",
+      "name": "Decontamination Chamber",
+      "description": "A sterile white room with harsh fluorescent lighting. Yellow and black biohazard symbols cover the walls. Chemical showers line one side, and the air smells of disinfectant. Emergency lights flash red. A hazmat suit hangs on the wall, and a locked storage cabinet sits in the corner.",
+      "items": [
+        {
+          "id": "storage_cabinet",
+          "name": "medical storage cabinet",
+          "description": "A tall metal cabinet with three compartments, labeled for emergency supplies",
+          "subcontainers": [
+            {
+              "id": "top_compartment",
+              "name": "top compartment",
+              "locked": false,
+              "contains": [
+                "facility_memo"
+              ]
+            },
+            {
+              "id": "middle_compartment",
+              "name": "middle compartment",
+              "locked": true,
+              "lock_type": "combination",
+              "combination": "426",
+              "contains": [
+                "access_keycard"
+              ]
+            },
+            {
+              "id": "bottom_compartment",
+              "name": "bottom compartment",
+              "locked": false,
+              "contains": []
+            }
+          ]
+        },
+        {
+          "id": "facility_memo",
+          "name": "emergency protocol memo",
+          "description": "A printed document with urgent instructions",
+          "readable": true,
+          "text": "EMERGENCY PROTOCOL: Facility breach on April 26th. All personnel must evacuate. Dr Sarah Chen is the lead researcher. Security code is the breach date in format MMDD. Extraction point is the secure vault safe zone."
+        },
+        {
+          "id": "access_keycard",
+          "name": "level two access keycard",
+          "description": "A plastic keycard with a magnetic strip and biohazard warning label"
+        },
+        {
+          "id": "hazmat_suit",
+          "name": "yellow hazmat suit",
+          "description": "A protective suit hanging on a hook, required for safe passage through contaminated areas",
+          "searchable": true,
+          "contains": [
+            "research_notes"
+          ]
+        },
+        {
+          "id": "research_notes",
+          "name": "folded research notes",
+          "description": "Handwritten notes stuffed in the hazmat suit pocket",
+          "readable": true,
+          "text": "Dr Chen notes: The pathogen was contained in Lab Station Alpha. We stored the antidote formula in the research laboratory. The cure requires three components from the cold storage unit."
+        },
+        {
+          "id": "wall_terminal",
+          "name": "wall mounted terminal",
+          "description": "A computer terminal displaying facility information and contamination levels",
+          "readable": true,
+          "text": "FACILITY STATUS: Quarantine Level 4. Contamination detected in sectors B through F. Lab Station Alpha is the source. Evacuation route: Proceed to Research Laboratory, then to Secure Vault Safe Zone."
+        },
+        {
+          "id": "reinforced_laboratory_door",
+          "name": "reinforced laboratory door",
+          "description": "A heavy steel door with a card reader and biohazard warnings. Red lights flash around the frame.",
+          "locked": true,
+          "key_required": "access_keycard",
+          "direction": "north",
+          "leads_to": "research_laboratory",
+          "aliases": [
+            "door",
+            "north"
+          ]
+        }
+      ],
+      "exits": []
+    },
+    {
+      "id": "research_laboratory",
+      "name": "Research Laboratory",
+      "description": "A large laboratory filled with scientific equipment, microscopes, and containment units. Broken glass litters the floor. Warning lights cast an eerie red glow. Computer monitors display biohazard alerts. A large cold storage unit dominates one wall, and research stations are scattered throughout the room.",
+      "items": [
+        {
+          "id": "lab_station_alpha",
+          "name": "lab station alpha",
+          "description": "The primary research station with scattered papers and a locked drawer",
+          "subcontainers": [
+            {
+              "id": "station_drawer",
+              "name": "station drawer",
+              "locked": true,
+              "lock_type": "combination",
+              "combination": "1138",
+              "contains": [
+                "vault_key"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "vault_key",
+          "name": "secure vault key",
+          "description": "A heavy key with a red tag labeled for the secure vault safe zone"
+        },
+        {
+          "id": "computer_terminal",
+          "name": "research computer terminal",
+          "description": "A computer displaying research data and security protocols",
+          "readable": true,
+          "text": "RESEARCH LOG: Dr Sarah Chen, Lead Researcher. Project started November 38th. Wait, that is impossible. Correct date: November 11th, 2038. Security code for Lab Station Alpha is 1138. The pathogen originated from specimen collection in the Arctic Facility."
+        },
+        {
+          "id": "cold_storage_unit",
+          "name": "cold storage unit",
+          "description": "A large refrigerated unit with multiple compartments for storing samples and compounds",
+          "searchable": true,
+          "contains": [
+            "antidote_formula"
+          ]
+        },
+        {
+          "id": "antidote_formula",
+          "name": "antidote formula document",
+          "description": "A sealed document containing the cure formula",
+          "readable": true,
+          "text": "ANTIDOTE FORMULA: Developed by Dr Sarah Chen. Requires three components from Arctic Facility specimens. Formula is stored in the secure vault safe zone for protection."
+        },
+        {
+          "id": "specimen_cabinet",
+          "name": "specimen storage cabinet",
+          "description": "A locked cabinet containing biological samples",
+          "locked": true,
+          "key_required": "vault_key",
+          "contains": [
+            "sample_log"
+          ]
+        },
+        {
+          "id": "sample_log",
+          "name": "specimen collection log",
+          "description": "A logbook detailing sample origins and storage",
+          "readable": true,
+          "text": "SPECIMEN LOG: All samples collected from Arctic Facility during expedition. Lead researcher Dr Sarah Chen. Samples stored in secure vault safe zone after processing."
+        },
+        {
+          "id": "whiteboard",
+          "name": "laboratory whiteboard",
+          "description": "A whiteboard covered in equations and notes",
+          "readable": true,
+          "text": "Notes on board: Remember security questions for vault access. Q1: Who leads this research? Q2: Where did the pathogen originate? Q3: Where is the extraction point?"
+        },
+        {
+          "id": "secure_vault_entrance",
+          "name": "secure vault entrance",
+          "description": "A massive reinforced door leading to the safe zone. A security panel displays three verification questions.",
+          "locked": true,
+          "lock_type": "password",
+          "password_questions": [
+            {
+              "question": "Who is the lead researcher?",
+              "answer": "dr sarah chen",
+              "hint": "Check the facility memo and research computer terminal"
+            },
+            {
+              "question": "Where did the pathogen originate?",
+              "answer": "arctic facility",
+              "hint": "Look at the research computer and specimen logs"
+            },
+            {
+              "question": "What is the extraction point?",
+              "answer": "secure vault safe zone",
+              "hint": "The emergency protocol memo mentions the evacuation destination"
+            }
+          ],
+          "direction": "east",
+          "leads_to": "secure_vault_safe_zone",
+          "aliases": [
+            "vault",
+            "east"
+          ]
+        }
+      ],
+      "exits": []
+    },
+    {
+      "id": "secure_vault_safe_zone",
+      "name": "Secure Vault Safe Zone",
+      "description": "You have reached the secure vault safe zone! A pristine clean room with positive air pressure keeping contaminants out. Medical supplies line the walls. A decontamination shower runs automatically, washing away any traces of the pathogen. Through a reinforced window, you see a helicopter landing pad where your extraction team awaits.",
+      "items": [
+        {
+          "id": "medical_supplies",
+          "name": "emergency medical supplies",
+          "description": "Shelves stocked with antidotes, vaccines, and emergency medical equipment"
+        },
+        {
+          "id": "extraction_radio",
+          "name": "emergency radio",
+          "description": "A radio communicating with the extraction team outside",
+          "readable": true,
+          "text": "RADIO: Extraction team standing by. Survivor detected in safe zone. Preparing for immediate evacuation. You are safe now."
+        },
+        {
+          "id": "observation_window",
+          "name": "reinforced observation window",
+          "description": "A thick window showing the helicopter landing pad and rescue team outside"
+        }
+      ],
+      "exits": [],
+      "is_goal": true,
+      "win_message": "SUCCESS! You have reached the secure vault safe zone and survived the biohazard quarantine! The decontamination process is complete, and the extraction team escorts you to the waiting helicopter. As you lift off, you see the facility being sealed below. You made it out alive with the antidote formula. You win!"
+    }
+  ]
+}

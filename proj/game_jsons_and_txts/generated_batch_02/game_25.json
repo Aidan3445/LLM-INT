@@ -1,0 +1,242 @@
+{
+    "theme": "Shadow Market Bazaar",
+    "title": "Shadow Market Bazaar Adventure #25",
+    "goal": "Solve the puzzles, achieve the main objective, and escape.",
+    "starting_room": "merchants_stall",
+    "rooms": [
+        {
+            "id": "merchants_stall",
+            "name": "Merchant's Stall",
+            "description": "A cramped stall in the underground Shadow Market, lit by flickering oil lamps. Exotic fabrics hang from the ceiling, and the air smells of incense and spices. Wooden crates and locked chests are stacked against the walls. Strange symbols are carved into the wooden beams overhead.",
+            "items": [
+                {
+                    "id": "wooden_crates",
+                    "name": "stack of wooden crates",
+                    "description": "Several crates marked with merchant symbols and shipping labels",
+                    "searchable": true,
+                    "contains": [
+                        "smugglers_note"
+                    ]
+                },
+                {
+                    "id": "smugglers_note",
+                    "name": "smuggler's note",
+                    "description": "A crumpled piece of parchment with hastily written instructions",
+                    "readable": true,
+                    "text": "Remember the stall numbers: Silk merchant at 3, Spice trader at 5, Weapon dealer at 7. That's the combination to the merchant's lockbox. The brass key inside opens the supply chest."
+                },
+                {
+                    "id": "merchant_lockbox",
+                    "name": "merchant's lockbox",
+                    "description": "An iron lockbox with a three-digit combination lock",
+                    "subcontainers": [
+                        {
+                            "id": "lockbox_interior",
+                            "name": "lockbox interior",
+                            "locked": true,
+                            "lock_type": "combination",
+                            "combination": "357",
+                            "contains": [
+                                "brass_key"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "brass_key",
+                    "name": "brass merchant key",
+                    "description": "A small brass key with a crescent moon symbol engraved on it"
+                },
+                {
+                    "id": "supply_chest",
+                    "name": "locked supply chest",
+                    "description": "A heavy wooden chest bound with iron straps and a brass lock",
+                    "locked": true,
+                    "key_required": "brass_key",
+                    "contains": [
+                        "market_ledger",
+                        "silver_token"
+                    ]
+                },
+                {
+                    "id": "market_ledger",
+                    "name": "market ledger",
+                    "description": "A leather-bound book containing merchant records and transactions",
+                    "readable": true,
+                    "text": "Shadow Market Registry: Head Merchant - Malik the Shrewd. Vault Keeper - Zara Nightwhisper. The vault lies beyond the central bazaar. Only those who know the market's secrets may enter: the head merchant's name, where forbidden goods are kept, and who you claim to be."
+                },
+                {
+                    "id": "silver_token",
+                    "name": "silver merchant token",
+                    "description": "A token bearing the symbol of the Shadow Market, proof of membership"
+                },
+                {
+                    "id": "fabric_display",
+                    "name": "hanging fabric display",
+                    "description": "Colorful silks and tapestries hanging from hooks",
+                    "searchable": true,
+                    "contains": [
+                        "hidden_map"
+                    ]
+                },
+                {
+                    "id": "hidden_map",
+                    "name": "bazaar map",
+                    "description": "A hand-drawn map of the Shadow Market's layout",
+                    "readable": true,
+                    "text": "Map shows the central bazaar to the east. Note scrawled at bottom: 'Forbidden goods stored in the Shadow Vault. Only registered merchants allowed.'"
+                },
+                {
+                    "id": "beaded_curtain_doorway",
+                    "name": "beaded curtain doorway",
+                    "description": "A doorway covered by strings of beads leading to the central bazaar",
+                    "locked": false,
+                    "direction": "east",
+                    "leads_to": "central_bazaar",
+                    "aliases": [
+                        "curtain",
+                        "east"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "central_bazaar",
+            "name": "Central Bazaar",
+            "description": "The heart of the Shadow Market - a vast underground chamber with dozens of stalls and merchants hawking their wares. Lanterns cast dancing shadows on the stone walls. The crowd is a mix of hooded figures, exotic travelers, and suspicious characters. Wanted posters are nailed to wooden posts, and a massive iron door stands at the north end, guarded by runes.",
+            "items": [
+                {
+                    "id": "wanted_poster_malik",
+                    "name": "wanted poster for Malik",
+                    "description": "A poster showing a bearded merchant with sharp eyes",
+                    "readable": true,
+                    "text": "WANTED by the City Guard: Malik the Shrewd - Smuggling, Tax Evasion, Trading in Forbidden Artifacts. Known as the Head Merchant of the Shadow Market. REWARD: 1000 gold pieces."
+                },
+                {
+                    "id": "wanted_poster_zara",
+                    "name": "wanted poster for Zara",
+                    "description": "A poster depicting a cloaked woman with mysterious eyes",
+                    "readable": true,
+                    "text": "WANTED: Zara Nightwhisper - Theft of Magical Artifacts, Operating Illegal Vault. Serves as Vault Keeper for the Shadow Market's most dangerous goods."
+                },
+                {
+                    "id": "wanted_poster_generic",
+                    "name": "wanted poster for various merchants",
+                    "description": "A poster listing several Shadow Market traders",
+                    "readable": true,
+                    "text": "WANTED: Various Shadow Market Merchants - If you are a registered merchant of the Shadow Market, you are considered an accomplice to illegal trade."
+                },
+                {
+                    "id": "merchant_stall_silk",
+                    "name": "silk merchant's stall",
+                    "description": "Stall #3 - A display of fine silks and rare fabrics from distant lands",
+                    "searchable": true,
+                    "contains": []
+                },
+                {
+                    "id": "merchant_stall_spice",
+                    "name": "spice trader's stall",
+                    "description": "Stall #5 - Aromatic spices and herbs in colorful jars and pouches",
+                    "searchable": true,
+                    "contains": []
+                },
+                {
+                    "id": "merchant_stall_weapons",
+                    "name": "weapon dealer's stall",
+                    "description": "Stall #7 - An array of exotic weapons and armor pieces",
+                    "searchable": true,
+                    "contains": [
+                        "dealers_note"
+                    ]
+                },
+                {
+                    "id": "dealers_note",
+                    "name": "weapon dealer's note",
+                    "description": "A note tucked under a dagger display",
+                    "readable": true,
+                    "text": "Reminder: The vault door asks three questions. Answer with: the head merchant's name (Malik the Shrewd), where the forbidden goods are kept (Shadow Vault), and identify yourself as a registered merchant."
+                },
+                {
+                    "id": "stone_fountain",
+                    "name": "central stone fountain",
+                    "description": "An ornate fountain with water trickling from a carved dragon's mouth",
+                    "searchable": true,
+                    "contains": [
+                        "copper_coin"
+                    ]
+                },
+                {
+                    "id": "copper_coin",
+                    "name": "lucky copper coin",
+                    "description": "A coin with strange markings, possibly a good luck charm"
+                },
+                {
+                    "id": "iron_vault_door",
+                    "name": "iron vault door",
+                    "description": "A massive iron door covered in protective runes. A brass panel displays three security questions that glow with magical light.",
+                    "locked": true,
+                    "lock_type": "password",
+                    "password_questions": [
+                        {
+                            "question": "Who leads the Shadow Market?",
+                            "answer": "malik the shrewd",
+                            "hint": "Check the wanted posters for the head merchant's name"
+                        },
+                        {
+                            "question": "Where are forbidden goods stored?",
+                            "answer": "shadow vault",
+                            "hint": "The market ledger and bazaar map mention this location"
+                        },
+                        {
+                            "question": "What are you?",
+                            "answer": "registered merchant",
+                            "hint": "The wanted posters and dealer's note mention who can access the vault"
+                        }
+                    ],
+                    "direction": "north",
+                    "leads_to": "vault_of_rarities",
+                    "aliases": [
+                        "vault",
+                        "north"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "vault_of_rarities",
+            "name": "Vault of Rarities",
+            "description": "You've made it into the legendary Shadow Vault! The chamber is filled with shelves of forbidden artifacts, magical items, and priceless treasures from across the realm. In the center, on a pedestal of black marble, rests the Crown of Shadows - a legendary artifact that grants its wearer the power to move unseen. A hidden passage behind the pedestal leads to freedom.",
+            "items": [
+                {
+                    "id": "crown_of_shadows",
+                    "name": "Crown of Shadows",
+                    "description": "A magnificent crown made of dark metal and set with purple gemstones that seem to absorb light. It radiates an aura of power and mystery."
+                },
+                {
+                    "id": "artifact_shelves",
+                    "name": "shelves of artifacts",
+                    "description": "Rows of shelves containing magical items, cursed objects, and rare treasures",
+                    "searchable": true,
+                    "contains": [
+                        "enchanted_amulet"
+                    ]
+                },
+                {
+                    "id": "enchanted_amulet",
+                    "name": "enchanted amulet",
+                    "description": "A silver amulet that glows faintly with protective magic"
+                },
+                {
+                    "id": "black_marble_pedestal",
+                    "name": "black marble pedestal",
+                    "description": "An ornate pedestal that once held the Crown of Shadows, now empty after you claimed the prize"
+                }
+            ],
+            "exits": [],
+            "is_goal": true,
+            "win_message": "SUCCESS! You have navigated the treacherous Shadow Market Bazaar and claimed the legendary Crown of Shadows! As you place the crown upon your head, you feel its power coursing through you - the ability to move unseen through any place. You slip through the hidden passage and vanish into the night, a master thief with the ultimate prize. The Shadow Market will speak of this heist for years to come. You win!"
+        }
+    ]
+}

@@ -1,0 +1,244 @@
+{
+  "theme": "Pocket-Universe Rift",
+  "title": "Pocket-Universe Rift Adventure #3",
+  "goal": "Solve the puzzles, achieve the main objective, and escape.",
+  "starting_room": "observation_deck",
+  "rooms": [
+    {
+      "id": "observation_deck",
+      "name": "Observation Deck",
+      "description": "A circular observation deck with floor-to-ceiling windows showing swirling purple and blue energy rifts in the space outside. Warning lights flash red across control panels. The air crackles with residual dimensional energy. Three memorial plaques honor fallen scientists on the wall.",
+      "items": [
+        {
+          "id": "control_console",
+          "name": "main control console",
+          "description": "A complex console with multiple compartments and displays showing rift readings",
+          "subcontainers": [
+            {
+              "id": "top_panel",
+              "name": "top panel",
+              "locked": false,
+              "contains": [
+                "emergency_protocol"
+              ]
+            },
+            {
+              "id": "secure_panel",
+              "name": "secure panel",
+              "locked": true,
+              "lock_type": "combination",
+              "combination": "2047",
+              "contains": [
+                "access_keycard"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "emergency_protocol",
+          "name": "emergency protocol document",
+          "description": "A laminated document with emergency procedures",
+          "readable": true,
+          "text": "EMERGENCY PROTOCOL: In case of rift containment failure, access the laboratory using authorized keycard. Rift stabilization requires the Dimensional Anchor. Remember: The facility was established in 2047. Lead researcher is Doctor Elena Vasquez."
+        },
+        {
+          "id": "access_keycard",
+          "name": "security access keycard",
+          "description": "A magnetic keycard labeled 'Level 3 Clearance'"
+        },
+        {
+          "id": "memorial_plaque_chen",
+          "name": "memorial plaque for Doctor Chen",
+          "description": "A brass plaque honoring a fallen scientist",
+          "readable": true,
+          "text": "In Memory of Doctor Sarah Chen - Quantum Physicist. Lost during the first rift experiment. Her research on dimensional frequencies continues to guide us."
+        },
+        {
+          "id": "memorial_plaque_patel",
+          "name": "memorial plaque for Doctor Patel",
+          "description": "A brass plaque commemorating a researcher",
+          "readable": true,
+          "text": "In Memory of Doctor Raj Patel - Theoretical Physicist. Disappeared into the void between dimensions. His theories on pocket universes were groundbreaking."
+        },
+        {
+          "id": "memorial_plaque_kim",
+          "name": "memorial plaque for Doctor Kim",
+          "description": "A brass plaque remembering a scientist",
+          "readable": true,
+          "text": "In Memory of Doctor Min-Jun Kim - Astrophysicist. Sacrificed himself to seal the first major rift. His courage saved the facility."
+        },
+        {
+          "id": "equipment_locker",
+          "name": "emergency equipment locker",
+          "description": "A tall locker containing emergency supplies",
+          "searchable": true,
+          "contains": [
+            "research_notes"
+          ]
+        },
+        {
+          "id": "research_notes",
+          "name": "research notebook",
+          "description": "A notebook filled with scientific observations",
+          "readable": true,
+          "text": "Research Log: The pocket universe rifts are stabilizing at specific frequencies. Doctor Vasquez believes we can close them using the Dimensional Anchor stored in the rift chamber. The void between dimensions is where we lost Doctor Patel."
+        },
+        {
+          "id": "reinforced_laboratory_door",
+          "name": "reinforced laboratory door",
+          "description": "A heavy security door with a card reader and biometric scanner",
+          "locked": true,
+          "key_required": "access_keycard",
+          "direction": "north",
+          "leads_to": "research_laboratory",
+          "aliases": [
+            "door",
+            "north"
+          ]
+        }
+      ],
+      "exits": []
+    },
+    {
+      "id": "research_laboratory",
+      "name": "Research Laboratory",
+      "description": "A state-of-the-art laboratory filled with advanced equipment and holographic displays showing dimensional equations. Containment pods line one wall, each holding samples of rift energy. A massive vault door dominates the far wall, leading to the rift chamber. Workstations are covered with research materials.",
+      "items": [
+        {
+          "id": "workstation_alpha",
+          "name": "primary research workstation",
+          "description": "A workstation with multiple monitors and a locked drawer",
+          "subcontainers": [
+            {
+              "id": "main_drawer",
+              "name": "main drawer",
+              "locked": false,
+              "contains": [
+                "frequency_data"
+              ]
+            },
+            {
+              "id": "secure_drawer",
+              "name": "secure drawer",
+              "locked": true,
+              "lock_type": "combination",
+              "combination": "137",
+              "contains": [
+                "vault_access_code"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "frequency_data",
+          "name": "dimensional frequency data",
+          "description": "A printout showing rift frequency measurements",
+          "readable": true,
+          "text": "Frequency Analysis: Stable rifts oscillate at 137 Hz - the inverse fine structure constant. This is the key to understanding dimensional barriers. Doctor Vasquez's breakthrough discovery."
+        },
+        {
+          "id": "vault_access_code",
+          "name": "vault access instructions",
+          "description": "A sealed document with vault security protocols",
+          "readable": true,
+          "text": "RIFT CHAMBER ACCESS: Security requires verification of authorized personnel. Questions: Who leads this research? Where was Doctor Patel lost? What device stabilizes rifts?"
+        },
+        {
+          "id": "containment_pods",
+          "name": "rift energy containment pods",
+          "description": "Glass cylinders containing swirling dimensional energy samples",
+          "searchable": true,
+          "contains": [
+            "energy_crystal"
+          ]
+        },
+        {
+          "id": "energy_crystal",
+          "name": "crystallized rift energy",
+          "description": "A glowing purple crystal formed from concentrated dimensional energy"
+        },
+        {
+          "id": "holographic_display",
+          "name": "holographic projection system",
+          "description": "A display showing three-dimensional models of pocket universes",
+          "readable": true,
+          "text": "Display shows: Pocket universes exist in the void between dimensions. The Dimensional Anchor can seal rifts by harmonizing frequencies. Current lead researcher: Doctor Elena Vasquez."
+        },
+        {
+          "id": "reference_library",
+          "name": "scientific reference library",
+          "description": "A bookshelf filled with research papers and journals",
+          "searchable": true,
+          "contains": [
+            "theoretical_paper"
+          ]
+        },
+        {
+          "id": "theoretical_paper",
+          "name": "published research paper",
+          "description": "A peer-reviewed paper on dimensional physics",
+          "readable": true,
+          "text": "Abstract: The Dimensional Anchor represents a breakthrough in rift stabilization technology. By matching the natural frequency of dimensional barriers, we can seal pocket universe rifts permanently. - Doctor Elena Vasquez, Lead Researcher"
+        },
+        {
+          "id": "rift_chamber_vault_door",
+          "name": "rift chamber vault door",
+          "description": "A massive reinforced door with a security terminal displaying three verification questions",
+          "locked": true,
+          "lock_type": "password",
+          "password_questions": [
+            {
+              "question": "Who leads this research facility?",
+              "answer": "doctor elena vasquez",
+              "hint": "Check the emergency protocol and research papers"
+            },
+            {
+              "question": "Where was Doctor Patel lost?",
+              "answer": "void between dimensions",
+              "hint": "Read the memorial plaques and research notes carefully"
+            },
+            {
+              "question": "What device stabilizes rifts?",
+              "answer": "dimensional anchor",
+              "hint": "Multiple documents mention the stabilization device"
+            }
+          ],
+          "direction": "east",
+          "leads_to": "rift_chamber",
+          "aliases": [
+            "vault",
+            "east"
+          ]
+        }
+      ],
+      "exits": []
+    },
+    {
+      "id": "rift_chamber",
+      "name": "Dimensional Rift Chamber",
+      "description": "You have reached the heart of the facility! A massive swirling rift tears through reality itself, showing glimpses of impossible geometries and alternate dimensions. In the center of the room, mounted on a pedestal, sits the Dimensional Anchor - a device of crystalline metal that hums with power. As you approach, the rift begins to stabilize, its chaotic energy calming. The Anchor activates, and the rift seals with a brilliant flash of light. Reality returns to normal.",
+      "items": [
+        {
+          "id": "dimensional_anchor",
+          "name": "Dimensional Anchor device",
+          "description": "A magnificent device of crystalline metal and glowing energy cores, designed to seal dimensional rifts"
+        },
+        {
+          "id": "stabilization_pedestal",
+          "name": "anchor mounting pedestal",
+          "description": "A reinforced pedestal designed to hold and power the Dimensional Anchor"
+        },
+        {
+          "id": "rift_monitors",
+          "name": "rift monitoring equipment",
+          "description": "Advanced sensors showing the rift's energy signature decreasing to zero",
+          "readable": true,
+          "text": "RIFT STATUS: Stabilization successful. Dimensional barrier integrity restored to 100%. Pocket universe sealed. All personnel may evacuate safely."
+        }
+      ],
+      "exits": [],
+      "is_goal": true,
+      "win_message": "SUCCESS! You have activated the Dimensional Anchor and sealed the pocket universe rift! The swirling chaos of dimensional energy collapses into a single point of light and vanishes. Reality stabilizes, and the facility's alarms fall silent. The research of Doctors Chen, Patel, and Kim was not in vain - their sacrifice has led to this moment. You have saved the facility and prevented the rift from consuming this dimension. You win!"
+    }
+  ]
+}

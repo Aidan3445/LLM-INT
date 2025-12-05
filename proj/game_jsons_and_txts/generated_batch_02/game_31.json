@@ -1,0 +1,219 @@
+{
+    "theme": "Hall of Forgotten Toys",
+    "title": "Hall of Forgotten Toys Adventure #31",
+    "goal": "Solve the puzzles, achieve the main objective, and escape.",
+    "starting_room": "dusty_attic",
+    "rooms": [
+        {
+            "id": "dusty_attic",
+            "name": "Dusty Attic of Forgotten Toys",
+            "description": "A dimly lit attic filled with cobwebs and shadows. Moonlight streams through a small round window, illuminating rows of forgotten toys covered in dust. A rocking horse sits motionless in the corner, and old toy boxes are stacked against the walls. The air smells of old wood and memories.",
+            "items": [
+                {
+                    "id": "toy_chest",
+                    "name": "old toy chest",
+                    "description": "A large wooden chest painted with faded circus animals. Three compartments are visible inside.",
+                    "subcontainers": [
+                        {
+                            "id": "left_compartment",
+                            "name": "left compartment",
+                            "locked": false,
+                            "contains": [
+                                "toy_diary"
+                            ]
+                        },
+                        {
+                            "id": "middle_compartment",
+                            "name": "middle compartment",
+                            "locked": true,
+                            "lock_type": "combination",
+                            "combination": "1955",
+                            "contains": [
+                                "brass_key"
+                            ]
+                        },
+                        {
+                            "id": "right_compartment",
+                            "name": "right compartment",
+                            "locked": false,
+                            "contains": []
+                        }
+                    ]
+                },
+                {
+                    "id": "toy_diary",
+                    "name": "child's diary",
+                    "description": "A small diary with a teddy bear on the cover",
+                    "readable": true,
+                    "text": "December 25th, 1955 - Best Christmas ever! Got Mr. Buttons the teddy bear, Sally the doll, and Rusty the tin soldier. Mom says I'm the luckiest kid in the world!"
+                },
+                {
+                    "id": "brass_key",
+                    "name": "small brass key",
+                    "description": "A tiny brass key with a toy soldier engraved on it"
+                },
+                {
+                    "id": "locked_dollhouse",
+                    "name": "antique dollhouse",
+                    "description": "A beautiful Victorian dollhouse with a small brass lock on the front door",
+                    "locked": true,
+                    "key_required": "brass_key",
+                    "contains": [
+                        "letter_to_toys"
+                    ]
+                },
+                {
+                    "id": "letter_to_toys",
+                    "name": "letter to the toys",
+                    "description": "A handwritten letter on yellowed paper",
+                    "readable": true,
+                    "text": "Dear toys, I'm sorry I forgot about you. I grew up and moved away. But I remember: Mr. Buttons was my first friend. Sally lived in the dollhouse. Rusty guarded my toy kingdom. I hope you can forgive me. - Emily"
+                },
+                {
+                    "id": "rocking_horse",
+                    "name": "wooden rocking horse",
+                    "description": "A weathered rocking horse with a gentle expression",
+                    "searchable": true,
+                    "contains": [
+                        "silver_key"
+                    ]
+                },
+                {
+                    "id": "silver_key",
+                    "name": "silver key",
+                    "description": "A silver key shaped like a star"
+                },
+                {
+                    "id": "attic_door",
+                    "name": "attic door",
+                    "description": "A wooden door leading down to the toy workshop. It has a star-shaped keyhole.",
+                    "locked": true,
+                    "key_required": "silver_key",
+                    "direction": "south",
+                    "leads_to": "toy_workshop",
+                    "aliases": [
+                        "door",
+                        "south"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "toy_workshop",
+            "name": "Moonlit Toy Workshop",
+            "description": "A magical workshop where toys are repaired and brought back to life. Workbenches are covered with tools, paint, and fabric. Shelves display restored toys that seem to watch you with knowing eyes. A large jack-in-the-box sits in the center of the room, and a mysterious glowing door stands at the far end.",
+            "items": [
+                {
+                    "id": "workbench",
+                    "name": "toy maker's workbench",
+                    "description": "A cluttered workbench with various toy-making supplies",
+                    "searchable": true,
+                    "contains": [
+                        "repair_manual"
+                    ]
+                },
+                {
+                    "id": "repair_manual",
+                    "name": "toy repair manual",
+                    "description": "A worn manual with notes in the margins",
+                    "readable": true,
+                    "text": "Toy Restoration Guide: Remember the three rules - First, identify the toy's original owner. Second, know where each toy belonged. Third, understand each toy's purpose. Only then can a toy find peace."
+                },
+                {
+                    "id": "shelf_teddy",
+                    "name": "shelf with teddy bear",
+                    "description": "A shelf displaying a restored teddy bear with button eyes",
+                    "readable": true,
+                    "text": "Name tag reads: 'Mr. Buttons - Beloved companion and first friend to Emily'"
+                },
+                {
+                    "id": "shelf_doll",
+                    "name": "shelf with porcelain doll",
+                    "description": "A shelf holding a beautiful doll in a blue dress",
+                    "readable": true,
+                    "text": "Name tag reads: 'Sally - Resident of the Victorian dollhouse, keeper of tea parties'"
+                },
+                {
+                    "id": "shelf_soldier",
+                    "name": "shelf with tin soldier",
+                    "description": "A shelf displaying a proud tin soldier at attention",
+                    "readable": true,
+                    "text": "Name tag reads: 'Rusty - Guardian of the toy kingdom, protector of dreams'"
+                },
+                {
+                    "id": "jack_in_box",
+                    "name": "large jack-in-the-box",
+                    "description": "A colorful jack-in-the-box with a crank handle on the side",
+                    "searchable": true,
+                    "contains": [
+                        "golden_key"
+                    ]
+                },
+                {
+                    "id": "golden_key",
+                    "name": "golden key",
+                    "description": "A magical golden key that glows with warm light"
+                },
+                {
+                    "id": "glowing_toy_kingdom_door",
+                    "name": "glowing toy kingdom door",
+                    "description": "A magnificent door decorated with painted toys and stars. Three questions are carved into a brass plaque beside it.",
+                    "locked": true,
+                    "lock_type": "password",
+                    "password_questions": [
+                        {
+                            "question": "Who was the toys' original owner?",
+                            "answer": "emily",
+                            "hint": "Check the letter in the dollhouse"
+                        },
+                        {
+                            "question": "Where did Sally live?",
+                            "answer": "dollhouse",
+                            "hint": "Read the name tags on the shelves in the workshop"
+                        },
+                        {
+                            "question": "What was Rusty's purpose?",
+                            "answer": "guardian",
+                            "hint": "Look at Rusty's description on his shelf"
+                        }
+                    ],
+                    "direction": "east",
+                    "leads_to": "toy_kingdom",
+                    "aliases": [
+                        "door",
+                        "east"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "toy_kingdom",
+            "name": "The Eternal Toy Kingdom",
+            "description": "You have entered a magical realm where forgotten toys live forever! A beautiful landscape of toy castles, candy forests, and rainbow skies stretches before you. Mr. Buttons, Sally, and Rusty stand together, smiling and waving. They are no longer forgotten - they are home, and they are happy. A shimmering portal of light offers your way back to the real world.",
+            "items": [
+                {
+                    "id": "toy_castle",
+                    "name": "magnificent toy castle",
+                    "description": "A grand castle made of building blocks and dreams, where all forgotten toys find peace"
+                },
+                {
+                    "id": "happy_toys",
+                    "name": "reunited toys",
+                    "description": "Mr. Buttons, Sally, and Rusty stand together, finally at peace in their eternal home"
+                },
+                {
+                    "id": "memory_book",
+                    "name": "book of memories",
+                    "description": "A magical book that records every child's love for their toys",
+                    "readable": true,
+                    "text": "Every toy that was ever loved lives on in the Toy Kingdom. They are never truly forgotten, for they live in the hearts and memories of those who cherished them."
+                }
+            ],
+            "exits": [],
+            "is_goal": true,
+            "win_message": "You have helped the forgotten toys find their way home to the Eternal Toy Kingdom! Mr. Buttons, Sally, and Rusty are finally at peace, reunited in a place where they will never be forgotten again. As you step through the shimmering portal, you carry with you the knowledge that every cherished toy lives on in memory and magic. You win!"
+        }
+    ]
+}

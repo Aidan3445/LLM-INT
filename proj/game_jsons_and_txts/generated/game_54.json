@@ -1,0 +1,300 @@
+{
+  "theme": "Eldritch Ritual Chamber",
+  "title": "Eldritch Ritual Chamber Adventure #54",
+  "goal": "Solve the puzzles, achieve the main objective, and escape.",
+  "starting_room": "ritual_antechamber",
+  "rooms": [
+    {
+      "id": "ritual_antechamber",
+      "name": "Ritual Antechamber",
+      "description": "A dimly lit stone chamber with walls covered in strange glowing runes. Candles flicker with unnatural green flames, casting dancing shadows. The air is thick with incense and an otherworldly hum resonates through the floor. Ancient symbols are carved into every surface, and a heavy wooden door blocks the way forward.",
+      "items": [
+        {
+          "id": "stone_altar",
+          "name": "small stone altar",
+          "description": "A waist-high altar covered in ritual markings and dried wax",
+          "searchable": true,
+          "contains": [
+            "ritual_dagger"
+          ]
+        },
+        {
+          "id": "ritual_dagger",
+          "name": "ceremonial dagger",
+          "description": "An ornate dagger with eldritch symbols etched into the blade"
+        },
+        {
+          "id": "bookshelf",
+          "name": "ancient bookshelf",
+          "description": "A tall shelf filled with leather-bound tomes and scrolls",
+          "searchable": true,
+          "contains": [
+            "tome_of_rituals"
+          ]
+        },
+        {
+          "id": "tome_of_rituals",
+          "name": "tome of forbidden rituals",
+          "description": "A heavy book bound in strange leather, its pages filled with arcane knowledge",
+          "readable": true,
+          "text": "The Great Ritual was performed on the 13th day of the 6th month in the year 66. The High Priest Azathoth commanded three acolytes: Keeper Nyarlathotep, Scribe Yog-Sothoth, and Guardian Shub-Niggurath. The ritual requires three sacred artifacts to complete."
+        },
+        {
+          "id": "wooden_chest",
+          "name": "carved wooden chest",
+          "description": "An ornate chest with three compartments, each marked with different symbols",
+          "subcontainers": [
+            {
+              "id": "top_compartment",
+              "name": "top compartment",
+              "locked": false,
+              "contains": [
+                "priests_journal"
+              ]
+            },
+            {
+              "id": "middle_compartment",
+              "name": "middle compartment",
+              "locked": true,
+              "lock_type": "combination",
+              "combination": "130666",
+              "contains": [
+                "brass_key"
+              ]
+            },
+            {
+              "id": "bottom_compartment",
+              "name": "bottom compartment",
+              "locked": false,
+              "contains": []
+            }
+          ]
+        },
+        {
+          "id": "priests_journal",
+          "name": "high priest's journal",
+          "description": "A journal with entries written in dark ink",
+          "readable": true,
+          "text": "Journal Entry: The ritual chamber beyond holds the secrets of the Old Ones. I, High Priest Azathoth, have sealed the inner sanctum. Only those who know the three sacred elements may enter: the source of our power, the place of our gathering, and the vessel of transformation."
+        },
+        {
+          "id": "brass_key",
+          "name": "tarnished brass key",
+          "description": "A heavy brass key with eldritch symbols engraved on its surface"
+        },
+        {
+          "id": "locked_cabinet",
+          "name": "ritual cabinet",
+          "description": "A tall cabinet with a brass lock, containing ritual supplies",
+          "locked": true,
+          "key_required": "brass_key",
+          "contains": [
+            "obsidian_orb"
+          ]
+        },
+        {
+          "id": "obsidian_orb",
+          "name": "obsidian orb",
+          "description": "A perfectly smooth black sphere that seems to absorb light, one of the sacred artifacts"
+        },
+        {
+          "id": "heavy_stone_door",
+          "name": "heavy stone door",
+          "description": "A massive door carved with writhing tentacles and cosmic horrors. It requires the ceremonial dagger to open.",
+          "locked": true,
+          "key_required": "ritual_dagger",
+          "direction": "north",
+          "leads_to": "main_ritual_chamber",
+          "aliases": [
+            "door",
+            "north"
+          ]
+        }
+      ],
+      "exits": []
+    },
+    {
+      "id": "main_ritual_chamber",
+      "name": "Main Ritual Chamber",
+      "description": "A vast circular chamber with a domed ceiling painted with constellations that seem to move. Five stone statues of robed figures stand in a circle around a central pentagram carved into the floor. Torches burn with purple flames, and the walls are covered with inscriptions in an ancient language. An archway to the east leads to the inner sanctum.",
+      "items": [
+        {
+          "id": "statue_keeper",
+          "name": "statue of the Keeper",
+          "description": "A hooded figure holding a staff topped with an eye symbol",
+          "readable": true,
+          "text": "Inscription at base: 'Keeper Nyarlathotep - Guardian of the Void Star, source of all eldritch power.'"
+        },
+        {
+          "id": "statue_scribe",
+          "name": "statue of the Scribe",
+          "description": "A robed figure clutching ancient scrolls",
+          "readable": true,
+          "text": "Inscription at base: 'Scribe Yog-Sothoth - Recorder of rituals performed in the Circle of Stones, our sacred gathering place.'"
+        },
+        {
+          "id": "statue_guardian",
+          "name": "statue of the Guardian",
+          "description": "A towering figure with multiple arms holding ritual implements",
+          "readable": true,
+          "text": "Inscription at base: 'Guardian Shub-Niggurath - Protector of the Chalice of Souls, vessel of transformation and rebirth.'"
+        },
+        {
+          "id": "statue_priest",
+          "name": "statue of High Priest Azathoth",
+          "description": "The central statue, larger than the others, depicting a figure in elaborate robes",
+          "readable": true,
+          "text": "Inscription at base: 'High Priest Azathoth - Master of the ritual, keeper of the three sacred artifacts needed to open the gateway.'"
+        },
+        {
+          "id": "statue_acolyte",
+          "name": "statue of an acolyte",
+          "description": "A smaller statue of a kneeling figure",
+          "readable": true,
+          "text": "Inscription at base: 'The faithful acolyte - Those who serve shall be rewarded with passage through the gateway.'"
+        },
+        {
+          "id": "ritual_pentagram",
+          "name": "carved pentagram",
+          "description": "A large pentagram carved into the stone floor, with strange symbols at each point",
+          "searchable": true,
+          "contains": [
+            "silver_amulet"
+          ]
+        },
+        {
+          "id": "silver_amulet",
+          "name": "silver amulet",
+          "description": "A crescent-shaped amulet made of tarnished silver, another sacred artifact"
+        },
+        {
+          "id": "stone_pedestal",
+          "name": "central stone pedestal",
+          "description": "A pedestal in the center of the pentagram with a locked compartment",
+          "subcontainers": [
+            {
+              "id": "pedestal_compartment",
+              "name": "pedestal compartment",
+              "locked": true,
+              "lock_type": "combination",
+              "combination": "777",
+              "contains": [
+                "ritual_scroll"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "ritual_scroll",
+          "name": "scroll of summoning",
+          "description": "An ancient scroll with instructions for the final ritual",
+          "readable": true,
+          "text": "To complete the ritual and open the gateway, speak the sacred number: the number of perfection, repeated thrice. The combination is 777."
+        },
+        {
+          "id": "wall_inscriptions",
+          "name": "wall inscriptions",
+          "description": "Ancient text carved into the chamber walls",
+          "readable": true,
+          "text": "The ritual chamber holds many secrets. The pedestal's lock opens with the sacred number of perfection: seven, seven, seven."
+        },
+        {
+          "id": "archway_to_inner_sanctum",
+          "name": "archway to inner sanctum",
+          "description": "An ornate archway covered in pulsing runes. Three questions are inscribed on a stone tablet beside it.",
+          "locked": true,
+          "lock_type": "password",
+          "password_questions": [
+            {
+              "question": "What is the source of eldritch power?",
+              "answer": "void star",
+              "hint": "Check the inscription on the Keeper's statue"
+            },
+            {
+              "question": "Where do the rituals take place?",
+              "answer": "circle of stones",
+              "hint": "Read the Scribe's statue inscription carefully"
+            },
+            {
+              "question": "What is the vessel of transformation?",
+              "answer": "chalice of souls",
+              "hint": "The Guardian's statue mentions this"
+            }
+          ],
+          "direction": "east",
+          "leads_to": "inner_sanctum",
+          "aliases": [
+            "archway",
+            "east"
+          ]
+        }
+      ],
+      "exits": []
+    },
+    {
+      "id": "inner_sanctum",
+      "name": "Inner Sanctum",
+      "description": "You have entered the heart of the ritual chamber! The room pulses with eldritch energy. In the center stands an altar with three indentations for sacred artifacts. Above it, a swirling portal of cosmic light and shadow offers escape from this place. Strange whispers echo from beyond reality, and the very air seems to bend and twist.",
+      "items": [
+        {
+          "id": "artifact_altar",
+          "name": "altar of artifacts",
+          "description": "A black stone altar with three circular indentations, each marked with a different symbol",
+          "readable": true,
+          "text": "Inscription: 'Place the three sacred artifacts upon this altar to activate the gateway and escape this realm. The obsidian orb, the silver amulet, and the golden chalice must be united.'"
+        },
+        {
+          "id": "ritual_table",
+          "name": "ritual preparation table",
+          "description": "A table covered with ritual implements and offerings",
+          "searchable": true,
+          "contains": [
+            "golden_chalice"
+          ]
+        },
+        {
+          "id": "golden_chalice",
+          "name": "golden chalice",
+          "description": "An ornate chalice made of pure gold, engraved with cosmic symbols, the final sacred artifact"
+        },
+        {
+          "id": "gateway_of_light",
+          "name": "gateway of light",
+          "description": "A swirling portal of otherworldly energy. It requires all three sacred artifacts to fully activate and allow passage.",
+          "locked": true,
+          "key_required": "golden_chalice",
+          "direction": "north",
+          "leads_to": "freedom",
+          "aliases": [
+            "portal",
+            "gateway",
+            "north"
+          ]
+        },
+        {
+          "id": "cosmic_murals",
+          "name": "cosmic murals",
+          "description": "Paintings depicting the rise and fall of ancient civilizations",
+          "readable": true,
+          "text": "The murals show the history of the ritual chamber: built by cultists who sought to bridge the gap between worlds. Those who complete the ritual may pass through the gateway to freedom."
+        }
+      ],
+      "exits": []
+    },
+    {
+      "id": "freedom",
+      "name": "Beyond the Veil",
+      "description": "You step through the gateway and find yourself in a place between worlds. The eldritch chamber fades behind you as reality reasserts itself. You have survived the ritual chamber and escaped with forbidden knowledge. The cosmic horrors recede, and you are free.",
+      "items": [
+        {
+          "id": "reality_anchor",
+          "name": "anchor to reality",
+          "description": "A shimmering point of light that represents your connection to the normal world"
+        }
+      ],
+      "exits": [],
+      "is_goal": true,
+      "win_message": "You have successfully completed the eldritch ritual and escaped the chamber! The three sacred artifacts merge into pure energy as you pass through the gateway. The cosmic horrors acknowledge your worthiness, and you return to reality forever changed by what you have witnessed. The ritual chamber seals itself behind you, its secrets preserved. You win!"
+    }
+  ]
+}

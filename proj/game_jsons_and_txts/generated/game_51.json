@@ -1,0 +1,242 @@
+{
+    "theme": "Ghost Ship Deck",
+    "title": "Ghost Ship Deck Adventure #51",
+    "goal": "Solve the puzzles, achieve the main objective, and escape.",
+    "starting_room": "main_deck",
+    "rooms": [
+        {
+            "id": "main_deck",
+            "name": "Main Deck",
+            "description": "A fog-shrouded deck of an ancient ghost ship. Tattered sails hang from broken masts, and ghostly mist swirls around your feet. The wooden planks creak ominously beneath you. Spectral lights flicker in the distance. A ship's wheel stands at the helm, and various nautical equipment lies scattered about.",
+            "items": [
+                {
+                    "id": "ships_wheel",
+                    "name": "ship's wheel",
+                    "description": "An old wooden ship's wheel covered in barnacles and seaweed",
+                    "readable": true,
+                    "text": "Carved into the wheel's hub: 'Captain Graves commands this vessel. First Mate Bones keeps the log. Quartermaster Skull guards the stores.'"
+                },
+                {
+                    "id": "coiled_rope",
+                    "name": "coiled rope",
+                    "description": "A thick rope coiled near the mast",
+                    "searchable": true,
+                    "contains": [
+                        "rusty_key"
+                    ]
+                },
+                {
+                    "id": "rusty_key",
+                    "name": "rusty iron key",
+                    "description": "A corroded key that might open something below deck"
+                },
+                {
+                    "id": "supply_crate",
+                    "name": "wooden supply crate",
+                    "description": "A weathered crate with the ship's emblem burned into the wood",
+                    "subcontainers": [
+                        {
+                            "id": "top_section",
+                            "name": "top section",
+                            "locked": false,
+                            "contains": [
+                                "navigation_chart"
+                            ]
+                        },
+                        {
+                            "id": "bottom_section",
+                            "name": "bottom section",
+                            "locked": true,
+                            "lock_type": "combination",
+                            "combination": "1692",
+                            "contains": [
+                                "brass_key"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "navigation_chart",
+                    "name": "old navigation chart",
+                    "description": "A sea chart with various markings and notes",
+                    "readable": true,
+                    "text": "Chart notation: 'The Phantom Maiden set sail in the year 1692. Captain Graves keeps his secrets locked away. The combination to his private stores matches our maiden voyage year.'"
+                },
+                {
+                    "id": "brass_key",
+                    "name": "brass cabin key",
+                    "description": "A polished brass key with an ornate skull design"
+                },
+                {
+                    "id": "cargo_hold_hatch",
+                    "name": "cargo hold hatch",
+                    "description": "A heavy wooden hatch leading down to the cargo hold. It's secured with an iron lock.",
+                    "locked": true,
+                    "key_required": "rusty_key",
+                    "direction": "south",
+                    "leads_to": "cargo_hold",
+                    "aliases": [
+                        "hatch",
+                        "down"
+                    ]
+                },
+                {
+                    "id": "captain's_cabin_door",
+                    "name": "captain's cabin door",
+                    "description": "An ornate door leading to the captain's private quarters",
+                    "locked": true,
+                    "key_required": "brass_key",
+                    "direction": "east",
+                    "leads_to": "captains_cabin",
+                    "aliases": [
+                        "door",
+                        "east"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "captains_cabin",
+            "name": "Captain's Cabin",
+            "description": "The captain's private quarters, filled with nautical instruments, maps, and personal effects. A large desk dominates the room, and ghostly portraits of crew members hang on the walls. The air is thick with the smell of salt and old wood. Moonlight filters through a cracked porthole.",
+            "items": [
+                {
+                    "id": "portrait_graves",
+                    "name": "portrait of Captain Graves",
+                    "description": "A painting of a stern-looking captain with a long beard",
+                    "readable": true,
+                    "text": "Captain Elias Graves - Master of the Phantom Maiden. Known for his iron will and command of the seven seas."
+                },
+                {
+                    "id": "portrait_bones",
+                    "name": "portrait of First Mate Bones",
+                    "description": "A painting of a weathered sailor with a scarred face",
+                    "readable": true,
+                    "text": "First Mate William Bones - Keeper of the ship's log and records. Lost his family to the depths of the ocean."
+                },
+                {
+                    "id": "portrait_skull",
+                    "name": "portrait of Quartermaster Skull",
+                    "description": "A painting of a burly man with a bald head",
+                    "readable": true,
+                    "text": "Quartermaster Thomas Skull - Guardian of supplies and provisions. Manages the cargo hold stores."
+                },
+                {
+                    "id": "captains_desk",
+                    "name": "captain's desk",
+                    "description": "A heavy oak desk covered with charts, a compass, and writing materials",
+                    "searchable": true,
+                    "contains": [
+                        "captains_journal"
+                    ]
+                },
+                {
+                    "id": "captains_journal",
+                    "name": "captain's journal",
+                    "description": "A leather-bound journal with the captain's personal entries",
+                    "readable": true,
+                    "text": "Final Entry: We are cursed! The crew has become spirits bound to this vessel. To escape, one must reach the cargo hold and find the lifeboat. But the hold is protected by questions only the living can answer."
+                },
+                {
+                    "id": "locked_chest",
+                    "name": "locked sea chest",
+                    "description": "A sturdy chest with brass fittings and a complex lock",
+                    "locked": true,
+                    "key_required": "brass_key",
+                    "contains": [
+                        "silver_key"
+                    ]
+                },
+                {
+                    "id": "silver_key",
+                    "name": "silver hold key",
+                    "description": "A silver key that looks important for accessing the lower decks"
+                },
+                {
+                    "id": "telescope",
+                    "name": "brass telescope",
+                    "description": "A telescope mounted near the porthole",
+                    "readable": true,
+                    "text": "Looking through the telescope, you see a distant shore. A note is attached: 'The ocean depths claimed Bones' family. Remember who you are - you are the living, not the dead.'"
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "cargo_hold",
+            "name": "Cargo Hold",
+            "description": "The dark belly of the ship, filled with barrels, crates, and supplies. Water sloshes at the bottom of the hold, and rats scurry in the shadows. A ghostly barrier blocks the way to the lifeboat at the far end. A spectral guardian stands before a sealed door, asking questions of those who wish to pass.",
+            "items": [
+                {
+                    "id": "supply_barrels",
+                    "name": "stack of barrels",
+                    "description": "Old barrels containing various ship supplies",
+                    "searchable": true,
+                    "contains": [
+                        "ships_manifest"
+                    ]
+                },
+                {
+                    "id": "ships_manifest",
+                    "name": "ship's manifest",
+                    "description": "A document listing the ship's cargo and crew",
+                    "readable": true,
+                    "text": "Manifest: The Phantom Maiden carries cargo for the living world. Quartermaster Skull oversees all stores in the cargo hold."
+                },
+                {
+                    "id": "spectral_barrier_door",
+                    "name": "spectral barrier door",
+                    "description": "A shimmering barrier of ghostly energy. The spectral guardian demands answers to three questions before allowing passage.",
+                    "locked": true,
+                    "lock_type": "password",
+                    "password_questions": [
+                        {
+                            "question": "Who commands this vessel?",
+                            "answer": "captain graves",
+                            "hint": "Check the ship's wheel and the portraits in the captain's cabin"
+                        },
+                        {
+                            "question": "What claimed First Mate Bones' family?",
+                            "answer": "ocean depths",
+                            "hint": "Read the portraits and the telescope note carefully"
+                        },
+                        {
+                            "question": "Who are you?",
+                            "answer": "the living",
+                            "hint": "The captain's journal and telescope note mention this"
+                        }
+                    ],
+                    "direction": "north",
+                    "leads_to": "lifeboat_deck",
+                    "aliases": [
+                        "barrier",
+                        "door",
+                        "north"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "lifeboat_deck",
+            "name": "Lifeboat Deck",
+            "description": "You've reached the lifeboat! A small but sturdy boat hangs from davits, ready to be lowered into the water. The ghostly mist begins to clear, and you can see the shore in the distance. The curse cannot hold you here any longer.",
+            "items": [
+                {
+                    "id": "lifeboat",
+                    "name": "wooden lifeboat",
+                    "description": "A seaworthy lifeboat that can carry you to safety and freedom"
+                },
+                {
+                    "id": "oars",
+                    "name": "pair of oars",
+                    "description": "Sturdy oars for rowing to shore"
+                }
+            ],
+            "exits": [],
+            "is_goal": true,
+            "win_message": "You lower the lifeboat into the water and row away from the cursed ghost ship! The Phantom Maiden fades into the mist behind you as you reach the safety of the shore. The spirits of Captain Graves and his crew watch silently as you escape their eternal fate. You are free! You win!"
+        }
+    ]
+}

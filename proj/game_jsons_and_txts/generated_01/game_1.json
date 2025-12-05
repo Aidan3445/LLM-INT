@@ -1,0 +1,268 @@
+{
+    "theme": "Forgotten Clock Tower",
+    "title": "Forgotten Clock Tower Adventure #1",
+    "goal": "Solve the puzzles, achieve the main objective, and escape.",
+    "starting_room": "ground_floor_workshop",
+    "rooms": [
+        {
+            "id": "ground_floor_workshop",
+            "name": "Clockmaker's Workshop",
+            "description": "A dusty workshop at the base of the forgotten clock tower. Cobwebs drape across workbenches covered with rusted tools and broken clock parts. Moonlight filters through grimy windows, illuminating brass gears scattered across the floor. The air smells of oil and decay. A massive wooden door leads upward into the tower's heart.",
+            "items": [
+                {
+                    "id": "main_workbench",
+                    "name": "clockmaker's workbench",
+                    "description": "A sturdy oak workbench covered in dust and abandoned tools",
+                    "searchable": true,
+                    "contains": [
+                        "brass_key"
+                    ]
+                },
+                {
+                    "id": "brass_key",
+                    "name": "small brass key",
+                    "description": "A tarnished brass key with a clock face engraved on its head"
+                },
+                {
+                    "id": "tool_cabinet",
+                    "name": "tool cabinet",
+                    "description": "A tall metal cabinet with three drawers, each labeled with different tool types",
+                    "subcontainers": [
+                        {
+                            "id": "top_drawer",
+                            "name": "top drawer",
+                            "locked": false,
+                            "contains": [
+                                "maintenance_log"
+                            ]
+                        },
+                        {
+                            "id": "middle_drawer",
+                            "name": "middle drawer",
+                            "locked": true,
+                            "lock_type": "combination",
+                            "combination": "1847",
+                            "contains": [
+                                "iron_key"
+                            ]
+                        },
+                        {
+                            "id": "bottom_drawer",
+                            "name": "bottom drawer",
+                            "locked": false,
+                            "contains": []
+                        }
+                    ]
+                },
+                {
+                    "id": "maintenance_log",
+                    "name": "maintenance log book",
+                    "description": "A leather-bound log with faded entries",
+                    "readable": true,
+                    "text": "MAINTENANCE LOG: Clock Tower constructed in 1847 by Master Clockmaker Heinrich Adler. Last wound: March 15th, 1923. The great bell rings from the summit. The main mechanism chamber houses the heart of the tower. Combination to secure drawer: year of construction."
+                },
+                {
+                    "id": "iron_key",
+                    "name": "heavy iron key",
+                    "description": "A large iron key with intricate teeth, labeled 'MECHANISM CHAMBER'"
+                },
+                {
+                    "id": "locked_chest",
+                    "name": "wooden storage chest",
+                    "description": "A cedar chest with brass fittings and a keyhole",
+                    "locked": true,
+                    "key_required": "brass_key",
+                    "contains": [
+                        "clockmakers_journal",
+                        "gear_diagram"
+                    ]
+                },
+                {
+                    "id": "clockmakers_journal",
+                    "name": "Heinrich's journal",
+                    "description": "A personal journal belonging to the clockmaker",
+                    "readable": true,
+                    "text": "Journal of Heinrich Adler: I have dedicated my life to this magnificent tower. The mechanism chamber contains my greatest work - gears that turn with perfect precision. Should anyone need to reach the summit, they must understand: Who built this tower? Where does the great bell ring? What drives the clock's heart?"
+                },
+                {
+                    "id": "gear_diagram",
+                    "name": "mechanical diagram",
+                    "description": "A detailed drawing of the clock's gear system",
+                    "readable": true,
+                    "text": "CLOCK TOWER MECHANISM: The main gears are housed in the mechanism chamber. The escapement regulates time. The bell mechanism is located at the summit. All components work in harmony to keep time eternal."
+                },
+                {
+                    "id": "wall_plaque",
+                    "name": "dedication plaque",
+                    "description": "A brass plaque mounted on the wall",
+                    "readable": true,
+                    "text": "This Clock Tower erected 1847. Master Clockmaker: Heinrich Adler. 'May this tower stand eternal, marking time for generations to come.'"
+                },
+                {
+                    "id": "broken_clock_face",
+                    "name": "broken clock face",
+                    "description": "A shattered clock face leaning against the wall, its hands frozen at midnight",
+                    "searchable": true,
+                    "contains": []
+                },
+                {
+                    "id": "heavy_wooden_door",
+                    "name": "heavy wooden door",
+                    "description": "A thick oak door reinforced with iron bands, leading up into the tower",
+                    "locked": true,
+                    "key_required": "iron_key",
+                    "direction": "north",
+                    "leads_to": "mechanism_chamber",
+                    "aliases": [
+                        "door",
+                        "north",
+                        "up"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "mechanism_chamber",
+            "name": "Clock Mechanism Chamber",
+            "description": "The heart of the clock tower. Enormous brass gears and wheels fill the circular chamber, frozen in time. Chains and pendulums hang motionless from the vaulted ceiling. The mechanical symphony that once filled this space is now silent. Moonlight streams through narrow windows, casting gear-shaped shadows. A spiral staircase winds upward to the bell tower.",
+            "items": [
+                {
+                    "id": "main_gear_assembly",
+                    "name": "main gear assembly",
+                    "description": "A massive arrangement of interlocking brass gears, the largest as tall as a person",
+                    "readable": true,
+                    "text": "The main drive mechanism. A small plaque reads: 'The heart of the clock - designed and built by Heinrich Adler, 1847. These gears turn the hands of time itself.'"
+                },
+                {
+                    "id": "pendulum",
+                    "name": "great pendulum",
+                    "description": "A massive brass pendulum hanging motionless in the center of the chamber",
+                    "readable": true,
+                    "text": "The pendulum that once swung with perfect rhythm. An inscription on its bob reads: 'Tempus Fugit - Time Flies. The bell at the summit marks each hour.'"
+                },
+                {
+                    "id": "maintenance_platform",
+                    "name": "maintenance platform",
+                    "description": "A wooden platform with tools and a locked toolbox",
+                    "subcontainers": [
+                        {
+                            "id": "toolbox",
+                            "name": "locked toolbox",
+                            "locked": true,
+                            "lock_type": "combination",
+                            "combination": "1923",
+                            "contains": [
+                                "silver_key"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "silver_key",
+                    "name": "ornate silver key",
+                    "description": "A beautifully crafted silver key with 'SUMMIT ACCESS' engraved on it"
+                },
+                {
+                    "id": "technical_manual",
+                    "name": "technical manual",
+                    "description": "A thick manual describing the clock's operation",
+                    "readable": true,
+                    "text": "CLOCK TOWER TECHNICAL MANUAL: The mechanism chamber houses the primary gears that drive all clock functions. Regular maintenance required. Last service: 1923. Emergency access to summit requires master key. Remember: the clockmaker's legacy lives in every gear."
+                },
+                {
+                    "id": "gear_storage_rack",
+                    "name": "gear storage rack",
+                    "description": "A rack holding spare gears of various sizes",
+                    "searchable": true,
+                    "contains": [
+                        "hidden_note"
+                    ]
+                },
+                {
+                    "id": "hidden_note",
+                    "name": "folded note",
+                    "description": "A note tucked behind a gear",
+                    "readable": true,
+                    "text": "Note to self: The toolbox combination is the year of the last winding - 1923. To access the summit, one must prove knowledge of the tower's history. Only those who understand Heinrich's work may ascend."
+                },
+                {
+                    "id": "observation_window",
+                    "name": "observation window",
+                    "description": "A narrow window offering a view of the town below and the night sky above",
+                    "readable": true,
+                    "text": "Through the window, you can see the town sleeping peacefully below. Above, the bell tower summit rises into the darkness, where the great bell waits silent."
+                },
+                {
+                    "id": "spiral_staircase",
+                    "name": "spiral staircase",
+                    "description": "An iron spiral staircase leading up to the bell tower. A locked gate blocks access, with three questions inscribed on a brass plate.",
+                    "locked": true,
+                    "lock_type": "password",
+                    "password_questions": [
+                        {
+                            "question": "Who built this clock tower?",
+                            "answer": "heinrich adler",
+                            "hint": "Check the maintenance log, journal, and dedication plaque"
+                        },
+                        {
+                            "question": "Where does the great bell ring?",
+                            "answer": "summit",
+                            "hint": "Multiple references mention where the bell is located"
+                        },
+                        {
+                            "question": "What is housed in the mechanism chamber?",
+                            "answer": "gears",
+                            "hint": "The journal and technical manual describe what drives the clock"
+                        }
+                    ],
+                    "direction": "north",
+                    "leads_to": "bell_tower_summit",
+                    "aliases": [
+                        "stairs",
+                        "staircase",
+                        "north",
+                        "up"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "bell_tower_summit",
+            "name": "Bell Tower Summit",
+            "description": "You've reached the top of the clock tower! The great bronze bell hangs majestically in the center of the open-air chamber. The four clock faces glow softly in the moonlight, their hands still frozen at midnight. A breathtaking view of the sleeping town spreads below. Fresh night air rushes through the arched openings. A maintenance ladder leads down the outside of the tower to freedom.",
+            "items": [
+                {
+                    "id": "great_bell",
+                    "name": "great bronze bell",
+                    "description": "A massive bell inscribed with the date 1847 and the clockmaker's name",
+                    "readable": true,
+                    "text": "The bell's inscription reads: 'Cast 1847 - May this bell ring eternal, marking the hours for all who dwell below. Heinrich Adler, Master Clockmaker.'"
+                },
+                {
+                    "id": "clock_faces",
+                    "name": "four clock faces",
+                    "description": "The tower's four illuminated clock faces, each facing a cardinal direction",
+                    "readable": true,
+                    "text": "The clock faces are works of art, with ornate Roman numerals and elegant hands. Though frozen at midnight, they still glow with an inner light, visible for miles."
+                },
+                {
+                    "id": "maintenance_ladder",
+                    "name": "external maintenance ladder",
+                    "description": "A sturdy iron ladder leading down the outside of the tower to the ground",
+                    "readable": true,
+                    "text": "The ladder provides a safe descent from the summit. Below, you can see the town square and freedom awaits."
+                },
+                {
+                    "id": "bell_mechanism",
+                    "name": "bell striking mechanism",
+                    "description": "The mechanical system that once rang the bell on the hour"
+                }
+            ],
+            "exits": [],
+            "is_goal": true,
+            "win_message": "You've reached the summit of the Forgotten Clock Tower! Standing beside the great bell, you feel the weight of history and the clockmaker's dedication. The maintenance ladder offers your escape route down to freedom. As you descend, you glance back at the magnificent tower, its clock faces glowing in the night. You have solved the mysteries of the Forgotten Clock Tower and escaped. You win!"
+        }
+    ]
+}

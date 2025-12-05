@@ -1,0 +1,289 @@
+{
+    "theme": "Ghostly Ballroom",
+    "title": "Ghostly Ballroom Adventure #63",
+    "goal": "Solve the puzzles, achieve the main objective, and escape.",
+    "starting_room": "grand_ballroom",
+    "rooms": [
+        {
+            "id": "grand_ballroom",
+            "name": "Grand Ballroom",
+            "description": "A magnificent ballroom frozen in time. Crystal chandeliers hang from the vaulted ceiling, their prisms catching moonlight that streams through tall windows. The polished marble floor reflects ghostly images of dancers who are no longer there. Elegant columns line the walls, and the air is cold despite the summer night. You can almost hear the echo of a waltz playing.",
+            "items": [
+                {
+                    "id": "grand_piano",
+                    "name": "grand piano",
+                    "description": "A beautiful black grand piano sits in the corner, its keys covered in dust",
+                    "searchable": true,
+                    "contains": [
+                        "sheet_music"
+                    ]
+                },
+                {
+                    "id": "sheet_music",
+                    "name": "yellowed sheet music",
+                    "description": "An old piece of music for a waltz",
+                    "readable": true,
+                    "text": "The Blue Danube Waltz - Performed at the Grand Opening, 1889. Conductor: Maestro Viktor Blackwood. This ballroom has hosted the finest society gatherings for generations."
+                },
+                {
+                    "id": "refreshment_table",
+                    "name": "refreshment table",
+                    "description": "A long table that once held champagne and delicacies, now covered with a dusty cloth",
+                    "searchable": true,
+                    "contains": [
+                        "invitation_card"
+                    ]
+                },
+                {
+                    "id": "invitation_card",
+                    "name": "gilded invitation card",
+                    "description": "An elegant invitation to a ball",
+                    "readable": true,
+                    "text": "You are cordially invited to the Midsummer Ball at Blackwood Manor. Dancing begins at midnight. Dress: Formal evening attire required. All guests must present themselves to the Master of Ceremonies in the gallery above."
+                },
+                {
+                    "id": "ornate_cabinet",
+                    "name": "ornate display cabinet",
+                    "description": "A tall cabinet with glass doors displaying trophies and memorabilia from past balls",
+                    "subcontainers": [
+                        {
+                            "id": "top_shelf",
+                            "name": "top shelf",
+                            "locked": false,
+                            "contains": [
+                                "ballroom_history"
+                            ]
+                        },
+                        {
+                            "id": "middle_shelf",
+                            "name": "middle shelf",
+                            "locked": true,
+                            "lock_type": "combination",
+                            "combination": "1889",
+                            "contains": [
+                                "silver_key"
+                            ]
+                        },
+                        {
+                            "id": "bottom_shelf",
+                            "name": "bottom shelf",
+                            "locked": false,
+                            "contains": []
+                        }
+                    ]
+                },
+                {
+                    "id": "ballroom_history",
+                    "name": "ballroom chronicle",
+                    "description": "A leather bound book documenting the ballroom's history",
+                    "readable": true,
+                    "text": "Blackwood Manor Ballroom - Opened 1889. Built by Lord Edmund Blackwood as the finest ballroom in the county. Maestro Viktor Blackwood, the lord's brother, served as conductor for all grand occasions. The combination to the middle shelf is the year of our grand opening."
+                },
+                {
+                    "id": "silver_key",
+                    "name": "ornate silver key",
+                    "description": "A decorative silver key with musical note engravings"
+                },
+                {
+                    "id": "velvet_chest",
+                    "name": "velvet chest",
+                    "description": "A chest covered in deep blue velvet with silver clasps",
+                    "locked": true,
+                    "key_required": "silver_key",
+                    "contains": [
+                        "conductor_journal",
+                        "brass_key"
+                    ]
+                },
+                {
+                    "id": "conductor_journal",
+                    "name": "conductor's journal",
+                    "description": "A personal journal belonging to Maestro Viktor Blackwood",
+                    "readable": true,
+                    "text": "My final entry: The Midsummer Ball of 1889 will be my greatest triumph. I have prepared the orchestra in the gallery above. But I fear something terrible will happen tonight. If you are reading this, seek the musician's gallery where I conducted. Only a guest of honor may pass."
+                },
+                {
+                    "id": "brass_key",
+                    "name": "brass key",
+                    "description": "A brass key with a treble clef design"
+                },
+                {
+                    "id": "crystal_chandelier",
+                    "name": "crystal chandelier",
+                    "description": "A massive chandelier hanging from the ceiling, its crystals tinkling softly in an unfelt breeze"
+                },
+                {
+                    "id": "marble_columns",
+                    "name": "marble columns",
+                    "description": "Elegant white marble columns supporting the gallery above",
+                    "readable": true,
+                    "text": "The columns are carved with musical motifs and dancing figures. A plaque reads: 'To reach the gallery, one must be properly attired for the ball.'"
+                },
+                {
+                    "id": "spiral_staircase",
+                    "name": "spiral staircase",
+                    "description": "An elegant staircase leading up to the musician's gallery, blocked by a velvet rope",
+                    "locked": true,
+                    "key_required": "brass_key",
+                    "direction": "north",
+                    "leads_to": "musicians_gallery",
+                    "aliases": [
+                        "stairs",
+                        "staircase",
+                        "north",
+                        "up"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "musicians_gallery",
+            "name": "Musician's Gallery",
+            "description": "A curved balcony overlooking the grand ballroom below. Music stands are arranged in a semicircle, and instruments rest in their cases as if the musicians just stepped away. The conductor's podium stands at the center. Moonlight illuminates sheet music scattered across the floor. A door to the east leads to the master's private study.",
+            "items": [
+                {
+                    "id": "conductor_podium",
+                    "name": "conductor's podium",
+                    "description": "An elevated platform where Maestro Blackwood once stood to conduct the orchestra",
+                    "searchable": true,
+                    "contains": [
+                        "conductor_baton"
+                    ]
+                },
+                {
+                    "id": "conductor_baton",
+                    "name": "silver conductor's baton",
+                    "description": "A elegant baton with Viktor Blackwood's initials engraved on it"
+                },
+                {
+                    "id": "music_stands",
+                    "name": "row of music stands",
+                    "description": "Empty music stands arranged for a full orchestra",
+                    "readable": true,
+                    "text": "Each stand has a nameplate: First Violin, Second Violin, Viola, Cello, Flute, Oboe, Clarinet, Horn, Trumpet. All performed under Maestro Viktor Blackwood's direction."
+                },
+                {
+                    "id": "violin_case",
+                    "name": "violin case",
+                    "description": "An open case containing a beautiful violin",
+                    "searchable": true,
+                    "contains": [
+                        "hidden_note"
+                    ]
+                },
+                {
+                    "id": "hidden_note",
+                    "name": "crumpled note",
+                    "description": "A hastily written note stuffed inside the violin case",
+                    "readable": true,
+                    "text": "The tragedy occurred during the Midsummer Ball. Maestro Viktor collapsed while conducting. They say his spirit still haunts the gallery. To escape, you must enter Lord Blackwood's private study. Answer the questions truthfully - who conducted here, where did the tragedy occur, and remember you are a guest of honor."
+                },
+                {
+                    "id": "orchestra_chest",
+                    "name": "orchestra equipment chest",
+                    "description": "A large chest containing spare instruments and supplies",
+                    "subcontainers": [
+                        {
+                            "id": "upper_compartment",
+                            "name": "upper compartment",
+                            "locked": false,
+                            "contains": [
+                                "program_booklet"
+                            ]
+                        },
+                        {
+                            "id": "lower_compartment",
+                            "name": "lower compartment",
+                            "locked": false,
+                            "contains": []
+                        }
+                    ]
+                },
+                {
+                    "id": "program_booklet",
+                    "name": "ball program booklet",
+                    "description": "A printed program from the fateful Midsummer Ball",
+                    "readable": true,
+                    "text": "Midsummer Ball Program - June 21, 1889. Orchestra conducted by Maestro Viktor Blackwood. Venue: Musician's Gallery, Blackwood Manor. Featured performance: The Blue Danube Waltz. All guests of honor are invited to meet Lord Blackwood in his private study after the performance."
+                },
+                {
+                    "id": "portrait_viktor",
+                    "name": "portrait of Maestro Viktor",
+                    "description": "An oil painting of a distinguished gentleman in formal conducting attire",
+                    "readable": true,
+                    "text": "Maestro Viktor Blackwood, 1845-1889. Beloved conductor and brother to Lord Edmund Blackwood. His passion for music brought joy to all who heard him conduct in this very gallery."
+                },
+                {
+                    "id": "mahogany_study_door",
+                    "name": "mahogany study door",
+                    "description": "A heavy mahogany door with brass fittings. Three questions are engraved on a brass plaque mounted beside it.",
+                    "locked": true,
+                    "lock_type": "password",
+                    "password_questions": [
+                        {
+                            "question": "Who was the conductor of the orchestra?",
+                            "answer": "maestro viktor blackwood",
+                            "hint": "Check the sheet music, journal, and portrait in the gallery"
+                        },
+                        {
+                            "question": "Where did the tragedy occur?",
+                            "answer": "musicians gallery",
+                            "hint": "The hidden note and program booklet mention the location"
+                        },
+                        {
+                            "question": "What is your status at this ball?",
+                            "answer": "guest of honor",
+                            "hint": "The invitation and program booklet refer to your role"
+                        }
+                    ],
+                    "direction": "east",
+                    "leads_to": "masters_study",
+                    "aliases": [
+                        "door",
+                        "east"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "masters_study",
+            "name": "Master's Private Study",
+            "description": "You have reached Lord Blackwood's private study! A cozy room lined with bookshelves and hunting trophies. A fire crackles in the fireplace, though no one tends it. Through the window, you can see the gardens and a path leading away from the manor. A secret passage behind a bookshelf stands open, revealing stone steps leading down to freedom.",
+            "items": [
+                {
+                    "id": "writing_desk",
+                    "name": "mahogany writing desk",
+                    "description": "Lord Blackwood's personal desk covered with correspondence and documents",
+                    "searchable": true,
+                    "contains": [
+                        "final_letter"
+                    ]
+                },
+                {
+                    "id": "final_letter",
+                    "name": "Lord Blackwood's letter",
+                    "description": "A letter written in elegant script",
+                    "readable": true,
+                    "text": "My dear brother Viktor conducted his final waltz tonight. The music was beautiful, but he collapsed at the podium. I cannot bear to remain in this house any longer. I am sealing the ballroom and leaving through the secret passage. May his spirit find peace."
+                },
+                {
+                    "id": "fireplace",
+                    "name": "stone fireplace",
+                    "description": "A large fireplace with a fire that burns eternally, casting dancing shadows"
+                },
+                {
+                    "id": "bookshelf",
+                    "name": "bookshelf with secret passage",
+                    "description": "A tall bookshelf that has swung open to reveal a hidden passage",
+                    "readable": true,
+                    "text": "The passage leads down through the manor's foundation and emerges in the gardens beyond. Freedom awaits."
+                }
+            ],
+            "exits": [],
+            "is_goal": true,
+            "win_message": "You have escaped the Ghostly Ballroom! As you descend the secret passage, you hear one final waltz echo through the manor - Maestro Viktor's spirit conducting his eternal performance. You emerge into the moonlit gardens, free at last from the haunted ballroom. The music fades behind you as you walk away into the night. You win!"
+        }
+    ]
+}

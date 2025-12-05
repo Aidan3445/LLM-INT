@@ -1,0 +1,262 @@
+{
+    "theme": "Wizard's Menagerie",
+    "title": "Wizard's Menagerie Adventure #13",
+    "goal": "Solve the puzzles, achieve the main objective, and escape.",
+    "starting_room": "creature_holding_pens",
+    "rooms": [
+        {
+            "id": "creature_holding_pens",
+            "name": "Creature Holding Pens",
+            "description": "A large chamber filled with enchanted cages housing magical creatures. Soft glowing crystals provide light. You hear the chirping of a phoenix, the gentle snoring of a sleeping dragon hatchling, and the soft neighing of a unicorn. The air smells of hay, magic, and exotic creature musk. A heavy wooden door leads north.",
+            "items": [
+                {
+                    "id": "supply_cabinet",
+                    "name": "creature supply cabinet",
+                    "description": "A tall wooden cabinet with three drawers containing feeding supplies and care equipment",
+                    "subcontainers": [
+                        {
+                            "id": "top_drawer",
+                            "name": "top drawer",
+                            "locked": false,
+                            "contains": [
+                                "feeding_schedule"
+                            ]
+                        },
+                        {
+                            "id": "middle_drawer",
+                            "name": "middle drawer",
+                            "locked": true,
+                            "lock_type": "combination",
+                            "combination": "357",
+                            "contains": [
+                                "brass_key"
+                            ]
+                        },
+                        {
+                            "id": "bottom_drawer",
+                            "name": "bottom drawer",
+                            "locked": false,
+                            "contains": []
+                        }
+                    ]
+                },
+                {
+                    "id": "feeding_schedule",
+                    "name": "creature feeding schedule",
+                    "description": "A parchment listing feeding times for the magical creatures",
+                    "readable": true,
+                    "text": "FEEDING SCHEDULE: Phoenix - 3 fireberries at dawn. Dragon hatchling - 5 gemstones at noon. Unicorn - 7 moonflowers at dusk. Remember these sacred numbers: 3, 5, 7."
+                },
+                {
+                    "id": "brass_key",
+                    "name": "brass cage key",
+                    "description": "A small brass key with a phoenix feather charm attached"
+                },
+                {
+                    "id": "phoenix_cage",
+                    "name": "phoenix cage",
+                    "description": "An ornate golden cage containing a magnificent phoenix with crimson and gold plumage",
+                    "locked": true,
+                    "key_required": "brass_key",
+                    "contains": [
+                        "phoenix_feather"
+                    ]
+                },
+                {
+                    "id": "phoenix_feather",
+                    "name": "enchanted phoenix feather",
+                    "description": "A glowing feather that radiates warmth and magical energy"
+                },
+                {
+                    "id": "dragon_nest",
+                    "name": "dragon hatchling nest",
+                    "description": "A nest of soft blankets where a small dragon sleeps peacefully",
+                    "searchable": true,
+                    "contains": [
+                        "wizard_note"
+                    ]
+                },
+                {
+                    "id": "wizard_note",
+                    "name": "wizard's research note",
+                    "description": "A hastily scribbled note from the wizard",
+                    "readable": true,
+                    "text": "Research Log: The apprentice Merrick must feed the creatures daily. My name is Archmage Aldric Thornweave. The Celestial Sanctum holds my most precious creation - the Orb of Eternal Light. Only those who know the creatures' sacred numbers may enter my study."
+                },
+                {
+                    "id": "unicorn_stall",
+                    "name": "unicorn stall",
+                    "description": "A pristine white stall where a silver unicorn stands gracefully",
+                    "searchable": true,
+                    "contains": [
+                        "silver_horseshoe"
+                    ]
+                },
+                {
+                    "id": "silver_horseshoe",
+                    "name": "enchanted silver horseshoe",
+                    "description": "A horseshoe that glimmers with protective magic"
+                },
+                {
+                    "id": "reinforced_oak_door",
+                    "name": "reinforced oak door",
+                    "description": "A sturdy door leading to the wizard's study, sealed with a magical lock",
+                    "locked": true,
+                    "key_required": "phoenix_feather",
+                    "direction": "north",
+                    "leads_to": "wizard_study",
+                    "aliases": [
+                        "door",
+                        "north"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "wizard_study",
+            "name": "Wizard's Study",
+            "description": "A circular tower room filled with towering bookshelves, bubbling potions, and floating spell books. Star charts cover the ceiling, and a large crystal ball sits on an ornate desk. Magical artifacts line the walls. A shimmering portal frame stands against the far wall, currently inactive. The scent of old parchment and incense fills the air.",
+            "items": [
+                {
+                    "id": "spell_book_shelf",
+                    "name": "ancient spell book collection",
+                    "description": "A shelf containing leather-bound spell books with glowing runes",
+                    "searchable": true,
+                    "contains": [
+                        "creature_compendium"
+                    ]
+                },
+                {
+                    "id": "creature_compendium",
+                    "name": "Compendium of Magical Creatures",
+                    "description": "A comprehensive guide to magical creature care and lore",
+                    "readable": true,
+                    "text": "Chapter 7: The phoenix represents rebirth and renewal. Chapter 12: Dragons are guardians of ancient treasure. Chapter 19: Unicorns symbolize purity and grace. The apprentice Merrick tends to all creatures with dedication."
+                },
+                {
+                    "id": "wizard_desk",
+                    "name": "ornate wizard's desk",
+                    "description": "A massive desk carved with mystical symbols, containing multiple locked compartments",
+                    "subcontainers": [
+                        {
+                            "id": "left_drawer",
+                            "name": "left drawer",
+                            "locked": false,
+                            "contains": [
+                                "apprentice_journal"
+                            ]
+                        },
+                        {
+                            "id": "center_drawer",
+                            "name": "center drawer",
+                            "locked": true,
+                            "lock_type": "combination",
+                            "combination": "357",
+                            "contains": [
+                                "portal_crystal"
+                            ]
+                        },
+                        {
+                            "id": "right_drawer",
+                            "name": "right drawer",
+                            "locked": false,
+                            "contains": []
+                        }
+                    ]
+                },
+                {
+                    "id": "apprentice_journal",
+                    "name": "apprentice's journal",
+                    "description": "A journal belonging to the wizard's apprentice",
+                    "readable": true,
+                    "text": "Day 47: Master Aldric has entrusted me with the menagerie. I am Merrick, proud apprentice. The Celestial Sanctum is where he keeps the Orb of Eternal Light. To enter, one must answer: Who is the master? Who tends the creatures? Where is the Orb kept?"
+                },
+                {
+                    "id": "portal_crystal",
+                    "name": "glowing portal crystal",
+                    "description": "A crystal that pulses with dimensional energy, needed to activate the portal"
+                },
+                {
+                    "id": "crystal_ball",
+                    "name": "divination crystal ball",
+                    "description": "A large crystal ball showing swirling mists and visions",
+                    "readable": true,
+                    "text": "The crystal ball shows a vision: A magnificent chamber bathed in golden light, with the Orb of Eternal Light floating above a pedestal. This is the Celestial Sanctum, the wizard's greatest achievement."
+                },
+                {
+                    "id": "potion_shelf",
+                    "name": "shelf of magical potions",
+                    "description": "Glass bottles containing colorful, bubbling liquids",
+                    "searchable": true,
+                    "contains": [
+                        "invisibility_potion"
+                    ]
+                },
+                {
+                    "id": "invisibility_potion",
+                    "name": "potion of invisibility",
+                    "description": "A shimmering silver potion that makes the drinker invisible"
+                },
+                {
+                    "id": "inactive_portal_frame",
+                    "name": "inactive portal frame",
+                    "description": "An ornate archway covered in runes. Three questions are inscribed on a plaque beside it.",
+                    "locked": true,
+                    "lock_type": "password",
+                    "password_questions": [
+                        {
+                            "question": "Who is the master of this menagerie?",
+                            "answer": "archmage aldric thornweave",
+                            "hint": "Check the wizard's research note in the creature pens"
+                        },
+                        {
+                            "question": "Who tends to the creatures?",
+                            "answer": "merrick",
+                            "hint": "Look for information about the apprentice"
+                        },
+                        {
+                            "question": "Where is the Orb of Eternal Light kept?",
+                            "answer": "celestial sanctum",
+                            "hint": "Multiple sources mention where the wizard's greatest creation is stored"
+                        }
+                    ],
+                    "direction": "east",
+                    "leads_to": "celestial_sanctum",
+                    "aliases": [
+                        "portal",
+                        "east"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "celestial_sanctum",
+            "name": "Celestial Sanctum",
+            "description": "You have entered the wizard's most sacred chamber! The room is bathed in radiant golden light emanating from a floating orb above a crystal pedestal. Constellations swirl across the domed ceiling, and the walls shimmer with pure magical energy. The Orb of Eternal Light pulses with power, illuminating ancient runes that spell out words of completion and mastery. A shimmering exit portal leads to freedom.",
+            "items": [
+                {
+                    "id": "orb_of_eternal_light",
+                    "name": "Orb of Eternal Light",
+                    "description": "A magnificent sphere of pure magical energy that radiates warmth, light, and infinite power"
+                },
+                {
+                    "id": "crystal_pedestal",
+                    "name": "crystal pedestal",
+                    "description": "A pedestal of flawless crystal supporting the legendary orb"
+                },
+                {
+                    "id": "ancient_runes",
+                    "name": "glowing wall runes",
+                    "description": "Magical runes that tell the story of the wizard's greatest achievement",
+                    "readable": true,
+                    "text": "These runes speak of Archmage Aldric Thornweave's life work: the creation of the Orb of Eternal Light, a source of infinite magical energy. Only those worthy enough to reach this sanctum may bask in its glory and claim mastery over the menagerie."
+                }
+            ],
+            "exits": [],
+            "is_goal": true,
+            "win_message": "You have successfully navigated the Wizard's Menagerie and reached the Celestial Sanctum! The Orb of Eternal Light recognizes your worthiness and grants you its blessing. Magical energy flows through you as the creatures in the menagerie below sing in harmony. You have proven yourself a true master of magical creatures and wizardry. You win!"
+        }
+    ]
+}

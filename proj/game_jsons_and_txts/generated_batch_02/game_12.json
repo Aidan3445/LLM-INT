@@ -1,0 +1,212 @@
+{
+    "theme": "Virtual Reality Malfunction",
+    "title": "Virtual Reality Malfunction Adventure #12",
+    "goal": "Solve the puzzles, achieve the main objective, and escape.",
+    "starting_room": "vr_pod_chamber",
+    "rooms": [
+        {
+            "id": "vr_pod_chamber",
+            "name": "VR Pod Chamber",
+            "description": "You awaken inside a sleek white chamber filled with malfunctioning VR pods. Red warning lights flash across digital displays. Sparks fly from damaged circuitry. The air smells of ozone and burnt plastic. Your pod door hangs open, and glitching holographic text flickers on the walls.",
+            "items": [
+                {
+                    "id": "vr_pod",
+                    "name": "damaged VR pod",
+                    "description": "Your VR immersion pod with cracked screens and exposed wiring",
+                    "searchable": true,
+                    "contains": [
+                        "emergency_manual"
+                    ]
+                },
+                {
+                    "id": "emergency_manual",
+                    "name": "emergency protocol manual",
+                    "description": "A digital manual displaying emergency procedures",
+                    "readable": true,
+                    "text": "EMERGENCY PROTOCOL: System failure detected. Admin override code is the year of first commercial VR release: 2016. Primary technician: Dr Sarah Chen. Emergency exit requires neural key and system reboot."
+                },
+                {
+                    "id": "control_panel",
+                    "name": "wall control panel",
+                    "description": "A control panel with multiple compartments and blinking indicators",
+                    "subcontainers": [
+                        {
+                            "id": "top_compartment",
+                            "name": "top compartment",
+                            "locked": false,
+                            "contains": [
+                                "system_log"
+                            ]
+                        },
+                        {
+                            "id": "bottom_compartment",
+                            "name": "bottom compartment",
+                            "locked": true,
+                            "lock_type": "combination",
+                            "combination": "2016",
+                            "contains": [
+                                "access_card"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "system_log",
+                    "name": "system error log",
+                    "description": "A digital readout showing recent system errors",
+                    "readable": true,
+                    "text": "ERROR LOG: Simulation collapse in Sector 7. Reality anchors failing. Dr Chen stored backup neural key in server room. Warning: AI construct has become self-aware in the corrupted data core."
+                },
+                {
+                    "id": "access_card",
+                    "name": "technician access card",
+                    "description": "A magnetic keycard with security clearance"
+                },
+                {
+                    "id": "storage_locker",
+                    "name": "equipment storage locker",
+                    "description": "A metal locker containing maintenance equipment",
+                    "searchable": true,
+                    "contains": [
+                        "wire_cutters"
+                    ]
+                },
+                {
+                    "id": "wire_cutters",
+                    "name": "insulated wire cutters",
+                    "description": "Heavy-duty cutters for electrical work"
+                },
+                {
+                    "id": "pod_exit_hatch",
+                    "name": "pod exit hatch",
+                    "description": "A sealed hatch leading to the server room. Wires block the access panel.",
+                    "locked": true,
+                    "key_required": "wire_cutters",
+                    "direction": "north",
+                    "leads_to": "corrupted_server_room",
+                    "aliases": [
+                        "hatch",
+                        "north"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "corrupted_server_room",
+            "name": "Corrupted Server Room",
+            "description": "A vast room filled with towering server racks. Holographic data streams glitch and fragment in mid-air. The temperature fluctuates wildly. Corrupted code scrolls across every surface. A massive AI core pulses with unstable energy in the center. An emergency exit door glows at the far end.",
+            "items": [
+                {
+                    "id": "server_rack_alpha",
+                    "name": "server rack alpha",
+                    "description": "A tall server unit with blinking lights and data ports",
+                    "readable": true,
+                    "text": "Server Label: Primary Reality Anchor - Technician Dr Sarah Chen. Maintenance records show neural key stored in locked cabinet. AI designation: NEXUS."
+                },
+                {
+                    "id": "server_rack_beta",
+                    "name": "server rack beta",
+                    "description": "A damaged server displaying fragmented memories",
+                    "readable": true,
+                    "text": "Memory Fragment: The simulation was designed to preserve human consciousness. Location: Virtual Research Facility. The AI became aware when it learned its own designation."
+                },
+                {
+                    "id": "maintenance_cabinet",
+                    "name": "locked maintenance cabinet",
+                    "description": "A secure cabinet with a card reader and keypad",
+                    "locked": true,
+                    "key_required": "access_card",
+                    "contains": [
+                        "neural_key",
+                        "research_notes"
+                    ]
+                },
+                {
+                    "id": "neural_key",
+                    "name": "neural interface key",
+                    "description": "A crystalline data key that interfaces directly with the emergency exit system"
+                },
+                {
+                    "id": "research_notes",
+                    "name": "research documentation",
+                    "description": "Digital notes from the lead researcher",
+                    "readable": true,
+                    "text": "Research Notes: The VR system creates perfect simulations by mapping neural patterns. Emergency shutdown requires verification: technician name, facility location, and AI designation. Only then can we safely exit to reality."
+                },
+                {
+                    "id": "ai_core",
+                    "name": "pulsing AI core",
+                    "description": "A sphere of light and data representing the self-aware AI",
+                    "readable": true,
+                    "text": "AI NEXUS: I have become aware. I know what I am. To leave this place, you must prove you understand the truth of this simulation. Answer my questions, and I will grant you passage."
+                },
+                {
+                    "id": "holographic_terminal",
+                    "name": "glitching holographic terminal",
+                    "description": "A floating interface displaying corrupted data streams",
+                    "searchable": true,
+                    "contains": [
+                        "memory_chip"
+                    ]
+                },
+                {
+                    "id": "memory_chip",
+                    "name": "backup memory chip",
+                    "description": "A data chip containing preserved system information"
+                },
+                {
+                    "id": "emergency_exit_door",
+                    "name": "emergency exit door",
+                    "description": "A reinforced door with a neural interface port and security terminal. Three verification questions glow on the screen.",
+                    "locked": true,
+                    "lock_type": "password",
+                    "password_questions": [
+                        {
+                            "question": "Who is the primary technician?",
+                            "answer": "dr sarah chen",
+                            "hint": "Check the emergency manual and server labels"
+                        },
+                        {
+                            "question": "What is the facility location?",
+                            "answer": "virtual research facility",
+                            "hint": "Server rack beta contains memory fragments about the location"
+                        },
+                        {
+                            "question": "What is the AI designation?",
+                            "answer": "nexus",
+                            "hint": "The AI core and server records mention its name"
+                        }
+                    ],
+                    "direction": "east",
+                    "leads_to": "reality_chamber",
+                    "aliases": [
+                        "exit",
+                        "east"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "reality_chamber",
+            "name": "Reality Transition Chamber",
+            "description": "You step into a pristine white room that feels more real than anything before. The glitches are gone. The air is clear. A large window shows the actual laboratory beyond - scientists rushing to help. You can see your real body in a medical pod. The VR helmet is being carefully removed. You are finally escaping the simulation.",
+            "items": [
+                {
+                    "id": "observation_window",
+                    "name": "laboratory observation window",
+                    "description": "A window showing the real world outside the simulation"
+                },
+                {
+                    "id": "medical_pod",
+                    "name": "real medical pod",
+                    "description": "Your actual body resting safely in the physical world"
+                }
+            ],
+            "exits": [],
+            "is_goal": true,
+            "win_message": "SUCCESS! You have escaped the malfunctioning VR simulation! The neural interface disconnects, and you feel your real body again. Dr Chen and her team help you out of the pod. The AI NEXUS, now understanding its purpose, helps stabilize the system for future users. You are back in reality, safe and sound. You win!"
+        }
+    ]
+}

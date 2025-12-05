@@ -1,0 +1,203 @@
+{
+    "theme": "Sunken City",
+    "title": "Sunken City Adventure #1",
+    "goal": "Solve the puzzles, achieve the main objective, and escape.",
+    "starting_room": "diving_bell_chamber",
+    "rooms": [
+        {
+            "id": "diving_bell_chamber",
+            "name": "Diving Bell Chamber",
+            "description": "You stand inside a rusty diving bell that has come to rest on the ocean floor. Through the porthole, you see the ruins of an ancient city covered in coral and seaweed. Bioluminescent fish cast an eerie glow. A heavy metal door leads deeper into the ruins.",
+            "items": [
+                {
+                    "id": "supply_crate",
+                    "name": "waterproof supply crate",
+                    "description": "A sealed crate with diving equipment and supplies",
+                    "searchable": true,
+                    "contains": [
+                        "diving_knife"
+                    ]
+                },
+                {
+                    "id": "diving_knife",
+                    "name": "sharp diving knife",
+                    "description": "A sturdy knife useful for cutting through obstacles"
+                },
+                {
+                    "id": "equipment_locker",
+                    "name": "equipment locker",
+                    "description": "A metal locker with two compartments, partially corroded by seawater",
+                    "subcontainers": [
+                        {
+                            "id": "top_compartment",
+                            "name": "top compartment",
+                            "locked": false,
+                            "contains": [
+                                "expedition_log"
+                            ]
+                        },
+                        {
+                            "id": "bottom_compartment",
+                            "name": "bottom compartment",
+                            "locked": true,
+                            "lock_type": "combination",
+                            "combination": "1247",
+                            "contains": [
+                                "bronze_key"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "expedition_log",
+                    "name": "expedition logbook",
+                    "description": "A waterlogged journal from a previous explorer",
+                    "readable": true,
+                    "text": "Day 15: We've discovered the lost city of Atlantea! According to the inscriptions, it was founded in the year 1247. The city was ruled by King Nereus. The temple holds the legendary Pearl of Tides. We must find the three sacred artifacts to enter."
+                },
+                {
+                    "id": "bronze_key",
+                    "name": "corroded bronze key",
+                    "description": "An ancient bronze key covered in barnacles"
+                },
+                {
+                    "id": "sealed_metal_hatch",
+                    "name": "sealed metal hatch",
+                    "description": "A heavy hatch leading into the sunken city ruins. Seaweed has grown over the lock mechanism.",
+                    "locked": true,
+                    "key_required": "diving_knife",
+                    "direction": "east",
+                    "leads_to": "sunken_plaza",
+                    "aliases": [
+                        "hatch",
+                        "east"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "sunken_plaza",
+            "name": "Sunken Plaza",
+            "description": "A vast underwater plaza with crumbling stone buildings and statues covered in coral. Ancient pillars rise toward the surface. In the center stands a large fountain with three statue figures. Schools of colorful fish dart between the ruins. A massive temple entrance looms to the north.",
+            "items": [
+                {
+                    "id": "statue_warrior",
+                    "name": "statue of a warrior",
+                    "description": "A weathered statue holding a trident, part of the central fountain",
+                    "readable": true,
+                    "text": "Inscription at base: 'Guardian of the Deep - The warrior protects the city with strength and courage.'"
+                },
+                {
+                    "id": "statue_scholar",
+                    "name": "statue of a scholar",
+                    "description": "A statue holding a scroll, covered in green algae",
+                    "readable": true,
+                    "text": "Inscription at base: 'Keeper of Knowledge - The scholar preserves wisdom in the Great Library beneath the waves.'"
+                },
+                {
+                    "id": "statue_king",
+                    "name": "statue of King Nereus",
+                    "description": "A regal statue wearing a crown, the centerpiece of the fountain",
+                    "readable": true,
+                    "text": "Inscription at base: 'King Nereus - Founder and eternal ruler of Atlantea. His crown rests in the royal vault.'"
+                },
+                {
+                    "id": "stone_chest",
+                    "name": "barnacle-covered stone chest",
+                    "description": "An ornate chest sealed with a bronze lock",
+                    "locked": true,
+                    "key_required": "bronze_key",
+                    "contains": [
+                        "golden_trident",
+                        "ancient_scroll"
+                    ]
+                },
+                {
+                    "id": "golden_trident",
+                    "name": "golden trident",
+                    "description": "A ceremonial trident made of gold, one of the sacred artifacts"
+                },
+                {
+                    "id": "ancient_scroll",
+                    "name": "preserved ancient scroll",
+                    "description": "A miraculously preserved scroll sealed in waterproof material",
+                    "readable": true,
+                    "text": "Sacred Scroll of Atlantea: To enter the Temple of Tides, one must answer the three questions of the ancients. Know the founder's name, the location of wisdom, and the resting place of the crown."
+                },
+                {
+                    "id": "coral_formation",
+                    "name": "large coral formation",
+                    "description": "A massive coral structure growing around something metallic",
+                    "searchable": true,
+                    "contains": [
+                        "silver_crown"
+                    ]
+                },
+                {
+                    "id": "silver_crown",
+                    "name": "tarnished silver crown",
+                    "description": "An ancient crown, another sacred artifact of the city"
+                },
+                {
+                    "id": "temple_entrance",
+                    "name": "temple entrance",
+                    "description": "Massive stone doors carved with ancient symbols. Three questions are etched into a stone tablet beside the entrance.",
+                    "locked": true,
+                    "lock_type": "password",
+                    "password_questions": [
+                        {
+                            "question": "Who founded this city?",
+                            "answer": "king nereus",
+                            "hint": "Check the expedition log and the statues in the plaza"
+                        },
+                        {
+                            "question": "Where is wisdom preserved?",
+                            "answer": "great library",
+                            "hint": "Read the inscription on the scholar's statue"
+                        },
+                        {
+                            "question": "Where does the crown rest?",
+                            "answer": "royal vault",
+                            "hint": "The inscription on King Nereus's statue mentions this"
+                        }
+                    ],
+                    "direction": "north",
+                    "leads_to": "ancient_temple",
+                    "aliases": [
+                        "temple",
+                        "north"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "ancient_temple",
+            "name": "Temple of Tides",
+            "description": "You have entered the sacred Temple of Tides! The interior glows with an otherworldly blue light. In the center, on a pedestal of pure crystal, rests the legendary Pearl of Tides - a massive pearl that pulses with magical energy. Ancient murals depicting the glory of Atlantea cover the walls. A shaft of light from above shows the way to the surface.",
+            "items": [
+                {
+                    "id": "pearl_of_tides",
+                    "name": "Pearl of Tides",
+                    "description": "A magnificent pearl the size of a human head, glowing with inner light and radiating ancient power"
+                },
+                {
+                    "id": "crystal_pedestal",
+                    "name": "crystal pedestal",
+                    "description": "A pedestal made of flawless crystal, holding the legendary pearl"
+                },
+                {
+                    "id": "ancient_murals",
+                    "name": "temple murals",
+                    "description": "Beautiful paintings showing the rise and fall of the sunken city",
+                    "readable": true,
+                    "text": "The murals tell the story of Atlantea: a prosperous city that sank beneath the waves in a single night. The Pearl of Tides was said to grant its bearer safe passage through any waters."
+                }
+            ],
+            "exits": [],
+            "is_goal": true,
+            "win_message": "You have discovered the legendary Pearl of Tides! As you grasp the ancient artifact, it glows brightly and creates a bubble of air around you. The pearl's magic guides you safely to the surface, and you emerge victorious with the treasure of the sunken city. You win!"
+        }
+    ]
+}

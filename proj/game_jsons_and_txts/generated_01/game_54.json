@@ -1,0 +1,265 @@
+{
+    "theme": "Space Elevator Control Room",
+    "title": "Space Elevator Control Room Adventure #54",
+    "goal": "Solve the puzzles, achieve the main objective, and escape.",
+    "starting_room": "main_control_room",
+    "rooms": [
+        {
+            "id": "main_control_room",
+            "name": "Main Control Room",
+            "description": "A high-tech command center with curved walls of monitors displaying Earth far below and the tether stretching into space above. Warning lights flash red across multiple consoles. The hum of machinery fills the air. Through the reinforced viewport, you can see the curvature of Earth and the blackness of space. Emergency protocols have been activated.",
+            "items": [
+                {
+                    "id": "main_console",
+                    "name": "primary control console",
+                    "description": "The central command station with multiple screens showing system diagnostics and alerts",
+                    "readable": true,
+                    "text": "SYSTEM ALERT: Critical malfunction detected in tether stabilization. Facility established 2089. Chief Engineer Rodriguez has initiated emergency protocols. All personnel must evacuate via escape pods."
+                },
+                {
+                    "id": "operations_desk",
+                    "name": "operations desk",
+                    "description": "A workstation covered with tablets and status reports",
+                    "subcontainers": [
+                        {
+                            "id": "top_drawer",
+                            "name": "top drawer",
+                            "locked": false,
+                            "contains": [
+                                "shift_log"
+                            ]
+                        },
+                        {
+                            "id": "secure_drawer",
+                            "name": "secure drawer",
+                            "locked": true,
+                            "lock_type": "combination",
+                            "combination": "2089",
+                            "contains": [
+                                "access_card"
+                            ]
+                        },
+                        {
+                            "id": "bottom_drawer",
+                            "name": "bottom drawer",
+                            "locked": false,
+                            "contains": []
+                        }
+                    ]
+                },
+                {
+                    "id": "shift_log",
+                    "name": "shift log tablet",
+                    "description": "A digital tablet with the current shift information",
+                    "readable": true,
+                    "text": "Shift Log - Station Commander: Chief Engineer Rodriguez. Systems Analyst: Dr. Kim. The secure drawer code is the year this facility became operational: 2089. Engineering Bay access requires proper authorization."
+                },
+                {
+                    "id": "access_card",
+                    "name": "engineering access card",
+                    "description": "A magnetic keycard labeled ENGINEERING BAY ACCESS"
+                },
+                {
+                    "id": "wall_monitor",
+                    "name": "status wall monitor",
+                    "description": "A large display showing facility schematics and system status",
+                    "readable": true,
+                    "text": "FACILITY STATUS: Tether integrity at 45% and falling. Engineering Bay contains emergency repair tools. Escape pods located in Pod Bay Delta. Chief Engineer Rodriguez authorized for all emergency procedures."
+                },
+                {
+                    "id": "emergency_locker",
+                    "name": "emergency equipment locker",
+                    "description": "A red locker marked with safety symbols",
+                    "searchable": true,
+                    "contains": [
+                        "flashlight",
+                        "emergency_guide"
+                    ]
+                },
+                {
+                    "id": "flashlight",
+                    "name": "emergency flashlight",
+                    "description": "A heavy-duty flashlight for emergency situations"
+                },
+                {
+                    "id": "emergency_guide",
+                    "name": "emergency procedures guide",
+                    "description": "A laminated card with evacuation instructions",
+                    "readable": true,
+                    "text": "EMERGENCY EVACUATION: Proceed to Engineering Bay to assess damage. Gather necessary tools and data. Access escape pods in Pod Bay Delta. Authorization required: verify station commander identity and facility location."
+                },
+                {
+                    "id": "supply_cabinet",
+                    "name": "supply cabinet",
+                    "description": "A metal cabinet with various supplies and equipment",
+                    "searchable": true,
+                    "contains": [
+                        "protein_bar"
+                    ]
+                },
+                {
+                    "id": "protein_bar",
+                    "name": "emergency protein bar",
+                    "description": "Sealed emergency rations"
+                },
+                {
+                    "id": "engineering_bay_door",
+                    "name": "engineering bay door",
+                    "description": "A reinforced door with a card reader and warning stripes. It leads to the Engineering Bay.",
+                    "locked": true,
+                    "key_required": "access_card",
+                    "direction": "east",
+                    "leads_to": "engineering_bay",
+                    "aliases": [
+                        "door",
+                        "east"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "engineering_bay",
+            "name": "Engineering Bay",
+            "description": "A spacious workshop filled with diagnostic equipment, tool racks, and repair stations. Cables and conduits run along the ceiling. The tether monitoring station shows critical stress readings. Spare parts and components are organized in labeled bins. A sealed door leads to the escape pod bay.",
+            "items": [
+                {
+                    "id": "diagnostic_station",
+                    "name": "tether diagnostic station",
+                    "description": "A specialized console monitoring the space elevator tether",
+                    "readable": true,
+                    "text": "TETHER ANALYSIS: Structural failure imminent. Cause: micrometeorite impact at 35000km altitude. Repair impossible from this location. Immediate evacuation required. This station orbits at geosynchronous altitude above the Pacific Ocean."
+                },
+                {
+                    "id": "tool_rack",
+                    "name": "engineering tool rack",
+                    "description": "A wall-mounted rack with various tools and equipment",
+                    "searchable": true,
+                    "contains": [
+                        "multitool"
+                    ]
+                },
+                {
+                    "id": "multitool",
+                    "name": "engineering multitool",
+                    "description": "A versatile tool with multiple functions"
+                },
+                {
+                    "id": "workbench",
+                    "name": "main workbench",
+                    "description": "A large workbench with drawers and a locked toolbox",
+                    "subcontainers": [
+                        {
+                            "id": "left_drawer",
+                            "name": "left drawer",
+                            "locked": false,
+                            "contains": [
+                                "technical_manual"
+                            ]
+                        },
+                        {
+                            "id": "locked_toolbox",
+                            "name": "locked toolbox",
+                            "locked": true,
+                            "key_required": "multitool",
+                            "contains": [
+                                "override_key"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "technical_manual",
+                    "name": "facility technical manual",
+                    "description": "A comprehensive manual for station operations",
+                    "readable": true,
+                    "text": "FACILITY OVERVIEW: Space Elevator Station Gamma, established 2089. Location: Geosynchronous orbit above Pacific Ocean. Station Commander: Chief Engineer Rodriguez. Emergency escape pods provide re-entry capability for all personnel."
+                },
+                {
+                    "id": "override_key",
+                    "name": "emergency override key",
+                    "description": "A physical key for emergency systems bypass"
+                },
+                {
+                    "id": "personnel_board",
+                    "name": "personnel assignment board",
+                    "description": "A digital display showing crew assignments and photos",
+                    "readable": true,
+                    "text": "CURRENT CREW: Chief Engineer Rodriguez - Station Commander, all emergency authority. Dr. Kim - Systems Analyst. Tech Martinez - Maintenance. Location: Pacific Ocean geosynchronous orbit."
+                },
+                {
+                    "id": "parts_bin",
+                    "name": "spare parts bin",
+                    "description": "A container with various replacement components",
+                    "searchable": true,
+                    "contains": [
+                        "data_chip"
+                    ]
+                },
+                {
+                    "id": "data_chip",
+                    "name": "diagnostic data chip",
+                    "description": "A chip containing critical system data"
+                },
+                {
+                    "id": "escape_pod_bay_door",
+                    "name": "escape pod bay door",
+                    "description": "A heavy blast door with security panel. Three verification questions are displayed on the screen.",
+                    "locked": true,
+                    "lock_type": "password",
+                    "password_questions": [
+                        {
+                            "question": "Who is the station commander?",
+                            "answer": "chief engineer rodriguez",
+                            "hint": "Check the shift log and personnel board"
+                        },
+                        {
+                            "question": "Where is this facility located?",
+                            "answer": "pacific ocean",
+                            "hint": "The technical manual and diagnostic station mention the location"
+                        },
+                        {
+                            "question": "What year was this facility established?",
+                            "answer": "2089",
+                            "hint": "Multiple documents reference the establishment date"
+                        }
+                    ],
+                    "direction": "north",
+                    "leads_to": "escape_pod_bay",
+                    "aliases": [
+                        "door",
+                        "north"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "escape_pod_bay",
+            "name": "Escape Pod Bay Delta",
+            "description": "You have reached the escape pod bay! A row of sleek emergency escape pods line the curved wall, their hatches open and ready. Status lights glow green on the nearest pod. Through the launch tube window, you can see Earth rotating slowly below. The pod systems hum with power, ready to carry you safely home.",
+            "items": [
+                {
+                    "id": "escape_pod",
+                    "name": "emergency escape pod",
+                    "description": "A streamlined re-entry vehicle with heat shielding and parachute systems"
+                },
+                {
+                    "id": "launch_control",
+                    "name": "launch control panel",
+                    "description": "The pod launch system showing all green indicators",
+                    "readable": true,
+                    "text": "ESCAPE POD STATUS: All systems nominal. Re-entry trajectory calculated. Destination: Pacific Ocean recovery zone. Launch sequence ready."
+                },
+                {
+                    "id": "viewport",
+                    "name": "observation viewport",
+                    "description": "A reinforced window showing the view of Earth below"
+                }
+            ],
+            "exits": [],
+            "is_goal": true,
+            "win_message": "SUCCESS! You climb into the escape pod and seal the hatch. The launch sequence initiates automatically. With a sudden thrust, the pod separates from the failing space elevator station and begins its controlled descent toward Earth. Through the window, you watch the station grow smaller as you fall safely toward the blue planet below. You have escaped the doomed facility and will soon be recovered from the Pacific Ocean. You win!"
+        }
+    ]
+}

@@ -1,0 +1,236 @@
+{
+  "theme": "Hologram Theater",
+  "title": "Hologram Theater Adventure #105",
+  "goal": "Solve the puzzles, achieve the main objective, and escape.",
+  "starting_room": "control_room",
+  "rooms": [
+    {
+      "id": "control_room",
+      "name": "Hologram Control Room",
+      "description": "A sleek control room filled with glowing blue panels and holographic displays floating in mid-air. Banks of servers hum softly along the walls. Through a large window, you can see the main projection stage where shimmering holograms flicker. The air smells of ozone and electronics.",
+      "items": [
+        {
+          "id": "control_console",
+          "name": "main control console",
+          "description": "A curved console with multiple compartments and holographic interfaces",
+          "subcontainers": [
+            {
+              "id": "console_top",
+              "name": "top compartment",
+              "locked": false,
+              "contains": [
+                "technician_manual"
+              ]
+            },
+            {
+              "id": "console_secure",
+              "name": "secure compartment",
+              "locked": true,
+              "lock_type": "combination",
+              "combination": "2047",
+              "contains": [
+                "access_keycard"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "technician_manual",
+          "name": "hologram technician manual",
+          "description": "A digital manual displayed on a transparent tablet",
+          "readable": true,
+          "text": "HOLOGRAM THEATER MANUAL: System installed in 2047. Chief Technician: Marcus Chen. Lead Programmer: Sarah Vega. Remember: The Reality Core is the heart of all projections. Only authorized personnel may access the stage area."
+        },
+        {
+          "id": "access_keycard",
+          "name": "blue access keycard",
+          "description": "A keycard with holographic security strips labeled STAGE ACCESS"
+        },
+        {
+          "id": "server_rack",
+          "name": "server rack",
+          "description": "A tall rack of humming servers with blinking status lights",
+          "searchable": true,
+          "contains": [
+            "maintenance_log"
+          ]
+        },
+        {
+          "id": "maintenance_log",
+          "name": "maintenance log tablet",
+          "description": "A tablet showing recent system maintenance records",
+          "readable": true,
+          "text": "MAINTENANCE LOG: Reality Core requires three-factor authentication. Security questions updated by Chief Technician Marcus Chen. Core location: Central Processing Chamber behind the main stage."
+        },
+        {
+          "id": "desk_unit",
+          "name": "technician desk unit",
+          "description": "A workstation desk with drawers and holographic displays",
+          "locked": true,
+          "key_required": "access_keycard",
+          "contains": [
+            "encrypted_note"
+          ]
+        },
+        {
+          "id": "encrypted_note",
+          "name": "encrypted data chip",
+          "description": "A small data chip containing encrypted information",
+          "readable": true,
+          "text": "ENCRYPTED MESSAGE: Core access credentials - Username: ADMIN. Password: HOLOGRAM_PRIME. The Reality Core powers all theater projections from the Central Processing Chamber."
+        },
+        {
+          "id": "reinforced_stage_door",
+          "name": "reinforced stage door",
+          "description": "A heavy door with a card reader leading to the projection stage",
+          "locked": true,
+          "key_required": "access_keycard",
+          "direction": "north",
+          "leads_to": "projection_stage",
+          "aliases": [
+            "stage door",
+            "north"
+          ]
+        }
+      ],
+      "exits": []
+    },
+    {
+      "id": "projection_stage",
+      "name": "Holographic Projection Stage",
+      "description": "A vast circular stage where multiple holographic projections shimmer and dance. Ancient ruins, alien landscapes, and futuristic cities flicker in and out of existence. Projection emitters line the ceiling and walls. A massive door to the east is labeled REALITY CORE ACCESS with a security terminal beside it.",
+      "items": [
+        {
+          "id": "hologram_emitter_one",
+          "name": "hologram emitter array one",
+          "description": "A cluster of projection devices creating a forest scene",
+          "readable": true,
+          "text": "Emitter Label: NATURE SCENE PROJECTOR - Programmed by Sarah Vega. Status: Active."
+        },
+        {
+          "id": "hologram_emitter_two",
+          "name": "hologram emitter array two",
+          "description": "Projection equipment displaying a cityscape",
+          "readable": true,
+          "text": "Emitter Label: URBAN SCENE PROJECTOR - Programmed by Sarah Vega. Status: Active."
+        },
+        {
+          "id": "hologram_emitter_three",
+          "name": "hologram emitter array three",
+          "description": "Devices projecting an underwater scene with swimming fish",
+          "readable": true,
+          "text": "Emitter Label: AQUATIC SCENE PROJECTOR - Programmed by Sarah Vega. Status: Active."
+        },
+        {
+          "id": "equipment_cabinet",
+          "name": "stage equipment cabinet",
+          "description": "A tall cabinet containing various holographic equipment and tools",
+          "subcontainers": [
+            {
+              "id": "cabinet_upper",
+              "name": "upper section",
+              "locked": false,
+              "contains": [
+                "projection_specs"
+              ]
+            },
+            {
+              "id": "cabinet_lower",
+              "name": "lower section",
+              "locked": false,
+              "contains": [
+                "calibration_tool"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "projection_specs",
+          "name": "projection specifications document",
+          "description": "Technical specifications for the hologram system",
+          "readable": true,
+          "text": "PROJECTION SPECS: All holograms are generated from the Reality Core located in the Central Processing Chamber. Chief Technician Marcus Chen oversees all core operations. Lead Programmer Sarah Vega maintains the software systems."
+        },
+        {
+          "id": "calibration_tool",
+          "name": "holographic calibration device",
+          "description": "A handheld device used for adjusting hologram projections"
+        },
+        {
+          "id": "control_pedestal",
+          "name": "stage control pedestal",
+          "description": "A pedestal with holographic controls floating above it",
+          "searchable": true,
+          "contains": [
+            "security_memo"
+          ]
+        },
+        {
+          "id": "security_memo",
+          "name": "security protocol memo",
+          "description": "A holographic document outlining security procedures",
+          "readable": true,
+          "text": "SECURITY MEMO: Reality Core access requires authentication. Questions: Who is the Chief Technician? Who programmed the holograms? Where is the Reality Core located? Only authorized personnel may proceed."
+        },
+        {
+          "id": "Reality_Core_access_door",
+          "name": "Reality Core access door",
+          "description": "A massive reinforced door with a security terminal displaying three authentication questions",
+          "locked": true,
+          "lock_type": "password",
+          "password_questions": [
+            {
+              "question": "Who is the Chief Technician?",
+              "answer": "marcus chen",
+              "hint": "Check the technician manual and maintenance logs"
+            },
+            {
+              "question": "Who programmed the holograms?",
+              "answer": "sarah vega",
+              "hint": "Read the labels on the hologram emitters"
+            },
+            {
+              "question": "Where is the Reality Core located?",
+              "answer": "central processing chamber",
+              "hint": "Multiple documents mention the core location"
+            }
+          ],
+          "direction": "east",
+          "leads_to": "reality_core_chamber",
+          "aliases": [
+            "core door",
+            "east"
+          ]
+        }
+      ],
+      "exits": []
+    },
+    {
+      "id": "reality_core_chamber",
+      "name": "Reality Core Chamber",
+      "description": "You have reached the heart of the Hologram Theater! A massive spherical core of pure light hovers in the center of the chamber, pulsing with energy. Streams of data flow around it like rivers of light. Holographic displays show every projection in the theater. A shimmering exit portal has materialized, leading back to reality.",
+      "items": [
+        {
+          "id": "reality_core",
+          "name": "Reality Core sphere",
+          "description": "A magnificent sphere of concentrated holographic energy, the source of all theater projections"
+        },
+        {
+          "id": "core_terminal",
+          "name": "core control terminal",
+          "description": "The main terminal for controlling the Reality Core systems",
+          "readable": true,
+          "text": "REALITY CORE STATUS: All systems operational. Theater projections stable. Emergency exit protocol activated. You have successfully accessed the core chamber."
+        },
+        {
+          "id": "data_streams",
+          "name": "flowing data streams",
+          "description": "Ribbons of light carrying information between the core and the theater systems"
+        }
+      ],
+      "exits": [],
+      "is_goal": true,
+      "win_message": "SUCCESS! You have reached the Reality Core at the heart of the Hologram Theater! The core recognizes your presence and activates the emergency exit protocol. A shimmering portal opens before you, leading back to the real world. You step through, leaving the world of holograms behind. You win!"
+    }
+  ]
+}

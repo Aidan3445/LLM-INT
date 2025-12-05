@@ -1,0 +1,232 @@
+{
+    "theme": "Giant's Kitchen",
+    "title": "Giant's Kitchen Adventure #74",
+    "goal": "Solve the puzzles, achieve the main objective, and escape.",
+    "starting_room": "pantry_shelf",
+    "rooms": [
+        {
+            "id": "pantry_shelf",
+            "name": "High Pantry Shelf",
+            "description": "You stand on a wooden shelf towering high above the kitchen floor. Enormous jars of flour and sugar loom like buildings around you. The air smells of dried herbs and spices. Far below, you can see the giant's kitchen counter. A rope made of twine hangs down from a hook, offering a way to descend.",
+            "items": [
+                {
+                    "id": "flour_jar",
+                    "name": "massive flour jar",
+                    "description": "A glass jar the size of a house, filled with white flour",
+                    "searchable": true,
+                    "contains": [
+                        "brass_key"
+                    ]
+                },
+                {
+                    "id": "brass_key",
+                    "name": "small brass key",
+                    "description": "A tiny key that must have fallen into the flour jar long ago"
+                },
+                {
+                    "id": "spice_rack",
+                    "name": "giant spice rack",
+                    "description": "A wooden rack holding enormous spice containers with different compartments",
+                    "subcontainers": [
+                        {
+                            "id": "cinnamon_container",
+                            "name": "cinnamon container",
+                            "locked": false,
+                            "contains": [
+                                "recipe_card"
+                            ]
+                        },
+                        {
+                            "id": "pepper_container",
+                            "name": "pepper container",
+                            "locked": true,
+                            "lock_type": "combination",
+                            "combination": "350",
+                            "contains": [
+                                "silver_key"
+                            ]
+                        },
+                        {
+                            "id": "salt_container",
+                            "name": "salt container",
+                            "locked": false,
+                            "contains": []
+                        }
+                    ]
+                },
+                {
+                    "id": "recipe_card",
+                    "name": "giant's recipe card",
+                    "description": "A stained card with a cookie recipe written in large letters",
+                    "readable": true,
+                    "text": "GIANT'S FAVORITE COOKIES: Preheat oven to 350 degrees. Mix 2 cups flour, 1 cup sugar, 3 eggs. Bake for 15 minutes. Note: I always bake these on Tuesdays for my friend Greta who lives in the Mountain Cave."
+                },
+                {
+                    "id": "silver_key",
+                    "name": "tarnished silver key",
+                    "description": "A small silver key hidden among the peppercorns"
+                },
+                {
+                    "id": "locked_tin",
+                    "name": "locked cookie tin",
+                    "description": "A decorative tin with a brass lock, likely containing treats",
+                    "locked": true,
+                    "key_required": "brass_key",
+                    "contains": [
+                        "shopping_list"
+                    ]
+                },
+                {
+                    "id": "shopping_list",
+                    "name": "giant's shopping list",
+                    "description": "A crumpled piece of paper with a shopping list",
+                    "readable": true,
+                    "text": "SHOPPING LIST: Eggs, milk, bread, cheese. Remember to visit the Market Square on Saturday. Don't forget Greta's birthday gift!"
+                },
+                {
+                    "id": "twine_rope",
+                    "name": "twine rope",
+                    "description": "A sturdy rope hanging down to the kitchen counter below",
+                    "locked": false,
+                    "direction": "south",
+                    "leads_to": "kitchen_counter",
+                    "aliases": [
+                        "rope",
+                        "down",
+                        "south"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "kitchen_counter",
+            "name": "Giant's Kitchen Counter",
+            "description": "An enormous kitchen counter stretches out like a vast plaza. A huge cutting board serves as a platform, and kitchen utensils tower overhead like metal trees. A massive cookbook lies open, and a refrigerator hums in the distance. To the east, you can see a window cracked open, letting in fresh air and sunlight.",
+            "items": [
+                {
+                    "id": "cookbook",
+                    "name": "giant cookbook",
+                    "description": "An enormous cookbook opened to a well-worn page",
+                    "readable": true,
+                    "text": "CHAPTER 7: GIANT CUISINE. My name is Grog the Giant, and I've lived in this kitchen for 50 years. My favorite meal is roasted vegetables with herbs from my garden. I always cook dinner at 6 PM sharp."
+                },
+                {
+                    "id": "cutting_board",
+                    "name": "wooden cutting board",
+                    "description": "A massive cutting board with knife marks and food stains",
+                    "searchable": true,
+                    "contains": [
+                        "schedule_note"
+                    ]
+                },
+                {
+                    "id": "schedule_note",
+                    "name": "daily schedule note",
+                    "description": "A note pinned under a knife, detailing the giant's routine",
+                    "readable": true,
+                    "text": "DAILY SCHEDULE: 6 AM - Wake up and tend the garden. 12 PM - Lunch. 6 PM - Dinner preparation. 9 PM - Read by the fireplace. Tuesdays - Bake cookies. Saturdays - Market Square shopping."
+                },
+                {
+                    "id": "utensil_holder",
+                    "name": "utensil holder",
+                    "description": "A ceramic container holding enormous spoons, forks, and knives",
+                    "searchable": true,
+                    "contains": [
+                        "copper_key"
+                    ]
+                },
+                {
+                    "id": "copper_key",
+                    "name": "copper key",
+                    "description": "A small copper key wedged between the utensils"
+                },
+                {
+                    "id": "breadbox",
+                    "name": "giant breadbox",
+                    "description": "A large wooden box with a silver lock, used for storing bread",
+                    "locked": true,
+                    "key_required": "silver_key",
+                    "contains": [
+                        "letter_to_greta"
+                    ]
+                },
+                {
+                    "id": "letter_to_greta",
+                    "name": "letter to Greta",
+                    "description": "An unsealed letter addressed to someone named Greta",
+                    "readable": true,
+                    "text": "Dear Greta, I hope this letter finds you well in the Mountain Cave. Thank you for being such a wonderful friend. I'm planning to visit Market Square this Saturday to find you a special birthday present. Your friend always, Grog"
+                },
+                {
+                    "id": "sugar_bowl",
+                    "name": "sugar bowl with lid",
+                    "description": "A covered bowl containing sugar, with a copper lock on the lid",
+                    "locked": true,
+                    "key_required": "copper_key",
+                    "contains": [
+                        "window_instructions"
+                    ]
+                },
+                {
+                    "id": "window_instructions",
+                    "name": "escape instructions",
+                    "description": "A small note written in tiny handwriting, clearly left by another small person",
+                    "readable": true,
+                    "text": "TO WHOEVER FINDS THIS: The window is your escape route! But the giant has installed a security latch. To unlock it, you must answer three questions about him. Study everything carefully. Good luck! - Previous Escapee"
+                },
+                {
+                    "id": "window_security_latch",
+                    "name": "window security latch",
+                    "description": "A complex locking mechanism on the window, designed to keep small creatures from escaping. A small panel displays three security questions.",
+                    "locked": true,
+                    "lock_type": "password",
+                    "password_questions": [
+                        {
+                            "question": "What is the giant's name?",
+                            "answer": "grog",
+                            "hint": "Check the cookbook for the giant's introduction"
+                        },
+                        {
+                            "question": "Where does Greta live?",
+                            "answer": "mountain cave",
+                            "hint": "The recipe card and letter both mention Greta's home"
+                        },
+                        {
+                            "question": "Where does the giant shop?",
+                            "answer": "market square",
+                            "hint": "Look at the shopping list and schedule note"
+                        }
+                    ],
+                    "direction": "east",
+                    "leads_to": "outside_freedom",
+                    "aliases": [
+                        "window",
+                        "east"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "outside_freedom",
+            "name": "Garden Outside the Window",
+            "description": "You've made it outside! Fresh air fills your lungs as you stand on the windowsill overlooking a beautiful garden. Birds chirp in the distance, and a gentle breeze carries the scent of flowers. A vine grows down the side of the house, offering a safe path to the ground and freedom.",
+            "items": [
+                {
+                    "id": "flowering_vine",
+                    "name": "climbing vine",
+                    "description": "A thick vine covered in morning glories, leading safely down to the garden below"
+                },
+                {
+                    "id": "garden_view",
+                    "name": "garden vista",
+                    "description": "A beautiful view of the giant's well-tended vegetable garden, with rows of enormous carrots, tomatoes, and herbs"
+                }
+            ],
+            "exits": [],
+            "is_goal": true,
+            "win_message": "You've successfully escaped the Giant's Kitchen! As you climb down the vine to freedom, you look back at the enormous house one last time. The giant Grog will never know how close he came to discovering you. You're free, you're safe, and you have quite the tale to tell. You win!"
+        }
+    ]
+}

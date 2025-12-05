@@ -1,0 +1,266 @@
+{
+    "theme": "Wizard Academy Exam",
+    "title": "Wizard Academy Exam Adventure #6",
+    "goal": "Solve the puzzles, achieve the main objective, and escape.",
+    "starting_room": "examination_hall",
+    "rooms": [
+        {
+            "id": "examination_hall",
+            "name": "Grand Examination Hall",
+            "description": "A vast hall with high vaulted ceilings covered in floating candles. Rows of wooden desks are arranged in perfect lines, each with a quill and inkwell. Magical portraits of famous wizards line the walls, their painted eyes following your movements. A large chalkboard displays exam rules in glowing script. The air crackles with residual magic from countless spells cast here over the years.",
+            "items": [
+                {
+                    "id": "exam_desk",
+                    "name": "student examination desk",
+                    "description": "A worn wooden desk scarred with carved initials and ink stains from nervous students",
+                    "searchable": true,
+                    "contains": [
+                        "exam_paper"
+                    ]
+                },
+                {
+                    "id": "exam_paper",
+                    "name": "examination paper",
+                    "description": "A parchment with exam questions and academy information",
+                    "readable": true,
+                    "text": "WIZARD ACADEMY FINAL EXAMINATION - Established 1456. Headmaster: Archmage Aldric Thornwood. Core Subjects: Potions, Charms, Transfiguration. Students must demonstrate mastery of all subjects to graduate. Good luck!"
+                },
+                {
+                    "id": "supply_cabinet",
+                    "name": "magical supply cabinet",
+                    "description": "A tall cabinet with three compartments containing exam supplies and materials",
+                    "subcontainers": [
+                        {
+                            "id": "top_compartment",
+                            "name": "top compartment",
+                            "locked": false,
+                            "contains": [
+                                "academy_handbook"
+                            ]
+                        },
+                        {
+                            "id": "middle_compartment",
+                            "name": "middle compartment",
+                            "locked": true,
+                            "lock_type": "combination",
+                            "combination": "1456",
+                            "contains": [
+                                "silver_key"
+                            ]
+                        },
+                        {
+                            "id": "bottom_compartment",
+                            "name": "bottom compartment",
+                            "locked": false,
+                            "contains": []
+                        }
+                    ]
+                },
+                {
+                    "id": "academy_handbook",
+                    "name": "student handbook",
+                    "description": "A leather-bound handbook given to all academy students",
+                    "readable": true,
+                    "text": "Welcome to the Wizard Academy! Founded in 1456 by Archmage Aldric Thornwood. Our curriculum includes Potions (brewing magical elixirs), Charms (enchantments and spells), and Transfiguration (changing forms). The Headmaster's Study contains advanced texts for exceptional students."
+                },
+                {
+                    "id": "silver_key",
+                    "name": "ornate silver key",
+                    "description": "A silver key engraved with magical runes and the academy crest"
+                },
+                {
+                    "id": "chalkboard",
+                    "name": "magical chalkboard",
+                    "description": "A large board with glowing text that shifts and changes",
+                    "readable": true,
+                    "text": "EXAM RULES: 1) No unauthorized spell casting. 2) All answers must demonstrate understanding of core subjects. 3) Access to the Headmaster's Study requires proper authorization. 4) The combination to secure storage is the year our academy was founded."
+                },
+                {
+                    "id": "locked_chest",
+                    "name": "enchanted chest",
+                    "description": "A wooden chest bound with silver bands and a keyhole shaped like a star",
+                    "locked": true,
+                    "key_required": "silver_key",
+                    "contains": [
+                        "study_pass",
+                        "professor_note"
+                    ]
+                },
+                {
+                    "id": "study_pass",
+                    "name": "study access pass",
+                    "description": "A magical pass granting entry to the Headmaster's Study"
+                },
+                {
+                    "id": "professor_note",
+                    "name": "professor's note",
+                    "description": "A note from one of the academy professors",
+                    "readable": true,
+                    "text": "Reminder to advanced students: The Headmaster's Study contains our most valuable texts. Remember your core subjects - Potions, Charms, and Transfiguration are the foundation of all magic. Only those who truly understand our teachings may proceed to the Tower Observatory."
+                },
+                {
+                    "id": "portrait_wall",
+                    "name": "wall of wizard portraits",
+                    "description": "Magical portraits of distinguished academy graduates",
+                    "searchable": true,
+                    "contains": [
+                        "graduation_scroll"
+                    ]
+                },
+                {
+                    "id": "graduation_scroll",
+                    "name": "graduation scroll",
+                    "description": "A scroll describing the graduation ceremony",
+                    "readable": true,
+                    "text": "Upon completing their studies in Potions, Charms, and Transfiguration, students ascend to the Tower Observatory where Headmaster Thornwood presents their diplomas. This tradition has continued since the academy's founding."
+                },
+                {
+                    "id": "door_to_Headmaster's_Study",
+                    "name": "door to Headmaster's Study",
+                    "description": "An imposing oak door carved with magical symbols, requiring the study pass to open",
+                    "locked": true,
+                    "key_required": "study_pass",
+                    "direction": "north",
+                    "leads_to": "headmasters_study",
+                    "aliases": [
+                        "door",
+                        "north"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "headmasters_study",
+            "name": "Headmaster's Study",
+            "description": "A circular room lined with towering bookshelves filled with ancient tomes and magical texts. A massive desk sits before a window overlooking the academy grounds. Crystal orbs float near the ceiling, casting soft light. The smell of old parchment and magical herbs fills the air. A spiral staircase leads upward to the Tower Observatory, but its entrance is sealed with powerful enchantments.",
+            "items": [
+                {
+                    "id": "headmasters_desk",
+                    "name": "Headmaster's desk",
+                    "description": "An ornate desk made of dark wood, covered with papers and magical instruments",
+                    "searchable": true,
+                    "contains": [
+                        "headmaster_journal"
+                    ]
+                },
+                {
+                    "id": "headmaster_journal",
+                    "name": "Headmaster's journal",
+                    "description": "A personal journal belonging to Archmage Thornwood",
+                    "readable": true,
+                    "text": "As Headmaster of this academy, I take pride in our three core subjects. Potions teaches precision, Charms teaches creativity, and Transfiguration teaches adaptability. Only students who master all three may ascend to the Tower Observatory for graduation."
+                },
+                {
+                    "id": "potions_bookshelf",
+                    "name": "Potions section bookshelf",
+                    "description": "A shelf dedicated to potion-making texts and alchemical knowledge",
+                    "readable": true,
+                    "text": "Section label: 'POTIONS - The Art of Brewing. Master the cauldron, master the elements.'"
+                },
+                {
+                    "id": "charms_bookshelf",
+                    "name": "Charms section bookshelf",
+                    "description": "A shelf containing books about enchantments and spell-casting",
+                    "readable": true,
+                    "text": "Section label: 'CHARMS - The Language of Magic. Every spell is a word, every word is power.'"
+                },
+                {
+                    "id": "transfiguration_bookshelf",
+                    "name": "Transfiguration section bookshelf",
+                    "description": "A shelf holding advanced texts on transformation magic",
+                    "readable": true,
+                    "text": "Section label: 'TRANSFIGURATION - The Science of Change. To transform the world, first transform yourself.'"
+                },
+                {
+                    "id": "crystal_orbs",
+                    "name": "floating crystal orbs",
+                    "description": "Magical orbs that provide light and store memories",
+                    "readable": true,
+                    "text": "The orbs glow softly, showing fleeting images of past graduation ceremonies in the Tower Observatory. You see Archmage Thornwood presenting diplomas to proud students who mastered the three core subjects."
+                },
+                {
+                    "id": "academy_records",
+                    "name": "academy records cabinet",
+                    "description": "A filing cabinet with historical records and documents",
+                    "searchable": true,
+                    "contains": [
+                        "founding_document"
+                    ]
+                },
+                {
+                    "id": "founding_document",
+                    "name": "academy founding document",
+                    "description": "The original charter establishing the Wizard Academy",
+                    "readable": true,
+                    "text": "By decree of Archmage Aldric Thornwood, this academy is hereby established in the year 1456. We shall teach the three pillars of magical education: Potions, Charms, and Transfiguration. May our students bring honor to these halls."
+                },
+                {
+                    "id": "enchanted_spiral_staircase",
+                    "name": "enchanted spiral staircase",
+                    "description": "A magical staircase leading up to the Tower Observatory. Three glowing questions hover in the air, blocking passage.",
+                    "locked": true,
+                    "lock_type": "password",
+                    "password_questions": [
+                        {
+                            "question": "What is the first core subject?",
+                            "answer": "potions",
+                            "hint": "Check the exam paper, handbook, and bookshelves for the three core subjects"
+                        },
+                        {
+                            "question": "What is the second core subject?",
+                            "answer": "charms",
+                            "hint": "The academy teaches three core subjects mentioned throughout the study"
+                        },
+                        {
+                            "question": "Who is the Headmaster?",
+                            "answer": "archmage aldric thornwood",
+                            "hint": "The exam paper and founding document name the Headmaster"
+                        }
+                    ],
+                    "direction": "east",
+                    "leads_to": "tower_observatory",
+                    "aliases": [
+                        "staircase",
+                        "stairs",
+                        "east",
+                        "up"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "tower_observatory",
+            "name": "Tower Observatory",
+            "description": "You've reached the top of the tower! A magnificent circular room with windows on all sides offering breathtaking views of the magical realm beyond. Stars twinkle overhead through an enchanted glass dome. A telescope points toward the heavens, and constellation maps cover the walls. A graduation podium stands in the center, and an open archway leads to a magical portal shimmering with freedom.",
+            "items": [
+                {
+                    "id": "graduation_podium",
+                    "name": "graduation podium",
+                    "description": "An elegant podium where the Headmaster presents diplomas to graduating students"
+                },
+                {
+                    "id": "magical_telescope",
+                    "name": "enchanted telescope",
+                    "description": "A brass telescope that can see across vast magical distances"
+                },
+                {
+                    "id": "constellation_maps",
+                    "name": "star constellation maps",
+                    "description": "Beautiful maps showing magical constellations and their meanings",
+                    "readable": true,
+                    "text": "The maps show constellations representing the three core subjects: The Cauldron (Potions), The Wand (Charms), and The Phoenix (Transfiguration). Together they form the symbol of the Wizard Academy."
+                },
+                {
+                    "id": "freedom_portal",
+                    "name": "shimmering portal",
+                    "description": "A magical gateway leading to freedom and the world beyond the academy"
+                }
+            ],
+            "exits": [],
+            "is_goal": true,
+            "win_message": "Congratulations! You have passed the Wizard Academy Exam and reached the Tower Observatory! As you stand at the graduation podium, magical energy swirls around you. You have demonstrated mastery of Potions, Charms, and Transfiguration. The shimmering portal opens before you, offering passage to your next great adventure. You are now a fully qualified wizard! You win!"
+        }
+    ]
+}

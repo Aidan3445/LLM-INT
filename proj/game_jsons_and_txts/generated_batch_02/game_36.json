@@ -1,0 +1,265 @@
+{
+    "theme": "Chronomancer's Observatory",
+    "title": "Chronomancer's Observatory Adventure #36",
+    "goal": "Solve the puzzles, achieve the main objective, and escape.",
+    "starting_room": "temporal_antechamber",
+    "rooms": [
+        {
+            "id": "temporal_antechamber",
+            "name": "Temporal Antechamber",
+            "description": "A circular chamber with walls covered in intricate clockwork mechanisms. Gears of various sizes tick and turn in mesmerizing patterns. The air shimmers with temporal energy, and you can hear the echo of countless ticking clocks. Hourglasses of different sizes line the shelves, their sands flowing in impossible directions. A large grandfather clock stands against the eastern wall.",
+            "items": [
+                {
+                    "id": "grandfather_clock",
+                    "name": "ornate grandfather clock",
+                    "description": "A magnificent clock with a glass face showing multiple time zones. The pendulum swings with hypnotic precision.",
+                    "readable": true,
+                    "text": "The clock face shows: Midnight (12), Dawn (6), Noon (12), Dusk (6). A small plaque reads: 'The chronomancer's birth hour was at midnight, the sacred number of completion.'"
+                },
+                {
+                    "id": "workbench",
+                    "name": "chronomancer's workbench",
+                    "description": "A cluttered workbench covered with temporal instruments, gears, and half-assembled clockwork devices. Three drawers are built into the front.",
+                    "subcontainers": [
+                        {
+                            "id": "top_drawer",
+                            "name": "top drawer",
+                            "locked": false,
+                            "contains": [
+                                "apprentice_journal"
+                            ]
+                        },
+                        {
+                            "id": "middle_drawer",
+                            "name": "middle drawer",
+                            "locked": true,
+                            "lock_type": "combination",
+                            "combination": "1212",
+                            "contains": [
+                                "brass_key"
+                            ]
+                        },
+                        {
+                            "id": "bottom_drawer",
+                            "name": "bottom drawer",
+                            "locked": false,
+                            "contains": []
+                        }
+                    ]
+                },
+                {
+                    "id": "apprentice_journal",
+                    "name": "apprentice's journal",
+                    "description": "A leather-bound journal filled with notes about temporal studies",
+                    "readable": true,
+                    "text": "Journal Entry: Master says the combination to the middle drawer is based on the sacred hours - midnight and noon, the points where time pivots. Write them as 12:12. Also, the Time Crystal is locked away in the glass case. Only the brass key can open it."
+                },
+                {
+                    "id": "brass_key",
+                    "name": "ornate brass key",
+                    "description": "A key shaped like a clock hand, made of polished brass with temporal runes etched along its length"
+                },
+                {
+                    "id": "glass_display_case",
+                    "name": "sealed glass display case",
+                    "description": "A protective case containing a glowing crystal that pulses with blue temporal energy",
+                    "locked": true,
+                    "key_required": "brass_key",
+                    "contains": [
+                        "time_crystal"
+                    ]
+                },
+                {
+                    "id": "time_crystal",
+                    "name": "Time Crystal",
+                    "description": "A radiant blue crystal that seems to exist in multiple moments simultaneously. One of the artifacts needed to enter the sanctum."
+                },
+                {
+                    "id": "bookshelf",
+                    "name": "ancient bookshelf",
+                    "description": "A tall shelf filled with dusty tomes about temporal magic and chronology",
+                    "searchable": true,
+                    "contains": [
+                        "temporal_theory_book"
+                    ]
+                },
+                {
+                    "id": "temporal_theory_book",
+                    "name": "book of temporal theory",
+                    "description": "A heavy tome with gold-leaf pages",
+                    "readable": true,
+                    "text": "Chapter 7: The Flow of Time - Time moves ever forward, never backward. The past is fixed in the Archives of Yesterday. The present is fleeting. The future remains unwritten in the Void of Tomorrow."
+                },
+                {
+                    "id": "spiral_staircase",
+                    "name": "spiral staircase",
+                    "description": "A winding staircase leading upward to the observatory dome. The steps seem to shimmer and shift slightly.",
+                    "locked": false,
+                    "direction": "north",
+                    "leads_to": "observatory_dome",
+                    "aliases": [
+                        "stairs",
+                        "up",
+                        "north"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "observatory_dome",
+            "name": "Observatory Dome",
+            "description": "A vast domed chamber with a glass ceiling revealing the night sky above. Stars wheel overhead in accelerated motion, showing the passage of time. A massive orrery dominates the center of the room, its planets and moons orbiting in perfect mechanical harmony. Telescopes point toward various celestial bodies, and star charts cover the walls. A heavy door to the east leads to the chronomancer's private sanctum.",
+            "items": [
+                {
+                    "id": "orrery",
+                    "name": "mechanical orrery",
+                    "description": "An intricate model of the solar system with planets moving on brass arms. Each planet is labeled with a name.",
+                    "readable": true,
+                    "text": "The planets are labeled: Mercury (Past), Venus (Present), Earth (Future), Mars (Eternity). A notation reads: 'The chronomancer studies the Past in the Archives of Yesterday.'"
+                },
+                {
+                    "id": "star_charts",
+                    "name": "celestial star charts",
+                    "description": "Detailed maps of constellations and celestial events",
+                    "readable": true,
+                    "text": "Chart notation: 'The Constellation of the Hourglass appears only during temporal convergences. The chronomancer's greatest discovery was understanding that time flows forward, an immutable law of the cosmos.'"
+                },
+                {
+                    "id": "telescope_array",
+                    "name": "array of telescopes",
+                    "description": "Several telescopes of varying sizes pointed at different parts of the sky",
+                    "searchable": true,
+                    "contains": [
+                        "observation_log"
+                    ]
+                },
+                {
+                    "id": "observation_log",
+                    "name": "observation logbook",
+                    "description": "A logbook recording celestial observations and temporal phenomena",
+                    "readable": true,
+                    "text": "Latest Entry: The temporal convergence approaches. I have hidden the Hourglass of Ages in the locked cabinet. To access the sanctum, one must prove their understanding of temporal principles. Remember: I am Chronos the Eternal, master of time itself."
+                },
+                {
+                    "id": "storage_cabinet",
+                    "name": "locked storage cabinet",
+                    "description": "A tall cabinet with ornate carvings of hourglasses and sundials",
+                    "subcontainers": [
+                        {
+                            "id": "upper_shelf",
+                            "name": "upper shelf",
+                            "locked": false,
+                            "contains": [
+                                "temporal_notes"
+                            ]
+                        },
+                        {
+                            "id": "lower_shelf",
+                            "name": "lower shelf",
+                            "locked": true,
+                            "lock_type": "combination",
+                            "combination": "369",
+                            "contains": [
+                                "hourglass_of_ages"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "temporal_notes",
+                    "name": "chronomancer's notes",
+                    "description": "Handwritten notes on parchment",
+                    "readable": true,
+                    "text": "Note: The lower shelf combination is based on the sacred temporal sequence - Past (3 letters), Present (7 letters)... wait, that's wrong. Let me recalculate: 3, 6, 9 - the multiples of three, representing the three phases of time."
+                },
+                {
+                    "id": "hourglass_of_ages",
+                    "name": "Hourglass of Ages",
+                    "description": "An ancient hourglass filled with golden sand that flows upward and downward simultaneously. The second artifact needed to enter the sanctum."
+                },
+                {
+                    "id": "chronomancer's_sanctum_door",
+                    "name": "chronomancer's sanctum door",
+                    "description": "A massive door made of dark wood reinforced with brass clockwork mechanisms. Three questions are inscribed on a bronze plaque beside it.",
+                    "locked": true,
+                    "lock_type": "password",
+                    "password_questions": [
+                        {
+                            "question": "What is the name of the master of this observatory?",
+                            "answer": "chronos the eternal",
+                            "hint": "Check the observation logbook for the chronomancer's name"
+                        },
+                        {
+                            "question": "Where does the chronomancer study the past?",
+                            "answer": "archives of yesterday",
+                            "hint": "The book of temporal theory and the orrery both mention this location"
+                        },
+                        {
+                            "question": "In which direction does time flow?",
+                            "answer": "forward",
+                            "hint": "The temporal theory book states this fundamental law"
+                        }
+                    ],
+                    "direction": "east",
+                    "leads_to": "chronomancers_sanctum",
+                    "aliases": [
+                        "door",
+                        "sanctum",
+                        "east"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "chronomancers_sanctum",
+            "name": "Chronomancer's Sanctum",
+            "description": "You have entered the heart of the observatory! The sanctum is a perfect sphere of polished crystal that seems to exist outside of normal time. In the center floats a pedestal holding two empty sockets - one shaped like a crystal, the other like an hourglass. Around you, images of past, present, and future swirl in a mesmerizing dance. A portal of pure temporal energy shimmers on the far side of the room, waiting to be activated.",
+            "items": [
+                {
+                    "id": "artifact_pedestal",
+                    "name": "floating crystal pedestal",
+                    "description": "A pedestal of pure light with two sockets for the temporal artifacts",
+                    "readable": true,
+                    "text": "Inscription in glowing runes: 'Place the Time Crystal and the Hourglass of Ages to prove your mastery over temporal forces and activate the portal home.'"
+                },
+                {
+                    "id": "shimmering_temporal_portal",
+                    "name": "shimmering temporal portal",
+                    "description": "A swirling vortex of time energy showing glimpses of your home beyond. It requires both artifacts to fully activate.",
+                    "locked": true,
+                    "key_required": "hourglass_of_ages",
+                    "direction": "north",
+                    "leads_to": "outside_world",
+                    "aliases": [
+                        "portal",
+                        "vortex",
+                        "north"
+                    ]
+                },
+                {
+                    "id": "time_streams",
+                    "name": "flowing time streams",
+                    "description": "Visible currents of temporal energy flowing through the air like rivers of light"
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "outside_world",
+            "name": "Beyond the Observatory",
+            "description": "You step through the portal and find yourself standing outside the observatory under a normal night sky. The stars no longer race across the heavens. Time flows naturally once more. The chronomancer's test is complete, and you have proven yourself worthy of temporal knowledge.",
+            "items": [
+                {
+                    "id": "night_sky",
+                    "name": "peaceful night sky",
+                    "description": "The stars twinkle peacefully overhead, moving at their natural pace"
+                }
+            ],
+            "exits": [],
+            "is_goal": true,
+            "win_message": "Congratulations! You have successfully navigated the Chronomancer's Observatory, solved all the temporal puzzles, and proven your understanding of time itself. The Time Crystal and Hourglass of Ages merge into a single chronometer that appears in your hand - a gift from Chronos the Eternal. You have mastered the test and earned the chronomancer's respect. You win!"
+        }
+    ]
+}

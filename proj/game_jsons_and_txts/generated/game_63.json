@@ -1,0 +1,229 @@
+{
+    "theme": "Parallel Universe Apartment",
+    "title": "Parallel Universe Apartment Adventure #63",
+    "goal": "Solve the puzzles, achieve the main objective, and escape.",
+    "starting_room": "apartment_63",
+    "rooms": [
+        {
+            "id": "apartment_63",
+            "name": "Living Room Universe 63",
+            "description": "Your apartment flickers and shifts unnaturally. The walls phase between solid and translucent. Furniture appears and disappears. A digital clock on the wall displays 'UNIVERSE 63 - UNSTABLE' in red letters. You can feel reality breaking down around you. A strange humming comes from the bedroom door.",
+            "items": [
+                {
+                    "id": "coffee_table",
+                    "name": "glass coffee table",
+                    "description": "A modern coffee table with a drawer underneath",
+                    "subcontainers": [
+                        {
+                            "id": "table_drawer",
+                            "name": "table drawer",
+                            "locked": false,
+                            "contains": [
+                                "quantum_journal"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "quantum_journal",
+                    "name": "quantum physics journal",
+                    "description": "A scientific journal with handwritten notes",
+                    "readable": true,
+                    "text": "Dr Chen's Log: I've discovered how to access parallel universes! Each universe has a number. Universe 63 is collapsing. Universe Prime (Universe 1) is the only stable reality. The combination to my desk is the year I made my breakthrough: 2063."
+                },
+                {
+                    "id": "bookshelf",
+                    "name": "tall bookshelf",
+                    "description": "A bookshelf filled with physics textbooks and scientific papers",
+                    "searchable": true,
+                    "contains": [
+                        "universe_map"
+                    ]
+                },
+                {
+                    "id": "universe_map",
+                    "name": "multiverse diagram",
+                    "description": "A complex diagram showing connections between parallel universes",
+                    "readable": true,
+                    "text": "Multiverse Map: All universes connect through the Nexus Portal Room. Universe 63 (unstable), Universe 42 (chaotic), Universe Prime (stable). Only Universe Prime is safe for permanent residence."
+                },
+                {
+                    "id": "bedroom_door",
+                    "name": "bedroom door",
+                    "description": "A door leading to the bedroom, vibrating with strange energy",
+                    "locked": false,
+                    "direction": "east",
+                    "leads_to": "bedroom_shifting",
+                    "aliases": [
+                        "door",
+                        "east"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "bedroom_shifting",
+            "name": "Bedroom Shifting Realities",
+            "description": "The bedroom exists in multiple universes simultaneously. You see ghostly overlapping versions of the same furniture. A desk phases in and out of existence. Through the window, you see different skies: day, night, alien stars, all at once. A shimmering portal device sits on a stand, currently inactive.",
+            "items": [
+                {
+                    "id": "quantum_desk",
+                    "name": "scientist's desk",
+                    "description": "A desk covered with equations and scientific equipment. It has two locked compartments.",
+                    "subcontainers": [
+                        {
+                            "id": "main_compartment",
+                            "name": "main compartment",
+                            "locked": true,
+                            "lock_type": "combination",
+                            "combination": "2063",
+                            "contains": [
+                                "dimensional_key",
+                                "research_notes"
+                            ]
+                        },
+                        {
+                            "id": "side_compartment",
+                            "name": "side compartment",
+                            "locked": false,
+                            "contains": [
+                                "power_cell"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "research_notes",
+                    "name": "Dr Chen research notes",
+                    "description": "Detailed notes about parallel universe travel",
+                    "readable": true,
+                    "text": "Critical Discovery: I am Dr Chen, the physicist who discovered multiverse travel. The portal requires a dimensional key and power cell. To reach Universe Prime, you must know: my name, the location of stability, and the nature of quantum reality."
+                },
+                {
+                    "id": "dimensional_key",
+                    "name": "dimensional key",
+                    "description": "A crystalline key that glows with otherworldly energy"
+                },
+                {
+                    "id": "power_cell",
+                    "name": "quantum power cell",
+                    "description": "A glowing energy cell that powers dimensional technology"
+                },
+                {
+                    "id": "nightstand",
+                    "name": "bedside nightstand",
+                    "description": "A small table next to the bed",
+                    "searchable": true,
+                    "contains": [
+                        "portal_manual"
+                    ]
+                },
+                {
+                    "id": "portal_manual",
+                    "name": "portal operation manual",
+                    "description": "Instructions for operating the dimensional portal",
+                    "readable": true,
+                    "text": "Portal Manual: The device creates doorways between universes. Insert dimensional key and power cell to activate. Warning: Quantum entanglement means reality itself is interconnected at the subatomic level. Handle with care."
+                },
+                {
+                    "id": "dimensional_portal_device",
+                    "name": "dimensional portal device",
+                    "description": "A sleek metallic device with slots for a key and power cell. Currently inactive.",
+                    "locked": true,
+                    "key_required": "dimensional_key",
+                    "direction": "north",
+                    "leads_to": "nexus_portal",
+                    "aliases": [
+                        "portal",
+                        "device",
+                        "north"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "nexus_portal",
+            "name": "Nexus Portal Room",
+            "description": "You stand in a space between universes. Swirling portals of different colors float around you, each leading to a different reality. The room itself is pure white energy. In the center, a large gateway pulses with golden light, labeled 'Universe Prime'. A control panel beside it displays three security questions.",
+            "items": [
+                {
+                    "id": "universe_63_portal",
+                    "name": "red swirling portal",
+                    "description": "A chaotic red portal leading back to the collapsing Universe 63",
+                    "readable": true,
+                    "text": "Portal Label: Universe 63 - Unstable - Collapse Imminent"
+                },
+                {
+                    "id": "universe_42_portal",
+                    "name": "purple swirling portal",
+                    "description": "A wild purple portal crackling with energy",
+                    "readable": true,
+                    "text": "Portal Label: Universe 42 - Chaotic - Not Recommended"
+                },
+                {
+                    "id": "control_panel",
+                    "name": "nexus control panel",
+                    "description": "A holographic interface displaying information about the multiverse",
+                    "readable": true,
+                    "text": "Nexus System: Multiple universes detected. Universe Prime is the original stable reality. All other universes are derivatives. Access requires verification of quantum knowledge."
+                },
+                {
+                    "id": "stable_universe_gateway",
+                    "name": "stable universe gateway",
+                    "description": "A magnificent golden portal leading to Universe Prime. A security system blocks entry with three questions glowing in the air.",
+                    "locked": true,
+                    "lock_type": "password",
+                    "password_questions": [
+                        {
+                            "question": "Who discovered multiverse travel?",
+                            "answer": "dr chen",
+                            "hint": "Check the research notes in the bedroom"
+                        },
+                        {
+                            "question": "Which universe is stable?",
+                            "answer": "universe prime",
+                            "hint": "Look at the quantum journal and multiverse diagram"
+                        },
+                        {
+                            "question": "What connects all realities?",
+                            "answer": "quantum entanglement",
+                            "hint": "The portal manual explains the nature of reality"
+                        }
+                    ],
+                    "direction": "west",
+                    "leads_to": "universe_prime",
+                    "aliases": [
+                        "gateway",
+                        "golden portal",
+                        "west"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "universe_prime",
+            "name": "Universe Prime Stable Reality",
+            "description": "You step through into Universe Prime and immediately feel the difference. Reality is solid, stable, and permanent. You're in a beautiful apartment with sunlight streaming through windows. The air is calm. No flickering, no phasing, no instability. You've found the one true stable universe. A door leads outside to freedom.",
+            "items": [
+                {
+                    "id": "stable_window",
+                    "name": "apartment window",
+                    "description": "A window showing a peaceful, stable city outside under a clear blue sky"
+                },
+                {
+                    "id": "reality_anchor",
+                    "name": "quantum reality anchor",
+                    "description": "A device that keeps this universe stable and prevents dimensional collapse",
+                    "readable": true,
+                    "text": "Reality Anchor Status: Universe Prime - Fully Stable - Permanent Reality Confirmed"
+                }
+            ],
+            "exits": [],
+            "is_goal": true,
+            "win_message": "You've successfully escaped the collapsing Universe 63 and reached Universe Prime! The stable reality welcomes you. Behind you, the portal closes, sealing off the unstable universes forever. You're safe now in the one true stable reality. Dr Chen's research has saved you. You win!"
+        }
+    ]
+}

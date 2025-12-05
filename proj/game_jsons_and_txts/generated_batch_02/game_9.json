@@ -1,0 +1,220 @@
+{
+    "theme": "Space Elevator Control Room",
+    "title": "Space Elevator Control Room Adventure #9",
+    "goal": "Solve the puzzles, achieve the main objective, and escape.",
+    "starting_room": "main_control_room",
+    "rooms": [
+        {
+            "id": "main_control_room",
+            "name": "Main Control Room",
+            "description": "A sleek control room filled with holographic displays and blinking control panels. Red emergency lights pulse rhythmically. Through the massive observation window, you see Earth far below and the tether stretching up into space. The elevator has stopped mid-transit, and all systems are locked down. A maintenance locker and main console dominate the room.",
+            "items": [
+                {
+                    "id": "main_console",
+                    "name": "main control console",
+                    "description": "The primary control station with multiple compartments and a locked central panel",
+                    "subcontainers": [
+                        {
+                            "id": "top_compartment",
+                            "name": "top compartment",
+                            "locked": false,
+                            "contains": [
+                                "operations_manual"
+                            ]
+                        },
+                        {
+                            "id": "secure_compartment",
+                            "name": "secure compartment",
+                            "locked": true,
+                            "lock_type": "combination",
+                            "combination": "36000",
+                            "contains": [
+                                "access_keycard"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "operations_manual",
+                    "name": "elevator operations manual",
+                    "description": "A digital manual displaying technical specifications",
+                    "readable": true,
+                    "text": "SPACE ELEVATOR SPECIFICATIONS: Total height: 36,000 kilometers from ground station to counterweight. Maximum capacity: 150 metric tons. Climb speed: 200 km/h. Emergency override code is based on the total height in kilometers."
+                },
+                {
+                    "id": "access_keycard",
+                    "name": "engineering access keycard",
+                    "description": "A magnetic keycard labeled 'Engineering Bay Access - Chief Engineer Rodriguez'"
+                },
+                {
+                    "id": "maintenance_locker",
+                    "name": "emergency maintenance locker",
+                    "description": "A tall metal locker with safety equipment and tools",
+                    "searchable": true,
+                    "contains": [
+                        "crew_roster"
+                    ]
+                },
+                {
+                    "id": "crew_roster",
+                    "name": "crew identification roster",
+                    "description": "A laminated card listing the current crew members",
+                    "readable": true,
+                    "text": "CURRENT CREW: Chief Engineer Maria Rodriguez - Systems Maintenance. Operator Chen Wei - Traffic Control. Safety Officer James Park - Emergency Protocols. Station Commander: Dr. Sarah Mitchell."
+                },
+                {
+                    "id": "observation_window",
+                    "name": "observation window",
+                    "description": "A massive reinforced window showing the view of Earth and the elevator tether",
+                    "readable": true,
+                    "text": "Through the window, you can see Earth's blue oceans and white clouds far below. The carbon nanotube tether stretches both up toward the orbital station and down toward the ground anchor point."
+                },
+                {
+                    "id": "engineering_bay_door",
+                    "name": "engineering bay door",
+                    "description": "A sealed door with a card reader and warning lights. It leads to the engineering section.",
+                    "locked": true,
+                    "key_required": "access_keycard",
+                    "direction": "east",
+                    "leads_to": "engineering_bay",
+                    "aliases": [
+                        "door",
+                        "east"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "engineering_bay",
+            "name": "Engineering Bay",
+            "description": "A technical workspace filled with diagnostic equipment, tool racks, and monitoring stations. Cables and conduits line the walls. Multiple screens display system status readouts, all showing critical errors. A large equipment cabinet stands against one wall, and a workstation desk is covered with technical documents. The escape pod access hatch is visible on the north wall.",
+            "items": [
+                {
+                    "id": "equipment_cabinet",
+                    "name": "engineering equipment cabinet",
+                    "description": "A secure cabinet containing critical tools and components",
+                    "locked": true,
+                    "key_required": "cabinet_key",
+                    "contains": [
+                        "emergency_protocol"
+                    ]
+                },
+                {
+                    "id": "emergency_protocol",
+                    "name": "emergency evacuation protocol",
+                    "description": "A red folder containing evacuation procedures",
+                    "readable": true,
+                    "text": "EMERGENCY EVACUATION PROTOCOL: In case of critical system failure, proceed to escape pod bay. Access requires command authorization. Security questions verify identity: Who commands this station? What system failed? Where is the ground anchor?"
+                },
+                {
+                    "id": "workstation_desk",
+                    "name": "engineer's workstation",
+                    "description": "A desk cluttered with technical diagrams and maintenance logs",
+                    "subcontainers": [
+                        {
+                            "id": "left_drawer",
+                            "name": "left drawer",
+                            "locked": false,
+                            "contains": [
+                                "maintenance_log"
+                            ]
+                        },
+                        {
+                            "id": "right_drawer",
+                            "name": "right drawer",
+                            "locked": false,
+                            "contains": [
+                                "cabinet_key"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "maintenance_log",
+                    "name": "chief engineer's log",
+                    "description": "A digital log with recent maintenance entries",
+                    "readable": true,
+                    "text": "Engineer Rodriguez Log - Day 247: Detected anomaly in the tether stabilization system. The ground anchor point at Quito Base is showing stress indicators. Running full diagnostics. If this escalates, we may need to evacuate."
+                },
+                {
+                    "id": "cabinet_key",
+                    "name": "small cabinet key",
+                    "description": "A key attached to a tag reading 'Equipment Cabinet - Rodriguez'"
+                },
+                {
+                    "id": "diagnostic_screen",
+                    "name": "system diagnostic screen",
+                    "description": "A large monitor displaying critical system alerts",
+                    "readable": true,
+                    "text": "CRITICAL ALERT: Tether stabilization system failure detected. Cause: Structural stress at ground anchor - Quito Base. Recommendation: Immediate evacuation. All personnel proceed to escape pods."
+                },
+                {
+                    "id": "tool_rack",
+                    "name": "tool rack",
+                    "description": "A wall-mounted rack with various engineering tools",
+                    "searchable": true,
+                    "contains": []
+                },
+                {
+                    "id": "escape_pod_access_hatch",
+                    "name": "escape pod access hatch",
+                    "description": "A reinforced hatch with a security terminal. Three verification questions are displayed on the screen.",
+                    "locked": true,
+                    "lock_type": "password",
+                    "password_questions": [
+                        {
+                            "question": "Who commands this station?",
+                            "answer": "dr sarah mitchell",
+                            "hint": "Check the crew roster in the main control room"
+                        },
+                        {
+                            "question": "What system failed?",
+                            "answer": "tether stabilization",
+                            "hint": "Look at the diagnostic screen and maintenance logs"
+                        },
+                        {
+                            "question": "Where is the ground anchor?",
+                            "answer": "quito base",
+                            "hint": "The maintenance log mentions the ground anchor location"
+                        }
+                    ],
+                    "direction": "north",
+                    "leads_to": "escape_pod_bay",
+                    "aliases": [
+                        "hatch",
+                        "north"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "escape_pod_bay",
+            "name": "Escape Pod Bay",
+            "description": "You've made it to the escape pod bay! A sleek emergency escape pod sits in its launch cradle, its systems humming with power. Through the pod's window, you can see the curve of Earth below. The pod's hatch is open and inviting. Status lights show green - the pod is ready for immediate launch.",
+            "items": [
+                {
+                    "id": "escape_pod",
+                    "name": "emergency escape pod",
+                    "description": "A streamlined pod designed for emergency evacuation, capable of safely returning to Earth"
+                },
+                {
+                    "id": "launch_console",
+                    "name": "pod launch console",
+                    "description": "A control panel with a large green launch button and status displays",
+                    "readable": true,
+                    "text": "ESCAPE POD STATUS: All systems nominal. Trajectory calculated. Destination: Emergency landing zone, Pacific Ocean. Launch sequence ready. Press green button to initiate."
+                },
+                {
+                    "id": "safety_harness",
+                    "name": "safety harness",
+                    "description": "A secure harness inside the escape pod for the journey home"
+                }
+            ],
+            "exits": [],
+            "is_goal": true,
+            "win_message": "You strap into the escape pod and initiate the launch sequence! The pod detaches from the space elevator with a hiss of compressed air. Thrusters fire, and you begin your descent toward Earth. Through the window, you watch the massive elevator tether recede into the distance. The pod's heat shield glows as you enter the atmosphere. Parachutes deploy, and you splash down safely in the Pacific Ocean. Rescue ships are already on their way. You've successfully escaped the failing space elevator! You win!"
+        }
+    ]
+}

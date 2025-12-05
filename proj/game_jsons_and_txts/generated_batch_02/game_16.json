@@ -1,0 +1,240 @@
+{
+  "theme": "Interdimensional Post Office",
+  "title": "Interdimensional Post Office Adventure #16",
+  "goal": "Solve the puzzles, achieve the main objective, and escape.",
+  "starting_room": "sorting_facility",
+  "rooms": [
+    {
+      "id": "sorting_facility",
+      "name": "Dimensional Sorting Facility",
+      "description": "A vast warehouse filled with floating packages wrapped in shimmering paper. Conveyor belts move parcels through glowing portals. Sorting machines hum and beep as they scan dimensional addresses. A large control desk sits in the center, and storage lockers line the walls. The air crackles with interdimensional energy.",
+      "items": [
+        {
+          "id": "control_desk",
+          "name": "postal control desk",
+          "description": "A desk covered in delivery manifests and dimensional routing charts. Three drawers are built into the front.",
+          "subcontainers": [
+            {
+              "id": "top_drawer",
+              "name": "top drawer",
+              "locked": false,
+              "contains": [
+                "supervisor_memo"
+              ]
+            },
+            {
+              "id": "middle_drawer",
+              "name": "middle drawer",
+              "locked": true,
+              "lock_type": "combination",
+              "combination": "742",
+              "contains": [
+                "storage_keycard"
+              ]
+            },
+            {
+              "id": "bottom_drawer",
+              "name": "bottom drawer",
+              "locked": false,
+              "contains": []
+            }
+          ]
+        },
+        {
+          "id": "supervisor_memo",
+          "name": "supervisor memorandum",
+          "description": "An official memo from the Postal Supervisor",
+          "readable": true,
+          "text": "MEMO: All postal workers must memorize dimensional coordinates. Priority package for Dimension 7, Sector 4, Zone 2 must be delivered today. Storage locker combination is the coordinates in order. Remember: You are Postal Agent Rivera, assigned to the Transit Hub."
+        },
+        {
+          "id": "storage_keycard",
+          "name": "dimensional storage keycard",
+          "description": "A glowing keycard that grants access to secure storage areas"
+        },
+        {
+          "id": "sorting_machine",
+          "name": "automated sorting machine",
+          "description": "A complex machine with blinking lights and a small display screen",
+          "readable": true,
+          "text": "SORTING PROTOCOL: Packages must be routed through the Transit Hub before final delivery. Emergency packages go to the Delivery Portal. Agent Rivera is authorized for all dimensional deliveries."
+        },
+        {
+          "id": "storage_locker",
+          "name": "secure storage locker",
+          "description": "A reinforced locker with a keycard reader and biometric scanner",
+          "locked": true,
+          "key_required": "storage_keycard",
+          "contains": [
+            "priority_package",
+            "delivery_manifest"
+          ]
+        },
+        {
+          "id": "priority_package",
+          "name": "urgent priority package",
+          "description": "A glowing package marked URGENT with dimensional coordinates 7-4-2 stamped on it"
+        },
+        {
+          "id": "delivery_manifest",
+          "name": "delivery manifest document",
+          "description": "A detailed shipping document with delivery instructions",
+          "readable": true,
+          "text": "DELIVERY MANIFEST: Package must be delivered to Dimension 7-4-2, recipient name: Ambassador Zyx. Contents: Temporal Stabilizer. Delivery location: The Nexus Chamber. Handle with extreme care."
+        },
+        {
+          "id": "bulletin_board",
+          "name": "employee bulletin board",
+          "description": "A board covered with notices and postal regulations",
+          "searchable": true,
+          "contains": [
+            "training_guide"
+          ]
+        },
+        {
+          "id": "training_guide",
+          "name": "postal training guide",
+          "description": "A handbook for new postal workers",
+          "readable": true,
+          "text": "TRAINING GUIDE: All deliveries must pass through the Transit Hub. The hub connects all dimensions. Remember your assignment location and recipient names for security clearance."
+        },
+        {
+          "id": "transit_hub_entrance",
+          "name": "transit hub entrance",
+          "description": "A shimmering doorway leading to the interdimensional transit hub",
+          "locked": false,
+          "direction": "north",
+          "leads_to": "transit_hub",
+          "aliases": [
+            "entrance",
+            "north"
+          ]
+        }
+      ],
+      "exits": []
+    },
+    {
+      "id": "transit_hub",
+      "name": "Interdimensional Transit Hub",
+      "description": "A circular chamber with dozens of glowing portals arranged around the walls, each leading to a different dimension. Holographic signs display dimensional coordinates. In the center stands a massive routing console. The walls are decorated with portraits of famous postal workers throughout the multiverse. A secure checkpoint blocks access to the delivery portal.",
+      "items": [
+        {
+          "id": "routing_console",
+          "name": "central routing console",
+          "description": "A complex control panel with screens showing active dimensional routes",
+          "readable": true,
+          "text": "ACTIVE ROUTES: Dimension 7-4-2 portal is currently active. Delivery window closes in 1 hour. Route through Delivery Portal for final destination: The Nexus Chamber."
+        },
+        {
+          "id": "portrait_martinez",
+          "name": "portrait of Agent Martinez",
+          "description": "A holographic portrait of a decorated postal agent",
+          "readable": true,
+          "text": "Agent Martinez - Legendary postal worker. First to deliver to Dimension 7-4-2. Known for saying the Transit Hub is the heart of all deliveries."
+        },
+        {
+          "id": "portrait_chen",
+          "name": "portrait of Supervisor Chen",
+          "description": "A portrait of a stern-looking supervisor",
+          "readable": true,
+          "text": "Supervisor Chen - Head of Operations. Established the security protocols. Requires all agents to know their assignment location for clearance."
+        },
+        {
+          "id": "portrait_ambassador",
+          "name": "portrait of Ambassador Zyx",
+          "description": "A portrait of an alien dignitary",
+          "readable": true,
+          "text": "Ambassador Zyx - Diplomatic representative from Dimension 7-4-2. Resides in the Nexus Chamber. Awaiting critical temporal stabilizer delivery."
+        },
+        {
+          "id": "information_kiosk",
+          "name": "information kiosk terminal",
+          "description": "A terminal providing information about dimensional deliveries",
+          "searchable": true,
+          "contains": [
+            "security_notice"
+          ]
+        },
+        {
+          "id": "security_notice",
+          "name": "security clearance notice",
+          "description": "An official security document",
+          "readable": true,
+          "text": "SECURITY NOTICE: Access to Delivery Portal requires verification. Agents must confirm: Where do all deliveries pass through? What is your assignment location? Who is receiving the priority package?"
+        },
+        {
+          "id": "supply_cabinet",
+          "name": "postal supply cabinet",
+          "description": "A cabinet containing various postal supplies and equipment",
+          "searchable": true,
+          "contains": [
+            "dimensional_scanner"
+          ]
+        },
+        {
+          "id": "dimensional_scanner",
+          "name": "handheld dimensional scanner",
+          "description": "A device used to verify package destinations and dimensional coordinates"
+        },
+        {
+          "id": "dimensional_security_checkpoint",
+          "name": "dimensional security checkpoint",
+          "description": "A heavily secured gateway with a verification terminal. Three security questions must be answered to proceed.",
+          "locked": true,
+          "lock_type": "password",
+          "password_questions": [
+            {
+              "question": "Where do all deliveries pass through?",
+              "answer": "transit hub",
+              "hint": "Check the training guide and Agent Martinez's portrait"
+            },
+            {
+              "question": "What is your assignment location?",
+              "answer": "transit hub",
+              "hint": "The supervisor memo states your assignment"
+            },
+            {
+              "question": "Who is receiving the priority package?",
+              "answer": "ambassador zyx",
+              "hint": "Check the delivery manifest and the portraits"
+            }
+          ],
+          "direction": "east",
+          "leads_to": "delivery_portal",
+          "aliases": [
+            "checkpoint",
+            "east"
+          ]
+        }
+      ],
+      "exits": []
+    },
+    {
+      "id": "delivery_portal",
+      "name": "Final Delivery Portal",
+      "description": "You have reached the Delivery Portal chamber! A massive swirling vortex of energy fills the room, showing glimpses of the Nexus Chamber in Dimension 7-4-2. Ambassador Zyx appears in holographic form, waiting to receive the urgent temporal stabilizer. Delivery completion scanners line the walls, ready to confirm successful delivery.",
+      "items": [
+        {
+          "id": "dimensional_vortex",
+          "name": "dimensional delivery vortex",
+          "description": "A stable portal directly to the Nexus Chamber in Dimension 7-4-2"
+        },
+        {
+          "id": "holographic_ambassador",
+          "name": "hologram of Ambassador Zyx",
+          "description": "A shimmering holographic projection of the package recipient",
+          "readable": true,
+          "text": "Ambassador Zyx: Thank you, Postal Agent Rivera! The temporal stabilizer has arrived just in time. Your dedication to interdimensional postal service is commendable. Delivery confirmed!"
+        },
+        {
+          "id": "completion_terminal",
+          "name": "delivery completion terminal",
+          "description": "A terminal displaying delivery confirmation and mission success status"
+        }
+      ],
+      "exits": [],
+      "is_goal": true,
+      "win_message": "SUCCESS! You have successfully delivered the priority package to Ambassador Zyx in Dimension 7-4-2! The temporal stabilizer is now in the right hands, and the dimensional crisis has been averted. Your exemplary service as Postal Agent Rivera has saved the day. The Interdimensional Post Office commends your dedication! You win!"
+    }
+  ]
+}

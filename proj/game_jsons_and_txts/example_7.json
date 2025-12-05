@@ -95,6 +95,7 @@
           "name": "door to balcony",
           "description": "A creaking door leading south to the Phantom Balcony.",
           "direction": "south",
+          "key_required": "spotlight_crystal",
           "leads_to": "phantom_balcony"
         }
       ],
@@ -104,21 +105,7 @@
       "id": "phantom_balcony",
       "name": "Phantom Balcony",
       "description": "A dim balcony overlooking the theatre. A ghostly figure sits at the railing.",
-      "items": [
-        {
-          "id": "phantom",
-          "name": "theatre phantom",
-          "description": "A ghost asking a single question.",
-          "locked": true,
-          "lock_type": "password",
-          "password_questions": [
-            {
-              "question": "How many acts were in the final show?",
-              "answer": "three"
-            }
-          ]
-        }
-      ],
+      "items": [],
       "exits": [],
       "is_goal": true,
       "win_message": "The theatre lights blaze to life one last time as the curse lifts. You escape the haunted stage forever. You win!"

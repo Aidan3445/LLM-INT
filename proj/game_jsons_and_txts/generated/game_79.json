@@ -1,0 +1,221 @@
+{
+    "theme": "Floating Sky Temple",
+    "title": "Floating Sky Temple Adventure #79",
+    "goal": "Solve the puzzles, achieve the main objective, and escape.",
+    "starting_room": "temple_courtyard",
+    "rooms": [
+        {
+            "id": "temple_courtyard",
+            "name": "Temple Courtyard",
+            "description": "You stand in an open courtyard suspended high above the clouds. White marble tiles reflect the brilliant blue sky. Wind chimes sing in the breeze, and prayer flags flutter from tall poles. To the east, massive bronze doors lead deeper into the temple. Wisps of cloud drift past the edges of the platform.",
+            "items": [
+                {
+                    "id": "stone_fountain",
+                    "name": "stone fountain",
+                    "description": "A circular fountain with water flowing upward in defiance of gravity. Ancient symbols are carved around its base.",
+                    "readable": true,
+                    "text": "Carved inscription: 'The sacred numbers guide the faithful - Sun brings 8 rays, Moon shows 4 phases, Stars number 12 in the zodiac.'"
+                },
+                {
+                    "id": "prayer_wheel",
+                    "name": "large prayer wheel",
+                    "description": "A massive bronze prayer wheel mounted on a stone pedestal. It spins slowly in the wind.",
+                    "searchable": true,
+                    "contains": [
+                        "temple_scroll"
+                    ]
+                },
+                {
+                    "id": "temple_scroll",
+                    "name": "ancient temple scroll",
+                    "description": "A weathered scroll with faded writing",
+                    "readable": true,
+                    "text": "Temple Record: This sanctuary was founded by Master Zephyr, the first Sky Monk. The sacred relic rests in the Shrine of Eternal Wind. Only those who understand the temple's wisdom may enter."
+                },
+                {
+                    "id": "offering_table",
+                    "name": "wooden offering table",
+                    "description": "A low table with three compartments for offerings and sacred items",
+                    "subcontainers": [
+                        {
+                            "id": "left_compartment",
+                            "name": "left compartment",
+                            "locked": false,
+                            "contains": [
+                                "incense_note"
+                            ]
+                        },
+                        {
+                            "id": "center_compartment",
+                            "name": "center compartment",
+                            "locked": true,
+                            "lock_type": "combination",
+                            "combination": "8412",
+                            "contains": [
+                                "jade_key"
+                            ]
+                        },
+                        {
+                            "id": "right_compartment",
+                            "name": "right compartment",
+                            "locked": false,
+                            "contains": []
+                        }
+                    ]
+                },
+                {
+                    "id": "incense_note",
+                    "name": "incense master's note",
+                    "description": "A small note written in elegant calligraphy",
+                    "readable": true,
+                    "text": "Reminder to acolytes: The center compartment opens with the sacred numbers - Sun, Moon, Stars in that order. Master Zephyr taught us that wind carries all wisdom to the Shrine of Eternal Wind."
+                },
+                {
+                    "id": "jade_key",
+                    "name": "jade key",
+                    "description": "A key carved from green jade, warm to the touch"
+                },
+                {
+                    "id": "meditation_cushions",
+                    "name": "meditation cushions",
+                    "description": "A circle of silk cushions arranged for meditation",
+                    "searchable": true,
+                    "contains": []
+                },
+                {
+                    "id": "bronze_temple_doors",
+                    "name": "bronze temple doors",
+                    "description": "Massive doors decorated with clouds and celestial symbols. A jade lock secures them.",
+                    "locked": true,
+                    "key_required": "jade_key",
+                    "direction": "east",
+                    "leads_to": "meditation_hall",
+                    "aliases": [
+                        "doors",
+                        "east"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "meditation_hall",
+            "name": "Meditation Hall",
+            "description": "A serene hall with polished wooden floors and walls lined with tapestries depicting sky monks in meditation. Shafts of sunlight pierce through high windows, illuminating floating dust motes. The air smells of sandalwood. Three large statues stand along the walls, and an ornate door blocks the northern passage.",
+            "items": [
+                {
+                    "id": "statue_zephyr",
+                    "name": "statue of Master Zephyr",
+                    "description": "A marble statue of a serene monk in flowing robes",
+                    "readable": true,
+                    "text": "Plaque reads: 'Master Zephyr - Founder of the Sky Temple. First to achieve enlightenment among the clouds. His teachings guide us still.'"
+                },
+                {
+                    "id": "statue_cloud_dancer",
+                    "name": "statue of Cloud Dancer",
+                    "description": "A statue depicting a monk in a graceful pose",
+                    "readable": true,
+                    "text": "Plaque reads: 'Cloud Dancer - Master of the Wind Arts. She discovered the sacred relic in the Celestial Peaks and brought it to this temple.'"
+                },
+                {
+                    "id": "statue_storm_sage",
+                    "name": "statue of Storm Sage",
+                    "description": "A weathered statue of an elderly monk with a long beard",
+                    "readable": true,
+                    "text": "Plaque reads: 'Storm Sage - Keeper of Ancient Knowledge. He recorded that the relic was found in the Celestial Peaks and must be protected in the shrine.'"
+                },
+                {
+                    "id": "wooden_cabinet",
+                    "name": "lacquered wooden cabinet",
+                    "description": "An ornate cabinet with intricate cloud carvings",
+                    "locked": true,
+                    "key_required": "jade_key",
+                    "contains": [
+                        "temple_history"
+                    ]
+                },
+                {
+                    "id": "temple_history",
+                    "name": "temple history book",
+                    "description": "A leather-bound book with gold lettering",
+                    "readable": true,
+                    "text": "Chapter 3: The Sacred Relic was discovered by Cloud Dancer in the Celestial Peaks. Master Zephyr decreed it should rest in the Shrine of Eternal Wind, where it remains to this day, protected by the wisdom of the temple."
+                },
+                {
+                    "id": "meditation_mat",
+                    "name": "silk meditation mat",
+                    "description": "A beautifully embroidered mat in the center of the hall",
+                    "searchable": true,
+                    "contains": [
+                        "wisdom_scroll"
+                    ]
+                },
+                {
+                    "id": "wisdom_scroll",
+                    "name": "scroll of wisdom",
+                    "description": "A scroll containing temple teachings",
+                    "readable": true,
+                    "text": "Teaching: To enter the sacred shrine, one must prove their understanding. Know who founded our order, where the relic was found, and where it now rests."
+                },
+                {
+                    "id": "ornate_shrine_door",
+                    "name": "ornate shrine door",
+                    "description": "A beautiful door inlaid with mother-of-pearl clouds. Three questions are inscribed on a bronze plate.",
+                    "locked": true,
+                    "lock_type": "password",
+                    "password_questions": [
+                        {
+                            "question": "Who founded the Sky Temple?",
+                            "answer": "master zephyr",
+                            "hint": "Check the statues and scrolls for the founder's name"
+                        },
+                        {
+                            "question": "Where was the sacred relic discovered?",
+                            "answer": "celestial peaks",
+                            "hint": "Read the temple history and statue inscriptions"
+                        },
+                        {
+                            "question": "Where does the relic rest now?",
+                            "answer": "shrine of eternal wind",
+                            "hint": "Multiple sources mention the relic's current location"
+                        }
+                    ],
+                    "direction": "north",
+                    "leads_to": "sacred_shrine",
+                    "aliases": [
+                        "door",
+                        "north"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "sacred_shrine",
+            "name": "Shrine of Eternal Wind",
+            "description": "You have entered the most sacred chamber of the Sky Temple! The room glows with soft golden light. In the center, on a pedestal of crystal, rests the Sacred Wind Orb - a sphere of swirling air and light that hovers without support. The walls are covered in ancient murals showing the temple's history. A gentle breeze circles the room, carrying the whispers of ancient monks. Through an archway, you can see a platform leading to freedom.",
+            "items": [
+                {
+                    "id": "wind_orb",
+                    "name": "Sacred Wind Orb",
+                    "description": "A magnificent sphere of pure wind energy, glowing with inner light and spinning slowly in the air"
+                },
+                {
+                    "id": "crystal_pedestal",
+                    "name": "crystal pedestal",
+                    "description": "A pedestal made of flawless crystal that seems to be made of solidified clouds"
+                },
+                {
+                    "id": "ancient_murals",
+                    "name": "temple murals",
+                    "description": "Beautiful paintings depicting the founding of the Sky Temple and the discovery of the Wind Orb",
+                    "readable": true,
+                    "text": "The murals show Master Zephyr establishing the temple in the clouds, Cloud Dancer finding the Wind Orb in the Celestial Peaks, and generations of monks protecting this sacred place."
+                }
+            ],
+            "exits": [],
+            "is_goal": true,
+            "win_message": "You have reached the Shrine of Eternal Wind and gazed upon the Sacred Wind Orb! As you stand in reverence, the orb pulses with energy and grants you its blessing. A pathway of solid cloud forms before you, leading safely down from the temple. You have proven yourself worthy of the Sky Temple's wisdom. You win!"
+        }
+    ]
+}

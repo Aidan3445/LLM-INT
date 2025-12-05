@@ -1,0 +1,257 @@
+{
+  "theme": "Vampire Manor",
+  "title": "Vampire Manor Adventure #47",
+  "goal": "Solve the puzzles, achieve the main objective, and escape.",
+  "starting_room": "grand_foyer",
+  "rooms": [
+    {
+      "id": "grand_foyer",
+      "name": "Grand Foyer",
+      "description": "A vast entrance hall with a vaulted ceiling disappearing into shadow. Moonlight streams through stained glass windows depicting scenes of ancient battles. A grand staircase curves upward, and portraits of pale aristocrats line the walls. The air is cold and smells of dust and decay. Cobwebs hang from an enormous chandelier overhead.",
+      "items": [
+        {
+          "id": "ornate_table",
+          "name": "ornate side table",
+          "description": "An elegant table with carved legs and a marble top",
+          "searchable": true,
+          "contains": [
+            "brass_key"
+          ]
+        },
+        {
+          "id": "brass_key",
+          "name": "brass key",
+          "description": "A small brass key with an ornate handle shaped like a bat"
+        },
+        {
+          "id": "portrait_vladimir",
+          "name": "portrait of Count Vladimir",
+          "description": "A large oil painting of a pale nobleman with piercing red eyes",
+          "readable": true,
+          "text": "Count Vladimir Dr\u0103cule\u0219ti - Born 1456, Master of this Manor. 'The night is eternal, and so am I.'"
+        },
+        {
+          "id": "portrait_elena",
+          "name": "portrait of Lady Elena",
+          "description": "A painting of an elegant woman in a crimson gown",
+          "readable": true,
+          "text": "Lady Elena - Beloved companion of the Count. 'She who walks in moonlight and dwells in the garden of eternal roses.'"
+        },
+        {
+          "id": "portrait_marcus",
+          "name": "portrait of Lord Marcus",
+          "description": "A dark portrait of a stern man holding a goblet",
+          "readable": true,
+          "text": "Lord Marcus - Keeper of the Blood Cellar. 'Guardian of the crimson vintage, protector of the ancient stores.'"
+        },
+        {
+          "id": "display_cabinet",
+          "name": "glass display cabinet",
+          "description": "A locked cabinet containing various artifacts and curiosities",
+          "locked": true,
+          "key_required": "brass_key",
+          "contains": [
+            "manor_history"
+          ]
+        },
+        {
+          "id": "manor_history",
+          "name": "manor history book",
+          "description": "A leather bound tome detailing the manor's dark past",
+          "readable": true,
+          "text": "The Manor was built in 1456 by Count Vladimir. The family crest bears three symbols: the bat, the rose, and the chalice. The Count's private study contains his most precious secrets, locked away from prying eyes."
+        },
+        {
+          "id": "heavy_oak_door",
+          "name": "heavy oak door",
+          "description": "A massive wooden door leading to the study, reinforced with iron bands",
+          "locked": false,
+          "direction": "east",
+          "leads_to": "vampire_study",
+          "aliases": [
+            "door",
+            "east"
+          ]
+        }
+      ],
+      "exits": []
+    },
+    {
+      "id": "vampire_study",
+      "name": "Count's Study",
+      "description": "A dimly lit study filled with ancient books and scrolls. A massive desk dominates the room, covered in papers written in archaic script. Candles flicker in wall sconces, casting dancing shadows. The walls are lined with bookshelves reaching to the ceiling. A strange symbol is carved into the floor, and a heavy iron chest sits in the corner. Stone stairs descend into darkness.",
+      "items": [
+        {
+          "id": "writing_desk",
+          "name": "mahogany writing desk",
+          "description": "An imposing desk with multiple drawers and compartments",
+          "subcontainers": [
+            {
+              "id": "top_drawer",
+              "name": "top drawer",
+              "locked": false,
+              "contains": [
+                "count_journal"
+              ]
+            },
+            {
+              "id": "middle_drawer",
+              "name": "middle drawer",
+              "locked": true,
+              "lock_type": "combination",
+              "combination": "1456",
+              "contains": [
+                "iron_key"
+              ]
+            },
+            {
+              "id": "bottom_drawer",
+              "name": "bottom drawer",
+              "locked": false,
+              "contains": []
+            }
+          ]
+        },
+        {
+          "id": "count_journal",
+          "name": "journal of Count Vladimir",
+          "description": "A personal diary written in elegant script",
+          "readable": true,
+          "text": "Entry from 1456: I have completed the manor this year. The crypt below holds the key to my immortality. Only those who know my true nature may enter: I am Vladimir, I rest in the Blood Cellar, and I am sustained by the crimson essence."
+        },
+        {
+          "id": "bookshelf",
+          "name": "ancient bookshelf",
+          "description": "Shelves packed with dusty tomes on dark subjects",
+          "searchable": true,
+          "contains": [
+            "vampire_codex"
+          ]
+        },
+        {
+          "id": "vampire_codex",
+          "name": "codex of the undead",
+          "description": "A forbidden text describing vampire lore",
+          "readable": true,
+          "text": "Chapter VII: The vampire sustains itself through blood, the crimson essence of life. They rest in crypts and cellars, away from the burning sun. Holy symbols and garlic are their bane."
+        },
+        {
+          "id": "ironbound_chest",
+          "name": "ironbound chest",
+          "description": "A heavy chest reinforced with iron bands and a sturdy lock",
+          "locked": true,
+          "key_required": "iron_key",
+          "contains": [
+            "silver_cross",
+            "crypt_map"
+          ]
+        },
+        {
+          "id": "iron_key",
+          "name": "iron key",
+          "description": "A large iron key with teeth shaped like fangs"
+        },
+        {
+          "id": "silver_cross",
+          "name": "silver cross",
+          "description": "A holy cross made of pure silver, warm to the touch"
+        },
+        {
+          "id": "crypt_map",
+          "name": "map of the crypt",
+          "description": "A detailed map showing the layout of the underground crypt",
+          "readable": true,
+          "text": "The crypt contains the Count's resting place and the secret passage to freedom. The escape tunnel leads to the forest beyond the manor walls. Only the silver cross can unlock the final barrier."
+        },
+        {
+          "id": "stone_staircase_to_crypt",
+          "name": "stone staircase to crypt",
+          "description": "Ancient stone steps descending into darkness. A stone door at the bottom is covered in carved questions.",
+          "locked": true,
+          "lock_type": "password",
+          "password_questions": [
+            {
+              "question": "What is the name of the manor's master?",
+              "answer": "vladimir",
+              "hint": "Check the portraits in the foyer and the journal"
+            },
+            {
+              "question": "Where does the master rest?",
+              "answer": "blood cellar",
+              "hint": "The portraits mention where Lord Marcus guards, and the journal confirms this"
+            },
+            {
+              "question": "What sustains the undead?",
+              "answer": "crimson essence",
+              "hint": "The vampire codex and journal both mention this"
+            }
+          ],
+          "direction": "south",
+          "leads_to": "ancient_crypt",
+          "aliases": [
+            "stairs",
+            "down",
+            "south"
+          ]
+        }
+      ],
+      "exits": []
+    },
+    {
+      "id": "ancient_crypt",
+      "name": "Ancient Crypt",
+      "description": "You have descended into the heart of the manor. The crypt is a vast underground chamber with stone sarcophagi lining the walls. In the center rests an ornate coffin on a raised platform. Torches burn with an eerie green flame. The air is thick with the scent of earth and age. On the far wall, a heavy door bears a cross-shaped indentation and promises escape.",
+      "items": [
+        {
+          "id": "ornate_coffin",
+          "name": "ornate coffin",
+          "description": "An elaborate coffin made of dark wood with silver inlays",
+          "searchable": true,
+          "contains": []
+        },
+        {
+          "id": "stone_sarcophagi",
+          "name": "ancient sarcophagi",
+          "description": "Stone tombs bearing the names of long-dead nobles",
+          "readable": true,
+          "text": "Here lie the ancestors of House Dr\u0103cule\u0219ti: Count Radu, Lady Mirela, Lord Stefan, and countless others who walked the night."
+        },
+        {
+          "id": "escape_door",
+          "name": "escape door",
+          "description": "A reinforced door with a cross-shaped lock. This is the way out of the manor.",
+          "locked": true,
+          "key_required": "silver_cross",
+          "direction": "north",
+          "leads_to": "freedom",
+          "aliases": [
+            "door",
+            "exit",
+            "north"
+          ]
+        }
+      ],
+      "exits": []
+    },
+    {
+      "id": "freedom",
+      "name": "Forest Path",
+      "description": "You emerge from a hidden tunnel into a moonlit forest. Fresh air fills your lungs as you leave the cursed manor behind. Through the trees, you can see the lights of a distant village. The nightmare is over, and you are free.",
+      "items": [
+        {
+          "id": "forest_path",
+          "name": "winding forest path",
+          "description": "A dirt path leading away from the manor toward civilization"
+        },
+        {
+          "id": "distant_village",
+          "name": "village lights",
+          "description": "Warm lights twinkling in the distance, promising safety and sanctuary"
+        }
+      ],
+      "exits": [],
+      "is_goal": true,
+      "win_message": "You have escaped the Vampire Manor! As you flee through the forest, you hear an inhuman shriek from the manor behind you. The silver cross in your hand grows warm, protecting you from any pursuit. You reach the village as dawn breaks, and the manor's dark influence fades. You have survived the night and uncovered the secrets of Count Vladimir. You win!"
+    }
+  ]
+}

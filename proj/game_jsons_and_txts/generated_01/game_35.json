@@ -1,0 +1,228 @@
+{
+    "theme": "Storm-Chaser Mobile Lab",
+    "title": "Storm-Chaser Mobile Lab Adventure #35",
+    "goal": "Solve the puzzles, achieve the main objective, and escape.",
+    "starting_room": "main_lab",
+    "rooms": [
+        {
+            "id": "main_lab",
+            "name": "Main Laboratory",
+            "description": "The interior of a high-tech mobile storm-chasing laboratory. Computer monitors display swirling radar images of a massive supercell. The vehicle rocks slightly as wind buffets the exterior. Equipment racks line the walls, and warning lights flash amber. Through reinforced windows, you see dark clouds and lightning. The air smells of ozone and electronics.",
+            "items": [
+                {
+                    "id": "computer_workstation",
+                    "name": "meteorological workstation",
+                    "description": "A bank of computers displaying real-time weather data and storm tracking information",
+                    "readable": true,
+                    "text": "STORM ALERT: Category 5 supercell detected. Wind speed: 180 mph. Mission Commander: Dr. Sarah Torres. Lead Meteorologist: Dr. James Chen. Vehicle commissioned: 2019. WARNING: Immediate evacuation recommended."
+                },
+                {
+                    "id": "equipment_rack",
+                    "name": "equipment storage rack",
+                    "description": "A metal rack holding various meteorological instruments and emergency supplies",
+                    "searchable": true,
+                    "contains": [
+                        "mission_log"
+                    ]
+                },
+                {
+                    "id": "mission_log",
+                    "name": "mission log tablet",
+                    "description": "A digital tablet with the current mission's log entries",
+                    "readable": true,
+                    "text": "Mission Log - Day 12: Dr. Torres has taken us closer than ever to the storm core. The data we're collecting is unprecedented. Emergency protocols stored in the secure cabinet. Access code is the year this lab was commissioned: 2019."
+                },
+                {
+                    "id": "secure_cabinet",
+                    "name": "secure equipment cabinet",
+                    "description": "A locked metal cabinet with a four-digit combination lock and emergency protocol labels",
+                    "locked": true,
+                    "lock_type": "combination",
+                    "combination": "2019",
+                    "contains": [
+                        "access_keycard",
+                        "emergency_manual"
+                    ]
+                },
+                {
+                    "id": "access_keycard",
+                    "name": "security access keycard",
+                    "description": "A magnetic keycard labeled 'DATA CENTER ACCESS - AUTHORIZED PERSONNEL ONLY'"
+                },
+                {
+                    "id": "emergency_manual",
+                    "name": "emergency procedures manual",
+                    "description": "A red binder containing evacuation protocols",
+                    "readable": true,
+                    "text": "EMERGENCY EVACUATION PROTOCOL: In case of extreme weather danger, proceed to the data center to secure critical research. Then access the emergency escape pod. Commander authorization required for pod deployment."
+                },
+                {
+                    "id": "supply_locker",
+                    "name": "supply locker",
+                    "description": "A tall locker containing safety equipment and supplies",
+                    "subcontainers": [
+                        {
+                            "id": "top_shelf",
+                            "name": "top shelf",
+                            "locked": false,
+                            "contains": [
+                                "weather_radio"
+                            ]
+                        },
+                        {
+                            "id": "bottom_shelf",
+                            "name": "bottom shelf",
+                            "locked": false,
+                            "contains": []
+                        }
+                    ]
+                },
+                {
+                    "id": "weather_radio",
+                    "name": "emergency weather radio",
+                    "description": "A handheld radio receiving severe weather alerts",
+                    "readable": true,
+                    "text": "ALERT: Tornado warning in effect. Multiple vortices detected. All storm-chaser units advised to evacuate immediately. Seek shelter in reinforced structures."
+                },
+                {
+                    "id": "reinforced_door_to_data_center",
+                    "name": "reinforced door to data center",
+                    "description": "A heavy steel door with a card reader, leading to the data storage and analysis center",
+                    "locked": true,
+                    "key_required": "access_keycard",
+                    "direction": "east",
+                    "leads_to": "data_center",
+                    "aliases": [
+                        "door",
+                        "east"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "data_center",
+            "name": "Data Center",
+            "description": "A cramped room filled with server racks and data storage systems. Cooling fans whir loudly. Multiple screens display atmospheric pressure readings, wind vectors, and 3D storm models. The vehicle shudders as hail pounds the exterior. Red emergency lights pulse rhythmically. A sealed hatch leads to the escape pod bay.",
+            "items": [
+                {
+                    "id": "server_rack",
+                    "name": "main server rack",
+                    "description": "A tall rack of servers storing years of storm research data",
+                    "readable": true,
+                    "text": "SERVER STATUS: All critical data backed up. Research archive contains 5 years of storm data collected by Dr. Torres and Dr. Chen. Location: Mobile Lab operates in Tornado Alley region."
+                },
+                {
+                    "id": "analysis_terminal",
+                    "name": "data analysis terminal",
+                    "description": "A computer terminal displaying complex atmospheric models",
+                    "readable": true,
+                    "text": "CURRENT ANALYSIS: Storm system shows unprecedented rotation. Dr. Chen's algorithms predict F5 tornado formation imminent. Recommend immediate evacuation to escape pod. Dr. Torres must authorize deployment."
+                },
+                {
+                    "id": "research_desk",
+                    "name": "research desk",
+                    "description": "A desk covered with printouts, charts, and a locked drawer",
+                    "subcontainers": [
+                        {
+                            "id": "desk_drawer",
+                            "name": "locked desk drawer",
+                            "locked": true,
+                            "lock_type": "combination",
+                            "combination": "180",
+                            "contains": [
+                                "pod_activation_key"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "pod_activation_key",
+                    "name": "escape pod activation key",
+                    "description": "A specialized key required to activate the emergency escape pod"
+                },
+                {
+                    "id": "wall_chart",
+                    "name": "storm classification chart",
+                    "description": "A laminated chart showing tornado and wind speed classifications",
+                    "readable": true,
+                    "text": "FUJITA SCALE: F0 (40-72 mph), F1 (73-112 mph), F2 (113-157 mph), F3 (158-206 mph), F4 (207-260 mph), F5 (261-318 mph). Current storm: 180 mph sustained winds - F3 classification."
+                },
+                {
+                    "id": "filing_cabinet",
+                    "name": "filing cabinet",
+                    "description": "A cabinet containing research papers and personnel files",
+                    "searchable": true,
+                    "contains": [
+                        "personnel_file"
+                    ]
+                },
+                {
+                    "id": "personnel_file",
+                    "name": "personnel records",
+                    "description": "Files on the storm-chasing team members",
+                    "readable": true,
+                    "text": "TEAM ROSTER: Dr. Sarah Torres - Mission Commander, Storm Dynamics Specialist. Dr. James Chen - Lead Meteorologist, Data Analysis. The team operates in Tornado Alley, the most active severe weather region in North America."
+                },
+                {
+                    "id": "escape_pod_access_hatch",
+                    "name": "escape pod access hatch",
+                    "description": "A circular hatch with a security panel displaying three verification questions. Warning lights flash around its perimeter.",
+                    "locked": true,
+                    "lock_type": "password",
+                    "password_questions": [
+                        {
+                            "question": "Who is the mission commander?",
+                            "answer": "dr sarah torres",
+                            "hint": "Check the workstation display and personnel records"
+                        },
+                        {
+                            "question": "What region does the lab operate in?",
+                            "answer": "tornado alley",
+                            "hint": "The server rack and personnel file mention the operating region"
+                        },
+                        {
+                            "question": "What is the current wind speed in mph?",
+                            "answer": "180",
+                            "hint": "Check the storm alert on the workstation and the classification chart"
+                        }
+                    ],
+                    "direction": "north",
+                    "leads_to": "escape_pod_bay",
+                    "aliases": [
+                        "hatch",
+                        "north"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "escape_pod_bay",
+            "name": "Emergency Escape Pod Bay",
+            "description": "You've reached the escape pod! A reinforced capsule sits in its launch cradle, designed to withstand extreme weather. Through a small porthole, you see the massive tornado bearing down on your position. The pod's systems glow green, ready for immediate deployment. A countdown timer shows you have seconds to launch.",
+            "items": [
+                {
+                    "id": "escape_pod",
+                    "name": "emergency escape pod",
+                    "description": "A heavily armored capsule with independent power and life support systems"
+                },
+                {
+                    "id": "launch_console",
+                    "name": "pod launch console",
+                    "description": "The control panel for escape pod deployment, all systems showing green status lights"
+                },
+                {
+                    "id": "porthole_window",
+                    "name": "reinforced porthole",
+                    "description": "A small window showing the approaching tornado",
+                    "readable": true,
+                    "text": "Through the porthole, you see the massive funnel cloud, debris swirling in its vortex. Lightning flashes illuminate the dark wall cloud. You need to launch NOW!"
+                }
+            ],
+            "exits": [],
+            "is_goal": true,
+            "win_message": "SUCCESS! You activate the escape pod and strap in as the launch sequence initiates. The pod rockets away from the mobile lab just as the tornado engulfs it. Through the porthole, you watch the lab tumble through the air, but you're safe in the reinforced capsule. The pod's parachute deploys, and you drift to a safe landing miles away. You've survived the storm and escaped with your life! You win!"
+        }
+    ]
+}

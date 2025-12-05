@@ -1,0 +1,278 @@
+{
+    "theme": "Underground River Temple",
+    "title": "Underground River Temple Adventure #101",
+    "goal": "Solve the puzzles, achieve the main objective, and escape.",
+    "starting_room": "temple_entrance",
+    "rooms": [
+        {
+            "id": "temple_entrance",
+            "name": "Ancient Temple Entrance",
+            "description": "A massive stone entrance carved into the underground cavern wall. Torches flicker in iron sconces, casting dancing shadows on walls covered with ancient hieroglyphs. The air is cool and damp, and you can hear the distant sound of rushing water echoing through the passages. A heavy iron gate blocks the way forward.",
+            "items": [
+                {
+                    "id": "stone_altar",
+                    "name": "weathered stone altar",
+                    "description": "An ancient altar with carved symbols and a shallow basin",
+                    "searchable": true,
+                    "contains": [
+                        "copper_key"
+                    ]
+                },
+                {
+                    "id": "copper_key",
+                    "name": "ancient copper key",
+                    "description": "A key shaped like a water droplet, covered in green patina"
+                },
+                {
+                    "id": "offering_box",
+                    "name": "stone offering box",
+                    "description": "A locked stone box with intricate carvings of waves and fish",
+                    "locked": true,
+                    "key_required": "copper_key",
+                    "contains": [
+                        "temple_chronicle"
+                    ]
+                },
+                {
+                    "id": "temple_chronicle",
+                    "name": "temple chronicle tablet",
+                    "description": "A clay tablet with ancient writing",
+                    "readable": true,
+                    "text": "Chronicle of the River Temple: Built in the year 842 by High Priest Aquarius. The temple honors the three sacred guardians: the Serpent of the Deep, the Keeper of Currents, and the Spirit of the Spring. Only those who know the founding year may pass the first gate."
+                },
+                {
+                    "id": "wall_carvings",
+                    "name": "hieroglyphic wall carvings",
+                    "description": "Ancient carvings depicting temple rituals and water ceremonies",
+                    "readable": true,
+                    "text": "The carvings show priests performing rituals by an underground river. One section depicts the High Priest Aquarius holding a staff, with the date 842 carved prominently beneath his feet."
+                },
+                {
+                    "id": "supply_chest",
+                    "name": "explorer's supply chest",
+                    "description": "A wooden chest left by previous explorers, with two compartments",
+                    "subcontainers": [
+                        {
+                            "id": "top_compartment",
+                            "name": "top compartment",
+                            "locked": false,
+                            "contains": [
+                                "explorer_journal"
+                            ]
+                        },
+                        {
+                            "id": "bottom_compartment",
+                            "name": "bottom compartment",
+                            "locked": true,
+                            "lock_type": "combination",
+                            "combination": "842",
+                            "contains": [
+                                "torch",
+                                "rope"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "explorer_journal",
+                    "name": "explorer's journal",
+                    "description": "A leather journal with recent entries",
+                    "readable": true,
+                    "text": "Day 3: We've reached the temple entrance. The gate requires the founding year as a combination. Day 5: We found references to 842 everywhere. The High Priest's name was Aquarius. Day 7: We need to find the Crystal of Tides in the Sacred Vault to complete our expedition."
+                },
+                {
+                    "id": "torch",
+                    "name": "oil torch",
+                    "description": "A sturdy torch that provides light in dark passages"
+                },
+                {
+                    "id": "rope",
+                    "name": "coil of rope",
+                    "description": "Strong rope useful for climbing or securing items"
+                },
+                {
+                    "id": "heavy_iron_gate",
+                    "name": "heavy iron gate",
+                    "description": "A massive gate with a combination lock mechanism showing three rotating dials",
+                    "locked": true,
+                    "lock_type": "combination",
+                    "combination": "842",
+                    "direction": "north",
+                    "leads_to": "river_chamber",
+                    "aliases": [
+                        "gate",
+                        "north"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "river_chamber",
+            "name": "Underground River Chamber",
+            "description": "A vast cavern where an underground river flows through the center, its waters glowing with a faint blue luminescence. Ancient stone bridges cross the water, and carved pillars rise from floor to ceiling. The sound of rushing water fills the chamber. Three large statues stand along the walls, and a sealed door leads deeper into the temple.",
+            "items": [
+                {
+                    "id": "serpent_statue",
+                    "name": "statue of the Serpent",
+                    "description": "A towering statue of a coiled serpent with sapphire eyes",
+                    "readable": true,
+                    "text": "Inscription: 'I am the Serpent of the Deep, guardian of the temple's foundation. I dwell in the darkest waters where light cannot reach.'"
+                },
+                {
+                    "id": "keeper_statue",
+                    "name": "statue of the Keeper",
+                    "description": "A statue depicting a robed figure holding a staff with flowing water",
+                    "readable": true,
+                    "text": "Inscription: 'I am the Keeper of Currents, guardian of the temple's flow. My domain is the sacred river that runs through these halls.'"
+                },
+                {
+                    "id": "spirit_statue",
+                    "name": "statue of the Spirit",
+                    "description": "A graceful statue of a figure emerging from water",
+                    "readable": true,
+                    "text": "Inscription: 'I am the Spirit of the Spring, guardian of the temple's source. I protect the eternal wellspring from which all waters flow.'"
+                },
+                {
+                    "id": "stone_pedestal",
+                    "name": "carved stone pedestal",
+                    "description": "A pedestal in the center of the chamber with a locked compartment",
+                    "locked": true,
+                    "key_required": "silver_key",
+                    "contains": [
+                        "guardian_scroll"
+                    ]
+                },
+                {
+                    "id": "guardian_scroll",
+                    "name": "scroll of the guardians",
+                    "description": "An ancient scroll describing the temple's protectors",
+                    "readable": true,
+                    "text": "The Three Guardians: The Serpent dwells in the darkest waters. The Keeper watches over the sacred river. The Spirit protects the eternal wellspring. Together they guard the Crystal of Tides in the Sacred Vault."
+                },
+                {
+                    "id": "river_bank",
+                    "name": "rocky river bank",
+                    "description": "The edge of the glowing underground river",
+                    "searchable": true,
+                    "contains": [
+                        "silver_key"
+                    ]
+                },
+                {
+                    "id": "silver_key",
+                    "name": "silver key",
+                    "description": "A key made of tarnished silver with wave patterns etched into it"
+                },
+                {
+                    "id": "stone_table",
+                    "name": "ancient stone table",
+                    "description": "A table carved from a single piece of stone, with three drawers",
+                    "subcontainers": [
+                        {
+                            "id": "left_drawer",
+                            "name": "left drawer",
+                            "locked": false,
+                            "contains": [
+                                "ritual_instructions"
+                            ]
+                        },
+                        {
+                            "id": "center_drawer",
+                            "name": "center drawer",
+                            "locked": false,
+                            "contains": []
+                        },
+                        {
+                            "id": "right_drawer",
+                            "name": "right drawer",
+                            "locked": true,
+                            "lock_type": "combination",
+                            "combination": "333",
+                            "contains": [
+                                "crystal_key"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "ritual_instructions",
+                    "name": "ritual instruction tablet",
+                    "description": "A stone tablet with ceremonial instructions",
+                    "readable": true,
+                    "text": "Temple Ritual: To enter the Sacred Vault, one must answer the three sacred questions. The number of guardians (3) repeated thrice (333) unlocks the drawer containing the Crystal Key."
+                },
+                {
+                    "id": "crystal_key",
+                    "name": "crystal key",
+                    "description": "A translucent key that glows with inner light, shaped like a water crystal"
+                },
+                {
+                    "id": "sealed_vault_door",
+                    "name": "sealed vault door",
+                    "description": "A massive door carved with images of water and guardians. Three questions are inscribed on a bronze plaque.",
+                    "locked": true,
+                    "lock_type": "password",
+                    "password_questions": [
+                        {
+                            "question": "Who built this temple?",
+                            "answer": "high priest aquarius",
+                            "hint": "Check the temple chronicle and wall carvings in the entrance"
+                        },
+                        {
+                            "question": "Where does the Serpent dwell?",
+                            "answer": "darkest waters",
+                            "hint": "Read the inscription on the Serpent statue"
+                        },
+                        {
+                            "question": "What do the guardians protect?",
+                            "answer": "crystal of tides",
+                            "hint": "The explorer's journal and guardian scroll mention this"
+                        }
+                    ],
+                    "direction": "east",
+                    "leads_to": "sacred_vault",
+                    "aliases": [
+                        "door",
+                        "east"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "sacred_vault",
+            "name": "Sacred Vault of the River Temple",
+            "description": "You have entered the heart of the temple! The Sacred Vault is a circular chamber with walls of polished stone that shimmer like water. In the center, on a pedestal of pure crystal, rests the legendary Crystal of Tides - a massive gem that pulses with blue light and seems to contain an entire ocean within its depths. Ancient murals depicting the temple's glory cover the ceiling. A shaft of light from above illuminates a stairway leading to the surface.",
+            "items": [
+                {
+                    "id": "crystal_of_tides",
+                    "name": "Crystal of Tides",
+                    "description": "A magnificent crystal the size of a human head, containing swirling blue energy that looks like captured ocean waves"
+                },
+                {
+                    "id": "crystal_pedestal",
+                    "name": "crystal pedestal",
+                    "description": "A pedestal made of flawless crystal that seems to grow from the floor itself"
+                },
+                {
+                    "id": "temple_murals",
+                    "name": "ceiling murals",
+                    "description": "Beautiful paintings showing the temple's construction and the three guardians",
+                    "readable": true,
+                    "text": "The murals depict High Priest Aquarius founding the temple in 842, the three guardians being summoned to protect it, and the Crystal of Tides being placed in this vault as the temple's greatest treasure."
+                },
+                {
+                    "id": "treasure_chest",
+                    "name": "ornate treasure chest",
+                    "description": "A chest filled with ancient coins, jewels, and artifacts from the temple's glory days",
+                    "searchable": true,
+                    "contains": []
+                }
+            ],
+            "exits": [],
+            "is_goal": true,
+            "win_message": "You have discovered the legendary Crystal of Tides! As you lift the ancient artifact, the three guardian statues in the river chamber glow with approval. The crystal's power illuminates a hidden stairway leading to the surface. You have solved the mysteries of the Underground River Temple and claimed its greatest treasure. You win!"
+        }
+    ]
+}

@@ -1,0 +1,334 @@
+{
+    "theme": "Biohazard Quarantine Zone",
+    "title": "Biohazard Quarantine Zone Adventure #46",
+    "goal": "Solve the puzzles, achieve the main objective, and escape.",
+    "starting_room": "decontamination_airlock",
+    "rooms": [
+        {
+            "id": "decontamination_airlock",
+            "name": "Decontamination Airlock",
+            "description": "A sterile white chamber with harsh fluorescent lighting. Warning signs flash red on the walls: BIOHAZARD LEVEL 4 - CONTAINMENT BREACH. Decontamination showers line one wall, and hazmat suits hang on hooks. The air smells of disinfectant and ozone. Emergency klaxons echo in the distance.",
+            "items": [
+                {
+                    "id": "hazmat_locker",
+                    "name": "hazmat equipment locker",
+                    "description": "A tall metal locker containing protective gear and emergency supplies",
+                    "subcontainers": [
+                        {
+                            "id": "top_compartment",
+                            "name": "top compartment",
+                            "locked": false,
+                            "contains": [
+                                "facility_manual"
+                            ]
+                        },
+                        {
+                            "id": "bottom_compartment",
+                            "name": "bottom compartment",
+                            "locked": false,
+                            "contains": [
+                                "respirator_mask"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "facility_manual",
+                    "name": "facility operations manual",
+                    "description": "A laminated manual with emergency procedures",
+                    "readable": true,
+                    "text": "APEX BIOCONTAINMENT FACILITY - Established 2047. Director: Dr. Sarah Chen. Lead Virologist: Dr. Marcus Webb. In case of containment breach, all personnel must evacuate through the Emergency Evacuation Bay. Pathogen samples stored in Research Laboratory."
+                },
+                {
+                    "id": "respirator_mask",
+                    "name": "emergency respirator mask",
+                    "description": "A protective mask with fresh filters"
+                },
+                {
+                    "id": "security_desk",
+                    "name": "security checkpoint desk",
+                    "description": "A desk with monitors showing facility status and a locked drawer",
+                    "subcontainers": [
+                        {
+                            "id": "desk_drawer",
+                            "name": "locked desk drawer",
+                            "locked": true,
+                            "lock_type": "combination",
+                            "combination": "2047",
+                            "contains": [
+                                "level_two_keycard"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "level_two_keycard",
+                    "name": "level two security keycard",
+                    "description": "A magnetic keycard labeled RESEARCH LAB ACCESS"
+                },
+                {
+                    "id": "warning_poster",
+                    "name": "biohazard warning poster",
+                    "description": "A large poster with safety protocols and facility information",
+                    "readable": true,
+                    "text": "BIOHAZARD SAFETY PROTOCOLS: All personnel must wear protective equipment. Pathogen samples are stored in secure containment in the Research Laboratory. The combination to secure storage is the year this facility was established: 2047."
+                },
+                {
+                    "id": "wall_mounted_terminal",
+                    "name": "wall mounted terminal",
+                    "description": "A computer terminal displaying facility status",
+                    "readable": true,
+                    "text": "SYSTEM STATUS: Containment breach detected in Research Laboratory. Pathogen: Experimental Virus Strain X. Source: Research Laboratory Sample Storage. All personnel evacuate immediately. You are a Research Scientist assigned to this facility."
+                },
+                {
+                    "id": "decon_shower",
+                    "name": "decontamination shower",
+                    "description": "An automated shower system for removing contamination",
+                    "searchable": true,
+                    "contains": [
+                        "emergency_note"
+                    ]
+                },
+                {
+                    "id": "emergency_note",
+                    "name": "handwritten emergency note",
+                    "description": "A note hastily written on waterproof paper",
+                    "readable": true,
+                    "text": "If you're reading this, get to the Research Lab and find the secure storage key. The Containment Control Room has the only working emergency exit. You'll need to prove you know the facility details to unlock it. - Dr. Chen"
+                },
+                {
+                    "id": "research_laboratory_door",
+                    "name": "research laboratory door",
+                    "description": "A heavy airlock door with a card reader and biohazard warnings. Red lights flash around the frame.",
+                    "locked": true,
+                    "key_required": "level_two_keycard",
+                    "direction": "north",
+                    "leads_to": "research_laboratory",
+                    "aliases": [
+                        "door",
+                        "airlock",
+                        "north"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "research_laboratory",
+            "name": "Research Laboratory",
+            "description": "A state of the art laboratory in chaos. Broken containment vessels leak glowing green liquid. Microscopes and equipment are overturned. Specimen freezers line the walls, some with doors hanging open. Emergency lights cast everything in an eerie red glow. Biohazard symbols are everywhere.",
+            "items": [
+                {
+                    "id": "research_workstation",
+                    "name": "main research workstation",
+                    "description": "A lab bench covered with notes, samples, and equipment",
+                    "searchable": true,
+                    "contains": [
+                        "lab_journal"
+                    ]
+                },
+                {
+                    "id": "lab_journal",
+                    "name": "research lab journal",
+                    "description": "Dr. Webb's research journal with recent entries",
+                    "readable": true,
+                    "text": "Day 47: Virus Strain X is more aggressive than anticipated. Dr. Chen has ordered all samples secured in the Research Laboratory containment units. The key to secure storage is hidden in the specimen freezer. If containment fails, evacuation through the Emergency Evacuation Bay is the only option."
+                },
+                {
+                    "id": "specimen_freezer",
+                    "name": "specimen storage freezer",
+                    "description": "A large freezer unit with frost covering the door",
+                    "searchable": true,
+                    "contains": [
+                        "storage_key"
+                    ]
+                },
+                {
+                    "id": "storage_key",
+                    "name": "secure storage key",
+                    "description": "A key labeled SECURE CONTAINMENT STORAGE"
+                },
+                {
+                    "id": "containment_unit",
+                    "name": "broken containment unit",
+                    "description": "A shattered glass containment chamber with green residue",
+                    "readable": true,
+                    "text": "WARNING: Containment Unit 7 - Virus Strain X. Status: BREACHED. Source of contamination identified. Pathogen origin: Research Laboratory Sample Storage."
+                },
+                {
+                    "id": "secure_storage_cabinet",
+                    "name": "secure storage cabinet",
+                    "description": "A reinforced cabinet with a heavy lock and biohazard markings",
+                    "locked": true,
+                    "key_required": "storage_key",
+                    "contains": [
+                        "hazmat_suit",
+                        "evacuation_protocol"
+                    ]
+                },
+                {
+                    "id": "hazmat_suit",
+                    "name": "full body hazmat suit",
+                    "description": "A complete protective suit required for safe evacuation"
+                },
+                {
+                    "id": "evacuation_protocol",
+                    "name": "evacuation procedures document",
+                    "description": "Official evacuation instructions",
+                    "readable": true,
+                    "text": "EMERGENCY EVACUATION PROTOCOL: In case of containment breach, proceed to Containment Control Room. Emergency exit requires security verification. Questions verify: 1) Facility name? 2) Contamination source location? 3) Your role designation?"
+                },
+                {
+                    "id": "computer_terminal",
+                    "name": "laboratory computer terminal",
+                    "description": "A terminal displaying research data and facility information",
+                    "readable": true,
+                    "text": "APEX BIOCONTAINMENT FACILITY DATABASE: Current research projects include Virus Strain X pathogen studies. All Research Scientists must follow safety protocols. Director Dr. Chen oversees all operations from Containment Control Room."
+                },
+                {
+                    "id": "microscope_station",
+                    "name": "electron microscope station",
+                    "description": "An expensive microscope with sample slides scattered around",
+                    "searchable": true,
+                    "contains": [
+                        "sample_slide"
+                    ]
+                },
+                {
+                    "id": "sample_slide",
+                    "name": "pathogen sample slide",
+                    "description": "A glass slide with a contaminated sample"
+                },
+                {
+                    "id": "containment_control_room_door",
+                    "name": "containment control room door",
+                    "description": "A reinforced door leading to the control room. A keycard reader blinks red.",
+                    "locked": true,
+                    "key_required": "level_two_keycard",
+                    "direction": "east",
+                    "leads_to": "containment_control_room",
+                    "aliases": [
+                        "door",
+                        "east"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "containment_control_room",
+            "name": "Containment Control Room",
+            "description": "The facility's command center. Banks of monitors display containment status across all zones. A large window overlooks the research laboratory below. Emergency lighting bathes everything in red. The emergency evacuation door glows green on the far wall, but it's sealed with a security panel requiring verification.",
+            "items": [
+                {
+                    "id": "control_console",
+                    "name": "main control console",
+                    "description": "The primary control station with multiple screens and status displays",
+                    "readable": true,
+                    "text": "FACILITY STATUS: CRITICAL CONTAINMENT BREACH. Pathogen: Virus Strain X. Origin: Research Laboratory. All zones compromised. Emergency evacuation authorized. Director: Dr. Sarah Chen."
+                },
+                {
+                    "id": "directors_desk",
+                    "name": "facility director's desk",
+                    "description": "Dr. Chen's desk covered with reports and emergency plans",
+                    "searchable": true,
+                    "contains": [
+                        "directors_log"
+                    ]
+                },
+                {
+                    "id": "directors_log",
+                    "name": "director's personal log",
+                    "description": "Dr. Chen's private notes about the facility",
+                    "readable": true,
+                    "text": "Personal Log - Dr. Sarah Chen: The APEX Biocontainment Facility has served us well since 2047. But today, the Research Laboratory containment failed. Virus Strain X has breached. I'm sealing the emergency exit with security questions. Only authorized Research Scientists who know the facility can escape."
+                },
+                {
+                    "id": "facility_schematic",
+                    "name": "facility layout schematic",
+                    "description": "A detailed map of the entire facility",
+                    "readable": true,
+                    "text": "APEX BIOCONTAINMENT FACILITY LAYOUT: Decontamination Airlock (Entry), Research Laboratory (Pathogen Storage), Containment Control Room (Command Center), Emergency Evacuation Bay (Exit). Contamination source: Research Laboratory."
+                },
+                {
+                    "id": "security_monitor",
+                    "name": "security camera monitor",
+                    "description": "Screens showing various areas of the facility",
+                    "readable": true,
+                    "text": "Camera feeds show the Research Laboratory in chaos, the source of the outbreak clearly visible in the broken containment units. The Emergency Evacuation Bay remains secure and uncontaminated."
+                },
+                {
+                    "id": "emergency_supplies",
+                    "name": "emergency supply cabinet",
+                    "description": "A cabinet with emergency equipment and supplies",
+                    "searchable": true,
+                    "contains": [
+                        "oxygen_tank"
+                    ]
+                },
+                {
+                    "id": "oxygen_tank",
+                    "name": "portable oxygen tank",
+                    "description": "A backup oxygen supply for emergencies"
+                },
+                {
+                    "id": "evacuation_bay_security_door",
+                    "name": "evacuation bay security door",
+                    "description": "The sealed emergency exit with a security verification panel. Three questions are displayed on the screen that must be answered correctly.",
+                    "locked": true,
+                    "lock_type": "password",
+                    "password_questions": [
+                        {
+                            "question": "What is the facility name?",
+                            "answer": "apex biocontainment facility",
+                            "hint": "Check the facility manual and various documents throughout the facility"
+                        },
+                        {
+                            "question": "Where did the contamination originate?",
+                            "answer": "research laboratory",
+                            "hint": "Multiple sources mention where the pathogen breach occurred"
+                        },
+                        {
+                            "question": "What is your role designation?",
+                            "answer": "research scientist",
+                            "hint": "The wall terminal in the airlock identifies your position"
+                        }
+                    ],
+                    "direction": "south",
+                    "leads_to": "emergency_evacuation_bay",
+                    "aliases": [
+                        "exit",
+                        "door",
+                        "south"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "emergency_evacuation_bay",
+            "name": "Emergency Evacuation Bay",
+            "description": "You've made it to safety! A clean, pressurized chamber with bright white lights and fresh filtered air. Decontamination systems spray you with cleansing mist. Through the large bay doors, you can see emergency vehicles and hazmat teams waiting outside. You're safe now.",
+            "items": [
+                {
+                    "id": "decontamination_system",
+                    "name": "automated decontamination system",
+                    "description": "Sprayers releasing cleansing mist to remove any contamination"
+                },
+                {
+                    "id": "emergency_phone",
+                    "name": "emergency communication phone",
+                    "description": "A red phone connected to emergency response teams"
+                },
+                {
+                    "id": "bay_doors",
+                    "name": "large bay doors",
+                    "description": "Massive doors opening to the outside world and safety"
+                }
+            ],
+            "exits": [],
+            "is_goal": true,
+            "win_message": "SUCCESS! You've escaped the biohazard quarantine zone and reached the Emergency Evacuation Bay! The decontamination systems wash away any traces of contamination as emergency teams rush in to help. Thanks to your quick thinking and problem-solving skills, you survived the containment breach. The facility will be sealed, but you made it out alive. You win!"
+        }
+    ]
+}

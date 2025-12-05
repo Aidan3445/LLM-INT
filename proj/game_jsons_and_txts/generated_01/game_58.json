@@ -1,0 +1,256 @@
+{
+    "theme": "Dream Thief's Hideout",
+    "title": "Dream Thief's Hideout Adventure #58",
+    "goal": "Solve the puzzles, achieve the main objective, and escape.",
+    "starting_room": "dream_vault",
+    "rooms": [
+        {
+            "id": "dream_vault",
+            "name": "Dream Vault",
+            "description": "A dimly lit chamber with walls lined with crystalline bottles, each containing swirling, luminescent mist - stolen dreams. The air shimmers with an otherworldly quality, and whispers of forgotten memories echo softly. Strange symbols glow faintly on the floor, and the scent of lavender and nightshade fills the space. A heavy door to the north leads deeper into the hideout.",
+            "items": [
+                {
+                    "id": "crystal_shelf",
+                    "name": "crystal shelf",
+                    "description": "A shelf holding dozens of dream bottles, each labeled with a victim's name and date",
+                    "searchable": true,
+                    "contains": [
+                        "brass_key"
+                    ]
+                },
+                {
+                    "id": "brass_key",
+                    "name": "tarnished brass key",
+                    "description": "A small brass key with a crescent moon engraved on its handle"
+                },
+                {
+                    "id": "storage_cabinet",
+                    "name": "locked storage cabinet",
+                    "description": "A tall cabinet with three compartments, secured with various locks",
+                    "subcontainers": [
+                        {
+                            "id": "top_compartment",
+                            "name": "top compartment",
+                            "locked": false,
+                            "contains": [
+                                "thiefs_journal"
+                            ]
+                        },
+                        {
+                            "id": "middle_compartment",
+                            "name": "middle compartment",
+                            "locked": true,
+                            "lock_type": "combination",
+                            "combination": "1313",
+                            "contains": [
+                                "silver_key"
+                            ]
+                        },
+                        {
+                            "id": "bottom_compartment",
+                            "name": "bottom compartment",
+                            "locked": false,
+                            "contains": []
+                        }
+                    ]
+                },
+                {
+                    "id": "thiefs_journal",
+                    "name": "Dream Thief's journal",
+                    "description": "A leather-bound journal with entries about stolen dreams",
+                    "readable": true,
+                    "text": "Entry 13: My collection grows. I am Morpheus the Dream Thief, master of the sleeping realm. Tonight I stole 13 dreams at the stroke of midnight - my lucky number, 1313. The extraction chamber is where I process the dreams. Only those who understand my methods can escape."
+                },
+                {
+                    "id": "silver_key",
+                    "name": "ornate silver key",
+                    "description": "A decorative silver key with dream symbols etched into it"
+                },
+                {
+                    "id": "dream_bottle_display",
+                    "name": "display case of dream bottles",
+                    "description": "A glass case showcasing the most precious stolen dreams",
+                    "readable": true,
+                    "text": "Label: 'Premium Collection - Dreams extracted in the extraction chamber using the dream siphon device. Each dream carefully catalogued by Morpheus the Dream Thief.'"
+                },
+                {
+                    "id": "locked_chest",
+                    "name": "ornate locked chest",
+                    "description": "A chest decorated with moon and star motifs, secured with a brass lock",
+                    "locked": true,
+                    "key_required": "brass_key",
+                    "contains": [
+                        "instruction_manual"
+                    ]
+                },
+                {
+                    "id": "instruction_manual",
+                    "name": "dream extraction manual",
+                    "description": "A manual detailing the dream theft process",
+                    "readable": true,
+                    "text": "DREAM EXTRACTION PROTOCOL: The dream siphon device must be used in the extraction chamber. Operator: Morpheus the Dream Thief. Warning: Escape is only possible through the portal room, accessible to those who know the three secrets."
+                },
+                {
+                    "id": "glowing_symbols",
+                    "name": "glowing floor symbols",
+                    "description": "Mystical symbols drawn on the floor in luminescent paint",
+                    "readable": true,
+                    "text": "The symbols form a pattern around the words: 'Morpheus walks in dreams. The siphon steals what sleepers hold dear. The chamber processes all.'"
+                },
+                {
+                    "id": "heavy_vault_door",
+                    "name": "heavy vault door",
+                    "description": "A reinforced door with dream imagery carved into its surface, leading to the workshop",
+                    "locked": true,
+                    "key_required": "silver_key",
+                    "direction": "north",
+                    "leads_to": "thiefs_workshop",
+                    "aliases": [
+                        "door",
+                        "north"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "thiefs_workshop",
+            "name": "Dream Thief's Workshop",
+            "description": "A cluttered workshop filled with strange devices and alchemical equipment. A large dream siphon device dominates the center of the room, connected to tubes and crystalline chambers. Charts showing sleep cycles and dream patterns cover the walls. The extraction chamber hums with residual energy. A mysterious portal door glows softly to the east.",
+            "items": [
+                {
+                    "id": "dream_siphon",
+                    "name": "dream siphon device",
+                    "description": "A complex machine with tubes, crystals, and dials used to extract dreams from sleeping victims",
+                    "readable": true,
+                    "text": "Device label: 'Dream Siphon Mark VII - Designed by Morpheus. Extracts dreams through psychic resonance. Operational since 1313. Handle with care.'"
+                },
+                {
+                    "id": "workbench",
+                    "name": "alchemist's workbench",
+                    "description": "A cluttered bench covered with vials, tools, and notes",
+                    "searchable": true,
+                    "contains": [
+                        "research_notes"
+                    ]
+                },
+                {
+                    "id": "research_notes",
+                    "name": "research notes",
+                    "description": "Detailed notes about dream theft techniques",
+                    "readable": true,
+                    "text": "Research Log: The dream siphon is my greatest invention. I, Morpheus, have perfected the art of stealing dreams. The extraction chamber allows me to process multiple dreams simultaneously. To escape my hideout, one must answer the three questions of awakening."
+                },
+                {
+                    "id": "wall_charts",
+                    "name": "sleep cycle charts",
+                    "description": "Charts and diagrams showing optimal times for dream theft",
+                    "readable": true,
+                    "text": "Chart notation: 'REM sleep occurs in cycles. The extraction chamber is most effective during deep sleep phases. Morpheus the Dream Thief operates primarily at midnight.'"
+                },
+                {
+                    "id": "equipment_locker",
+                    "name": "equipment locker",
+                    "description": "A metal locker containing tools and supplies",
+                    "subcontainers": [
+                        {
+                            "id": "top_shelf",
+                            "name": "top shelf",
+                            "locked": false,
+                            "contains": [
+                                "identity_card"
+                            ]
+                        },
+                        {
+                            "id": "bottom_shelf",
+                            "name": "bottom shelf",
+                            "locked": false,
+                            "contains": [
+                                "device_manual"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "identity_card",
+                    "name": "identification card",
+                    "description": "An ID card with a photo and name",
+                    "readable": true,
+                    "text": "IDENTIFICATION: Name: Morpheus. Occupation: Dream Thief. Specialization: Dream extraction and storage. Authorized to operate all equipment in the extraction chamber."
+                },
+                {
+                    "id": "device_manual",
+                    "name": "device operation manual",
+                    "description": "A technical manual for the dream siphon",
+                    "readable": true,
+                    "text": "OPERATION MANUAL: The dream siphon device is the primary tool for dream extraction. Only Morpheus is authorized to operate it. All extracted dreams are stored in the vault. Emergency exit available through portal room."
+                },
+                {
+                    "id": "extraction_chamber_sign",
+                    "name": "chamber identification sign",
+                    "description": "A metal sign mounted on the wall",
+                    "readable": true,
+                    "text": "EXTRACTION CHAMBER - Authorized Personnel Only. This chamber is where all dream processing occurs. Operator: Morpheus the Dream Thief."
+                },
+                {
+                    "id": "glowing_portal_door",
+                    "name": "glowing portal door",
+                    "description": "A shimmering door that seems to exist between reality and dreams. Three questions are inscribed on a plaque beside it in glowing script.",
+                    "locked": true,
+                    "lock_type": "password",
+                    "password_questions": [
+                        {
+                            "question": "What is the Dream Thief's name?",
+                            "answer": "morpheus",
+                            "hint": "Check the journal, research notes, and identification card"
+                        },
+                        {
+                            "question": "What device steals the dreams?",
+                            "answer": "dream siphon",
+                            "hint": "Look at the device labels and manuals throughout the workshop"
+                        },
+                        {
+                            "question": "Where are dreams processed?",
+                            "answer": "extraction chamber",
+                            "hint": "Multiple documents mention where the dream processing occurs"
+                        }
+                    ],
+                    "direction": "east",
+                    "leads_to": "escape_portal",
+                    "aliases": [
+                        "portal",
+                        "east"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "escape_portal",
+            "name": "Escape Portal Chamber",
+            "description": "You have reached the escape portal! A swirling vortex of light and color fills the center of the circular chamber. The portal pulses with energy, offering passage back to the waking world. Around you, the walls shimmer with images of peaceful dreams - perhaps the ones you've freed by solving the Dream Thief's puzzles. Freedom awaits.",
+            "items": [
+                {
+                    "id": "escape_portal",
+                    "name": "swirling escape portal",
+                    "description": "A magnificent portal of light and energy leading back to reality"
+                },
+                {
+                    "id": "freed_dreams",
+                    "name": "freed dream essences",
+                    "description": "Wisps of colorful dream energy floating peacefully around the portal"
+                },
+                {
+                    "id": "portal_pedestal",
+                    "name": "portal control pedestal",
+                    "description": "A stone pedestal with glowing runes that stabilize the portal",
+                    "readable": true,
+                    "text": "Portal inscription: 'You have proven yourself worthy by understanding the Dream Thief's secrets. Pass through and return to the waking world.'"
+                }
+            ],
+            "exits": [],
+            "is_goal": true,
+            "win_message": "You step through the swirling portal and feel reality rushing back! The Dream Thief's hideout fades away like a forgotten nightmare. You've escaped Morpheus's lair and freed the stolen dreams. As you awaken in the real world, you realize you've solved all the puzzles and achieved victory. You win!"
+        }
+    ]
+}

@@ -1,0 +1,231 @@
+{
+    "theme": "Secret Library",
+    "title": "Secret Library Adventure #30",
+    "goal": "Solve the puzzles, achieve the main objective, and escape.",
+    "starting_room": "restricted_section",
+    "rooms": [
+        {
+            "id": "restricted_section",
+            "name": "Restricted Section",
+            "description": "A dimly lit corner of an ancient library filled with towering bookshelves. Dust motes dance in the amber light from a single brass lamp. The air smells of old paper and leather bindings. A heavy oak desk sits against one wall, and a locked glass bookcase contains the rarest volumes.",
+            "items": [
+                {
+                    "id": "oak_desk",
+                    "name": "librarian's oak desk",
+                    "description": "A massive desk with ornate carvings and three drawers with brass handles",
+                    "subcontainers": [
+                        {
+                            "id": "top_drawer",
+                            "name": "top drawer",
+                            "locked": false,
+                            "contains": [
+                                "library_journal"
+                            ]
+                        },
+                        {
+                            "id": "middle_drawer",
+                            "name": "middle drawer",
+                            "locked": true,
+                            "lock_type": "combination",
+                            "combination": "1455",
+                            "contains": [
+                                "brass_key"
+                            ]
+                        },
+                        {
+                            "id": "bottom_drawer",
+                            "name": "bottom drawer",
+                            "locked": false,
+                            "contains": []
+                        }
+                    ]
+                },
+                {
+                    "id": "library_journal",
+                    "name": "head librarian's journal",
+                    "description": "A leather-bound journal with careful handwriting",
+                    "readable": true,
+                    "text": "Journal Entry: The library was founded in 1455 when Johannes Gutenberg completed his printing press. This date is the key to protecting our most precious volumes. Remember: The head librarian is Margaret Blackwood, guardian of the Secret Archive where ancient wisdom is preserved."
+                },
+                {
+                    "id": "brass_key",
+                    "name": "ornate brass key",
+                    "description": "A decorative key with a book-shaped handle"
+                },
+                {
+                    "id": "bookshelf_a",
+                    "name": "tall bookshelf",
+                    "description": "A shelf packed with ancient tomes and manuscripts",
+                    "searchable": true,
+                    "contains": [
+                        "poetry_collection"
+                    ]
+                },
+                {
+                    "id": "poetry_collection",
+                    "name": "collection of poetry",
+                    "description": "A worn book of classical poems",
+                    "readable": true,
+                    "text": "Bookplate inscription: 'This volume belongs to the collection of Edgar Whitmore, poet and scholar. His works rest in the Hall of Authors alongside other literary masters.'"
+                },
+                {
+                    "id": "glass_bookcase",
+                    "name": "locked glass bookcase",
+                    "description": "A beautiful case displaying the library's rarest books behind locked glass doors",
+                    "locked": true,
+                    "key_required": "brass_key",
+                    "contains": [
+                        "ancient_manuscript",
+                        "library_card"
+                    ]
+                },
+                {
+                    "id": "ancient_manuscript",
+                    "name": "illuminated manuscript",
+                    "description": "A medieval manuscript with gold leaf decorations",
+                    "readable": true,
+                    "text": "Manuscript text: 'In the year of our Lord, knowledge was preserved in the Secret Archive, where the wise keep their treasures safe from those who would misuse them. Only the guardian may grant passage.'"
+                },
+                {
+                    "id": "library_card",
+                    "name": "special library card",
+                    "description": "An old library card with faded writing",
+                    "readable": true,
+                    "text": "Library Card - Special Access. Holder: Margaret Blackwood, Head Librarian. Access granted to: Secret Archive. Note: The archive preserves ancient wisdom for future generations."
+                },
+                {
+                    "id": "heavy_wooden_door",
+                    "name": "heavy wooden door",
+                    "description": "A door with carved book spines decorating its surface, leading to the main reading hall",
+                    "locked": false,
+                    "direction": "north",
+                    "leads_to": "reading_hall",
+                    "aliases": [
+                        "door",
+                        "north"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "reading_hall",
+            "name": "Main Reading Hall",
+            "description": "A grand hall with vaulted ceilings and rows of reading tables. Portraits of famous authors line the walls, each with a nameplate and description. Tall windows let in streams of golden afternoon light. A magnificent door at the far end is marked 'Secret Archive - Authorized Personnel Only'.",
+            "items": [
+                {
+                    "id": "portrait_shakespeare",
+                    "name": "portrait of William Shakespeare",
+                    "description": "A painting of the famous playwright holding a quill",
+                    "readable": true,
+                    "text": "William Shakespeare - Playwright and Poet. Known for his timeless works and mastery of the English language. His plays are performed in the Hall of Authors."
+                },
+                {
+                    "id": "portrait_whitmore",
+                    "name": "portrait of Edgar Whitmore",
+                    "description": "A painting of a thoughtful-looking poet",
+                    "readable": true,
+                    "text": "Edgar Whitmore - Poet and Scholar. His poetry collection resides in the restricted section. A beloved member of the Hall of Authors."
+                },
+                {
+                    "id": "portrait_blackwood",
+                    "name": "portrait of Margaret Blackwood",
+                    "description": "A painting of a stern woman in librarian's attire",
+                    "readable": true,
+                    "text": "Margaret Blackwood - Head Librarian. Guardian of the Secret Archive and protector of ancient knowledge. Devoted her life to preserving wisdom."
+                },
+                {
+                    "id": "reading_table",
+                    "name": "large reading table",
+                    "description": "A polished wooden table covered with open books and research materials",
+                    "searchable": true,
+                    "contains": [
+                        "research_notes"
+                    ]
+                },
+                {
+                    "id": "research_notes",
+                    "name": "scholar's research notes",
+                    "description": "Handwritten notes about the library's history",
+                    "readable": true,
+                    "text": "Research Notes: The Secret Archive was established to preserve ancient wisdom. Access is restricted to the head librarian. The archive is located beyond the main reading hall, protected by security questions about the library's history and guardians."
+                },
+                {
+                    "id": "card_catalog",
+                    "name": "old card catalog",
+                    "description": "A wooden cabinet with hundreds of small drawers containing index cards",
+                    "searchable": true,
+                    "contains": [
+                        "index_card"
+                    ]
+                },
+                {
+                    "id": "index_card",
+                    "name": "catalog index card",
+                    "description": "A yellowed index card with library information",
+                    "readable": true,
+                    "text": "Subject: Secret Archive. Location: Beyond Main Reading Hall. Access: Restricted. Guardian: Margaret Blackwood. Purpose: Preservation of ancient wisdom. Note: Hall of Authors contains portraits of literary masters."
+                },
+                {
+                    "id": "archive_entrance_door",
+                    "name": "archive entrance door",
+                    "description": "An imposing door with a brass plaque reading 'Secret Archive'. A security panel displays three questions.",
+                    "locked": true,
+                    "lock_type": "password",
+                    "password_questions": [
+                        {
+                            "question": "Who is the guardian of the Secret Archive?",
+                            "answer": "margaret blackwood",
+                            "hint": "Check the library card and the portraits in the reading hall"
+                        },
+                        {
+                            "question": "Where do the literary masters reside?",
+                            "answer": "hall of authors",
+                            "hint": "Read the portrait descriptions and the poetry collection bookplate"
+                        },
+                        {
+                            "question": "What does the archive preserve?",
+                            "answer": "ancient wisdom",
+                            "hint": "The manuscript and research notes mention this"
+                        }
+                    ],
+                    "direction": "east",
+                    "leads_to": "secret_archive",
+                    "aliases": [
+                        "archive",
+                        "east"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "secret_archive",
+            "name": "Secret Archive",
+            "description": "You have discovered the legendary Secret Archive! The room is filled with ancient scrolls, rare manuscripts, and books of immense historical value. A shaft of light from a hidden skylight illuminates a central pedestal holding the oldest book in the collection. A concealed door in the back wall stands open, revealing a passage to freedom.",
+            "items": [
+                {
+                    "id": "ancient_pedestal",
+                    "name": "marble pedestal",
+                    "description": "A white marble pedestal displaying the archive's crown jewel",
+                    "searchable": false
+                },
+                {
+                    "id": "oldest_book",
+                    "name": "the oldest book",
+                    "description": "A massive tome bound in leather and gold, dating back centuries",
+                    "readable": true,
+                    "text": "The First Book: This volume contains the collected wisdom of ages past. You have proven yourself worthy to access this knowledge. The secret passage behind the archive leads to freedom. Go forth with the wisdom you have gained."
+                },
+                {
+                    "id": "scroll_collection",
+                    "name": "collection of ancient scrolls",
+                    "description": "Carefully preserved scrolls containing lost knowledge"
+                }
+            ],
+            "exits": [],
+            "is_goal": true,
+            "win_message": "Congratulations! You have successfully navigated the Secret Library's puzzles and reached the legendary Secret Archive. The ancient wisdom contained here is now yours to protect. You escape through the hidden passage, carrying with you the knowledge of ages. You win!"
+        }
+    ]
+}

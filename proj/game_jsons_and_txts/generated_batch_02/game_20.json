@@ -1,0 +1,319 @@
+{
+    "theme": "Lost Research Station",
+    "title": "Lost Research Station Adventure #20",
+    "goal": "Solve the puzzles, achieve the main objective, and escape.",
+    "starting_room": "quarantine_airlock",
+    "rooms": [
+        {
+            "id": "quarantine_airlock",
+            "name": "Quarantine Airlock",
+            "description": "A sterile white chamber with red emergency lighting casting an ominous glow. Biohazard warnings flash on wall-mounted screens. The air is cold and smells of disinfectant. A decontamination shower stands in one corner, and a sealed locker is mounted on the wall. Through the reinforced window, you can see the main laboratory corridor.",
+            "items": [
+                {
+                    "id": "decontamination_shower",
+                    "name": "decontamination shower",
+                    "description": "A chemical shower unit with various nozzles and controls",
+                    "searchable": true,
+                    "contains": [
+                        "hazmat_gloves"
+                    ]
+                },
+                {
+                    "id": "hazmat_gloves",
+                    "name": "hazmat gloves",
+                    "description": "Heavy-duty protective gloves for handling dangerous materials"
+                },
+                {
+                    "id": "wall_locker",
+                    "name": "emergency supply locker",
+                    "description": "A metal locker with two compartments labeled for emergency supplies",
+                    "subcontainers": [
+                        {
+                            "id": "top_compartment",
+                            "name": "top compartment",
+                            "locked": false,
+                            "contains": [
+                                "station_log"
+                            ]
+                        },
+                        {
+                            "id": "bottom_compartment",
+                            "name": "bottom compartment",
+                            "locked": true,
+                            "lock_type": "combination",
+                            "combination": "2847",
+                            "contains": [
+                                "security_keycard"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "station_log",
+                    "name": "station status log",
+                    "description": "A digital tablet displaying the last status report",
+                    "readable": true,
+                    "text": "STATION LOG - Final Entry: Containment breach in Lab 2847. Dr. Chen and Dr. Webb have sealed themselves in the research wing. Project Exodus data must be retrieved from the mainframe. Emergency protocol: Security code is the breach lab number. - Station Director Hayes"
+                },
+                {
+                    "id": "security_keycard",
+                    "name": "level 2 security keycard",
+                    "description": "A magnetic keycard with Level 2 clearance markings"
+                },
+                {
+                    "id": "reinforced_corridor_door",
+                    "name": "reinforced corridor door",
+                    "description": "A heavy security door with a card reader and biohazard seal",
+                    "locked": true,
+                    "key_required": "security_keycard",
+                    "direction": "north",
+                    "leads_to": "main_corridor",
+                    "aliases": [
+                        "door",
+                        "north"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "main_corridor",
+            "name": "Main Laboratory Corridor",
+            "description": "A long corridor with flickering fluorescent lights. Lab doors line both sides, most sealed with red lockdown indicators. Emergency signs point to various sections. A large bulletin board displays staff photos and research assignments. Broken glass and scattered papers litter the floor. The air is eerily quiet except for the hum of ventilation systems.",
+            "items": [
+                {
+                    "id": "bulletin_board",
+                    "name": "staff bulletin board",
+                    "description": "A board with photos and information about research staff",
+                    "readable": true,
+                    "text": "STAFF ASSIGNMENTS: Dr. Chen - Xenobiology, Lab 2847. Dr. Webb - Quantum Physics, Lab 2847. Dr. Hayes - Station Director, Administration. All personnel report to the research wing for Project Exodus briefings."
+                },
+                {
+                    "id": "photo_chen",
+                    "name": "photo of Dr Chen",
+                    "description": "A staff photo showing a scientist in a lab coat",
+                    "readable": true,
+                    "text": "Dr. Sarah Chen - Lead Xenobiologist. Specializes in extraterrestrial organism research. Office: Research Wing, Room 12."
+                },
+                {
+                    "id": "photo_webb",
+                    "name": "photo of Dr Webb",
+                    "description": "A staff photo of a physicist with safety goggles",
+                    "readable": true,
+                    "text": "Dr. Marcus Webb - Quantum Physicist. Project lead for dimensional gateway experiments. Office: Research Wing, Room 15."
+                },
+                {
+                    "id": "photo_hayes",
+                    "name": "photo of Director Hayes",
+                    "description": "A formal portrait of the station director",
+                    "readable": true,
+                    "text": "Director Elizabeth Hayes - Station Commander. Oversees all research operations and emergency protocols."
+                },
+                {
+                    "id": "scattered_papers",
+                    "name": "scattered research papers",
+                    "description": "Papers strewn across the floor, some stained and torn",
+                    "searchable": true,
+                    "contains": [
+                        "research_memo"
+                    ]
+                },
+                {
+                    "id": "research_memo",
+                    "name": "urgent research memo",
+                    "description": "A crumpled memo marked URGENT",
+                    "readable": true,
+                    "text": "MEMO: Project Exodus nearing completion. The gateway requires three authentication factors: Director's authorization, lead scientist confirmation, and project designation. Gateway room access restricted to senior staff only. - Dr. Webb"
+                },
+                {
+                    "id": "supply_cabinet",
+                    "name": "emergency supply cabinet",
+                    "description": "A cabinet with medical and emergency supplies",
+                    "searchable": true,
+                    "contains": [
+                        "flashlight"
+                    ]
+                },
+                {
+                    "id": "flashlight",
+                    "name": "emergency flashlight",
+                    "description": "A heavy-duty flashlight with fresh batteries"
+                },
+                {
+                    "id": "research_wing_security_door",
+                    "name": "research wing security door",
+                    "description": "A blast door leading to the research wing. A terminal beside it displays three security questions.",
+                    "locked": true,
+                    "lock_type": "password",
+                    "password_questions": [
+                        {
+                            "question": "Enter Station Director surname:",
+                            "answer": "hayes",
+                            "hint": "Check the staff photos and station log"
+                        },
+                        {
+                            "question": "Enter lead xenobiologist surname:",
+                            "answer": "chen",
+                            "hint": "Look at the staff assignments on the bulletin board"
+                        },
+                        {
+                            "question": "Enter containment breach lab number:",
+                            "answer": "2847",
+                            "hint": "The station log mentions the breach location"
+                        }
+                    ],
+                    "direction": "east",
+                    "leads_to": "research_wing",
+                    "aliases": [
+                        "door",
+                        "east"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "research_wing",
+            "name": "Research Wing Central Hub",
+            "description": "The heart of the research station. A circular room with multiple lab doors branching off. In the center stands a large holographic display showing a swirling dimensional gateway. Computer terminals line the walls, most still active and displaying data streams. A massive vault door dominates the far wall, marked with Project Exodus insignia. The room hums with residual energy.",
+            "items": [
+                {
+                    "id": "holographic_display",
+                    "name": "gateway hologram",
+                    "description": "A 3D projection of a dimensional portal with technical readouts",
+                    "readable": true,
+                    "text": "PROJECT EXODUS: Dimensional Gateway Status - STANDBY. Activation requires: Director Hayes authorization, Dr. Chen biological clearance, Project Exodus designation code. WARNING: Gateway destination coordinates locked to safe zone."
+                },
+                {
+                    "id": "main_terminal",
+                    "name": "main computer terminal",
+                    "description": "The primary research station computer with multiple access ports",
+                    "searchable": true,
+                    "contains": [
+                        "access_instructions"
+                    ]
+                },
+                {
+                    "id": "access_instructions",
+                    "name": "gateway access protocol",
+                    "description": "A document detailing the gateway activation procedure",
+                    "readable": true,
+                    "text": "GATEWAY ACTIVATION PROTOCOL: Three-factor authentication required. Q1: Who authorized Project Exodus? Q2: Who led the xenobiology research? Q3: What is the project designation? All answers must be exact. Gateway provides escape route from contaminated station."
+                },
+                {
+                    "id": "research_desk",
+                    "name": "research station desk",
+                    "description": "A desk covered with data tablets and research notes",
+                    "subcontainers": [
+                        {
+                            "id": "desk_drawer_left",
+                            "name": "left drawer",
+                            "locked": false,
+                            "contains": [
+                                "personnel_file_chen"
+                            ]
+                        },
+                        {
+                            "id": "desk_drawer_right",
+                            "name": "right drawer",
+                            "locked": false,
+                            "contains": [
+                                "personnel_file_webb"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "personnel_file_chen",
+                    "name": "personnel file for Dr Chen",
+                    "description": "Official personnel record for the xenobiologist",
+                    "readable": true,
+                    "text": "Dr. Sarah Chen - Employee ID: XB-2847. Clearance Level: Senior Researcher. Project Assignment: Exodus - Xenobiology Division. Status: Active."
+                },
+                {
+                    "id": "personnel_file_webb",
+                    "name": "personnel file for Dr Webb",
+                    "description": "Official personnel record for the physicist",
+                    "readable": true,
+                    "text": "Dr. Marcus Webb - Employee ID: QP-1523. Clearance Level: Senior Researcher. Project Assignment: Exodus - Quantum Physics Division. Status: Active."
+                },
+                {
+                    "id": "equipment_rack",
+                    "name": "equipment storage rack",
+                    "description": "A rack holding various scientific instruments",
+                    "searchable": true,
+                    "contains": [
+                        "data_drive"
+                    ]
+                },
+                {
+                    "id": "data_drive",
+                    "name": "encrypted data drive",
+                    "description": "A storage device containing critical research data",
+                    "readable": true,
+                    "text": "PROJECT EXODUS - CLASSIFIED: This drive contains all research data for the dimensional gateway project. Project designation: EXODUS. Keep secure at all times."
+                },
+                {
+                    "id": "Project_Exodus_vault_door",
+                    "name": "Project Exodus vault door",
+                    "description": "A massive reinforced door with a biometric scanner and authentication terminal. The Project Exodus logo glows on its surface.",
+                    "locked": true,
+                    "lock_type": "password",
+                    "password_questions": [
+                        {
+                            "question": "Enter Director authorization name:",
+                            "answer": "director hayes",
+                            "hint": "Check who authorized the project in the logs and photos"
+                        },
+                        {
+                            "question": "Enter lead xenobiologist name:",
+                            "answer": "dr chen",
+                            "hint": "Look at the personnel files and staff assignments"
+                        },
+                        {
+                            "question": "Enter project designation:",
+                            "answer": "exodus",
+                            "hint": "The project name appears on multiple documents and the vault door"
+                        }
+                    ],
+                    "direction": "north",
+                    "leads_to": "gateway_chamber",
+                    "aliases": [
+                        "vault",
+                        "north"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "gateway_chamber",
+            "name": "Dimensional Gateway Chamber",
+            "description": "You have reached the Project Exodus gateway! A massive circular portal dominates the room, its surface rippling with otherworldly energy. The gateway frame is covered in advanced technology and glowing conduits. Through the portal, you can see a safe research facility on the other side - your escape route. Control panels show all systems are green and ready for transit.",
+            "items": [
+                {
+                    "id": "dimensional_gateway",
+                    "name": "dimensional portal",
+                    "description": "A stable wormhole leading to safety, the culmination of years of research"
+                },
+                {
+                    "id": "control_panel",
+                    "name": "gateway control panel",
+                    "description": "The master controls for the dimensional gateway",
+                    "readable": true,
+                    "text": "GATEWAY STATUS: ACTIVE. Destination: Safe Zone Research Facility Alpha. Transit ready. All personnel may evacuate through the gateway. Project Exodus is complete."
+                },
+                {
+                    "id": "research_archive",
+                    "name": "research archive terminal",
+                    "description": "A terminal containing all Project Exodus research data",
+                    "readable": true,
+                    "text": "PROJECT EXODUS COMPLETE: Dimensional gateway technology successfully developed. Station evacuation authorized due to containment breach. All research data secured. Gateway provides permanent escape route."
+                }
+            ],
+            "exits": [],
+            "is_goal": true,
+            "win_message": "SUCCESS! You have activated the Project Exodus dimensional gateway and secured the research data. The portal stabilizes before you, showing a safe facility on the other side. You step through the shimmering gateway and emerge in a clean, secure research station far from the contaminated facility. The lost research station's final mission is complete - you have escaped with the critical data that will save countless lives. You win!"
+        }
+    ]
+}

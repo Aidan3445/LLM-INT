@@ -1,0 +1,271 @@
+{
+    "theme": "Zombie Outbreak Motel",
+    "title": "Zombie Outbreak Motel Adventure #57",
+    "goal": "Solve the puzzles, achieve the main objective, and escape.",
+    "starting_room": "motel_room_7",
+    "rooms": [
+        {
+            "id": "motel_room_7",
+            "name": "Motel Room 7",
+            "description": "A dingy motel room with peeling wallpaper and a musty smell. The window is boarded up with wooden planks, and scratching sounds come from outside. A flickering TV shows an emergency broadcast. Blood stains mark the carpet near the door. The room contains a bed, nightstand, and a small bathroom. Groaning echoes from the hallway.",
+            "items": [
+                {
+                    "id": "nightstand",
+                    "name": "wooden nightstand",
+                    "description": "A cheap nightstand with two drawers, one of which appears to be locked",
+                    "subcontainers": [
+                        {
+                            "id": "top_drawer",
+                            "name": "top drawer",
+                            "locked": false,
+                            "contains": [
+                                "motel_brochure"
+                            ]
+                        },
+                        {
+                            "id": "bottom_drawer",
+                            "name": "bottom drawer",
+                            "locked": true,
+                            "lock_type": "combination",
+                            "combination": "1957",
+                            "contains": [
+                                "office_key"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "motel_brochure",
+                    "name": "motel brochure",
+                    "description": "A faded brochure advertising the motel's amenities",
+                    "readable": true,
+                    "text": "Welcome to Sunset Motel - Est. 1957! Manager: Frank Morrison. Office hours: 24/7. In case of emergency, contact the office or proceed to the emergency supply room. Free coffee in the lobby!"
+                },
+                {
+                    "id": "office_key",
+                    "name": "office key",
+                    "description": "A brass key with a tag reading 'OFFICE'"
+                },
+                {
+                    "id": "television",
+                    "name": "flickering television",
+                    "description": "An old TV showing static and emergency broadcasts",
+                    "readable": true,
+                    "text": "EMERGENCY BROADCAST: Outbreak confirmed. Avoid contact with infected individuals. Seek shelter immediately. Emergency supplies located in designated safe rooms. Manager Frank Morrison has activated emergency protocols."
+                },
+                {
+                    "id": "bathroom_cabinet",
+                    "name": "bathroom cabinet",
+                    "description": "A small medicine cabinet above the sink",
+                    "searchable": true,
+                    "contains": [
+                        "previous_guest_note"
+                    ]
+                },
+                {
+                    "id": "previous_guest_note",
+                    "name": "handwritten note",
+                    "description": "A crumpled note left by a previous guest",
+                    "readable": true,
+                    "text": "Day 3 of the outbreak. I'm trapped in Room 7. The motel manager said the emergency supply room has everything we need to survive - food, weapons, a radio. The combination to the nightstand is the year this place opened. I'm going to make a run for it. - Jake"
+                },
+                {
+                    "id": "bed",
+                    "name": "unmade bed",
+                    "description": "A bed with rumpled sheets and a pillow",
+                    "searchable": true,
+                    "contains": [
+                        "flashlight"
+                    ]
+                },
+                {
+                    "id": "flashlight",
+                    "name": "heavy flashlight",
+                    "description": "A metal flashlight that could be used as a weapon"
+                },
+                {
+                    "id": "boarded_window",
+                    "name": "boarded window",
+                    "description": "A window covered with wooden planks. Shadows move outside.",
+                    "readable": true,
+                    "text": "Through gaps in the boards, you can see the parking lot filled with abandoned cars and shambling figures. The office is across the lot."
+                },
+                {
+                    "id": "motel_room_door",
+                    "name": "motel room door",
+                    "description": "A sturdy door leading to the hallway. You can hear groaning and shuffling outside.",
+                    "locked": false,
+                    "direction": "west",
+                    "leads_to": "motel_office",
+                    "aliases": [
+                        "door",
+                        "west",
+                        "hallway"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "motel_office",
+            "name": "Motel Office",
+            "description": "The motel's front office is in disarray. Papers are scattered everywhere, and a coffee pot has shattered on the floor. The front desk has a computer still running and a cash register hanging open. A bulletin board displays emergency procedures. A heavy metal door marked 'SUPPLY ROOM' stands at the back. The smell of stale coffee and fear permeates the air.",
+            "items": [
+                {
+                    "id": "front_desk",
+                    "name": "front desk",
+                    "description": "A wooden desk with a computer, phone, and several drawers",
+                    "subcontainers": [
+                        {
+                            "id": "desk_drawer",
+                            "name": "desk drawer",
+                            "locked": true,
+                            "key_required": "office_key",
+                            "contains": [
+                                "manager_log"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "manager_log",
+                    "name": "manager's log book",
+                    "description": "A daily log kept by the motel manager",
+                    "readable": true,
+                    "text": "Manager's Log - Frank Morrison: The outbreak started three days ago. I've secured all emergency supplies in the supply room. Only authorized personnel should access it. Security protocol requires knowledge of: my name, where supplies are kept, and the motel's founding year."
+                },
+                {
+                    "id": "computer",
+                    "name": "office computer",
+                    "description": "A desktop computer with several windows open",
+                    "readable": true,
+                    "text": "Email from Corporate: Frank, ensure all emergency supplies are moved to the designated supply room. In case of evacuation, this is the primary safe zone. Stock includes food, water, medical supplies, and communication equipment."
+                },
+                {
+                    "id": "bulletin_board",
+                    "name": "emergency bulletin board",
+                    "description": "A cork board with various notices and emergency procedures pinned to it",
+                    "readable": true,
+                    "text": "EMERGENCY PROCEDURES: In case of outbreak or disaster, proceed to emergency supply room. Manager Frank Morrison is responsible for all safety protocols. Supplies stored in supply room include: non-perishable food, water, first aid, radio equipment, and weapons."
+                },
+                {
+                    "id": "filing_cabinet",
+                    "name": "metal filing cabinet",
+                    "description": "A tall cabinet with employee and guest records",
+                    "searchable": true,
+                    "contains": [
+                        "employee_roster"
+                    ]
+                },
+                {
+                    "id": "employee_roster",
+                    "name": "employee roster",
+                    "description": "A list of motel staff members",
+                    "readable": true,
+                    "text": "SUNSET MOTEL STAFF: Frank Morrison - Manager, Maria Garcia - Housekeeper, Tom Chen - Maintenance. Manager Morrison has been with us since the motel opened in 1957."
+                },
+                {
+                    "id": "coffee_station",
+                    "name": "coffee station",
+                    "description": "A counter with a broken coffee pot and supplies",
+                    "searchable": true,
+                    "contains": [
+                        "survival_guide"
+                    ]
+                },
+                {
+                    "id": "survival_guide",
+                    "name": "survival guide pamphlet",
+                    "description": "A government-issued survival guide for outbreak scenarios",
+                    "readable": true,
+                    "text": "OUTBREAK SURVIVAL GUIDE: Secure yourself in a safe location with supplies. The supply room is your best option for long-term survival. Avoid the infected at all costs. Wait for rescue teams."
+                },
+                {
+                    "id": "cash_register",
+                    "name": "open cash register",
+                    "description": "An old-fashioned cash register with the drawer hanging open",
+                    "searchable": true,
+                    "contains": [
+                        "supply_room_note"
+                    ]
+                },
+                {
+                    "id": "supply_room_note",
+                    "name": "note about supply room",
+                    "description": "A sticky note attached to some cash",
+                    "readable": true,
+                    "text": "Reminder: Supply room has everything we need - food, water, medical supplies, weapons, and a working radio to call for help. The security system will ask verification questions. - Frank"
+                },
+                {
+                    "id": "heavy_metal_supply_room_door",
+                    "name": "heavy metal supply room door",
+                    "description": "A reinforced steel door with a digital security panel. Three security questions are displayed on the screen.",
+                    "locked": true,
+                    "lock_type": "password",
+                    "password_questions": [
+                        {
+                            "question": "What is the manager's name?",
+                            "answer": "frank morrison",
+                            "hint": "Check the motel brochure, manager's log, and employee roster"
+                        },
+                        {
+                            "question": "Where are emergency supplies kept?",
+                            "answer": "supply room",
+                            "hint": "Multiple documents mention where supplies are stored"
+                        },
+                        {
+                            "question": "What year was the motel established?",
+                            "answer": "1957",
+                            "hint": "The motel brochure and employee roster mention the founding year"
+                        }
+                    ],
+                    "direction": "north",
+                    "leads_to": "emergency_supply_room",
+                    "aliases": [
+                        "supply",
+                        "north",
+                        "metal door"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "emergency_supply_room",
+            "name": "Emergency Supply Room",
+            "description": "You've made it to the emergency supply room! A well-stocked bunker-like space with metal shelves lined with canned food, water bottles, and medical supplies. A gun safe stands in the corner. A ham radio crackles with distant transmissions. Most importantly, a reinforced emergency exit door leads to the roof access and the fire escape - your route to safety. You're going to survive this!",
+            "items": [
+                {
+                    "id": "supply_shelves",
+                    "name": "supply shelves",
+                    "description": "Industrial shelving units packed with survival supplies"
+                },
+                {
+                    "id": "gun_safe",
+                    "name": "gun safe",
+                    "description": "A locked safe containing weapons for self-defense"
+                },
+                {
+                    "id": "ham_radio",
+                    "name": "ham radio",
+                    "description": "A working radio transmitter and receiver",
+                    "readable": true,
+                    "text": "The radio crackles: 'This is rescue team Alpha. We are evacuating survivors from rooftops. If you can reach a roof, signal us with a flashlight. We will extract you.'"
+                },
+                {
+                    "id": "medical_supplies",
+                    "name": "medical supply kit",
+                    "description": "A comprehensive first aid kit with bandages, antibiotics, and other medical necessities"
+                },
+                {
+                    "id": "emergency_exit",
+                    "name": "emergency exit to roof",
+                    "description": "A reinforced door with a push bar leading to roof access and the fire escape"
+                }
+            ],
+            "exits": [],
+            "is_goal": true,
+            "win_message": "You've reached the emergency supply room and found the way out! Grabbing supplies and the flashlight, you push through the emergency exit and climb the stairs to the roof. In the distance, you see a helicopter approaching. You signal with your flashlight, and the rescue team spots you. As the helicopter descends, you realize you've survived the zombie outbreak. You win!"
+        }
+    ]
+}

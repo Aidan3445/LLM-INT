@@ -1,0 +1,247 @@
+{
+    "theme": "Underground Resistance Bunker",
+    "title": "Underground Resistance Bunker Adventure #46",
+    "goal": "Solve the puzzles, achieve the main objective, and escape.",
+    "starting_room": "communications_room",
+    "rooms": [
+        {
+            "id": "communications_room",
+            "name": "Communications Room",
+            "description": "A cramped underground room lit by a single flickering bulb. Radio equipment lines one wall, crackling with static. Maps with red pins cover another wall. The air is damp and smells of earth and old paper. A metal desk sits in the corner, and supply crates are stacked near the entrance.",
+            "items": [
+                {
+                    "id": "supply_crates",
+                    "name": "wooden supply crates",
+                    "description": "Several crates marked with resistance symbols",
+                    "searchable": true,
+                    "contains": [
+                        "wire_cutters"
+                    ]
+                },
+                {
+                    "id": "wire_cutters",
+                    "name": "heavy wire cutters",
+                    "description": "Industrial wire cutters for cutting through fences or locks"
+                },
+                {
+                    "id": "metal_desk",
+                    "name": "resistance commander's desk",
+                    "description": "A battered metal desk with three locked drawers",
+                    "subcontainers": [
+                        {
+                            "id": "top_drawer",
+                            "name": "top drawer",
+                            "locked": false,
+                            "contains": [
+                                "mission_briefing"
+                            ]
+                        },
+                        {
+                            "id": "middle_drawer",
+                            "name": "middle drawer",
+                            "locked": true,
+                            "lock_type": "combination",
+                            "combination": "1944",
+                            "contains": [
+                                "access_card"
+                            ]
+                        },
+                        {
+                            "id": "bottom_drawer",
+                            "name": "bottom drawer",
+                            "locked": false,
+                            "contains": []
+                        }
+                    ]
+                },
+                {
+                    "id": "mission_briefing",
+                    "name": "classified mission briefing",
+                    "description": "A typed document marked 'TOP SECRET'",
+                    "readable": true,
+                    "text": "MISSION BRIEFING: Operation Liberation begins June 6, 1944. Commander Wolf leads the operation. Agent Eagle handles intelligence. Agent Fox manages supplies. The documents must be retrieved from the armory and delivered to the extraction point. Remember: only those who know the resistance survive."
+                },
+                {
+                    "id": "access_card",
+                    "name": "security access card",
+                    "description": "A worn card with 'ARMORY ACCESS' stamped on it"
+                },
+                {
+                    "id": "wall_maps",
+                    "name": "tactical wall maps",
+                    "description": "Maps showing enemy positions and resistance safe houses",
+                    "readable": true,
+                    "text": "The maps show various locations marked: Safe House Alpha in the Forest Bunker, Enemy Headquarters in the City Center, and Extraction Point at the Northern Border."
+                },
+                {
+                    "id": "radio_equipment",
+                    "name": "resistance radio",
+                    "description": "An old radio set with a logbook beside it",
+                    "searchable": true,
+                    "contains": [
+                        "radio_log"
+                    ]
+                },
+                {
+                    "id": "radio_log",
+                    "name": "radio communications log",
+                    "description": "A notebook with coded transmissions",
+                    "readable": true,
+                    "text": "Latest transmission: 'Eagle to Wolf - Documents secured in armory lockbox. Combination is the year of our greatest operation. Fox confirms extraction route clear. Remember who we are and where we hide.'"
+                },
+                {
+                    "id": "reinforced_steel_door",
+                    "name": "reinforced steel door",
+                    "description": "A heavy door with a card reader and warning signs",
+                    "locked": true,
+                    "key_required": "access_card",
+                    "direction": "north",
+                    "leads_to": "armory",
+                    "aliases": [
+                        "door",
+                        "north"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "armory",
+            "name": "Resistance Armory",
+            "description": "A concrete room with weapons racks along the walls. Rifles, ammunition boxes, and equipment are neatly organized. A large metal cabinet dominates one corner. Propaganda posters showing resistance symbols cover the walls. A locked gate leads to the escape tunnel.",
+            "items": [
+                {
+                    "id": "weapons_rack",
+                    "name": "weapons rack",
+                    "description": "A rack holding various resistance weapons and tools",
+                    "searchable": true,
+                    "contains": [
+                        "bolt_cutters"
+                    ]
+                },
+                {
+                    "id": "bolt_cutters",
+                    "name": "heavy bolt cutters",
+                    "description": "Large bolt cutters capable of cutting through chains and locks"
+                },
+                {
+                    "id": "propaganda_posters",
+                    "name": "resistance propaganda posters",
+                    "description": "Posters showing the resistance symbol and slogans",
+                    "readable": true,
+                    "text": "The posters read: 'FREEDOM OR DEATH' and 'THE RESISTANCE NEVER SURRENDERS'. One poster shows three leaders: Commander Wolf, Agent Eagle, and Agent Fox, with the caption 'Our leaders hide in the Forest Bunker, planning our liberation.'"
+                },
+                {
+                    "id": "metal_cabinet",
+                    "name": "secure metal cabinet",
+                    "description": "A tall cabinet with a combination lock and multiple compartments",
+                    "subcontainers": [
+                        {
+                            "id": "top_compartment",
+                            "name": "top compartment",
+                            "locked": false,
+                            "contains": [
+                                "personnel_file"
+                            ]
+                        },
+                        {
+                            "id": "middle_compartment",
+                            "name": "middle compartment",
+                            "locked": true,
+                            "lock_type": "combination",
+                            "combination": "1944",
+                            "contains": [
+                                "classified_documents"
+                            ]
+                        },
+                        {
+                            "id": "bottom_compartment",
+                            "name": "bottom compartment",
+                            "locked": false,
+                            "contains": [
+                                "escape_map"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "personnel_file",
+                    "name": "resistance personnel file",
+                    "description": "A folder containing information about resistance members",
+                    "readable": true,
+                    "text": "PERSONNEL FILE: Commander Wolf - Leader of resistance operations. Agent Eagle - Intelligence officer. Agent Fox - Supply coordinator. All members are part of the Underground Resistance fighting for freedom."
+                },
+                {
+                    "id": "classified_documents",
+                    "name": "classified resistance documents",
+                    "description": "The critical documents needed for the mission - intelligence reports and operational plans"
+                },
+                {
+                    "id": "escape_map",
+                    "name": "escape tunnel map",
+                    "description": "A hand-drawn map showing the tunnel route",
+                    "readable": true,
+                    "text": "ESCAPE ROUTE: The tunnel leads to the Northern Border extraction point. Security checkpoint requires verification: Who leads us? Where do we hide? What are we called?"
+                },
+                {
+                    "id": "ammunition_boxes",
+                    "name": "stacked ammunition boxes",
+                    "description": "Boxes of ammunition and supplies",
+                    "searchable": true,
+                    "contains": []
+                },
+                {
+                    "id": "escape_tunnel_gate",
+                    "name": "escape tunnel gate",
+                    "description": "A locked gate with a security panel. Three verification questions are displayed on a screen.",
+                    "locked": true,
+                    "lock_type": "password",
+                    "password_questions": [
+                        {
+                            "question": "Who leads the resistance?",
+                            "answer": "commander wolf",
+                            "hint": "Check the mission briefing and personnel files"
+                        },
+                        {
+                            "question": "Where does the resistance hide?",
+                            "answer": "forest bunker",
+                            "hint": "Look at the maps and posters for safe house locations"
+                        },
+                        {
+                            "question": "What are we called?",
+                            "answer": "underground resistance",
+                            "hint": "The personnel file mentions the organization's name"
+                        }
+                    ],
+                    "direction": "east",
+                    "leads_to": "extraction_point",
+                    "aliases": [
+                        "gate",
+                        "east"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "extraction_point",
+            "name": "Extraction Point",
+            "description": "You emerge from the tunnel into a moonlit forest clearing. A resistance truck waits with its engine running. Fellow resistance members wave you forward. The classified documents are secure, and the mission is complete. Freedom lies ahead!",
+            "items": [
+                {
+                    "id": "resistance_truck",
+                    "name": "resistance transport truck",
+                    "description": "A camouflaged truck ready to take you to safety"
+                },
+                {
+                    "id": "resistance_members",
+                    "name": "fellow resistance fighters",
+                    "description": "Your comrades in the fight for freedom, waiting to help you escape"
+                }
+            ],
+            "exits": [],
+            "is_goal": true,
+            "win_message": "SUCCESS! You have retrieved the classified documents and escaped the bunker. The resistance truck speeds away into the night, carrying you and the vital intelligence to safety. The mission is complete, and the fight for freedom continues. You win!"
+        }
+    ]
+}

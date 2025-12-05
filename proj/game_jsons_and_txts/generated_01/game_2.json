@@ -1,0 +1,246 @@
+{
+    "theme": "Hologram Theater",
+    "title": "Hologram Theater Adventure #2",
+    "goal": "Solve the puzzles, achieve the main objective, and escape.",
+    "starting_room": "control_booth",
+    "rooms": [
+        {
+            "id": "control_booth",
+            "name": "Hologram Control Booth",
+            "description": "A cramped technical booth filled with glowing control panels and holographic displays. Cables snake across the floor, and multiple screens show different angles of the darkened theater below. The air hums with electronic equipment. Emergency lighting casts everything in a blue glow. A large window overlooks the main stage.",
+            "items": [
+                {
+                    "id": "main_console",
+                    "name": "main control console",
+                    "description": "The primary control station with multiple screens and input terminals",
+                    "readable": true,
+                    "text": "SYSTEM STATUS: Holographic projectors online. Theater capacity: 500 seats. Emergency protocols active. Director Nova Chen - access required for override."
+                },
+                {
+                    "id": "technical_desk",
+                    "name": "technician's desk",
+                    "description": "A cluttered desk covered in maintenance logs and equipment manuals",
+                    "subcontainers": [
+                        {
+                            "id": "top_drawer",
+                            "name": "top drawer",
+                            "locked": false,
+                            "contains": [
+                                "theater_manual"
+                            ]
+                        },
+                        {
+                            "id": "bottom_drawer",
+                            "name": "bottom drawer",
+                            "locked": true,
+                            "lock_type": "combination",
+                            "combination": "2087",
+                            "contains": [
+                                "silver_keycard"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "theater_manual",
+                    "name": "theater operations manual",
+                    "description": "A thick binder with technical specifications and history",
+                    "readable": true,
+                    "text": "HOLOGRAM THEATER - Established 2087. Director: Nova Chen. This revolutionary theater uses advanced holographic projection technology to create immersive performances. The projection core is located beneath the main stage. Combination for secure storage: year of establishment."
+                },
+                {
+                    "id": "silver_keycard",
+                    "name": "silver access keycard",
+                    "description": "A keycard labeled 'STAGE ACCESS - AUTHORIZED PERSONNEL'"
+                },
+                {
+                    "id": "equipment_rack",
+                    "name": "equipment storage rack",
+                    "description": "A metal rack holding various technical equipment and tools",
+                    "searchable": true,
+                    "contains": [
+                        "maintenance_log"
+                    ]
+                },
+                {
+                    "id": "maintenance_log",
+                    "name": "maintenance log",
+                    "description": "A digital tablet with recent maintenance entries",
+                    "readable": true,
+                    "text": "Last Entry: Holographic projectors calibrated. The projection core beneath the stage is the heart of our system - without it, no show can run. Director Chen has been working on a special performance. Remember: only she can authorize emergency evacuation."
+                },
+                {
+                    "id": "wall_poster",
+                    "name": "promotional poster",
+                    "description": "A holographic poster advertising the theater's latest show",
+                    "readable": true,
+                    "text": "EXPERIENCE THE FUTURE OF ENTERTAINMENT! Hologram Theater presents: Dreams in Light. Featuring cutting-edge holographic technology that brings performances to life. Director Nova Chen's vision realized."
+                },
+                {
+                    "id": "locked_cabinet",
+                    "name": "locked equipment cabinet",
+                    "description": "A secure cabinet with a keycard reader",
+                    "locked": true,
+                    "key_required": "silver_keycard",
+                    "contains": [
+                        "brass_key",
+                        "technical_note"
+                    ]
+                },
+                {
+                    "id": "brass_key",
+                    "name": "brass stage key",
+                    "description": "A key labeled 'MAIN STAGE ACCESS'"
+                },
+                {
+                    "id": "technical_note",
+                    "name": "technician's note",
+                    "description": "A handwritten note from the technical staff",
+                    "readable": true,
+                    "text": "Reminder: The Director's Suite can only be accessed from the main stage. Security system requires knowledge of theater operations. Director Chen is very particular about security protocols."
+                },
+                {
+                    "id": "booth_exit_door",
+                    "name": "booth exit door",
+                    "description": "A heavy door with a brass lock leading down to the main stage area",
+                    "locked": true,
+                    "key_required": "brass_key",
+                    "direction": "south",
+                    "leads_to": "main_stage",
+                    "aliases": [
+                        "door",
+                        "south"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "main_stage",
+            "name": "Main Theater Stage",
+            "description": "A vast stage surrounded by rows of empty seats rising into darkness. Holographic projectors are mounted on the ceiling and walls, their lenses gleaming. The stage floor is marked with positioning guides and technical markings. A trapdoor in the center leads to the projection core below. The Director's Suite entrance is visible on the far wall, sealed with a security panel.",
+            "items": [
+                {
+                    "id": "holographic_projector_array",
+                    "name": "holographic projector array",
+                    "description": "An array of advanced projectors creating the theater's signature effects",
+                    "readable": true,
+                    "text": "PROJECTOR ARRAY: Model HT-2087. Capable of generating fully three-dimensional holographic performances. Powered by the projection core located beneath the stage. Maintenance required by certified technicians only."
+                },
+                {
+                    "id": "stage_trapdoor",
+                    "name": "stage trapdoor",
+                    "description": "A trapdoor with a handle, leading down to the technical areas",
+                    "searchable": true,
+                    "contains": [
+                        "core_access_note"
+                    ]
+                },
+                {
+                    "id": "core_access_note",
+                    "name": "projection core note",
+                    "description": "A note attached near the trapdoor",
+                    "readable": true,
+                    "text": "PROJECTION CORE ACCESS: The holographic projection core is the heart of this theater's technology. All performances depend on this system. Director Chen designed the entire theater around this revolutionary technology."
+                },
+                {
+                    "id": "directors_chair",
+                    "name": "director's chair",
+                    "description": "An ornate chair at the edge of the stage with Director Chen's name on it",
+                    "searchable": true,
+                    "contains": [
+                        "directors_notes"
+                    ]
+                },
+                {
+                    "id": "directors_notes",
+                    "name": "director's notes",
+                    "description": "A leather-bound notebook with Director Chen's personal notes",
+                    "readable": true,
+                    "text": "Director Nova Chen - Personal Notes: This theater is my life's work. The holographic projection core makes the impossible possible. I am the only one authorized to initiate emergency evacuation protocols. The future of entertainment is here."
+                },
+                {
+                    "id": "lighting_console",
+                    "name": "stage lighting console",
+                    "description": "A control panel for stage lighting and effects",
+                    "readable": true,
+                    "text": "LIGHTING CONTROL: Integrated with holographic systems. All controls route through the projection core beneath the stage. Emergency override available in Director's Suite."
+                },
+                {
+                    "id": "prop_storage",
+                    "name": "prop storage area",
+                    "description": "A section backstage with various theatrical props and equipment",
+                    "searchable": true,
+                    "contains": [
+                        "theater_program"
+                    ]
+                },
+                {
+                    "id": "theater_program",
+                    "name": "theater program",
+                    "description": "A glossy program from a recent performance",
+                    "readable": true,
+                    "text": "HOLOGRAM THEATER PRESENTS: An evening of wonder and innovation. Founded in 2087 by visionary Director Nova Chen. Our revolutionary holographic projection core creates experiences unlike anything else in the world. Thank you for being part of the future."
+                },
+                {
+                    "id": "Director's_Suite_entrance",
+                    "name": "Director's Suite entrance",
+                    "description": "An elegant door with a biometric security panel displaying three verification questions. A plaque reads 'Director Nova Chen - Private Suite'",
+                    "locked": true,
+                    "lock_type": "password",
+                    "password_questions": [
+                        {
+                            "question": "What is the heart of the theater's technology?",
+                            "answer": "projection core",
+                            "hint": "Check the maintenance log and technical notes about what powers the holographic system"
+                        },
+                        {
+                            "question": "Where is the projection core located?",
+                            "answer": "beneath the stage",
+                            "hint": "Multiple sources mention where the core is positioned"
+                        },
+                        {
+                            "question": "Who authorizes emergency evacuation?",
+                            "answer": "director nova chen",
+                            "hint": "The director's notes and system status mention who has this authority"
+                        }
+                    ],
+                    "direction": "east",
+                    "leads_to": "directors_suite",
+                    "aliases": [
+                        "suite",
+                        "east"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "directors_suite",
+            "name": "Director's Suite",
+            "description": "You've reached the Director's Suite! A luxurious office with floor-to-ceiling windows overlooking the theater. Awards and holographic art pieces line the walls. A sleek desk holds multiple screens showing theater operations. Most importantly, an emergency exit door stands open, revealing a stairway to street level and freedom. Fresh air flows in from outside.",
+            "items": [
+                {
+                    "id": "directors_desk",
+                    "name": "director's desk",
+                    "description": "An elegant desk with holographic displays and personal mementos"
+                },
+                {
+                    "id": "award_wall",
+                    "name": "wall of awards",
+                    "description": "Numerous awards and accolades for theatrical innovation and holographic technology",
+                    "readable": true,
+                    "text": "Awards for Director Nova Chen: Innovation in Holographic Entertainment, Theater of the Year 2089, Lifetime Achievement in Theatrical Technology. 'For revolutionizing the art of performance through holographic projection.'"
+                },
+                {
+                    "id": "emergency_exit",
+                    "name": "emergency exit door",
+                    "description": "An open door with an illuminated exit sign, stairs leading down to street level"
+                }
+            ],
+            "exits": [],
+            "is_goal": true,
+            "win_message": "SUCCESS! You've reached the Director's Suite and found the emergency exit! As you descend the stairs to street level, you leave the darkened Hologram Theater behind. The cool night air greets you as you emerge onto the city streets. You've solved the puzzles and escaped the theater. You win!"
+        }
+    ]
+}

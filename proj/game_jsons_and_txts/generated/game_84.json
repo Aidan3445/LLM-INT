@@ -1,0 +1,277 @@
+{
+    "theme": "Wizard Academy Exam",
+    "title": "Wizard Academy Exam Adventure #84",
+    "goal": "Solve the puzzles, achieve the main objective, and escape.",
+    "starting_room": "exam_hall",
+    "rooms": [
+        {
+            "id": "exam_hall",
+            "name": "Enchanted Exam Hall",
+            "description": "A grand hall with high vaulted ceilings covered in floating candles. Stone walls are lined with portraits of famous wizards. Your exam desk sits in the center, covered with magical instruments and locked compartments. A large blackboard displays glowing runes. The air crackles with magical energy.",
+            "items": [
+                {
+                    "id": "exam_desk",
+                    "name": "enchanted exam desk",
+                    "description": "A wooden desk with three locked drawers and various magical items scattered on top",
+                    "subcontainers": [
+                        {
+                            "id": "top_drawer",
+                            "name": "top drawer",
+                            "locked": false,
+                            "contains": [
+                                "exam_instructions"
+                            ]
+                        },
+                        {
+                            "id": "middle_drawer",
+                            "name": "middle drawer",
+                            "locked": true,
+                            "lock_type": "combination",
+                            "combination": "137",
+                            "contains": [
+                                "brass_key"
+                            ]
+                        },
+                        {
+                            "id": "bottom_drawer",
+                            "name": "bottom drawer",
+                            "locked": false,
+                            "contains": []
+                        }
+                    ]
+                },
+                {
+                    "id": "exam_instructions",
+                    "name": "exam instruction scroll",
+                    "description": "A rolled parchment with official academy seals",
+                    "readable": true,
+                    "text": "WIZARD ACADEMY EXAM #84: Welcome, apprentice! To pass this exam, you must demonstrate knowledge of our academy's history and magical principles. Remember: Professor Merlindale teaches Spell 1, Professor Thornwick teaches Spell 3, and Professor Nightshade teaches Spell 7. Good luck!"
+                },
+                {
+                    "id": "blackboard",
+                    "name": "magical blackboard",
+                    "description": "A large slate board with glowing runes and chalk writings",
+                    "readable": true,
+                    "text": "Today's Lesson: The Three Great Spells. Spell 1 - Illumination (taught by Merlindale). Spell 3 - Levitation (taught by Thornwick). Spell 7 - Transformation (taught by Nightshade). Remember the order: 1, 3, 7."
+                },
+                {
+                    "id": "bookshelf",
+                    "name": "towering bookshelf",
+                    "description": "A tall shelf filled with ancient spellbooks and magical tomes",
+                    "searchable": true,
+                    "contains": [
+                        "history_book"
+                    ]
+                },
+                {
+                    "id": "history_book",
+                    "name": "Academy History Volume",
+                    "description": "A leather-bound book detailing the academy's past",
+                    "readable": true,
+                    "text": "The Wizard Academy was founded by Headmaster Aldric Stormweaver in the year 892. The academy's motto is 'Knowledge Through Magic.' Our three founding professors were Merlindale, Thornwick, and Nightshade."
+                },
+                {
+                    "id": "brass_key",
+                    "name": "ornate brass key",
+                    "description": "A key with magical runes etched into its surface"
+                },
+                {
+                    "id": "locked_chest",
+                    "name": "spell component chest",
+                    "description": "A wooden chest bound with brass fittings and a keyhole",
+                    "locked": true,
+                    "key_required": "brass_key",
+                    "contains": [
+                        "potion_recipe",
+                        "crystal_wand"
+                    ]
+                },
+                {
+                    "id": "potion_recipe",
+                    "name": "advanced potion recipe",
+                    "description": "A parchment with instructions for brewing a complex potion",
+                    "readable": true,
+                    "text": "Master Potion Recipe: This formula was created in the Potion Laboratory by Professor Nightshade. The key ingredient is stored in the cauldron. Remember: only those who know the founder's name, the academy's founding year, and the sacred motto may enter the laboratory."
+                },
+                {
+                    "id": "crystal_wand",
+                    "name": "crystal wand",
+                    "description": "A wand made of pure crystal that glows with inner light"
+                },
+                {
+                    "id": "portrait_aldric",
+                    "name": "portrait of Headmaster Aldric",
+                    "description": "A large painting of a wise wizard with a long white beard",
+                    "readable": true,
+                    "text": "Headmaster Aldric Stormweaver - Founder of the Wizard Academy. 'Through knowledge and dedication, all magic is possible.'"
+                },
+                {
+                    "id": "enchanted_laboratory_door",
+                    "name": "enchanted laboratory door",
+                    "description": "A heavy oak door with glowing magical seals. Three questions are inscribed on a brass plaque.",
+                    "locked": true,
+                    "lock_type": "password",
+                    "password_questions": [
+                        {
+                            "question": "Who founded the Wizard Academy?",
+                            "answer": "aldric stormweaver",
+                            "hint": "Check the Academy History book and the portrait"
+                        },
+                        {
+                            "question": "In what year was the academy founded?",
+                            "answer": "892",
+                            "hint": "The history book contains this information"
+                        },
+                        {
+                            "question": "What is the academy's motto?",
+                            "answer": "knowledge through magic",
+                            "hint": "Read the Academy History Volume carefully"
+                        }
+                    ],
+                    "direction": "north",
+                    "leads_to": "potion_laboratory",
+                    "aliases": [
+                        "door",
+                        "north"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "potion_laboratory",
+            "name": "Potion Laboratory",
+            "description": "A mystical laboratory filled with bubbling cauldrons, shelves of colorful ingredients, and floating bottles. Purple smoke drifts through the air. Crystal vials line the walls, and a large brewing station dominates the center. A golden door at the far end leads to the Headmaster's Chamber.",
+            "items": [
+                {
+                    "id": "brewing_station",
+                    "name": "master brewing station",
+                    "description": "A complex setup with multiple burners, flasks, and measuring instruments",
+                    "searchable": true,
+                    "contains": [
+                        "professor_notes"
+                    ]
+                },
+                {
+                    "id": "professor_notes",
+                    "name": "Professor Nightshade's notes",
+                    "description": "Personal notes written in elegant handwriting",
+                    "readable": true,
+                    "text": "Note to self: The Headmaster's Chamber can only be accessed by those who truly understand our academy. The final exam questions test knowledge of our three founding professors and where the most powerful potions are created."
+                },
+                {
+                    "id": "ingredient_shelves",
+                    "name": "ingredient shelves",
+                    "description": "Shelves packed with jars of magical ingredients and components",
+                    "subcontainers": [
+                        {
+                            "id": "top_shelf",
+                            "name": "top shelf",
+                            "locked": false,
+                            "contains": [
+                                "phoenix_feather"
+                            ]
+                        },
+                        {
+                            "id": "bottom_shelf",
+                            "name": "bottom shelf",
+                            "locked": false,
+                            "contains": [
+                                "dragon_scale"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "phoenix_feather",
+                    "name": "glowing phoenix feather",
+                    "description": "A brilliant red and gold feather that radiates warmth"
+                },
+                {
+                    "id": "dragon_scale",
+                    "name": "iridescent dragon scale",
+                    "description": "A shimmering scale that changes colors in the light"
+                },
+                {
+                    "id": "large_cauldron",
+                    "name": "bubbling cauldron",
+                    "description": "A massive iron cauldron with green liquid bubbling inside",
+                    "searchable": true,
+                    "contains": [
+                        "golden_key"
+                    ]
+                },
+                {
+                    "id": "golden_key",
+                    "name": "golden master key",
+                    "description": "A key made of pure gold with the academy crest"
+                },
+                {
+                    "id": "potion_journal",
+                    "name": "laboratory journal",
+                    "description": "A journal documenting various potion experiments",
+                    "readable": true,
+                    "text": "Laboratory Log: Professor Merlindale specializes in illumination potions. Professor Thornwick excels at levitation elixirs. Professor Nightshade is the master of transformation brews. Together, they created the most powerful potions in this very laboratory."
+                },
+                {
+                    "id": "golden_chamber_door",
+                    "name": "golden chamber door",
+                    "description": "An ornate golden door with the academy crest. A magical lock displays three final exam questions.",
+                    "locked": true,
+                    "lock_type": "password",
+                    "password_questions": [
+                        {
+                            "question": "Name the professor who teaches Spell 1:",
+                            "answer": "merlindale",
+                            "hint": "Check the exam instructions and the blackboard"
+                        },
+                        {
+                            "question": "Name the professor who teaches Spell 7:",
+                            "answer": "nightshade",
+                            "hint": "The blackboard and laboratory journal mention this"
+                        },
+                        {
+                            "question": "Where are the most powerful potions created?",
+                            "answer": "potion laboratory",
+                            "hint": "Professor Nightshade's notes and the laboratory journal reveal this"
+                        }
+                    ],
+                    "direction": "east",
+                    "leads_to": "headmaster_chamber",
+                    "aliases": [
+                        "door",
+                        "east"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "headmaster_chamber",
+            "name": "Headmaster's Chamber",
+            "description": "You have reached the Headmaster's private chamber! A magnificent room with walls lined with ancient spellbooks and magical artifacts. A large desk holds a glowing certificate with your name on it. Sunlight streams through stained glass windows depicting great wizards of the past. A shimmering portal swirls in the corner, ready to transport you home.",
+            "items": [
+                {
+                    "id": "exam_certificate",
+                    "name": "graduation certificate",
+                    "description": "A magical certificate that glows with golden light",
+                    "readable": true,
+                    "text": "CONGRATULATIONS! You have successfully completed Wizard Academy Exam #84. You have demonstrated exceptional knowledge of magical history, potion brewing, and spell theory. You are hereby certified as a Graduate Wizard. - Headmaster Aldric Stormweaver"
+                },
+                {
+                    "id": "headmaster_desk",
+                    "name": "Headmaster's desk",
+                    "description": "An impressive desk made of ancient oak, covered with magical instruments and scrolls"
+                },
+                {
+                    "id": "magical_artifacts",
+                    "name": "display of magical artifacts",
+                    "description": "A collection of powerful magical items from throughout history"
+                }
+            ],
+            "exits": [],
+            "is_goal": true,
+            "win_message": "Congratulations! You have passed the Wizard Academy Exam with flying colors! The Headmaster's chamber recognizes your achievement, and your certificate glows brightly. You have proven your knowledge of magical history, potion brewing, and the academy's traditions. The shimmering portal activates, ready to transport you home as a certified wizard. You win!"
+        }
+    ]
+}

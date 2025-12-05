@@ -1,0 +1,247 @@
+{
+  "theme": "Frozen Research Vault",
+  "title": "Frozen Research Vault Adventure #14",
+  "goal": "Solve the puzzles, achieve the main objective, and escape.",
+  "starting_room": "cryo_storage",
+  "rooms": [
+    {
+      "id": "cryo_storage",
+      "name": "Cryogenic Storage Chamber",
+      "description": "A frigid chamber filled with rows of frosted cryogenic pods. Ice crystals coat every surface, and your breath forms clouds in the subzero air. Emergency lighting casts an eerie blue glow. The temperature gauge on the wall reads negative forty degrees. A control station sits near the entrance, and several pods line the walls.",
+      "items": [
+        {
+          "id": "control_station",
+          "name": "cryo control station",
+          "description": "A computer terminal with frost-covered screens and a locked drawer underneath",
+          "subcontainers": [
+            {
+              "id": "terminal_drawer",
+              "name": "terminal drawer",
+              "locked": false,
+              "contains": [
+                "research_log"
+              ]
+            },
+            {
+              "id": "security_compartment",
+              "name": "security compartment",
+              "locked": true,
+              "lock_type": "combination",
+              "combination": "2157",
+              "contains": [
+                "access_keycard"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "research_log",
+          "name": "research log datapad",
+          "description": "A digital tablet with research notes and facility information",
+          "readable": true,
+          "text": "Research Log: Specimen Alpha 7 stored in pod 21. Specimen Beta 5 in pod 57. Critical: Facility lockdown code is the pod numbers in sequence. Lead researcher is Dr. Helena Frost. All specimens must remain at cryogenic temperatures."
+        },
+        {
+          "id": "access_keycard",
+          "name": "security access keycard",
+          "description": "A magnetic keycard labeled 'Level 2 Access' with frost clinging to its edges"
+        },
+        {
+          "id": "cryopod_alpha",
+          "name": "cryogenic pod Alpha 7",
+          "description": "A large cylindrical pod with a viewing window showing a preserved specimen inside",
+          "readable": true,
+          "text": "Pod Label: Specimen Alpha 7 - Status: Stable. Temperature: -196\u00b0C. Do not thaw."
+        },
+        {
+          "id": "supply_locker",
+          "name": "emergency supply locker",
+          "description": "A metal locker containing emergency equipment and supplies",
+          "locked": true,
+          "key_required": "access_keycard",
+          "contains": [
+            "thermal_scanner",
+            "facility_map"
+          ]
+        },
+        {
+          "id": "thermal_scanner",
+          "name": "handheld thermal scanner",
+          "description": "A device for measuring temperature and detecting heat signatures"
+        },
+        {
+          "id": "facility_map",
+          "name": "facility layout map",
+          "description": "A laminated map showing the research vault's layout",
+          "readable": true,
+          "text": "Map shows: Cryo Storage (current location) connects to Main Research Lab via the north corridor. Emergency Exit is accessible from the Research Lab. Note: Dr. Frost's office contains backup security protocols."
+        },
+        {
+          "id": "storage_cabinet",
+          "name": "specimen storage cabinet",
+          "description": "A tall cabinet with glass doors, containing various research samples",
+          "searchable": true,
+          "contains": [
+            "specimen_notes"
+          ]
+        },
+        {
+          "id": "specimen_notes",
+          "name": "specimen documentation",
+          "description": "Papers detailing the research specimens and their storage",
+          "readable": true,
+          "text": "Specimen Documentation: All samples collected from Arctic expedition. Primary researcher: Dr. Helena Frost. Storage protocol requires maintaining vault integrity. Emergency evacuation route leads to the surface bunker."
+        },
+        {
+          "id": "reinforced_airlock_door",
+          "name": "reinforced airlock door",
+          "description": "A heavy door with a card reader and frost buildup around the seal",
+          "locked": true,
+          "key_required": "access_keycard",
+          "direction": "north",
+          "leads_to": "research_lab",
+          "aliases": [
+            "airlock",
+            "north"
+          ]
+        }
+      ],
+      "exits": []
+    },
+    {
+      "id": "research_lab",
+      "name": "Main Research Laboratory",
+      "description": "A spacious laboratory filled with scientific equipment, computer workstations, and analysis machines. Frost patterns decorate the windows. Research papers and specimen containers are scattered across the workbenches. A large information panel is mounted on the wall, and a secure vault door dominates the far wall.",
+      "items": [
+        {
+          "id": "main_workbench",
+          "name": "research workbench",
+          "description": "A long table covered with microscopes, test tubes, and research equipment",
+          "searchable": true,
+          "contains": [
+            "lab_notebook"
+          ]
+        },
+        {
+          "id": "lab_notebook",
+          "name": "laboratory notebook",
+          "description": "A notebook filled with handwritten research observations",
+          "readable": true,
+          "text": "Lab Notes: Breakthrough discovery in specimen analysis! The key to understanding the samples lies in their origin. All specimens were collected from the Arctic surface bunker location. Temperature stability is critical for preservation."
+        },
+        {
+          "id": "computer_terminal",
+          "name": "research computer terminal",
+          "description": "A desktop computer with multiple monitors displaying data and graphs",
+          "readable": true,
+          "text": "Computer Display: Research Database - Lead Researcher: Dr. Helena Frost. Project Status: Active. Security Level: Maximum. Warning: Unauthorized access will trigger lockdown protocols."
+        },
+        {
+          "id": "wall_panel",
+          "name": "wall mounted information panel",
+          "description": "A digital display panel showing facility information and emergency procedures",
+          "readable": true,
+          "text": "Emergency Procedures: In case of facility breach, proceed to Emergency Vault. Access requires knowledge of: Lead researcher name, specimen origin location, and evacuation destination. Contact Dr. Helena Frost for authorization."
+        },
+        {
+          "id": "filing_system",
+          "name": "secure filing system",
+          "description": "A cabinet with multiple compartments for storing classified documents",
+          "subcontainers": [
+            {
+              "id": "top_section",
+              "name": "top section",
+              "locked": false,
+              "contains": [
+                "security_memo"
+              ]
+            },
+            {
+              "id": "bottom_section",
+              "name": "bottom section",
+              "locked": false,
+              "contains": []
+            }
+          ]
+        },
+        {
+          "id": "security_memo",
+          "name": "security memorandum",
+          "description": "An official document outlining security protocols",
+          "readable": true,
+          "text": "SECURITY MEMO: Emergency vault access requires verification. Personnel must correctly answer security questions. Remember: specimens came from Arctic surface bunker, evacuation leads to surface bunker, lead researcher is Dr. Helena Frost."
+        },
+        {
+          "id": "specimen_freezer",
+          "name": "specimen freezer unit",
+          "description": "A large freezer containing preserved research samples",
+          "searchable": true,
+          "contains": [
+            "frozen_sample"
+          ]
+        },
+        {
+          "id": "frozen_sample",
+          "name": "preserved specimen sample",
+          "description": "A small container holding a frozen biological sample"
+        },
+        {
+          "id": "emergency_vault_door",
+          "name": "emergency vault door",
+          "description": "A massive reinforced door with a security terminal displaying three verification questions",
+          "locked": true,
+          "lock_type": "password",
+          "password_questions": [
+            {
+              "question": "Who is the lead researcher?",
+              "answer": "dr helena frost",
+              "hint": "Check the research logs and computer terminal"
+            },
+            {
+              "question": "Where were the specimens collected?",
+              "answer": "arctic surface bunker",
+              "hint": "Look at the lab notebook and security memo"
+            },
+            {
+              "question": "Where does the evacuation route lead?",
+              "answer": "surface bunker",
+              "hint": "The facility map and security memo mention the evacuation destination"
+            }
+          ],
+          "direction": "east",
+          "leads_to": "escape_corridor",
+          "aliases": [
+            "vault",
+            "east"
+          ]
+        }
+      ],
+      "exits": []
+    },
+    {
+      "id": "escape_corridor",
+      "name": "Emergency Escape Corridor",
+      "description": "You've made it to the emergency escape route! A long corridor with emergency lighting leads upward. At the end, a ladder ascends to a surface hatch. Through the small window in the hatch, you can see daylight and freedom. The temperature is rising as you move away from the frozen vault below.",
+      "items": [
+        {
+          "id": "emergency_ladder",
+          "name": "escape ladder",
+          "description": "A sturdy metal ladder leading up to the surface hatch and freedom"
+        },
+        {
+          "id": "surface_hatch",
+          "name": "surface access hatch",
+          "description": "A hatch leading to the outside world, with sunlight visible through its window"
+        },
+        {
+          "id": "emergency_supplies",
+          "name": "emergency supply cache",
+          "description": "A box containing survival gear, food, and communication equipment"
+        }
+      ],
+      "exits": [],
+      "is_goal": true,
+      "win_message": "SUCCESS! You've navigated through the frozen research vault, solved all the security puzzles, and reached the emergency escape corridor. You climb the ladder and push open the surface hatch, emerging into the bright Arctic daylight. The frozen vault and its secrets remain below as you make your way to safety. You win!"
+    }
+  ]
+}

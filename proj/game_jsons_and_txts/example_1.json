@@ -65,6 +65,11 @@
           "text": "My precious daughter, never forget who you are - a princess of this realm. Your father and I await you at dinner. Love, Mother the Queen"
         },
         {
+          "id": "wooden_key",
+          "name": "wooden key",
+          "description": "A small wooden key with intricate carvings"
+        },
+        {
           "id": "trapdoor",
           "name": "wooden trapdoor",
           "description": "A trapdoor in the corner of the room leading down",

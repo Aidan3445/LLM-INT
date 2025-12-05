@@ -1,0 +1,253 @@
+{
+    "theme": "Shadow Assassin Dojo",
+    "title": "Shadow Assassin Dojo Adventure #58",
+    "goal": "Solve the puzzles, achieve the main objective, and escape.",
+    "starting_room": "training_hall",
+    "rooms": [
+        {
+            "id": "training_hall",
+            "name": "Shadow Training Hall",
+            "description": "A dimly lit training hall with wooden floors worn smooth by countless footsteps. Training dummies line the walls, and weapon racks hold practice swords and staffs. Moonlight filters through paper screens, casting long shadows. The air smells of incense and sweat.",
+            "items": [
+                {
+                    "id": "weapon_rack",
+                    "name": "wooden weapon rack",
+                    "description": "A rack holding various training weapons - wooden swords, staffs, and practice kunai",
+                    "searchable": true,
+                    "contains": [
+                        "hidden_scroll"
+                    ]
+                },
+                {
+                    "id": "hidden_scroll",
+                    "name": "scroll of the shadow path",
+                    "description": "An ancient scroll describing the dojo's founding",
+                    "readable": true,
+                    "text": "The Shadow Assassin Dojo was founded by Master Kage in the year 1582. He taught that mastery requires balance of mind, body, and spirit. Remember: there are 8 fundamental forms, 5 elements of combat, and 3 principles of stealth."
+                },
+                {
+                    "id": "training_dummy",
+                    "name": "wooden training dummy",
+                    "description": "A well-worn practice dummy with strike marks covering its surface",
+                    "searchable": true,
+                    "contains": []
+                },
+                {
+                    "id": "meditation_mat",
+                    "name": "meditation mat",
+                    "description": "A simple mat placed before a small shrine",
+                    "searchable": true,
+                    "contains": [
+                        "bronze_key"
+                    ]
+                },
+                {
+                    "id": "bronze_key",
+                    "name": "bronze key with dragon symbol",
+                    "description": "A small bronze key engraved with a coiling dragon"
+                },
+                {
+                    "id": "storage_cabinet",
+                    "name": "training equipment cabinet",
+                    "description": "A tall cabinet with three compartments for storing training gear",
+                    "subcontainers": [
+                        {
+                            "id": "top_compartment",
+                            "name": "top compartment",
+                            "locked": false,
+                            "contains": [
+                                "master_teachings"
+                            ]
+                        },
+                        {
+                            "id": "middle_compartment",
+                            "name": "middle compartment",
+                            "locked": true,
+                            "lock_type": "combination",
+                            "combination": "853",
+                            "contains": [
+                                "silver_key"
+                            ]
+                        },
+                        {
+                            "id": "bottom_compartment",
+                            "name": "bottom compartment",
+                            "locked": false,
+                            "contains": []
+                        }
+                    ]
+                },
+                {
+                    "id": "master_teachings",
+                    "name": "Master Kage's teachings",
+                    "description": "A document outlining the fundamental principles of the dojo",
+                    "readable": true,
+                    "text": "Master Kage's Core Teachings: Master the 8 fundamental forms. Understand the 5 elements: Earth, Water, Fire, Wind, and Void. Follow the 3 principles of stealth: Silence, Shadow, and Speed. Only then can you enter the Inner Sanctum."
+                },
+                {
+                    "id": "silver_key",
+                    "name": "silver key with tiger symbol",
+                    "description": "A silver key engraved with a leaping tiger"
+                },
+                {
+                    "id": "reinforced_sliding_door",
+                    "name": "reinforced sliding door",
+                    "description": "A heavy door leading to the armory, secured with a dragon-marked lock",
+                    "locked": true,
+                    "key_required": "bronze_key",
+                    "direction": "east",
+                    "leads_to": "secret_armory",
+                    "aliases": [
+                        "door",
+                        "east"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "secret_armory",
+            "name": "Secret Armory",
+            "description": "A hidden chamber filled with authentic weapons and armor. Katanas, shuriken, and kusarigama hang on the walls. Display cases hold ancient artifacts. Scrolls detailing assassination techniques are carefully preserved in glass cases. A portrait of Master Kage watches over the room.",
+            "items": [
+                {
+                    "id": "master_portrait",
+                    "name": "portrait of Master Kage",
+                    "description": "A painting of the dojo's founder in traditional garb",
+                    "readable": true,
+                    "text": "Master Kage (1542-1620) - Founder of the Shadow Assassin Dojo. Known for his mastery of the Silent Strike technique and his philosophy of honorable assassination."
+                },
+                {
+                    "id": "display_case_one",
+                    "name": "first display case",
+                    "description": "A glass case containing historical weapons",
+                    "searchable": true,
+                    "contains": [
+                        "technique_scroll"
+                    ]
+                },
+                {
+                    "id": "technique_scroll",
+                    "name": "scroll of techniques",
+                    "description": "A scroll listing the dojo's signature moves",
+                    "readable": true,
+                    "text": "Signature Techniques of the Shadow Dojo: The Silent Strike - Master Kage's legendary technique. The Phantom Step - taught by Master Yuki. The Dragon's Breath - perfected by Master Ryu. These masters guard the path to the Inner Sanctum."
+                },
+                {
+                    "id": "display_case_two",
+                    "name": "second display case",
+                    "description": "A case holding ancient armor pieces",
+                    "searchable": true,
+                    "contains": []
+                },
+                {
+                    "id": "weapon_chest",
+                    "name": "locked weapon chest",
+                    "description": "An ornate chest secured with a tiger-marked lock",
+                    "locked": true,
+                    "key_required": "silver_key",
+                    "contains": [
+                        "master_scroll",
+                        "jade_token"
+                    ]
+                },
+                {
+                    "id": "master_scroll",
+                    "name": "Master's final scroll",
+                    "description": "A scroll containing Master Kage's final instructions",
+                    "readable": true,
+                    "text": "To my successor: You have proven yourself worthy. The Inner Sanctum awaits beyond the Gate of Shadows. To pass, you must answer three questions that prove your understanding of our way. Remember who perfected each technique, and know that true mastery lies in the void."
+                },
+                {
+                    "id": "jade_token",
+                    "name": "jade token of mastery",
+                    "description": "A circular jade token engraved with the dojo's symbol - proof of a master assassin"
+                },
+                {
+                    "id": "Gate_of_Shadows",
+                    "name": "Gate of Shadows",
+                    "description": "A massive black door carved with intricate symbols. Three questions are etched into a stone tablet beside it.",
+                    "locked": true,
+                    "lock_type": "password",
+                    "password_questions": [
+                        {
+                            "question": "Who created the Silent Strike?",
+                            "answer": "master kage",
+                            "hint": "Check the technique scroll and the portrait"
+                        },
+                        {
+                            "question": "Who taught the Phantom Step?",
+                            "answer": "master yuki",
+                            "hint": "The scroll of techniques lists each master's specialty"
+                        },
+                        {
+                            "question": "What is the fifth element?",
+                            "answer": "void",
+                            "hint": "Master Kage's teachings mention all five elements"
+                        }
+                    ],
+                    "direction": "north",
+                    "leads_to": "inner_sanctum",
+                    "aliases": [
+                        "gate",
+                        "north"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "inner_sanctum",
+            "name": "Inner Sanctum of the Shadow Master",
+            "description": "You have entered the legendary Inner Sanctum! The chamber is circular, with walls covered in ancient scrolls and weapons of legendary assassins. In the center, a raised platform holds the Shadow Master's throne. Behind it, a secret passage leads to freedom. Moonlight streams through a skylight, illuminating the jade token in your hand.",
+            "items": [
+                {
+                    "id": "shadow_throne",
+                    "name": "Shadow Master's throne",
+                    "description": "An ornate black throne carved from a single piece of obsidian"
+                },
+                {
+                    "id": "wall_scrolls",
+                    "name": "ancient wall scrolls",
+                    "description": "Scrolls containing the complete history and techniques of the Shadow Assassin Dojo",
+                    "readable": true,
+                    "text": "The complete teachings of the Shadow Assassin Dojo, passed down through generations. You have proven yourself worthy to learn these secrets."
+                },
+                {
+                    "id": "legendary_weapons",
+                    "name": "weapons of legend",
+                    "description": "The actual weapons used by Master Kage and the founding assassins, preserved for eternity"
+                },
+                {
+                    "id": "hidden_escape_passage",
+                    "name": "hidden escape passage",
+                    "description": "A concealed passage leading out of the dojo, accessible only to those who hold the jade token",
+                    "locked": true,
+                    "key_required": "jade_token",
+                    "direction": "west",
+                    "leads_to": "freedom",
+                    "aliases": [
+                        "passage",
+                        "west"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "freedom",
+            "name": "Mountain Path to Freedom",
+            "description": "You emerge onto a moonlit mountain path overlooking the valley below. The Shadow Assassin Dojo stands behind you, its secrets now yours. The jade token glows softly in your hand - you are now a true master of the shadow arts.",
+            "items": [
+                {
+                    "id": "mountain_view",
+                    "name": "valley overlook",
+                    "description": "A breathtaking view of the valley below, with villages dotting the landscape under the moonlight"
+                }
+            ],
+            "exits": [],
+            "is_goal": true,
+            "win_message": "You have completed the trials of the Shadow Assassin Dojo! By solving the ancient puzzles and proving your knowledge of the dojo's teachings, you have earned the jade token of mastery. You are now recognized as a true Shadow Assassin, worthy of Master Kage's legacy. The path to freedom lies open before you. You win!"
+        }
+    ]
+}

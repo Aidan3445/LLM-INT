@@ -1,0 +1,256 @@
+{
+    "theme": "Eldritch Ritual Chamber",
+    "title": "Eldritch Ritual Chamber Adventure #14",
+    "goal": "Solve the puzzles, achieve the main objective, and escape.",
+    "starting_room": "ritual_preparation_chamber",
+    "rooms": [
+        {
+            "id": "ritual_preparation_chamber",
+            "name": "Ritual Preparation Chamber",
+            "description": "A dimly lit chamber with walls covered in disturbing symbols that seem to writhe in the flickering candlelight. The air is thick with the smell of incense and something older, more primal. Ritual implements are scattered across stone tables. Strange chanting echoes from somewhere deep below. Black candles cast dancing shadows that move independently of their flames.",
+            "items": [
+                {
+                    "id": "ritual_table",
+                    "name": "stone ritual table",
+                    "description": "A dark stone table stained with unidentifiable substances and covered in ritual tools",
+                    "searchable": true,
+                    "contains": [
+                        "ceremonial_dagger"
+                    ]
+                },
+                {
+                    "id": "ceremonial_dagger",
+                    "name": "ceremonial dagger",
+                    "description": "A curved dagger with eldritch symbols etched into the blade"
+                },
+                {
+                    "id": "offering_chest",
+                    "name": "offering chest",
+                    "description": "A wooden chest bound with iron, used to store ritual offerings",
+                    "locked": true,
+                    "key_required": "ceremonial_dagger",
+                    "contains": [
+                        "cult_manifesto"
+                    ]
+                },
+                {
+                    "id": "cult_manifesto",
+                    "name": "cult manifesto",
+                    "description": "A leather-bound document outlining the cult's beliefs",
+                    "readable": true,
+                    "text": "The Order of the Starless Void was founded in 1923 by High Priest Mordecai Blackwood. We seek communion with the Great Old Ones who dwell beyond the stars. Through ritual and sacrifice, we shall open the gateway and bring forth the Dark Herald from the Void Between Worlds."
+                },
+                {
+                    "id": "candle_altar",
+                    "name": "altar of black candles",
+                    "description": "An altar with thirteen black candles arranged in a specific pattern",
+                    "subcontainers": [
+                        {
+                            "id": "altar_compartment",
+                            "name": "hidden altar compartment",
+                            "locked": true,
+                            "lock_type": "combination",
+                            "combination": "1923",
+                            "contains": [
+                                "brass_key"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "brass_key",
+                    "name": "tarnished brass key",
+                    "description": "An old brass key with a star symbol that hurts to look at directly"
+                },
+                {
+                    "id": "wall_inscription",
+                    "name": "wall inscription",
+                    "description": "Strange symbols carved deep into the stone wall",
+                    "readable": true,
+                    "text": "The inscription reads: 'Only those who know the sacred truths may enter the Archive of Forbidden Knowledge. Beyond lies the Ritual Chamber where the gateway shall open. Speak the name of our Herald, our founder, and the source of our power.'"
+                },
+                {
+                    "id": "robed_mannequin",
+                    "name": "robed figure mannequin",
+                    "description": "A mannequin wearing dark ceremonial robes",
+                    "searchable": true,
+                    "contains": [
+                        "ritual_instructions"
+                    ]
+                },
+                {
+                    "id": "ritual_instructions",
+                    "name": "ritual instructions",
+                    "description": "A scroll detailing the ritual process",
+                    "readable": true,
+                    "text": "Instructions for the Summoning: The ritual must be performed in the Ritual Chamber. High Priest Blackwood has prepared everything. The Dark Herald awaits beyond the Void Between Worlds. Only the initiated may proceed to the Archive."
+                },
+                {
+                    "id": "iron_door",
+                    "name": "iron door",
+                    "description": "A heavy iron door covered in protective wards and symbols, leading to the archive",
+                    "locked": true,
+                    "key_required": "brass_key",
+                    "direction": "north",
+                    "leads_to": "forbidden_archive",
+                    "aliases": [
+                        "door",
+                        "north"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "forbidden_archive",
+            "name": "Archive of Forbidden Knowledge",
+            "description": "A vast library filled with ancient tomes and scrolls that should not exist. The books seem to whisper secrets in languages that predate humanity. Dust motes float in the air like tiny stars. Strange diagrams cover the walls, showing cosmic geometries that make your eyes water. A sense of vast, incomprehensible knowledge presses down on you.",
+            "items": [
+                {
+                    "id": "reading_lectern",
+                    "name": "ancient reading lectern",
+                    "description": "A wooden lectern holding an open book with pages that seem to move on their own",
+                    "readable": true,
+                    "text": "The Necronomicon excerpt: 'The Dark Herald dwells in the Void Between Worlds, waiting for the stars to align. When the gateway opens in the Ritual Chamber, it shall emerge and remake reality in its image.'"
+                },
+                {
+                    "id": "bookshelf_left",
+                    "name": "bookshelf of cosmic lore",
+                    "description": "Shelves packed with books about entities beyond human comprehension",
+                    "searchable": true,
+                    "contains": [
+                        "cosmic_entities_tome"
+                    ]
+                },
+                {
+                    "id": "cosmic_entities_tome",
+                    "name": "tome of cosmic entities",
+                    "description": "A heavy book describing the Great Old Ones",
+                    "readable": true,
+                    "text": "Chapter VII: The Dark Herald - This entity exists in the Void Between Worlds, a dimension outside normal space and time. It is one of the Great Old Ones, waiting to be summoned by those foolish enough to open the gateway."
+                },
+                {
+                    "id": "bookshelf_right",
+                    "name": "bookshelf of cult history",
+                    "description": "Shelves containing records of the cult's activities",
+                    "searchable": true,
+                    "contains": [
+                        "cult_history"
+                    ]
+                },
+                {
+                    "id": "cult_history",
+                    "name": "cult history chronicle",
+                    "description": "A detailed history of the Order of the Starless Void",
+                    "readable": true,
+                    "text": "The Order was established by High Priest Mordecai Blackwood in 1923 after he discovered forbidden texts in an expedition to Antarctica. He dedicated his life to preparing the ritual that would summon the Dark Herald and usher in a new age."
+                },
+                {
+                    "id": "scroll_cabinet",
+                    "name": "scroll cabinet",
+                    "description": "A cabinet with multiple compartments containing rolled scrolls",
+                    "subcontainers": [
+                        {
+                            "id": "top_compartment",
+                            "name": "top compartment",
+                            "locked": false,
+                            "contains": [
+                                "summoning_scroll"
+                            ]
+                        },
+                        {
+                            "id": "bottom_compartment",
+                            "name": "bottom compartment",
+                            "locked": false,
+                            "contains": [
+                                "silver_key"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "summoning_scroll",
+                    "name": "summoning scroll",
+                    "description": "A scroll with the complete summoning ritual",
+                    "readable": true,
+                    "text": "The Final Ritual: To complete the summoning, one must enter the Ritual Chamber and speak the three truths: the name of the entity we summon, the name of our founder who showed us the way, and the realm from which the entity shall emerge."
+                },
+                {
+                    "id": "silver_key",
+                    "name": "ornate silver key",
+                    "description": "A silver key that feels unnaturally cold to the touch"
+                },
+                {
+                    "id": "star_chart",
+                    "name": "astronomical star chart",
+                    "description": "A chart showing constellations that don't match any known astronomy",
+                    "readable": true,
+                    "text": "The stars align on this night. The gateway between worlds grows thin. The Void Between Worlds touches our reality. The Dark Herald stirs in its cosmic prison, ready to answer our call."
+                },
+                {
+                    "id": "ritual_chamber_door",
+                    "name": "ritual chamber door",
+                    "description": "A massive door carved with scenes of cosmic horror. Three questions are inscribed in glowing script that seems to pulse with otherworldly energy.",
+                    "locked": true,
+                    "lock_type": "password",
+                    "password_questions": [
+                        {
+                            "question": "What entity do we summon?",
+                            "answer": "dark herald",
+                            "hint": "Check the cult manifesto and the tome of cosmic entities"
+                        },
+                        {
+                            "question": "Who founded our order?",
+                            "answer": "mordecai blackwood",
+                            "hint": "The cult manifesto and history chronicle mention the founder's full name"
+                        },
+                        {
+                            "question": "From what realm does it emerge?",
+                            "answer": "void between worlds",
+                            "hint": "Multiple texts describe where the Dark Herald dwells"
+                        }
+                    ],
+                    "direction": "east",
+                    "leads_to": "main_ritual_chamber",
+                    "aliases": [
+                        "door",
+                        "east"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "main_ritual_chamber",
+            "name": "Main Ritual Chamber",
+            "description": "You have entered the heart of the eldritch ritual site! A vast circular chamber with a massive summoning circle carved into the floor. The symbols glow with an eerie green light. At the center, a swirling portal of darkness has begun to form - but instead of summoning something through, it offers a way out! The cosmic energies are unstable, creating an escape route back to the normal world. You must leave before the ritual completes!",
+            "items": [
+                {
+                    "id": "summoning_circle",
+                    "name": "massive summoning circle",
+                    "description": "An intricate circle of power carved into the stone floor, glowing with eldritch energy"
+                },
+                {
+                    "id": "portal_of_darkness",
+                    "name": "unstable portal",
+                    "description": "A swirling vortex of darkness and stars that offers escape from this nightmare",
+                    "readable": true,
+                    "text": "The portal pulses with cosmic energy. Rather than bringing something through, the unstable energies have created a rift back to the normal world. This is your chance to escape!"
+                },
+                {
+                    "id": "ritual_altar",
+                    "name": "central ritual altar",
+                    "description": "A black stone altar at the center of the summoning circle, covered in strange implements"
+                },
+                {
+                    "id": "eldritch_statue",
+                    "name": "statue of the Dark Herald",
+                    "description": "A disturbing statue depicting an entity that should not exist, its form hurting to perceive"
+                }
+            ],
+            "exits": [],
+            "is_goal": true,
+            "win_message": "You leap through the unstable portal just as the ritual energies reach their peak! The cosmic forces tear at reality around you, but you emerge safely in the normal world. Behind you, the portal collapses with a sound like reality screaming. You have escaped the Eldritch Ritual Chamber and prevented the summoning. The cult's plans are thwarted, and you live to tell the tale - though no one will believe you. You win!"
+        }
+    ]
+}

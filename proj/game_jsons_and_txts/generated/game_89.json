@@ -1,0 +1,216 @@
+{
+    "theme": "Ghostly Ballroom",
+    "title": "Ghostly Ballroom Adventure #89",
+    "goal": "Solve the puzzles, achieve the main objective, and escape.",
+    "starting_room": "grand_ballroom",
+    "rooms": [
+        {
+            "id": "grand_ballroom",
+            "name": "Grand Ballroom",
+            "description": "A magnificent ballroom frozen in time. Crystal chandeliers cast flickering light across the polished marble floor. Ghostly figures in elegant gowns and tailcoats waltz to phantom music from an invisible orchestra. The air is cold and smells of old perfume and candle wax. Ornate mirrors line the walls, reflecting dancers who aren't really there.",
+            "items": [
+                {
+                    "id": "grand_piano",
+                    "name": "grand piano",
+                    "description": "A black grand piano in the corner, its keys moving on their own to play a haunting waltz",
+                    "searchable": true,
+                    "contains": [
+                        "sheet_music"
+                    ]
+                },
+                {
+                    "id": "sheet_music",
+                    "name": "yellowed sheet music",
+                    "description": "An old piece of music with notes and writing in the margins",
+                    "readable": true,
+                    "text": "Waltz in D Minor - Composed for the Grand Ball of 1889. Margin note: 'Lady Victoria danced her last dance on October 31st, 1889. She waits still in the gallery, remembering.'"
+                },
+                {
+                    "id": "refreshment_table",
+                    "name": "refreshment table",
+                    "description": "A long table covered with a dusty white cloth. Crystal glasses and silver platters sit untouched.",
+                    "subcontainers": [
+                        {
+                            "id": "table_drawer",
+                            "name": "table drawer",
+                            "locked": true,
+                            "lock_type": "combination",
+                            "combination": "1889",
+                            "contains": [
+                                "silver_key"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "silver_key",
+                    "name": "tarnished silver key",
+                    "description": "An ornate silver key with a ghost-shaped handle"
+                },
+                {
+                    "id": "guest_book",
+                    "name": "guest registry book",
+                    "description": "A leather-bound book on a podium near the entrance",
+                    "readable": true,
+                    "text": "Final entries from October 31st, 1889: Lady Victoria Ashworth, Lord Edmund Blackwood, Countess Helena Ravencroft. Note at bottom: 'The last ball before the tragedy. All guests remain, forever dancing.'"
+                },
+                {
+                    "id": "locked_cabinet",
+                    "name": "display cabinet",
+                    "description": "A glass cabinet containing old invitations and memorabilia from past balls",
+                    "locked": true,
+                    "key_required": "silver_key",
+                    "contains": [
+                        "invitation",
+                        "locket"
+                    ]
+                },
+                {
+                    "id": "invitation",
+                    "name": "final ball invitation",
+                    "description": "An elegant invitation on cream-colored paper",
+                    "readable": true,
+                    "text": "You are cordially invited to the Grand Halloween Ball at Ashworth Manor. October 31st, 1889. Hosted by Lady Victoria Ashworth. Dress: Formal. The gardens will be open for moonlit strolls."
+                },
+                {
+                    "id": "locket",
+                    "name": "gold locket",
+                    "description": "A heart-shaped locket with a portrait inside",
+                    "readable": true,
+                    "text": "Inside the locket is a miniature portrait of a beautiful woman with the inscription: 'Victoria - Forever in the Garden of Memories'"
+                },
+                {
+                    "id": "mirror",
+                    "name": "ornate mirror",
+                    "description": "A large gilded mirror that shows ghostly reflections",
+                    "searchable": true,
+                    "contains": [
+                        "hidden_note"
+                    ]
+                },
+                {
+                    "id": "hidden_note",
+                    "name": "note behind mirror",
+                    "description": "A folded note tucked behind the mirror frame",
+                    "readable": true,
+                    "text": "To escape the eternal dance, one must know: Who hosted the final ball? Where do the spirits long to go? What ended the celebration?"
+                },
+                {
+                    "id": "double_doors_to_gallery",
+                    "name": "double doors to gallery",
+                    "description": "Tall mahogany doors leading to the portrait gallery, slightly ajar",
+                    "locked": false,
+                    "direction": "north",
+                    "leads_to": "portrait_gallery",
+                    "aliases": [
+                        "doors",
+                        "north"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "portrait_gallery",
+            "name": "Portrait Gallery",
+            "description": "A long gallery lined with oil paintings of aristocrats from centuries past. Candles in wall sconces flicker despite no breeze. The portraits seem to watch you as you move. At the far end, French doors lead to a moonlit terrace. The temperature drops noticeably in this room.",
+            "items": [
+                {
+                    "id": "portrait_victoria",
+                    "name": "portrait of Lady Victoria",
+                    "description": "A large portrait of a woman in a blue ball gown, her eyes seem to follow you",
+                    "readable": true,
+                    "text": "Lady Victoria Ashworth (1860-1889). Beloved hostess of Ashworth Manor. Her final ball ended in tragedy when fire consumed the ballroom. She and her guests perished, but their spirits dance on."
+                },
+                {
+                    "id": "portrait_edmund",
+                    "name": "portrait of Lord Edmund",
+                    "description": "A stern-looking gentleman in formal attire",
+                    "readable": true,
+                    "text": "Lord Edmund Blackwood (1855-1889). Distinguished guest and friend of the Ashworth family. Lost in the fire of October 31st."
+                },
+                {
+                    "id": "portrait_helena",
+                    "name": "portrait of Countess Helena",
+                    "description": "An elegant woman with kind eyes",
+                    "readable": true,
+                    "text": "Countess Helena Ravencroft (1862-1889). Patron of the arts. Her last wish was to walk in the Garden of Memories one more time."
+                },
+                {
+                    "id": "memorial_plaque",
+                    "name": "memorial plaque",
+                    "description": "A brass plaque mounted on the wall",
+                    "readable": true,
+                    "text": "In Memory of Those Lost in the Fire of October 31st, 1889. May they find peace in the Garden of Memories. The tragedy that ended the celebration shall not be forgotten."
+                },
+                {
+                    "id": "antique_desk",
+                    "name": "writing desk",
+                    "description": "A small desk with papers and a quill pen",
+                    "searchable": true,
+                    "contains": [
+                        "diary_entry"
+                    ]
+                },
+                {
+                    "id": "diary_entry",
+                    "name": "diary page",
+                    "description": "A torn page from someone's diary",
+                    "readable": true,
+                    "text": "October 30th, 1889 - Tomorrow is Lady Victoria Ashworth's grand ball. I have heard she plans to open the Garden of Memories for guests to enjoy under the full moon. How wonderful it will be!"
+                },
+                {
+                    "id": "French_doors_to_terrace",
+                    "name": "French doors to terrace",
+                    "description": "Elegant glass doors leading to the moonlit terrace. A spectral lock glows with ethereal light, and three questions are etched in frost on the glass.",
+                    "locked": true,
+                    "lock_type": "password",
+                    "password_questions": [
+                        {
+                            "question": "Who hosted the final ball?",
+                            "answer": "lady victoria ashworth",
+                            "hint": "Check the guest book and portraits for the hostess's name"
+                        },
+                        {
+                            "question": "Where do the spirits long to go?",
+                            "answer": "garden of memories",
+                            "hint": "Look at the locket, memorial plaque, and diary entries"
+                        },
+                        {
+                            "question": "What ended the celebration?",
+                            "answer": "fire",
+                            "hint": "Read Lady Victoria's portrait description carefully"
+                        }
+                    ],
+                    "direction": "east",
+                    "leads_to": "moonlit_terrace",
+                    "aliases": [
+                        "terrace",
+                        "east"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "moonlit_terrace",
+            "name": "Moonlit Terrace and Garden of Memories",
+            "description": "You step through the doors onto a beautiful terrace overlooking a garden bathed in silvery moonlight. The ghostly music fades behind you. White roses bloom impossibly in the night, and a gentle breeze carries the scent of jasmine. The spirits of the ballroom appear one final time, bowing gracefully before fading into peaceful light. A stone path leads away from the manor to freedom.",
+            "items": [
+                {
+                    "id": "rose_garden",
+                    "name": "garden of white roses",
+                    "description": "A beautiful garden where the spirits have found their peace at last"
+                },
+                {
+                    "id": "stone_path",
+                    "name": "moonlit path",
+                    "description": "A path leading away from the haunted manor into the peaceful night"
+                }
+            ],
+            "exits": [],
+            "is_goal": true,
+            "win_message": "As you step into the Garden of Memories, the ghostly ballroom behind you glows with warm light one final time. Lady Victoria and her guests appear, no longer trapped, and bow to you in gratitude. They fade into peaceful light, finally free from their eternal dance. You walk down the moonlit path to safety, having solved the mystery and released the spirits. You win!"
+        }
+    ]
+}

@@ -1,0 +1,235 @@
+{
+    "theme": "Golem Foundry",
+    "title": "Golem Foundry Adventure #14",
+    "goal": "Solve the puzzles, achieve the main objective, and escape.",
+    "starting_room": "foundry_workshop",
+    "rooms": [
+        {
+            "id": "foundry_workshop",
+            "name": "Foundry Workshop",
+            "description": "A vast workshop filled with the smell of molten metal and ozone. Half-finished golems stand frozen in various poses. Arcane runes glow faintly on the walls. Workbenches are cluttered with tools, gears, and crystalline power cores. A massive forge burns in the corner, casting dancing shadows across the stone floor.",
+            "items": [
+                {
+                    "id": "main_workbench",
+                    "name": "master workbench",
+                    "description": "A large workbench covered in blueprints, tools, and golem components",
+                    "searchable": true,
+                    "contains": [
+                        "bronze_key"
+                    ]
+                },
+                {
+                    "id": "bronze_key",
+                    "name": "bronze workshop key",
+                    "description": "A key shaped like a gear, warm to the touch"
+                },
+                {
+                    "id": "tool_cabinet",
+                    "name": "tool cabinet",
+                    "description": "A tall cabinet with multiple drawers containing various artificer's tools",
+                    "subcontainers": [
+                        {
+                            "id": "top_drawer",
+                            "name": "top drawer",
+                            "locked": false,
+                            "contains": [
+                                "workshop_log"
+                            ]
+                        },
+                        {
+                            "id": "middle_drawer",
+                            "name": "middle drawer",
+                            "locked": true,
+                            "lock_type": "combination",
+                            "combination": "742",
+                            "contains": [
+                                "activation_crystal"
+                            ]
+                        },
+                        {
+                            "id": "bottom_drawer",
+                            "name": "bottom drawer",
+                            "locked": false,
+                            "contains": []
+                        }
+                    ]
+                },
+                {
+                    "id": "workshop_log",
+                    "name": "artificer's workshop log",
+                    "description": "A leather-bound journal with notes about golem construction",
+                    "readable": true,
+                    "text": "Workshop Log - Master Artificer Theron: Today I completed Golem Model 742, my finest work yet. The activation sequence requires the command word, the power source location, and the creator's name. Only then will the guardian golem awaken and open the vault."
+                },
+                {
+                    "id": "activation_crystal",
+                    "name": "glowing activation crystal",
+                    "description": "A crystalline power core pulsing with magical energy"
+                },
+                {
+                    "id": "locked_chest",
+                    "name": "reinforced iron chest",
+                    "description": "A heavy chest secured with a bronze lock mechanism",
+                    "locked": true,
+                    "key_required": "bronze_key",
+                    "contains": [
+                        "golem_manual"
+                    ]
+                },
+                {
+                    "id": "golem_manual",
+                    "name": "golem operation manual",
+                    "description": "A technical manual with detailed instructions",
+                    "readable": true,
+                    "text": "GOLEM OPERATION MANUAL: Command Word: AWAKEN. All golems draw power from the Core Furnace in the heart of the foundry. Emergency protocols: If trapped, activate the guardian golem to access the vault exit."
+                },
+                {
+                    "id": "forge",
+                    "name": "massive arcane forge",
+                    "description": "A forge burning with magical flames, runes carved into its stone base",
+                    "readable": true,
+                    "text": "Forge inscription: 'Built by Master Artificer Theron, creator of the eternal guardians.'"
+                },
+                {
+                    "id": "heavy_workshop_door",
+                    "name": "heavy workshop door",
+                    "description": "A reinforced door leading to the foundry archives",
+                    "locked": false,
+                    "direction": "north",
+                    "leads_to": "foundry_archives",
+                    "aliases": [
+                        "door",
+                        "north"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "foundry_archives",
+            "name": "Foundry Archives",
+            "description": "A dimly lit chamber lined with shelves containing scrolls, blueprints, and crystalline data storage devices. Dust motes float in beams of light from enchanted lanterns. A large stone golem stands motionless in the center of the room, its eyes dark and lifeless. Ancient diagrams cover the walls, showing various golem designs.",
+            "items": [
+                {
+                    "id": "blueprint_rack",
+                    "name": "blueprint storage rack",
+                    "description": "A wooden rack holding rolled-up technical drawings",
+                    "searchable": true,
+                    "contains": [
+                        "guardian_blueprint"
+                    ]
+                },
+                {
+                    "id": "guardian_blueprint",
+                    "name": "guardian golem blueprint",
+                    "description": "A detailed schematic of the guardian golem model",
+                    "readable": true,
+                    "text": "GUARDIAN GOLEM - MODEL 742: Activation requires crystal insertion into chest cavity. Voice command: AWAKEN. Purpose: Vault security and emergency evacuation. Power Source: Core Furnace."
+                },
+                {
+                    "id": "archive_shelves",
+                    "name": "archive shelves",
+                    "description": "Tall shelves packed with scrolls and ancient records",
+                    "searchable": true,
+                    "contains": [
+                        "master_record"
+                    ]
+                },
+                {
+                    "id": "master_record",
+                    "name": "master artificer record",
+                    "description": "An official document sealed with a wax stamp",
+                    "readable": true,
+                    "text": "FOUNDRY MASTER RECORD: This facility was established by Master Artificer Theron in the year 1247. All golems created here bear his mark. The vault contains the most valuable creations and the only exit from the sealed foundry."
+                },
+                {
+                    "id": "stone_golem",
+                    "name": "dormant guardian golem",
+                    "description": "A massive stone golem standing perfectly still, with a crystal socket visible in its chest",
+                    "readable": true,
+                    "text": "The golem's chest has an empty socket shaped for a power crystal. Runes on its forehead read: 'Model 742 - Guardian Protocol Active.'"
+                },
+                {
+                    "id": "research_desk",
+                    "name": "research desk",
+                    "description": "A desk covered in notes and experimental data",
+                    "subcontainers": [
+                        {
+                            "id": "desk_drawer",
+                            "name": "desk drawer",
+                            "locked": false,
+                            "contains": [
+                                "activation_notes"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "activation_notes",
+                    "name": "activation procedure notes",
+                    "description": "Handwritten notes about golem activation",
+                    "readable": true,
+                    "text": "ACTIVATION NOTES: To activate guardian golem - insert crystal, speak command word AWAKEN, then answer security questions. Questions verify: command word, power source, and creator identity."
+                },
+                {
+                    "id": "sealed_vault_entrance",
+                    "name": "sealed vault entrance",
+                    "description": "A massive door with a magical lock that responds to voice commands. Three questions are inscribed on a brass plate.",
+                    "locked": true,
+                    "lock_type": "password",
+                    "password_questions": [
+                        {
+                            "question": "What is the golem command word?",
+                            "answer": "awaken",
+                            "hint": "Check the golem operation manual and activation notes"
+                        },
+                        {
+                            "question": "Where do golems draw their power?",
+                            "answer": "core furnace",
+                            "hint": "The operation manual mentions the power source"
+                        },
+                        {
+                            "question": "Who created the guardian golems?",
+                            "answer": "master artificer theron",
+                            "hint": "Look at the forge inscription and master records"
+                        }
+                    ],
+                    "direction": "east",
+                    "leads_to": "vault_chamber",
+                    "aliases": [
+                        "vault",
+                        "east"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "vault_chamber",
+            "name": "Master Vault Chamber",
+            "description": "You have reached the heart of the foundry! The vault chamber is filled with completed golems of incredible craftsmanship - warriors, servants, and guardians, all standing in perfect rows. In the center, a pedestal holds a magnificent golden golem, the masterwork of the foundry. Beyond it, a shimmering portal of light leads to freedom.",
+            "items": [
+                {
+                    "id": "golden_golem",
+                    "name": "masterwork golden golem",
+                    "description": "A breathtaking golem crafted from pure gold, inlaid with precious gems and glowing runes",
+                    "readable": true,
+                    "text": "Inscription on base: 'The Eternal Guardian - Masterwork of Theron, greatest of all artificers. May it protect the foundry for all time.'"
+                },
+                {
+                    "id": "golem_army",
+                    "name": "rows of completed golems",
+                    "description": "Dozens of perfectly crafted golems standing in formation, awaiting activation"
+                },
+                {
+                    "id": "exit_portal",
+                    "name": "shimmering exit portal",
+                    "description": "A magical portal leading out of the sealed foundry, glowing with arcane energy"
+                }
+            ],
+            "exits": [],
+            "is_goal": true,
+            "win_message": "You have successfully navigated the Golem Foundry and reached the master vault! The guardian golem you activated bows respectfully as you approach the exit portal. The golden masterwork golem's eyes glow briefly in acknowledgment of your achievement. You step through the portal and emerge outside the foundry, free at last. The secrets of golem creation are yours to remember. You win!"
+        }
+    ]
+}

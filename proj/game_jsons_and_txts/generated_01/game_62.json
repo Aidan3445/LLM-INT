@@ -1,0 +1,248 @@
+{
+    "theme": "Submarine Lab",
+    "title": "Submarine Lab Adventure #62",
+    "goal": "Solve the puzzles, achieve the main objective, and escape.",
+    "starting_room": "research_bay",
+    "rooms": [
+        {
+            "id": "research_bay",
+            "name": "Deep Sea Research Bay",
+            "description": "A cramped research laboratory deep beneath the ocean surface. Water drips from corroded pipes overhead, and emergency lights cast an eerie red glow. Scientific equipment lies abandoned on metal tables. Through the reinforced porthole, you see only darkness and the occasional bioluminescent creature drifting past. The air is cold and smells of salt and rust.",
+            "items": [
+                {
+                    "id": "research_table",
+                    "name": "research table",
+                    "description": "A stainless steel table covered with notebooks and specimen containers",
+                    "searchable": true,
+                    "contains": [
+                        "research_log"
+                    ]
+                },
+                {
+                    "id": "research_log",
+                    "name": "research log",
+                    "description": "A waterproof notebook with detailed entries",
+                    "readable": true,
+                    "text": "Research Log - Deep Sea Station Nautilus, established 2089. Lead Scientist: Dr. Elena Vasquez. Chief Engineer: Marcus Webb. Our mission: study deep sea organisms at 3000 meters depth. The specimens are stored in the containment lockers."
+                },
+                {
+                    "id": "specimen_containers",
+                    "name": "specimen containers",
+                    "description": "Glass containers with preserved deep sea creatures",
+                    "searchable": true,
+                    "contains": [
+                        "facility_keycard"
+                    ]
+                },
+                {
+                    "id": "facility_keycard",
+                    "name": "security keycard",
+                    "description": "A magnetic keycard labeled 'AUTHORIZED PERSONNEL'"
+                },
+                {
+                    "id": "storage_locker",
+                    "name": "storage locker",
+                    "description": "A tall metal locker with three compartments for equipment storage",
+                    "subcontainers": [
+                        {
+                            "id": "top_compartment",
+                            "name": "top compartment",
+                            "locked": false,
+                            "contains": [
+                                "station_manual"
+                            ]
+                        },
+                        {
+                            "id": "middle_compartment",
+                            "name": "middle compartment",
+                            "locked": true,
+                            "lock_type": "combination",
+                            "combination": "2089",
+                            "contains": [
+                                "control_room_key"
+                            ]
+                        },
+                        {
+                            "id": "bottom_compartment",
+                            "name": "bottom compartment",
+                            "locked": false,
+                            "contains": []
+                        }
+                    ]
+                },
+                {
+                    "id": "station_manual",
+                    "name": "station operations manual",
+                    "description": "A technical manual for the submarine lab",
+                    "readable": true,
+                    "text": "NAUTILUS STATION MANUAL: Established 2089 at 3000 meters depth. Emergency protocols require knowledge of key personnel and systems. The control room manages all life support and escape systems. Remember: the combination to secure storage is the year of establishment."
+                },
+                {
+                    "id": "control_room_key",
+                    "name": "brass control room key",
+                    "description": "A key labeled 'CONTROL ROOM ACCESS'"
+                },
+                {
+                    "id": "computer_terminal",
+                    "name": "research computer terminal",
+                    "description": "A computer screen displaying system status and logs",
+                    "readable": true,
+                    "text": "SYSTEM STATUS: Life support critical. Dr. Vasquez logged: 'Emergency evacuation may be necessary. Chief Engineer Webb has secured the escape pod bay. Only authorized personnel with proper credentials can access the pods.'"
+                },
+                {
+                    "id": "containment_locker",
+                    "name": "specimen containment locker",
+                    "description": "A reinforced locker with a keycard reader",
+                    "locked": true,
+                    "key_required": "facility_keycard",
+                    "contains": [
+                        "emergency_note"
+                    ]
+                },
+                {
+                    "id": "emergency_note",
+                    "name": "emergency procedures note",
+                    "description": "A laminated card with emergency instructions",
+                    "readable": true,
+                    "text": "EMERGENCY EVACUATION: Proceed to control room, then escape pod bay. Security verification required at pod bay: Who leads the research? What manages life support? What is your depth?"
+                },
+                {
+                    "id": "pressure_door_to_control_room",
+                    "name": "pressure door to control room",
+                    "description": "A heavy reinforced door with a brass lock, leading to the control room",
+                    "locked": true,
+                    "key_required": "control_room_key",
+                    "direction": "north",
+                    "leads_to": "control_room",
+                    "aliases": [
+                        "door",
+                        "north"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "control_room",
+            "name": "Central Control Room",
+            "description": "The nerve center of the submarine lab. Banks of monitors display depth readings, oxygen levels, and hull integrity warnings. Red emergency lights flash rhythmically. A large viewport shows the crushing darkness of the deep ocean. Control panels line the walls, and a sealed hatch leads to the escape pod bay.",
+            "items": [
+                {
+                    "id": "main_console",
+                    "name": "main control console",
+                    "description": "The primary control station with multiple displays and readouts",
+                    "readable": true,
+                    "text": "STATION STATUS: Depth: 3000 meters. Life Support: CRITICAL. Hull Integrity: 67%. Lead Scientist Dr. Elena Vasquez has authorized emergency evacuation. Control room manages all life support systems."
+                },
+                {
+                    "id": "personnel_board",
+                    "name": "personnel assignment board",
+                    "description": "A digital display showing crew assignments and photos",
+                    "readable": true,
+                    "text": "CREW ROSTER: Dr. Elena Vasquez - Lead Scientist, Marine Biology. Marcus Webb - Chief Engineer, Life Support Systems. Station depth: 3000 meters below surface."
+                },
+                {
+                    "id": "engineering_panel",
+                    "name": "engineering control panel",
+                    "description": "Controls for life support and environmental systems",
+                    "readable": true,
+                    "text": "LIFE SUPPORT SYSTEMS: Oxygen generation: FAILING. Temperature control: NOMINAL. Pressure regulation: CRITICAL. All systems managed from control room. Chief Engineer Webb's last entry: 'Life support failing. Evacuation imminent.'"
+                },
+                {
+                    "id": "emergency_locker",
+                    "name": "emergency equipment locker",
+                    "description": "A red locker containing emergency supplies",
+                    "searchable": true,
+                    "contains": [
+                        "oxygen_mask",
+                        "depth_gauge"
+                    ]
+                },
+                {
+                    "id": "oxygen_mask",
+                    "name": "emergency oxygen mask",
+                    "description": "A portable breathing apparatus for emergencies"
+                },
+                {
+                    "id": "depth_gauge",
+                    "name": "depth gauge",
+                    "description": "A device showing current depth: 3000 meters",
+                    "readable": true,
+                    "text": "Current depth reading: 3000 meters below sea level. Maximum safe operating depth for escape pods."
+                },
+                {
+                    "id": "captain_desk",
+                    "name": "station commander's desk",
+                    "description": "A desk with logs and documentation",
+                    "searchable": true,
+                    "contains": [
+                        "final_log"
+                    ]
+                },
+                {
+                    "id": "final_log",
+                    "name": "commander's final log",
+                    "description": "The last entry in the station log",
+                    "readable": true,
+                    "text": "Final Log Entry: Dr. Vasquez here. Systems failing at 3000 meters depth. I'm authorizing evacuation. The escape pod bay requires security verification. Remember: I lead this research, the control room manages life support, and we're at 3000 meters depth."
+                },
+                {
+                    "id": "escape_pod_bay_hatch",
+                    "name": "escape pod bay hatch",
+                    "description": "A sealed hatch with a security terminal displaying three verification questions. Red warning lights flash around it.",
+                    "locked": true,
+                    "lock_type": "password",
+                    "password_questions": [
+                        {
+                            "question": "Who leads the research station?",
+                            "answer": "dr elena vasquez",
+                            "hint": "Check the research log and personnel board for the lead scientist's name"
+                        },
+                        {
+                            "question": "What system manages life support?",
+                            "answer": "control room",
+                            "hint": "The station manual and control panels mention what manages life support"
+                        },
+                        {
+                            "question": "What is the station depth in meters?",
+                            "answer": "3000",
+                            "hint": "Multiple displays and documents show the depth reading"
+                        }
+                    ],
+                    "direction": "east",
+                    "leads_to": "escape_pod_bay",
+                    "aliases": [
+                        "hatch",
+                        "east"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "escape_pod_bay",
+            "name": "Emergency Escape Pod Bay",
+            "description": "You've reached the escape pod bay! A sleek emergency submersible sits in its launch cradle, its systems humming to life. Through the launch tube above, you can see the faint glow of sunlight filtering down from the surface far above. The pod's interior lights up, displaying 'LAUNCH SEQUENCE READY' on its control panel. Safety at the surface awaits!",
+            "items": [
+                {
+                    "id": "escape_pod",
+                    "name": "emergency escape pod",
+                    "description": "A compact submersible designed for emergency evacuation to the surface"
+                },
+                {
+                    "id": "launch_controls",
+                    "name": "pod launch controls",
+                    "description": "The control panel showing all systems green and ready for launch"
+                },
+                {
+                    "id": "launch_tube",
+                    "name": "vertical launch tube",
+                    "description": "A tube leading upward to the ocean surface, 3000 meters above"
+                }
+            ],
+            "exits": [],
+            "is_goal": true,
+            "win_message": "SUCCESS! You climb into the escape pod and seal the hatch. The launch sequence initiates, and the pod rockets upward through the launch tube. The crushing darkness of the deep ocean gives way to blue water, then brilliant sunlight as you breach the surface. You've escaped the failing submarine lab and survived the depths! You win!"
+        }
+    ]
+}

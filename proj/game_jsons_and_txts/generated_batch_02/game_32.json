@@ -1,0 +1,232 @@
+{
+    "theme": "Witch's Cottage",
+    "title": "Witch's Cottage Adventure #32",
+    "goal": "Solve the puzzles, achieve the main objective, and escape.",
+    "starting_room": "cottage_main_room",
+    "rooms": [
+        {
+            "id": "cottage_main_room",
+            "name": "Witch's Main Room",
+            "description": "A cozy but eerie cottage interior lit by flickering candles. Dried herbs hang from the rafters, and the air smells of lavender and something mysterious. A large black cauldron bubbles in the fireplace, casting dancing shadows on the walls. A black cat watches you from atop a bookshelf. Moonlight streams through a small window, illuminating dust motes that sparkle like fairy dust.",
+            "items": [
+                {
+                    "id": "bookshelf",
+                    "name": "wooden bookshelf",
+                    "description": "A tall shelf crammed with ancient spell books and mysterious tomes",
+                    "searchable": true,
+                    "contains": [
+                        "spell_book"
+                    ]
+                },
+                {
+                    "id": "spell_book",
+                    "name": "leather spell book",
+                    "description": "An old book with a pentagram on the cover, filled with handwritten spells",
+                    "readable": true,
+                    "text": "Spell of Transformation: Requires 3 moonflower petals, 7 dragon scales, and 2 phoenix feathers. Mix in cauldron under full moon. Warning: The witch Morgana keeps her most precious ingredients locked away."
+                },
+                {
+                    "id": "cauldron",
+                    "name": "bubbling cauldron",
+                    "description": "A large iron cauldron with green liquid bubbling inside",
+                    "searchable": true,
+                    "contains": [
+                        "wooden_ladle"
+                    ]
+                },
+                {
+                    "id": "wooden_ladle",
+                    "name": "wooden stirring ladle",
+                    "description": "A long wooden spoon used for stirring potions"
+                },
+                {
+                    "id": "writing_desk",
+                    "name": "cluttered writing desk",
+                    "description": "A desk covered with parchments, quills, and ink bottles. It has two drawers.",
+                    "subcontainers": [
+                        {
+                            "id": "top_desk_drawer",
+                            "name": "top drawer",
+                            "locked": false,
+                            "contains": [
+                                "witchs_diary"
+                            ]
+                        },
+                        {
+                            "id": "bottom_desk_drawer",
+                            "name": "bottom drawer",
+                            "locked": false,
+                            "contains": []
+                        }
+                    ]
+                },
+                {
+                    "id": "witchs_diary",
+                    "name": "witch's personal diary",
+                    "description": "A journal with a crescent moon embossed on the cover",
+                    "readable": true,
+                    "text": "Dear Diary, I am Morgana the Green, keeper of ancient wisdom. My familiar, Shadow the cat, is my constant companion. Today I stored my rarest ingredients in the locked cabinet: 3 moonflower petals, 7 dragon scales, and 2 phoenix feathers. The combination is the count of each ingredient in order."
+                },
+                {
+                    "id": "ingredient_cabinet",
+                    "name": "locked ingredient cabinet",
+                    "description": "A wooden cabinet with mystical symbols carved into its doors and a combination lock",
+                    "locked": true,
+                    "lock_type": "combination",
+                    "combination": "372",
+                    "contains": [
+                        "brass_key",
+                        "crystal_vial"
+                    ]
+                },
+                {
+                    "id": "brass_key",
+                    "name": "ornate brass key",
+                    "description": "A key with a crescent moon design on its handle"
+                },
+                {
+                    "id": "crystal_vial",
+                    "name": "vial of moonlight",
+                    "description": "A small vial containing glowing liquid that looks like captured moonlight"
+                },
+                {
+                    "id": "black_cat",
+                    "name": "black cat named Shadow",
+                    "description": "A sleek black cat with intelligent green eyes, the witch's familiar",
+                    "readable": true,
+                    "text": "The cat purrs and rubs against your leg. A small tag on its collar reads: 'Shadow - Familiar of Morgana the Green'"
+                },
+                {
+                    "id": "crystal_ball",
+                    "name": "crystal ball",
+                    "description": "A glass sphere on a velvet cushion that swirls with mysterious fog",
+                    "searchable": true,
+                    "contains": []
+                },
+                {
+                    "id": "heavy_wooden_door",
+                    "name": "heavy wooden door",
+                    "description": "A sturdy door bound with iron, leading to what appears to be a secret room. It has a brass keyhole.",
+                    "locked": true,
+                    "key_required": "brass_key",
+                    "direction": "north",
+                    "leads_to": "potion_laboratory",
+                    "aliases": [
+                        "door",
+                        "north"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "potion_laboratory",
+            "name": "Secret Potion Laboratory",
+            "description": "A hidden laboratory filled with bubbling beakers, colorful potions in glass bottles, and shelves lined with jars containing strange ingredients. Glowing mushrooms provide eerie illumination. A large workbench dominates the center of the room, covered with alchemical equipment. On the far wall, a door covered in glowing runes leads to what must be the witch's garden.",
+            "items": [
+                {
+                    "id": "workbench",
+                    "name": "alchemist's workbench",
+                    "description": "A sturdy table covered with beakers, flasks, and mysterious substances",
+                    "searchable": true,
+                    "contains": [
+                        "potion_recipe"
+                    ]
+                },
+                {
+                    "id": "potion_recipe",
+                    "name": "ancient potion recipe",
+                    "description": "A yellowed parchment with a recipe written in elegant script",
+                    "readable": true,
+                    "text": "Recipe for Portal Potion: Combine essence of starlight with tears of the moon. Only those who know the witch's true name, her familiar's name, and the source of her power may access the enchanted garden where the portal awaits."
+                },
+                {
+                    "id": "ingredient_shelves",
+                    "name": "shelves of ingredients",
+                    "description": "Tall shelves holding hundreds of jars with labels like 'Eye of Newt' and 'Bat Wings'",
+                    "searchable": true,
+                    "contains": [
+                        "mysterious_note"
+                    ]
+                },
+                {
+                    "id": "mysterious_note",
+                    "name": "folded note",
+                    "description": "A note written in hurried handwriting",
+                    "readable": true,
+                    "text": "Reminder: The garden portal requires knowledge of three truths. My name is Morgana the Green. My faithful companion is Shadow. My power comes from the ancient grimoire I inherited from my grandmother."
+                },
+                {
+                    "id": "potion_bottles",
+                    "name": "colorful potion bottles",
+                    "description": "Glass bottles filled with liquids of every color imaginable",
+                    "readable": true,
+                    "text": "The bottles are labeled: Love Potion, Invisibility Elixir, Strength Tonic, Flying Potion, and many more."
+                },
+                {
+                    "id": "glowing_mushrooms",
+                    "name": "bioluminescent mushrooms",
+                    "description": "Clusters of mushrooms that glow with a soft blue light",
+                    "searchable": true,
+                    "contains": []
+                },
+                {
+                    "id": "rune_covered_door",
+                    "name": "rune_covered door",
+                    "description": "A door inscribed with glowing magical runes. Three questions appear in shimmering text on its surface.",
+                    "locked": true,
+                    "lock_type": "password",
+                    "password_questions": [
+                        {
+                            "question": "What is the witch's true name?",
+                            "answer": "morgana the green",
+                            "hint": "Check the witch's diary in the main room"
+                        },
+                        {
+                            "question": "What is the name of her familiar?",
+                            "answer": "shadow",
+                            "hint": "Look at the black cat's collar tag"
+                        },
+                        {
+                            "question": "What is the source of her power?",
+                            "answer": "ancient grimoire",
+                            "hint": "Read the mysterious note in the laboratory"
+                        }
+                    ],
+                    "direction": "east",
+                    "leads_to": "enchanted_garden",
+                    "aliases": [
+                        "door",
+                        "east"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "enchanted_garden",
+            "name": "Enchanted Garden",
+            "description": "You step into a magical garden bathed in ethereal moonlight. Flowers of impossible colors bloom everywhere, and the air sparkles with floating motes of light. In the center of the garden stands a shimmering portal made of swirling silver and purple energy. Fireflies dance around it, and you can see glimpses of the outside world through its surface. You've found your escape!",
+            "items": [
+                {
+                    "id": "magical_flowers",
+                    "name": "enchanted flowers",
+                    "description": "Flowers that glow and change colors, humming with magical energy"
+                },
+                {
+                    "id": "escape_portal",
+                    "name": "shimmering escape portal",
+                    "description": "A swirling vortex of magical energy that leads to freedom"
+                },
+                {
+                    "id": "garden_fountain",
+                    "name": "crystal fountain",
+                    "description": "A fountain flowing with water that sparkles like diamonds"
+                }
+            ],
+            "exits": [],
+            "is_goal": true,
+            "win_message": "You step through the magical portal and feel a rush of energy wash over you. The witch's cottage fades away behind you as you emerge safely in the forest outside, free at last! The portal closes with a soft shimmer, and you hear a distant cat's meow - perhaps Shadow is saying goodbye. You've successfully escaped the Witch's Cottage! You win!"
+        }
+    ]
+}

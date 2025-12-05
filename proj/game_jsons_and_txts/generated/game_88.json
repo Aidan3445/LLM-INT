@@ -1,0 +1,227 @@
+{
+    "theme": "Lunar Ruins Dig Site",
+    "title": "Lunar Ruins Dig Site Adventure #88",
+    "goal": "Solve the puzzles, achieve the main objective, and escape.",
+    "starting_room": "excavation_tent",
+    "rooms": [
+        {
+            "id": "excavation_tent",
+            "name": "Excavation Tent",
+            "description": "A pressurized habitat tent on the lunar surface. Through the transparent dome you see the grey lunar landscape and Earth hanging in the black sky. Scientific equipment, storage crates, and research materials are scattered around. A sealed airlock leads to the ruins entrance.",
+            "items": [
+                {
+                    "id": "research_desk",
+                    "name": "research desk",
+                    "description": "A metal desk covered with tablets, charts, and sample containers",
+                    "subcontainers": [
+                        {
+                            "id": "top_drawer",
+                            "name": "top drawer",
+                            "locked": false,
+                            "contains": [
+                                "mission_log"
+                            ]
+                        },
+                        {
+                            "id": "bottom_drawer",
+                            "name": "bottom drawer",
+                            "locked": true,
+                            "lock_type": "combination",
+                            "combination": "1969",
+                            "contains": [
+                                "access_card"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "mission_log",
+                    "name": "mission logbook",
+                    "description": "A digital tablet with expedition records",
+                    "readable": true,
+                    "text": "Mission Log - Lunar Dig Site 88: Lead archaeologist Dr Chen discovered these ruins in sector 1969, the year of the first moon landing. The team includes geologist Dr Reeves, engineer Martinez, and xenoarchaeologist Dr Kwan. The ruins appear to be over 10000 years old."
+                },
+                {
+                    "id": "access_card",
+                    "name": "security access card",
+                    "description": "A magnetic keycard labeled Authorized Personnel Only"
+                },
+                {
+                    "id": "supply_crate",
+                    "name": "equipment supply crate",
+                    "description": "A large crate containing tools and supplies",
+                    "searchable": true,
+                    "contains": [
+                        "excavation_tool"
+                    ]
+                },
+                {
+                    "id": "excavation_tool",
+                    "name": "laser excavation tool",
+                    "description": "A handheld laser tool used for careful excavation work"
+                },
+                {
+                    "id": "sample_cabinet",
+                    "name": "sample storage cabinet",
+                    "description": "A locked cabinet containing artifact samples",
+                    "locked": true,
+                    "key_required": "access_card",
+                    "contains": [
+                        "artifact_fragment",
+                        "translation_guide"
+                    ]
+                },
+                {
+                    "id": "artifact_fragment",
+                    "name": "alien artifact fragment",
+                    "description": "A piece of crystalline material with glowing symbols, one of the key artifacts"
+                },
+                {
+                    "id": "translation_guide",
+                    "name": "symbol translation guide",
+                    "description": "A reference document for decoding alien symbols",
+                    "readable": true,
+                    "text": "Translation Guide: The alien symbols found in the ruins have been partially decoded. Key findings - The builders called themselves the Selenites. Their sacred chamber is called the Vault of Stars. The head archaeologist must verify identity to access restricted areas."
+                },
+                {
+                    "id": "airlock_door_to_ruins",
+                    "name": "airlock door to ruins",
+                    "description": "A reinforced airlock door leading outside to the ruins entrance",
+                    "locked": true,
+                    "key_required": "access_card",
+                    "direction": "north",
+                    "leads_to": "ruins_entrance",
+                    "aliases": [
+                        "airlock",
+                        "north"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "ruins_entrance",
+            "name": "Ancient Ruins Entrance",
+            "description": "You stand in a vast chamber carved from lunar bedrock. The walls are covered with intricate alien symbols that glow with a faint blue light. Massive stone pillars support the ceiling. Ancient statues of alien figures line the walls. A sealed doorway covered in symbols blocks the path deeper into the ruins.",
+            "items": [
+                {
+                    "id": "statue_builder",
+                    "name": "statue of alien builder",
+                    "description": "A tall statue depicting a slender humanoid figure holding construction tools",
+                    "readable": true,
+                    "text": "Inscription at base: The Selenites - Builders of the lunar cities. Masters of crystal technology and star navigation."
+                },
+                {
+                    "id": "statue_guardian",
+                    "name": "statue of guardian",
+                    "description": "A statue of an armored figure holding a staff",
+                    "readable": true,
+                    "text": "Inscription at base: Guardian of the Vault of Stars - Protector of the sacred knowledge and the celestial artifacts."
+                },
+                {
+                    "id": "statue_scholar",
+                    "name": "statue of scholar",
+                    "description": "A statue showing a robed figure examining star charts",
+                    "readable": true,
+                    "text": "Inscription at base: Keeper of Wisdom - The scholars preserved all knowledge in the Archive of Eternity beneath the surface."
+                },
+                {
+                    "id": "stone_pedestal",
+                    "name": "carved stone pedestal",
+                    "description": "A pedestal with a circular depression and alien writing",
+                    "readable": true,
+                    "text": "Ancient text: Place the fragment of the stars here to prove your worth as a seeker of knowledge."
+                },
+                {
+                    "id": "wall_panel",
+                    "name": "glowing wall panel",
+                    "description": "A panel covered with crystalline buttons and symbols",
+                    "searchable": true,
+                    "contains": [
+                        "ancient_tablet"
+                    ]
+                },
+                {
+                    "id": "ancient_tablet",
+                    "name": "stone tablet",
+                    "description": "A tablet with carved text in both alien symbols and translated English",
+                    "readable": true,
+                    "text": "Tablet inscription: To enter the Vault of Stars, answer the three questions of the ancients. Who built these halls? Where is knowledge kept? Who leads the human expedition?"
+                },
+                {
+                    "id": "sealed_vault_door",
+                    "name": "sealed vault door",
+                    "description": "A massive door covered in glowing symbols. A control panel displays three questions in translated text.",
+                    "locked": true,
+                    "lock_type": "password",
+                    "password_questions": [
+                        {
+                            "question": "Who built these lunar halls?",
+                            "answer": "selenites",
+                            "hint": "Check the translation guide and the statue inscriptions"
+                        },
+                        {
+                            "question": "Where is knowledge preserved?",
+                            "answer": "archive of eternity",
+                            "hint": "Read the scholar statue inscription carefully"
+                        },
+                        {
+                            "question": "Who leads this human expedition?",
+                            "answer": "dr chen",
+                            "hint": "The mission log identifies the lead archaeologist"
+                        }
+                    ],
+                    "direction": "east",
+                    "leads_to": "vault_of_stars",
+                    "aliases": [
+                        "vault",
+                        "door",
+                        "east"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "vault_of_stars",
+            "name": "Vault of Stars",
+            "description": "You have discovered the legendary Vault of Stars! The chamber is breathtaking - the ceiling displays a perfect holographic map of the galaxy as it appeared 10000 years ago. In the center floats a massive crystal sphere pulsing with energy. Ancient alien technology hums with power. This is the greatest archaeological discovery in human history.",
+            "items": [
+                {
+                    "id": "crystal_sphere",
+                    "name": "celestial crystal sphere",
+                    "description": "A magnificent sphere of pure crystal containing swirling energy and star maps. The ultimate prize of the expedition."
+                },
+                {
+                    "id": "star_map",
+                    "name": "holographic star map",
+                    "description": "A three-dimensional display showing ancient star positions and alien settlements",
+                    "readable": true,
+                    "text": "The map reveals dozens of Selenite settlements across the solar system, including bases on Mars, Europa, and Titan. This civilization was far more advanced than we imagined."
+                },
+                {
+                    "id": "control_console",
+                    "name": "alien control console",
+                    "description": "A crystalline console still functioning after millennia, displaying data in alien symbols"
+                },
+                {
+                    "id": "knowledge_archive",
+                    "name": "data archive",
+                    "description": "Crystalline storage devices containing the complete knowledge of the Selenite civilization",
+                    "searchable": true,
+                    "contains": [
+                        "master_crystal"
+                    ]
+                },
+                {
+                    "id": "master_crystal",
+                    "name": "master data crystal",
+                    "description": "A crystal containing the entire scientific and cultural knowledge of an ancient alien civilization"
+                }
+            ],
+            "exits": [],
+            "is_goal": true,
+            "win_message": "Incredible! You have successfully navigated the lunar ruins and discovered the Vault of Stars. The celestial crystal sphere and master data crystal contain knowledge that will revolutionize human understanding of the universe. This discovery proves that an advanced alien civilization once thrived in our solar system. Mission Control is receiving your transmission - you have made history! You win!"
+        }
+    ]
+}

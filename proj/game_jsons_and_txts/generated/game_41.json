@@ -1,0 +1,208 @@
+{
+    "theme": "Medieval Dungeon",
+    "title": "Medieval Dungeon Adventure #41",
+    "goal": "Solve the puzzles, achieve the main objective, and escape.",
+    "starting_room": "dungeon_cell",
+    "rooms": [
+        {
+            "id": "dungeon_cell",
+            "name": "Dark Dungeon Cell",
+            "description": "A damp stone cell lit by a single torch. The walls are covered in moss and scratches. A skeleton lies chained to the wall, and a rusty iron door blocks the exit. The air is thick with the smell of decay and despair.",
+            "items": [
+                {
+                    "id": "skeleton_prisoner",
+                    "name": "chained skeleton",
+                    "description": "The remains of a long-dead prisoner still wearing tattered clothes",
+                    "searchable": true,
+                    "contains": [
+                        "prisoner_note"
+                    ]
+                },
+                {
+                    "id": "prisoner_note",
+                    "name": "crumpled parchment",
+                    "description": "A note clutched in the skeleton's bony hand",
+                    "readable": true,
+                    "text": "They locked me here in the year 1342. I was prisoner number 789. The guard's name was Sir Blackwood. If only I had known the combination to the chest... the numbers of my imprisonment."
+                },
+                {
+                    "id": "stone_bed",
+                    "name": "stone sleeping platform",
+                    "description": "A crude bed carved from stone with a thin layer of moldy straw",
+                    "searchable": true,
+                    "contains": [
+                        "rusty_nail"
+                    ]
+                },
+                {
+                    "id": "rusty_nail",
+                    "name": "long rusty nail",
+                    "description": "A thick iron nail, useful for prying things open"
+                },
+                {
+                    "id": "wooden_chest",
+                    "name": "old wooden chest",
+                    "description": "A weathered chest with a combination lock showing three digit wheels",
+                    "locked": true,
+                    "lock_type": "combination",
+                    "combination": "789",
+                    "contains": [
+                        "iron_cell_key"
+                    ]
+                },
+                {
+                    "id": "iron_cell_key",
+                    "name": "iron cell key",
+                    "description": "A heavy iron key with rust covering its surface"
+                },
+                {
+                    "id": "wall_scratches",
+                    "name": "scratches on wall",
+                    "description": "Deep scratches carved into the stone wall",
+                    "readable": true,
+                    "text": "Tally marks cover the wall, counting days. Below them, words are scratched: 'The torture chamber holds the way forward. The guard keeps the courtyard key in his desk.'"
+                },
+                {
+                    "id": "heavy_cell_door",
+                    "name": "heavy cell door",
+                    "description": "A thick iron door with a large keyhole, leading out of the cell",
+                    "locked": true,
+                    "key_required": "iron_cell_key",
+                    "direction": "north",
+                    "leads_to": "torture_chamber",
+                    "aliases": [
+                        "door",
+                        "north"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "torture_chamber",
+            "name": "Torture Chamber",
+            "description": "A horrifying room filled with rusted torture devices. Chains hang from the ceiling, and dark stains cover the floor. A guard's desk sits in the corner, and various implements of pain line the walls. A barred gate leads to the courtyard beyond.",
+            "items": [
+                {
+                    "id": "torture_rack",
+                    "name": "wooden torture rack",
+                    "description": "A sinister wooden device with leather straps and a crank mechanism",
+                    "searchable": true,
+                    "contains": [
+                        "dungeon_map"
+                    ]
+                },
+                {
+                    "id": "dungeon_map",
+                    "name": "hand drawn dungeon map",
+                    "description": "A crude map showing the layout of the dungeon",
+                    "readable": true,
+                    "text": "The map shows three areas: the cell, the torture chamber, and the courtyard. A note reads: 'The courtyard gate requires knowledge of the dungeon's history. Remember the year, the guard's name, and the prisoner's number.'"
+                },
+                {
+                    "id": "guards_desk",
+                    "name": "guard's wooden desk",
+                    "description": "A sturdy desk with two drawers and papers scattered across the top",
+                    "subcontainers": [
+                        {
+                            "id": "top_desk_drawer",
+                            "name": "top drawer",
+                            "locked": false,
+                            "contains": [
+                                "guard_log"
+                            ]
+                        },
+                        {
+                            "id": "bottom_desk_drawer",
+                            "name": "bottom drawer",
+                            "locked": true,
+                            "key_required": "rusty_nail",
+                            "contains": [
+                                "courtyard_key"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "guard_log",
+                    "name": "guard's logbook",
+                    "description": "A leather-bound book with daily entries",
+                    "readable": true,
+                    "text": "Guard Log - Sir Blackwood reporting. Prisoner 789 continues to resist. The year 1342 marks his fifth year of imprisonment. The courtyard gate password system has been updated for security."
+                },
+                {
+                    "id": "courtyard_key",
+                    "name": "brass courtyard key",
+                    "description": "A brass key labeled 'Courtyard Gate - Emergency Access'"
+                },
+                {
+                    "id": "iron_maiden",
+                    "name": "iron maiden device",
+                    "description": "A metal cabinet shaped like a person, with spikes inside",
+                    "searchable": true,
+                    "contains": [
+                        "prisoner_list"
+                    ]
+                },
+                {
+                    "id": "prisoner_list",
+                    "name": "prisoner registry",
+                    "description": "A document listing all prisoners held in the dungeon",
+                    "readable": true,
+                    "text": "Prisoner Registry: Prisoner 789 - Captured for treason. Guarded by Sir Blackwood. Imprisoned in year 1342. Status: Deceased."
+                },
+                {
+                    "id": "iron_courtyard_gate",
+                    "name": "iron courtyard gate",
+                    "description": "A massive iron gate with both a keyhole and a password panel. Three questions are engraved on a metal plaque.",
+                    "locked": true,
+                    "lock_type": "password",
+                    "password_questions": [
+                        {
+                            "question": "What year was the prisoner imprisoned?",
+                            "answer": "1342",
+                            "hint": "Check the prisoner's note and the guard's logbook"
+                        },
+                        {
+                            "question": "What was the guard's name?",
+                            "answer": "sir blackwood",
+                            "hint": "The guard's logbook is signed with his name"
+                        },
+                        {
+                            "question": "What was the prisoner's number?",
+                            "answer": "789",
+                            "hint": "The prisoner's note mentions his number"
+                        }
+                    ],
+                    "direction": "east",
+                    "leads_to": "courtyard_exit",
+                    "aliases": [
+                        "gate",
+                        "east"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "courtyard_exit",
+            "name": "Dungeon Courtyard",
+            "description": "You emerge into a moonlit courtyard! Fresh air fills your lungs as you see the open gate leading to freedom. The stars shine above, and the sounds of the forest beckon. You have escaped the medieval dungeon!",
+            "items": [
+                {
+                    "id": "open_gate",
+                    "name": "open freedom gate",
+                    "description": "A gate standing wide open, leading to the forest and freedom beyond"
+                },
+                {
+                    "id": "night_sky",
+                    "name": "starry night sky",
+                    "description": "The beautiful night sky stretches above, a sight you thought you'd never see again"
+                }
+            ],
+            "exits": [],
+            "is_goal": true,
+            "win_message": "You have successfully escaped the medieval dungeon! After solving the puzzles and unlocking the secrets of the imprisoned, you are finally free. The cool night air and the open sky welcome you as you leave the horrors of the dungeon behind forever. You win!"
+        }
+    ]
+}

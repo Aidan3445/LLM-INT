@@ -1,0 +1,220 @@
+{
+    "theme": "Corporate Espionage Office",
+    "title": "Corporate Espionage Office Adventure #42",
+    "goal": "Solve the puzzles, achieve the main objective, and escape.",
+    "starting_room": "executive_office",
+    "rooms": [
+        {
+            "id": "executive_office",
+            "name": "Executive Office",
+            "description": "A luxurious corner office with floor-to-ceiling windows overlooking the city skyline. A massive mahogany desk dominates the room, surrounded by leather chairs and expensive artwork. The air smells of coffee and printer toner. Security cameras blink red in the corners.",
+            "items": [
+                {
+                    "id": "mahogany_desk",
+                    "name": "executive desk",
+                    "description": "An imposing desk with multiple locked drawers and a computer terminal",
+                    "subcontainers": [
+                        {
+                            "id": "top_drawer",
+                            "name": "top drawer",
+                            "locked": false,
+                            "contains": [
+                                "employee_memo"
+                            ]
+                        },
+                        {
+                            "id": "middle_drawer",
+                            "name": "middle drawer",
+                            "locked": true,
+                            "lock_type": "combination",
+                            "combination": "2847",
+                            "contains": [
+                                "security_card"
+                            ]
+                        },
+                        {
+                            "id": "bottom_drawer",
+                            "name": "bottom drawer",
+                            "locked": false,
+                            "contains": []
+                        }
+                    ]
+                },
+                {
+                    "id": "employee_memo",
+                    "name": "confidential memo",
+                    "description": "A memo marked 'CONFIDENTIAL' with employee information",
+                    "readable": true,
+                    "text": "MEMO: Employee ID assignments - Sarah Chen: 2847, Marcus Rodriguez: 5193, Jennifer Park: 7621. Remember, Sarah Chen is our Chief Security Officer responsible for all access protocols."
+                },
+                {
+                    "id": "filing_cabinet",
+                    "name": "metal filing cabinet",
+                    "description": "A tall filing cabinet with corporate documents",
+                    "searchable": true,
+                    "contains": [
+                        "project_file"
+                    ]
+                },
+                {
+                    "id": "project_file",
+                    "name": "classified project file",
+                    "description": "A folder labeled 'Project Phoenix - Top Secret'",
+                    "readable": true,
+                    "text": "PROJECT PHOENIX: Next-generation AI system stored in secure data vault. Lead developer: Dr. Marcus Rodriguez. All project data backed up to server room mainframe. Access restricted to authorized personnel only."
+                },
+                {
+                    "id": "security_card",
+                    "name": "executive access card",
+                    "description": "A magnetic keycard with 'EXECUTIVE ACCESS' printed on it"
+                },
+                {
+                    "id": "bookshelf",
+                    "name": "executive bookshelf",
+                    "description": "A bookshelf filled with business books and corporate manuals",
+                    "searchable": true,
+                    "contains": [
+                        "hidden_note"
+                    ]
+                },
+                {
+                    "id": "hidden_note",
+                    "name": "handwritten note",
+                    "description": "A note tucked behind the books",
+                    "readable": true,
+                    "text": "Personal reminder: Data vault password system uses three security questions. Answers are in the employee records. The vault contains everything about Project Phoenix."
+                },
+                {
+                    "id": "reinforced_office_door",
+                    "name": "reinforced office door",
+                    "description": "A heavy door with a card reader leading to the server room",
+                    "locked": true,
+                    "key_required": "security_card",
+                    "direction": "east",
+                    "leads_to": "server_room",
+                    "aliases": [
+                        "door",
+                        "east"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "server_room",
+            "name": "Server Room",
+            "description": "A cold room filled with rows of humming servers and blinking lights. The air conditioning creates a constant low hum. Cables snake across the floor, and monitors display streams of data. A massive vault door dominates the far wall, its digital lock glowing ominously.",
+            "items": [
+                {
+                    "id": "server_rack",
+                    "name": "main server rack",
+                    "description": "A tall rack of servers with various status lights",
+                    "searchable": true,
+                    "contains": [
+                        "backup_log"
+                    ]
+                },
+                {
+                    "id": "backup_log",
+                    "name": "system backup log",
+                    "description": "A printout of recent backup operations",
+                    "readable": true,
+                    "text": "BACKUP LOG: All Project Phoenix files backed up to Data Vault. System administrator: Sarah Chen. Primary developer workspace: Lab 7. Remember: Chen oversees security, Rodriguez develops in Lab 7, Park manages the vault."
+                },
+                {
+                    "id": "workstation",
+                    "name": "security workstation",
+                    "description": "A computer terminal with multiple monitors showing security feeds",
+                    "readable": true,
+                    "text": "SECURITY TERMINAL: Access logs show Jennifer Park has been assigned as Data Vault Manager. Her office is located in the vault area. All vault access requires proper authentication."
+                },
+                {
+                    "id": "maintenance_panel",
+                    "name": "wall maintenance panel",
+                    "description": "A panel with various tools and equipment",
+                    "subcontainers": [
+                        {
+                            "id": "tool_compartment",
+                            "name": "tool compartment",
+                            "locked": false,
+                            "contains": [
+                                "employee_directory"
+                            ]
+                        },
+                        {
+                            "id": "supply_compartment",
+                            "name": "supply compartment",
+                            "locked": false,
+                            "contains": []
+                        }
+                    ]
+                },
+                {
+                    "id": "employee_directory",
+                    "name": "employee directory",
+                    "description": "A laminated directory of key personnel",
+                    "readable": true,
+                    "text": "KEY PERSONNEL: Sarah Chen - Chief Security Officer, Marcus Rodriguez - Lead AI Developer (Lab 7), Jennifer Park - Data Vault Manager. Emergency contact: Security Office."
+                },
+                {
+                    "id": "data_vault_door",
+                    "name": "data vault door",
+                    "description": "A massive steel door with a biometric scanner and digital keypad. Three security questions are displayed on the screen.",
+                    "locked": true,
+                    "lock_type": "password",
+                    "password_questions": [
+                        {
+                            "question": "Who is the Chief Security Officer?",
+                            "answer": "sarah chen",
+                            "hint": "Check the employee memo and directory"
+                        },
+                        {
+                            "question": "Where does the lead developer work?",
+                            "answer": "lab 7",
+                            "hint": "The backup log mentions Rodriguez's workspace"
+                        },
+                        {
+                            "question": "Who manages the data vault?",
+                            "answer": "jennifer park",
+                            "hint": "Look at the security terminal and employee directory"
+                        }
+                    ],
+                    "direction": "north",
+                    "leads_to": "data_vault",
+                    "aliases": [
+                        "vault",
+                        "north"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "data_vault",
+            "name": "Secure Data Vault",
+            "description": "You've breached the inner sanctum! A climate-controlled vault filled with servers containing the company's most valuable secrets. In the center, a terminal displays 'PROJECT PHOENIX - FULL ACCESS GRANTED'. Holographic displays show schematics for revolutionary AI technology. A emergency exit glows green, offering your escape route.",
+            "items": [
+                {
+                    "id": "central_terminal",
+                    "name": "main data terminal",
+                    "description": "A high-security terminal with full access to Project Phoenix files",
+                    "readable": true,
+                    "text": "PROJECT PHOENIX ACCESSED: All files downloaded successfully. Revolutionary AI technology acquired. Mission complete."
+                },
+                {
+                    "id": "data_servers",
+                    "name": "classified data servers",
+                    "description": "Rows of servers containing billions of dollars worth of corporate secrets and intellectual property"
+                },
+                {
+                    "id": "holographic_display",
+                    "name": "holographic projection system",
+                    "description": "Advanced displays showing AI schematics and technical specifications"
+                }
+            ],
+            "exits": [],
+            "is_goal": true,
+            "win_message": "SUCCESS! You've infiltrated the corporate headquarters and extracted the Project Phoenix files. The revolutionary AI technology is now in your possession. Time to disappear before security realizes what happened. Mission accomplished, agent. You win!"
+        }
+    ]
+}

@@ -1,0 +1,239 @@
+{
+    "theme": "Nanotech Cleanroom",
+    "title": "Nanotech Cleanroom Adventure #37",
+    "goal": "Solve the puzzles, achieve the main objective, and escape.",
+    "starting_room": "decontamination_airlock",
+    "rooms": [
+        {
+            "id": "decontamination_airlock",
+            "name": "Decontamination Airlock",
+            "description": "A sterile white chamber with gleaming metal walls and bright LED lighting. Air filtration systems hum quietly overhead. Hazmat suits hang on hooks beside a decontamination shower. Warning signs about particle contamination cover the walls. A security terminal blinks on a desk, and sealed storage lockers line one wall.",
+            "items": [
+                {
+                    "id": "security_desk",
+                    "name": "security desk",
+                    "description": "A metal desk with a computer terminal and several drawers",
+                    "subcontainers": [
+                        {
+                            "id": "top_drawer",
+                            "name": "top drawer",
+                            "locked": false,
+                            "contains": [
+                                "facility_manual"
+                            ]
+                        },
+                        {
+                            "id": "bottom_drawer",
+                            "name": "bottom drawer",
+                            "locked": true,
+                            "lock_type": "combination",
+                            "combination": "2045",
+                            "contains": [
+                                "access_keycard"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "facility_manual",
+                    "name": "facility operations manual",
+                    "description": "A thick binder with operational procedures",
+                    "readable": true,
+                    "text": "NANOTECH RESEARCH FACILITY - Established 2045. Lead Scientist: Dr. Sarah Chen. Safety Officer: Dr. Marcus Webb. All personnel must complete decontamination before entering the Main Cleanroom. Combination to secure storage: facility establishment year."
+                },
+                {
+                    "id": "access_keycard",
+                    "name": "security access keycard",
+                    "description": "A magnetic keycard labeled 'CLEANROOM ACCESS - AUTHORIZED PERSONNEL ONLY'"
+                },
+                {
+                    "id": "hazmat_rack",
+                    "name": "hazmat suit rack",
+                    "description": "A rack holding protective suits and equipment",
+                    "searchable": true,
+                    "contains": [
+                        "safety_goggles"
+                    ]
+                },
+                {
+                    "id": "safety_goggles",
+                    "name": "protective safety goggles",
+                    "description": "High-grade protective eyewear for cleanroom work"
+                },
+                {
+                    "id": "warning_signs",
+                    "name": "contamination warning signs",
+                    "description": "Multiple signs with safety warnings and protocols",
+                    "readable": true,
+                    "text": "WARNING: Class 1 Cleanroom ahead. Particle count must remain below 10 per cubic meter. All research conducted in Main Cleanroom under supervision of Dr. Sarah Chen. Unauthorized access prohibited."
+                },
+                {
+                    "id": "storage_locker",
+                    "name": "sealed storage locker",
+                    "description": "A metal locker with a biometric scanner",
+                    "searchable": true,
+                    "contains": [
+                        "research_notes"
+                    ]
+                },
+                {
+                    "id": "research_notes",
+                    "name": "preliminary research notes",
+                    "description": "A notebook with handwritten observations",
+                    "readable": true,
+                    "text": "Dr. Chen's Notes: The nanobot prototypes are showing promising results. All active research is conducted in the Main Cleanroom. Dr. Webb handles all safety protocols. Remember: only authorized personnel can access the Control Center."
+                },
+                {
+                    "id": "cleanroom_access_door",
+                    "name": "cleanroom access door",
+                    "description": "A heavy airlock door with a card reader and pressure seal. LED indicators show the room is ready for entry.",
+                    "locked": true,
+                    "key_required": "access_keycard",
+                    "direction": "north",
+                    "leads_to": "main_cleanroom",
+                    "aliases": [
+                        "door",
+                        "airlock",
+                        "north"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "main_cleanroom",
+            "name": "Main Cleanroom",
+            "description": "A vast sterile chamber with white walls, floors, and ceiling. Electron microscopes and nanofabrication equipment line the workstations. Robotic arms hang suspended from ceiling tracks. The air is perfectly still and filtered. Holographic displays show molecular structures floating in mid-air. A sealed door to the Control Center glows with security indicators.",
+            "items": [
+                {
+                    "id": "workstation_alpha",
+                    "name": "primary research workstation",
+                    "description": "A sophisticated workstation with multiple monitors and precision instruments",
+                    "searchable": true,
+                    "contains": [
+                        "project_log"
+                    ]
+                },
+                {
+                    "id": "project_log",
+                    "name": "project status log",
+                    "description": "A digital tablet displaying recent research entries",
+                    "readable": true,
+                    "text": "PROJECT LOG - Lead Scientist Dr. Sarah Chen: Nanobot assembly proceeding on schedule. The nanobots are our primary research focus. Dr. Webb continues to ensure all safety protocols are followed. Control Center access restricted to authorized personnel only."
+                },
+                {
+                    "id": "electron_microscope",
+                    "name": "electron microscope",
+                    "description": "A massive microscope capable of viewing individual atoms",
+                    "readable": true,
+                    "text": "Microscope display shows nanoscale structures. Label reads: 'Property of Nanotech Research Facility - Dr. Sarah Chen, Lead Scientist'"
+                },
+                {
+                    "id": "fabrication_chamber",
+                    "name": "nanofabrication chamber",
+                    "description": "A sealed chamber where nanobots are assembled",
+                    "readable": true,
+                    "text": "Chamber status: STANDBY. Last operation: Nanobot prototype assembly. Operator: Dr. Chen. Note: All nanobot research conducted in this cleanroom."
+                },
+                {
+                    "id": "supply_cabinet",
+                    "name": "supply cabinet",
+                    "description": "A cabinet containing cleanroom supplies and materials",
+                    "subcontainers": [
+                        {
+                            "id": "top_shelf",
+                            "name": "top shelf",
+                            "locked": false,
+                            "contains": [
+                                "personnel_roster"
+                            ]
+                        },
+                        {
+                            "id": "bottom_shelf",
+                            "name": "bottom shelf",
+                            "locked": false,
+                            "contains": [
+                                "cleanroom_wipes"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "personnel_roster",
+                    "name": "personnel roster",
+                    "description": "A document listing facility staff and their roles",
+                    "readable": true,
+                    "text": "FACILITY PERSONNEL: Dr. Sarah Chen - Lead Scientist, Nanobot Research. Dr. Marcus Webb - Safety Officer, Protocol Enforcement. Tech Rodriguez - Equipment Maintenance. All research activities take place in the Main Cleanroom."
+                },
+                {
+                    "id": "cleanroom_wipes",
+                    "name": "sterile cleanroom wipes",
+                    "description": "Ultra-clean wipes for maintaining the sterile environment"
+                },
+                {
+                    "id": "holographic_display",
+                    "name": "holographic molecular display",
+                    "description": "A 3D projection system showing molecular structures",
+                    "readable": true,
+                    "text": "Display shows nanobot schematics with annotation: 'Breakthrough achieved! Our nanobots represent the cutting edge of nanotechnology. - Dr. Sarah Chen'"
+                },
+                {
+                    "id": "control_center_security_door",
+                    "name": "control center security door",
+                    "description": "A reinforced door with a biometric scanner and security terminal. Three verification questions are displayed on the screen.",
+                    "locked": true,
+                    "lock_type": "password",
+                    "password_questions": [
+                        {
+                            "question": "Who is the lead scientist?",
+                            "answer": "dr sarah chen",
+                            "hint": "Check the facility manual, project logs, and personnel roster"
+                        },
+                        {
+                            "question": "What is the primary research focus?",
+                            "answer": "nanobots",
+                            "hint": "Multiple documents mention what research is being conducted"
+                        },
+                        {
+                            "question": "Where is research conducted?",
+                            "answer": "main cleanroom",
+                            "hint": "Look at the warning signs and project logs"
+                        }
+                    ],
+                    "direction": "east",
+                    "leads_to": "control_center",
+                    "aliases": [
+                        "door",
+                        "east"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "control_center",
+            "name": "Control Center",
+            "description": "You've reached the facility Control Center! A high-tech command room with wall-to-wall monitors displaying facility systems, environmental controls, and security feeds. The main console shows all systems are stable. An emergency exit door stands open, revealing a decontamination corridor leading to the outside. Fresh air flows in from the exit. You're safe now!",
+            "items": [
+                {
+                    "id": "main_console",
+                    "name": "main control console",
+                    "description": "The central control system for the entire facility, showing green status indicators across all systems"
+                },
+                {
+                    "id": "monitoring_screens",
+                    "name": "monitoring screens",
+                    "description": "Multiple displays showing real-time data from throughout the facility"
+                },
+                {
+                    "id": "emergency_exit_sign",
+                    "name": "emergency exit sign",
+                    "description": "A glowing sign indicating the safe exit route"
+                }
+            ],
+            "exits": [],
+            "is_goal": true,
+            "win_message": "SUCCESS! You've navigated through the Nanotech Cleanroom facility and reached the Control Center. The emergency exit leads you safely out of the facility. Your problem-solving skills and attention to detail have paid off. The mysteries of the cleanroom are solved, and you've escaped to safety. You win!"
+        }
+    ]
+}

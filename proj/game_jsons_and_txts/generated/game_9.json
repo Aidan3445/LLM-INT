@@ -1,0 +1,257 @@
+{
+    "theme": "Retro Arcade Time Loop",
+    "title": "Retro Arcade Time Loop Adventure #9",
+    "goal": "Solve the puzzles, achieve the main objective, and escape.",
+    "starting_room": "arcade_floor",
+    "rooms": [
+        {
+            "id": "arcade_floor",
+            "name": "Neon Arcade Floor",
+            "description": "A dimly lit arcade filled with the glow of CRT screens and the electronic beeps of classic games. Rows of vintage arcade cabinets line the walls. The carpet is worn with geometric patterns. A strange feeling of d\u00e9j\u00e0 vu washes over you. A door marked EMPLOYEES ONLY stands to the north.",
+            "items": [
+                {
+                    "id": "pacman_cabinet",
+                    "name": "PACMAN arcade cabinet",
+                    "description": "A classic yellow cabinet with joystick controls. The high score screen flickers.",
+                    "readable": true,
+                    "text": "HIGH SCORE: 999,999 by ACE. A note taped to the side reads: 'Remember the champions: ACE scored 999, BLAZE got 450, and NOVA reached 128.'"
+                },
+                {
+                    "id": "space_invaders_cabinet",
+                    "name": "Space Invaders cabinet",
+                    "description": "A black cabinet with alien graphics and a fire button worn smooth from use.",
+                    "searchable": true,
+                    "contains": [
+                        "quarter"
+                    ]
+                },
+                {
+                    "id": "quarter",
+                    "name": "arcade token",
+                    "description": "A shiny token with 'PIXEL PALACE ARCADE' stamped on it"
+                },
+                {
+                    "id": "donkey_kong_cabinet",
+                    "name": "Donkey Kong cabinet",
+                    "description": "A red cabinet showing a gorilla throwing barrels. The screen displays a looping demo.",
+                    "searchable": true,
+                    "contains": [
+                        "arcade_manual"
+                    ]
+                },
+                {
+                    "id": "arcade_manual",
+                    "name": "arcade maintenance manual",
+                    "description": "A worn manual with handwritten notes in the margins",
+                    "readable": true,
+                    "text": "PIXEL PALACE ARCADE - Owner: Manager Rick Stevens. Emergency procedures: In case of temporal anomaly, access the Loop Control System in the back room. Only the manager has authorization."
+                },
+                {
+                    "id": "prize_counter",
+                    "name": "prize counter",
+                    "description": "A glass counter displaying cheap toys and candy. The register drawer is slightly open.",
+                    "searchable": true,
+                    "contains": [
+                        "screwdriver"
+                    ]
+                },
+                {
+                    "id": "screwdriver",
+                    "name": "flathead screwdriver",
+                    "description": "A tool left behind by a maintenance worker"
+                },
+                {
+                    "id": "manager's_office_door",
+                    "name": "manager's office door",
+                    "description": "A wooden door with a sign reading MANAGER - RICK STEVENS. The lock mechanism looks old.",
+                    "locked": true,
+                    "key_required": "screwdriver",
+                    "direction": "north",
+                    "leads_to": "managers_office",
+                    "aliases": [
+                        "door",
+                        "north",
+                        "office"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "managers_office",
+            "name": "Manager's Office",
+            "description": "A cluttered office with posters of classic arcade games covering the walls. A desk is buried under papers and empty energy drink cans. A filing cabinet stands in the corner. Through a window, you can see the arcade floor, but something seems off about the lighting. A reinforced door to the east has a keypad lock.",
+            "items": [
+                {
+                    "id": "desk",
+                    "name": "manager's desk",
+                    "description": "A metal desk covered in invoices and repair receipts",
+                    "searchable": true,
+                    "contains": [
+                        "manager_journal"
+                    ]
+                },
+                {
+                    "id": "manager_journal",
+                    "name": "manager's personal journal",
+                    "description": "A notebook with daily entries about the arcade",
+                    "readable": true,
+                    "text": "Day 47: The loop continues. Every night at closing, time resets. I've hidden the access card in the filing cabinet. The combination is the high scores in order: ACE, BLAZE, NOVA. The back room holds the answer. I must remember: I am Rick Stevens, this arcade opened in 1982, and the loop must be broken."
+                },
+                {
+                    "id": "filing_cabinet",
+                    "name": "metal filing cabinet",
+                    "description": "A four drawer cabinet with labels barely visible under dust",
+                    "subcontainers": [
+                        {
+                            "id": "drawer_a",
+                            "name": "drawer A FINANCES",
+                            "locked": false,
+                            "contains": [
+                                "tax_documents"
+                            ]
+                        },
+                        {
+                            "id": "drawer_b",
+                            "name": "drawer B MAINTENANCE",
+                            "locked": true,
+                            "lock_type": "combination",
+                            "combination": "999450128",
+                            "contains": [
+                                "access_card"
+                            ]
+                        },
+                        {
+                            "id": "drawer_c",
+                            "name": "drawer C EMPLOYEE RECORDS",
+                            "locked": false,
+                            "contains": []
+                        },
+                        {
+                            "id": "drawer_d",
+                            "name": "drawer D CONFIDENTIAL",
+                            "locked": false,
+                            "contains": [
+                                "temporal_report"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "tax_documents",
+                    "name": "tax forms",
+                    "description": "Boring financial paperwork from 1982",
+                    "readable": true,
+                    "text": "PIXEL PALACE ARCADE - Established 1982. Owner: Rick Stevens."
+                },
+                {
+                    "id": "temporal_report",
+                    "name": "temporal anomaly report",
+                    "description": "A scientific document with complex diagrams",
+                    "readable": true,
+                    "text": "CLASSIFIED: Temporal loop detected at coordinates matching arcade location. Loop initiated by experimental arcade cabinet in back room. Reset occurs at 2400 hours daily. Recommend immediate shutdown of Loop Control System."
+                },
+                {
+                    "id": "access_card",
+                    "name": "security access card",
+                    "description": "A magnetic keycard labeled AUTHORIZED PERSONNEL ONLY"
+                },
+                {
+                    "id": "wall_posters",
+                    "name": "framed arcade posters",
+                    "description": "Vintage posters from the golden age of arcades",
+                    "readable": true,
+                    "text": "Posters for: Galaga, Centipede, Defender, and more. A handwritten note says: 'The back room cabinet was delivered in 1982, the year we opened.'"
+                },
+                {
+                    "id": "reinforced_metal_door",
+                    "name": "reinforced metal door",
+                    "description": "A heavy security door with a digital keypad. A warning label reads: AUTHORIZED ACCESS ONLY - TEMPORAL EQUIPMENT.",
+                    "locked": true,
+                    "lock_type": "password",
+                    "password_questions": [
+                        {
+                            "question": "What is the manager's full name?",
+                            "answer": "rick stevens",
+                            "hint": "Check the door sign and the manager's journal"
+                        },
+                        {
+                            "question": "What year did the arcade open?",
+                            "answer": "1982",
+                            "hint": "Look at the tax documents and the journal entries"
+                        },
+                        {
+                            "question": "What must be broken?",
+                            "answer": "loop",
+                            "hint": "The manager's journal mentions what needs to be broken"
+                        }
+                    ],
+                    "direction": "east",
+                    "leads_to": "back_room",
+                    "aliases": [
+                        "door",
+                        "east",
+                        "back room"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "back_room",
+            "name": "Temporal Control Room",
+            "description": "You've found it! A secret room containing a bizarre arcade cabinet that pulses with unnatural energy. Wires and cables connect it to banks of computers and monitoring equipment. The cabinet's screen shows a countdown timer that keeps resetting to 24:00:00. A large lever labeled LOOP RESET is mounted on the wall. Reality seems to shimmer and distort around the cabinet.",
+            "items": [
+                {
+                    "id": "temporal_cabinet",
+                    "name": "experimental arcade cabinet",
+                    "description": "A strange cabinet covered in warning labels and blinking lights. The screen displays: TIME LOOP ACTIVE - CYCLE 2,847.",
+                    "readable": true,
+                    "text": "WARNING: Experimental temporal arcade game. Do not operate without authorization. To deactivate loop, pull emergency reset lever."
+                },
+                {
+                    "id": "monitoring_station",
+                    "name": "computer monitoring station",
+                    "description": "Banks of computers showing temporal readings and loop statistics",
+                    "readable": true,
+                    "text": "LOOP STATUS: ACTIVE. Duration: 2,847 cycles. Anomaly source: Experimental cabinet. Solution: Manual override via emergency lever."
+                },
+                {
+                    "id": "loop_reset_lever",
+                    "name": "loop reset lever",
+                    "description": "A large red lever with a sign: EMERGENCY LOOP TERMINATION. Pull to break temporal cycle and restore normal time flow.",
+                    "locked": true,
+                    "key_required": "access_card",
+                    "direction": "north",
+                    "leads_to": "freedom",
+                    "aliases": [
+                        "lever",
+                        "north",
+                        "exit"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "freedom",
+            "name": "Arcade at Dawn",
+            "description": "The temporal distortion fades away like a bad dream. The arcade cabinet powers down with a final electronic whine. Through the windows, you see the sun rising for the first time in what feels like years. The clock on the wall ticks forward normally. Time is flowing again. You're free!",
+            "items": [
+                {
+                    "id": "sunrise",
+                    "name": "morning sunlight",
+                    "description": "Beautiful golden light streaming through the windows, proof that time is moving forward again"
+                },
+                {
+                    "id": "working_clock",
+                    "name": "wall clock",
+                    "description": "A clock that finally shows time progressing normally instead of resetting"
+                }
+            ],
+            "exits": [],
+            "is_goal": true,
+            "win_message": "You've broken the time loop! The experimental arcade cabinet is permanently disabled, and the Pixel Palace Arcade is free from its temporal prison. Manager Rick Stevens can finally go home after being trapped for 2,847 cycles. The sun rises on a new day, and time flows forward once more. You win!"
+        }
+    ]
+}

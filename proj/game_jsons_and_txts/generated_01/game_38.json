@@ -1,0 +1,265 @@
+{
+    "theme": "Zombie Outbreak Motel",
+    "title": "Zombie Outbreak Motel Adventure #38",
+    "goal": "Solve the puzzles, achieve the main objective, and escape.",
+    "starting_room": "motel_room_13",
+    "rooms": [
+        {
+            "id": "motel_room_13",
+            "name": "Motel Room 13",
+            "description": "A dingy motel room with peeling wallpaper and stained carpet. The windows are hastily barricaded with furniture. Scratching and moaning sounds come from outside. Blood smears mark the door. A flickering TV shows emergency broadcasts. The air reeks of decay and fear. You need to find a way out before they break through.",
+            "items": [
+                {
+                    "id": "nightstand",
+                    "name": "wooden nightstand",
+                    "description": "A cheap nightstand with two drawers, one of the legs is broken",
+                    "subcontainers": [
+                        {
+                            "id": "top_drawer",
+                            "name": "top drawer",
+                            "locked": false,
+                            "contains": [
+                                "motel_brochure"
+                            ]
+                        },
+                        {
+                            "id": "bottom_drawer",
+                            "name": "bottom drawer",
+                            "locked": true,
+                            "lock_type": "combination",
+                            "combination": "1987",
+                            "contains": [
+                                "office_key"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "motel_brochure",
+                    "name": "faded motel brochure",
+                    "description": "An old promotional brochure for the Sunset Motel",
+                    "readable": true,
+                    "text": "Welcome to Sunset Motel - Your Home Away From Home Since 1987! Manager Frank Morrison ensures your comfort. Office hours: 24/7. In case of emergency, contact the front office immediately."
+                },
+                {
+                    "id": "office_key",
+                    "name": "motel office key",
+                    "description": "A brass key with a tag reading 'OFFICE - DO NOT DUPLICATE'"
+                },
+                {
+                    "id": "television",
+                    "name": "old television",
+                    "description": "A boxy TV showing static and emergency broadcasts",
+                    "readable": true,
+                    "text": "EMERGENCY BROADCAST: Outbreak spreading rapidly. Seek shelter immediately. Avoid contact with infected individuals. Military establishing safe zones. Manager Frank Morrison of Sunset Motel reported securing basement bunker for survivors."
+                },
+                {
+                    "id": "bed",
+                    "name": "unmade bed",
+                    "description": "A bed with rumpled sheets and a pillow",
+                    "searchable": true,
+                    "contains": [
+                        "previous_guest_note"
+                    ]
+                },
+                {
+                    "id": "previous_guest_note",
+                    "name": "handwritten note",
+                    "description": "A desperate note scrawled on motel stationery",
+                    "readable": true,
+                    "text": "If anyone finds this - the manager Frank Morrison told me about a safe room in the basement bunker before he turned. The combination to the bottom drawer is the year this cursed motel opened. Get to the office, then find the bunker. Good luck. - Previous Guest"
+                },
+                {
+                    "id": "barricaded_window",
+                    "name": "barricaded window",
+                    "description": "A window blocked with a dresser and chair. Shadows move outside.",
+                    "readable": true,
+                    "text": "Through gaps in the barricade, you see dozens of zombies shambling through the parking lot. The motel sign flickers: 'Sunset Motel - Vacancy'. Going outside is not an option."
+                },
+                {
+                    "id": "bathroom_cabinet",
+                    "name": "bathroom cabinet",
+                    "description": "A rusty medicine cabinet above the sink",
+                    "searchable": true,
+                    "contains": [
+                        "first_aid_kit"
+                    ]
+                },
+                {
+                    "id": "first_aid_kit",
+                    "name": "first aid kit",
+                    "description": "A small medical kit with bandages and antiseptic"
+                },
+                {
+                    "id": "motel_room_door",
+                    "name": "motel room door",
+                    "description": "The door leading to the exterior walkway. You can hear zombies outside - this way is blocked. There's another door leading to the interior hallway.",
+                    "locked": true,
+                    "key_required": "office_key",
+                    "direction": "west",
+                    "leads_to": "motel_office",
+                    "aliases": [
+                        "door",
+                        "west",
+                        "hallway"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "motel_office",
+            "name": "Motel Office",
+            "description": "The motel's front office is in chaos. Papers are scattered everywhere, and the cash register hangs open. A coffee maker still gurgles with ancient coffee. Blood trails lead toward the back. The manager's desk dominates the room. A reinforced door marked 'BASEMENT - AUTHORIZED ONLY' stands behind the counter.",
+            "items": [
+                {
+                    "id": "managers_desk",
+                    "name": "manager's desk",
+                    "description": "A cluttered desk covered with reservation books and paperwork",
+                    "subcontainers": [
+                        {
+                            "id": "desk_drawer",
+                            "name": "desk drawer",
+                            "locked": false,
+                            "contains": [
+                                "managers_log"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "managers_log",
+                    "name": "manager's log book",
+                    "description": "Frank Morrison's daily log of motel operations",
+                    "readable": true,
+                    "text": "Manager's Log - Frank Morrison: Day 1 of outbreak. I've secured the basement bunker with supplies. It's the only safe place left. The combination is my employee number, but I can't remember it. Check my employee file in the cabinet. If you're reading this and I'm gone, get to the bunker and survive."
+                },
+                {
+                    "id": "filing_cabinet",
+                    "name": "metal filing cabinet",
+                    "description": "A dented filing cabinet with employee records",
+                    "searchable": true,
+                    "contains": [
+                        "employee_file"
+                    ]
+                },
+                {
+                    "id": "employee_file",
+                    "name": "Frank Morrison's employee file",
+                    "description": "Personnel file for the motel manager",
+                    "readable": true,
+                    "text": "EMPLOYEE RECORD - Name: Frank Morrison. Position: Manager. Employee #: 1987. Hired: Opening day. Notes: Dedicated employee, knows every inch of this motel including the basement bunker safe room."
+                },
+                {
+                    "id": "bulletin_board",
+                    "name": "bulletin board",
+                    "description": "A cork board with notices and emergency procedures",
+                    "readable": true,
+                    "text": "EMERGENCY PROCEDURES: In case of disaster, manager Frank Morrison will secure the basement bunker. All survivors should proceed to the safe room location. The bunker is equipped with supplies and an emergency exit tunnel."
+                },
+                {
+                    "id": "supply_closet",
+                    "name": "supply closet",
+                    "description": "A closet with cleaning supplies and tools",
+                    "searchable": true,
+                    "contains": [
+                        "flashlight",
+                        "crowbar"
+                    ]
+                },
+                {
+                    "id": "flashlight",
+                    "name": "heavy flashlight",
+                    "description": "A large metal flashlight that still works"
+                },
+                {
+                    "id": "crowbar",
+                    "name": "rusty crowbar",
+                    "description": "A tool that could be useful for prying things open"
+                },
+                {
+                    "id": "security_monitor",
+                    "name": "security monitor",
+                    "description": "A grainy monitor showing camera feeds from around the motel",
+                    "readable": true,
+                    "text": "The cameras show zombies everywhere - parking lot, walkways, pool area. But the basement bunker feed shows a clear emergency tunnel exit. That's your way out if you can reach it."
+                },
+                {
+                    "id": "survival_guide",
+                    "name": "zombie survival guide",
+                    "description": "A hastily printed guide someone left behind",
+                    "readable": true,
+                    "text": "SURVIVAL TIPS: You are a survivor - remember that. Find safe rooms and bunkers. Avoid the infected. Know your escape routes. The manager of any facility usually knows the safest locations. Trust your instincts."
+                },
+                {
+                    "id": "reinforced_basement_door",
+                    "name": "reinforced basement door",
+                    "description": "A heavy steel door with a security panel. Three verification questions glow on the digital display.",
+                    "locked": true,
+                    "lock_type": "password",
+                    "password_questions": [
+                        {
+                            "question": "Who is the motel manager?",
+                            "answer": "frank morrison",
+                            "hint": "Check the motel brochure, manager's log, and employee records"
+                        },
+                        {
+                            "question": "Where is the safe room located?",
+                            "answer": "basement bunker",
+                            "hint": "The TV broadcast, manager's log, and bulletin board mention this"
+                        },
+                        {
+                            "question": "What are you?",
+                            "answer": "survivor",
+                            "hint": "The survival guide reminds you of your identity"
+                        }
+                    ],
+                    "direction": "south",
+                    "leads_to": "basement_bunker",
+                    "aliases": [
+                        "basement",
+                        "bunker",
+                        "south"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "basement_bunker",
+            "name": "Basement Bunker Safe Room",
+            "description": "You've made it to the basement bunker! A reinforced concrete room stocked with supplies, water, and canned food. Emergency lights cast a steady glow. The air is clean and cool. Best of all, an emergency tunnel with a ladder leads up to the surface outside the motel perimeter. Freedom is within reach!",
+            "items": [
+                {
+                    "id": "supply_shelves",
+                    "name": "supply shelves",
+                    "description": "Metal shelves stocked with survival supplies, food, and water"
+                },
+                {
+                    "id": "emergency_radio",
+                    "name": "emergency radio",
+                    "description": "A working radio receiving rescue broadcasts",
+                    "readable": true,
+                    "text": "RESCUE BROADCAST: Military safe zones established 20 miles north. All survivors proceed to evacuation points. The outbreak is being contained. Help is coming."
+                },
+                {
+                    "id": "escape_tunnel",
+                    "name": "emergency escape tunnel",
+                    "description": "A concrete tunnel with a ladder leading up to a hatch outside the motel grounds",
+                    "readable": true,
+                    "text": "The tunnel is clear! The ladder leads to a hatch that opens in the woods beyond the motel. You can see daylight above. This is your escape route to safety."
+                },
+                {
+                    "id": "managers_final_note",
+                    "name": "Frank's final message",
+                    "description": "A note left by the manager before he succumbed",
+                    "readable": true,
+                    "text": "To whoever finds this: I'm glad you made it. The tunnel will take you to safety. I built this bunker years ago, never thinking I'd actually need it. Stay alive out there. - Frank Morrison"
+                }
+            ],
+            "exits": [],
+            "is_goal": true,
+            "win_message": "You've reached the basement bunker and found the escape tunnel! Climbing the ladder, you emerge in the woods far from the motel. The sounds of the undead fade behind you as you make your way toward the military safe zones. You survived the zombie outbreak at Sunset Motel. You win!"
+        }
+    ]
+}

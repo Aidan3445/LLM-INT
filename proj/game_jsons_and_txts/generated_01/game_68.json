@@ -1,0 +1,235 @@
+{
+    "theme": "Gothic Astronomy Tower",
+    "title": "Gothic Astronomy Tower Adventure #68",
+    "goal": "Solve the puzzles, achieve the main objective, and escape.",
+    "starting_room": "observatory_chamber",
+    "rooms": [
+        {
+            "id": "observatory_chamber",
+            "name": "Lower Observatory Chamber",
+            "description": "A circular stone chamber at the base of an ancient astronomy tower. Gothic arches frame tall windows showing the night sky. Brass instruments and celestial globes rest on wooden tables. Dust motes float in moonbeams. The air smells of old parchment and brass polish. Stone stairs spiral upward into darkness.",
+            "items": [
+                {
+                    "id": "celestial_globe",
+                    "name": "brass celestial globe",
+                    "description": "An ornate globe showing constellations and celestial coordinates",
+                    "readable": true,
+                    "text": "The globe is marked with major constellations: Orion the Hunter, Ursa Major the Great Bear, and Draco the Dragon. A brass plate reads: 'Crafted for the tower in 1687.'"
+                },
+                {
+                    "id": "observation_desk",
+                    "name": "observation desk",
+                    "description": "A heavy oak desk covered with astronomical charts and instruments",
+                    "subcontainers": [
+                        {
+                            "id": "top_drawer",
+                            "name": "top drawer",
+                            "locked": false,
+                            "contains": [
+                                "tower_history"
+                            ]
+                        },
+                        {
+                            "id": "bottom_drawer",
+                            "name": "bottom drawer",
+                            "locked": true,
+                            "lock_type": "combination",
+                            "combination": "1687",
+                            "contains": [
+                                "brass_key"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "tower_history",
+                    "name": "tower chronicle",
+                    "description": "A leather-bound book documenting the tower's history",
+                    "readable": true,
+                    "text": "The Gothic Astronomy Tower was constructed in 1687 by the renowned astronomer Dr Blackwood. He dedicated his life to studying the heavens from this very chamber. His greatest work resides in the Star Chart Library above."
+                },
+                {
+                    "id": "brass_key",
+                    "name": "ornate brass key",
+                    "description": "A key engraved with star patterns and celestial symbols"
+                },
+                {
+                    "id": "instrument_cabinet",
+                    "name": "instrument cabinet",
+                    "description": "A tall cabinet storing astronomical tools and devices",
+                    "searchable": true,
+                    "contains": [
+                        "astrolabe"
+                    ]
+                },
+                {
+                    "id": "astrolabe",
+                    "name": "ancient astrolabe",
+                    "description": "A brass instrument used for measuring the positions of stars"
+                },
+                {
+                    "id": "locked_chest",
+                    "name": "wooden storage chest",
+                    "description": "A chest bound with iron bands and a brass lock",
+                    "locked": true,
+                    "key_required": "brass_key",
+                    "contains": [
+                        "astronomer_journal"
+                    ]
+                },
+                {
+                    "id": "astronomer_journal",
+                    "name": "astronomer journal",
+                    "description": "The personal journal of Dr Blackwood",
+                    "readable": true,
+                    "text": "Entry 47: My life's work mapping the heavens is nearly complete. The Star Chart Library holds my greatest discoveries. Only those who understand the celestial realm may access the telescope platform above. Three truths guard the way: the constellation of the hunter, where my charts reside, and my own name."
+                },
+                {
+                    "id": "spiral_stone_stairway",
+                    "name": "spiral stone stairway",
+                    "description": "Ancient stone steps winding upward through the tower to the library level",
+                    "locked": false,
+                    "direction": "north",
+                    "leads_to": "star_chart_library",
+                    "aliases": [
+                        "stairs",
+                        "up",
+                        "north"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "star_chart_library",
+            "name": "Star Chart Library",
+            "description": "A magnificent library filled with astronomical charts and ancient texts. Bookshelves line the curved walls, packed with volumes on celestial mechanics. A large table displays star maps under glass. Moonlight streams through a domed skylight. The scent of old leather and ink fills the air. An iron door leads to the telescope platform above.",
+            "items": [
+                {
+                    "id": "star_map_table",
+                    "name": "star map table",
+                    "description": "A table displaying detailed charts of the night sky under protective glass",
+                    "readable": true,
+                    "text": "The maps show detailed observations of constellations. The most prominent chart depicts Orion, with notes: 'Orion the Hunter - most recognizable constellation in winter skies. Three stars form the belt, sword hangs below.'"
+                },
+                {
+                    "id": "bookshelf_north",
+                    "name": "northern bookshelf",
+                    "description": "Shelves containing volumes on planetary motion and celestial mechanics",
+                    "searchable": true,
+                    "contains": [
+                        "planetary_text"
+                    ]
+                },
+                {
+                    "id": "planetary_text",
+                    "name": "planetary motion text",
+                    "description": "A thick volume discussing the movements of celestial bodies",
+                    "readable": true,
+                    "text": "Chapter 5: The planets orbit the sun in elliptical paths. Dr Blackwood's observations from this tower contributed greatly to our understanding of celestial mechanics."
+                },
+                {
+                    "id": "bookshelf_south",
+                    "name": "southern bookshelf",
+                    "description": "Shelves dedicated to constellation studies and star catalogs",
+                    "readable": true,
+                    "text": "Section label: 'Constellation Studies - Charts and observations compiled in the Star Chart Library by Dr Blackwood and his predecessors.'"
+                },
+                {
+                    "id": "reading_lectern",
+                    "name": "wooden reading lectern",
+                    "description": "A tall lectern holding an open manuscript",
+                    "readable": true,
+                    "text": "Manuscript page: 'The great astronomer Dr Blackwood spent forty years in this tower, charting the heavens. His star charts, housed in this very library, represent the pinnacle of astronomical knowledge.'"
+                },
+                {
+                    "id": "archive_cabinet",
+                    "name": "archive cabinet",
+                    "description": "A cabinet with multiple compartments for storing precious documents",
+                    "subcontainers": [
+                        {
+                            "id": "upper_compartment",
+                            "name": "upper compartment",
+                            "locked": false,
+                            "contains": [
+                                "constellation_guide"
+                            ]
+                        },
+                        {
+                            "id": "lower_compartment",
+                            "name": "lower compartment",
+                            "locked": false,
+                            "contains": []
+                        }
+                    ]
+                },
+                {
+                    "id": "constellation_guide",
+                    "name": "constellation reference guide",
+                    "description": "A comprehensive guide to identifying constellations",
+                    "readable": true,
+                    "text": "Guide excerpt: 'Orion the Hunter is perhaps the most famous constellation, easily identified by the three stars of his belt. Ancient cultures across the world recognized this stellar pattern.'"
+                },
+                {
+                    "id": "iron_telescope_door",
+                    "name": "iron telescope door",
+                    "description": "A heavy iron door leading to the telescope platform at the tower's peak. Three questions are engraved on a brass plate mounted beside it.",
+                    "locked": true,
+                    "lock_type": "password",
+                    "password_questions": [
+                        {
+                            "question": "What constellation is known as the Hunter?",
+                            "answer": "orion",
+                            "hint": "Check the star maps and constellation guides throughout the library"
+                        },
+                        {
+                            "question": "Where are the star charts housed?",
+                            "answer": "star chart library",
+                            "hint": "Multiple texts mention where the charts are stored"
+                        },
+                        {
+                            "question": "Who built this tower?",
+                            "answer": "dr blackwood",
+                            "hint": "The tower chronicle and various texts name the founder"
+                        }
+                    ],
+                    "direction": "east",
+                    "leads_to": "telescope_platform",
+                    "aliases": [
+                        "door",
+                        "platform",
+                        "east"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "telescope_platform",
+            "name": "Telescope Platform",
+            "description": "You have reached the pinnacle of the Gothic Astronomy Tower! A magnificent brass telescope points toward the heavens through an open dome. The night sky spreads above in breathtaking glory, stars twinkling like diamonds. The entire countryside is visible far below. A ladder leads down the exterior to freedom. Fresh night air fills your lungs.",
+            "items": [
+                {
+                    "id": "grand_telescope",
+                    "name": "grand brass telescope",
+                    "description": "A massive telescope mounted on a rotating platform, pointed at the stars"
+                },
+                {
+                    "id": "observation_platform",
+                    "name": "observation platform",
+                    "description": "The circular platform surrounding the telescope, offering panoramic views"
+                },
+                {
+                    "id": "star_charts",
+                    "name": "mounted star charts",
+                    "description": "Charts showing the current positions of constellations and planets",
+                    "readable": true,
+                    "text": "Tonight's sky: Orion rises in the east, the Great Bear circles the north star, and Jupiter shines brightly near the moon."
+                }
+            ],
+            "exits": [],
+            "is_goal": true,
+            "win_message": "You have reached the telescope platform at the top of the Gothic Astronomy Tower! The mysteries of the heavens spread before you, and the path to freedom lies down the exterior ladder. You have solved the astronomical puzzles and escaped the tower. The stars themselves seem to celebrate your success. You win!"
+        }
+    ]
+}

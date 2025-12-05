@@ -1,0 +1,218 @@
+{
+    "theme": "Medieval Dungeon",
+    "title": "Medieval Dungeon Adventure #1",
+    "goal": "Solve the puzzles, achieve the main objective, and escape.",
+    "starting_room": "dungeon_cell",
+    "rooms": [
+        {
+            "id": "dungeon_cell",
+            "name": "Dark Dungeon Cell",
+            "description": "A cold, damp cell deep beneath the castle. Stone walls glisten with moisture, and a single torch flickers on the wall casting dancing shadows. Iron chains hang from the walls, and straw covers the floor. A heavy wooden door with iron bands is the only exit.",
+            "items": [
+                {
+                    "id": "straw_pile",
+                    "name": "pile of straw",
+                    "description": "A musty pile of old straw in the corner of the cell",
+                    "searchable": true,
+                    "contains": [
+                        "rusty_nail"
+                    ]
+                },
+                {
+                    "id": "rusty_nail",
+                    "name": "rusty nail",
+                    "description": "A long rusty nail, possibly useful for picking locks"
+                },
+                {
+                    "id": "wooden_bucket",
+                    "name": "old wooden bucket",
+                    "description": "A weathered bucket with a false bottom",
+                    "searchable": true,
+                    "contains": [
+                        "prisoner_note"
+                    ]
+                },
+                {
+                    "id": "prisoner_note",
+                    "name": "prisoner's note",
+                    "description": "A scrap of parchment with desperate scrawling",
+                    "readable": true,
+                    "text": "They imprisoned me in the year of the great battle - 1066, when William conquered England. The guard's desk holds the key to freedom. Remember: the dungeon master is Sir Blackwood, prisoners are held in the tower, and the treasure lies in the vault."
+                },
+                {
+                    "id": "iron_chains",
+                    "name": "hanging iron chains",
+                    "description": "Heavy chains bolted to the wall, one appears loose",
+                    "searchable": true,
+                    "contains": []
+                },
+                {
+                    "id": "heavy_cell_door",
+                    "name": "heavy cell door",
+                    "description": "A thick wooden door reinforced with iron bands. The lock looks old and rusty.",
+                    "locked": true,
+                    "key_required": "rusty_nail",
+                    "direction": "north",
+                    "leads_to": "guard_room",
+                    "aliases": [
+                        "door",
+                        "north"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "guard_room",
+            "name": "Castle Guard Room",
+            "description": "A stone chamber with weapon racks lining the walls. Swords, shields, and spears are mounted on display. A large wooden table sits in the center with dice and ale mugs scattered across it. Torches burn in wall sconces. A massive iron gate leads to the courtyard beyond.",
+            "items": [
+                {
+                    "id": "weapon_rack",
+                    "name": "wooden weapon rack",
+                    "description": "A rack holding various medieval weapons",
+                    "searchable": true,
+                    "contains": [
+                        "ceremonial_sword"
+                    ]
+                },
+                {
+                    "id": "ceremonial_sword",
+                    "name": "ceremonial sword",
+                    "description": "An ornate sword with jewels in the hilt, too decorative for actual combat"
+                },
+                {
+                    "id": "guard_table",
+                    "name": "guard's table",
+                    "description": "A sturdy oak table covered with the remains of a card game",
+                    "searchable": true,
+                    "contains": [
+                        "duty_roster"
+                    ]
+                },
+                {
+                    "id": "duty_roster",
+                    "name": "guard duty roster",
+                    "description": "A parchment listing guard assignments and schedules",
+                    "readable": true,
+                    "text": "Guard Duty Roster: Sir Blackwood commands the dungeon. All prisoners must be secured in the tower. The vault contains the castle's treasure and must be guarded at all times. - Captain of the Guard"
+                },
+                {
+                    "id": "wooden_desk",
+                    "name": "guard captain's desk",
+                    "description": "A desk with three drawers, each marked with a different symbol",
+                    "subcontainers": [
+                        {
+                            "id": "top_drawer",
+                            "name": "top drawer",
+                            "locked": false,
+                            "contains": [
+                                "castle_map"
+                            ]
+                        },
+                        {
+                            "id": "middle_drawer",
+                            "name": "middle drawer",
+                            "locked": true,
+                            "lock_type": "combination",
+                            "combination": "1066",
+                            "contains": [
+                                "iron_key"
+                            ]
+                        },
+                        {
+                            "id": "bottom_drawer",
+                            "name": "bottom drawer",
+                            "locked": false,
+                            "contains": []
+                        }
+                    ]
+                },
+                {
+                    "id": "castle_map",
+                    "name": "castle layout map",
+                    "description": "A detailed map of the castle grounds",
+                    "readable": true,
+                    "text": "Castle Map: The dungeon lies beneath the tower. The guard room connects to the main courtyard. The vault is accessible from the great hall. All exits lead through the courtyard gate."
+                },
+                {
+                    "id": "iron_key",
+                    "name": "heavy iron key",
+                    "description": "A large iron key with the castle crest engraved on it"
+                },
+                {
+                    "id": "shield_display",
+                    "name": "decorative shield display",
+                    "description": "Several shields mounted on the wall, one has a hollow back",
+                    "searchable": true,
+                    "contains": [
+                        "hidden_scroll"
+                    ]
+                },
+                {
+                    "id": "hidden_scroll",
+                    "name": "hidden scroll",
+                    "description": "A rolled parchment hidden behind a shield",
+                    "readable": true,
+                    "text": "Secret Orders: The courtyard gate is protected by three security questions. Only those who know the castle's secrets may pass. The answers lie within these walls."
+                },
+                {
+                    "id": "iron_courtyard_gate",
+                    "name": "iron courtyard gate",
+                    "description": "A massive iron gate with intricate metalwork. A brass panel beside it displays three questions that must be answered to unlock it.",
+                    "locked": true,
+                    "lock_type": "password",
+                    "password_questions": [
+                        {
+                            "question": "Who commands the dungeon?",
+                            "answer": "sir blackwood",
+                            "hint": "Check the guard duty roster and prisoner's note"
+                        },
+                        {
+                            "question": "Where are prisoners held?",
+                            "answer": "tower",
+                            "hint": "The duty roster mentions where prisoners are secured"
+                        },
+                        {
+                            "question": "Where is the treasure kept?",
+                            "answer": "vault",
+                            "hint": "Look at the duty roster and castle map"
+                        }
+                    ],
+                    "direction": "east",
+                    "leads_to": "castle_courtyard",
+                    "aliases": [
+                        "gate",
+                        "east"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "castle_courtyard",
+            "name": "Castle Courtyard",
+            "description": "You emerge into the open air of the castle courtyard! Sunlight streams down from above, and you can see the blue sky for the first time in what feels like ages. The courtyard is empty, and the main gate to freedom stands open before you. Birds sing in the distance, and you can smell fresh grass and flowers.",
+            "items": [
+                {
+                    "id": "open_gate",
+                    "name": "castle main gate",
+                    "description": "The main gate stands open, leading to freedom and the world beyond"
+                },
+                {
+                    "id": "fountain",
+                    "name": "stone fountain",
+                    "description": "A beautiful fountain with clear water sparkling in the sunlight"
+                },
+                {
+                    "id": "flower_garden",
+                    "name": "small flower garden",
+                    "description": "Colorful flowers blooming in neat rows, a stark contrast to the dark dungeon"
+                }
+            ],
+            "exits": [],
+            "is_goal": true,
+            "win_message": "Freedom at last! You have escaped the medieval dungeon and made it to the castle courtyard. The open gate beckons, and you walk through into the sunlight, leaving your imprisonment behind. You are free! You win!"
+        }
+    ]
+}

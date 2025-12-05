@@ -1,0 +1,245 @@
+{
+    "theme": "Forbidden Forest Ritual Site",
+    "title": "Forbidden Forest Ritual Site Adventure #33",
+    "goal": "Solve the puzzles, achieve the main objective, and escape.",
+    "starting_room": "forest_clearing",
+    "rooms": [
+        {
+            "id": "forest_clearing",
+            "name": "Ancient Forest Clearing",
+            "description": "A circular clearing deep in the forbidden forest. Ancient trees tower overhead, their branches blocking most sunlight. In the center stands a ring of moss covered stones arranged in a ritual pattern. Strange symbols are carved into the bark of surrounding trees, and the air feels thick with old magic.",
+            "items": [
+                {
+                    "id": "ritual_stones",
+                    "name": "moss covered stones",
+                    "description": "Seven large stones arranged in a circle, each carved with a different nature symbol",
+                    "readable": true,
+                    "text": "The stones are carved with symbols: Oak (strength), Willow (wisdom), Ash (protection), Birch (renewal), Elder (magic), Hawthorn (passage), Rowan (vision). An inscription reads: 'The Elder's number unlocks the keeper's secrets.'"
+                },
+                {
+                    "id": "hollow_log",
+                    "name": "hollow oak log",
+                    "description": "A massive fallen oak tree with a hollow interior",
+                    "searchable": true,
+                    "contains": [
+                        "forest_keeper_journal"
+                    ]
+                },
+                {
+                    "id": "forest_keeper_journal",
+                    "name": "forest keeper's journal",
+                    "description": "A leather bound journal wrapped in leaves",
+                    "readable": true,
+                    "text": "Journal of the Forest Keeper: I am Rowan Thornwood, guardian of this sacred site. The ritual requires three elements: the Elder Stone (the 5th stone), the Sacred Branch, and the Moon Water. Only those who understand the forest's wisdom may enter the Sacred Grove."
+                },
+                {
+                    "id": "wooden_chest",
+                    "name": "carved wooden chest",
+                    "description": "A chest carved with intricate leaf patterns and forest creatures",
+                    "subcontainers": [
+                        {
+                            "id": "main_compartment",
+                            "name": "main compartment",
+                            "locked": true,
+                            "lock_type": "combination",
+                            "combination": "5",
+                            "contains": [
+                                "iron_key"
+                            ]
+                        },
+                        {
+                            "id": "side_compartment",
+                            "name": "side compartment",
+                            "locked": false,
+                            "contains": [
+                                "ritual_instructions"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "ritual_instructions",
+                    "name": "ancient ritual scroll",
+                    "description": "A scroll describing the forest ritual",
+                    "readable": true,
+                    "text": "To perform the ritual: Gather the three sacred elements. The Sacred Branch grows in the Grove. Moon Water collects in the stone basin. The Elder Stone marks the fifth position in the circle of seven."
+                },
+                {
+                    "id": "iron_key",
+                    "name": "rusted iron key",
+                    "description": "An old iron key with a leaf shaped handle"
+                },
+                {
+                    "id": "iron_gate",
+                    "name": "iron gate",
+                    "description": "A wrought iron gate covered in vines, leading deeper into the forest",
+                    "locked": true,
+                    "key_required": "iron_key",
+                    "direction": "north",
+                    "leads_to": "sacred_grove",
+                    "aliases": [
+                        "gate",
+                        "north"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "sacred_grove",
+            "name": "Sacred Grove",
+            "description": "A mystical grove where ancient trees form a natural cathedral. Shafts of silver moonlight pierce through the canopy, illuminating a stone altar in the center. Glowing mushrooms ring the clearing, and the sound of running water echoes from a nearby spring. The air hums with magical energy.",
+            "items": [
+                {
+                    "id": "stone_altar",
+                    "name": "ancient stone altar",
+                    "description": "A flat stone altar covered in moss and carved with ritual symbols",
+                    "readable": true,
+                    "text": "Altar inscription: 'Three offerings must be placed: the branch of the sacred tree, water blessed by moonlight, and the stone of the elders. Only then shall the sanctuary reveal itself.'"
+                },
+                {
+                    "id": "sacred_tree",
+                    "name": "ancient willow tree",
+                    "description": "A massive willow tree with silvery bark and hanging branches that glow faintly",
+                    "searchable": true,
+                    "contains": [
+                        "sacred_branch"
+                    ]
+                },
+                {
+                    "id": "sacred_branch",
+                    "name": "sacred willow branch",
+                    "description": "A branch that glows with soft silver light, one of the ritual elements"
+                },
+                {
+                    "id": "moon_spring",
+                    "name": "moonlit spring",
+                    "description": "A natural spring where water collects in a stone basin, reflecting the moonlight",
+                    "searchable": true,
+                    "contains": [
+                        "moon_water"
+                    ]
+                },
+                {
+                    "id": "moon_water",
+                    "name": "vial of moon water",
+                    "description": "Crystal clear water that glows with captured moonlight"
+                },
+                {
+                    "id": "mushroom_circle",
+                    "name": "circle of glowing mushrooms",
+                    "description": "Bioluminescent mushrooms forming a perfect circle",
+                    "searchable": true,
+                    "contains": [
+                        "elder_stone"
+                    ]
+                },
+                {
+                    "id": "elder_stone",
+                    "name": "elder stone",
+                    "description": "A smooth stone carved with the elder tree symbol, pulsing with ancient magic"
+                },
+                {
+                    "id": "tree_trunk",
+                    "name": "massive tree trunk",
+                    "description": "An enormous tree trunk with a hidden compartment",
+                    "searchable": true,
+                    "contains": [
+                        "keeper_note"
+                    ]
+                },
+                {
+                    "id": "keeper_note",
+                    "name": "keeper's final note",
+                    "description": "A note left by the forest keeper",
+                    "readable": true,
+                    "text": "If you read this, I am gone. To enter the Inner Sanctuary, answer the forest's questions: Who guards this place? What tree grants wisdom? Where does magic dwell?"
+                },
+                {
+                    "id": "hidden_sanctuary_door",
+                    "name": "hidden sanctuary door",
+                    "description": "A door woven from living vines and roots, covered in glowing runes. Three questions are inscribed on a wooden plaque.",
+                    "locked": true,
+                    "lock_type": "password",
+                    "password_questions": [
+                        {
+                            "question": "Who guards this sacred place?",
+                            "answer": "rowan thornwood",
+                            "hint": "Check the forest keeper's journal"
+                        },
+                        {
+                            "question": "What tree grants wisdom?",
+                            "answer": "willow",
+                            "hint": "Look at the ritual stones and their meanings"
+                        },
+                        {
+                            "question": "Where does magic dwell?",
+                            "answer": "elder",
+                            "hint": "The ritual stones show which tree represents magic"
+                        }
+                    ],
+                    "direction": "east",
+                    "leads_to": "inner_sanctuary",
+                    "aliases": [
+                        "door",
+                        "east"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "inner_sanctuary",
+            "name": "Inner Sanctuary",
+            "description": "You have entered the heart of the forbidden forest! A magnificent chamber formed by intertwined ancient trees, their roots creating natural archways. In the center, a portal of swirling green light pulses with life energy. The three ritual elements you gathered resonate with power. Beyond the portal, you can see the edge of the forest and freedom.",
+            "items": [
+                {
+                    "id": "ritual_pedestal",
+                    "name": "ritual pedestal",
+                    "description": "A stone pedestal with three indentations for the sacred elements",
+                    "readable": true,
+                    "text": "Place the Sacred Branch, Moon Water, and Elder Stone to activate the portal and complete the ancient ritual."
+                },
+                {
+                    "id": "forest_portal",
+                    "name": "forest portal",
+                    "description": "A swirling portal of green energy that leads out of the forbidden forest",
+                    "locked": true,
+                    "key_required": "elder_stone",
+                    "direction": "south",
+                    "leads_to": "forest_edge",
+                    "aliases": [
+                        "portal",
+                        "south"
+                    ]
+                },
+                {
+                    "id": "ancient_tree_throne",
+                    "name": "throne of roots",
+                    "description": "A throne formed from living tree roots, where the forest keeper once sat"
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "forest_edge",
+            "name": "Edge of the Forbidden Forest",
+            "description": "You emerge at the boundary of the forbidden forest. Sunlight streams through the trees behind you as you step onto a grassy meadow. The dark forest looms at your back, but you have successfully completed the ancient ritual and escaped its depths. Birds sing in the distance, and a path leads to civilization.",
+            "items": [
+                {
+                    "id": "boundary_marker",
+                    "name": "stone boundary marker",
+                    "description": "An ancient stone marking the edge of the forbidden forest"
+                },
+                {
+                    "id": "meadow_flowers",
+                    "name": "wildflowers",
+                    "description": "Colorful flowers blooming in the sunlight, a stark contrast to the dark forest"
+                }
+            ],
+            "exits": [],
+            "is_goal": true,
+            "win_message": "You have successfully navigated the Forbidden Forest Ritual Site and completed the ancient ritual! The forest's magic recognizes your wisdom and grants you safe passage. As you leave the forest behind, the portal closes, and the ritual stones glow one final time in acknowledgment. You are free, and the forest's secrets are yours to keep. You win!"
+        }
+    ]
+}

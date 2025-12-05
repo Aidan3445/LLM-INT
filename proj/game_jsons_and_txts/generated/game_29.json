@@ -1,0 +1,236 @@
+{
+    "theme": "Celestial Library",
+    "title": "Celestial Library Adventure #29",
+    "goal": "Solve the puzzles, achieve the main objective, and escape.",
+    "starting_room": "astronomy_wing",
+    "rooms": [
+        {
+            "id": "astronomy_wing",
+            "name": "Astronomy Wing",
+            "description": "A magnificent chamber with a domed ceiling painted to resemble the night sky. Constellations glow with soft starlight, and floating books drift lazily through the air. Ancient telescopes point toward crystalline windows showing distant galaxies. The scent of old parchment and cosmic dust fills the air.",
+            "items": [
+                {
+                    "id": "star_chart_table",
+                    "name": "star chart table",
+                    "description": "A large table covered with celestial maps and astronomical instruments",
+                    "searchable": true,
+                    "contains": [
+                        "constellation_guide"
+                    ]
+                },
+                {
+                    "id": "constellation_guide",
+                    "name": "constellation reference guide",
+                    "description": "An ancient tome describing the major constellations",
+                    "readable": true,
+                    "text": "The Three Sacred Constellations: Orion the Hunter has 7 bright stars. Cassiopeia the Queen has 5 bright stars. The Big Dipper has 7 bright stars. Together they form the key: 7-5-7."
+                },
+                {
+                    "id": "archive_cabinet",
+                    "name": "celestial archive cabinet",
+                    "description": "A tall cabinet made of dark wood inlaid with silver stars, containing three drawers",
+                    "subcontainers": [
+                        {
+                            "id": "top_drawer",
+                            "name": "top drawer",
+                            "locked": false,
+                            "contains": [
+                                "librarian_note"
+                            ]
+                        },
+                        {
+                            "id": "middle_drawer",
+                            "name": "middle drawer",
+                            "locked": true,
+                            "lock_type": "combination",
+                            "combination": "757",
+                            "contains": [
+                                "silver_star_key"
+                            ]
+                        },
+                        {
+                            "id": "bottom_drawer",
+                            "name": "bottom drawer",
+                            "locked": false,
+                            "contains": []
+                        }
+                    ]
+                },
+                {
+                    "id": "librarian_note",
+                    "name": "head librarian's note",
+                    "description": "A letter written in shimmering ink",
+                    "readable": true,
+                    "text": "Dear Seeker, you have been chosen as the new Keeper of Celestial Knowledge. To prove yourself worthy, you must know: The library was founded by Astronomer Celestia. The ancient texts rest in the Nebula Archives. You are destined to become the Star Keeper."
+                },
+                {
+                    "id": "silver_star_key",
+                    "name": "silver star key",
+                    "description": "A key shaped like a five-pointed star, made of gleaming silver"
+                },
+                {
+                    "id": "locked_bookcase",
+                    "name": "locked glass bookcase",
+                    "description": "An ornate bookcase containing rare astronomical texts, secured with a star-shaped lock",
+                    "locked": true,
+                    "key_required": "silver_star_key",
+                    "contains": [
+                        "cosmic_chronicle"
+                    ]
+                },
+                {
+                    "id": "cosmic_chronicle",
+                    "name": "Chronicle of Cosmic Beings",
+                    "description": "A heavy tome bound in midnight blue leather with gold constellation patterns",
+                    "readable": true,
+                    "text": "Chapter on the Guardians: The Moon Guardian watches over dreams and tides. The Sun Guardian brings light and warmth to all worlds. The Star Guardian, keeper of wishes, dwells in the Constellation Chamber where cosmic secrets are kept."
+                },
+                {
+                    "id": "floating_telescope",
+                    "name": "enchanted telescope",
+                    "description": "A brass telescope floating in mid-air, pointed at a specific constellation",
+                    "searchable": true,
+                    "contains": [
+                        "observation_log"
+                    ]
+                },
+                {
+                    "id": "observation_log",
+                    "name": "astronomer's observation log",
+                    "description": "A journal with detailed astronomical observations",
+                    "readable": true,
+                    "text": "Final Entry: The Constellation Chamber can only be accessed by those who understand the cosmic order. Remember that Astronomer Celestia founded this sacred library to preserve knowledge among the stars."
+                },
+                {
+                    "id": "starlit_archway",
+                    "name": "starlit archway",
+                    "description": "An elegant archway filled with shimmering light, leading deeper into the library",
+                    "locked": false,
+                    "direction": "north",
+                    "leads_to": "hall_of_cosmic_knowledge",
+                    "aliases": [
+                        "archway",
+                        "north"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "hall_of_cosmic_knowledge",
+            "name": "Hall of Cosmic Knowledge",
+            "description": "A grand hallway lined with towering statues of celestial beings carved from luminous crystal. Each statue holds a different astronomical instrument and stands on a pedestal with an inscription. Ethereal music seems to emanate from the walls themselves. At the far end, a massive door decorated with constellation patterns awaits.",
+            "items": [
+                {
+                    "id": "moon_guardian_statue",
+                    "name": "statue of the Moon Guardian",
+                    "description": "A serene figure holding a crescent moon staff, carved from pale white crystal",
+                    "readable": true,
+                    "text": "Inscription: 'Moon Guardian - Protector of Dreams. Watches over the sleeping worlds and guides travelers through the night.'"
+                },
+                {
+                    "id": "sun_guardian_statue",
+                    "name": "statue of the Sun Guardian",
+                    "description": "A radiant figure with arms raised toward the sky, carved from golden crystal",
+                    "readable": true,
+                    "text": "Inscription: 'Sun Guardian - Bringer of Light. Illuminates all knowledge and warms the hearts of seekers.'"
+                },
+                {
+                    "id": "star_guardian_statue",
+                    "name": "statue of the Star Guardian",
+                    "description": "A majestic figure crowned with stars, carved from deep blue crystal that sparkles with inner light",
+                    "readable": true,
+                    "text": "Inscription: 'Star Guardian - Keeper of Wishes. Dwells eternally in the Constellation Chamber, guardian of cosmic mysteries.'"
+                },
+                {
+                    "id": "reading_alcove",
+                    "name": "reading alcove",
+                    "description": "A cozy nook with cushioned seats and a small table",
+                    "searchable": true,
+                    "contains": [
+                        "ancient_scroll"
+                    ]
+                },
+                {
+                    "id": "ancient_scroll",
+                    "name": "scroll of celestial wisdom",
+                    "description": "A scroll written in an ancient language that glows when read",
+                    "readable": true,
+                    "text": "Prophecy: The one who seeks the Celestial Vault must answer the three questions of the cosmos. Know the founder's name, the guardian's dwelling, and your own destiny."
+                },
+                {
+                    "id": "display_pedestal",
+                    "name": "crystal display pedestal",
+                    "description": "A pedestal showcasing various celestial artifacts",
+                    "searchable": true,
+                    "contains": [
+                        "star_compass"
+                    ]
+                },
+                {
+                    "id": "star_compass",
+                    "name": "enchanted star compass",
+                    "description": "A compass that points toward cosmic destinations rather than cardinal directions"
+                },
+                {
+                    "id": "constellation_door",
+                    "name": "constellation door",
+                    "description": "A magnificent door covered in glowing constellation patterns. A crystalline panel displays three questions that pulse with starlight.",
+                    "locked": true,
+                    "lock_type": "password",
+                    "password_questions": [
+                        {
+                            "question": "Who founded the Celestial Library?",
+                            "answer": "astronomer celestia",
+                            "hint": "Check the librarian's note and observation log in the Astronomy Wing"
+                        },
+                        {
+                            "question": "Where does the Star Guardian dwell?",
+                            "answer": "constellation chamber",
+                            "hint": "Read the Chronicle of Cosmic Beings and the Star Guardian's statue inscription"
+                        },
+                        {
+                            "question": "What is your destiny?",
+                            "answer": "star keeper",
+                            "hint": "The head librarian's note reveals your destined role"
+                        }
+                    ],
+                    "direction": "east",
+                    "leads_to": "celestial_vault",
+                    "aliases": [
+                        "door",
+                        "east"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "celestial_vault",
+            "name": "Celestial Vault",
+            "description": "You have reached the heart of the Celestial Library! The chamber is a perfect sphere with walls that display the entire universe in motion - galaxies spiral, stars are born and die, and cosmic phenomena dance across the surface. In the center floats the Codex of Infinite Stars, an ancient book that contains all celestial knowledge. As you approach, it opens and your name appears in glowing letters, confirming you as the new Star Keeper.",
+            "items": [
+                {
+                    "id": "codex_of_infinite_stars",
+                    "name": "Codex of Infinite Stars",
+                    "description": "An ancient tome that floats in mid-air, its pages filled with living starlight and cosmic wisdom",
+                    "readable": true,
+                    "text": "The Codex recognizes you as the new Star Keeper. All the knowledge of the cosmos is now yours to protect and share. The library accepts you as its guardian."
+                },
+                {
+                    "id": "cosmic_throne",
+                    "name": "throne of starlight",
+                    "description": "A magnificent throne woven from pure starlight, the seat of the Star Keeper"
+                },
+                {
+                    "id": "universe_display",
+                    "name": "living universe display",
+                    "description": "The walls themselves, showing the entire cosmos in breathtaking detail"
+                }
+            ],
+            "exits": [],
+            "is_goal": true,
+            "win_message": "Congratulations! You have proven yourself worthy and become the new Star Keeper of the Celestial Library. The Codex of Infinite Stars has accepted you as its guardian. You now possess all the cosmic knowledge contained within these hallowed halls. The constellations themselves celebrate your achievement, and your name will be written among the stars for eternity. You win!"
+        }
+    ]
+}

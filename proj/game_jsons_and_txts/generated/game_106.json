@@ -1,0 +1,242 @@
+{
+    "theme": "Cursed Pirate Lagoon",
+    "title": "Cursed Pirate Lagoon Adventure #106",
+    "goal": "Solve the puzzles, achieve the main objective, and escape.",
+    "starting_room": "abandoned_dock",
+    "rooms": [
+        {
+            "id": "abandoned_dock",
+            "name": "Abandoned Dock",
+            "description": "A rotting wooden dock extends into murky green water. Fog rolls across the lagoon, and the air reeks of brine and decay. A weathered shack stands at the end of the dock, its door hanging loose. In the distance, you can hear the faint sound of ghostly singing.",
+            "items": [
+                {
+                    "id": "fishing_crate",
+                    "name": "old fishing crate",
+                    "description": "A splintered wooden crate filled with tangled nets and rusty hooks",
+                    "searchable": true,
+                    "contains": [
+                        "rusty_hook"
+                    ]
+                },
+                {
+                    "id": "rusty_hook",
+                    "name": "rusty fishing hook",
+                    "description": "A large iron hook, still sharp despite the rust"
+                },
+                {
+                    "id": "supply_barrel",
+                    "name": "supply barrel",
+                    "description": "A sealed barrel with two compartments inside",
+                    "subcontainers": [
+                        {
+                            "id": "top_section",
+                            "name": "top section",
+                            "locked": false,
+                            "contains": [
+                                "sailors_journal"
+                            ]
+                        },
+                        {
+                            "id": "bottom_section",
+                            "name": "bottom section",
+                            "locked": true,
+                            "lock_type": "combination",
+                            "combination": "1692",
+                            "contains": [
+                                "brass_key"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "sailors_journal",
+                    "name": "waterlogged journal",
+                    "description": "A sailor's journal with barely legible writing",
+                    "readable": true,
+                    "text": "Last entry, year 1692: Captain Redbeard cursed us all when we mutinied. The treasure lies in the grotto, but only those who know the captain's secrets may enter. His parrot was named Bones, his ship was the Crimson Revenge, and his treasure is buried in the cursed grotto."
+                },
+                {
+                    "id": "brass_key",
+                    "name": "tarnished brass key",
+                    "description": "A brass key green with age and salt corrosion"
+                },
+                {
+                    "id": "weathered_shack_door",
+                    "name": "weathered shack door",
+                    "description": "A door to a small shack, secured with a brass lock",
+                    "locked": true,
+                    "key_required": "brass_key",
+                    "direction": "west",
+                    "leads_to": "smugglers_shack",
+                    "aliases": [
+                        "shack",
+                        "west"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "smugglers_shack",
+            "name": "Smuggler's Shack",
+            "description": "A cramped shack filled with contraband and stolen goods. Moonlight filters through gaps in the walls. Maps and wanted posters cover every surface. A trapdoor in the floor leads down to darkness below.",
+            "items": [
+                {
+                    "id": "wanted_poster_redbeard",
+                    "name": "wanted poster for Captain Redbeard",
+                    "description": "A faded poster showing a fierce pirate captain",
+                    "readable": true,
+                    "text": "WANTED DEAD OR ALIVE: Captain Redbeard - Piracy, Murder, Theft. Last seen commanding the Crimson Revenge. Known to keep a parrot named Bones. REWARD: 1000 pieces of eight."
+                },
+                {
+                    "id": "navigation_maps",
+                    "name": "collection of maps",
+                    "description": "Various nautical charts and treasure maps",
+                    "readable": true,
+                    "text": "One map shows the lagoon with a marking: 'Cursed Grotto - entrance hidden beneath the waves. Beware the guardian spirits.'"
+                },
+                {
+                    "id": "smugglers_chest",
+                    "name": "locked smuggler's chest",
+                    "description": "A heavy chest bound with iron bands",
+                    "locked": true,
+                    "key_required": "rusty_hook",
+                    "contains": [
+                        "silver_compass",
+                        "grotto_note"
+                    ]
+                },
+                {
+                    "id": "silver_compass",
+                    "name": "enchanted silver compass",
+                    "description": "A compass that glows with an eerie blue light"
+                },
+                {
+                    "id": "grotto_note",
+                    "name": "note about the grotto",
+                    "description": "A warning scrawled on parchment",
+                    "readable": true,
+                    "text": "The grotto entrance asks three questions of all who seek the treasure. Know the captain's name, his parrot's name, and where the treasure lies. Only then will the spirits grant passage."
+                },
+                {
+                    "id": "wooden_trapdoor",
+                    "name": "wooden trapdoor",
+                    "description": "A heavy trapdoor leading down into darkness",
+                    "locked": false,
+                    "direction": "south",
+                    "leads_to": "underwater_passage",
+                    "aliases": [
+                        "trapdoor",
+                        "down",
+                        "south"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "underwater_passage",
+            "name": "Underwater Passage",
+            "description": "A partially flooded tunnel carved through rock. Bioluminescent algae provides dim green light. The water is waist-deep and ice cold. Ahead, you can see the entrance to a grotto, blocked by a shimmering barrier of ghostly energy. Three spectral figures float before it, their hollow eyes watching you.",
+            "items": [
+                {
+                    "id": "submerged_wreckage",
+                    "name": "submerged ship wreckage",
+                    "description": "Pieces of a destroyed ship scattered across the tunnel floor",
+                    "searchable": true,
+                    "contains": [
+                        "ships_nameplate"
+                    ]
+                },
+                {
+                    "id": "ships_nameplate",
+                    "name": "ship's nameplate",
+                    "description": "A brass plate from a ship's hull",
+                    "readable": true,
+                    "text": "Crimson Revenge - Launched 1685"
+                },
+                {
+                    "id": "skeleton_remains",
+                    "name": "skeleton of a pirate",
+                    "description": "The bones of a long-dead pirate, still clutching something",
+                    "searchable": true,
+                    "contains": [
+                        "cursed_doubloon"
+                    ]
+                },
+                {
+                    "id": "cursed_doubloon",
+                    "name": "cursed gold doubloon",
+                    "description": "A gold coin that pulses with dark energy"
+                },
+                {
+                    "id": "spectral_barrier",
+                    "name": "spectral barrier",
+                    "description": "A wall of ghostly energy blocking the grotto entrance. Three phantom voices whisper questions.",
+                    "locked": true,
+                    "lock_type": "password",
+                    "password_questions": [
+                        {
+                            "question": "What was the captain's name?",
+                            "answer": "captain redbeard",
+                            "hint": "Check the wanted poster in the shack"
+                        },
+                        {
+                            "question": "What was the parrot's name?",
+                            "answer": "bones",
+                            "hint": "The sailor's journal mentions this"
+                        },
+                        {
+                            "question": "Where is the treasure buried?",
+                            "answer": "cursed grotto",
+                            "hint": "Look at the maps and notes you've found"
+                        }
+                    ],
+                    "direction": "north",
+                    "leads_to": "treasure_grotto",
+                    "aliases": [
+                        "barrier",
+                        "north"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "treasure_grotto",
+            "name": "Cursed Treasure Grotto",
+            "description": "You have found Captain Redbeard's legendary treasure! The grotto is filled with chests overflowing with gold, jewels, and precious artifacts. In the center, a massive pile of treasure glitters in the light of your enchanted compass. The ghostly singing grows louder, then fades to peaceful silence. A natural tunnel leads upward to freedom and daylight.",
+            "items": [
+                {
+                    "id": "treasure_pile",
+                    "name": "mountain of treasure",
+                    "description": "An enormous pile of gold coins, jeweled crowns, and precious gems"
+                },
+                {
+                    "id": "captains_chest",
+                    "name": "captain's personal chest",
+                    "description": "An ornate chest with Captain Redbeard's insignia",
+                    "searchable": true,
+                    "contains": [
+                        "ruby_ring"
+                    ]
+                },
+                {
+                    "id": "ruby_ring",
+                    "name": "captain's ruby ring",
+                    "description": "A magnificent ring with a blood-red ruby, the captain's most prized possession"
+                },
+                {
+                    "id": "ghost_of_redbeard",
+                    "name": "ghost of Captain Redbeard",
+                    "description": "The translucent spirit of the captain appears, nodding in approval",
+                    "readable": true,
+                    "text": "The ghost speaks: 'Ye have proven yerself worthy. Take me treasure and lift the curse. May ye sail free, brave soul.'"
+                }
+            ],
+            "exits": [],
+            "is_goal": true,
+            "win_message": "You have discovered Captain Redbeard's cursed treasure and lifted the curse on the lagoon! The ghost of the captain salutes you before fading into peaceful rest. With your pockets full of gold and jewels, you climb through the natural tunnel to freedom. The fog lifts from the lagoon as the curse is finally broken. You win!"
+        }
+    ]
+}

@@ -1,0 +1,218 @@
+{
+    "theme": "Abandoned Cyber-Zoo",
+    "title": "Abandoned Cyber-Zoo Adventure #59",
+    "goal": "Solve the puzzles, achieve the main objective, and escape.",
+    "starting_room": "entrance_plaza",
+    "rooms": [
+        {
+            "id": "entrance_plaza",
+            "name": "Entrance Plaza",
+            "description": "The main entrance of an abandoned cyber-zoo. Holographic signs flicker weakly, advertising extinct animals. Broken turnstiles block the path forward. Vines have grown through cracks in the synthetic floor. A dusty information kiosk stands near the entrance, and a security booth sits empty to one side.",
+            "items": [
+                {
+                    "id": "information_kiosk",
+                    "name": "information kiosk",
+                    "description": "A touch-screen kiosk covered in dust and cobwebs",
+                    "readable": true,
+                    "text": "WELCOME TO CYBERZOO PRIME! Featured exhibits: Arctic Habitat (opened 2087), Savanna Dome (Director Chen's favorite), Aquatic Pavilion. Remember: Director Chen oversees all operations. Security Chief Rodriguez manages access codes."
+                },
+                {
+                    "id": "security_booth",
+                    "name": "abandoned security booth",
+                    "description": "A small booth with a desk and filing system",
+                    "subcontainers": [
+                        {
+                            "id": "top_compartment",
+                            "name": "top compartment",
+                            "locked": false,
+                            "contains": [
+                                "security_memo"
+                            ]
+                        },
+                        {
+                            "id": "bottom_compartment",
+                            "name": "bottom compartment",
+                            "locked": true,
+                            "lock_type": "combination",
+                            "combination": "2087",
+                            "contains": [
+                                "access_card"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "security_memo",
+                    "name": "security memorandum",
+                    "description": "A faded document with security protocols",
+                    "readable": true,
+                    "text": "SECURITY MEMO: Access card stored in bottom compartment. Combination is the year our first exhibit opened. All staff must remember: robotic animals are stored in the maintenance bay when not active."
+                },
+                {
+                    "id": "access_card",
+                    "name": "security access card",
+                    "description": "A plastic card with a magnetic strip labeled 'STAFF ACCESS'"
+                },
+                {
+                    "id": "trash_receptacle",
+                    "name": "overturned trash receptacle",
+                    "description": "A toppled waste bin with scattered contents",
+                    "searchable": true,
+                    "contains": [
+                        "torn_brochure"
+                    ]
+                },
+                {
+                    "id": "torn_brochure",
+                    "name": "torn visitor brochure",
+                    "description": "A damaged brochure with zoo information",
+                    "readable": true,
+                    "text": "Visit our amazing exhibits! See robotic tigers in the Savanna Dome! Director Chen personally designed the control systems. Exit through the main gate after your visit!"
+                },
+                {
+                    "id": "main_security_gate",
+                    "name": "main security gate",
+                    "description": "A reinforced gate with a card reader and warning signs",
+                    "locked": true,
+                    "key_required": "access_card",
+                    "direction": "north",
+                    "leads_to": "habitat_dome",
+                    "aliases": [
+                        "gate",
+                        "north"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "habitat_dome",
+            "name": "Habitat Dome",
+            "description": "A massive dome that once housed robotic animals in simulated environments. The artificial sky above flickers between day and night. Deactivated robotic animals stand frozen in various poses. Control panels line the walls, and a large observation deck overlooks the space. To the east, a heavy door leads to the control center.",
+            "items": [
+                {
+                    "id": "control_panel_alpha",
+                    "name": "habitat control panel",
+                    "description": "A dusty control panel with various displays and readouts",
+                    "readable": true,
+                    "text": "HABITAT CONTROL SYSTEM v3.2 - Last operator: Director Chen. System shutdown initiated by Security Chief Rodriguez. Emergency override available at main control center."
+                },
+                {
+                    "id": "observation_deck",
+                    "name": "observation deck terminal",
+                    "description": "A terminal with logs and records",
+                    "readable": true,
+                    "text": "OBSERVATION LOG: Final entry before evacuation. All robotic specimens deactivated and stored in maintenance bay. Director Chen authorized final shutdown. Security Chief Rodriguez sealed all exits. Only authorized personnel can access control center."
+                },
+                {
+                    "id": "storage_locker",
+                    "name": "equipment storage locker",
+                    "description": "A tall locker with maintenance equipment",
+                    "searchable": true,
+                    "contains": [
+                        "maintenance_tablet"
+                    ]
+                },
+                {
+                    "id": "maintenance_tablet",
+                    "name": "maintenance tablet",
+                    "description": "A digital tablet with technical information",
+                    "readable": true,
+                    "text": "MAINTENANCE NOTES: Control center access requires security verification. Questions programmed by Security Chief Rodriguez: Who runs this facility? Where are the robots stored? What is the main exit called?"
+                },
+                {
+                    "id": "robotic_tiger",
+                    "name": "deactivated robotic tiger",
+                    "description": "A lifelike mechanical tiger frozen mid-stride",
+                    "searchable": true,
+                    "contains": [
+                        "power_cell"
+                    ]
+                },
+                {
+                    "id": "power_cell",
+                    "name": "charged power cell",
+                    "description": "A glowing energy cell that could power electronic systems"
+                },
+                {
+                    "id": "reinforced_control_center_door",
+                    "name": "reinforced control center door",
+                    "description": "A heavy security door with a biometric scanner and question panel. The panel displays three security questions.",
+                    "locked": true,
+                    "lock_type": "password",
+                    "password_questions": [
+                        {
+                            "question": "Who runs this facility?",
+                            "answer": "director chen",
+                            "hint": "Check the information kiosk and control panels for the director's name"
+                        },
+                        {
+                            "question": "Where are the robots stored?",
+                            "answer": "maintenance bay",
+                            "hint": "The security memo and observation log mention where inactive robots are kept"
+                        },
+                        {
+                            "question": "What is the main exit called?",
+                            "answer": "main gate",
+                            "hint": "The torn brochure mentions how visitors leave the facility"
+                        }
+                    ],
+                    "direction": "east",
+                    "leads_to": "control_center",
+                    "aliases": [
+                        "door",
+                        "east"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "control_center",
+            "name": "Control Center",
+            "description": "You've reached the heart of the cyber-zoo! A room filled with monitors, control stations, and blinking lights. The main console shows a map of the entire facility with an emergency exit highlighted. Through a large window, you can see the path to freedom. A final door marked 'EMERGENCY EXIT' glows green, ready to open.",
+            "items": [
+                {
+                    "id": "main_console",
+                    "name": "main control console",
+                    "description": "The central command station for the entire facility, now displaying emergency protocols"
+                },
+                {
+                    "id": "facility_map",
+                    "name": "holographic facility map",
+                    "description": "A 3D map showing all areas of the cyber-zoo and the emergency exit route",
+                    "readable": true,
+                    "text": "EMERGENCY EVACUATION ROUTE: Proceed through emergency exit to reach the outside world. All systems nominal for evacuation."
+                },
+                {
+                    "id": "emergency_exit_door",
+                    "name": "emergency exit door",
+                    "description": "A clearly marked exit door with green lighting, leading to freedom",
+                    "locked": false,
+                    "direction": "north",
+                    "leads_to": "freedom",
+                    "aliases": [
+                        "exit",
+                        "north"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "freedom",
+            "name": "Outside the CyberZoo",
+            "description": "You step out into the fresh air and sunlight. The abandoned cyber-zoo facility looms behind you, now just a memory. Overgrown paths lead away from the complex toward civilization. You are free!",
+            "items": [
+                {
+                    "id": "overgrown_path",
+                    "name": "path to civilization",
+                    "description": "A winding path leading away from the abandoned facility"
+                }
+            ],
+            "exits": [],
+            "is_goal": true,
+            "win_message": "SUCCESS! You've navigated the abandoned cyber-zoo, solved its puzzles, and found your way to freedom! The mysteries of the derelict facility are behind you now. You win!"
+        }
+    ]
+}

@@ -1,0 +1,234 @@
+{
+    "theme": "Ghost Ship Deck",
+    "title": "Ghost Ship Deck Adventure #64",
+    "goal": "Solve the puzzles, achieve the main objective, and escape.",
+    "starting_room": "captains_quarters",
+    "rooms": [
+        {
+            "id": "captains_quarters",
+            "name": "Captain's Quarters",
+            "description": "A decaying cabin filled with rotting furniture and the smell of salt and decay. Moonlight filters through broken portholes, illuminating ghostly mist that swirls across the floor. The captain's desk sits against one wall, covered in barnacles and seaweed. Tattered maps hang on the walls, and a locked sea chest rests in the corner. The floorboards creak ominously with each step.",
+            "items": [
+                {
+                    "id": "captains_desk",
+                    "name": "captain's desk",
+                    "description": "A weathered oak desk covered in barnacles, with brass fittings turned green from the sea",
+                    "subcontainers": [
+                        {
+                            "id": "top_drawer",
+                            "name": "top drawer",
+                            "locked": false,
+                            "contains": [
+                                "ships_log"
+                            ]
+                        },
+                        {
+                            "id": "bottom_drawer",
+                            "name": "bottom drawer",
+                            "locked": true,
+                            "lock_type": "combination",
+                            "combination": "1847",
+                            "contains": [
+                                "brass_key"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "ships_log",
+                    "name": "ship's log",
+                    "description": "A water-damaged leather journal with faded entries",
+                    "readable": true,
+                    "text": "Captain's Log - The Phantom Maiden, Captain Blackwell commanding. Final entry, October 1847: The storm has doomed us. The crew knows we're bound for Davy Jones' Locker. I've hidden the treasure in the vault below. The combination to my desk is the year of our demise: 1847."
+                },
+                {
+                    "id": "brass_key",
+                    "name": "tarnished brass key",
+                    "description": "A heavy brass key encrusted with salt and barnacles"
+                },
+                {
+                    "id": "sea_chest",
+                    "name": "locked sea chest",
+                    "description": "A large wooden chest bound with iron bands and a brass lock",
+                    "locked": true,
+                    "key_required": "brass_key",
+                    "contains": [
+                        "captains_letter",
+                        "treasure_map"
+                    ]
+                },
+                {
+                    "id": "captains_letter",
+                    "name": "captain's letter",
+                    "description": "A sealed letter addressed to the captain's family",
+                    "readable": true,
+                    "text": "My Dearest Family, if you find this, know that Captain Blackwell died with honor. The Phantom Maiden was the finest ship to sail these waters. Our treasure lies in the vault, protected by questions only a true treasure hunter could answer. - Your loving husband and father"
+                },
+                {
+                    "id": "treasure_map",
+                    "name": "old treasure map",
+                    "description": "A map showing the layout of the ship with an X marking the treasure vault",
+                    "readable": true,
+                    "text": "Map of The Phantom Maiden. The treasure vault is located in the lower hold, accessible through the ship's hold. Warning: The vault is protected by the captain's final test."
+                },
+                {
+                    "id": "tattered_maps",
+                    "name": "wall maps",
+                    "description": "Nautical charts showing various shipping routes",
+                    "readable": true,
+                    "text": "Various shipping charts and routes. One map shows 'The Phantom Maiden - Flagship of Captain Blackwell's Fleet.' Another shows common routes to Davy Jones' Locker marked with skull symbols."
+                },
+                {
+                    "id": "broken_compass",
+                    "name": "broken compass",
+                    "description": "A brass compass with a cracked glass face, the needle spinning wildly",
+                    "searchable": true,
+                    "contains": [
+                        "hidden_note"
+                    ]
+                },
+                {
+                    "id": "hidden_note",
+                    "name": "hidden note",
+                    "description": "A small note tucked inside the compass",
+                    "readable": true,
+                    "text": "Remember: Only a treasure hunter who knows the captain's name, the ship's fate, and their own purpose can claim the treasure. - First Mate"
+                },
+                {
+                    "id": "heavy_wooden_door",
+                    "name": "heavy wooden door",
+                    "description": "A thick door swollen from water damage, leading down to the ship's hold",
+                    "locked": false,
+                    "direction": "south",
+                    "leads_to": "ships_hold",
+                    "aliases": [
+                        "door",
+                        "south"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "ships_hold",
+            "name": "Ship's Hold",
+            "description": "A dark, cavernous space filled with rotting cargo and the sound of dripping water. Ghostly whispers echo through the darkness. Broken crates and barrels are scattered everywhere. Spectral lights flicker in the corners. A massive iron door with an ornate lock stands at the far end, leading to the treasure vault.",
+            "items": [
+                {
+                    "id": "cargo_crates",
+                    "name": "pile of cargo crates",
+                    "description": "Stacks of wooden crates, most broken open and empty",
+                    "searchable": true,
+                    "contains": [
+                        "crew_manifest"
+                    ]
+                },
+                {
+                    "id": "crew_manifest",
+                    "name": "crew manifest",
+                    "description": "A document listing the ship's crew members",
+                    "readable": true,
+                    "text": "Crew Manifest - The Phantom Maiden. Captain: Blackwell. First Mate: Roberts. Crew of 40 souls. All hands lost when the ship went down in the storm of 1847. May they rest in Davy Jones' Locker."
+                },
+                {
+                    "id": "broken_barrels",
+                    "name": "broken barrels",
+                    "description": "Old barrels that once held rum and supplies",
+                    "searchable": true,
+                    "contains": [
+                        "rum_bottle"
+                    ]
+                },
+                {
+                    "id": "rum_bottle",
+                    "name": "empty rum bottle",
+                    "description": "An old bottle with a message inside",
+                    "readable": true,
+                    "text": "Message in a bottle: 'Whoever finds this ship, know that we were treasure hunters seeking fortune. Captain Blackwell promised us riches beyond measure. Now we're all bound for Davy Jones' Locker. The treasure remains, waiting for another hunter brave enough to claim it.'"
+                },
+                {
+                    "id": "ships_bell",
+                    "name": "ship's bell",
+                    "description": "A large brass bell hanging from a beam, covered in verdigris",
+                    "readable": true,
+                    "text": "Engraved on the bell: 'The Phantom Maiden - Captain Blackwell - 1845'. The bell rings softly in the ghostly wind."
+                },
+                {
+                    "id": "water_barrel",
+                    "name": "water barrel",
+                    "description": "A large barrel still half-filled with stagnant water",
+                    "searchable": true,
+                    "contains": [
+                        "skeleton_key"
+                    ]
+                },
+                {
+                    "id": "skeleton_key",
+                    "name": "skeleton key",
+                    "description": "An ornate key shaped like a skeleton, used for the vault"
+                },
+                {
+                    "id": "iron_vault_door",
+                    "name": "iron vault door",
+                    "description": "A massive iron door with elaborate engravings of sea monsters and treasure. Three questions are etched into a brass plate beside the lock.",
+                    "locked": true,
+                    "lock_type": "password",
+                    "password_questions": [
+                        {
+                            "question": "What was the captain's name?",
+                            "answer": "blackwell",
+                            "hint": "Check the ship's log, crew manifest, and the ship's bell"
+                        },
+                        {
+                            "question": "Where did the crew meet their fate?",
+                            "answer": "davy jones locker",
+                            "hint": "Multiple documents mention the final resting place of the crew"
+                        },
+                        {
+                            "question": "What are you?",
+                            "answer": "treasure hunter",
+                            "hint": "The captain's letter and the message in the bottle reveal your purpose"
+                        }
+                    ],
+                    "direction": "east",
+                    "leads_to": "treasure_vault",
+                    "aliases": [
+                        "vault",
+                        "east"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "treasure_vault",
+            "name": "Treasure Vault",
+            "description": "You've found it! A glittering chamber filled with gold coins, jeweled artifacts, and precious gems. Chests overflow with treasure collected from a hundred voyages. The ghostly mist parts, revealing a ladder leading up to the deck and freedom. The spirits of the crew seem to nod in approval as you claim your prize.",
+            "items": [
+                {
+                    "id": "treasure_chests",
+                    "name": "overflowing treasure chests",
+                    "description": "Multiple chests filled with gold doubloons, pieces of eight, and precious gems"
+                },
+                {
+                    "id": "golden_artifacts",
+                    "name": "golden artifacts",
+                    "description": "Ornate golden statues, crowns, and ceremonial objects from distant lands"
+                },
+                {
+                    "id": "jeweled_sword",
+                    "name": "jeweled cutlass",
+                    "description": "Captain Blackwell's personal weapon, encrusted with rubies and emeralds"
+                },
+                {
+                    "id": "escape_ladder",
+                    "name": "ladder to deck",
+                    "description": "A sturdy ladder leading up through an open hatch to the ship's deck and freedom"
+                }
+            ],
+            "exits": [],
+            "is_goal": true,
+            "win_message": "You've claimed the treasure of The Phantom Maiden! As you climb the ladder with your hard-won prize, the ghostly crew fades away, finally at peace. You emerge onto the deck under a clear sky, the cursed ship beginning to sink back into the depths. You escape in a lifeboat with the treasure, a true treasure hunter who solved the mysteries of the ghost ship. You win!"
+        }
+    ]
+}

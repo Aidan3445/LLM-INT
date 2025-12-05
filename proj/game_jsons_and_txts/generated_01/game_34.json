@@ -1,0 +1,307 @@
+{
+    "theme": "Haunted Subway Terminal",
+    "title": "Haunted Subway Terminal Adventure #34",
+    "goal": "Solve the puzzles, achieve the main objective, and escape.",
+    "starting_room": "abandoned_platform",
+    "rooms": [
+        {
+            "id": "abandoned_platform",
+            "name": "Abandoned Platform",
+            "description": "A decaying subway platform deep underground. Flickering fluorescent lights cast eerie shadows across cracked tiles. Water drips from the ceiling, forming murky puddles. Graffiti covers the walls, and the air smells of mold and rust. The tracks disappear into darkness in both directions. An old ticket booth stands against one wall.",
+            "items": [
+                {
+                    "id": "ticket_booth",
+                    "name": "old ticket booth",
+                    "description": "A dusty ticket booth with a broken window and scattered papers inside",
+                    "searchable": true,
+                    "contains": [
+                        "station_map"
+                    ]
+                },
+                {
+                    "id": "station_map",
+                    "name": "faded station map",
+                    "description": "A yellowed map showing the subway system layout",
+                    "readable": true,
+                    "text": "METRO TRANSIT MAP - Station 34 opened in 1954. This terminal was closed in 1989 due to structural issues. Station Master: Harold Graves. Emergency protocols require knowledge of station history and personnel."
+                },
+                {
+                    "id": "metal_bench",
+                    "name": "metal bench",
+                    "description": "A rusted bench bolted to the platform",
+                    "searchable": true,
+                    "contains": [
+                        "rusty_crowbar"
+                    ]
+                },
+                {
+                    "id": "rusty_crowbar",
+                    "name": "rusty crowbar",
+                    "description": "A heavy crowbar that could pry open weak locks"
+                },
+                {
+                    "id": "storage_locker",
+                    "name": "maintenance storage locker",
+                    "description": "A tall metal locker with three compartments",
+                    "subcontainers": [
+                        {
+                            "id": "top_compartment",
+                            "name": "top compartment",
+                            "locked": false,
+                            "contains": [
+                                "maintenance_log"
+                            ]
+                        },
+                        {
+                            "id": "middle_compartment",
+                            "name": "middle compartment",
+                            "locked": true,
+                            "lock_type": "combination",
+                            "combination": "1954",
+                            "contains": [
+                                "brass_key"
+                            ]
+                        },
+                        {
+                            "id": "lower_compartment",
+                            "name": "lower compartment",
+                            "locked": false,
+                            "contains": []
+                        }
+                    ]
+                },
+                {
+                    "id": "maintenance_log",
+                    "name": "maintenance log book",
+                    "description": "A water-damaged logbook with maintenance records",
+                    "readable": true,
+                    "text": "Last Entry - October 1989: Strange occurrences reported. Workers refuse to enter the control room. Station Master Graves has locked himself in his office. The combination to the secure compartment is the year this cursed station opened: 1954."
+                },
+                {
+                    "id": "brass_key",
+                    "name": "tarnished brass key",
+                    "description": "An old brass key with 'OFFICE' engraved on it"
+                },
+                {
+                    "id": "graffiti_wall",
+                    "name": "graffiti covered wall",
+                    "description": "A wall covered in spray paint and mysterious symbols",
+                    "readable": true,
+                    "text": "Among the graffiti, you notice repeated phrases: 'Station 34 - Never Forget', 'Graves knows the truth', 'The control room holds the answers'. One message reads: 'Emergency exit through the control room - only way out!'"
+                },
+                {
+                    "id": "vending_machine",
+                    "name": "broken vending machine",
+                    "description": "An old vending machine with a shattered glass front",
+                    "searchable": true,
+                    "contains": [
+                        "flashlight"
+                    ]
+                },
+                {
+                    "id": "flashlight",
+                    "name": "battery powered flashlight",
+                    "description": "A heavy flashlight that still works"
+                },
+                {
+                    "id": "station_master_office_door",
+                    "name": "station master office door",
+                    "description": "A heavy metal door with a brass lock leading to the station master's office",
+                    "locked": true,
+                    "key_required": "brass_key",
+                    "direction": "north",
+                    "leads_to": "station_master_office",
+                    "aliases": [
+                        "office",
+                        "door",
+                        "north"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "station_master_office",
+            "name": "Station Master's Office",
+            "description": "A cramped office filled with filing cabinets and dusty furniture. Papers are scattered everywhere. A desk sits beneath a grimy window overlooking the platform. Photographs of subway workers line the walls. The air is stale and oppressive. A locked door leads to the control room.",
+            "items": [
+                {
+                    "id": "desk",
+                    "name": "station master's desk",
+                    "description": "A metal desk covered in papers and a locked drawer",
+                    "subcontainers": [
+                        {
+                            "id": "desk_drawer",
+                            "name": "locked desk drawer",
+                            "locked": true,
+                            "key_required": "rusty_crowbar",
+                            "contains": [
+                                "personal_journal"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "personal_journal",
+                    "name": "Harold Graves' journal",
+                    "description": "A leather journal belonging to the station master",
+                    "readable": true,
+                    "text": "Final Entry: Something is wrong with this station. The workers have seen things in the tunnels. I've sealed the control room - only those who know the station's history can enter. The emergency exit is beyond the control room. God help us all. - Harold Graves, Station Master"
+                },
+                {
+                    "id": "filing_cabinet",
+                    "name": "metal filing cabinet",
+                    "description": "A tall cabinet with employee records and station documents",
+                    "searchable": true,
+                    "contains": [
+                        "personnel_file"
+                    ]
+                },
+                {
+                    "id": "personnel_file",
+                    "name": "personnel records",
+                    "description": "A folder containing employee information",
+                    "readable": true,
+                    "text": "STATION 34 PERSONNEL: Harold Graves - Station Master. Thomas Chen - Chief Engineer. Maria Rodriguez - Safety Inspector. All emergency procedures managed by the station master. Control room access restricted."
+                },
+                {
+                    "id": "wall_photos",
+                    "name": "framed photographs",
+                    "description": "Black and white photos of subway workers from decades past",
+                    "readable": true,
+                    "text": "Photos show the station's opening ceremony in 1954, workers maintaining the tunnels, and a stern-looking man labeled 'Harold Graves - Station Master'. One photo shows the control room with its complex equipment."
+                },
+                {
+                    "id": "bulletin_board",
+                    "name": "bulletin board",
+                    "description": "A corkboard with notices and safety warnings",
+                    "readable": true,
+                    "text": "SAFETY NOTICE: In case of emergency, evacuate through the control room emergency exit. Only authorized personnel may access the control room. Station Master Harold Graves is responsible for all safety protocols."
+                },
+                {
+                    "id": "safe",
+                    "name": "wall safe",
+                    "description": "A small safe built into the wall behind a picture",
+                    "locked": true,
+                    "lock_type": "combination",
+                    "combination": "1989",
+                    "contains": [
+                        "control_room_key"
+                    ]
+                },
+                {
+                    "id": "control_room_key",
+                    "name": "control room key",
+                    "description": "A heavy iron key labeled 'CONTROL ROOM - AUTHORIZED ACCESS ONLY'"
+                },
+                {
+                    "id": "newspaper_clipping",
+                    "name": "newspaper clipping",
+                    "description": "A yellowed newspaper article pinned to the wall",
+                    "readable": true,
+                    "text": "METRO NEWS - October 1989: Station 34 to Close Permanently. After 35 years of service, the aging terminal will shut down due to safety concerns. Station Master Harold Graves cited structural issues as the primary reason."
+                },
+                {
+                    "id": "heavy_control_room_door",
+                    "name": "heavy control room door",
+                    "description": "A reinforced steel door with warning signs and a security panel displaying three verification questions",
+                    "locked": true,
+                    "lock_type": "password",
+                    "password_questions": [
+                        {
+                            "question": "When did Station 34 open?",
+                            "answer": "1954",
+                            "hint": "Check the station map and the photographs"
+                        },
+                        {
+                            "question": "Who was the station master?",
+                            "answer": "harold graves",
+                            "hint": "Multiple documents mention the station master's name"
+                        },
+                        {
+                            "question": "When did the station close?",
+                            "answer": "1989",
+                            "hint": "The newspaper clipping and maintenance log record the closure date"
+                        }
+                    ],
+                    "direction": "east",
+                    "leads_to": "control_room",
+                    "aliases": [
+                        "control",
+                        "door",
+                        "east"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "control_room",
+            "name": "Control Room",
+            "description": "You've reached the control room! A vast chamber filled with ancient electrical panels, switches, and monitoring equipment. Emergency lights bathe everything in red. The walls are lined with circuit breakers and warning signs. At the far end, a green EXIT sign glows above an emergency door leading to the surface. Fresh air flows from above - freedom awaits!",
+            "items": [
+                {
+                    "id": "control_panels",
+                    "name": "electrical control panels",
+                    "description": "Massive panels with hundreds of switches and indicators, most no longer functioning"
+                },
+                {
+                    "id": "monitoring_station",
+                    "name": "monitoring station",
+                    "description": "A desk with old security monitors showing static",
+                    "searchable": true,
+                    "contains": [
+                        "final_note"
+                    ]
+                },
+                {
+                    "id": "final_note",
+                    "name": "final message",
+                    "description": "A handwritten note left on the monitoring desk",
+                    "readable": true,
+                    "text": "If you're reading this, you've made it to the control room. The emergency exit leads to the street above. I'm sealing this station forever. Whatever haunts these tunnels will remain buried. - H. Graves"
+                },
+                {
+                    "id": "circuit_breakers",
+                    "name": "circuit breaker panel",
+                    "description": "A wall of circuit breakers and electrical switches"
+                },
+                {
+                    "id": "emergency_exit_door",
+                    "name": "emergency exit door",
+                    "description": "A heavy door with a glowing EXIT sign above it. A ladder leads up to the street level.",
+                    "locked": false,
+                    "direction": "north",
+                    "leads_to": "street_level",
+                    "aliases": [
+                        "exit",
+                        "ladder",
+                        "north",
+                        "up"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "street_level",
+            "name": "Street Level",
+            "description": "You've escaped! You emerge from the emergency exit onto a quiet city street. Fresh air fills your lungs as you climb out of the underground. The entrance to Station 34 is boarded up behind you, covered in warning signs. Sunlight has never felt so good. You're finally free from the haunted subway terminal!",
+            "items": [
+                {
+                    "id": "boarded_entrance",
+                    "name": "boarded up entrance",
+                    "description": "The sealed entrance to the abandoned station, covered with 'DANGER - DO NOT ENTER' signs"
+                },
+                {
+                    "id": "city_street",
+                    "name": "city street",
+                    "description": "A normal city street with cars passing by and people going about their day"
+                }
+            ],
+            "exits": [],
+            "is_goal": true,
+            "win_message": "SUCCESS! You've escaped the Haunted Subway Terminal! As you stand on the street, breathing fresh air and feeling the sun on your face, you look back at the boarded-up entrance. Whatever mysteries and horrors lurk in Station 34 will remain buried in the darkness below. You solved the puzzles, uncovered the station's secrets, and found your way to freedom. You win!"
+        }
+    ]
+}

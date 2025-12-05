@@ -1,0 +1,213 @@
+{
+    "theme": "Parallel Universe Apartment",
+    "title": "Parallel Universe Apartment Adventure #38",
+    "goal": "Solve the puzzles, achieve the main objective, and escape.",
+    "starting_room": "apartment_living_room",
+    "rooms": [
+        {
+            "id": "apartment_living_room",
+            "name": "Apartment Living Room Universe Prime",
+            "description": "Your apartment living room, but something feels off. The furniture is familiar yet subtly different. A strange humming emanates from the walls. Through the window, you see a sky with two moons. Reality feels thin here, like you could reach through to somewhere else. A quantum resonance device sits on the coffee table, and strange portals shimmer on the walls.",
+            "items": [
+                {
+                    "id": "coffee_table",
+                    "name": "glass coffee table",
+                    "description": "A modern glass table with a drawer underneath",
+                    "subcontainers": [
+                        {
+                            "id": "table_drawer",
+                            "name": "table drawer",
+                            "locked": false,
+                            "contains": [
+                                "research_notes"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "research_notes",
+                    "name": "quantum research notes",
+                    "description": "Scientific notes about parallel universe theory",
+                    "readable": true,
+                    "text": "Dr. Chen's Notes: I've successfully created viewing portals to Universes 3, 7, 15, and 27. Each universe has a unique frequency: U3=137, U7=299, U15=628, U27=941. The convergence code is the sum of U3 and U7 frequencies: 436."
+                },
+                {
+                    "id": "bookshelf",
+                    "name": "dimensional bookshelf",
+                    "description": "A bookshelf that seems to contain books from multiple realities",
+                    "searchable": true,
+                    "contains": [
+                        "universe_journal"
+                    ]
+                },
+                {
+                    "id": "universe_journal",
+                    "name": "journal from Universe 7",
+                    "description": "A journal that shouldn't exist in this universe",
+                    "readable": true,
+                    "text": "Journal Entry from Universe 7: In my reality, I am Dr. Sarah Chen, quantum physicist. I've hidden the dimensional key in the locked box. The combination is based on the three prime universe numbers in ascending order: 3, 7, 15 becomes 0307."
+                },
+                {
+                    "id": "locked_box",
+                    "name": "quantum locked box",
+                    "description": "A metallic box with a digital combination lock displaying four digits",
+                    "locked": true,
+                    "lock_type": "combination",
+                    "combination": "0307",
+                    "contains": [
+                        "dimensional_key"
+                    ]
+                },
+                {
+                    "id": "dimensional_key",
+                    "name": "crystalline dimensional key",
+                    "description": "A key that vibrates with quantum energy, seemingly existing in multiple states at once"
+                },
+                {
+                    "id": "viewing_portal_3",
+                    "name": "viewing portal to Universe 3",
+                    "description": "A shimmering window showing an alternate version of your apartment where everything is blue",
+                    "readable": true,
+                    "text": "Through the portal, you see a note on the wall: 'The Traveler's name is Sarah Chen. She seeks the Convergence Chamber.'"
+                },
+                {
+                    "id": "viewing_portal_15",
+                    "name": "viewing portal to Universe 15",
+                    "description": "A rippling portal showing a version of your apartment filled with plants",
+                    "readable": true,
+                    "text": "Through the portal, you see a whiteboard with text: 'The key to dimensional travel lies in the Convergence Chamber, where all realities meet.'"
+                },
+                {
+                    "id": "viewing_portal_27",
+                    "name": "viewing portal to Universe 27",
+                    "description": "A glowing portal showing a futuristic version of your apartment",
+                    "readable": true,
+                    "text": "Through the portal, you see a holographic display: 'Warning: Dimensional instability detected. Only Dr. Chen can stabilize the convergence.'"
+                },
+                {
+                    "id": "dimensional_hallway_door",
+                    "name": "dimensional hallway door",
+                    "description": "The door to the hallway, but it's locked with a quantum seal",
+                    "locked": true,
+                    "key_required": "dimensional_key",
+                    "direction": "north",
+                    "leads_to": "quantum_hallway",
+                    "aliases": [
+                        "door",
+                        "north"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "quantum_hallway",
+            "name": "Quantum Hallway",
+            "description": "A hallway that exists between dimensions. The walls flicker between different states of reality. Doors line both sides, each leading to a different universe. At the end of the hallway, a massive portal door pulses with energy. The air crackles with quantum potential.",
+            "items": [
+                {
+                    "id": "universe_map",
+                    "name": "dimensional map",
+                    "description": "A holographic map showing the multiverse structure",
+                    "readable": true,
+                    "text": "Multiverse Map: Universe Prime (origin point) connects to 4 parallel universes. The Convergence Chamber exists at the intersection of all realities. Access requires proof of identity and knowledge of dimensional theory."
+                },
+                {
+                    "id": "control_panel",
+                    "name": "quantum control panel",
+                    "description": "A complex panel with various compartments and controls",
+                    "subcontainers": [
+                        {
+                            "id": "upper_compartment",
+                            "name": "upper compartment",
+                            "locked": false,
+                            "contains": [
+                                "stability_report"
+                            ]
+                        },
+                        {
+                            "id": "lower_compartment",
+                            "name": "lower compartment",
+                            "locked": true,
+                            "lock_type": "combination",
+                            "combination": "436",
+                            "contains": [
+                                "convergence_access_card"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "stability_report",
+                    "name": "dimensional stability report",
+                    "description": "A technical document about the multiverse",
+                    "readable": true,
+                    "text": "Stability Report: All universes are converging. Dr. Sarah Chen must enter the Convergence Chamber to stabilize reality. The chamber exists in the space between all universes, accessible only through the convergence portal."
+                },
+                {
+                    "id": "convergence_access_card",
+                    "name": "convergence access card",
+                    "description": "A special keycard that shimmers with rainbow light"
+                },
+                {
+                    "id": "memorial_plaque",
+                    "name": "memorial plaque",
+                    "description": "A plaque honoring dimensional researchers",
+                    "readable": true,
+                    "text": "In memory of those who explored the multiverse: Dr. Sarah Chen, pioneer of quantum dimensional travel. Her work in the Convergence Chamber made interdimensional travel possible."
+                },
+                {
+                    "id": "convergence_portal",
+                    "name": "convergence portal",
+                    "description": "A massive portal door covered in quantum equations. A security terminal displays three verification questions.",
+                    "locked": true,
+                    "lock_type": "password",
+                    "password_questions": [
+                        {
+                            "question": "What is the Traveler's name?",
+                            "answer": "sarah chen",
+                            "hint": "Check the viewing portals and research notes in the living room"
+                        },
+                        {
+                            "question": "Where do all realities meet?",
+                            "answer": "convergence chamber",
+                            "hint": "Look at the dimensional map and stability report"
+                        },
+                        {
+                            "question": "What must be stabilized?",
+                            "answer": "reality",
+                            "hint": "The stability report mentions what needs stabilization"
+                        }
+                    ],
+                    "direction": "east",
+                    "leads_to": "convergence_chamber",
+                    "aliases": [
+                        "portal",
+                        "east"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "convergence_chamber",
+            "name": "Convergence Chamber",
+            "description": "You have reached the Convergence Chamber, a space that exists in all universes simultaneously! The room is a perfect sphere of pure white light. Through transparent walls, you can see infinite versions of yourself in infinite universes, all converging on this single point. A central pedestal holds a device that stabilizes all of reality. You feel complete, whole, existing in perfect harmony across all dimensions.",
+            "items": [
+                {
+                    "id": "reality_stabilizer",
+                    "name": "quantum reality stabilizer",
+                    "description": "A beautiful crystalline device that maintains the stability of the multiverse"
+                },
+                {
+                    "id": "convergence_throne",
+                    "name": "convergence throne",
+                    "description": "A seat of pure energy where the dimensional traveler can observe all realities at once"
+                }
+            ],
+            "exits": [],
+            "is_goal": true,
+            "win_message": "You have reached the Convergence Chamber and stabilized the multiverse! All versions of yourself across infinite realities merge into one perfect being. You are Dr. Sarah Chen, master of dimensional travel, and you have achieved what no one else could - existing in perfect harmony across all parallel universes. Reality is saved, and you are home in every universe at once. You win!"
+        }
+    ]
+}

@@ -1,0 +1,215 @@
+{
+    "theme": "Medieval Dungeon",
+    "title": "Medieval Dungeon Adventure #26",
+    "goal": "Solve the puzzles, achieve the main objective, and escape.",
+    "starting_room": "dungeon_cell",
+    "rooms": [
+        {
+            "id": "dungeon_cell",
+            "name": "Dark Dungeon Cell",
+            "description": "A damp stone cell lit by a single flickering torch. The walls are covered in moss and ancient scratches. Chains hang from the ceiling, and the air smells of mildew and despair. A heavy wooden door with iron bands is the only exit. Water drips steadily from cracks in the ceiling.",
+            "items": [
+                {
+                    "id": "pile_of_straw",
+                    "name": "pile of moldy straw",
+                    "description": "A heap of old straw in the corner, damp and rotting",
+                    "searchable": true,
+                    "contains": [
+                        "rusty_nail"
+                    ]
+                },
+                {
+                    "id": "rusty_nail",
+                    "name": "long rusty nail",
+                    "description": "A bent iron nail, still sharp enough to be useful"
+                },
+                {
+                    "id": "wall_scratches",
+                    "name": "scratches on wall",
+                    "description": "Deep scratches carved into the stone wall by previous prisoners",
+                    "readable": true,
+                    "text": "Carved message: 'The guard's name is Sir Aldric. He keeps his keys in the chest. The combination is the year the Black Plague came to our land: 1348.'"
+                },
+                {
+                    "id": "wooden_bucket",
+                    "name": "old wooden bucket",
+                    "description": "A bucket with a loose bottom board",
+                    "searchable": true,
+                    "contains": [
+                        "prisoners_note"
+                    ]
+                },
+                {
+                    "id": "prisoners_note",
+                    "name": "torn parchment",
+                    "description": "A note hidden by a former prisoner",
+                    "readable": true,
+                    "text": "If you find this, know that freedom lies beyond the guard room. The torture chamber holds the final key. Remember: the dungeon is beneath the castle keep, and only the king's justice can free you."
+                },
+                {
+                    "id": "iron_chest",
+                    "name": "locked iron chest",
+                    "description": "A small chest bolted to the floor with a combination lock",
+                    "locked": true,
+                    "lock_type": "combination",
+                    "combination": "1348",
+                    "contains": [
+                        "iron_key"
+                    ]
+                },
+                {
+                    "id": "iron_key",
+                    "name": "heavy iron key",
+                    "description": "A large key with the guard's seal stamped on it"
+                },
+                {
+                    "id": "iron_banded_cell_door",
+                    "name": "iron banded cell door",
+                    "description": "A thick wooden door reinforced with iron bands and a heavy lock",
+                    "locked": true,
+                    "key_required": "iron_key",
+                    "direction": "north",
+                    "leads_to": "guard_room",
+                    "aliases": [
+                        "door",
+                        "north"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "guard_room",
+            "name": "Dungeon Guard Room",
+            "description": "A circular chamber with weapon racks on the walls and a large wooden table in the center. Torches burn in iron sconces, casting dancing shadows. A guard's armor stands in the corner, and various instruments of interrogation hang from hooks. The vault door to the east leads to the treasure room and freedom beyond.",
+            "items": [
+                {
+                    "id": "weapon_rack",
+                    "name": "wooden weapon rack",
+                    "description": "A rack holding rusty swords and spears",
+                    "searchable": true,
+                    "contains": [
+                        "bronze_key"
+                    ]
+                },
+                {
+                    "id": "bronze_key",
+                    "name": "small bronze key",
+                    "description": "A delicate key with ornate engravings"
+                },
+                {
+                    "id": "guards_table",
+                    "name": "guard's wooden table",
+                    "description": "A sturdy table covered with maps, dice, and ale mugs. It has two drawers.",
+                    "subcontainers": [
+                        {
+                            "id": "left_drawer",
+                            "name": "left drawer",
+                            "locked": false,
+                            "contains": [
+                                "duty_roster"
+                            ]
+                        },
+                        {
+                            "id": "right_drawer",
+                            "name": "right drawer",
+                            "locked": true,
+                            "key_required": "bronze_key",
+                            "contains": [
+                                "captains_orders"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "duty_roster",
+                    "name": "guard duty roster",
+                    "description": "A schedule listing the guards and their posts",
+                    "readable": true,
+                    "text": "Guard Roster: Sir Aldric - Dungeon Master. Sir Gareth - Gate Captain. Sir Brennan - Tower Watch. Note: All guards report to Captain Sir Gareth at the castle keep."
+                },
+                {
+                    "id": "captains_orders",
+                    "name": "sealed captain's orders",
+                    "description": "Official orders from the captain of the guard",
+                    "readable": true,
+                    "text": "By order of Captain Sir Gareth: The vault contains the king's justice - a royal pardon for the worthy. Only those who can answer may pass: Who commands the dungeon? Where is the dungeon located? What grants freedom?"
+                },
+                {
+                    "id": "armor_stand",
+                    "name": "suit of guard armor",
+                    "description": "A complete set of chainmail and plate armor on a wooden stand",
+                    "searchable": true,
+                    "contains": [
+                        "dungeon_map"
+                    ]
+                },
+                {
+                    "id": "dungeon_map",
+                    "name": "dungeon layout map",
+                    "description": "A detailed map of the dungeon complex",
+                    "readable": true,
+                    "text": "Map shows: Dungeon cells in the lower level beneath the castle keep. Guard room in the center. Vault and exit passage to the east leading to freedom."
+                },
+                {
+                    "id": "torture_tools",
+                    "name": "rack of torture tools",
+                    "description": "Various medieval interrogation implements hanging on the wall",
+                    "searchable": true,
+                    "contains": []
+                },
+                {
+                    "id": "massive_iron_vault_door",
+                    "name": "massive iron vault door",
+                    "description": "An enormous iron door with a complex locking mechanism. Three questions are engraved on a brass plate.",
+                    "locked": true,
+                    "lock_type": "password",
+                    "password_questions": [
+                        {
+                            "question": "Who commands the dungeon?",
+                            "answer": "sir aldric",
+                            "hint": "Check the duty roster to see who is the Dungeon Master"
+                        },
+                        {
+                            "question": "Where is the dungeon located?",
+                            "answer": "castle keep",
+                            "hint": "The dungeon map shows the location"
+                        },
+                        {
+                            "question": "What grants freedom?",
+                            "answer": "royal pardon",
+                            "hint": "The captain's orders mention what the vault contains"
+                        }
+                    ],
+                    "direction": "east",
+                    "leads_to": "freedom",
+                    "aliases": [
+                        "vault",
+                        "east"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "freedom",
+            "name": "Castle Courtyard",
+            "description": "You emerge into the bright sunlight of the castle courtyard! Fresh air fills your lungs as you step out of the darkness. Guards lower their weapons as you present the royal pardon from the vault. Birds sing overhead, and the castle gates stand open before you. You are free!",
+            "items": [
+                {
+                    "id": "royal_pardon",
+                    "name": "royal pardon scroll",
+                    "description": "An official document bearing the king's seal, granting you freedom and clearing your name"
+                },
+                {
+                    "id": "castle_gates",
+                    "name": "open castle gates",
+                    "description": "The massive wooden gates stand open, leading to the road beyond and your new life of freedom"
+                }
+            ],
+            "exits": [],
+            "is_goal": true,
+            "win_message": "You have escaped the medieval dungeon! With the royal pardon in hand, you walk through the castle gates as a free person. The guards salute you as you pass. Your imprisonment is over, and a new chapter of your life begins. You win!"
+        }
+    ]
+}

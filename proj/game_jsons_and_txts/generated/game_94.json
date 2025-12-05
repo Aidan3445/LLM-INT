@@ -1,0 +1,257 @@
+{
+  "theme": "Dwarven Forge",
+  "title": "Dwarven Forge Adventure #94",
+  "goal": "Solve the puzzles, achieve the main objective, and escape.",
+  "starting_room": "ancient_forge_chamber",
+  "rooms": [
+    {
+      "id": "ancient_forge_chamber",
+      "name": "Ancient Forge Chamber",
+      "description": "A vast underground chamber lit by the orange glow of a massive forge. The air is thick with heat and the smell of coal and molten metal. Ancient dwarven runes cover the stone walls, and the sound of dripping water echoes from somewhere deep below. A massive anvil sits in the center, surrounded by smithing tools and weapon racks.",
+      "items": [
+        {
+          "id": "weapon_rack",
+          "name": "iron weapon rack",
+          "description": "A sturdy rack holding various dwarven weapons and tools",
+          "searchable": true,
+          "contains": [
+            "smithing_hammer"
+          ]
+        },
+        {
+          "id": "smithing_hammer",
+          "name": "heavy smithing hammer",
+          "description": "A well-worn hammer with dwarven runes etched into the handle"
+        },
+        {
+          "id": "tool_chest",
+          "name": "dwarven tool chest",
+          "description": "A reinforced chest with three compartments, each labeled with a dwarven symbol",
+          "subcontainers": [
+            {
+              "id": "top_compartment",
+              "name": "top compartment",
+              "locked": false,
+              "contains": [
+                "forge_master_journal"
+              ]
+            },
+            {
+              "id": "middle_compartment",
+              "name": "middle compartment",
+              "locked": true,
+              "lock_type": "combination",
+              "combination": "1205",
+              "contains": [
+                "bronze_key"
+              ]
+            },
+            {
+              "id": "bottom_compartment",
+              "name": "bottom compartment",
+              "locked": false,
+              "contains": []
+            }
+          ]
+        },
+        {
+          "id": "forge_master_journal",
+          "name": "forge master's journal",
+          "description": "A leather-bound journal with singed edges",
+          "readable": true,
+          "text": "Year 1205 of the Mountain Age: I, Forge Master Ironbeard, have completed the Sacred Anvil. Only those who know the three pillars of dwarven craft may enter the vault: the metal we prize above all, where our greatest works are kept, and who leads our clan."
+        },
+        {
+          "id": "bronze_key",
+          "name": "ornate bronze key",
+          "description": "A key decorated with intricate dwarven knotwork patterns"
+        },
+        {
+          "id": "locked_cabinet",
+          "name": "locked iron cabinet",
+          "description": "A heavy cabinet secured with a bronze lock",
+          "locked": true,
+          "key_required": "bronze_key",
+          "contains": [
+            "clan_records"
+          ]
+        },
+        {
+          "id": "clan_records",
+          "name": "clan record scroll",
+          "description": "An ancient scroll detailing the history of the clan",
+          "readable": true,
+          "text": "The Ironbeard Clan has dwelt in these mountains for generations. Our masterworks are stored in the Hall of Treasures, protected by the wisdom of our ancestors. Clan Chief Thorin Ironbeard leads us with strength and honor. We value mithril above all other metals."
+        },
+        {
+          "id": "stone_anvil",
+          "name": "massive stone anvil",
+          "description": "An enormous anvil carved from a single piece of granite, covered in glowing runes",
+          "searchable": true,
+          "contains": [
+            "ancient_tablet"
+          ]
+        },
+        {
+          "id": "ancient_tablet",
+          "name": "stone tablet",
+          "description": "A tablet with carved instructions",
+          "readable": true,
+          "text": "To those who seek the treasures of the forge: The vault door requires the hammer of the smith to open. Beyond lies the Hall of Treasures, where our greatest works await."
+        },
+        {
+          "id": "heavy_vault_door",
+          "name": "heavy vault door",
+          "description": "A massive iron door reinforced with steel bands. It has a slot shaped like a hammer head.",
+          "locked": true,
+          "key_required": "smithing_hammer",
+          "direction": "north",
+          "leads_to": "hall_of_treasures",
+          "aliases": [
+            "vault",
+            "north"
+          ]
+        }
+      ],
+      "exits": []
+    },
+    {
+      "id": "hall_of_treasures",
+      "name": "Hall of Treasures",
+      "description": "A magnificent hall with vaulted ceilings supported by carved stone pillars. Display cases line the walls, filled with legendary dwarven weapons, armor, and jewelry. Gems embedded in the walls catch the light from braziers burning with eternal flames. At the far end, a grand archway leads to the Sacred Anvil Chamber.",
+      "items": [
+        {
+          "id": "display_case_weapons",
+          "name": "weapon display case",
+          "description": "A glass case containing legendary dwarven axes and swords",
+          "readable": true,
+          "text": "Plaque: 'These weapons were forged by Master Ironbeard in the year 1205, using the finest mithril from the Deep Mines.'"
+        },
+        {
+          "id": "display_case_armor",
+          "name": "armor display case",
+          "description": "A case showcasing a complete set of dwarven plate armor",
+          "readable": true,
+          "text": "Plaque: 'The armor of Clan Chief Thorin Ironbeard, protector of the mountain halls and keeper of ancient traditions.'"
+        },
+        {
+          "id": "display_case_jewelry",
+          "name": "jewelry display case",
+          "description": "A case filled with rings, necklaces, and crowns adorned with precious gems",
+          "readable": true,
+          "text": "Plaque: 'Crown jewels of the Ironbeard dynasty, crafted from mithril and set with diamonds from the deepest veins.'"
+        },
+        {
+          "id": "stone_pedestal",
+          "name": "carved stone pedestal",
+          "description": "A pedestal in the center of the hall with an open book resting on it",
+          "searchable": true,
+          "contains": [
+            "book_of_wisdom"
+          ]
+        },
+        {
+          "id": "book_of_wisdom",
+          "name": "book of dwarven wisdom",
+          "description": "An ancient tome containing the knowledge of the ancestors",
+          "readable": true,
+          "text": "Chapter on Sacred Metals: Mithril is the most precious metal known to dwarvenkind, lighter than steel yet stronger than any other material. Chapter on Leadership: Clan Chief Thorin Ironbeard has guided our people with wisdom for fifty years. Chapter on Sacred Places: The Hall of Treasures holds our most valued creations, protected by ancient magic."
+        },
+        {
+          "id": "treasure_chest",
+          "name": "reinforced treasure chest",
+          "description": "A large chest bound with iron straps and a complex lock",
+          "searchable": true,
+          "contains": [
+            "golden_key"
+          ]
+        },
+        {
+          "id": "golden_key",
+          "name": "golden key",
+          "description": "A key made of pure gold, warm to the touch"
+        },
+        {
+          "id": "grand_archway",
+          "name": "grand archway",
+          "description": "A towering archway carved with scenes of dwarven history. Three questions are inscribed in the stone.",
+          "locked": true,
+          "lock_type": "password",
+          "password_questions": [
+            {
+              "question": "What metal do dwarves prize above all others?",
+              "answer": "mithril",
+              "hint": "Check the clan records and the book of wisdom"
+            },
+            {
+              "question": "Where are the greatest dwarven works kept?",
+              "answer": "hall of treasures",
+              "hint": "The forge master's journal mentions this location"
+            },
+            {
+              "question": "Who leads the Ironbeard Clan?",
+              "answer": "thorin ironbeard",
+              "hint": "Look at the clan records and armor display"
+            }
+          ],
+          "direction": "east",
+          "leads_to": "sacred_anvil_chamber",
+          "aliases": [
+            "archway",
+            "east"
+          ]
+        }
+      ],
+      "exits": []
+    },
+    {
+      "id": "sacred_anvil_chamber",
+      "name": "Sacred Anvil Chamber",
+      "description": "You have reached the heart of the dwarven forge! A magnificent anvil made of pure mithril sits atop a raised platform, glowing with an inner light. The walls are covered in golden runes that pulse with ancient magic. A shaft of light from above illuminates a tunnel leading to the surface and freedom.",
+      "items": [
+        {
+          "id": "mithril_anvil",
+          "name": "sacred mithril anvil",
+          "description": "The legendary anvil of the forge masters, said to have been used to create the greatest weapons in dwarven history"
+        },
+        {
+          "id": "golden_runes",
+          "name": "glowing golden runes",
+          "description": "Ancient dwarven runes that tell the story of the forge",
+          "readable": true,
+          "text": "The runes tell of how Forge Master Ironbeard created this sacred chamber as a testament to dwarven craftsmanship. Those who reach this place have proven themselves worthy of the ancient knowledge."
+        },
+        {
+          "id": "escape_tunnel",
+          "name": "escape tunnel",
+          "description": "A tunnel carved through the mountain, leading upward to daylight and freedom",
+          "locked": true,
+          "key_required": "golden_key",
+          "direction": "north",
+          "leads_to": "mountain_exit",
+          "aliases": [
+            "tunnel",
+            "north",
+            "exit"
+          ]
+        }
+      ],
+      "exits": []
+    },
+    {
+      "id": "mountain_exit",
+      "name": "Mountain Summit",
+      "description": "You emerge onto a mountain peak, breathing in the fresh air and feeling the warmth of the sun. Behind you, the entrance to the ancient dwarven forge seals itself with a rumble of stone. You have successfully navigated the trials and proven yourself worthy of the dwarven legacy.",
+      "items": [
+        {
+          "id": "mountain_vista",
+          "name": "mountain vista",
+          "description": "A breathtaking view of the valleys and peaks stretching to the horizon"
+        }
+      ],
+      "exits": [],
+      "is_goal": true,
+      "win_message": "Congratulations! You have solved the puzzles of the Dwarven Forge, discovered the Sacred Anvil Chamber, and escaped to freedom. The ancient knowledge of the Ironbeard Clan is now yours. May your path be as strong as mithril and as enduring as the mountains! You win!"
+    }
+  ]
+}

@@ -1,0 +1,250 @@
+{
+    "theme": "Astral Projection Chamber",
+    "title": "Astral Projection Chamber Adventure #27",
+    "goal": "Solve the puzzles, achieve the main objective, and escape.",
+    "starting_room": "meditation_chamber",
+    "rooms": [
+        {
+            "id": "meditation_chamber",
+            "name": "Meditation Chamber",
+            "description": "A serene circular room with soft purple lighting emanating from crystal lamps. Incense smoke curls through the air, carrying the scent of sandalwood. Meditation cushions are arranged in a circle around a central altar. The walls are adorned with chakra symbols and ancient Sanskrit texts. A sense of deep peace permeates the space.",
+            "items": [
+                {
+                    "id": "central_altar",
+                    "name": "crystal altar",
+                    "description": "A low altar made of polished amethyst, holding various spiritual objects",
+                    "searchable": true,
+                    "contains": [
+                        "silver_bell"
+                    ]
+                },
+                {
+                    "id": "silver_bell",
+                    "name": "tibetan silver bell",
+                    "description": "A small bell that produces a clear, resonant tone when rung"
+                },
+                {
+                    "id": "meditation_cushion",
+                    "name": "silk meditation cushion",
+                    "description": "A purple cushion embroidered with golden symbols",
+                    "searchable": true,
+                    "contains": [
+                        "folded_note"
+                    ]
+                },
+                {
+                    "id": "folded_note",
+                    "name": "meditation instructor's note",
+                    "description": "A handwritten note on parchment paper",
+                    "readable": true,
+                    "text": "Welcome, seeker. To begin your astral journey, remember the sacred number of energy centers within the body. The chakras number seven, and this is the key to unlocking your path. - Master Kai"
+                },
+                {
+                    "id": "wooden_cabinet",
+                    "name": "wooden storage cabinet",
+                    "description": "A carved teak cabinet with intricate mandala patterns and three compartments",
+                    "subcontainers": [
+                        {
+                            "id": "top_compartment",
+                            "name": "top compartment",
+                            "locked": false,
+                            "contains": [
+                                "chakra_chart"
+                            ]
+                        },
+                        {
+                            "id": "middle_compartment",
+                            "name": "middle compartment",
+                            "locked": true,
+                            "lock_type": "combination",
+                            "combination": "7",
+                            "contains": [
+                                "brass_key"
+                            ]
+                        },
+                        {
+                            "id": "bottom_compartment",
+                            "name": "bottom compartment",
+                            "locked": false,
+                            "contains": []
+                        }
+                    ]
+                },
+                {
+                    "id": "chakra_chart",
+                    "name": "chakra alignment chart",
+                    "description": "A colorful diagram showing the seven chakra points",
+                    "readable": true,
+                    "text": "The Seven Chakras: Root, Sacral, Solar Plexus, Heart, Throat, Third Eye, and Crown. Seven energy centers guide the astral traveler to higher consciousness."
+                },
+                {
+                    "id": "brass_key",
+                    "name": "ornate brass key",
+                    "description": "A key with a lotus flower design on its handle"
+                },
+                {
+                    "id": "locked_chest",
+                    "name": "sandalwood chest",
+                    "description": "A fragrant chest bound with brass fittings and a lotus-shaped lock",
+                    "locked": true,
+                    "key_required": "brass_key",
+                    "contains": [
+                        "astral_guide",
+                        "quartz_crystal"
+                    ]
+                },
+                {
+                    "id": "astral_guide",
+                    "name": "astral projection guide",
+                    "description": "An ancient leather-bound manual with gold lettering",
+                    "readable": true,
+                    "text": "The Art of Astral Projection: To traverse the astral plane, one must achieve the vibrational state. The practitioner is called an astral traveler or projector. The silver cord connects body to spirit. Beware the lower astral plane, where shadows dwell."
+                },
+                {
+                    "id": "quartz_crystal",
+                    "name": "clear quartz crystal",
+                    "description": "A large, perfectly clear crystal that seems to pulse with inner light"
+                },
+                {
+                    "id": "wall_scroll",
+                    "name": "ancient wall scroll",
+                    "description": "A scroll hanging on the wall with faded Sanskrit writing",
+                    "readable": true,
+                    "text": "Wisdom of the Masters: The astral body travels while the physical rests. Master Kai teaches that the silver cord is the lifeline. The lower astral plane holds illusions and fears."
+                },
+                {
+                    "id": "shimmering_portal",
+                    "name": "shimmering portal",
+                    "description": "A doorway that seems to ripple like water, glowing with ethereal blue light. Strange symbols float across its surface.",
+                    "locked": false,
+                    "direction": "north",
+                    "leads_to": "astral_plane",
+                    "aliases": [
+                        "portal",
+                        "doorway",
+                        "north"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "astral_plane",
+            "name": "The Astral Plane",
+            "description": "You float in a vast space of swirling colors and geometric patterns. There is no up or down here. Translucent figures drift past, and distant music echoes from nowhere. A silver cord extends from your chest back toward the meditation chamber. Three pedestals float in a triangle formation, each holding a different object. A massive gateway of light pulses at the far end.",
+            "items": [
+                {
+                    "id": "pedestal_one",
+                    "name": "first floating pedestal",
+                    "description": "A crystalline pedestal holding a glowing sphere",
+                    "readable": true,
+                    "text": "Pedestal inscription: 'The Third Eye sees beyond the veil of illusion.'"
+                },
+                {
+                    "id": "pedestal_two",
+                    "name": "second floating pedestal",
+                    "description": "A marble pedestal with an open book resting on it",
+                    "readable": true,
+                    "text": "The book reads: 'In the astral realm, thought becomes reality. The silver cord binds spirit to flesh. Never forget your true name, for identity anchors consciousness.'"
+                },
+                {
+                    "id": "pedestal_three",
+                    "name": "third floating pedestal",
+                    "description": "An obsidian pedestal holding a small locked box",
+                    "locked": true,
+                    "key_required": "quartz_crystal",
+                    "contains": [
+                        "astral_key"
+                    ]
+                },
+                {
+                    "id": "astral_key",
+                    "name": "key of pure light",
+                    "description": "A key made entirely of solidified light energy, warm to the touch"
+                },
+                {
+                    "id": "floating_library",
+                    "name": "floating books",
+                    "description": "Several ancient tomes drift through the air, their pages turning on their own",
+                    "searchable": true,
+                    "contains": [
+                        "akashic_record"
+                    ]
+                },
+                {
+                    "id": "akashic_record",
+                    "name": "akashic record fragment",
+                    "description": "A glowing page from the universal records",
+                    "readable": true,
+                    "text": "Record Entry: The seeker known as Master Kai achieved enlightenment through dedication to the path. The vibrational state is the gateway. The Third Eye chakra perceives astral truth."
+                },
+                {
+                    "id": "silver_cord",
+                    "name": "silver cord",
+                    "description": "A shimmering cord of silver light connecting you to your physical body",
+                    "readable": true,
+                    "text": "The silver cord pulses gently with your heartbeat, a reminder of your connection to the physical world."
+                },
+                {
+                    "id": "gateway_of_enlightenment",
+                    "name": "gateway of enlightenment",
+                    "description": "A massive archway made of pure radiant light. Three questions appear in glowing script before it.",
+                    "locked": true,
+                    "lock_type": "password",
+                    "password_questions": [
+                        {
+                            "question": "What is the name of your meditation teacher?",
+                            "answer": "master kai",
+                            "hint": "Check the meditation instructor's note and the akashic records"
+                        },
+                        {
+                            "question": "What connects the astral body to the physical?",
+                            "answer": "silver cord",
+                            "hint": "The astral projection guide mentions this lifeline"
+                        },
+                        {
+                            "question": "Which chakra perceives astral truth?",
+                            "answer": "third eye",
+                            "hint": "Look at the pedestal inscriptions and akashic records"
+                        }
+                    ],
+                    "direction": "east",
+                    "leads_to": "enlightenment_chamber",
+                    "aliases": [
+                        "gateway",
+                        "archway",
+                        "east"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "enlightenment_chamber",
+            "name": "Chamber of Enlightenment",
+            "description": "You have transcended to the highest astral plane! The chamber is filled with brilliant white light that doesn't hurt to look at. Geometric patterns of sacred geometry rotate slowly in the air. A sense of infinite peace and understanding washes over you. You feel connected to all consciousness. In the center, a throne of pure energy awaits, and beyond it, a portal back to your awakened body.",
+            "items": [
+                {
+                    "id": "throne_of_light",
+                    "name": "throne of pure consciousness",
+                    "description": "A seat made of condensed light and universal energy"
+                },
+                {
+                    "id": "sacred_geometry",
+                    "name": "floating sacred patterns",
+                    "description": "The Flower of Life, Metatron's Cube, and other sacred geometric forms rotate in perfect harmony"
+                },
+                {
+                    "id": "universal_wisdom",
+                    "name": "sphere of infinite knowledge",
+                    "description": "A glowing sphere containing all wisdom of the universe",
+                    "readable": true,
+                    "text": "You have achieved astral mastery. The journey inward leads to the infinite outward. You are consciousness experiencing itself."
+                }
+            ],
+            "exits": [],
+            "is_goal": true,
+            "win_message": "You have successfully completed your astral journey and achieved enlightenment! Your consciousness expands to touch the infinite, understanding the true nature of reality. The silver cord gently pulls you back to your physical body, but you return forever changed, carrying the wisdom of the astral planes. You awaken in the meditation chamber with a profound sense of peace and understanding. You win!"
+        }
+    ]
+}

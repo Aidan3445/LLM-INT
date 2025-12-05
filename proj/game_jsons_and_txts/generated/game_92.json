@@ -1,0 +1,225 @@
+{
+    "theme": "Oracle's Chamber",
+    "title": "Oracle's Chamber Adventure #92",
+    "goal": "Solve the puzzles, achieve the main objective, and escape.",
+    "starting_room": "antechamber",
+    "rooms": [
+        {
+            "id": "antechamber",
+            "name": "Oracle's Antechamber",
+            "description": "A dimly lit chamber with walls covered in ancient inscriptions that glow faintly with ethereal light. Incense smoke curls through the air, and the sound of distant chanting echoes from somewhere deep within. Stone pillars carved with prophetic symbols support the vaulted ceiling. A sense of ancient wisdom permeates the space.",
+            "items": [
+                {
+                    "id": "stone_altar",
+                    "name": "stone altar",
+                    "description": "An ancient altar with three offering bowls and carved inscriptions",
+                    "readable": true,
+                    "text": "Inscription: 'The Oracle speaks in numbers three - the year of the first prophecy, the age of the youngest seer, the count of sacred visions. Together they unlock the path to wisdom.'"
+                },
+                {
+                    "id": "offering_table",
+                    "name": "offering table",
+                    "description": "A wooden table with compartments for sacred offerings",
+                    "subcontainers": [
+                        {
+                            "id": "left_compartment",
+                            "name": "left compartment",
+                            "locked": false,
+                            "contains": [
+                                "prophecy_scroll"
+                            ]
+                        },
+                        {
+                            "id": "center_compartment",
+                            "name": "center compartment",
+                            "locked": true,
+                            "lock_type": "combination",
+                            "combination": "777",
+                            "contains": [
+                                "crystal_key"
+                            ]
+                        },
+                        {
+                            "id": "right_compartment",
+                            "name": "right compartment",
+                            "locked": false,
+                            "contains": []
+                        }
+                    ]
+                },
+                {
+                    "id": "prophecy_scroll",
+                    "name": "ancient prophecy scroll",
+                    "description": "A weathered scroll containing the Oracle's first prophecy",
+                    "readable": true,
+                    "text": "The First Prophecy, spoken in the year 7 of the Oracle's reign: 'Three seekers shall come, bearing the sacred number. Seven visions shall guide them, and seven truths shall be revealed. The youngest seer was but 7 years of age when blessed with sight.'"
+                },
+                {
+                    "id": "incense_burner",
+                    "name": "ornate incense burner",
+                    "description": "A bronze burner with intricate carvings, still smoldering with fragrant smoke",
+                    "searchable": true,
+                    "contains": [
+                        "hidden_amulet"
+                    ]
+                },
+                {
+                    "id": "hidden_amulet",
+                    "name": "silver amulet",
+                    "description": "A tarnished silver amulet engraved with mystical symbols"
+                },
+                {
+                    "id": "locked_chest",
+                    "name": "sealed prophecy chest",
+                    "description": "A chest bound with crystal locks, containing sacred texts",
+                    "locked": true,
+                    "key_required": "crystal_key",
+                    "contains": [
+                        "oracle_journal"
+                    ]
+                },
+                {
+                    "id": "oracle_journal",
+                    "name": "Oracle's personal journal",
+                    "description": "A leather-bound journal with the Oracle's private writings",
+                    "readable": true,
+                    "text": "Journal Entry: I am Oracle Cassandra, keeper of visions and speaker of truths. The Inner Sanctum holds the Orb of Destiny, which grants its bearer the power to see their true path. To enter, one must know: my name, where wisdom is kept, and what gift the Oracle possesses."
+                },
+                {
+                    "id": "crystal_key",
+                    "name": "crystal key",
+                    "description": "A key carved from pure crystal that glows with inner light"
+                },
+                {
+                    "id": "carved_stone_archway",
+                    "name": "carved stone archway",
+                    "description": "An archway leading deeper into the Oracle's domain, decorated with prophetic symbols",
+                    "locked": false,
+                    "direction": "north",
+                    "leads_to": "hall_of_visions",
+                    "aliases": [
+                        "archway",
+                        "north"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "hall_of_visions",
+            "name": "Hall of Visions",
+            "description": "A grand hallway lined with towering murals depicting prophetic visions. Each mural shimmers as if alive, showing scenes of past, present, and future. Crystal sconces cast dancing shadows on the walls. At the far end, an imposing door carved with question marks guards the Oracle's Inner Sanctum.",
+            "items": [
+                {
+                    "id": "mural_oracle",
+                    "name": "mural of the Oracle",
+                    "description": "A magnificent painting showing a robed figure with glowing eyes",
+                    "readable": true,
+                    "text": "Mural inscription: 'Oracle Cassandra, blessed with the gift of foresight, keeper of the Sacred Library where all wisdom is preserved.'"
+                },
+                {
+                    "id": "mural_seers",
+                    "name": "mural of the seers",
+                    "description": "A painting depicting three figures with their hands raised to the heavens",
+                    "readable": true,
+                    "text": "Mural inscription: 'The Three Seers who came before - each blessed with the sacred gift of prophecy, able to glimpse the threads of fate.'"
+                },
+                {
+                    "id": "mural_destiny",
+                    "name": "mural of destiny",
+                    "description": "A swirling painting showing paths branching in infinite directions",
+                    "readable": true,
+                    "text": "Mural inscription: 'The Orb of Destiny reveals all paths. It rests in the Inner Sanctum, awaiting one worthy to claim it.'"
+                },
+                {
+                    "id": "vision_pool",
+                    "name": "pool of visions",
+                    "description": "A shallow pool of water that reflects images of possible futures",
+                    "searchable": true,
+                    "contains": [
+                        "prophecy_tablet"
+                    ]
+                },
+                {
+                    "id": "prophecy_tablet",
+                    "name": "stone prophecy tablet",
+                    "description": "A tablet inscribed with ancient wisdom",
+                    "readable": true,
+                    "text": "Tablet inscription: 'Know thyself, seeker. The Oracle's name opens the way. Wisdom dwells in the Sacred Library. The Oracle's blessing is the gift of foresight.'"
+                },
+                {
+                    "id": "meditation_cushions",
+                    "name": "meditation cushions",
+                    "description": "Silk cushions arranged in a circle for contemplation",
+                    "searchable": true,
+                    "contains": [
+                        "silver_amulet"
+                    ]
+                },
+                {
+                    "id": "silver_amulet",
+                    "name": "blessed amulet",
+                    "description": "An amulet that radiates protective energy"
+                },
+                {
+                    "id": "door_to_Inner_Sanctum",
+                    "name": "door to Inner Sanctum",
+                    "description": "A massive door carved with mystical symbols. Three questions are etched into a golden plate mounted on the door.",
+                    "locked": true,
+                    "lock_type": "password",
+                    "password_questions": [
+                        {
+                            "question": "What is the Oracle's name?",
+                            "answer": "cassandra",
+                            "hint": "Check the Oracle's journal and the mural of the Oracle"
+                        },
+                        {
+                            "question": "Where is wisdom preserved?",
+                            "answer": "sacred library",
+                            "hint": "The mural of the Oracle mentions where wisdom is kept"
+                        },
+                        {
+                            "question": "What gift does the Oracle possess?",
+                            "answer": "foresight",
+                            "hint": "Read the prophecy tablet and mural inscriptions carefully"
+                        }
+                    ],
+                    "direction": "east",
+                    "leads_to": "inner_sanctum",
+                    "aliases": [
+                        "door",
+                        "east"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "inner_sanctum",
+            "name": "Oracle's Inner Sanctum",
+            "description": "You have entered the heart of the Oracle's Chamber! The circular room is bathed in soft golden light emanating from a floating crystal orb in the center - the legendary Orb of Destiny. Ancient texts line the walls, and the air thrums with prophetic power. As you approach the orb, visions of your own future flash before your eyes.",
+            "items": [
+                {
+                    "id": "orb_of_destiny",
+                    "name": "Orb of Destiny",
+                    "description": "A magnificent crystal sphere that floats in mid-air, swirling with images of past, present, and future"
+                },
+                {
+                    "id": "oracle_throne",
+                    "name": "Oracle's throne",
+                    "description": "An ornate throne carved from a single piece of white marble, inscribed with prophecies"
+                },
+                {
+                    "id": "sacred_texts",
+                    "name": "shelves of sacred texts",
+                    "description": "Ancient books and scrolls containing all the wisdom of the ages",
+                    "readable": true,
+                    "text": "The texts speak of those who have gazed into the Orb of Destiny and seen their true path. You are now one of them."
+                }
+            ],
+            "exits": [],
+            "is_goal": true,
+            "win_message": "You have reached the Oracle's Inner Sanctum and claimed the Orb of Destiny! As you touch the crystal sphere, visions flood your mind - you see your past, your present, and glimpses of possible futures. The Oracle's voice echoes in your mind: 'You have proven yourself worthy, seeker. The gift of foresight is now yours. Use it wisely.' The orb's light envelops you, and you feel the ancient wisdom of the Oracle flowing through you. You win!"
+        }
+    ]
+}

@@ -69,6 +69,11 @@
           "description": "A key with 'D' stamped on it"
         },
         {
+          "id": "access_card",
+          "name": "corporate access card",
+          "description": "A plastic access card with a magnetic strip"
+        },
+        {
           "id": "elevator_door",
           "name": "elevator door",
           "description": "A sleek chrome elevator door with a card reader",

@@ -1,0 +1,258 @@
+{
+    "theme": "Hall of Mirrors Maze",
+    "title": "Hall of Mirrors Maze Adventure #60",
+    "goal": "Solve the puzzles, achieve the main objective, and escape.",
+    "starting_room": "entrance_hall",
+    "rooms": [
+        {
+            "id": "entrance_hall",
+            "name": "Mirrored Entrance Hall",
+            "description": "You stand in a grand entrance hall where every wall is covered in ornate mirrors of different shapes and sizes. Your reflection multiplies endlessly in all directions, creating a dizzying effect. Crystal chandeliers cast fragmented light across the polished marble floor. A pedestal stands in the center, and an elaborate cabinet rests against the north wall.",
+            "items": [
+                {
+                    "id": "center_pedestal",
+                    "name": "marble pedestal",
+                    "description": "A white marble pedestal with an inscription carved into its base",
+                    "readable": true,
+                    "text": "Welcome to the Hall of Mirrors. To escape, you must understand what the mirrors reveal. The silver shows the past, the gold shows the present, and the crystal shows the future. Remember: 3, 7, 9."
+                },
+                {
+                    "id": "ornate_cabinet",
+                    "name": "mirrored cabinet",
+                    "description": "A tall cabinet with mirrored doors and three drawers",
+                    "subcontainers": [
+                        {
+                            "id": "top_drawer",
+                            "name": "top drawer",
+                            "locked": false,
+                            "contains": [
+                                "reflection_journal"
+                            ]
+                        },
+                        {
+                            "id": "middle_drawer",
+                            "name": "middle drawer",
+                            "locked": true,
+                            "lock_type": "combination",
+                            "combination": "379",
+                            "contains": [
+                                "silver_key"
+                            ]
+                        },
+                        {
+                            "id": "bottom_drawer",
+                            "name": "bottom drawer",
+                            "locked": false,
+                            "contains": []
+                        }
+                    ]
+                },
+                {
+                    "id": "reflection_journal",
+                    "name": "journal of reflections",
+                    "description": "A leather journal with notes about the mirror maze",
+                    "readable": true,
+                    "text": "Day 1: I've discovered that each mirror type reveals different truths. The architect's name was Marcus Silverglass. He built this maze in three sections: the silver mirrors show memories, the gold mirrors show reality, and the crystal mirrors show possibilities. The numbers 3, 7, and 9 are key to everything."
+                },
+                {
+                    "id": "silver_key",
+                    "name": "ornate silver key",
+                    "description": "A decorative key with mirror fragments embedded in its handle"
+                },
+                {
+                    "id": "silver_mirror",
+                    "name": "large silver framed mirror",
+                    "description": "An enormous mirror with an elaborate silver frame. Looking into it, you see not your reflection, but a vision of the past",
+                    "readable": true,
+                    "text": "In the mirror's reflection, you see the architect Marcus Silverglass placing a golden compass into a locked chest. He whispers: 'The reflection chamber holds the truth.'"
+                },
+                {
+                    "id": "locked_chest",
+                    "name": "silver locked chest",
+                    "description": "A chest with a silver lock mechanism beneath the large mirror",
+                    "locked": true,
+                    "key_required": "silver_key",
+                    "contains": [
+                        "golden_compass"
+                    ]
+                },
+                {
+                    "id": "golden_compass",
+                    "name": "golden compass",
+                    "description": "A beautiful compass with a golden case that always points toward truth"
+                },
+                {
+                    "id": "mirrored_archway",
+                    "name": "mirrored archway",
+                    "description": "An archway framed by mirrors leading deeper into the maze",
+                    "locked": false,
+                    "direction": "east",
+                    "leads_to": "reflection_chamber",
+                    "aliases": [
+                        "archway",
+                        "east"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "reflection_chamber",
+            "name": "Chamber of Infinite Reflections",
+            "description": "A hexagonal room where mirrors cover every surface - walls, ceiling, and even parts of the floor. Your image reflects infinitely in all directions, making it impossible to tell which way is real. Three distinct mirrors stand out: one with a gold frame, one with a silver frame, and one with a crystal frame. A strange table sits in the center with various objects.",
+            "items": [
+                {
+                    "id": "gold_mirror",
+                    "name": "tall gold framed mirror",
+                    "description": "A magnificent mirror with an ornate gold frame. It shows your true reflection in the present moment",
+                    "readable": true,
+                    "text": "Looking into the gold mirror, you see yourself clearly. Behind your reflection, you notice words appearing: 'The architect's name unlocks the way forward. Seek where memories are stored. The crystal reveals the final path.'"
+                },
+                {
+                    "id": "silver_mirror_two",
+                    "name": "antique silver framed mirror",
+                    "description": "Another silver-framed mirror showing visions of the past",
+                    "readable": true,
+                    "text": "In this mirror, you see a memory of someone placing a crystal shard into a hidden compartment. A voice echoes: 'The memory vault holds what you seek.'"
+                },
+                {
+                    "id": "crystal_mirror",
+                    "name": "shimmering crystal framed mirror",
+                    "description": "A mirror with a frame made of pure crystal that seems to show possible futures",
+                    "readable": true,
+                    "text": "The crystal mirror shows a vision of you standing before a door, holding a crystal shard and speaking the architect's name. The future is not yet written, but this path leads to freedom."
+                },
+                {
+                    "id": "center_table",
+                    "name": "glass table",
+                    "description": "A table made entirely of mirrors and glass, with a locked compartment underneath",
+                    "searchable": true,
+                    "contains": [
+                        "maze_map"
+                    ]
+                },
+                {
+                    "id": "maze_map",
+                    "name": "map of the maze",
+                    "description": "A detailed map showing the layout of the Hall of Mirrors",
+                    "readable": true,
+                    "text": "The map shows three main chambers: Entrance Hall, Reflection Chamber, and Memory Vault. A note reads: 'The Memory Vault contains the final key. The exit requires knowledge of the architect and the location of memories.'"
+                },
+                {
+                    "id": "mirror_box",
+                    "name": "mirrored puzzle box",
+                    "description": "A complex box covered in small mirrors with a combination lock",
+                    "locked": true,
+                    "lock_type": "combination",
+                    "combination": "379",
+                    "contains": [
+                        "vault_key"
+                    ]
+                },
+                {
+                    "id": "vault_key",
+                    "name": "brass vault key",
+                    "description": "A heavy brass key labeled 'Memory Vault'"
+                },
+                {
+                    "id": "mirror_lined_passage",
+                    "name": "mirror lined passage",
+                    "description": "A narrow passage lined with mirrors leading north",
+                    "locked": true,
+                    "key_required": "vault_key",
+                    "direction": "north",
+                    "leads_to": "memory_vault",
+                    "aliases": [
+                        "passage",
+                        "north"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "memory_vault",
+            "name": "Memory Vault",
+            "description": "A circular chamber with walls covered in small mirror panels, each one showing a different memory or moment in time. The air shimmers with an otherworldly quality. In the center stands a pedestal holding a crystal shard. A magnificent door covered in mirror tiles blocks the exit, with an inscription panel beside it.",
+            "items": [
+                {
+                    "id": "memory_pedestal",
+                    "name": "crystal pedestal",
+                    "description": "A pedestal made of clear crystal holding a glowing shard",
+                    "searchable": true,
+                    "contains": [
+                        "crystal_shard"
+                    ]
+                },
+                {
+                    "id": "crystal_shard",
+                    "name": "glowing crystal shard",
+                    "description": "A fragment of crystal that pulses with inner light, the final artifact needed to escape"
+                },
+                {
+                    "id": "memory_mirrors",
+                    "name": "wall of memory mirrors",
+                    "description": "Hundreds of small mirrors, each showing a different memory",
+                    "readable": true,
+                    "text": "The mirrors show fragments of memories: the architect Marcus Silverglass designing the maze, visitors getting lost in reflections, and finally, a vision of the exit door opening when the correct answers are given."
+                },
+                {
+                    "id": "inscription_panel",
+                    "name": "bronze inscription panel",
+                    "description": "A panel with carved text explaining the final challenge",
+                    "readable": true,
+                    "text": "Final Challenge: To escape the Hall of Mirrors, you must prove you understand what you have learned. Answer these questions and the door shall open."
+                },
+                {
+                    "id": "door_of_mirrors",
+                    "name": "door of mirrors",
+                    "description": "A massive door covered in mirror tiles. Three questions are etched into a brass plate beside it.",
+                    "locked": true,
+                    "lock_type": "password",
+                    "password_questions": [
+                        {
+                            "question": "Who built this maze?",
+                            "answer": "marcus silverglass",
+                            "hint": "Check the journal of reflections in the entrance hall"
+                        },
+                        {
+                            "question": "Where are memories stored?",
+                            "answer": "memory vault",
+                            "hint": "The map and the silver mirrors mention this location"
+                        },
+                        {
+                            "question": "What shows the future?",
+                            "answer": "crystal",
+                            "hint": "The pedestal inscription mentioned three types of mirrors and what they show"
+                        }
+                    ],
+                    "direction": "west",
+                    "leads_to": "freedom",
+                    "aliases": [
+                        "door",
+                        "exit",
+                        "west"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "freedom",
+            "name": "Exit Gallery",
+            "description": "You step through the door into a bright, open gallery with windows showing the outside world. The oppressive maze of mirrors is behind you. Sunlight streams through the windows, and a simple wooden door leads to true freedom. You have conquered the Hall of Mirrors!",
+            "items": [
+                {
+                    "id": "exit_plaque",
+                    "name": "commemorative plaque",
+                    "description": "A brass plaque on the wall",
+                    "readable": true,
+                    "text": "Congratulations to those who escape the Hall of Mirrors. You have proven your ability to see through illusions and find truth in reflections. - Marcus Silverglass, Architect"
+                }
+            ],
+            "exits": [],
+            "is_goal": true,
+            "win_message": "You have successfully navigated the Hall of Mirrors Maze! The crystal shard in your hand glows brightly as you step into the sunlight. The maze's illusions no longer hold power over you - you have learned to distinguish reflection from reality, past from present, and possibility from truth. You are free! You win!"
+        }
+    ]
+}

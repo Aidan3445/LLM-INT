@@ -1,0 +1,255 @@
+{
+    "theme": "Gilded Opera House",
+    "title": "Gilded Opera House Adventure #26",
+    "goal": "Solve the puzzles, achieve the main objective, and escape.",
+    "starting_room": "costume_storage",
+    "rooms": [
+        {
+            "id": "costume_storage",
+            "name": "Costume Storage Room",
+            "description": "A cramped backstage room filled with elaborate costumes from past productions. Velvet gowns, feathered hats, and ornate masks hang from racks. The air smells of mothballs and old fabric. Trunks and boxes are stacked against the walls. A single gas lamp flickers, casting dancing shadows across sequined dresses and silk capes.",
+            "items": [
+                {
+                    "id": "costume_rack",
+                    "name": "costume rack",
+                    "description": "A wheeled rack holding elaborate period costumes from various operas",
+                    "searchable": true,
+                    "contains": [
+                        "hidden_note"
+                    ]
+                },
+                {
+                    "id": "hidden_note",
+                    "name": "wardrobe mistress note",
+                    "description": "A note tucked into a costume pocket",
+                    "readable": true,
+                    "text": "Reminder: The opera house opened in 1889 with a performance of La Traviata. Maestro Bellini keeps the orchestra pit key in the prop trunk. The combination is our opening year."
+                },
+                {
+                    "id": "prop_trunk",
+                    "name": "large prop trunk",
+                    "description": "A heavy trunk with brass fittings and a four digit combination lock",
+                    "locked": true,
+                    "lock_type": "combination",
+                    "combination": "1889",
+                    "contains": [
+                        "brass_key",
+                        "opera_program"
+                    ]
+                },
+                {
+                    "id": "brass_key",
+                    "name": "brass key",
+                    "description": "A key engraved with musical notes and the words 'Orchestra Pit'"
+                },
+                {
+                    "id": "opera_program",
+                    "name": "opening night program",
+                    "description": "A preserved program from the opera house's grand opening",
+                    "readable": true,
+                    "text": "GRAND OPENING 1889: La Traviata by Giuseppe Verdi. Conducted by Maestro Bellini. Stage Manager: Antonio Rossi. This magnificent opera house stands as a temple to the musical arts."
+                },
+                {
+                    "id": "makeup_table",
+                    "name": "makeup table",
+                    "description": "A cluttered table with mirrors and theatrical makeup",
+                    "subcontainers": [
+                        {
+                            "id": "top_drawer",
+                            "name": "top drawer",
+                            "locked": false,
+                            "contains": [
+                                "stage_manager_journal"
+                            ]
+                        },
+                        {
+                            "id": "bottom_drawer",
+                            "name": "bottom drawer",
+                            "locked": false,
+                            "contains": []
+                        }
+                    ]
+                },
+                {
+                    "id": "stage_manager_journal",
+                    "name": "stage manager's journal",
+                    "description": "A leather journal belonging to Antonio Rossi",
+                    "readable": true,
+                    "text": "Antonio Rossi, Stage Manager: Tonight we perform La Traviata in the grand hall. The royal box offers the finest view. Maestro Bellini conducts with passion. Remember: only those who know our history may access the royal box."
+                },
+                {
+                    "id": "mask_display",
+                    "name": "venetian mask display",
+                    "description": "A collection of ornate masks from various productions",
+                    "searchable": true,
+                    "contains": [
+                        "silver_mask"
+                    ]
+                },
+                {
+                    "id": "silver_mask",
+                    "name": "silver opera mask",
+                    "description": "An elegant silver mask decorated with crystals"
+                },
+                {
+                    "id": "storage_room_door",
+                    "name": "storage room door",
+                    "description": "A wooden door leading to the orchestra pit area",
+                    "locked": true,
+                    "key_required": "brass_key",
+                    "direction": "north",
+                    "leads_to": "orchestra_pit",
+                    "aliases": [
+                        "door",
+                        "north"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "orchestra_pit",
+            "name": "Orchestra Pit",
+            "description": "The sunken orchestra pit beneath the stage. Music stands and chairs are arranged in perfect formation. Sheet music is scattered across the conductor's podium. The smell of rosin and wood polish fills the air. Above, the grand stage looms. Ornate railings separate the pit from the audience seating.",
+            "items": [
+                {
+                    "id": "conductors_podium",
+                    "name": "conductor's podium",
+                    "description": "An elevated platform with a music stand and baton",
+                    "searchable": true,
+                    "contains": [
+                        "sheet_music"
+                    ]
+                },
+                {
+                    "id": "sheet_music",
+                    "name": "annotated sheet music",
+                    "description": "Sheet music for La Traviata with handwritten notes",
+                    "readable": true,
+                    "text": "La Traviata by Giuseppe Verdi - Maestro Bellini's personal copy. Note in margin: 'This opera, composed by the great Verdi, remains our finest production. The royal box key is hidden in the instrument locker.'"
+                },
+                {
+                    "id": "instrument_locker",
+                    "name": "instrument storage locker",
+                    "description": "A tall locker containing various orchestral instruments",
+                    "subcontainers": [
+                        {
+                            "id": "violin_case",
+                            "name": "violin case",
+                            "locked": false,
+                            "contains": [
+                                "concert_master_note"
+                            ]
+                        },
+                        {
+                            "id": "hidden_compartment",
+                            "name": "hidden compartment",
+                            "locked": false,
+                            "contains": [
+                                "golden_key"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "concert_master_note",
+                    "name": "concert master's note",
+                    "description": "A note from the lead violinist",
+                    "readable": true,
+                    "text": "The royal box is reserved for distinguished guests. To enter, one must prove knowledge of our opera house: What opera did we open with? Who composed it? Who conducts our orchestra?"
+                },
+                {
+                    "id": "golden_key",
+                    "name": "ornate golden key",
+                    "description": "A decorative key with 'Royal Box' engraved on it"
+                },
+                {
+                    "id": "music_stand",
+                    "name": "first violin music stand",
+                    "description": "A stand with more sheet music and performance notes",
+                    "readable": true,
+                    "text": "Performance notes: La Traviata, composed by Giuseppe Verdi, conducted by Maestro Bellini. This production showcases the finest talents of our opera house."
+                },
+                {
+                    "id": "opera_glasses_case",
+                    "name": "velvet opera glasses case",
+                    "description": "An elegant case sitting on a chair",
+                    "searchable": true,
+                    "contains": [
+                        "mother_of_pearl_opera_glasses"
+                    ]
+                },
+                {
+                    "id": "mother_of_pearl_opera_glasses",
+                    "name": "mother of pearl opera glasses",
+                    "description": "Exquisite opera glasses with mother of pearl inlay"
+                },
+                {
+                    "id": "grand_staircase_to_royal_box",
+                    "name": "grand staircase to royal box",
+                    "description": "A carpeted staircase leading up to the royal box. A velvet rope blocks access, and a brass plaque displays three questions.",
+                    "locked": true,
+                    "lock_type": "password",
+                    "password_questions": [
+                        {
+                            "question": "What opera opened this house?",
+                            "answer": "la traviata",
+                            "hint": "Check the opening night program and various notes around the opera house"
+                        },
+                        {
+                            "question": "Who composed this opera?",
+                            "answer": "giuseppe verdi",
+                            "hint": "The sheet music and performance notes mention the composer"
+                        },
+                        {
+                            "question": "Who conducts the orchestra?",
+                            "answer": "maestro bellini",
+                            "hint": "Multiple documents reference the conductor's name"
+                        }
+                    ],
+                    "direction": "east",
+                    "leads_to": "royal_box",
+                    "aliases": [
+                        "staircase",
+                        "stairs",
+                        "east",
+                        "up"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "royal_box",
+            "name": "Royal Box",
+            "description": "You have reached the magnificent royal box! Plush velvet seats face the grand stage below. Crystal chandeliers sparkle overhead. The view of the entire opera house is breathtaking. Gilded railings and ornate decorations surround you. A private exit door leads to the street outside, offering your escape from the opera house.",
+            "items": [
+                {
+                    "id": "velvet_seats",
+                    "name": "plush velvet seats",
+                    "description": "Luxurious seating reserved for royalty and distinguished guests"
+                },
+                {
+                    "id": "crystal_chandelier",
+                    "name": "crystal chandelier",
+                    "description": "A magnificent chandelier casting prismatic light throughout the box"
+                },
+                {
+                    "id": "gilded_railing",
+                    "name": "gilded railing",
+                    "description": "An ornate gold railing overlooking the stage and audience below"
+                },
+                {
+                    "id": "commemorative_plaque",
+                    "name": "commemorative plaque",
+                    "description": "A brass plaque mounted on the wall",
+                    "readable": true,
+                    "text": "This Royal Box was inaugurated in 1889 at the grand opening of our opera house. May the arts flourish here for generations to come."
+                }
+            ],
+            "exits": [],
+            "is_goal": true,
+            "win_message": "Congratulations! You have reached the royal box and found the private exit to freedom! As you step through the door into the cool night air, you hear the faint strains of La Traviata echoing from within. You have successfully navigated the mysteries of the Gilded Opera House and made your escape. Bravo! You win!"
+        }
+    ]
+}

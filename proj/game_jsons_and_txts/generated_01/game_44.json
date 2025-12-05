@@ -1,0 +1,324 @@
+{
+    "theme": "Mystery Theater Dressing Room",
+    "title": "Mystery Theater Dressing Room Adventure #44",
+    "goal": "Solve the puzzles, achieve the main objective, and escape.",
+    "starting_room": "stars_dressing_room",
+    "rooms": [
+        {
+            "id": "stars_dressing_room",
+            "name": "Star's Dressing Room",
+            "description": "An elegant dressing room with a large vanity mirror surrounded by bright bulbs. Costumes hang on a brass rack, and theatrical posters adorn the walls. The air smells of greasepaint and perfume. A bouquet of wilted roses sits on the vanity, and makeup is scattered everywhere. The room feels frozen in time, as if the star just stepped out.",
+            "items": [
+                {
+                    "id": "vanity_table",
+                    "name": "vanity table",
+                    "description": "An ornate vanity with a large mirror and three drawers filled with makeup and theatrical supplies",
+                    "subcontainers": [
+                        {
+                            "id": "top_drawer",
+                            "name": "top drawer",
+                            "locked": false,
+                            "contains": [
+                                "opening_night_program"
+                            ]
+                        },
+                        {
+                            "id": "middle_drawer",
+                            "name": "middle drawer",
+                            "locked": true,
+                            "lock_type": "combination",
+                            "combination": "1927",
+                            "contains": [
+                                "brass_key"
+                            ]
+                        },
+                        {
+                            "id": "bottom_drawer",
+                            "name": "bottom drawer",
+                            "locked": false,
+                            "contains": []
+                        }
+                    ]
+                },
+                {
+                    "id": "opening_night_program",
+                    "name": "opening night program",
+                    "description": "A vintage theater program from the grand opening",
+                    "readable": true,
+                    "text": "GRAND OPENING - The Starlight Theater, 1927. Tonight's Performance: 'The Phantom's Masquerade' starring the incomparable Vivienne Noir. Directed by the legendary Marcus Thornwood. This magnificent theater brings Broadway glamour to our city!"
+                },
+                {
+                    "id": "brass_key",
+                    "name": "ornate brass key",
+                    "description": "A decorative brass key with theatrical masks engraved on it"
+                },
+                {
+                    "id": "costume_rack",
+                    "name": "costume rack",
+                    "description": "A brass rack holding elaborate theatrical costumes",
+                    "searchable": true,
+                    "contains": [
+                        "hidden_letter"
+                    ]
+                },
+                {
+                    "id": "hidden_letter",
+                    "name": "personal letter",
+                    "description": "A letter tucked into a costume pocket",
+                    "readable": true,
+                    "text": "My dearest Vivienne, your performance tonight was magnificent! The Starlight Theater has never seen such talent. Director Thornwood says you are destined for greatness. Remember, the spotlight is where you truly belong. - Your devoted admirer"
+                },
+                {
+                    "id": "theatrical_posters",
+                    "name": "framed theatrical posters",
+                    "description": "Vintage posters advertising past performances",
+                    "readable": true,
+                    "text": "Multiple posters feature Vivienne Noir in various roles: 'The Phantom's Masquerade', 'Midnight in Paris', 'The Crimson Rose'. Each poster prominently displays 'Starlight Theater' and 'Directed by Marcus Thornwood'."
+                },
+                {
+                    "id": "locked_trunk",
+                    "name": "costume trunk",
+                    "description": "A large theatrical trunk with brass fittings and a lock",
+                    "locked": true,
+                    "key_required": "brass_key",
+                    "contains": [
+                        "actress_diary",
+                        "stage_pass"
+                    ]
+                },
+                {
+                    "id": "actress_diary",
+                    "name": "Vivienne's diary",
+                    "description": "A leather-bound diary with gold lettering",
+                    "readable": true,
+                    "text": "Tonight is opening night at the Starlight Theater! I can hardly believe this is happening. Director Thornwood has been so supportive. The spotlight calls to me - it's where I feel most alive. I must remember the three truths if I ever need to escape through the director's office."
+                },
+                {
+                    "id": "stage_pass",
+                    "name": "backstage pass",
+                    "description": "A laminated pass granting access to backstage areas"
+                },
+                {
+                    "id": "dressing_room_door",
+                    "name": "dressing room door",
+                    "description": "A door with a star nameplate reading 'Vivienne Noir', leading to the backstage props room",
+                    "locked": true,
+                    "key_required": "stage_pass",
+                    "direction": "west",
+                    "leads_to": "backstage_props_room",
+                    "aliases": [
+                        "door",
+                        "west"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "backstage_props_room",
+            "name": "Backstage Props Room",
+            "description": "A cluttered room filled with theatrical props, set pieces, and equipment. Painted backdrops lean against the walls. Prop swords, fake flowers, and vintage furniture create a maze of theatrical history. Dust covers everything, and the smell of old paint and wood fills the air. A door to the north leads to the director's office.",
+            "items": [
+                {
+                    "id": "prop_table",
+                    "name": "props table",
+                    "description": "A large table covered with various theatrical props and accessories",
+                    "searchable": true,
+                    "contains": [
+                        "theater_history_book"
+                    ]
+                },
+                {
+                    "id": "theater_history_book",
+                    "name": "theater history book",
+                    "description": "A book documenting the Starlight Theater's history",
+                    "readable": true,
+                    "text": "The Starlight Theater: A History. Founded in 1927 by visionary director Marcus Thornwood. The theater's crown jewel was its magnificent spotlight, which illuminated countless stars. The greatest of these was Vivienne Noir, whose talent shone brightest under the spotlight's glow."
+                },
+                {
+                    "id": "painted_backdrops",
+                    "name": "painted backdrops",
+                    "description": "Large canvas backdrops depicting various theatrical scenes",
+                    "readable": true,
+                    "text": "The backdrops show scenes from famous productions: a Parisian street, a haunted mansion, a grand ballroom. Each is signed 'Starlight Theater - M. Thornwood, Director'."
+                },
+                {
+                    "id": "equipment_cabinet",
+                    "name": "equipment cabinet",
+                    "description": "A metal cabinet storing lighting and sound equipment",
+                    "subcontainers": [
+                        {
+                            "id": "top_shelf",
+                            "name": "top shelf",
+                            "locked": false,
+                            "contains": [
+                                "lighting_manual"
+                            ]
+                        },
+                        {
+                            "id": "bottom_shelf",
+                            "name": "bottom shelf",
+                            "locked": false,
+                            "contains": [
+                                "silver_key"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "lighting_manual",
+                    "name": "lighting manual",
+                    "description": "A technical manual for the theater's lighting system",
+                    "readable": true,
+                    "text": "STARLIGHT THEATER LIGHTING SYSTEM: The main spotlight is the heart of our theater. All great performances happen under the spotlight. Director Thornwood insists that proper lighting is essential to theatrical magic."
+                },
+                {
+                    "id": "silver_key",
+                    "name": "silver key",
+                    "description": "A silver key labeled 'Director's Office'"
+                },
+                {
+                    "id": "prop_chest",
+                    "name": "prop storage chest",
+                    "description": "A wooden chest filled with miscellaneous props",
+                    "searchable": true,
+                    "contains": [
+                        "script_pages"
+                    ]
+                },
+                {
+                    "id": "script_pages",
+                    "name": "script pages",
+                    "description": "Pages from 'The Phantom's Masquerade' script",
+                    "readable": true,
+                    "text": "Script notes in the margin: 'Vivienne - remember your motivation. You are drawn to the spotlight. It is your destiny. The spotlight reveals all truth. - Director M. Thornwood'"
+                },
+                {
+                    "id": "director's_office_door",
+                    "name": "director's office door",
+                    "description": "A polished wooden door with a brass nameplate reading 'Marcus Thornwood - Director'. It has a silver keyhole.",
+                    "locked": true,
+                    "key_required": "silver_key",
+                    "direction": "north",
+                    "leads_to": "directors_office",
+                    "aliases": [
+                        "door",
+                        "north"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "directors_office",
+            "name": "Director's Office",
+            "description": "An elegant office with mahogany furniture and theatrical memorabilia. Awards and photographs line the walls, documenting decades of successful productions. A large desk dominates the room, and a window overlooks the stage. The final exit door, leading to freedom, stands at the far end with an electronic keypad displaying three security questions.",
+            "items": [
+                {
+                    "id": "directors_desk",
+                    "name": "director's desk",
+                    "description": "A grand mahogany desk covered with scripts and production notes",
+                    "searchable": true,
+                    "contains": [
+                        "production_notes"
+                    ]
+                },
+                {
+                    "id": "production_notes",
+                    "name": "production notes",
+                    "description": "Director Thornwood's personal notes on various productions",
+                    "readable": true,
+                    "text": "Notes on 'The Phantom's Masquerade': Vivienne Noir is a natural star. She understands that the spotlight is where magic happens. The Starlight Theater was built for performers like her. Remember: the theater's name, the star's destiny, and the director's vision are the keys to everything."
+                },
+                {
+                    "id": "photo_wall",
+                    "name": "wall of photographs",
+                    "description": "Framed photographs of theatrical productions and performers",
+                    "readable": true,
+                    "text": "Dozens of photos show Vivienne Noir in various roles, always center stage under the spotlight. Captions read: 'Vivienne Noir - Star of the Starlight Theater', 'The spotlight belongs to Vivienne', 'Marcus Thornwood directs another masterpiece'."
+                },
+                {
+                    "id": "award_shelf",
+                    "name": "award shelf",
+                    "description": "A shelf displaying theatrical awards and trophies",
+                    "readable": true,
+                    "text": "Multiple awards for 'Best Director - Marcus Thornwood' and 'Best Actress - Vivienne Noir'. One trophy is engraved: 'Starlight Theater - Where Stars Shine Brightest Under the Spotlight'."
+                },
+                {
+                    "id": "filing_cabinet",
+                    "name": "filing cabinet",
+                    "description": "A cabinet with theater records and contracts",
+                    "subcontainers": [
+                        {
+                            "id": "contracts_drawer",
+                            "name": "contracts drawer",
+                            "locked": false,
+                            "contains": [
+                                "theater_contract"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "theater_contract",
+                    "name": "theater contract",
+                    "description": "Vivienne Noir's original contract with the Starlight Theater",
+                    "readable": true,
+                    "text": "CONTRACT: Vivienne Noir agrees to perform exclusively at the Starlight Theater under the direction of Marcus Thornwood. The spotlight shall be hers, and she shall bring glory to this establishment. Signed 1927."
+                },
+                {
+                    "id": "stage_exit_door",
+                    "name": "stage exit door",
+                    "description": "A heavy door with an electronic security panel. Three questions glow on the display screen, requiring answers to unlock the exit to freedom.",
+                    "locked": true,
+                    "lock_type": "password",
+                    "password_questions": [
+                        {
+                            "question": "What is the name of this theater?",
+                            "answer": "starlight theater",
+                            "hint": "Check the opening night program and various documents throughout the theater"
+                        },
+                        {
+                            "question": "Where does the star belong?",
+                            "answer": "spotlight",
+                            "hint": "Multiple references in the diary, scripts, and production notes mention this"
+                        },
+                        {
+                            "question": "Who directed the productions?",
+                            "answer": "marcus thornwood",
+                            "hint": "The director's name appears on programs, posters, and the office door"
+                        }
+                    ],
+                    "direction": "east",
+                    "leads_to": "stage_exit",
+                    "aliases": [
+                        "exit",
+                        "east"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "stage_exit",
+            "name": "Stage Exit to Freedom",
+            "description": "You've made it to the stage exit! You step through the door onto the grand stage of the Starlight Theater. The spotlight shines down on you, illuminating your path to freedom. The house lights come up, revealing rows of empty velvet seats. The exit doors at the back of the theater stand open, showing the night sky beyond. Fresh air rushes in, and you can hear the sounds of the city outside.",
+            "items": [
+                {
+                    "id": "grand_spotlight",
+                    "name": "grand spotlight",
+                    "description": "The magnificent spotlight that made the Starlight Theater famous, now shining on you"
+                },
+                {
+                    "id": "stage_curtains",
+                    "name": "velvet stage curtains",
+                    "description": "Rich red velvet curtains framing the stage"
+                },
+                {
+                    "id": "theater_exit_doors",
+                    "name": "theater exit doors",
+                    "description": "Open doors leading out to freedom and the world beyond"
+                }
+            ],
+            "is_goal": true,
+            "win_message": "Congratulations! You've escaped the Mystery Theater Dressing Room! As you stand on the grand stage under the spotlight, you feel like a true star. The mysteries of the Starlight Theater have been solved, and you've discovered the secrets of Vivienne Noir and Director Thornwood. The exit doors lead you out into the night, free at last. You win!"
+        }
+    ]
+}

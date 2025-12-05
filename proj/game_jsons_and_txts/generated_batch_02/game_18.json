@@ -1,0 +1,236 @@
+{
+  "theme": "Mystery Theater Dressing Room",
+  "title": "Mystery Theater Dressing Room Adventure #18",
+  "goal": "Solve the puzzles, achieve the main objective, and escape.",
+  "starting_room": "stars_dressing_room",
+  "rooms": [
+    {
+      "id": "stars_dressing_room",
+      "name": "Star's Dressing Room",
+      "description": "An elegant dressing room with a large mirror surrounded by bright bulbs. Costumes hang on a rack, and makeup covers a vanity table. A faded poster on the wall shows a glamorous actress. The air smells of old perfume and stage makeup. A locked door leads backstage.",
+      "items": [
+        {
+          "id": "vanity_table",
+          "name": "makeup vanity table",
+          "description": "A cluttered table with makeup, brushes, and various cosmetics. Three drawers are built into the front.",
+          "subcontainers": [
+            {
+              "id": "top_drawer",
+              "name": "top drawer",
+              "locked": false,
+              "contains": [
+                "opening_night_program"
+              ]
+            },
+            {
+              "id": "middle_drawer",
+              "name": "middle drawer",
+              "locked": true,
+              "lock_type": "combination",
+              "combination": "1952",
+              "contains": [
+                "brass_key"
+              ]
+            },
+            {
+              "id": "bottom_drawer",
+              "name": "bottom drawer",
+              "locked": false,
+              "contains": []
+            }
+          ]
+        },
+        {
+          "id": "opening_night_program",
+          "name": "opening night program",
+          "description": "A vintage theater program from the show's premiere",
+          "readable": true,
+          "text": "THE MIDNIGHT MASQUERADE - Opening Night, 1952. Starring the incomparable Victoria Blackwood as Lady Sinclair. Performed at the Grand Orpheum Theater. A thrilling mystery in three acts!"
+        },
+        {
+          "id": "brass_key",
+          "name": "ornate brass key",
+          "description": "A decorative brass key with theatrical masks engraved on the handle"
+        },
+        {
+          "id": "costume_rack",
+          "name": "costume rack",
+          "description": "A rolling rack filled with elaborate period costumes and gowns",
+          "searchable": true,
+          "contains": [
+            "hidden_note"
+          ]
+        },
+        {
+          "id": "hidden_note",
+          "name": "crumpled note",
+          "description": "A note hidden in a costume pocket",
+          "readable": true,
+          "text": "Reminder for tonight's performance: The final prop is the silver dagger. Don't forget! Victoria must have it for the climactic scene. - Stage Manager"
+        },
+        {
+          "id": "makeup_case",
+          "name": "locked makeup case",
+          "description": "A vintage leather case with a brass lock, containing professional stage makeup",
+          "locked": true,
+          "key_required": "brass_key",
+          "contains": [
+            "directors_letter"
+          ]
+        },
+        {
+          "id": "directors_letter",
+          "name": "director's letter",
+          "description": "A personal letter addressed to the lead actress",
+          "readable": true,
+          "text": "Dearest Victoria, your performance as Lady Sinclair has made The Midnight Masquerade the talk of the town. The Grand Orpheum has never seen such talent. Remember, the show must go on! - Director Harold Pemberton"
+        },
+        {
+          "id": "theater_poster",
+          "name": "vintage theater poster",
+          "description": "A framed poster showing a glamorous actress in an elegant gown",
+          "readable": true,
+          "text": "THE MIDNIGHT MASQUERADE starring VICTORIA BLACKWOOD. Now playing at the Grand Orpheum Theater. A mystery that will keep you guessing until the final curtain!"
+        },
+        {
+          "id": "backstage_door",
+          "name": "backstage door",
+          "description": "A heavy wooden door with a star painted on it, leading to the backstage area",
+          "locked": true,
+          "key_required": "brass_key",
+          "direction": "west",
+          "leads_to": "backstage_props_room",
+          "aliases": [
+            "door",
+            "west"
+          ]
+        }
+      ],
+      "exits": []
+    },
+    {
+      "id": "backstage_props_room",
+      "name": "Backstage Props Room",
+      "description": "A cluttered storage room filled with theatrical props, set pieces, and equipment. Ropes and pulleys hang from the ceiling. Dusty furniture and fake weapons line the walls. A large prop cabinet dominates one corner. The stage exit door is visible to the north, secured with an electronic lock.",
+      "items": [
+        {
+          "id": "prop_cabinet",
+          "name": "large prop cabinet",
+          "description": "A tall wooden cabinet with glass doors, displaying various stage props and weapons",
+          "searchable": true,
+          "contains": [
+            "silver_dagger",
+            "stage_manager_log"
+          ]
+        },
+        {
+          "id": "silver_dagger",
+          "name": "silver dagger prop",
+          "description": "A theatrical prop dagger made of silver-painted wood, used in the final scene"
+        },
+        {
+          "id": "stage_manager_log",
+          "name": "stage manager's logbook",
+          "description": "A worn notebook with production notes and schedules",
+          "readable": true,
+          "text": "Production Log: The Midnight Masquerade has been running for 6 months at the Grand Orpheum. Lead actress Victoria Blackwood is brilliant. The silver dagger prop is crucial for Act III. Security code reminder: Lead actress name, theater name, final prop."
+        },
+        {
+          "id": "prop_table",
+          "name": "props table",
+          "description": "A long table covered with various theatrical props and set dressing",
+          "subcontainers": [
+            {
+              "id": "left_box",
+              "name": "left box",
+              "locked": false,
+              "contains": [
+                "rehearsal_notes"
+              ]
+            },
+            {
+              "id": "right_box",
+              "name": "right box",
+              "locked": false,
+              "contains": []
+            }
+          ]
+        },
+        {
+          "id": "rehearsal_notes",
+          "name": "rehearsal notes",
+          "description": "Notes from a recent rehearsal session",
+          "readable": true,
+          "text": "Rehearsal Notes: Victoria nailed the final scene today. The moment when Lady Sinclair reveals the silver dagger always gives me chills. This show at the Grand Orpheum is going to run for years!"
+        },
+        {
+          "id": "costume_trunk",
+          "name": "old costume trunk",
+          "description": "A battered trunk filled with old costumes and accessories",
+          "searchable": true,
+          "contains": [
+            "theater_history"
+          ]
+        },
+        {
+          "id": "theater_history",
+          "name": "theater history booklet",
+          "description": "A small booklet about the Grand Orpheum Theater",
+          "readable": true,
+          "text": "The Grand Orpheum Theater - A Historic Landmark. Built in 1898, the Grand Orpheum has hosted countless legendary performances. Current production: The Midnight Masquerade, starring Victoria Blackwood."
+        },
+        {
+          "id": "stage_exit_door",
+          "name": "stage exit door",
+          "description": "A modern security door with an electronic keypad. A sign reads: 'Emergency Stage Exit - Authorized Personnel Only.' Three security questions are displayed on the screen.",
+          "locked": true,
+          "lock_type": "password",
+          "password_questions": [
+            {
+              "question": "Who is the lead actress?",
+              "answer": "victoria blackwood",
+              "hint": "Check the opening night program and theater poster"
+            },
+            {
+              "question": "What is the name of this theater?",
+              "answer": "grand orpheum",
+              "hint": "Multiple documents mention the theater's name"
+            },
+            {
+              "question": "What is the final prop?",
+              "answer": "silver dagger",
+              "hint": "The stage manager's notes mention the crucial prop for Act III"
+            }
+          ],
+          "direction": "north",
+          "leads_to": "stage_exit",
+          "aliases": [
+            "exit",
+            "north"
+          ]
+        }
+      ],
+      "exits": []
+    },
+    {
+      "id": "stage_exit",
+      "name": "Stage Exit to Freedom",
+      "description": "You've made it to the stage exit! The door opens onto a quiet alley behind the theater. The night air is cool and refreshing. Street lights illuminate the path to freedom. The mystery of the locked dressing room is behind you now.",
+      "items": [
+        {
+          "id": "exit_sign",
+          "name": "illuminated exit sign",
+          "description": "A glowing red exit sign marking your escape route"
+        },
+        {
+          "id": "alley_view",
+          "name": "view of the alley",
+          "description": "Through the open door, you can see the peaceful alley and the city beyond"
+        }
+      ],
+      "exits": [],
+      "is_goal": true,
+      "win_message": "Congratulations! You've solved the mysteries of the theater dressing room and made your escape through the stage exit. The secrets of Victoria Blackwood's dressing room and The Midnight Masquerade are yours to keep. The show must go on, but your adventure has reached its final curtain. You win!"
+    }
+  ]
+}

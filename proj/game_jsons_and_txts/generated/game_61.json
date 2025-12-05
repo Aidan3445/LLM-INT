@@ -1,0 +1,264 @@
+{
+    "theme": "Vampire Manor",
+    "title": "Vampire Manor Adventure #61",
+    "goal": "Solve the puzzles, achieve the main objective, and escape.",
+    "starting_room": "vampire_study",
+    "rooms": [
+        {
+            "id": "vampire_study",
+            "name": "Vampire's Study",
+            "description": "A dimly lit study with towering bookshelves filled with ancient tomes. Moonlight filters through heavy velvet curtains, casting eerie shadows across a massive oak desk. The air smells of old parchment and something metallic. Portraits of pale aristocrats line the walls, their eyes seeming to follow your every move.",
+            "items": [
+                {
+                    "id": "oak_desk",
+                    "name": "vampire lord's desk",
+                    "description": "An ornate desk carved with bat motifs and gothic symbols. Three drawers are built into the front.",
+                    "subcontainers": [
+                        {
+                            "id": "top_drawer",
+                            "name": "top drawer",
+                            "locked": false,
+                            "contains": [
+                                "blood_journal"
+                            ]
+                        },
+                        {
+                            "id": "middle_drawer",
+                            "name": "middle drawer",
+                            "locked": true,
+                            "lock_type": "combination",
+                            "combination": "1476",
+                            "contains": [
+                                "iron_key"
+                            ]
+                        },
+                        {
+                            "id": "bottom_drawer",
+                            "name": "bottom drawer",
+                            "locked": false,
+                            "contains": []
+                        }
+                    ]
+                },
+                {
+                    "id": "blood_journal",
+                    "name": "vampire lord's journal",
+                    "description": "A leather-bound journal with crimson-stained pages",
+                    "readable": true,
+                    "text": "Entry from 1476: I, Count Vladislav Dr\u0103cule\u0219ti, have ruled this manor for centuries. My servants are loyal: Renfield the butler, Carmilla the handmaiden, and Igor the groundskeeper. The ritual chamber holds my most precious possession - the Chalice of Eternal Night. Only those who understand the old ways may enter."
+                },
+                {
+                    "id": "bookshelf",
+                    "name": "ancient bookshelf",
+                    "description": "Shelves packed with dusty volumes on dark magic and vampire lore",
+                    "searchable": true,
+                    "contains": [
+                        "vampire_codex"
+                    ]
+                },
+                {
+                    "id": "vampire_codex",
+                    "name": "Codex of the Undead",
+                    "description": "An ancient text bound in what appears to be human skin",
+                    "readable": true,
+                    "text": "Chapter VII: The vampire's servants perform sacred duties. The butler maintains the manor and guards the crypts. The handmaiden prepares the blood rituals. The groundskeeper tends the graves where victims rest eternally."
+                },
+                {
+                    "id": "locked_cabinet",
+                    "name": "glass display cabinet",
+                    "description": "A cabinet displaying various occult artifacts behind locked glass",
+                    "locked": true,
+                    "key_required": "iron_key",
+                    "contains": [
+                        "silver_amulet",
+                        "manor_history"
+                    ]
+                },
+                {
+                    "id": "iron_key",
+                    "name": "ornate iron key",
+                    "description": "A heavy key with a bat-shaped handle"
+                },
+                {
+                    "id": "silver_amulet",
+                    "name": "silver amulet",
+                    "description": "A protective amulet engraved with holy symbols, one of the artifacts needed to escape"
+                },
+                {
+                    "id": "manor_history",
+                    "name": "manor historical record",
+                    "description": "A document detailing the manor's dark past",
+                    "readable": true,
+                    "text": "The Dr\u0103cule\u0219ti Manor was built in 1476 by Count Vladislav. Legend says he made a pact with darkness itself. To escape his domain, one must answer three questions: Who rules this manor? Where do the butler's duties lie? What breaks a vampire's curse?"
+                },
+                {
+                    "id": "portrait",
+                    "name": "portrait of Count Vladislav",
+                    "description": "A large oil painting of a pale nobleman with piercing red eyes",
+                    "searchable": true,
+                    "contains": [
+                        "brass_key"
+                    ]
+                },
+                {
+                    "id": "brass_key",
+                    "name": "small brass key",
+                    "description": "A tarnished brass key hidden behind the portrait"
+                },
+                {
+                    "id": "heavy_wooden_door",
+                    "name": "heavy wooden door",
+                    "description": "A door leading deeper into the manor, secured with a brass lock",
+                    "locked": true,
+                    "key_required": "brass_key",
+                    "direction": "north",
+                    "leads_to": "ritual_chamber",
+                    "aliases": [
+                        "door",
+                        "north"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "ritual_chamber",
+            "name": "Blood Ritual Chamber",
+            "description": "A circular stone chamber lit by black candles. In the center stands an altar with a golden chalice surrounded by dried blood stains. Ancient symbols are carved into the floor in a pentagram pattern. The walls are decorated with tapestries depicting dark ceremonies. A sense of malevolent power permeates the air.",
+            "items": [
+                {
+                    "id": "stone_altar",
+                    "name": "sacrificial altar",
+                    "description": "A black stone altar with channels carved to direct blood flow",
+                    "searchable": true,
+                    "contains": [
+                        "golden_chalice"
+                    ]
+                },
+                {
+                    "id": "golden_chalice",
+                    "name": "Chalice of Eternal Night",
+                    "description": "An ornate golden chalice encrusted with rubies, said to hold the vampire's power"
+                },
+                {
+                    "id": "ritual_chest",
+                    "name": "ritual offering chest",
+                    "description": "A chest used to store ceremonial items, with three compartments",
+                    "subcontainers": [
+                        {
+                            "id": "left_compartment",
+                            "name": "left compartment",
+                            "locked": false,
+                            "contains": [
+                                "ritual_instructions"
+                            ]
+                        },
+                        {
+                            "id": "center_compartment",
+                            "name": "center compartment",
+                            "locked": true,
+                            "lock_type": "combination",
+                            "combination": "666",
+                            "contains": [
+                                "wooden_stake"
+                            ]
+                        },
+                        {
+                            "id": "right_compartment",
+                            "name": "right compartment",
+                            "locked": false,
+                            "contains": []
+                        }
+                    ]
+                },
+                {
+                    "id": "ritual_instructions",
+                    "name": "blood ritual scroll",
+                    "description": "Instructions for performing dark ceremonies",
+                    "readable": true,
+                    "text": "The Ritual of Binding: To contain the vampire's essence, one must use the sacred number - 666, the mark of the beast. The wooden stake in the center compartment can pierce the heart of darkness. Combine it with the silver amulet and the chalice to break the curse."
+                },
+                {
+                    "id": "wooden_stake",
+                    "name": "blessed wooden stake",
+                    "description": "A sharpened stake made from ash wood, blessed by a priest"
+                },
+                {
+                    "id": "tapestry",
+                    "name": "ancient tapestry",
+                    "description": "A tapestry depicting the vampire's servants performing their duties",
+                    "readable": true,
+                    "text": "The tapestry shows three scenes: Renfield guarding the crypts with keys in hand, Carmilla preparing blood in the ritual chamber, and Igor digging graves in the cemetery where the dead are buried."
+                },
+                {
+                    "id": "candelabra",
+                    "name": "black candelabra",
+                    "description": "A twisted iron candelabra holding black candles",
+                    "searchable": true,
+                    "contains": [
+                        "escape_note"
+                    ]
+                },
+                {
+                    "id": "escape_note",
+                    "name": "prisoner's note",
+                    "description": "A desperate note left by a previous victim",
+                    "readable": true,
+                    "text": "If you're reading this, there's still hope! The exit is through the iron door, but it requires knowledge of the vampire lord. Remember: sunlight and holy symbols break the curse. The count's name is in his journal. I pray you escape before dawn!"
+                },
+                {
+                    "id": "reinforced_iron_door",
+                    "name": "reinforced iron door",
+                    "description": "A massive door with three questions etched into a brass plate. This is the only way out.",
+                    "locked": true,
+                    "lock_type": "password",
+                    "password_questions": [
+                        {
+                            "question": "Who rules this manor?",
+                            "answer": "count vladislav",
+                            "hint": "Check the vampire lord's journal in the study"
+                        },
+                        {
+                            "question": "Where does the butler guard?",
+                            "answer": "crypts",
+                            "hint": "The Codex and tapestry mention the butler's duties"
+                        },
+                        {
+                            "question": "What breaks a vampire's curse?",
+                            "answer": "sunlight",
+                            "hint": "The manor history and prisoner's note mention this"
+                        }
+                    ],
+                    "direction": "east",
+                    "leads_to": "manor_exit",
+                    "aliases": [
+                        "door",
+                        "exit",
+                        "east"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "manor_exit",
+            "name": "Manor Courtyard at Dawn",
+            "description": "You burst through the door into the manor's courtyard just as the first rays of sunlight break over the horizon. The golden light floods the grounds, and you hear an anguished scream from within the manor as the vampire's power is broken. The curse is lifted, and you are free!",
+            "items": [
+                {
+                    "id": "sunrise",
+                    "name": "breaking dawn",
+                    "description": "The beautiful sunrise that signals your freedom and the vampire's defeat"
+                },
+                {
+                    "id": "manor_gates",
+                    "name": "open manor gates",
+                    "description": "The iron gates stand open, leading to the road and safety beyond"
+                }
+            ],
+            "exits": [],
+            "is_goal": true,
+            "win_message": "You have escaped the Vampire Manor! As sunlight floods the courtyard, the manor begins to crumble behind you. Count Vladislav's reign of terror is finally over. You clutch the silver amulet, the golden chalice, and the wooden stake - proof of your harrowing adventure. You've survived the night and broken the curse. You win!"
+        }
+    ]
+}

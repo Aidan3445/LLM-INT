@@ -1,0 +1,253 @@
+{
+    "theme": "Ancient Underworld Gate",
+    "title": "Ancient Underworld Gate Adventure #55",
+    "goal": "Solve the puzzles, achieve the main objective, and escape.",
+    "starting_room": "entrance_chamber",
+    "rooms": [
+        {
+            "id": "entrance_chamber",
+            "name": "Entrance Chamber of the Underworld",
+            "description": "A dark stone chamber carved deep beneath the earth. Ancient Greek columns support a vaulted ceiling covered in faded frescoes depicting souls crossing the River Styx. The air is cold and still, carrying the faint scent of sulfur. Torches flicker in iron sconces, casting dancing shadows on walls inscribed with warnings in ancient script. A heavy bronze door stands to the north.",
+            "items": [
+                {
+                    "id": "stone_pedestal",
+                    "name": "stone pedestal",
+                    "description": "A weathered pedestal with carved reliefs of three-headed dogs and ferrymen",
+                    "searchable": true,
+                    "contains": [
+                        "silver_obol"
+                    ]
+                },
+                {
+                    "id": "silver_obol",
+                    "name": "silver obol coin",
+                    "description": "An ancient Greek coin used to pay the ferryman of the dead"
+                },
+                {
+                    "id": "offering_altar",
+                    "name": "offering altar",
+                    "description": "A black marble altar with three compartments for offerings to the underworld gods",
+                    "subcontainers": [
+                        {
+                            "id": "left_compartment",
+                            "name": "left compartment",
+                            "locked": false,
+                            "contains": [
+                                "ancient_scroll"
+                            ]
+                        },
+                        {
+                            "id": "center_compartment",
+                            "name": "center compartment",
+                            "locked": true,
+                            "lock_type": "combination",
+                            "combination": "333",
+                            "contains": [
+                                "bronze_key"
+                            ]
+                        },
+                        {
+                            "id": "right_compartment",
+                            "name": "right compartment",
+                            "locked": false,
+                            "contains": []
+                        }
+                    ]
+                },
+                {
+                    "id": "ancient_scroll",
+                    "name": "scroll of the underworld",
+                    "description": "A papyrus scroll with faded Greek writing",
+                    "readable": true,
+                    "text": "The Underworld Codex: Three heads guard the gate, three judges weigh the souls, three paths lead to different fates. Remember the sacred number: 333. The ferryman Charon demands payment. The three-headed guardian Cerberus allows none to leave. Lord Hades rules all."
+                },
+                {
+                    "id": "bronze_key",
+                    "name": "ancient bronze key",
+                    "description": "A heavy bronze key with the symbol of Hades engraved upon it"
+                },
+                {
+                    "id": "stone_chest",
+                    "name": "sealed stone chest",
+                    "description": "A chest carved from black stone with bronze fittings and a keyhole",
+                    "locked": true,
+                    "key_required": "bronze_key",
+                    "contains": [
+                        "underworld_map",
+                        "ritual_dagger"
+                    ]
+                },
+                {
+                    "id": "underworld_map",
+                    "name": "map of the underworld",
+                    "description": "A detailed map showing the realms of the dead",
+                    "readable": true,
+                    "text": "Map of the Underworld: The River Styx flows through all realms. Charon the ferryman transports souls across the water. Beyond the Hall of Trials lies the Gate itself, guarded by mighty Cerberus. Only those who answer the Three Questions may pass."
+                },
+                {
+                    "id": "ritual_dagger",
+                    "name": "ceremonial dagger",
+                    "description": "A bronze dagger used in ancient underworld rituals"
+                },
+                {
+                    "id": "wall_inscription",
+                    "name": "warning inscription",
+                    "description": "Ancient Greek text carved into the stone wall",
+                    "readable": true,
+                    "text": "WARNING TO ALL WHO ENTER: This is the realm of Hades, Lord of the Dead. Charon ferries souls across the Styx. Cerberus guards the gate with three heads. Pay the ferryman, answer the questions, and you may yet escape."
+                },
+                {
+                    "id": "heavy_bronze_door",
+                    "name": "heavy bronze door",
+                    "description": "A massive door decorated with scenes of the underworld, leading north to the Hall of Trials",
+                    "locked": true,
+                    "key_required": "silver_obol",
+                    "direction": "north",
+                    "leads_to": "hall_of_trials",
+                    "aliases": [
+                        "door",
+                        "north"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "hall_of_trials",
+            "name": "Hall of Trials",
+            "description": "A vast columned hall with statues of underworld deities lining both sides. The floor is polished black marble reflecting the torchlight. At the center, three stone thrones sit empty - the seats of the judges of the dead. Frescoes on the ceiling depict Hades and Persephone ruling their dark kingdom. An imposing gate carved with fearsome imagery stands at the far end.",
+            "items": [
+                {
+                    "id": "statue_hades",
+                    "name": "statue of Hades",
+                    "description": "A towering statue of the Lord of the Underworld holding a scepter",
+                    "readable": true,
+                    "text": "Inscription: 'Hades, Lord of the Dead, Ruler of the Underworld. He who judges all souls and commands the shadows. His word is law in this realm.'"
+                },
+                {
+                    "id": "statue_persephone",
+                    "name": "statue of Persephone",
+                    "description": "An elegant statue of the Queen of the Underworld holding pomegranate seeds",
+                    "readable": true,
+                    "text": "Inscription: 'Persephone, Queen of the Underworld, who dwells six months below and six months above. She brings mercy to the realm of shadows.'"
+                },
+                {
+                    "id": "statue_charon",
+                    "name": "statue of Charon",
+                    "description": "A weathered statue of the ferryman with his pole and boat",
+                    "readable": true,
+                    "text": "Inscription: 'Charon, Ferryman of the Dead. He transports souls across the River Styx for payment of one obol. Without his service, none may cross the waters of death.'"
+                },
+                {
+                    "id": "statue_cerberus",
+                    "name": "statue of Cerberus",
+                    "description": "A fearsome statue depicting the three-headed hound of Hades",
+                    "readable": true,
+                    "text": "Inscription: 'Cerberus, Guardian of the Gate. The three-headed hound who allows all to enter but none to leave. He is the final barrier between the living and the dead.'"
+                },
+                {
+                    "id": "judges_thrones",
+                    "name": "three stone thrones",
+                    "description": "The seats where Minos, Rhadamanthus, and Aeacus judge the souls of the dead",
+                    "searchable": true,
+                    "contains": [
+                        "judgment_tablet"
+                    ]
+                },
+                {
+                    "id": "judgment_tablet",
+                    "name": "tablet of judgment",
+                    "description": "A stone tablet with the criteria for judging souls",
+                    "readable": true,
+                    "text": "The Three Questions of Passage: To pass through the Gate of the Underworld, you must prove your knowledge. Who guards the gate? Who ferries souls across the Styx? Who rules this realm of shadows?"
+                },
+                {
+                    "id": "offering_bowl",
+                    "name": "ceremonial offering bowl",
+                    "description": "A bronze bowl containing ancient coins and offerings",
+                    "searchable": true,
+                    "contains": [
+                        "golden_key"
+                    ]
+                },
+                {
+                    "id": "golden_key",
+                    "name": "golden key of passage",
+                    "description": "A key made of gold with intricate underworld symbols"
+                },
+                {
+                    "id": "fresco_ceiling",
+                    "name": "ceiling fresco",
+                    "description": "A magnificent painting showing Hades and Persephone on their thrones",
+                    "readable": true,
+                    "text": "The fresco depicts Hades, Lord of the Underworld, seated beside Persephone. Around them, souls are judged and ferried by Charon across the dark waters. Cerberus stands guard at the gate, his three heads ever watchful."
+                },
+                {
+                    "id": "gate_of_the_underworld",
+                    "name": "gate of the underworld",
+                    "description": "A massive iron gate decorated with images of Cerberus and souls. Three questions are inscribed in ancient Greek on a bronze plaque.",
+                    "locked": true,
+                    "lock_type": "password",
+                    "password_questions": [
+                        {
+                            "question": "Who guards the gate?",
+                            "answer": "cerberus",
+                            "hint": "Check the statues and inscriptions about the three-headed guardian"
+                        },
+                        {
+                            "question": "Who ferries souls across the Styx?",
+                            "answer": "charon",
+                            "hint": "The map and statues mention the ferryman who requires payment"
+                        },
+                        {
+                            "question": "Who rules the underworld?",
+                            "answer": "hades",
+                            "hint": "Multiple inscriptions and the fresco identify the Lord of the Dead"
+                        }
+                    ],
+                    "direction": "east",
+                    "leads_to": "gate_chamber",
+                    "aliases": [
+                        "gate",
+                        "east"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "gate_chamber",
+            "name": "Chamber of the Ancient Gate",
+            "description": "You have reached the Chamber of the Ancient Gate! A colossal stone archway dominates the room, covered in glowing runes that pulse with otherworldly energy. Beyond the arch, you can see a shimmering portal leading back to the world of the living. The three-headed shadow of Cerberus watches but does not attack - you have proven yourself worthy. Fresh air flows through the portal, carrying the scent of the surface world.",
+            "items": [
+                {
+                    "id": "ancient_gate_arch",
+                    "name": "ancient gate archway",
+                    "description": "A massive stone arch covered in mystical runes, the true gate between worlds"
+                },
+                {
+                    "id": "glowing_portal",
+                    "name": "shimmering portal",
+                    "description": "A swirling portal of light leading back to the world above",
+                    "readable": true,
+                    "text": "The portal shimmers with golden light, offering passage back to the realm of the living. You have solved the mysteries of the underworld and earned your escape."
+                },
+                {
+                    "id": "cerberus_shadow",
+                    "name": "shadow of Cerberus",
+                    "description": "The spectral form of the three-headed guardian, watching but allowing passage"
+                },
+                {
+                    "id": "victory_inscription",
+                    "name": "inscription of passage",
+                    "description": "Words carved into the arch itself",
+                    "readable": true,
+                    "text": "You who have answered the Three Questions and proven your knowledge of the underworld may pass. Go forth, and remember what you have learned in the realm of shadows."
+                }
+            ],
+            "exits": [],
+            "is_goal": true,
+            "win_message": "You step through the shimmering portal and feel the warmth of sunlight on your face! You have successfully navigated the Ancient Underworld Gate, solved its mysteries, and escaped the realm of the dead. The knowledge of Hades, Charon, and Cerberus has served you well. As the portal closes behind you, you stand once more in the world of the living, forever changed by your journey. You win!"
+        }
+    ]
+}

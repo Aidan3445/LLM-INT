@@ -1,0 +1,225 @@
+{
+    "theme": "Retro Arcade Time Loop",
+    "title": "Retro Arcade Time Loop Adventure #97",
+    "goal": "Solve the puzzles, achieve the main objective, and escape.",
+    "starting_room": "arcade_floor",
+    "rooms": [
+        {
+            "id": "arcade_floor",
+            "name": "Neon Arcade Main Floor",
+            "description": "A dimly lit arcade filled with the glow of CRT screens and the electronic beeps of classic games. The carpet has a garish geometric pattern, and posters of pixelated heroes cover the walls. The same song loops endlessly on the jukebox. Time feels stuck here, repeating the same moment over and over.",
+            "items": [
+                {
+                    "id": "pacmaze_cabinet",
+                    "name": "PACMAZE arcade cabinet",
+                    "description": "A yellow cabinet featuring the classic maze chase game. The high score screen is displayed.",
+                    "readable": true,
+                    "text": "HIGH SCORES: 1st - ACE 9999, 2nd - MAX 8888, 3rd - ZEX 2580"
+                },
+                {
+                    "id": "space_blaster_cabinet",
+                    "name": "SPACE BLASTER arcade cabinet",
+                    "description": "A cabinet with alien invaders descending from the top. A note is taped to the side.",
+                    "readable": true,
+                    "text": "Note: Remember the token count! We ordered exactly 142 tokens for the grand opening in 1984."
+                },
+                {
+                    "id": "prize_counter",
+                    "name": "prize counter",
+                    "description": "A glass counter displaying cheap toys and candy. The register sits on top, and there are two drawers underneath.",
+                    "subcontainers": [
+                        {
+                            "id": "top_drawer",
+                            "name": "top drawer",
+                            "locked": false,
+                            "contains": [
+                                "employee_memo"
+                            ]
+                        },
+                        {
+                            "id": "bottom_drawer",
+                            "name": "bottom drawer",
+                            "locked": true,
+                            "lock_type": "combination",
+                            "combination": "2580",
+                            "contains": [
+                                "office_key"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "employee_memo",
+                    "name": "employee memo",
+                    "description": "A faded memo pinned to a clipboard",
+                    "readable": true,
+                    "text": "MEMO: The combination to the bottom drawer is the high score of the player ZEX on PACMAZE. Manager Dave keeps the office key there. Remember, only Dave Chronos can access the time calibration system."
+                },
+                {
+                    "id": "office_key",
+                    "name": "brass office key",
+                    "description": "A small brass key labeled 'OFFICE'"
+                },
+                {
+                    "id": "jukebox",
+                    "name": "retro jukebox",
+                    "description": "A colorful jukebox playing the same synthwave track on repeat",
+                    "searchable": true,
+                    "contains": [
+                        "arcade_token"
+                    ]
+                },
+                {
+                    "id": "arcade_token",
+                    "name": "golden arcade token",
+                    "description": "A special commemorative token from the arcade's opening"
+                },
+                {
+                    "id": "poster_wall",
+                    "name": "wall of game posters",
+                    "description": "Posters for classic games cover the wall",
+                    "readable": true,
+                    "text": "Posters show: PACMAZE (1980), SPACE BLASTER (1978), DRAGON QUEST FIGHTER (1984), and TURBO RACER (1982). A handwritten note says: 'The loop started the year we opened - 1984.'"
+                },
+                {
+                    "id": "employee_office_door",
+                    "name": "employee office door",
+                    "description": "A door marked 'EMPLOYEES ONLY' leading to the back office",
+                    "locked": true,
+                    "key_required": "office_key",
+                    "direction": "west",
+                    "leads_to": "back_office",
+                    "aliases": [
+                        "office",
+                        "west"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "back_office",
+            "name": "Manager's Office",
+            "description": "A cluttered office with filing cabinets, a desk covered in paperwork, and a wall of employee schedules. A calendar is stuck on the same date. Through a window, you can see the arcade floor frozen in time. A heavy metal door on the north wall has a keypad lock.",
+            "items": [
+                {
+                    "id": "manager_desk",
+                    "name": "manager's desk",
+                    "description": "A messy desk with scattered papers and a locked drawer",
+                    "subcontainers": [
+                        {
+                            "id": "desk_drawer",
+                            "name": "desk drawer",
+                            "locked": true,
+                            "lock_type": "combination",
+                            "combination": "1984142",
+                            "contains": [
+                                "calibration_manual"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "calibration_manual",
+                    "name": "time calibration manual",
+                    "description": "A technical manual with handwritten notes",
+                    "readable": true,
+                    "text": "TIME LOOP CALIBRATION SYSTEM: To reset the temporal loop, answer the security questions correctly. The system was installed by Dave Chronos. The loop anchor point is the arcade floor. The loop was caused by a power surge during a thunderstorm."
+                },
+                {
+                    "id": "filing_cabinet",
+                    "name": "metal filing cabinet",
+                    "description": "A tall cabinet with employee records and maintenance logs",
+                    "searchable": true,
+                    "contains": [
+                        "maintenance_log"
+                    ]
+                },
+                {
+                    "id": "maintenance_log",
+                    "name": "maintenance logbook",
+                    "description": "A log of repairs and incidents",
+                    "readable": true,
+                    "text": "INCIDENT REPORT: On opening night, a severe thunderstorm caused a power surge. The experimental time stabilization device in the server room malfunctioned, creating a temporal loop. Only Manager Dave Chronos has access to the reset system."
+                },
+                {
+                    "id": "calendar",
+                    "name": "wall calendar",
+                    "description": "A calendar frozen on a single date",
+                    "readable": true,
+                    "text": "The calendar is stuck on July 15, 1984 - Grand Opening Night"
+                },
+                {
+                    "id": "employee_board",
+                    "name": "employee information board",
+                    "description": "A corkboard with employee photos and names",
+                    "readable": true,
+                    "text": "STAFF: Manager - Dave Chronos, Assistant Manager - Sarah Mills, Technician - Tom Rivers, Counter Staff - Jenny Park"
+                },
+                {
+                    "id": "server_room_door",
+                    "name": "server room door",
+                    "description": "A reinforced door with a digital keypad. A plaque reads 'TEMPORAL STABILIZATION SYSTEM - AUTHORIZED PERSONNEL ONLY'",
+                    "locked": true,
+                    "lock_type": "password",
+                    "password_questions": [
+                        {
+                            "question": "Who is the manager?",
+                            "answer": "dave chronos",
+                            "hint": "Check the employee memo and the employee board"
+                        },
+                        {
+                            "question": "Where is the loop anchor point?",
+                            "answer": "arcade floor",
+                            "hint": "The calibration manual mentions where the loop is anchored"
+                        },
+                        {
+                            "question": "What caused the loop?",
+                            "answer": "thunderstorm",
+                            "hint": "Read the maintenance log for the incident details"
+                        }
+                    ],
+                    "direction": "north",
+                    "leads_to": "server_room",
+                    "aliases": [
+                        "server",
+                        "north"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "server_room",
+            "name": "Temporal Stabilization Chamber",
+            "description": "A room filled with blinking servers and a large machine covered in dials and displays. In the center is a glowing temporal stabilization device with a pulsing blue light. Screens show the same moment repeating infinitely. A large red button labeled 'RESET TEMPORAL LOOP' sits on the main console.",
+            "items": [
+                {
+                    "id": "stabilization_device",
+                    "name": "temporal stabilization device",
+                    "description": "A complex machine with spinning rings and glowing crystals, clearly malfunctioning"
+                },
+                {
+                    "id": "main_console",
+                    "name": "main control console",
+                    "description": "A console with various readouts showing temporal anomaly data",
+                    "readable": true,
+                    "text": "SYSTEM STATUS: Temporal loop active. Duration: 97 iterations. Anchor: Arcade Floor. To break loop: Press RESET button."
+                },
+                {
+                    "id": "reset_button",
+                    "name": "red reset button",
+                    "description": "A large emergency reset button that will break the time loop"
+                },
+                {
+                    "id": "server_racks",
+                    "name": "humming server racks",
+                    "description": "Rows of servers processing temporal data, keeping the loop stable"
+                }
+            ],
+            "exits": [],
+            "is_goal": true,
+            "win_message": "You press the RESET button and the temporal stabilization device powers down with a deep hum. The endless loop of arcade music stops. Time begins flowing normally again. The screens show the date advancing past 1984. You've broken free from the Retro Arcade Time Loop! The arcade fades around you as reality reasserts itself. You win!"
+        }
+    ]
+}

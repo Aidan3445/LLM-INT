@@ -1,0 +1,208 @@
+{
+    "theme": "Crystal-Powered Train Station",
+    "title": "Crystal-Powered Train Station Adventure #95",
+    "goal": "Solve the puzzles, achieve the main objective, and escape.",
+    "starting_room": "ticket_hall",
+    "rooms": [
+        {
+            "id": "ticket_hall",
+            "name": "Grand Ticket Hall",
+            "description": "A magnificent hall with vaulted ceilings and walls lined with glowing crystal sconces. The ticket counter is covered in dust, and departure boards flicker with faded destinations. Crystalline pillars pulse with a faint blue light. A locked door to the east leads to the engine room.",
+            "items": [
+                {
+                    "id": "ticket_counter",
+                    "name": "abandoned ticket counter",
+                    "description": "A marble counter with three drawers built into the front",
+                    "subcontainers": [
+                        {
+                            "id": "top_drawer",
+                            "name": "top drawer",
+                            "locked": false,
+                            "contains": [
+                                "station_manual"
+                            ]
+                        },
+                        {
+                            "id": "middle_drawer",
+                            "name": "middle drawer",
+                            "locked": true,
+                            "lock_type": "combination",
+                            "combination": "528",
+                            "contains": [
+                                "brass_key"
+                            ]
+                        },
+                        {
+                            "id": "bottom_drawer",
+                            "name": "bottom drawer",
+                            "locked": false,
+                            "contains": []
+                        }
+                    ]
+                },
+                {
+                    "id": "station_manual",
+                    "name": "station operations manual",
+                    "description": "A leather-bound manual with crystal diagrams",
+                    "readable": true,
+                    "text": "Crystal Station Operations: The main power crystal resonates at frequency 528 Hz. Engineer Tesla maintains the engine room. Conductor Morrison oversees departures. Station Master Chen commands all operations. Emergency crystal storage is located in the maintenance locker."
+                },
+                {
+                    "id": "brass_key",
+                    "name": "brass maintenance key",
+                    "description": "A key with a crystal emblem engraved on the handle"
+                },
+                {
+                    "id": "departure_board",
+                    "name": "flickering departure board",
+                    "description": "An old board showing train schedules",
+                    "readable": true,
+                    "text": "DEPARTURES: Platform 9 Crystal Express - DELAYED. Awaiting power crystal activation. Last departure: The Crystal Express to New Aurora, operated by Conductor Morrison."
+                },
+                {
+                    "id": "maintenance_locker",
+                    "name": "maintenance locker",
+                    "description": "A tall metal locker with a brass lock",
+                    "locked": true,
+                    "key_required": "brass_key",
+                    "contains": [
+                        "power_crystal",
+                        "engineer_note"
+                    ]
+                },
+                {
+                    "id": "power_crystal",
+                    "name": "blue power crystal",
+                    "description": "A glowing crystal that hums with energy, essential for powering the train"
+                },
+                {
+                    "id": "engineer_note",
+                    "name": "engineer's note",
+                    "description": "A hastily written note on yellowed paper",
+                    "readable": true,
+                    "text": "Note from Engineer Tesla: The engine room door requires security clearance. Remember the chain of command: Station Master Chen oversees everything, I maintain the engines, and the crystal storage is in the maintenance locker. The train awaits on the departure platform!"
+                },
+                {
+                    "id": "waiting_bench",
+                    "name": "wooden waiting bench",
+                    "description": "A long bench with carved crystal patterns",
+                    "searchable": true,
+                    "contains": [
+                        "old_newspaper"
+                    ]
+                },
+                {
+                    "id": "old_newspaper",
+                    "name": "old newspaper",
+                    "description": "A newspaper from the station's glory days",
+                    "readable": true,
+                    "text": "CRYSTAL CITY TIMES: Station Master Chen celebrates 20 years of service! The Crystal-Powered Railway continues to connect our cities using revolutionary crystal technology. Engineer Tesla recently upgraded the engine room systems."
+                },
+                {
+                    "id": "reinforced_engine_room_door",
+                    "name": "reinforced engine room door",
+                    "description": "A heavy steel door with a security panel displaying three questions",
+                    "locked": true,
+                    "lock_type": "password",
+                    "password_questions": [
+                        {
+                            "question": "Who commands the station?",
+                            "answer": "station master chen",
+                            "hint": "Check the station manual and newspaper"
+                        },
+                        {
+                            "question": "Where is the crystal storage?",
+                            "answer": "maintenance locker",
+                            "hint": "The engineer's note mentions this location"
+                        },
+                        {
+                            "question": "Who maintains the engines?",
+                            "answer": "engineer tesla",
+                            "hint": "The station manual lists the engineer's name"
+                        }
+                    ],
+                    "direction": "east",
+                    "leads_to": "crystal_engine_room",
+                    "aliases": [
+                        "door",
+                        "east"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "crystal_engine_room",
+            "name": "Crystal Engine Room",
+            "description": "A vast chamber filled with massive crystal engines that tower overhead. Pipes and conduits run along the walls, all converging on a central power pedestal. The engines are dormant, waiting for a power crystal. A doorway to the north leads to the departure platform.",
+            "items": [
+                {
+                    "id": "power_pedestal",
+                    "name": "central power pedestal",
+                    "description": "A crystalline pedestal with a socket for a power crystal",
+                    "readable": true,
+                    "text": "Inscription: 'Insert power crystal to activate the Crystal Express. The train awaits on the departure platform to the north.'"
+                },
+                {
+                    "id": "control_panel",
+                    "name": "engine control panel",
+                    "description": "A panel covered in switches and crystal indicators",
+                    "readable": true,
+                    "text": "Status: ENGINES OFFLINE. Awaiting power crystal insertion. Once activated, proceed to departure platform for boarding."
+                },
+                {
+                    "id": "tool_cabinet",
+                    "name": "engineer's tool cabinet",
+                    "description": "A cabinet filled with maintenance tools and spare parts",
+                    "searchable": true,
+                    "contains": [
+                        "technical_manual"
+                    ]
+                },
+                {
+                    "id": "technical_manual",
+                    "name": "crystal engine manual",
+                    "description": "A technical guide to crystal power systems",
+                    "readable": true,
+                    "text": "Crystal Engine Technical Manual: The power crystal must be inserted into the central pedestal to energize the engines. Once activated, the Crystal Express will be ready for departure from the platform. Handle crystals with care!"
+                },
+                {
+                    "id": "platform_access_door",
+                    "name": "platform access door",
+                    "description": "A door leading to the departure platform. It requires the engines to be powered.",
+                    "locked": true,
+                    "key_required": "power_crystal",
+                    "direction": "north",
+                    "leads_to": "departure_platform",
+                    "aliases": [
+                        "door",
+                        "north"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "departure_platform",
+            "name": "Departure Platform",
+            "description": "You've made it to the departure platform! The magnificent Crystal Express sits on the tracks, its crystal engines now glowing with brilliant blue light. Steam mixed with crystal energy rises from the locomotive. The conductor's whistle echoes through the station as the train prepares to depart for New Aurora.",
+            "items": [
+                {
+                    "id": "crystal_express",
+                    "name": "Crystal Express locomotive",
+                    "description": "A beautiful train powered by crystalline energy, ready to carry you to freedom"
+                },
+                {
+                    "id": "conductor_stand",
+                    "name": "conductor's stand",
+                    "description": "A podium where the conductor once called out departures",
+                    "readable": true,
+                    "text": "Final Departure: Crystal Express to New Aurora - ALL ABOARD!"
+                }
+            ],
+            "exits": [],
+            "is_goal": true,
+            "win_message": "SUCCESS! You've powered up the Crystal Express and reached the departure platform! The train's engines roar to life with brilliant blue crystal energy. You board the magnificent locomotive as it begins to move, carrying you away from the abandoned station toward the shining city of New Aurora. The crystal-powered railway lives again! You win!"
+        }
+    ]
+}

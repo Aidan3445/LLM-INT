@@ -1,0 +1,268 @@
+{
+  "theme": "Undersea Volcano Station",
+  "title": "Undersea Volcano Station Adventure #22",
+  "goal": "Solve the puzzles, achieve the main objective, and escape.",
+  "starting_room": "control_room",
+  "rooms": [
+    {
+      "id": "control_room",
+      "name": "Main Control Room",
+      "description": "A cramped control room with flickering monitors displaying seismic warnings. Red emergency lights pulse across banks of equipment. Through the reinforced viewport, you see the dark ocean depths and the ominous glow of volcanic vents below. The station groans under pressure as tremors shake the walls. Warning klaxons echo through the corridors.",
+      "items": [
+        {
+          "id": "main_console",
+          "name": "main control console",
+          "description": "The primary station control panel covered in blinking warning lights and status displays",
+          "readable": true,
+          "text": "SYSTEM STATUS: CRITICAL. Volcanic activity at dangerous levels. Station Commander: Dr. Elena Vasquez. Chief Engineer: Marcus Webb. Established: 2089. All personnel evacuate to escape pod bay immediately."
+        },
+        {
+          "id": "emergency_locker",
+          "name": "emergency equipment locker",
+          "description": "A red locker marked with emergency symbols and multiple compartments",
+          "subcontainers": [
+            {
+              "id": "top_compartment",
+              "name": "top compartment",
+              "locked": false,
+              "contains": [
+                "station_manual"
+              ]
+            },
+            {
+              "id": "bottom_compartment",
+              "name": "bottom compartment",
+              "locked": true,
+              "lock_type": "combination",
+              "combination": "2089",
+              "contains": [
+                "access_keycard"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "station_manual",
+          "name": "station operations manual",
+          "description": "A waterproof manual with emergency procedures",
+          "readable": true,
+          "text": "UNDERSEA VOLCANO RESEARCH STATION - Established 2089. In case of volcanic emergency, proceed to escape pod bay. Access requires security clearance. Bottom compartment code is station founding year: 2089."
+        },
+        {
+          "id": "access_keycard",
+          "name": "security access keycard",
+          "description": "A magnetic keycard labeled 'RESEARCH LAB ACCESS'"
+        },
+        {
+          "id": "seismic_monitor",
+          "name": "seismic monitoring station",
+          "description": "A display showing real-time volcanic activity readings",
+          "readable": true,
+          "text": "SEISMIC ALERT: Magma chamber pressure critical. Eruption imminent. Dr. Vasquez has authorized emergency evacuation. All research data stored in research lab. Chief Engineer Webb maintains escape systems."
+        },
+        {
+          "id": "desk",
+          "name": "station commander's desk",
+          "description": "A metal desk bolted to the floor with scattered papers and equipment",
+          "searchable": true,
+          "contains": [
+            "commander_log"
+          ]
+        },
+        {
+          "id": "commander_log",
+          "name": "commander's log",
+          "description": "A digital tablet with the commander's personal notes",
+          "readable": true,
+          "text": "Commander's Log - Dr. Elena Vasquez: The volcanic activity is worse than predicted. I've ordered evacuation to the escape pod bay. Marcus is ensuring the pods are operational. Research data in the lab documents our findings. We must survive to share what we've learned."
+        },
+        {
+          "id": "supply_cabinet",
+          "name": "supply cabinet",
+          "description": "A locked cabinet containing emergency supplies",
+          "searchable": true,
+          "contains": [
+            "flashlight"
+          ]
+        },
+        {
+          "id": "flashlight",
+          "name": "emergency flashlight",
+          "description": "A waterproof flashlight for emergency situations"
+        },
+        {
+          "id": "research_lab_door",
+          "name": "research lab door",
+          "description": "A reinforced pressure door with a card reader, leading to the research laboratory",
+          "locked": true,
+          "key_required": "access_keycard",
+          "direction": "north",
+          "leads_to": "research_lab",
+          "aliases": [
+            "door",
+            "north"
+          ]
+        }
+      ],
+      "exits": []
+    },
+    {
+      "id": "research_lab",
+      "name": "Research Laboratory",
+      "description": "A state-of-the-art laboratory filled with scientific equipment and specimen tanks. Bioluminescent samples from volcanic vents glow eerily in containment units. Research stations line the walls, and a large viewport shows the churning volcanic activity below. The floor vibrates with each tremor. Emergency lighting casts everything in an amber glow.",
+      "items": [
+        {
+          "id": "research_station_alpha",
+          "name": "research station alpha",
+          "description": "A workstation covered with geological samples and analysis equipment",
+          "searchable": true,
+          "contains": [
+            "research_notes"
+          ]
+        },
+        {
+          "id": "research_notes",
+          "name": "research journal",
+          "description": "Dr. Vasquez's research documentation",
+          "readable": true,
+          "text": "Research Notes: Our study of the undersea volcano has yielded incredible discoveries. The unique ecosystem thrives in the thermal vents. However, the magma chamber is unstable. Chief Engineer Webb has prepared the escape pod bay as a precaution. Location: escape pod bay is north of the research lab."
+        },
+        {
+          "id": "specimen_tanks",
+          "name": "bioluminescent specimen tanks",
+          "description": "Glass tanks containing glowing organisms from the volcanic vents",
+          "readable": true,
+          "text": "Specimen labels: Thermophilic bacteria, tube worms, and bioluminescent fish collected from volcanic vents. These organisms survive in extreme heat and pressure. Research conducted by Dr. Elena Vasquez and team."
+        },
+        {
+          "id": "filing_cabinet",
+          "name": "research filing cabinet",
+          "description": "A waterproof cabinet with personnel files and research data",
+          "subcontainers": [
+            {
+              "id": "personnel_drawer",
+              "name": "personnel drawer",
+              "locked": false,
+              "contains": [
+                "personnel_file"
+              ]
+            },
+            {
+              "id": "data_drawer",
+              "name": "data drawer",
+              "locked": false,
+              "contains": [
+                "mission_report"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "personnel_file",
+          "name": "personnel records",
+          "description": "Files on station crew members",
+          "readable": true,
+          "text": "STATION PERSONNEL: Dr. Elena Vasquez - Station Commander, Volcanologist. Marcus Webb - Chief Engineer, Escape Systems. Dr. Sarah Kim - Marine Biologist. Tech Officer Rodriguez - Systems Maintenance. Commander Vasquez has final authority on all evacuations."
+        },
+        {
+          "id": "mission_report",
+          "name": "mission summary report",
+          "description": "A comprehensive report on the station's mission",
+          "readable": true,
+          "text": "MISSION SUMMARY: Undersea Volcano Research Station established to study geothermal activity and extremophile ecosystems. Primary location: escape pod bay provides emergency evacuation capability. Station Commander Dr. Vasquez leads all operations. Critical systems maintained by Chief Engineer Webb."
+        },
+        {
+          "id": "equipment_table",
+          "name": "equipment table",
+          "description": "A table with various scientific instruments and tools",
+          "searchable": true,
+          "contains": [
+            "safety_protocol"
+          ]
+        },
+        {
+          "id": "safety_protocol",
+          "name": "emergency safety protocol",
+          "description": "A laminated card with evacuation procedures",
+          "readable": true,
+          "text": "EMERGENCY EVACUATION PROTOCOL: In case of volcanic eruption, proceed immediately to escape pod bay. Security verification required. You must confirm: Who commands this station? Where are the escape pods located? Who maintains escape systems?"
+        },
+        {
+          "id": "viewport",
+          "name": "reinforced viewport",
+          "description": "A thick glass window showing the volcanic activity outside",
+          "readable": true,
+          "text": "Through the viewport, you see glowing lava flows and superheated water. The volcanic eruption is imminent. The escape pod bay is your only hope for survival."
+        },
+        {
+          "id": "escape_pod_bay_door",
+          "name": "escape pod bay door",
+          "description": "A heavy blast door leading to the escape pod bay. A security terminal displays three verification questions that must be answered correctly.",
+          "locked": true,
+          "lock_type": "password",
+          "password_questions": [
+            {
+              "question": "Who commands this station?",
+              "answer": "dr elena vasquez",
+              "hint": "Check the main console, personnel records, and research notes"
+            },
+            {
+              "question": "Where are the escape pods located?",
+              "answer": "escape pod bay",
+              "hint": "Multiple documents mention the location of emergency evacuation"
+            },
+            {
+              "question": "Who maintains the escape systems?",
+              "answer": "marcus webb",
+              "hint": "Look at personnel files and the commander's log"
+            }
+          ],
+          "direction": "north",
+          "leads_to": "escape_pod_bay",
+          "aliases": [
+            "door",
+            "bay",
+            "north"
+          ]
+        }
+      ],
+      "exits": []
+    },
+    {
+      "id": "escape_pod_bay",
+      "name": "Escape Pod Bay",
+      "description": "You've reached the escape pod bay! A sleek emergency evacuation pod sits in its launch cradle, its systems humming with power. Status lights glow green across the control panel. Through the launch tube, you can see the dark ocean above, your path to safety. The station shudders violently as the volcano erupts below, but you're ready to escape.",
+      "items": [
+        {
+          "id": "escape_pod",
+          "name": "emergency escape pod",
+          "description": "A pressurized evacuation vehicle designed to reach the surface quickly"
+        },
+        {
+          "id": "launch_controls",
+          "name": "pod launch controls",
+          "description": "The control panel showing all systems ready for immediate launch",
+          "readable": true,
+          "text": "ESCAPE POD STATUS: All systems operational. Pressure seals intact. Life support active. Coordinates set for surface rendezvous. Ready for immediate launch."
+        },
+        {
+          "id": "emergency_supplies",
+          "name": "emergency supply locker",
+          "description": "A locker stocked with survival gear for the journey to the surface",
+          "searchable": true,
+          "contains": [
+            "survival_kit"
+          ]
+        },
+        {
+          "id": "survival_kit",
+          "name": "survival kit",
+          "description": "Emergency supplies including food, water, and medical equipment"
+        }
+      ],
+      "exits": [],
+      "is_goal": true,
+      "win_message": "SUCCESS! You board the escape pod and initiate the launch sequence. The pod rockets upward through the launch tube as the volcano erupts below, destroying the research station. Within minutes, you breach the surface and see rescue ships approaching. You've survived the undersea volcano disaster and escaped with your life. The research data you gathered will help future missions. You win!"
+    }
+  ]
+}

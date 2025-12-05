@@ -1,0 +1,264 @@
+{
+    "theme": "Shadow Assassin Dojo",
+    "title": "Shadow Assassin Dojo Adventure #18",
+    "goal": "Solve the puzzles, achieve the main objective, and escape.",
+    "starting_room": "training_hall",
+    "rooms": [
+        {
+            "id": "training_hall",
+            "name": "Ancient Training Hall",
+            "description": "A spacious hall with polished wooden floors and walls lined with weapons. Training dummies stand in formation, and practice mats are rolled in the corner. Moonlight filters through paper screens, casting long shadows. The air smells of incense and old wood. Calligraphy scrolls hang on the walls, their messages speaking of discipline and honor.",
+            "items": [
+                {
+                    "id": "weapon_rack",
+                    "name": "wooden weapon rack",
+                    "description": "A rack displaying various training weapons - wooden swords, staffs, and practice shuriken",
+                    "searchable": true,
+                    "contains": [
+                        "iron_key"
+                    ]
+                },
+                {
+                    "id": "iron_key",
+                    "name": "iron key",
+                    "description": "A heavy iron key with the dojo's symbol engraved on it"
+                },
+                {
+                    "id": "training_cabinet",
+                    "name": "training equipment cabinet",
+                    "description": "A tall cabinet with three drawers containing training supplies",
+                    "subcontainers": [
+                        {
+                            "id": "top_drawer",
+                            "name": "top drawer",
+                            "locked": false,
+                            "contains": [
+                                "founding_scroll"
+                            ]
+                        },
+                        {
+                            "id": "middle_drawer",
+                            "name": "middle drawer",
+                            "locked": true,
+                            "lock_type": "combination",
+                            "combination": "1847",
+                            "contains": [
+                                "silver_key"
+                            ]
+                        },
+                        {
+                            "id": "bottom_drawer",
+                            "name": "bottom drawer",
+                            "locked": false,
+                            "contains": []
+                        }
+                    ]
+                },
+                {
+                    "id": "founding_scroll",
+                    "name": "dojo founding scroll",
+                    "description": "An ancient scroll detailing the dojo's history",
+                    "readable": true,
+                    "text": "The Shadow Assassin Dojo was founded in the year 1847 by the legendary Master Takeshi. Our three sacred principles guide all who train here: Stealth, Honor, and Discipline. Only those who embody these virtues may access the Hidden Sanctuary."
+                },
+                {
+                    "id": "silver_key",
+                    "name": "silver key",
+                    "description": "A polished silver key with intricate engravings"
+                },
+                {
+                    "id": "calligraphy_wall",
+                    "name": "calligraphy scrolls",
+                    "description": "Several scrolls with beautiful calligraphy hanging on the wall",
+                    "readable": true,
+                    "text": "The scrolls read: 'Through Stealth, we move unseen. Through Honor, we maintain our code. Through Discipline, we perfect our art. Master Takeshi's wisdom guides us always.'"
+                },
+                {
+                    "id": "training_dummy",
+                    "name": "practice training dummy",
+                    "description": "A wooden dummy used for striking practice, wrapped in straw",
+                    "searchable": true,
+                    "contains": [
+                        "hidden_note"
+                    ]
+                },
+                {
+                    "id": "hidden_note",
+                    "name": "hidden note",
+                    "description": "A small note tucked inside the training dummy",
+                    "readable": true,
+                    "text": "Student's reminder: The combination to the middle drawer is the year our dojo was founded. Master Takeshi keeps important items in his chamber. The path to freedom lies in the Hidden Sanctuary."
+                },
+                {
+                    "id": "locked_chest",
+                    "name": "wooden storage chest",
+                    "description": "A sturdy chest with an iron lock, used for storing valuable training equipment",
+                    "locked": true,
+                    "key_required": "iron_key",
+                    "contains": [
+                        "training_manual"
+                    ]
+                },
+                {
+                    "id": "training_manual",
+                    "name": "training manual",
+                    "description": "A leather-bound manual with training techniques and philosophy",
+                    "readable": true,
+                    "text": "Shadow Assassin Training Manual: All students must master the three principles. Master Takeshi teaches that true strength comes from within. The Master's Chamber contains the deepest secrets of our art. Remember: Stealth is the first principle we learn."
+                },
+                {
+                    "id": "sliding_paper_door",
+                    "name": "sliding paper door",
+                    "description": "A traditional sliding door with paper panels, leading to the Master's Chamber",
+                    "locked": true,
+                    "key_required": "silver_key",
+                    "direction": "north",
+                    "leads_to": "masters_chamber",
+                    "aliases": [
+                        "door",
+                        "north"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "masters_chamber",
+            "name": "Master's Chamber",
+            "description": "A serene chamber with minimal furnishings - a low table, meditation cushions, and a small shrine. Weapons of legendary quality are displayed on the walls. Incense burns slowly, filling the room with a calming scent. Ancient scrolls and texts line shelves carved into the walls. A concealed door to the east is barely visible in the shadows.",
+            "items": [
+                {
+                    "id": "meditation_area",
+                    "name": "meditation cushions",
+                    "description": "Simple cushions arranged before a small shrine",
+                    "searchable": true,
+                    "contains": [
+                        "wisdom_scroll"
+                    ]
+                },
+                {
+                    "id": "wisdom_scroll",
+                    "name": "scroll of wisdom",
+                    "description": "A scroll containing Master Takeshi's teachings",
+                    "readable": true,
+                    "text": "Master Takeshi's Wisdom: The three principles are the foundation of our way. First, Stealth - to move like shadow. Second, Honor - to uphold our code. Third, Discipline - to master ourselves. Only in the Hidden Sanctuary can one find true enlightenment."
+                },
+                {
+                    "id": "weapon_display",
+                    "name": "legendary weapon display",
+                    "description": "A display case showing Master Takeshi's personal weapons",
+                    "readable": true,
+                    "text": "These weapons belonged to Master Takeshi, founder of our dojo. His katana, tanto, and shuriken are preserved here as sacred relics. A plaque reads: 'Master Takeshi - Founder and Eternal Guide.'"
+                },
+                {
+                    "id": "low_table",
+                    "name": "master's writing table",
+                    "description": "A low table with writing supplies and documents",
+                    "subcontainers": [
+                        {
+                            "id": "table_drawer",
+                            "name": "table drawer",
+                            "locked": false,
+                            "contains": [
+                                "personal_journal"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "personal_journal",
+                    "name": "Master Takeshi's journal",
+                    "description": "The personal journal of the dojo's founder",
+                    "readable": true,
+                    "text": "Final Entry: I have built this dojo to preserve the ancient arts. The Hidden Sanctuary is my greatest secret - a place of peace and escape. Only those who understand our three principles and know my name may enter. The shadow path leads to freedom."
+                },
+                {
+                    "id": "scroll_shelf",
+                    "name": "shelf of ancient scrolls",
+                    "description": "Wooden shelves holding numerous scrolls and texts",
+                    "searchable": true,
+                    "contains": [
+                        "principle_text"
+                    ]
+                },
+                {
+                    "id": "principle_text",
+                    "name": "text of principles",
+                    "description": "A detailed explanation of the dojo's three principles",
+                    "readable": true,
+                    "text": "The Three Sacred Principles: STEALTH - The art of moving unseen, striking from shadow. HONOR - The code that binds us, our unbreakable oath. DISCIPLINE - The training of mind and body, the path to mastery. These principles were established by Master Takeshi and must never be forgotten."
+                },
+                {
+                    "id": "shrine",
+                    "name": "small shrine",
+                    "description": "A shrine dedicated to the dojo's founder",
+                    "readable": true,
+                    "text": "Shrine to Master Takeshi, Founder of the Shadow Assassin Dojo. May his teachings guide us forever. The Hidden Sanctuary awaits those worthy to enter."
+                },
+                {
+                    "id": "concealed_door",
+                    "name": "concealed door",
+                    "description": "A hidden door cleverly disguised in the wall paneling. Three questions are carved into a small panel beside it.",
+                    "locked": true,
+                    "lock_type": "password",
+                    "password_questions": [
+                        {
+                            "question": "What is the first sacred principle?",
+                            "answer": "stealth",
+                            "hint": "Check the founding scroll and the text of principles"
+                        },
+                        {
+                            "question": "Where does the shadow path lead?",
+                            "answer": "hidden sanctuary",
+                            "hint": "Master Takeshi's journal and other texts mention this location"
+                        },
+                        {
+                            "question": "Who founded this dojo?",
+                            "answer": "master takeshi",
+                            "hint": "Multiple scrolls and the shrine identify the founder"
+                        }
+                    ],
+                    "direction": "east",
+                    "leads_to": "hidden_sanctuary",
+                    "aliases": [
+                        "door",
+                        "east"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "hidden_sanctuary",
+            "name": "Hidden Sanctuary",
+            "description": "You have discovered the Hidden Sanctuary! A peaceful chamber hidden deep within the dojo, untouched by time. A small garden with a koi pond occupies the center, and moonlight streams through an opening in the ceiling. Stone lanterns provide gentle illumination. At the far end, a secret passage leads to the outside world and freedom. You have proven yourself worthy.",
+            "items": [
+                {
+                    "id": "koi_pond",
+                    "name": "tranquil koi pond",
+                    "description": "A serene pond with colorful koi fish swimming peacefully"
+                },
+                {
+                    "id": "stone_lanterns",
+                    "name": "stone lanterns",
+                    "description": "Ancient lanterns that still burn with a soft, eternal flame"
+                },
+                {
+                    "id": "memorial_stone",
+                    "name": "memorial stone",
+                    "description": "A stone monument with an inscription",
+                    "readable": true,
+                    "text": "In memory of Master Takeshi, who created this sanctuary as a place of peace and a path to freedom. May all who find this place carry forward the principles of Stealth, Honor, and Discipline."
+                },
+                {
+                    "id": "secret_passage",
+                    "name": "secret passage",
+                    "description": "A hidden tunnel leading to the outside world, your path to freedom"
+                }
+            ],
+            "exits": [],
+            "is_goal": true,
+            "win_message": "You have reached the Hidden Sanctuary and discovered the secret path to freedom! As you walk through the peaceful garden one last time, you feel the weight of Master Takeshi's wisdom. You have proven yourself worthy by mastering the puzzles and understanding the three sacred principles. The secret passage opens before you, leading to the outside world. You escape the Shadow Assassin Dojo with honor. You win!"
+        }
+    ]
+}

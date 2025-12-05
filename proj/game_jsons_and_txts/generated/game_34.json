@@ -1,0 +1,199 @@
+{
+    "theme": "Biohazard Quarantine Zone",
+    "title": "Biohazard Quarantine Zone Adventure #34",
+    "goal": "Solve the puzzles, achieve the main objective, and escape.",
+    "starting_room": "decontamination_chamber",
+    "rooms": [
+        {
+            "id": "decontamination_chamber",
+            "name": "Decontamination Chamber",
+            "description": "A sterile white room with harsh fluorescent lighting. Yellow and black biohazard symbols cover the walls. Chemical showers line one side, and the air smells of disinfectant. Emergency lights flash red. A hazmat suit hangs on the wall, and a metal locker stands in the corner.",
+            "items": [
+                {
+                    "id": "metal_locker",
+                    "name": "emergency supply locker",
+                    "description": "A tall metal locker with two compartments and a biohazard warning label",
+                    "subcontainers": [
+                        {
+                            "id": "top_compartment",
+                            "name": "top compartment",
+                            "locked": false,
+                            "contains": [
+                                "evacuation_protocol"
+                            ]
+                        },
+                        {
+                            "id": "bottom_compartment",
+                            "name": "bottom compartment",
+                            "locked": true,
+                            "lock_type": "combination",
+                            "combination": "2847",
+                            "contains": [
+                                "security_keycard"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "evacuation_protocol",
+                    "name": "evacuation protocol document",
+                    "description": "An official document with emergency procedures",
+                    "readable": true,
+                    "text": "EVACUATION PROTOCOL: In case of containment breach, proceed to Research Lab Alpha. Lead scientist Dr Webb (ID: 2847) has access to antidote storage. Chief of Security is Director Hayes. Outbreak originated in Sector C."
+                },
+                {
+                    "id": "security_keycard",
+                    "name": "security access keycard",
+                    "description": "A magnetic keycard with a red stripe and biohazard symbol"
+                },
+                {
+                    "id": "hazmat_suit",
+                    "name": "hanging hazmat suit",
+                    "description": "A protective suit with multiple pockets and equipment",
+                    "searchable": true,
+                    "contains": [
+                        "contamination_report"
+                    ]
+                },
+                {
+                    "id": "contamination_report",
+                    "name": "contamination incident report",
+                    "description": "A crumpled report with handwritten notes",
+                    "readable": true,
+                    "text": "INCIDENT REPORT: Pathogen breach in Sector C at 0600 hours. Dr Chen was first responder. Antidote Formula X7 is stored in the secure vault. Vault combination is the year of the first recorded pandemic plus the current facility level (4)."
+                },
+                {
+                    "id": "reinforced_airlock_door",
+                    "name": "reinforced airlock door",
+                    "description": "A heavy steel door with a card reader and multiple locks. Red warning lights flash around the frame.",
+                    "locked": true,
+                    "key_required": "security_keycard",
+                    "direction": "north",
+                    "leads_to": "research_laboratory",
+                    "aliases": [
+                        "airlock",
+                        "north"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "research_laboratory",
+            "name": "Research Laboratory Alpha",
+            "description": "A large laboratory filled with overturned equipment and shattered glass. Microscopes and centrifuges sit on metal tables. Specimen containers are scattered across the floor. Warning signs indicate hazardous materials. Three information boards hang on the walls, and a biometric vault door dominates the east wall.",
+            "items": [
+                {
+                    "id": "info_board_webb",
+                    "name": "information board for Dr Webb",
+                    "description": "A board with a photo and details about the lead scientist",
+                    "readable": true,
+                    "text": "Dr. Sarah Webb - Lead Virologist. Employee ID: 2847. Specializes in pathogen research and antidote development. Office located in Sector C."
+                },
+                {
+                    "id": "info_board_chen",
+                    "name": "information board for Dr Chen",
+                    "description": "A board showing a researcher in protective gear",
+                    "readable": true,
+                    "text": "Dr. Michael Chen - Biochemist. First responder to containment breaches. Known for quick thinking during the 1918 pandemic research project."
+                },
+                {
+                    "id": "info_board_hayes",
+                    "name": "information board for Director Hayes",
+                    "description": "A board displaying the security director",
+                    "readable": true,
+                    "text": "Director Patricia Hayes - Chief of Security. Responsible for facility lockdown protocols and emergency evacuations. Authorized for all secure areas."
+                },
+                {
+                    "id": "lab_table",
+                    "name": "overturned lab table",
+                    "description": "A metal table with drawers, knocked on its side with papers scattered around",
+                    "searchable": true,
+                    "contains": [
+                        "research_notes",
+                        "vault_key"
+                    ]
+                },
+                {
+                    "id": "research_notes",
+                    "name": "Webb research notes",
+                    "description": "A notebook filled with scientific observations and formulas",
+                    "readable": true,
+                    "text": "Research Notes: Formula X7 shows promise as universal antidote. Stored in vault for safety. Vault combination based on 1918 pandemic year plus facility level 4 equals 19184. Keep Chen ID badge for backup vault access."
+                },
+                {
+                    "id": "vault_key",
+                    "name": "Chen ID badge",
+                    "description": "An identification badge with a magnetic strip and photo"
+                },
+                {
+                    "id": "specimen_cabinet",
+                    "name": "locked specimen cabinet",
+                    "description": "A refrigerated cabinet with a combination lock displaying four digits",
+                    "locked": true,
+                    "lock_type": "combination",
+                    "combination": "19184",
+                    "contains": [
+                        "antidote_formula"
+                    ]
+                },
+                {
+                    "id": "antidote_formula",
+                    "name": "Formula X7 antidote",
+                    "description": "A vial containing a glowing blue liquid labeled as the universal antidote"
+                },
+                {
+                    "id": "biometric_vault_door",
+                    "name": "biometric vault door",
+                    "description": "A high-security door with a biometric scanner and a terminal displaying three security questions",
+                    "locked": true,
+                    "lock_type": "password",
+                    "password_questions": [
+                        {
+                            "question": "Who is the Chief of Security?",
+                            "answer": "director hayes",
+                            "hint": "Check the information boards in the laboratory"
+                        },
+                        {
+                            "question": "Where did the outbreak originate?",
+                            "answer": "sector c",
+                            "hint": "The evacuation protocol mentions the outbreak location"
+                        },
+                        {
+                            "question": "What year was the first recorded pandemic?",
+                            "answer": "1918",
+                            "hint": "Dr Chen's information board references a pandemic research project"
+                        }
+                    ],
+                    "direction": "east",
+                    "leads_to": "emergency_helipad",
+                    "aliases": [
+                        "vault",
+                        "east"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "emergency_helipad",
+            "name": "Emergency Rooftop Helipad",
+            "description": "You burst through the vault door onto the facility rooftop. Fresh air fills your lungs as a rescue helicopter waits with rotors spinning. The pilot waves urgently. Behind you, the quarantined facility is sealed. You clutch the antidote that will save countless lives. The nightmare is over.",
+            "items": [
+                {
+                    "id": "rescue_helicopter",
+                    "name": "rescue helicopter",
+                    "description": "A medical evacuation helicopter with red cross markings, ready for immediate departure"
+                },
+                {
+                    "id": "pilot",
+                    "name": "rescue pilot",
+                    "description": "A pilot in flight gear gesturing for you to board quickly"
+                }
+            ],
+            "exits": [],
+            "is_goal": true,
+            "win_message": "SUCCESS! You have escaped the Biohazard Quarantine Zone with the Formula X7 antidote! The helicopter lifts off as the facility is sealed below. Thanks to your bravery and puzzle-solving skills, the antidote will be mass-produced and the outbreak contained. You are a hero! You win!"
+        }
+    ]
+}

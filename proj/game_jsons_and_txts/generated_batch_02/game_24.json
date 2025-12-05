@@ -1,0 +1,213 @@
+{
+    "theme": "Crystal-Powered Train Station",
+    "title": "Crystal-Powered Train Station Adventure #24",
+    "goal": "Solve the puzzles, achieve the main objective, and escape.",
+    "starting_room": "main_platform",
+    "rooms": [
+        {
+            "id": "main_platform",
+            "name": "Main Platform",
+            "description": "A grand Victorian-era train platform with vaulted glass ceilings. Crystalline chandeliers hang dark and lifeless overhead. The air is cold and still. Frost patterns cover the brass fixtures. Along the walls, dormant crystal sconces flicker weakly. A large information board displays frozen departure times.",
+            "items": [
+                {
+                    "id": "ticket_booth",
+                    "name": "abandoned ticket booth",
+                    "description": "A wooden booth with a brass cash register and dusty ledgers",
+                    "searchable": true,
+                    "contains": [
+                        "station_master_key"
+                    ]
+                },
+                {
+                    "id": "station_master_key",
+                    "name": "brass station master key",
+                    "description": "An ornate brass key with a crystal embedded in its handle"
+                },
+                {
+                    "id": "information_board",
+                    "name": "departure information board",
+                    "description": "A large board with train schedules and station notices",
+                    "readable": true,
+                    "text": "NOTICE: Crystal Power System requires three types of crystals - Red (power level 7), Blue (power level 3), and Green (power level 9). Station Master is Chief Engineer Thornwick. Emergency protocols stored in Power Room vault."
+                },
+                {
+                    "id": "luggage_cart",
+                    "name": "old luggage cart",
+                    "description": "A wheeled cart with several compartments for storing baggage",
+                    "subcontainers": [
+                        {
+                            "id": "top_compartment",
+                            "name": "top compartment",
+                            "locked": false,
+                            "contains": [
+                                "engineer_journal"
+                            ]
+                        },
+                        {
+                            "id": "bottom_compartment",
+                            "name": "bottom compartment",
+                            "locked": true,
+                            "lock_type": "combination",
+                            "combination": "739",
+                            "contains": [
+                                "red_crystal"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "engineer_journal",
+                    "name": "engineer's journal",
+                    "description": "A leather-bound journal with technical notes",
+                    "readable": true,
+                    "text": "Day 47: The crystal power system is failing. I've hidden the red crystal in the luggage cart. The combination is the power levels in order: Red, Blue, Green. Remember - the station was founded in 1887. The crystals must be placed in the Crystal Resonance Chamber."
+                },
+                {
+                    "id": "red_crystal",
+                    "name": "red power crystal",
+                    "description": "A glowing red crystal that pulses with warm energy"
+                },
+                {
+                    "id": "storage_locker",
+                    "name": "station storage locker",
+                    "description": "A tall metal locker with a crystal-shaped lock",
+                    "locked": true,
+                    "key_required": "station_master_key",
+                    "contains": [
+                        "blue_crystal",
+                        "maintenance_log"
+                    ]
+                },
+                {
+                    "id": "blue_crystal",
+                    "name": "blue power crystal",
+                    "description": "A cool blue crystal that hums with electrical energy"
+                },
+                {
+                    "id": "maintenance_log",
+                    "name": "maintenance log",
+                    "description": "A clipboard with maintenance records",
+                    "readable": true,
+                    "text": "MAINTENANCE LOG: Chief Engineer Thornwick reporting. The green crystal is stored in the Crystal Power Room for safety. The resonance chamber is located in the Crystal Power Room. All crystals must be installed to activate the departure train."
+                },
+                {
+                    "id": "crystal_power_room_door",
+                    "name": "crystal power room door",
+                    "description": "A heavy door with crystalline inlays leading to the power systems",
+                    "locked": false,
+                    "direction": "north",
+                    "leads_to": "crystal_power_room",
+                    "aliases": [
+                        "door",
+                        "north"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "crystal_power_room",
+            "name": "Crystal Power Room",
+            "description": "A circular chamber with walls lined with intricate copper pipes and crystal conduits. In the center stands a large brass mechanism with three crystal sockets - red, blue, and green. Gears and pistons wait silently for activation. A vault door on the east wall leads to the departure platform.",
+            "items": [
+                {
+                    "id": "crystal_resonance_chamber",
+                    "name": "crystal resonance chamber",
+                    "description": "The main power mechanism with three empty crystal sockets",
+                    "readable": true,
+                    "text": "CRYSTAL RESONANCE CHAMBER: Insert Red, Blue, and Green crystals to restore station power. Warning: Improper installation may cause system failure."
+                },
+                {
+                    "id": "control_panel",
+                    "name": "brass control panel",
+                    "description": "A panel covered in gauges, switches, and indicator lights",
+                    "searchable": true,
+                    "contains": [
+                        "green_crystal"
+                    ]
+                },
+                {
+                    "id": "green_crystal",
+                    "name": "green power crystal",
+                    "description": "A vibrant green crystal that radiates life energy"
+                },
+                {
+                    "id": "technical_manual",
+                    "name": "station technical manual",
+                    "description": "A thick manual with detailed diagrams and procedures",
+                    "readable": true,
+                    "text": "STATION OPERATIONS MANUAL: This station was founded in 1887 by Chief Engineer Thornwick. The Crystal Resonance Chamber powers all station systems. Emergency question protocols: What year was the station founded? Who is the chief engineer? Where are the crystals installed?"
+                },
+                {
+                    "id": "workbench",
+                    "name": "engineer's workbench",
+                    "description": "A cluttered workbench with tools and crystal fragments",
+                    "searchable": true,
+                    "contains": [
+                        "protocol_note"
+                    ]
+                },
+                {
+                    "id": "protocol_note",
+                    "name": "emergency protocol note",
+                    "description": "A hastily written note about emergency procedures",
+                    "readable": true,
+                    "text": "EMERGENCY: If power fails, manually answer security questions at vault door. Answers are in the station records. The crystals go in the resonance chamber!"
+                },
+                {
+                    "id": "security_vault_door",
+                    "name": "security vault door",
+                    "description": "A reinforced door with a security panel displaying three questions. Crystal energy flows through its locking mechanism.",
+                    "locked": true,
+                    "lock_type": "password",
+                    "password_questions": [
+                        {
+                            "question": "What year was this station founded?",
+                            "answer": "1887",
+                            "hint": "Check the information board and technical manual"
+                        },
+                        {
+                            "question": "Who is the chief engineer?",
+                            "answer": "thornwick",
+                            "hint": "Look at the maintenance log and station notices"
+                        },
+                        {
+                            "question": "Where are the power crystals installed?",
+                            "answer": "resonance chamber",
+                            "hint": "Read the engineer's journal and technical manual"
+                        }
+                    ],
+                    "direction": "east",
+                    "leads_to": "departure_platform",
+                    "aliases": [
+                        "vault",
+                        "east"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "departure_platform",
+            "name": "Departure Platform",
+            "description": "You've made it! A magnificent steam train with crystal-powered engines sits on the tracks, its boiler glowing with restored energy. The crystalline chandeliers throughout the station blaze to life. Steam hisses from the locomotive as it prepares for departure. The conductor's ghost appears briefly, tipping his hat in gratitude before fading away.",
+            "items": [
+                {
+                    "id": "crystal_train",
+                    "name": "crystal-powered locomotive",
+                    "description": "A beautiful steam engine with glowing crystal power cores, ready to carry you to safety"
+                },
+                {
+                    "id": "conductor_sign",
+                    "name": "illuminated departure sign",
+                    "description": "A glowing sign reading 'ALL ABOARD - DESTINATION: FREEDOM'",
+                    "readable": true,
+                    "text": "The train is ready for departure. Your journey through the Crystal-Powered Train Station is complete!"
+                }
+            ],
+            "exits": [],
+            "is_goal": true,
+            "win_message": "SUCCESS! You've restored power to the Crystal-Powered Train Station and activated the departure train! The three crystals glow brilliantly in the resonance chamber as the station comes alive with light and energy. You board the magnificent locomotive and it pulls away from the platform, carrying you safely away from the frozen station. The adventure is complete! You win!"
+        }
+    ]
+}

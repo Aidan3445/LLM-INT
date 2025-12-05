@@ -1,0 +1,244 @@
+{
+    "theme": "Architect's Impossible House",
+    "title": "Architect's Impossible House Adventure #11",
+    "goal": "Solve the puzzles, achieve the main objective, and escape.",
+    "starting_room": "inverted_study",
+    "rooms": [
+        {
+            "id": "inverted_study",
+            "name": "Inverted Study",
+            "description": "A disorienting room where the laws of physics seem negotiable. Bookshelves line what should be the ceiling, a desk sits sideways on the wall, and a chandelier grows upward from the floor. The architect's blueprints and sketches cover every surface, showing impossible geometries and paradoxical structures.",
+            "items": [
+                {
+                    "id": "blueprint_table",
+                    "name": "floating blueprint table",
+                    "description": "A drafting table that hovers at an odd angle, covered with architectural drawings",
+                    "searchable": true,
+                    "contains": [
+                        "master_blueprint"
+                    ]
+                },
+                {
+                    "id": "master_blueprint",
+                    "name": "master blueprint",
+                    "description": "The architect's primary design document for this impossible house",
+                    "readable": true,
+                    "text": "MASTER BLUEPRINT - Project: Impossible House. Designed by M.C. Penrose. Foundation laid: 1954. Key principle: A structure exists in four dimensions simultaneously. The number of impossible angles: 8. Total paradoxes incorporated: 3."
+                },
+                {
+                    "id": "sideways_desk",
+                    "name": "sideways architect's desk",
+                    "description": "A mahogany desk mounted perpendicular to the floor with three drawers that open in defiance of gravity",
+                    "subcontainers": [
+                        {
+                            "id": "top_drawer",
+                            "name": "top drawer",
+                            "locked": false,
+                            "contains": [
+                                "architects_journal"
+                            ]
+                        },
+                        {
+                            "id": "middle_drawer",
+                            "name": "middle drawer",
+                            "locked": true,
+                            "lock_type": "combination",
+                            "combination": "1954",
+                            "contains": [
+                                "brass_key"
+                            ]
+                        },
+                        {
+                            "id": "bottom_drawer",
+                            "name": "bottom drawer",
+                            "locked": false,
+                            "contains": []
+                        }
+                    ]
+                },
+                {
+                    "id": "architects_journal",
+                    "name": "architect's personal journal",
+                    "description": "A leather-bound journal filled with sketches and notes",
+                    "readable": true,
+                    "text": "Journal Entry: I am M.C. Penrose, and I have achieved what others deemed impossible. This house exists in multiple dimensions. The year I began this work, 1954, is the key to everything. My gallery displays the masters who inspired me: Escher, Piranesi, and the concept of the Penrose stairs itself."
+                },
+                {
+                    "id": "brass_key",
+                    "name": "geometric brass key",
+                    "description": "A key shaped like an impossible triangle, warm to the touch"
+                },
+                {
+                    "id": "locked_cabinet",
+                    "name": "upside-down cabinet",
+                    "description": "A glass cabinet mounted on what appears to be the ceiling, containing important documents",
+                    "locked": true,
+                    "key_required": "brass_key",
+                    "contains": [
+                        "dimension_theory",
+                        "reality_crystal"
+                    ]
+                },
+                {
+                    "id": "dimension_theory",
+                    "name": "dimensional theory document",
+                    "description": "A scientific paper explaining the house's construction",
+                    "readable": true,
+                    "text": "THEORY OF IMPOSSIBLE SPACES: This house exists where Euclidean geometry fails. To navigate it, one must understand: The architect's name is the key to identity. The inspiration comes from the Infinite Staircase. The house's true nature is that it exists in Four Dimensions."
+                },
+                {
+                    "id": "reality_crystal",
+                    "name": "reality anchor crystal",
+                    "description": "A crystalline object that seems to stabilize the space around it, pulsing with a soft blue light"
+                },
+                {
+                    "id": "paradoxical_doorway",
+                    "name": "paradoxical doorway",
+                    "description": "A door frame that appears to lead both up and down simultaneously, shimmering with spatial distortion",
+                    "locked": false,
+                    "direction": "north",
+                    "leads_to": "infinite_gallery",
+                    "aliases": [
+                        "doorway",
+                        "north",
+                        "door"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "infinite_gallery",
+            "name": "Infinite Gallery",
+            "description": "A vast gallery where perspective itself becomes unreliable. Paintings line walls that seem to extend forever in impossible directions. Staircases lead up and down to the same place. Columns twist in non-Euclidean curves. The artwork depicts famous impossible structures and optical illusions.",
+            "items": [
+                {
+                    "id": "escher_tribute",
+                    "name": "tribute to Escher",
+                    "description": "A large painting in the style of M.C. Escher showing an endless staircase",
+                    "readable": true,
+                    "text": "Painting label: 'Homage to Escher - The master of impossible spaces. His infinite staircases inspired this very house. Without his vision, none of this would exist.'"
+                },
+                {
+                    "id": "piranesi_print",
+                    "name": "Piranesi print",
+                    "description": "An architectural print showing vast, impossible prison spaces",
+                    "readable": true,
+                    "text": "Print description: 'Piranesi's Imaginary Prisons - Architecture that defies reason and scale. These visions of impossible spaces laid the groundwork for modern paradoxical design.'"
+                },
+                {
+                    "id": "penrose_diagram",
+                    "name": "Penrose stairs diagram",
+                    "description": "A framed diagram of the famous impossible staircase",
+                    "readable": true,
+                    "text": "Diagram notation: 'The Penrose Stairs - A staircase that ascends or descends forever in a loop. Also known as the Infinite Staircase. The foundation of this house's design.'"
+                },
+                {
+                    "id": "display_pedestal",
+                    "name": "rotating display pedestal",
+                    "description": "A pedestal that slowly rotates, displaying various impossible objects",
+                    "searchable": true,
+                    "contains": [
+                        "architects_note"
+                    ]
+                },
+                {
+                    "id": "architects_note",
+                    "name": "architect's final note",
+                    "description": "A handwritten note left by the architect",
+                    "readable": true,
+                    "text": "To whoever finds this: I am M.C. Penrose, and I have transcended three-dimensional space. This house exists in four dimensions. To escape, you must understand the nature of reality itself. Take the reality crystal to my sanctum and activate the portal. Only then can you return to normal space."
+                },
+                {
+                    "id": "sculpture_garden",
+                    "name": "impossible sculpture garden",
+                    "description": "A collection of sculptures that appear different from every angle",
+                    "searchable": true,
+                    "contains": []
+                },
+                {
+                    "id": "architect's_sanctum_entrance",
+                    "name": "architect's sanctum entrance",
+                    "description": "A grand doorway with three questions etched into its frame in elegant script. The door seems to exist in multiple places at once.",
+                    "locked": true,
+                    "lock_type": "password",
+                    "password_questions": [
+                        {
+                            "question": "What is the architect's name?",
+                            "answer": "m.c. penrose",
+                            "hint": "Check the architect's journal and notes throughout the house"
+                        },
+                        {
+                            "question": "What inspired the house's design?",
+                            "answer": "infinite staircase",
+                            "hint": "Look at the Penrose stairs diagram and the dimension theory document"
+                        },
+                        {
+                            "question": "In how many dimensions does this house exist?",
+                            "answer": "four dimensions",
+                            "hint": "The dimension theory document and architect's note explain this"
+                        }
+                    ],
+                    "direction": "east",
+                    "leads_to": "architects_sanctum",
+                    "aliases": [
+                        "entrance",
+                        "east",
+                        "sanctum"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "architects_sanctum",
+            "name": "Architect's Sanctum",
+            "description": "The heart of the impossible house. A perfectly normal room - or so it appears at first. In the center stands a portal frame showing swirling colors and glimpses of normal reality. The architect's desk sits peacefully in the corner, and through the windows you can see impossible vistas of the house folding in on itself. A pedestal before the portal awaits the reality crystal.",
+            "items": [
+                {
+                    "id": "dimensional_portal",
+                    "name": "dimensional portal",
+                    "description": "A shimmering portal that leads back to normal three-dimensional space. It requires the reality crystal to fully activate.",
+                    "locked": true,
+                    "key_required": "reality_crystal",
+                    "direction": "north",
+                    "leads_to": "freedom",
+                    "aliases": [
+                        "portal",
+                        "north"
+                    ]
+                },
+                {
+                    "id": "crystal_pedestal",
+                    "name": "activation pedestal",
+                    "description": "A simple pedestal with a crystal-shaped depression",
+                    "readable": true,
+                    "text": "Inscription: 'Place the reality anchor here to stabilize the portal and return to Euclidean space.'"
+                },
+                {
+                    "id": "architects_final_desk",
+                    "name": "architect's personal desk",
+                    "description": "A normal desk with papers and drawings showing the architect's final designs",
+                    "searchable": true,
+                    "contains": []
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "freedom",
+            "name": "Normal Reality",
+            "description": "You step through the portal and find yourself standing on a normal street in front of an ordinary-looking house. When you turn back, the impossible house has vanished, leaving only a small brass key in your hand shaped like an impossible triangle - proof that it was all real.",
+            "items": [
+                {
+                    "id": "normal_house",
+                    "name": "ordinary house",
+                    "description": "A completely normal, three-dimensional house that obeys all laws of physics"
+                }
+            ],
+            "exits": [],
+            "is_goal": true,
+            "win_message": "You have successfully escaped the Architect's Impossible House! The reality crystal dissolves in your hand as you return to normal space, but the memory of walking through four-dimensional architecture will stay with you forever. M.C. Penrose's masterpiece remains hidden between dimensions, waiting for the next curious soul to discover it. You win!"
+        }
+    ]
+}

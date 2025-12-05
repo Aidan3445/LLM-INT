@@ -1,0 +1,308 @@
+{
+    "theme": "Haunted Doll Factory",
+    "title": "Haunted Doll Factory Adventure #1",
+    "goal": "Solve the puzzles, achieve the main objective, and escape.",
+    "starting_room": "factory_floor",
+    "rooms": [
+        {
+            "id": "factory_floor",
+            "name": "Abandoned Factory Floor",
+            "description": "A vast, dusty factory floor filled with rusted machinery and conveyor belts. Broken porcelain doll parts litter the ground. Cobwebs hang from the ceiling, and moonlight streams through shattered windows. The air is thick with the smell of decay and old paint. Shadows seem to move in the corners of your vision.",
+            "items": [
+                {
+                    "id": "workbench",
+                    "name": "old workbench",
+                    "description": "A wooden workbench covered in dust and doll-making tools",
+                    "searchable": true,
+                    "contains": [
+                        "rusty_screwdriver"
+                    ]
+                },
+                {
+                    "id": "rusty_screwdriver",
+                    "name": "rusty screwdriver",
+                    "description": "A corroded screwdriver that could pry open weak locks"
+                },
+                {
+                    "id": "filing_cabinet",
+                    "name": "metal filing cabinet",
+                    "description": "A dented filing cabinet with three drawers, covered in rust",
+                    "subcontainers": [
+                        {
+                            "id": "top_drawer",
+                            "name": "top drawer",
+                            "locked": false,
+                            "contains": [
+                                "factory_notice"
+                            ]
+                        },
+                        {
+                            "id": "middle_drawer",
+                            "name": "middle drawer",
+                            "locked": true,
+                            "lock_type": "combination",
+                            "combination": "1952",
+                            "contains": [
+                                "brass_key"
+                            ]
+                        },
+                        {
+                            "id": "bottom_drawer",
+                            "name": "bottom drawer",
+                            "locked": false,
+                            "contains": []
+                        }
+                    ]
+                },
+                {
+                    "id": "factory_notice",
+                    "name": "faded factory notice",
+                    "description": "A yellowed notice posted on official letterhead",
+                    "readable": true,
+                    "text": "NOTICE: Blackwood Doll Factory - Est. 1952. Owner: Mr. Edgar Blackwood. All employees must report to the Assembly Room for safety training. Remember: the dolls are stored in the warehouse, and Mr. Blackwood's office is on the second floor."
+                },
+                {
+                    "id": "brass_key",
+                    "name": "tarnished brass key",
+                    "description": "An old brass key with 'SUPPLY' engraved on it"
+                },
+                {
+                    "id": "supply_cabinet",
+                    "name": "locked supply cabinet",
+                    "description": "A tall metal cabinet with a brass lock",
+                    "locked": true,
+                    "key_required": "brass_key",
+                    "contains": [
+                        "employee_journal"
+                    ]
+                },
+                {
+                    "id": "employee_journal",
+                    "name": "employee's journal",
+                    "description": "A leather-bound journal belonging to a former worker",
+                    "readable": true,
+                    "text": "Last Entry: Something is wrong with the dolls. They move when no one is watching. Mr. Blackwood has locked himself in his office. The only way out is through the loading dock, but you need the manager's key from his office upstairs."
+                },
+                {
+                    "id": "conveyor_belt",
+                    "name": "broken conveyor belt",
+                    "description": "A rusted conveyor belt with doll parts scattered along it",
+                    "searchable": true,
+                    "contains": [
+                        "doll_head"
+                    ]
+                },
+                {
+                    "id": "doll_head",
+                    "name": "cracked porcelain doll head",
+                    "description": "A disturbing doll head with one eye missing and a cracked smile"
+                },
+                {
+                    "id": "door_to_assembly_room",
+                    "name": "door to assembly room",
+                    "description": "A heavy wooden door leading east to the Assembly Room",
+                    "locked": false,
+                    "direction": "east",
+                    "leads_to": "assembly_room",
+                    "aliases": [
+                        "door",
+                        "east"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "assembly_room",
+            "name": "Doll Assembly Room",
+            "description": "A cramped room filled with assembly stations and shelves of doll parts. Dozens of unfinished dolls sit on the tables, their empty eye sockets seeming to follow your movements. Paint cans and brushes are scattered everywhere. A staircase leads up to the manager's office. The walls are covered with instruction posters and safety warnings.",
+            "items": [
+                {
+                    "id": "instruction_poster",
+                    "name": "assembly instruction poster",
+                    "description": "A poster showing the doll assembly process",
+                    "readable": true,
+                    "text": "ASSEMBLY INSTRUCTIONS: Step 1 - Attach head to body. Step 2 - Insert glass eyes. Step 3 - Paint facial features. Step 4 - Add clothing. All completed dolls must be moved to the warehouse for storage."
+                },
+                {
+                    "id": "safety_poster",
+                    "name": "safety warning poster",
+                    "description": "A faded safety poster with important warnings",
+                    "readable": true,
+                    "text": "SAFETY FIRST! In case of emergency, exit through the loading dock. Manager Edgar Blackwood is responsible for all safety protocols. Report all incidents to the office immediately."
+                },
+                {
+                    "id": "paint_cabinet",
+                    "name": "paint storage cabinet",
+                    "description": "A cabinet filled with old paint cans and supplies",
+                    "searchable": true,
+                    "contains": [
+                        "hidden_note"
+                    ]
+                },
+                {
+                    "id": "hidden_note",
+                    "name": "hidden note",
+                    "description": "A crumpled note stuffed behind paint cans",
+                    "readable": true,
+                    "text": "I've hidden the spare office key in the toolbox on the assembly table. The combination is the year this cursed factory opened. - E.B."
+                },
+                {
+                    "id": "assembly_table",
+                    "name": "main assembly table",
+                    "description": "A large table covered with doll parts and a locked toolbox",
+                    "subcontainers": [
+                        {
+                            "id": "toolbox",
+                            "name": "locked toolbox",
+                            "locked": true,
+                            "lock_type": "combination",
+                            "combination": "1952",
+                            "contains": [
+                                "office_key"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "office_key",
+                    "name": "office key",
+                    "description": "A small silver key labeled 'MANAGER OFFICE'"
+                },
+                {
+                    "id": "doll_shelf",
+                    "name": "shelf of completed dolls",
+                    "description": "A shelf displaying finished dolls with glassy eyes that seem to watch you",
+                    "searchable": true,
+                    "contains": []
+                },
+                {
+                    "id": "staircase_to_office",
+                    "name": "staircase to office",
+                    "description": "A narrow wooden staircase leading up to the manager's office. The door at the top has a keyhole.",
+                    "locked": true,
+                    "key_required": "office_key",
+                    "direction": "north",
+                    "leads_to": "managers_office",
+                    "aliases": [
+                        "stairs",
+                        "up",
+                        "north"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "managers_office",
+            "name": "Manager's Office",
+            "description": "A small, claustrophobic office overlooking the factory floor. The desk is covered with papers and ledgers. A large portrait of Edgar Blackwood hangs on the wall, his painted eyes seeming to follow you. File cabinets line one wall, and a locked safe sits in the corner. A window shows the loading dock below.",
+            "items": [
+                {
+                    "id": "desk",
+                    "name": "manager's desk",
+                    "description": "A cluttered oak desk with papers and a locked drawer",
+                    "subcontainers": [
+                        {
+                            "id": "desk_drawer",
+                            "name": "desk drawer",
+                            "locked": true,
+                            "key_required": "rusty_screwdriver",
+                            "contains": [
+                                "safe_instructions"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "safe_instructions",
+                    "name": "safe combination note",
+                    "description": "A note with instructions for opening the safe",
+                    "readable": true,
+                    "text": "SAFE ACCESS: To open the safe, answer the security questions correctly. Q1: What is the factory name? Q2: Where are finished dolls stored? Q3: Who owns this factory?"
+                },
+                {
+                    "id": "portrait",
+                    "name": "portrait of Edgar Blackwood",
+                    "description": "An oil painting of a stern man in a suit",
+                    "readable": true,
+                    "text": "Portrait of Edgar Blackwood, Factory Owner. His nameplate reads: 'Edgar Blackwood - Proprietor of Blackwood Doll Factory since 1952'"
+                },
+                {
+                    "id": "ledger",
+                    "name": "accounting ledger",
+                    "description": "A thick book with financial records",
+                    "readable": true,
+                    "text": "Blackwood Doll Factory - Financial Records. Warehouse inventory shows 500 completed dolls in storage. All products shipped from loading dock."
+                },
+                {
+                    "id": "wall_safe",
+                    "name": "wall safe",
+                    "description": "A heavy safe built into the wall with a digital keypad displaying three security questions",
+                    "locked": true,
+                    "lock_type": "password",
+                    "password_questions": [
+                        {
+                            "question": "What is the factory name?",
+                            "answer": "blackwood doll factory",
+                            "hint": "Check the factory notice and the portrait"
+                        },
+                        {
+                            "question": "Where are finished dolls stored?",
+                            "answer": "warehouse",
+                            "hint": "Look at the instruction poster and the ledger"
+                        },
+                        {
+                            "question": "Who owns this factory?",
+                            "answer": "edgar blackwood",
+                            "hint": "The portrait and notices mention the owner's name"
+                        }
+                    ],
+                    "contains": [
+                        "loading_dock_key"
+                    ]
+                },
+                {
+                    "id": "loading_dock_key",
+                    "name": "loading dock key",
+                    "description": "A heavy iron key labeled 'LOADING DOCK EXIT'"
+                },
+                {
+                    "id": "window_overlooking_loading_dock",
+                    "name": "window overlooking loading dock",
+                    "description": "A window with a fire escape ladder leading down to the loading dock",
+                    "locked": true,
+                    "key_required": "loading_dock_key",
+                    "direction": "south",
+                    "leads_to": "loading_dock",
+                    "aliases": [
+                        "window",
+                        "down",
+                        "south"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "loading_dock",
+            "name": "Loading Dock",
+            "description": "You've made it to the loading dock! The large bay doors are open, revealing the night sky and freedom beyond. Fresh air rushes in, dispelling the oppressive atmosphere of the factory. An old delivery truck sits waiting, its engine still running. Behind you, the factory looms dark and silent.",
+            "items": [
+                {
+                    "id": "delivery_truck",
+                    "name": "old delivery truck",
+                    "description": "A vintage truck with 'Blackwood Dolls' painted on the side, engine idling"
+                },
+                {
+                    "id": "bay_doors",
+                    "name": "open bay doors",
+                    "description": "Large doors opening to the outside world and freedom"
+                }
+            ],
+            "exits": [],
+            "is_goal": true,
+            "win_message": "You've escaped the Haunted Doll Factory! As you climb into the delivery truck and drive away, you glance in the rearview mirror. For just a moment, you see dozens of porcelain faces watching from the factory windows. You floor the accelerator and never look back. You win!"
+        }
+    ]
+}

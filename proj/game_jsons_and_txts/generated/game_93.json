@@ -1,0 +1,357 @@
+{
+    "theme": "Underground Resistance Bunker",
+    "title": "Underground Resistance Bunker Adventure #93",
+    "goal": "Solve the puzzles, achieve the main objective, and escape.",
+    "starting_room": "sleeping_quarters",
+    "rooms": [
+        {
+            "id": "sleeping_quarters",
+            "name": "Sleeping Quarters",
+            "description": "A cramped underground room with metal bunk beds bolted to concrete walls. Dim emergency lights cast long shadows. The air is stale and cool. Personal belongings are scattered on footlockers, and resistance propaganda posters cover the walls. A heavy steel door leads north.",
+            "items": [
+                {
+                    "id": "footlocker",
+                    "name": "metal footlocker",
+                    "description": "A dented footlocker with two compartments and a resistance symbol painted on the lid",
+                    "subcontainers": [
+                        {
+                            "id": "top_compartment",
+                            "name": "top compartment",
+                            "locked": false,
+                            "contains": [
+                                "resistance_journal"
+                            ]
+                        },
+                        {
+                            "id": "bottom_compartment",
+                            "name": "bottom compartment",
+                            "locked": true,
+                            "lock_type": "combination",
+                            "combination": "1984",
+                            "contains": [
+                                "access_card"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "resistance_journal",
+                    "name": "resistance fighter's journal",
+                    "description": "A worn notebook with handwritten entries",
+                    "readable": true,
+                    "text": "Day 47: The regime fell in 1984, the year we'll never forget. Commander Sarah leads us now. We store weapons in the arsenal. Our mission: reach the surface through the escape tunnel. The supply room code is hidden in the operations manual."
+                },
+                {
+                    "id": "access_card",
+                    "name": "security access card",
+                    "description": "A plastic card with a magnetic strip labeled 'Level 2 Access'"
+                },
+                {
+                    "id": "bunk_bed",
+                    "name": "metal bunk bed",
+                    "description": "A sturdy bunk bed with thin mattresses",
+                    "searchable": true,
+                    "contains": [
+                        "hidden_key"
+                    ]
+                },
+                {
+                    "id": "hidden_key",
+                    "name": "small brass key",
+                    "description": "A key hidden between the mattresses, slightly tarnished"
+                },
+                {
+                    "id": "propaganda_posters",
+                    "name": "resistance posters",
+                    "description": "Posters showing resistance slogans and symbols",
+                    "readable": true,
+                    "text": "RESIST! REMEMBER 1984! FREEDOM OR DEATH! Commander Sarah leads the way!"
+                },
+                {
+                    "id": "reinforced_steel_door",
+                    "name": "reinforced steel door",
+                    "description": "A heavy door with a card reader mounted beside it",
+                    "locked": true,
+                    "key_required": "access_card",
+                    "direction": "north",
+                    "leads_to": "command_center",
+                    "aliases": [
+                        "door",
+                        "north"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "command_center",
+            "name": "Command Center",
+            "description": "The nerve center of the resistance bunker. Radio equipment lines one wall, crackling with static. A large tactical map covers another wall, marked with positions and routes. Computer monitors flicker with encrypted data. Filing cabinets and a command desk dominate the room. Doors lead east and west.",
+            "items": [
+                {
+                    "id": "tactical_map",
+                    "name": "tactical wall map",
+                    "description": "A detailed map showing bunker layout and surface escape routes",
+                    "readable": true,
+                    "text": "Map shows: Sleeping Quarters (South), Command Center (Center), Supply Room (East), Arsenal (West), Escape Tunnel (North from Supply Room). Red X marks the escape tunnel exit to freedom."
+                },
+                {
+                    "id": "command_desk",
+                    "name": "commander's desk",
+                    "description": "A metal desk covered with papers and communication equipment",
+                    "subcontainers": [
+                        {
+                            "id": "desk_drawer_top",
+                            "name": "top drawer",
+                            "locked": false,
+                            "contains": [
+                                "operations_manual"
+                            ]
+                        },
+                        {
+                            "id": "desk_drawer_bottom",
+                            "name": "bottom drawer",
+                            "locked": true,
+                            "key_required": "hidden_key",
+                            "contains": [
+                                "commander_note"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "operations_manual",
+                    "name": "operations manual",
+                    "description": "A tactical handbook with resistance protocols",
+                    "readable": true,
+                    "text": "RESISTANCE OPERATIONS MANUAL - Supply Room Access Code: Enter the three numbers representing our core values. Freedom (7 letters), Unity (5 letters), Victory (7 letters). Code: 757"
+                },
+                {
+                    "id": "commander_note",
+                    "name": "commander's personal note",
+                    "description": "A handwritten note from Commander Sarah",
+                    "readable": true,
+                    "text": "To whoever finds this: I am Commander Sarah, leader of this cell. Our weapons are stored in the arsenal to the west. The escape tunnel requires knowledge of our mission. Remember: we fight for freedom, we hide in bunkers, and I lead this resistance."
+                },
+                {
+                    "id": "filing_cabinet",
+                    "name": "secure filing cabinet",
+                    "description": "A locked cabinet with classified documents",
+                    "locked": true,
+                    "lock_type": "combination",
+                    "combination": "757",
+                    "contains": [
+                        "arsenal_key",
+                        "intelligence_report"
+                    ]
+                },
+                {
+                    "id": "arsenal_key",
+                    "name": "arsenal access key",
+                    "description": "A heavy key labeled 'Arsenal - Authorized Personnel Only'"
+                },
+                {
+                    "id": "intelligence_report",
+                    "name": "intelligence report",
+                    "description": "A classified document with enemy movements",
+                    "readable": true,
+                    "text": "CLASSIFIED: Enemy patrols have increased. We must evacuate through the northern escape tunnel soon. All personnel should memorize the security questions. Our cause is freedom, our sanctuary is this bunker, our leader is Commander Sarah."
+                },
+                {
+                    "id": "radio_equipment",
+                    "name": "radio communications array",
+                    "description": "Sophisticated radio equipment for encrypted communications",
+                    "searchable": true,
+                    "contains": []
+                },
+                {
+                    "id": "arsenal_door",
+                    "name": "arsenal door",
+                    "description": "A reinforced door leading west to the weapons storage",
+                    "locked": true,
+                    "key_required": "arsenal_key",
+                    "direction": "west",
+                    "leads_to": "arsenal",
+                    "aliases": [
+                        "west",
+                        "arsenal"
+                    ]
+                },
+                {
+                    "id": "supply_room_door",
+                    "name": "supply room door",
+                    "description": "A standard door leading east to the supply room",
+                    "locked": false,
+                    "direction": "east",
+                    "leads_to": "supply_room",
+                    "aliases": [
+                        "east",
+                        "supply"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "arsenal",
+            "name": "Arsenal",
+            "description": "A secure weapons storage room with racks of rifles, ammunition crates, and tactical gear. The walls are reinforced concrete. Everything is organized with military precision. A workbench holds maintenance tools and equipment.",
+            "items": [
+                {
+                    "id": "weapon_racks",
+                    "name": "weapon storage racks",
+                    "description": "Metal racks holding various resistance weapons",
+                    "searchable": true,
+                    "contains": [
+                        "bolt_cutters"
+                    ]
+                },
+                {
+                    "id": "bolt_cutters",
+                    "name": "heavy bolt cutters",
+                    "description": "Large bolt cutters capable of cutting through chains and locks"
+                },
+                {
+                    "id": "ammunition_crate",
+                    "name": "ammunition crate",
+                    "description": "A wooden crate filled with ammunition and supplies",
+                    "searchable": true,
+                    "contains": [
+                        "supply_manifest"
+                    ]
+                },
+                {
+                    "id": "supply_manifest",
+                    "name": "supply manifest",
+                    "description": "A document listing all weapons and equipment",
+                    "readable": true,
+                    "text": "ARSENAL INVENTORY: 47 rifles, 23 pistols, 156 grenades, bolt cutters (for emergency use), tactical gear. Note: Bolt cutters can cut through the chain on the escape tunnel hatch."
+                },
+                {
+                    "id": "workbench",
+                    "name": "maintenance workbench",
+                    "description": "A sturdy workbench with tools and weapon parts",
+                    "searchable": true,
+                    "contains": []
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "supply_room",
+            "name": "Supply Room",
+            "description": "A storage area packed with crates of food, water, medical supplies, and equipment. Shelves line the walls from floor to ceiling. The room smells of cardboard and preserved rations. A ladder leads up to a hatch in the ceiling, secured with a heavy chain. A security terminal guards access to the escape route.",
+            "items": [
+                {
+                    "id": "supply_crates",
+                    "name": "stacked supply crates",
+                    "description": "Wooden crates containing food and water rations",
+                    "searchable": true,
+                    "contains": [
+                        "medical_kit"
+                    ]
+                },
+                {
+                    "id": "medical_kit",
+                    "name": "first aid kit",
+                    "description": "A red medical kit with basic supplies"
+                },
+                {
+                    "id": "storage_shelves",
+                    "name": "metal storage shelves",
+                    "description": "Industrial shelving units holding various supplies",
+                    "searchable": true,
+                    "contains": [
+                        "evacuation_plan"
+                    ]
+                },
+                {
+                    "id": "evacuation_plan",
+                    "name": "evacuation plan document",
+                    "description": "A laminated document with escape procedures",
+                    "readable": true,
+                    "text": "EVACUATION PROTOCOL: In case of emergency, proceed to supply room. Access escape tunnel via ceiling hatch (chain must be cut). Security terminal requires verification: What do we fight for? Where do we hide? Who leads us?"
+                },
+                {
+                    "id": "ceiling_hatch_with_chain",
+                    "name": "ceiling hatch with chain",
+                    "description": "A metal hatch in the ceiling secured with a thick chain and padlock",
+                    "locked": true,
+                    "key_required": "bolt_cutters",
+                    "direction": "north",
+                    "leads_to": "escape_tunnel_entrance",
+                    "aliases": [
+                        "hatch",
+                        "up",
+                        "north"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "escape_tunnel_entrance",
+            "name": "Escape Tunnel Entrance",
+            "description": "A narrow concrete passage leading upward. Emergency lights illuminate a steep tunnel carved through rock and earth. A security door blocks the way forward, its electronic lock glowing red. This is the final barrier between you and freedom.",
+            "items": [
+                {
+                    "id": "security_verification_terminal",
+                    "name": "security verification terminal",
+                    "description": "An electronic terminal with a screen displaying three security questions",
+                    "locked": true,
+                    "lock_type": "password",
+                    "password_questions": [
+                        {
+                            "question": "What do we fight for?",
+                            "answer": "freedom",
+                            "hint": "Check the operations manual and intelligence reports"
+                        },
+                        {
+                            "question": "Where do we hide?",
+                            "answer": "bunker",
+                            "hint": "The intelligence report mentions our sanctuary"
+                        },
+                        {
+                            "question": "Who leads us?",
+                            "answer": "commander sarah",
+                            "hint": "Multiple documents mention the resistance leader's name"
+                        }
+                    ],
+                    "direction": "north",
+                    "leads_to": "freedom",
+                    "aliases": [
+                        "door",
+                        "tunnel",
+                        "north"
+                    ]
+                },
+                {
+                    "id": "emergency_lights",
+                    "name": "emergency lighting",
+                    "description": "Battery-powered lights showing the way to freedom"
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "freedom",
+            "name": "Surface Freedom",
+            "description": "You emerge into the open air! Sunlight streams down as you climb out of the tunnel into a forest clearing. Birds sing in the trees. The bunker entrance is hidden behind you. You've successfully escaped the underground resistance bunker and can now continue the fight for freedom in the outside world.",
+            "items": [
+                {
+                    "id": "forest_clearing",
+                    "name": "forest clearing",
+                    "description": "A peaceful clearing surrounded by tall trees, far from enemy patrols"
+                },
+                {
+                    "id": "hidden_entrance",
+                    "name": "camouflaged tunnel entrance",
+                    "description": "The bunker entrance, cleverly hidden beneath brush and branches"
+                }
+            ],
+            "exits": [],
+            "is_goal": true,
+            "win_message": "SUCCESS! You've navigated the resistance bunker, solved all the puzzles, and escaped to the surface! The resistance lives on, and you're free to continue the fight. Commander Sarah would be proud. You win!"
+        }
+    ]
+}

@@ -59,6 +59,11 @@
           "text": "Crew member, remember who you are. You are Pilot Tiernan of Earth Fleet. You alone can launch the escape shuttle. — Commander Vega"
         },
         {
+          "id": "crew_keycard",
+          "name": "crew keycard",
+          "description": "A magnetic keycard labeled 'Crew Access'."
+        },
+        {
           "id": "airlock_door",
           "name": "airlock door",
           "description": "A sealed door with warning labels. It leads deeper into the station.",
@@ -98,7 +103,7 @@
           "text": "Commander Vega — Leader of Earth Fleet Station One. Known for bravery and devotion to crew."
         },
         {
-          "id": "shuttle_door",
+          "id": "shuttle_hatch",
           "name": "escape shuttle hatch",
           "description": "A reinforced door leading to the escape shuttle bay. A terminal beside it displays three questions.",
           "locked": true,

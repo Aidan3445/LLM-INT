@@ -1,0 +1,263 @@
+{
+    "theme": "Alien Zoo",
+    "title": "Alien Zoo Adventure #5",
+    "goal": "Solve the puzzles, achieve the main objective, and escape.",
+    "starting_room": "quarantine_bay",
+    "rooms": [
+        {
+            "id": "quarantine_bay",
+            "name": "Quarantine Bay",
+            "description": "A sterile containment facility with reinforced glass chambers housing bizarre alien creatures. Bioluminescent organisms pulse with eerie light in their tanks. Warning klaxons flash silently overhead. The air is filtered and cold. Control panels blink with alien script and human translations. Strange chittering and humming sounds echo from the specimens.",
+            "items": [
+                {
+                    "id": "control_console",
+                    "name": "specimen control console",
+                    "description": "A computer terminal displaying containment status and facility information",
+                    "readable": true,
+                    "text": "XENOBIOLOGY RESEARCH STATION - Established 2187. Director: Dr. Helena Voss. Chief Xenobiologist: Dr. Marcus Kane. All specimens are housed in the quarantine bay. Emergency protocols stored in the research laboratory."
+                },
+                {
+                    "id": "containment_tank_alpha",
+                    "name": "containment tank alpha",
+                    "description": "A large tank containing a floating jellyfish-like creature with multiple eyes",
+                    "readable": true,
+                    "text": "SPECIMEN ALPHA: Nebula Drifter - Origin: Andromeda Sector. Status: CONTAINED. Bioluminescent, telepathic abilities suspected. Extremely dangerous if released."
+                },
+                {
+                    "id": "containment_tank_beta",
+                    "name": "containment tank beta",
+                    "description": "A reinforced chamber holding a crystalline insectoid creature",
+                    "readable": true,
+                    "text": "SPECIMEN BETA: Crystal Mantis - Origin: Kepler-442b. Status: CONTAINED. Silicon-based lifeform. Highly aggressive. Handle with extreme caution."
+                },
+                {
+                    "id": "supply_locker",
+                    "name": "emergency supply locker",
+                    "description": "A metal locker with three compartments for emergency equipment",
+                    "subcontainers": [
+                        {
+                            "id": "top_compartment",
+                            "name": "top compartment",
+                            "locked": false,
+                            "contains": [
+                                "facility_manual"
+                            ]
+                        },
+                        {
+                            "id": "middle_compartment",
+                            "name": "middle compartment",
+                            "locked": true,
+                            "lock_type": "combination",
+                            "combination": "2187",
+                            "contains": [
+                                "access_keycard"
+                            ]
+                        },
+                        {
+                            "id": "bottom_compartment",
+                            "name": "bottom compartment",
+                            "locked": false,
+                            "contains": []
+                        }
+                    ]
+                },
+                {
+                    "id": "facility_manual",
+                    "name": "facility operations manual",
+                    "description": "A digital tablet with station procedures",
+                    "readable": true,
+                    "text": "STATION OPERATIONS: This facility was established in 2187 to study xenobiological specimens. All research is conducted in the research laboratory. Director Voss oversees all operations. The combination to secure storage is the year of establishment."
+                },
+                {
+                    "id": "access_keycard",
+                    "name": "security access keycard",
+                    "description": "A magnetic keycard with 'LABORATORY ACCESS' printed on it"
+                },
+                {
+                    "id": "observation_window",
+                    "name": "observation window",
+                    "description": "A thick window overlooking the alien specimens",
+                    "searchable": true,
+                    "contains": [
+                        "research_notes"
+                    ]
+                },
+                {
+                    "id": "research_notes",
+                    "name": "xenobiologist's notes",
+                    "description": "A datapad with handwritten observations",
+                    "readable": true,
+                    "text": "Dr. Kane's Log: The specimens in the quarantine bay are becoming increasingly agitated. I've secured the specimen data files in the lab safe. If we need to evacuate, the escape pods are our only option. Director Voss has the final authority on all evacuation procedures."
+                },
+                {
+                    "id": "specimen_cage",
+                    "name": "small specimen cage",
+                    "description": "A portable containment unit sitting on a workbench",
+                    "searchable": true,
+                    "contains": [
+                        "alien_artifact"
+                    ]
+                },
+                {
+                    "id": "alien_artifact",
+                    "name": "strange alien artifact",
+                    "description": "A small crystalline object that hums with energy"
+                },
+                {
+                    "id": "laboratory_access_door",
+                    "name": "laboratory access door",
+                    "description": "A heavy airlock door with a card reader, leading to the research laboratory",
+                    "locked": true,
+                    "key_required": "access_keycard",
+                    "direction": "north",
+                    "leads_to": "research_laboratory",
+                    "aliases": [
+                        "door",
+                        "airlock",
+                        "north"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "research_laboratory",
+            "name": "Research Laboratory",
+            "description": "A high-tech laboratory filled with analysis equipment, holographic displays, and specimen samples in stasis fields. Microscopes and gene sequencers line the workbenches. Data screens show alien DNA structures and behavioral patterns. A large safe sits in the corner. The escape pod bay access is visible through a reinforced window.",
+            "items": [
+                {
+                    "id": "main_workbench",
+                    "name": "main research workbench",
+                    "description": "A cluttered workstation with various scientific instruments and datapads",
+                    "searchable": true,
+                    "contains": [
+                        "specimen_report"
+                    ]
+                },
+                {
+                    "id": "specimen_report",
+                    "name": "specimen analysis report",
+                    "description": "A detailed scientific report on the alien specimens",
+                    "readable": true,
+                    "text": "XENOBIOLOGY REPORT by Dr. Marcus Kane: All specimens are housed in the quarantine bay for safety. The Nebula Drifter (Specimen Alpha) is our most dangerous acquisition. Research conducted here in the laboratory has revealed fascinating insights into alien biology."
+                },
+                {
+                    "id": "holographic_display",
+                    "name": "holographic display terminal",
+                    "description": "A floating holographic interface showing station schematics",
+                    "readable": true,
+                    "text": "STATION LAYOUT: Quarantine Bay - Specimen containment. Research Laboratory - Analysis and study. Escape Pod Bay - Emergency evacuation. Director: Dr. Helena Voss. Chief Xenobiologist: Dr. Marcus Kane."
+                },
+                {
+                    "id": "gene_sequencer",
+                    "name": "alien gene sequencer",
+                    "description": "A sophisticated machine analyzing alien DNA samples",
+                    "readable": true,
+                    "text": "ANALYSIS IN PROGRESS: Specimen Alpha DNA structure is unlike anything in our database. The creature's telepathic abilities make it extremely dangerous. Evacuation protocols may be necessary."
+                },
+                {
+                    "id": "lab_safe",
+                    "name": "laboratory safe",
+                    "description": "A secure safe containing sensitive research data and equipment",
+                    "locked": true,
+                    "key_required": "alien_artifact",
+                    "contains": [
+                        "evacuation_protocol",
+                        "emergency_beacon"
+                    ]
+                },
+                {
+                    "id": "evacuation_protocol",
+                    "name": "evacuation protocol document",
+                    "description": "Official emergency evacuation procedures",
+                    "readable": true,
+                    "text": "EMERGENCY EVACUATION PROTOCOL: In case of containment breach or critical emergency, proceed immediately to the escape pod bay. Authorization required from Director Voss. Security verification questions must be answered: 1) What is the most dangerous specimen? 2) Where are specimens contained? 3) Who authorizes evacuation?"
+                },
+                {
+                    "id": "emergency_beacon",
+                    "name": "emergency distress beacon",
+                    "description": "A handheld device for signaling rescue ships"
+                },
+                {
+                    "id": "directors_desk",
+                    "name": "director's desk",
+                    "description": "Dr. Voss's personal workstation with locked drawers",
+                    "subcontainers": [
+                        {
+                            "id": "desk_drawer",
+                            "name": "desk drawer",
+                            "locked": false,
+                            "contains": [
+                                "personal_log"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "personal_log",
+                    "name": "director's personal log",
+                    "description": "Dr. Voss's private journal",
+                    "readable": true,
+                    "text": "Director's Log: As station director, I alone have the authority to order evacuation. The Nebula Drifter in the quarantine bay is showing signs of breaking containment. If the situation deteriorates, we must use the escape pods immediately. I pray it doesn't come to that."
+                },
+                {
+                    "id": "escape_pod_bay_access_door",
+                    "name": "escape pod bay access door",
+                    "description": "A sealed emergency door with a security terminal displaying three verification questions. Red warning lights pulse around the frame.",
+                    "locked": true,
+                    "lock_type": "password",
+                    "password_questions": [
+                        {
+                            "question": "What is the most dangerous specimen?",
+                            "answer": "nebula drifter",
+                            "hint": "Check the specimen reports and Dr. Voss's personal log"
+                        },
+                        {
+                            "question": "Where are specimens contained?",
+                            "answer": "quarantine bay",
+                            "hint": "The facility manual and reports mention where specimens are housed"
+                        },
+                        {
+                            "question": "Who authorizes evacuation?",
+                            "answer": "dr helena voss",
+                            "hint": "Check the evacuation protocol and facility information"
+                        }
+                    ],
+                    "direction": "east",
+                    "leads_to": "escape_pod_bay",
+                    "aliases": [
+                        "door",
+                        "pod",
+                        "east"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "escape_pod_bay",
+            "name": "Escape Pod Bay",
+            "description": "You've reached the escape pod bay! A sleek emergency evacuation pod sits in its launch cradle, systems humming with readiness. Through the transparent launch tube, you can see the stars and the safety of open space. The pod's interior glows with soft blue light, and the control panel displays 'READY FOR LAUNCH' in bright green letters.",
+            "items": [
+                {
+                    "id": "escape_pod",
+                    "name": "emergency escape pod",
+                    "description": "A streamlined single-occupant spacecraft designed for emergency evacuation"
+                },
+                {
+                    "id": "launch_control_panel",
+                    "name": "launch control panel",
+                    "description": "The pod's control interface showing all systems operational and ready"
+                },
+                {
+                    "id": "viewport",
+                    "name": "launch tube viewport",
+                    "description": "A window showing the launch trajectory into open space and freedom"
+                }
+            ],
+            "exits": [],
+            "is_goal": true,
+            "win_message": "SUCCESS! You climb into the escape pod and seal the hatch. The launch sequence initiates automatically, and within seconds you're rocketing away from the alien zoo station. Through the viewport, you watch the facility shrink into the distance as you head toward the safety of the nearest human outpost. You've escaped the Alien Zoo! You win!"
+        }
+    ]
+}

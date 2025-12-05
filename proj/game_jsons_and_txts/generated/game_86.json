@@ -1,0 +1,200 @@
+{
+    "theme": "Nanotech Cleanroom",
+    "title": "Nanotech Cleanroom Adventure #86",
+    "goal": "Solve the puzzles, achieve the main objective, and escape.",
+    "starting_room": "decontamination_airlock",
+    "rooms": [
+        {
+            "id": "decontamination_airlock",
+            "name": "Decontamination Airlock",
+            "description": "A pristine white chamber with glowing blue UV lights overhead. Air filtration systems hum quietly. Sterile suits hang on the wall next to a decontamination shower. A digital display shows particle count readings. The air smells of ozone and antiseptic.",
+            "items": [
+                {
+                    "id": "storage_locker",
+                    "name": "equipment storage locker",
+                    "description": "A white metal locker with two compartments for cleanroom supplies",
+                    "subcontainers": [
+                        {
+                            "id": "top_compartment",
+                            "name": "top compartment",
+                            "locked": false,
+                            "contains": [
+                                "safety_protocol"
+                            ]
+                        },
+                        {
+                            "id": "bottom_compartment",
+                            "name": "bottom compartment",
+                            "locked": true,
+                            "lock_type": "combination",
+                            "combination": "100",
+                            "contains": [
+                                "access_card"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "safety_protocol",
+                    "name": "cleanroom safety protocol",
+                    "description": "A laminated document with safety procedures",
+                    "readable": true,
+                    "text": "CLEANROOM PROTOCOL: Maximum allowable particle size is 100 nanometers. Lead researcher: Dr. Sarah Chen. Project: Nanoforge synthesis of medical nanobots. Storage location: Cryogenic vault in main lab."
+                },
+                {
+                    "id": "access_card",
+                    "name": "security access card",
+                    "description": "A white plastic card with a magnetic strip labeled 'AUTHORIZED PERSONNEL'"
+                },
+                {
+                    "id": "decon_shower",
+                    "name": "decontamination shower",
+                    "description": "A glass-enclosed shower with chemical spray nozzles",
+                    "searchable": true,
+                    "contains": [
+                        "research_note"
+                    ]
+                },
+                {
+                    "id": "research_note",
+                    "name": "waterproof research note",
+                    "description": "A sealed note attached to the shower wall",
+                    "readable": true,
+                    "text": "Reminder: The nanoforge requires three authentication factors. Remember - who leads this project, what we're creating, and where we store the samples. -Dr. Chen"
+                },
+                {
+                    "id": "particle_display",
+                    "name": "particle count display",
+                    "description": "A digital screen showing real-time air quality measurements",
+                    "readable": true,
+                    "text": "PARTICLE COUNT: 0.003 particles per cubic meter. MAXIMUM ALLOWED: 100nm. STATUS: OPTIMAL"
+                },
+                {
+                    "id": "pressurized_airlock_door",
+                    "name": "pressurized airlock door",
+                    "description": "A heavy door with a card reader and pressure seal. Red lights indicate it's locked.",
+                    "locked": true,
+                    "key_required": "access_card",
+                    "direction": "east",
+                    "leads_to": "main_cleanroom",
+                    "aliases": [
+                        "door",
+                        "east"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "main_cleanroom",
+            "name": "Main Cleanroom Laboratory",
+            "description": "A vast sterile laboratory with white walls and floors. Electron microscopes, centrifuges, and analysis equipment line the workbenches. A massive sealed chamber labeled 'NANOFORGE' dominates the far wall. Robotic arms hang from the ceiling. Everything gleams under bright LED lighting.",
+            "items": [
+                {
+                    "id": "workbench",
+                    "name": "research workbench",
+                    "description": "A stainless steel bench covered with scientific instruments and sample containers",
+                    "searchable": true,
+                    "contains": [
+                        "lab_key"
+                    ]
+                },
+                {
+                    "id": "lab_key",
+                    "name": "small lab key",
+                    "description": "A key with a biohazard symbol etched on it"
+                },
+                {
+                    "id": "equipment_cabinet",
+                    "name": "sealed equipment cabinet",
+                    "description": "A locked cabinet containing sensitive research materials",
+                    "locked": true,
+                    "key_required": "lab_key",
+                    "contains": [
+                        "project_log"
+                    ]
+                },
+                {
+                    "id": "project_log",
+                    "name": "project research log",
+                    "description": "Dr. Chen's detailed research journal",
+                    "readable": true,
+                    "text": "PROJECT LOG - Dr. Sarah Chen: We are developing medical nanobots for targeted drug delivery. The prototypes are stored in the cryogenic vault. Today we achieved a breakthrough in the nanoforge synthesis process. The final activation sequence is critical."
+                },
+                {
+                    "id": "electron_microscope",
+                    "name": "electron microscope station",
+                    "description": "A sophisticated microscope with a viewing screen showing nanoscale structures",
+                    "readable": true,
+                    "text": "SAMPLE ANALYSIS: Nanobot prototype dimensions: 100nm diameter. Structure: Medical delivery capsule. Status: Ready for synthesis."
+                },
+                {
+                    "id": "computer_terminal",
+                    "name": "research computer terminal",
+                    "description": "A workstation with multiple monitors displaying research data",
+                    "readable": true,
+                    "text": "SYSTEM LOG: Nanoforge chamber requires authentication. Security protocols active. Only authorized researchers may access synthesis controls."
+                },
+                {
+                    "id": "nanoforge_chamber_door",
+                    "name": "nanoforge chamber door",
+                    "description": "A massive reinforced door with a biometric scanner and security terminal. Three authentication questions are displayed on the screen.",
+                    "locked": true,
+                    "lock_type": "password",
+                    "password_questions": [
+                        {
+                            "question": "Who is the lead researcher?",
+                            "answer": "dr sarah chen",
+                            "hint": "Check the safety protocol and project log"
+                        },
+                        {
+                            "question": "What is being created?",
+                            "answer": "medical nanobots",
+                            "hint": "The project log describes the research goal"
+                        },
+                        {
+                            "question": "Where are samples stored?",
+                            "answer": "cryogenic vault",
+                            "hint": "Multiple documents mention the storage location"
+                        }
+                    ],
+                    "direction": "north",
+                    "leads_to": "nanoforge_chamber",
+                    "aliases": [
+                        "nanoforge",
+                        "chamber",
+                        "north"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "nanoforge_chamber",
+            "name": "Nanoforge Synthesis Chamber",
+            "description": "You've reached the heart of the facility! A cylindrical chamber filled with swirling plasma and electromagnetic fields. Robotic manipulators position atoms with impossible precision. On the central platform, a glowing vial contains the completed batch of medical nanobots - tiny machines that will revolutionize medicine. Mission accomplished!",
+            "items": [
+                {
+                    "id": "nanoforge_core",
+                    "name": "nanoforge synthesis core",
+                    "description": "The main synthesis chamber where nanobots are assembled atom by atom"
+                },
+                {
+                    "id": "nanobot_vial",
+                    "name": "completed nanobot sample",
+                    "description": "A sealed vial containing millions of medical nanobots, glowing with a faint blue light"
+                },
+                {
+                    "id": "control_panel",
+                    "name": "synthesis control panel",
+                    "description": "The master controls showing successful completion of the synthesis process",
+                    "readable": true,
+                    "text": "SYNTHESIS COMPLETE: 1,000,000 medical nanobots produced. Quality: 100%. Status: Ready for clinical trials. Project success!"
+                }
+            ],
+            "exits": [],
+            "is_goal": true,
+            "win_message": "SUCCESS! You've navigated the cleanroom protocols and successfully completed the nanobot synthesis! The medical nanobots you've created will save countless lives through targeted drug delivery. Dr. Chen's research is complete, and you've proven yourself as a capable nanotechnology researcher. You win!"
+        }
+    ]
+}

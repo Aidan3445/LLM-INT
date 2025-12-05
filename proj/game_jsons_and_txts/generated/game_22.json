@@ -1,0 +1,241 @@
+{
+    "theme": "Floating Sky Temple",
+    "title": "Floating Sky Temple Adventure #22",
+    "goal": "Solve the puzzles, achieve the main objective, and escape.",
+    "starting_room": "temple_entrance",
+    "rooms": [
+        {
+            "id": "temple_entrance",
+            "name": "Temple Entrance Hall",
+            "description": "A magnificent hall suspended in the clouds. White marble pillars reach toward the open sky above. Wisps of clouds drift through the chamber, and the floor is inlaid with celestial patterns in gold and silver. Ancient statues of winged guardians line the walls. A gentle breeze carries the scent of incense and mountain air.",
+            "items": [
+                {
+                    "id": "guardian_statue_left",
+                    "name": "statue of the Sun Guardian",
+                    "description": "A towering statue of a winged figure holding a golden sun disk",
+                    "readable": true,
+                    "text": "Inscription at base: 'I am the Sun Guardian, first of the three celestial protectors. I rise in the east and bring light to the temple. My number is one.'"
+                },
+                {
+                    "id": "guardian_statue_center",
+                    "name": "statue of the Moon Guardian",
+                    "description": "A graceful statue of a winged figure cradling a silver crescent moon",
+                    "readable": true,
+                    "text": "Inscription at base: 'I am the Moon Guardian, second of the three celestial protectors. I watch over the night sky. My number is two.'"
+                },
+                {
+                    "id": "guardian_statue_right",
+                    "name": "statue of the Star Guardian",
+                    "description": "An elegant statue of a winged figure crowned with stars",
+                    "readable": true,
+                    "text": "Inscription at base: 'I am the Star Guardian, third of the three celestial protectors. I guide travelers through darkness. My number is three.'"
+                },
+                {
+                    "id": "offering_altar",
+                    "name": "stone offering altar",
+                    "description": "A carved altar with three compartments and celestial symbols",
+                    "subcontainers": [
+                        {
+                            "id": "sun_compartment",
+                            "name": "sun compartment",
+                            "locked": false,
+                            "contains": [
+                                "temple_scroll"
+                            ]
+                        },
+                        {
+                            "id": "moon_compartment",
+                            "name": "moon compartment",
+                            "locked": true,
+                            "lock_type": "combination",
+                            "combination": "123",
+                            "contains": [
+                                "crystal_key"
+                            ]
+                        },
+                        {
+                            "id": "star_compartment",
+                            "name": "star compartment",
+                            "locked": false,
+                            "contains": []
+                        }
+                    ]
+                },
+                {
+                    "id": "temple_scroll",
+                    "name": "ancient temple scroll",
+                    "description": "A scroll written in flowing script with celestial diagrams",
+                    "readable": true,
+                    "text": "Welcome, seeker. To ascend through the Floating Sky Temple, you must understand the order of the heavens. The Sun Guardian comes first, then the Moon Guardian, then the Star Guardian. Their sacred numbers unlock the path forward. The Keeper of this temple is known as High Priest Solarius."
+                },
+                {
+                    "id": "crystal_key",
+                    "name": "glowing crystal key",
+                    "description": "A translucent key that pulses with inner light"
+                },
+                {
+                    "id": "meditation_cushions",
+                    "name": "silk meditation cushions",
+                    "description": "Ornate cushions arranged in a circle for contemplation",
+                    "searchable": true,
+                    "contains": [
+                        "wisdom_tablet"
+                    ]
+                },
+                {
+                    "id": "wisdom_tablet",
+                    "name": "tablet of wisdom",
+                    "description": "A stone tablet with carved teachings",
+                    "readable": true,
+                    "text": "The wisdom of the temple: Knowledge resides in the Sacred Observatory, where the ancients studied the cosmos. The temple's greatest treasure, the Celestial Orb, rests in the Sky Shrine at the highest point."
+                },
+                {
+                    "id": "locked_chest",
+                    "name": "ornate temple chest",
+                    "description": "A beautifully carved chest with a crystal lock mechanism",
+                    "locked": true,
+                    "key_required": "crystal_key",
+                    "contains": [
+                        "sky_compass"
+                    ]
+                },
+                {
+                    "id": "sky_compass",
+                    "name": "enchanted sky compass",
+                    "description": "A golden compass that always points toward the heavens"
+                },
+                {
+                    "id": "carved_observatory_door",
+                    "name": "carved observatory door",
+                    "description": "A tall door decorated with star charts and constellation patterns",
+                    "locked": false,
+                    "direction": "north",
+                    "leads_to": "sacred_observatory",
+                    "aliases": [
+                        "door",
+                        "north"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "sacred_observatory",
+            "name": "Sacred Observatory",
+            "description": "A circular chamber open to the sky, with no roof to obstruct the view of the heavens. Ancient astronomical instruments made of brass and crystal are positioned around the room. Star charts cover the walls, and a massive telescope points upward. The floor is a mosaic depicting the night sky with constellations picked out in precious gems.",
+            "items": [
+                {
+                    "id": "star_chart_north",
+                    "name": "northern star chart",
+                    "description": "A detailed map of the northern constellations",
+                    "readable": true,
+                    "text": "Chart notation: The constellation of the Phoenix rises in the northern sky. Ancient astronomers called this region the Sacred Observatory, where all celestial knowledge was gathered."
+                },
+                {
+                    "id": "star_chart_south",
+                    "name": "southern star chart",
+                    "description": "A detailed map of the southern constellations",
+                    "readable": true,
+                    "text": "Chart notation: The constellation of the Dragon dominates the southern sky. Legends say dragons once nested in the Sky Shrine at the temple's peak."
+                },
+                {
+                    "id": "telescope",
+                    "name": "ancient brass telescope",
+                    "description": "A magnificent telescope pointed at the heavens",
+                    "readable": true,
+                    "text": "Looking through the telescope, you see countless stars. A note attached reads: 'High Priest Solarius used this telescope to discover the Celestial Orb's true power.'"
+                },
+                {
+                    "id": "instrument_table",
+                    "name": "astronomer's table",
+                    "description": "A table covered with celestial instruments and calculation tools",
+                    "searchable": true,
+                    "contains": [
+                        "astronomer_journal"
+                    ]
+                },
+                {
+                    "id": "astronomer_journal",
+                    "name": "astronomer's journal",
+                    "description": "A leather bound journal filled with observations and notes",
+                    "readable": true,
+                    "text": "Final entry: After years of study in this Sacred Observatory, I have learned the three truths needed to enter the Sky Shrine. First, who maintains this temple? High Priest Solarius. Second, where is celestial knowledge kept? In the Sacred Observatory. Third, where does the Celestial Orb rest? In the Sky Shrine above."
+                },
+                {
+                    "id": "crystal_cabinet",
+                    "name": "crystal display cabinet",
+                    "description": "A cabinet with glass doors containing various celestial artifacts",
+                    "locked": true,
+                    "key_required": "sky_compass",
+                    "contains": [
+                        "silver_feather"
+                    ]
+                },
+                {
+                    "id": "silver_feather",
+                    "name": "silver feather",
+                    "description": "A shimmering feather that seems to have fallen from a celestial being"
+                },
+                {
+                    "id": "ascending_stairway",
+                    "name": "ascending stairway",
+                    "description": "A spiral staircase of white marble leading upward into the clouds. An ornate gate blocks the way, inscribed with three questions.",
+                    "locked": true,
+                    "lock_type": "password",
+                    "password_questions": [
+                        {
+                            "question": "Who maintains this sacred temple?",
+                            "answer": "high priest solarius",
+                            "hint": "Check the temple scroll and the astronomer's journal"
+                        },
+                        {
+                            "question": "Where is celestial knowledge gathered?",
+                            "answer": "sacred observatory",
+                            "hint": "The star charts mention where knowledge resides"
+                        },
+                        {
+                            "question": "Where does the Celestial Orb rest?",
+                            "answer": "sky shrine",
+                            "hint": "The tablet of wisdom and astronomer's journal reveal this"
+                        }
+                    ],
+                    "direction": "east",
+                    "leads_to": "sky_shrine",
+                    "aliases": [
+                        "stairway",
+                        "stairs",
+                        "east"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "sky_shrine",
+            "name": "Sky Shrine",
+            "description": "You have reached the highest point of the Floating Sky Temple! The shrine is a platform suspended among the clouds with no walls, only pillars supporting a domed ceiling painted with celestial scenes. In the center, on a pedestal of pure white marble, rests the legendary Celestial Orb, a sphere of swirling light and color that contains the wisdom of the stars. The view stretches endlessly in all directions, and you can see other floating islands in the distance. A shimmering portal of light has appeared, offering passage back to the world below.",
+            "items": [
+                {
+                    "id": "celestial_orb",
+                    "name": "Celestial Orb",
+                    "description": "A magnificent sphere of pure energy that pulses with the light of a thousand stars, containing all the wisdom and knowledge of the ancient sky temple"
+                },
+                {
+                    "id": "marble_pedestal",
+                    "name": "white marble pedestal",
+                    "description": "An elegant pedestal carved with scenes of celestial beings ascending to enlightenment"
+                },
+                {
+                    "id": "temple_inscriptions",
+                    "name": "shrine inscriptions",
+                    "description": "Golden text carved into the pillars surrounding the shrine",
+                    "readable": true,
+                    "text": "You who have reached the Sky Shrine have proven yourself worthy. The Celestial Orb grants enlightenment to those who seek truth. May you carry this wisdom back to the world below."
+                }
+            ],
+            "exits": [],
+            "is_goal": true,
+            "win_message": "You have reached the Sky Shrine and claimed the Celestial Orb! As you touch the orb, visions of cosmic wisdom flood your mind. The three guardians appear as spirits, bowing in respect. The shimmering portal activates, and you step through with the orb in hand, descending safely back to the world below with the temple's greatest treasure and the knowledge of the ancients. You win!"
+        }
+    ]
+}

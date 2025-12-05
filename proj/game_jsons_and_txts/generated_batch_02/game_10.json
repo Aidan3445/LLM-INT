@@ -1,0 +1,275 @@
+{
+    "theme": "Fairy Realm Crossing",
+    "title": "Fairy Realm Crossing Adventure #10",
+    "goal": "Solve the puzzles, achieve the main objective, and escape.",
+    "starting_room": "enchanted_glade",
+    "rooms": [
+        {
+            "id": "enchanted_glade",
+            "name": "Enchanted Glade",
+            "description": "A mystical clearing bathed in soft, ethereal light filtering through ancient trees. Glowing mushrooms form a circle around a crystal-clear pond. Fireflies dance in the air, leaving trails of sparkling dust. The air hums with fairy magic, and you can hear the tinkling of distant bells. A massive oak tree with a door carved into its trunk stands at the center.",
+            "items": [
+                {
+                    "id": "crystal_pond",
+                    "name": "crystal clear pond",
+                    "description": "A perfectly still pond that reflects the sky like a mirror. Something glimmers beneath the surface.",
+                    "searchable": true,
+                    "contains": [
+                        "silver_acorn"
+                    ]
+                },
+                {
+                    "id": "silver_acorn",
+                    "name": "silver acorn",
+                    "description": "A magical acorn made of pure silver, warm to the touch"
+                },
+                {
+                    "id": "mushroom_circle",
+                    "name": "fairy ring of mushrooms",
+                    "description": "A perfect circle of glowing toadstools. In the center sits a small wooden box.",
+                    "searchable": true,
+                    "contains": [
+                        "fairy_riddle"
+                    ]
+                },
+                {
+                    "id": "fairy_riddle",
+                    "name": "scroll of fairy riddles",
+                    "description": "A tiny scroll written in shimmering ink",
+                    "readable": true,
+                    "text": "Riddle of the Fae: Three gifts unlock the ancient oak - the number of petals on a moonflower, the number of wings on a pixie, and the number of seasons in the fairy realm. Seek these answers in the glade."
+                },
+                {
+                    "id": "ancient_oak",
+                    "name": "ancient oak tree",
+                    "description": "A massive oak with a beautifully carved door. The tree has three hollow compartments at different heights.",
+                    "subcontainers": [
+                        {
+                            "id": "high_hollow",
+                            "name": "high hollow",
+                            "locked": false,
+                            "contains": [
+                                "moonflower_guide"
+                            ]
+                        },
+                        {
+                            "id": "middle_hollow",
+                            "name": "middle hollow",
+                            "locked": true,
+                            "lock_type": "combination",
+                            "combination": "542",
+                            "contains": [
+                                "golden_key"
+                            ]
+                        },
+                        {
+                            "id": "low_hollow",
+                            "name": "low hollow",
+                            "locked": false,
+                            "contains": []
+                        }
+                    ]
+                },
+                {
+                    "id": "moonflower_guide",
+                    "name": "moonflower botanical guide",
+                    "description": "A small book about magical flowers",
+                    "readable": true,
+                    "text": "The Moonflower: This rare bloom opens only under moonlight and has exactly 5 petals. Pixies, the smallest of fae folk, have 4 wings. The fairy realm experiences only 2 seasons: eternal spring and eternal autumn."
+                },
+                {
+                    "id": "golden_key",
+                    "name": "golden key",
+                    "description": "A delicate key made of gold, engraved with leaf patterns"
+                },
+                {
+                    "id": "flower_bed",
+                    "name": "bed of glowing flowers",
+                    "description": "A patch of luminescent flowers that seem to whisper secrets",
+                    "searchable": true,
+                    "contains": [
+                        "pixie_note"
+                    ]
+                },
+                {
+                    "id": "pixie_note",
+                    "name": "pixie's message",
+                    "description": "A note written in tiny, elegant script",
+                    "readable": true,
+                    "text": "Dear traveler, I am Dewdrop the pixie. To cross into the Fairy Court, you must know: Who tends the gardens? Where do the fae dance? What is the queen's true name?"
+                },
+                {
+                    "id": "carved_oak_door",
+                    "name": "carved oak door",
+                    "description": "A door carved into the ancient oak, decorated with intricate fairy symbols. It has a golden keyhole.",
+                    "locked": true,
+                    "key_required": "golden_key",
+                    "direction": "north",
+                    "leads_to": "twilight_garden",
+                    "aliases": [
+                        "door",
+                        "north"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "twilight_garden",
+            "name": "Twilight Garden",
+            "description": "A breathtaking garden suspended between day and night. Half the garden blooms in eternal sunset, while the other half glows under starlight. Crystalline fountains sing melodious tunes, and paths of luminescent stones wind between beds of impossible flowers. Statues of fairy nobles line the walkways, and an ornate gazebo stands at the garden's heart.",
+            "items": [
+                {
+                    "id": "statue_gardener",
+                    "name": "statue of the Royal Gardener",
+                    "description": "A marble statue of a fairy holding pruning shears and a watering can",
+                    "readable": true,
+                    "text": "Plaque reads: 'Thornblossom, Royal Gardener - Keeper of the Twilight Garden and tender of all growing things in the realm.'"
+                },
+                {
+                    "id": "statue_dancer",
+                    "name": "statue of a dancing fairy",
+                    "description": "A graceful statue of a fairy in mid-dance",
+                    "readable": true,
+                    "text": "Plaque reads: 'In memory of the Grand Ball - Where fae folk gather to dance beneath the stars in the Moonlit Pavilion.'"
+                },
+                {
+                    "id": "statue_queen",
+                    "name": "statue of the Fairy Queen",
+                    "description": "A regal statue wearing a crown of flowers",
+                    "readable": true,
+                    "text": "Plaque reads: 'Queen Titania Starweaver - Eternal ruler of the Fairy Realm, beloved by all who dwell within.'"
+                },
+                {
+                    "id": "crystal_fountain",
+                    "name": "singing crystal fountain",
+                    "description": "A fountain made of pure crystal that produces musical notes as water flows through it",
+                    "searchable": true,
+                    "contains": [
+                        "sapphire_petal"
+                    ]
+                },
+                {
+                    "id": "sapphire_petal",
+                    "name": "sapphire petal",
+                    "description": "A flower petal made of solid sapphire, one of the sacred treasures"
+                },
+                {
+                    "id": "ornate_gazebo",
+                    "name": "ornate gazebo",
+                    "description": "A beautiful gazebo with a locked chest inside and decorative panels",
+                    "subcontainers": [
+                        {
+                            "id": "left_panel",
+                            "name": "left decorative panel",
+                            "locked": false,
+                            "contains": [
+                                "realm_history"
+                            ]
+                        },
+                        {
+                            "id": "right_panel",
+                            "name": "right decorative panel",
+                            "locked": true,
+                            "key_required": "silver_acorn",
+                            "contains": [
+                                "emerald_leaf"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "realm_history",
+                    "name": "history of the realm",
+                    "description": "An illuminated manuscript detailing fairy history",
+                    "readable": true,
+                    "text": "The Fairy Realm was created by Queen Titania Starweaver in ages past. The sacred treasures - the Sapphire Petal and Emerald Leaf - must be united to open the portal home."
+                },
+                {
+                    "id": "emerald_leaf",
+                    "name": "emerald leaf",
+                    "description": "A leaf carved from pure emerald, the second sacred treasure"
+                },
+                {
+                    "id": "archway_of_living_vines",
+                    "name": "archway of living vines",
+                    "description": "An archway woven from living vines covered in blooming flowers. Three questions are carved into a wooden sign hanging from the arch.",
+                    "locked": true,
+                    "lock_type": "password",
+                    "password_questions": [
+                        {
+                            "question": "Who tends the gardens?",
+                            "answer": "thornblossom",
+                            "hint": "Check the statue of the Royal Gardener"
+                        },
+                        {
+                            "question": "Where do the fae dance?",
+                            "answer": "moonlit pavilion",
+                            "hint": "Read the inscription on the dancing fairy statue"
+                        },
+                        {
+                            "question": "What is the queen's true name?",
+                            "answer": "titania starweaver",
+                            "hint": "The queen's statue reveals her full name"
+                        }
+                    ],
+                    "direction": "east",
+                    "leads_to": "portal_chamber",
+                    "aliases": [
+                        "archway",
+                        "east"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "portal_chamber",
+            "name": "Chamber of the Crossing",
+            "description": "A circular chamber with walls of living crystal that pulse with rainbow light. In the center stands a stone altar with two indentations shaped like a petal and a leaf. Above the altar, a dormant portal swirls with potential energy, waiting to be activated. Ancient runes glow softly on the floor, forming a protective circle.",
+            "items": [
+                {
+                    "id": "stone_altar",
+                    "name": "ancient stone altar",
+                    "description": "An altar with two perfectly shaped indentations for the sacred treasures",
+                    "readable": true,
+                    "text": "Inscription: 'Place the Sapphire Petal and Emerald Leaf upon this altar to awaken the portal and return to your world.'"
+                },
+                {
+                    "id": "crystal_walls",
+                    "name": "living crystal walls",
+                    "description": "Walls that seem to breathe with magical energy, showing glimpses of other realms"
+                },
+                {
+                    "id": "sealed_portal_door",
+                    "name": "sealed portal door",
+                    "description": "A shimmering portal that requires both sacred treasures to activate fully",
+                    "locked": true,
+                    "key_required": "emerald_leaf",
+                    "direction": "north",
+                    "leads_to": "mortal_world",
+                    "aliases": [
+                        "portal",
+                        "north"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "mortal_world",
+            "name": "The Mortal World",
+            "description": "You step through the portal and find yourself back in the familiar mortal world. The sun is setting over a peaceful meadow, and the fairy realm fades like a beautiful dream. You hold the Sapphire Petal and Emerald Leaf in your hands - proof that your adventure was real.",
+            "items": [
+                {
+                    "id": "meadow",
+                    "name": "peaceful meadow",
+                    "description": "A quiet meadow at sunset, the gateway between worlds now closed"
+                }
+            ],
+            "exits": [],
+            "is_goal": true,
+            "win_message": "You have successfully crossed back from the Fairy Realm! The sacred treasures in your hands shimmer one last time before transforming into ordinary flower petals that drift away on the breeze. The fairy magic fades, but the memory of your enchanted adventure will stay with you forever. You win!"
+        }
+    ]
+}

@@ -1,0 +1,282 @@
+{
+    "theme": "Ghostly Ballroom",
+    "title": "Ghostly Ballroom Adventure #40",
+    "goal": "Solve the puzzles, achieve the main objective, and escape.",
+    "starting_room": "grand_ballroom",
+    "rooms": [
+        {
+            "id": "grand_ballroom",
+            "name": "Grand Ballroom",
+            "description": "A magnificent but decaying ballroom with a crystal chandelier hanging precariously overhead. Ghostly music echoes through the air, and translucent figures waltz across the dusty floor. Moonlight streams through tall windows, illuminating portraits of long-dead nobility. A grand piano sits in the corner, and an ornate table stands near the entrance.",
+            "items": [
+                {
+                    "id": "grand_piano",
+                    "name": "grand piano",
+                    "description": "An elegant piano covered in dust. Sheet music rests on the stand.",
+                    "readable": true,
+                    "text": "Sheet music title: 'The Phantom's Waltz - Composed in 1847 by Lord Ashworth'"
+                },
+                {
+                    "id": "ornate_table",
+                    "name": "ornate table",
+                    "description": "A decorative table with intricate carvings. It has a single drawer.",
+                    "subcontainers": [
+                        {
+                            "id": "table_drawer",
+                            "name": "table drawer",
+                            "locked": true,
+                            "lock_type": "combination",
+                            "combination": "1847",
+                            "contains": [
+                                "silver_key"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "silver_key",
+                    "name": "silver key",
+                    "description": "An ornate silver key with ghostly engravings"
+                },
+                {
+                    "id": "portrait_lady",
+                    "name": "portrait of Lady Ashworth",
+                    "description": "A painting of an elegant woman in a blue gown",
+                    "readable": true,
+                    "text": "Lady Catherine Ashworth - Beloved wife and mistress of the manor. Her favorite place was the garden where roses bloomed eternal."
+                },
+                {
+                    "id": "portrait_lord",
+                    "name": "portrait of Lord Ashworth",
+                    "description": "A painting of a stern nobleman",
+                    "readable": true,
+                    "text": "Lord Edmund Ashworth - Master of Ashworth Manor. Known for his love of music and his devotion to his wife Catherine."
+                },
+                {
+                    "id": "chandelier",
+                    "name": "crystal chandelier",
+                    "description": "A massive chandelier that sways gently despite no breeze",
+                    "searchable": true,
+                    "contains": [
+                        "ghostly_letter"
+                    ]
+                },
+                {
+                    "id": "ghostly_letter",
+                    "name": "ghostly letter",
+                    "description": "A translucent letter that glows with spectral energy",
+                    "readable": true,
+                    "text": "My dearest Catherine, I await you in the library where we spent countless evenings. Remember our wedding year, 1845, and the name of the one who holds your heart. - Edmund"
+                },
+                {
+                    "id": "double_doors_to_gallery",
+                    "name": "double doors to gallery",
+                    "description": "Tall double doors leading to the portrait gallery",
+                    "locked": true,
+                    "key_required": "silver_key",
+                    "direction": "north",
+                    "leads_to": "portrait_gallery",
+                    "aliases": [
+                        "doors",
+                        "north"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "portrait_gallery",
+            "name": "Portrait Gallery",
+            "description": "A long hallway lined with portraits of the Ashworth family through the generations. Candles flicker in wall sconces, casting dancing shadows. A locked cabinet stands against one wall, and a glass display case holds various artifacts. A door to the west leads to the garden.",
+            "items": [
+                {
+                    "id": "display_case",
+                    "name": "glass display case",
+                    "description": "A case displaying family heirlooms and trinkets",
+                    "searchable": true,
+                    "contains": [
+                        "family_bible"
+                    ]
+                },
+                {
+                    "id": "family_bible",
+                    "name": "Ashworth family bible",
+                    "description": "An old bible with family records",
+                    "readable": true,
+                    "text": "Family Records: Lord Edmund Ashworth married Lady Catherine Rose in the year 1845. Their union was blessed and their love eternal."
+                },
+                {
+                    "id": "locked_cabinet",
+                    "name": "mahogany cabinet",
+                    "description": "A tall cabinet with two compartments",
+                    "subcontainers": [
+                        {
+                            "id": "upper_compartment",
+                            "name": "upper compartment",
+                            "locked": false,
+                            "contains": [
+                                "servants_diary"
+                            ]
+                        },
+                        {
+                            "id": "lower_compartment",
+                            "name": "lower compartment",
+                            "locked": true,
+                            "lock_type": "combination",
+                            "combination": "1845",
+                            "contains": [
+                                "garden_key"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "servants_diary",
+                    "name": "servant's diary",
+                    "description": "A worn diary belonging to a household servant",
+                    "readable": true,
+                    "text": "The master and mistress were so happy together. Lady Catherine loved the rose garden more than anything. After she passed, Lord Edmund locked himself in the library, never to emerge. Some say his spirit still waits there for her."
+                },
+                {
+                    "id": "garden_key",
+                    "name": "brass garden key",
+                    "description": "A key shaped like a rose"
+                },
+                {
+                    "id": "portrait_servants",
+                    "name": "portrait of the household staff",
+                    "description": "A group portrait of the manor's servants",
+                    "readable": true,
+                    "text": "The loyal staff of Ashworth Manor: Head Butler James, Cook Margaret, and Gardener Thomas who tended the roses."
+                },
+                {
+                    "id": "door_to_garden",
+                    "name": "door to garden",
+                    "description": "A wooden door with rose carvings leading to the garden",
+                    "locked": true,
+                    "key_required": "garden_key",
+                    "direction": "west",
+                    "leads_to": "rose_garden",
+                    "aliases": [
+                        "door",
+                        "west"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "rose_garden",
+            "name": "Moonlit Rose Garden",
+            "description": "A hauntingly beautiful garden where ghostly roses bloom in eternal moonlight. Stone benches sit among the flower beds, and a fountain tinkles softly in the center. The ghost of Lady Catherine can be seen tending to her roses. A gate leads to the library.",
+            "items": [
+                {
+                    "id": "stone_fountain",
+                    "name": "stone fountain",
+                    "description": "A fountain with a statue of two lovers embracing",
+                    "searchable": true,
+                    "contains": [
+                        "love_letter"
+                    ]
+                },
+                {
+                    "id": "love_letter",
+                    "name": "Catherine's letter",
+                    "description": "A letter written in elegant script",
+                    "readable": true,
+                    "text": "My beloved Edmund, even in death I remember our love. To join me, you must prove you know: who was I in life, where did we wed, and who tends my beloved roses now. - Your eternal Catherine"
+                },
+                {
+                    "id": "rose_bush",
+                    "name": "spectral rose bush",
+                    "description": "A bush of glowing ghostly roses",
+                    "searchable": true,
+                    "contains": [
+                        "library_note"
+                    ]
+                },
+                {
+                    "id": "library_note",
+                    "name": "gardener's note",
+                    "description": "A note left by the ghostly gardener",
+                    "readable": true,
+                    "text": "Thomas here. The master and mistress were wed in the chapel on the grounds. Lady Catherine's maiden name was Rose, fitting for one who loved these flowers so. I tend them still, even in death."
+                },
+                {
+                    "id": "garden_bench",
+                    "name": "stone bench",
+                    "description": "A weathered bench with an inscription",
+                    "readable": true,
+                    "text": "In memory of Catherine Rose Ashworth - Forever in our hearts"
+                },
+                {
+                    "id": "iron_gate_to_library",
+                    "name": "iron gate to library",
+                    "description": "An ornate iron gate with three questions etched into a brass plaque",
+                    "locked": true,
+                    "lock_type": "password",
+                    "password_questions": [
+                        {
+                            "question": "What was Lady Catherine's maiden name?",
+                            "answer": "rose",
+                            "hint": "Check the garden bench inscription and the gardener's note"
+                        },
+                        {
+                            "question": "Where were Edmund and Catherine wed?",
+                            "answer": "chapel",
+                            "hint": "The gardener's note mentions the wedding location"
+                        },
+                        {
+                            "question": "Who tends the roses now?",
+                            "answer": "thomas",
+                            "hint": "Look for information about the gardener"
+                        }
+                    ],
+                    "direction": "east",
+                    "leads_to": "library",
+                    "aliases": [
+                        "gate",
+                        "east"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "library",
+            "name": "Ashworth Library",
+            "description": "A grand library filled with ancient books and the scent of old paper. The ghost of Lord Edmund sits in a chair by the fireplace, finally at peace. As you enter, both ghostly figures - Edmund and Catherine - turn to you and smile. A shimmering portal of light appears, offering escape from the haunted manor.",
+            "items": [
+                {
+                    "id": "fireplace",
+                    "name": "stone fireplace",
+                    "description": "A grand fireplace with ghostly flames that provide no heat"
+                },
+                {
+                    "id": "reading_chair",
+                    "name": "Lord Edmund's chair",
+                    "description": "A comfortable chair where the ghost of Lord Edmund sits, now reunited with his love"
+                },
+                {
+                    "id": "bookshelf",
+                    "name": "towering bookshelf",
+                    "description": "Shelves filled with leather-bound volumes",
+                    "searchable": true,
+                    "contains": [
+                        "final_journal"
+                    ]
+                },
+                {
+                    "id": "final_journal",
+                    "name": "Edmund's final journal",
+                    "description": "The last journal of Lord Ashworth",
+                    "readable": true,
+                    "text": "I have waited so long for my Catherine. Now that someone has brought us together again by remembering our story, we can finally rest. Thank you, brave soul. You have freed us both."
+                }
+            ],
+            "exits": [],
+            "is_goal": true,
+            "win_message": "The ghostly couple embraces, their forms glowing brighter and brighter until they fade into peaceful light. The curse on Ashworth Manor is broken! The ballroom music stops, and the oppressive atmosphere lifts. You have reunited the eternal lovers and freed their spirits. The manor is at peace at last. You win!"
+        }
+    ]
+}

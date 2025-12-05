@@ -1,0 +1,220 @@
+{
+    "theme": "Floating Sky Temple",
+    "title": "Floating Sky Temple Adventure #29",
+    "goal": "Solve the puzzles, achieve the main objective, and escape.",
+    "starting_room": "meditation_chamber",
+    "rooms": [
+        {
+            "id": "meditation_chamber",
+            "name": "Meditation Chamber",
+            "description": "A serene circular room with walls of polished white marble. Soft light filters through crystalline windows showing endless clouds below. Incense smoke curls upward from brass burners. A large meditation cushion sits in the center, and an ornate desk stands against the eastern wall. The air feels thin but peaceful.",
+            "items": [
+                {
+                    "id": "meditation_cushion",
+                    "name": "silk meditation cushion",
+                    "description": "A large cushion embroidered with cloud patterns",
+                    "searchable": true,
+                    "contains": []
+                },
+                {
+                    "id": "ornate_desk",
+                    "name": "carved wooden desk",
+                    "description": "An ancient desk with intricate carvings of flying birds and clouds. It has three drawers.",
+                    "subcontainers": [
+                        {
+                            "id": "top_drawer",
+                            "name": "top drawer",
+                            "locked": false,
+                            "contains": [
+                                "temple_chronicle"
+                            ]
+                        },
+                        {
+                            "id": "middle_drawer",
+                            "name": "middle drawer",
+                            "locked": true,
+                            "lock_type": "combination",
+                            "combination": "888",
+                            "contains": [
+                                "jade_key"
+                            ]
+                        },
+                        {
+                            "id": "bottom_drawer",
+                            "name": "bottom drawer",
+                            "locked": false,
+                            "contains": []
+                        }
+                    ]
+                },
+                {
+                    "id": "temple_chronicle",
+                    "name": "temple chronicle scroll",
+                    "description": "An ancient scroll detailing the temple's history",
+                    "readable": true,
+                    "text": "The Floating Sky Temple was founded in the year 888 by the Sky Monks. Master Zephyr was appointed as the eternal guardian. The temple floats above the Sacred Cloud Valley, accessible only to those who seek enlightenment."
+                },
+                {
+                    "id": "jade_key",
+                    "name": "jade key",
+                    "description": "A key carved from green jade with cloud symbols"
+                },
+                {
+                    "id": "locked_cabinet",
+                    "name": "ceremonial cabinet",
+                    "description": "A tall cabinet with jade inlays and a jade-shaped keyhole",
+                    "locked": true,
+                    "key_required": "jade_key",
+                    "contains": [
+                        "wind_amulet",
+                        "monks_letter"
+                    ]
+                },
+                {
+                    "id": "wind_amulet",
+                    "name": "amulet of wind",
+                    "description": "A silver amulet that feels weightless, inscribed with ancient symbols"
+                },
+                {
+                    "id": "monks_letter",
+                    "name": "letter from the monks",
+                    "description": "A sealed letter addressed to 'The Seeker'",
+                    "readable": true,
+                    "text": "Dear Seeker, you have been chosen to complete the trials and ascend beyond the temple. Remember who you are - you are the Chosen Seeker, destined to bring balance. Master Zephyr awaits your answers in the Hall of Trials."
+                },
+                {
+                    "id": "brass_burner",
+                    "name": "brass incense burner",
+                    "description": "An ornate burner with fragrant smoke rising from it",
+                    "searchable": true,
+                    "contains": [
+                        "hidden_note"
+                    ]
+                },
+                {
+                    "id": "hidden_note",
+                    "name": "hidden meditation note",
+                    "description": "A small note tucked beneath the burner",
+                    "readable": true,
+                    "text": "Meditation wisdom: The temple floats above the Sacred Cloud Valley. Only those who know the guardian's name and their own purpose may proceed to the Sky Platform."
+                },
+                {
+                    "id": "arched_doorway",
+                    "name": "arched doorway",
+                    "description": "A tall archway leading north to the Hall of Celestial Trials",
+                    "locked": false,
+                    "direction": "north",
+                    "leads_to": "hall_of_trials",
+                    "aliases": [
+                        "doorway",
+                        "arch",
+                        "north"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "hall_of_trials",
+            "name": "Hall of Celestial Trials",
+            "description": "A grand hall with towering pillars reaching toward a domed ceiling painted with constellations. Three massive statues line the walls, each depicting a different Sky Monk in meditation pose. Wind chimes hanging from the ceiling create ethereal music. At the far end, a magnificent door carved with celestial symbols blocks the path to freedom.",
+            "items": [
+                {
+                    "id": "statue_zephyr",
+                    "name": "statue of Master Zephyr",
+                    "description": "A serene statue of a monk with hands raised toward the sky",
+                    "readable": true,
+                    "text": "Master Zephyr - Guardian of the Floating Sky Temple. Protector of the sacred winds and keeper of ancient wisdom. He watches over all who seek enlightenment."
+                },
+                {
+                    "id": "statue_aurora",
+                    "name": "statue of Sister Aurora",
+                    "description": "A graceful statue of a female monk holding a lotus flower",
+                    "readable": true,
+                    "text": "Sister Aurora - Keeper of the Dawn. She tends to the temple gardens and teaches the path of compassion to all seekers."
+                },
+                {
+                    "id": "statue_nimbus",
+                    "name": "statue of Brother Nimbus",
+                    "description": "A powerful statue of a monk in a warrior's stance",
+                    "readable": true,
+                    "text": "Brother Nimbus - Defender of the Temple. He trains seekers in the art of balance and protects the Sacred Cloud Valley from darkness."
+                },
+                {
+                    "id": "offering_altar",
+                    "name": "stone offering altar",
+                    "description": "A simple altar with offerings of flowers and crystals",
+                    "searchable": true,
+                    "contains": [
+                        "prayer_scroll"
+                    ]
+                },
+                {
+                    "id": "prayer_scroll",
+                    "name": "prayer scroll",
+                    "description": "A scroll containing prayers and wisdom",
+                    "readable": true,
+                    "text": "Prayer of the Seeker: May the Chosen Seeker find wisdom in the clouds and strength in the wind. May they remember their purpose and ascend to the Sky Platform where freedom awaits."
+                },
+                {
+                    "id": "wind_chimes",
+                    "name": "hanging wind chimes",
+                    "description": "Delicate chimes made of crystal that sing in the breeze",
+                    "readable": true,
+                    "text": "Each chime is inscribed with a word: 'Guardian', 'Valley', 'Seeker', 'Balance', 'Enlightenment'"
+                },
+                {
+                    "id": "celestial_door",
+                    "name": "celestial door",
+                    "description": "A massive door carved with stars, moons, and clouds. Three questions are inscribed in glowing script on a stone tablet beside it.",
+                    "locked": true,
+                    "lock_type": "password",
+                    "password_questions": [
+                        {
+                            "question": "Who is the guardian of this temple?",
+                            "answer": "master zephyr",
+                            "hint": "Check the statues in the hall and the temple chronicle"
+                        },
+                        {
+                            "question": "What sacred place lies below the temple?",
+                            "answer": "sacred cloud valley",
+                            "hint": "The temple chronicle and hidden note mention this location"
+                        },
+                        {
+                            "question": "Who are you?",
+                            "answer": "chosen seeker",
+                            "hint": "The monks' letter and prayer scroll reveal your identity"
+                        }
+                    ],
+                    "direction": "east",
+                    "leads_to": "sky_platform",
+                    "aliases": [
+                        "door",
+                        "east"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "sky_platform",
+            "name": "Sky Platform of Ascension",
+            "description": "You step onto a circular platform suspended in the open sky. Clouds drift peacefully all around you, and the sun shines brilliantly overhead. A gentle wind lifts you, and you feel weightless. The temple behind you begins to fade as you ascend higher into the heavens, free at last.",
+            "items": [
+                {
+                    "id": "ascending_winds",
+                    "name": "ascending winds",
+                    "description": "Gentle currents of air that carry you upward toward enlightenment"
+                },
+                {
+                    "id": "cloud_formations",
+                    "name": "peaceful clouds",
+                    "description": "Soft white clouds drifting in the endless blue sky"
+                }
+            ],
+            "exits": [],
+            "is_goal": true,
+            "win_message": "You have completed the trials of the Floating Sky Temple! As the Chosen Seeker, you have proven your wisdom and understanding. The winds carry you upward, beyond the temple, toward true enlightenment and freedom. The Sky Monks smile upon you. You win!"
+        }
+    ]
+}

@@ -1,0 +1,232 @@
+{
+  "theme": "Alien Zoo",
+  "title": "Alien Zoo Adventure #2",
+  "goal": "Solve the puzzles, achieve the main objective, and escape.",
+  "starting_room": "observation_deck",
+  "rooms": [
+    {
+      "id": "observation_deck",
+      "name": "Observation Deck",
+      "description": "A sterile observation room overlooking the alien containment zones. Through reinforced glass windows, you see bioluminescent creatures floating in containment tanks. Emergency lights flash red, and an alarm klaxon echoes in the distance. The facility appears to be in lockdown mode.",
+      "items": [
+        {
+          "id": "control_console",
+          "name": "monitoring control console",
+          "description": "A complex console with multiple screens showing alien specimen data",
+          "subcontainers": [
+            {
+              "id": "console_top_panel",
+              "name": "top panel",
+              "locked": false,
+              "contains": [
+                "facility_manual"
+              ]
+            },
+            {
+              "id": "console_secure_panel",
+              "name": "secure panel",
+              "locked": true,
+              "lock_type": "combination",
+              "combination": "742",
+              "contains": [
+                "access_keycard"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "facility_manual",
+          "name": "facility operations manual",
+          "description": "A digital manual with emergency procedures and specimen information",
+          "readable": true,
+          "text": "FACILITY MANUAL: Specimen classifications - Xenomorph Alpha (Class 7), Nebula Jellyfish (Class 4), Void Serpent (Class 2). Emergency override code is the sum of all specimen class numbers. Lead Researcher: Dr Helena Vex. Security Chief: Commander Rax."
+        },
+        {
+          "id": "access_keycard",
+          "name": "blue security keycard",
+          "description": "A magnetic keycard with blue security clearance markings"
+        },
+        {
+          "id": "specimen_display",
+          "name": "specimen information display",
+          "description": "A holographic display showing details about the alien creatures",
+          "readable": true,
+          "text": "SPECIMEN DATABASE: Xenomorph Alpha - Highly intelligent, telepathic abilities. Nebula Jellyfish - Emits calming bioluminescence. Void Serpent - Feeds on dark matter. All specimens secured in the Containment Vault below."
+        },
+        {
+          "id": "emergency_locker",
+          "name": "emergency supply locker",
+          "description": "A wall-mounted locker containing emergency equipment",
+          "searchable": true,
+          "contains": [
+            "plasma_cutter"
+          ]
+        },
+        {
+          "id": "plasma_cutter",
+          "name": "handheld plasma cutter",
+          "description": "A tool designed for cutting through metal barriers in emergencies"
+        },
+        {
+          "id": "research_lab_entrance",
+          "name": "research lab entrance",
+          "description": "A sealed door with a card reader and biometric scanner",
+          "locked": true,
+          "key_required": "access_keycard",
+          "direction": "east",
+          "leads_to": "research_laboratory",
+          "aliases": [
+            "door",
+            "east"
+          ]
+        }
+      ],
+      "exits": []
+    },
+    {
+      "id": "research_laboratory",
+      "name": "Research Laboratory",
+      "description": "A high-tech laboratory filled with alien specimens in stasis tubes, holographic displays, and research equipment. Glowing samples line the walls, and the air hums with energy. A massive vault door dominates the north wall, and various research stations are scattered throughout the room.",
+      "items": [
+        {
+          "id": "research_terminal",
+          "name": "main research terminal",
+          "description": "A sophisticated computer terminal with multiple data streams",
+          "readable": true,
+          "text": "RESEARCH LOG: Dr Helena Vex, Lead Xenobiologist. Commander Rax oversees all security protocols. The Quantum Stabilizer is stored in the vault for safekeeping. Access requires knowledge of facility personnel and specimen locations."
+        },
+        {
+          "id": "specimen_cabinet",
+          "name": "specimen storage cabinet",
+          "description": "A refrigerated cabinet containing various alien samples and research materials",
+          "subcontainers": [
+            {
+              "id": "cabinet_drawer_a",
+              "name": "drawer A",
+              "locked": false,
+              "contains": [
+                "research_notes"
+              ]
+            },
+            {
+              "id": "cabinet_drawer_b",
+              "name": "drawer B",
+              "locked": false,
+              "contains": [
+                "quantum_stabilizer"
+              ]
+            },
+            {
+              "id": "cabinet_drawer_c",
+              "name": "drawer C",
+              "locked": true,
+              "lock_type": "combination",
+              "combination": "13",
+              "contains": [
+                "vault_override_chip"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "research_notes",
+          "name": "xenobiology research notes",
+          "description": "Detailed notes about alien specimen behavior and characteristics",
+          "readable": true,
+          "text": "RESEARCH NOTES: The facility houses exactly 13 distinct alien species. The Quantum Stabilizer is essential for maintaining the containment fields. Without it, the specimens could break free. Emergency evacuation route is through the escape pod bay."
+        },
+        {
+          "id": "quantum_stabilizer",
+          "name": "quantum stabilizer device",
+          "description": "A crucial piece of technology needed to maintain alien containment systems"
+        },
+        {
+          "id": "vault_override_chip",
+          "name": "security override chip",
+          "description": "A data chip that can bypass certain security protocols"
+        },
+        {
+          "id": "holographic_map",
+          "name": "facility holographic map",
+          "description": "A 3D map showing the layout of the alien zoo facility",
+          "readable": true,
+          "text": "FACILITY MAP: Level 1 - Observation Deck. Level 2 - Research Laboratory (current location). Level 3 - Containment Vault (specimens stored here). Level 4 - Escape Pod Bay. All personnel must know their roles and specimen locations for vault access."
+        },
+        {
+          "id": "workbench",
+          "name": "research workbench",
+          "description": "A cluttered workbench with various tools and alien artifacts",
+          "searchable": true,
+          "contains": [
+            "personnel_roster"
+          ]
+        },
+        {
+          "id": "personnel_roster",
+          "name": "facility personnel roster",
+          "description": "A list of all facility staff and their roles",
+          "readable": true,
+          "text": "PERSONNEL ROSTER: Dr Helena Vex - Lead Researcher and Xenobiologist. Commander Rax - Security Chief. Dr Chen - Assistant Researcher. Lt Morrison - Security Officer. All specimens are housed in the Containment Vault for maximum security."
+        },
+        {
+          "id": "containment_vault_door",
+          "name": "containment vault door",
+          "description": "A massive reinforced door leading to the specimen containment area. A security terminal displays three verification questions.",
+          "locked": true,
+          "lock_type": "password",
+          "password_questions": [
+            {
+              "question": "Who is the lead researcher?",
+              "answer": "dr helena vex",
+              "hint": "Check the research terminal and personnel roster"
+            },
+            {
+              "question": "Who is the security chief?",
+              "answer": "commander rax",
+              "hint": "The personnel roster lists all staff roles"
+            },
+            {
+              "question": "Where are the specimens stored?",
+              "answer": "containment vault",
+              "hint": "The facility map and specimen display mention this location"
+            }
+          ],
+          "direction": "north",
+          "leads_to": "escape_pod_bay",
+          "aliases": [
+            "vault",
+            "north"
+          ]
+        }
+      ],
+      "exits": []
+    },
+    {
+      "id": "escape_pod_bay",
+      "name": "Escape Pod Bay",
+      "description": "You have reached the emergency escape pod bay! A sleek escape pod sits ready in its launch tube, its engines humming with power. Through the viewport, you can see the stars and the promise of freedom. The containment breach alarm continues to wail, but you have found your way out.",
+      "items": [
+        {
+          "id": "escape_pod",
+          "name": "emergency escape pod",
+          "description": "A small spacecraft designed for emergency evacuation, fully fueled and ready to launch"
+        },
+        {
+          "id": "launch_console",
+          "name": "pod launch console",
+          "description": "The control panel for launching the escape pod",
+          "readable": true,
+          "text": "LAUNCH SEQUENCE READY: All systems nominal. Quantum Stabilizer detected. Pod is cleared for immediate departure. Destination: Nearest space station."
+        },
+        {
+          "id": "viewport",
+          "name": "observation viewport",
+          "description": "A large window showing the vast expanse of space beyond the facility"
+        }
+      ],
+      "exits": [],
+      "is_goal": true,
+      "win_message": "SUCCESS! You board the escape pod and initiate the launch sequence. The pod detaches from the facility and rockets away into space. Through the rear viewport, you watch the Alien Zoo facility grow smaller as you head toward safety. You have escaped with your life and valuable knowledge about the alien specimens. You win!"
+    }
+  ]
+}

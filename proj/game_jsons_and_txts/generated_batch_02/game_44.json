@@ -1,0 +1,256 @@
+{
+    "theme": "Storm-Chaser Mobile Lab",
+    "title": "Storm-Chaser Mobile Lab Adventure #44",
+    "goal": "Solve the puzzles, achieve the main objective, and escape.",
+    "starting_room": "main_lab",
+    "rooms": [
+        {
+            "id": "main_lab",
+            "name": "Main Laboratory",
+            "description": "The interior of a high-tech mobile weather lab rocks violently as hurricane-force winds batter the vehicle. Computer screens flicker with storm data. Rain hammers against reinforced windows. Emergency lights cast an eerie red glow. You need to reach the underground shelter before the storm destroys the lab.",
+            "items": [
+                {
+                    "id": "computer_station",
+                    "name": "weather monitoring station",
+                    "description": "A bank of computers displaying real-time storm data and warnings",
+                    "readable": true,
+                    "text": "SEVERE WEATHER ALERT: Category 5 storm approaching. Wind speed: 175 mph. Barometric pressure: 892 mb. All personnel evacuate to emergency shelter immediately. Lead researcher: Dr Sarah Chen."
+                },
+                {
+                    "id": "research_desk",
+                    "name": "research desk",
+                    "description": "A cluttered desk covered with papers, instruments, and locked drawers",
+                    "subcontainers": [
+                        {
+                            "id": "top_drawer",
+                            "name": "top drawer",
+                            "locked": false,
+                            "contains": [
+                                "team_roster"
+                            ]
+                        },
+                        {
+                            "id": "middle_drawer",
+                            "name": "middle drawer",
+                            "locked": true,
+                            "lock_type": "combination",
+                            "combination": "175",
+                            "contains": [
+                                "access_card"
+                            ]
+                        },
+                        {
+                            "id": "bottom_drawer",
+                            "name": "bottom drawer",
+                            "locked": false,
+                            "contains": []
+                        }
+                    ]
+                },
+                {
+                    "id": "team_roster",
+                    "name": "team roster document",
+                    "description": "A list of the storm-chasing team members",
+                    "readable": true,
+                    "text": "Storm-Chaser Team #44: Lead Researcher - Dr Sarah Chen, Meteorologist - James Torres, Equipment Specialist - Maria Rodriguez, Data Analyst - Kevin Park. Emergency shelter code based on current wind speed reading."
+                },
+                {
+                    "id": "access_card",
+                    "name": "security access card",
+                    "description": "A magnetic keycard labeled 'Equipment Bay Access'"
+                },
+                {
+                    "id": "wall_cabinet",
+                    "name": "locked wall cabinet",
+                    "description": "A metal cabinet with a keycard reader and emergency supplies visible through the glass",
+                    "locked": true,
+                    "key_required": "access_card",
+                    "contains": [
+                        "emergency_manual",
+                        "flashlight"
+                    ]
+                },
+                {
+                    "id": "emergency_manual",
+                    "name": "emergency procedures manual",
+                    "description": "A red binder containing safety protocols",
+                    "readable": true,
+                    "text": "EMERGENCY SHELTER ACCESS: Located in Equipment Bay. Shelter hatch requires master key from equipment locker. Shelter entrance combination: Current barometric pressure reading (no decimal point)."
+                },
+                {
+                    "id": "flashlight",
+                    "name": "heavy-duty flashlight",
+                    "description": "A waterproof flashlight for emergency use"
+                },
+                {
+                    "id": "photo_frame",
+                    "name": "framed photograph",
+                    "description": "A photo on the desk showing the research team",
+                    "searchable": true,
+                    "contains": [
+                        "handwritten_note"
+                    ]
+                },
+                {
+                    "id": "handwritten_note",
+                    "name": "handwritten note",
+                    "description": "A note tucked behind the photo",
+                    "readable": true,
+                    "text": "Remember: Equipment locker code is the year we started this project - 2018. Stay safe out there! - Dr Sarah Chen"
+                },
+                {
+                    "id": "reinforced_rear_door",
+                    "name": "reinforced rear door",
+                    "description": "A heavy door leading to the equipment bay at the back of the mobile lab",
+                    "locked": false,
+                    "direction": "south",
+                    "leads_to": "equipment_bay",
+                    "aliases": [
+                        "door",
+                        "south"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "equipment_bay",
+            "name": "Equipment Bay",
+            "description": "The rear section of the mobile lab filled with weather instruments, storage lockers, and emergency gear. The vehicle lurches as the storm intensifies. A circular hatch in the floor leads to the underground emergency shelter. Warning lights flash urgently.",
+            "items": [
+                {
+                    "id": "equipment_locker",
+                    "name": "large equipment locker",
+                    "description": "A tall metal locker with a combination lock and various compartments",
+                    "subcontainers": [
+                        {
+                            "id": "main_compartment",
+                            "name": "main compartment",
+                            "locked": true,
+                            "lock_type": "combination",
+                            "combination": "2018",
+                            "contains": [
+                                "master_key",
+                                "storm_log"
+                            ]
+                        },
+                        {
+                            "id": "side_compartment",
+                            "name": "side compartment",
+                            "locked": false,
+                            "contains": [
+                                "weather_balloon"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "master_key",
+                    "name": "shelter master key",
+                    "description": "A heavy brass key labeled 'Emergency Shelter Access'"
+                },
+                {
+                    "id": "storm_log",
+                    "name": "storm tracking log",
+                    "description": "A detailed log of storm measurements and observations",
+                    "readable": true,
+                    "text": "Storm Log Entry #44: This is the most intense storm we've tracked. Dr Sarah Chen recorded pressure at 892 mb - lowest ever measured. Wind speeds reached 175 mph. Team members Torres, Rodriguez, and Park have already evacuated to shelter."
+                },
+                {
+                    "id": "weather_balloon",
+                    "name": "deflated weather balloon",
+                    "description": "A collapsed weather balloon used for atmospheric measurements"
+                },
+                {
+                    "id": "instrument_rack",
+                    "name": "instrument rack",
+                    "description": "A rack holding various weather monitoring devices",
+                    "searchable": true,
+                    "contains": [
+                        "barometer"
+                    ]
+                },
+                {
+                    "id": "barometer",
+                    "name": "portable barometer",
+                    "description": "A precision instrument showing current atmospheric pressure",
+                    "readable": true,
+                    "text": "Current Reading: 892 mb (millibars). CRITICAL LOW PRESSURE - EXTREME DANGER"
+                },
+                {
+                    "id": "supply_crate",
+                    "name": "emergency supply crate",
+                    "description": "A crate containing survival supplies and equipment",
+                    "searchable": true,
+                    "contains": [
+                        "first_aid_kit"
+                    ]
+                },
+                {
+                    "id": "first_aid_kit",
+                    "name": "first aid kit",
+                    "description": "A red medical kit with basic supplies"
+                },
+                {
+                    "id": "emergency_shelter_hatch",
+                    "name": "emergency shelter hatch",
+                    "description": "A reinforced circular hatch in the floor with a complex locking mechanism. Three security questions are displayed on a digital panel.",
+                    "locked": true,
+                    "lock_type": "password",
+                    "password_questions": [
+                        {
+                            "question": "Who is the lead researcher?",
+                            "answer": "dr sarah chen",
+                            "hint": "Check the weather monitoring station and team roster"
+                        },
+                        {
+                            "question": "What is the equipment specialist's last name?",
+                            "answer": "rodriguez",
+                            "hint": "Look at the team roster document"
+                        },
+                        {
+                            "question": "What is the shelter entrance combination?",
+                            "answer": "892",
+                            "hint": "The emergency manual says to use the barometric pressure reading"
+                        }
+                    ],
+                    "direction": "south",
+                    "leads_to": "emergency_shelter",
+                    "aliases": [
+                        "hatch",
+                        "down",
+                        "south"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "emergency_shelter",
+            "name": "Underground Emergency Shelter",
+            "description": "You've made it to safety! A reinforced concrete bunker deep underground, completely isolated from the raging storm above. The shelter is stocked with food, water, and supplies. Comfortable bunks line the walls. A radio crackles with weather updates. Through the thick walls, you can barely hear the muffled roar of the storm, but you are completely safe.",
+            "items": [
+                {
+                    "id": "supply_shelves",
+                    "name": "supply shelves",
+                    "description": "Shelves stocked with emergency food, water, and survival gear"
+                },
+                {
+                    "id": "emergency_radio",
+                    "name": "emergency radio",
+                    "description": "A radio receiving weather service broadcasts",
+                    "readable": true,
+                    "text": "WEATHER SERVICE: Storm-Chaser Mobile Lab #44 reported destroyed by Category 5 storm. All personnel confirmed safe in emergency shelter. Rescue teams will arrive when conditions permit. Estimated 24-48 hours."
+                },
+                {
+                    "id": "bunk_beds",
+                    "name": "shelter bunk beds",
+                    "description": "Comfortable beds where you can rest safely until rescue arrives"
+                }
+            ],
+            "exits": [],
+            "is_goal": true,
+            "win_message": "SUCCESS! You've reached the emergency shelter just in time. The storm rages above, but you are safe underground with plenty of supplies. Your quick thinking and puzzle-solving skills saved your life. The mobile lab may be destroyed, but you survived Storm-Chaser Adventure #44. Rescue teams are on their way. You win!"
+        }
+    ]
+}

@@ -1,0 +1,222 @@
+{
+  "theme": "Runaway Nano-Swarm Zone",
+  "title": "Runaway Nano-Swarm Zone Adventure #4",
+  "goal": "Solve the puzzles, achieve the main objective, and escape.",
+  "starting_room": "decontamination_airlock",
+  "rooms": [
+    {
+      "id": "decontamination_airlock",
+      "name": "Decontamination Airlock",
+      "description": "A sterile white chamber with warning lights flashing red along the walls. Through the reinforced viewport, you can see a gray metallic swarm moving like liquid mercury through the adjacent corridors. Emergency klaxons blare intermittently. Decontamination spray nozzles hang from the ceiling. The air smells of ozone and chemical disinfectant.",
+      "items": [
+        {
+          "id": "emergency_locker",
+          "name": "emergency equipment locker",
+          "description": "A red metal locker with emergency supplies and protective gear",
+          "searchable": true,
+          "contains": [
+            "incident_report"
+          ]
+        },
+        {
+          "id": "incident_report",
+          "name": "incident report datapad",
+          "description": "A digital tablet displaying an emergency incident report",
+          "readable": true,
+          "text": "INCIDENT REPORT: Nano swarm containment breach at 0847 hours. Facility established 2089. Chief Scientist Dr. Elena Vasquez initiated emergency protocols. Lead Engineer Marcus Webb sealed contaminated sectors. All personnel must evacuate via emergency pods. Combination to secure storage: facility founding year."
+        },
+        {
+          "id": "wall_panel",
+          "name": "wall mounted control panel",
+          "description": "A control panel with facility status displays and warning indicators",
+          "readable": true,
+          "text": "FACILITY STATUS: Nano Swarm Containment Facility Alpha. Established 2089. Current Status: CRITICAL BREACH. Contamination Level: 87%. Evacuation Required. Emergency pods located in Pod Bay Gamma."
+        },
+        {
+          "id": "secure_storage_box",
+          "name": "secure storage box",
+          "description": "A reinforced storage box with a four digit combination lock",
+          "locked": true,
+          "lock_type": "combination",
+          "combination": "2089",
+          "contains": [
+            "access_keycard"
+          ]
+        },
+        {
+          "id": "access_keycard",
+          "name": "security access keycard",
+          "description": "A magnetic keycard labeled AUTHORIZED PERSONNEL ONLY"
+        },
+        {
+          "id": "decon_station",
+          "name": "decontamination station",
+          "description": "A station with chemical showers and protective equipment",
+          "searchable": true,
+          "contains": [
+            "safety_manual"
+          ]
+        },
+        {
+          "id": "safety_manual",
+          "name": "safety procedures manual",
+          "description": "A laminated manual with emergency protocols",
+          "readable": true,
+          "text": "SAFETY PROTOCOLS: In case of nano swarm breach, proceed immediately to research laboratory to gather containment data. Dr. Vasquez maintains all critical research files. Engineer Webb controls facility systems from the laboratory."
+        },
+        {
+          "id": "reinforced_laboratory_door",
+          "name": "reinforced laboratory door",
+          "description": "A heavy security door with a card reader, leading to the research laboratory",
+          "locked": true,
+          "key_required": "access_keycard",
+          "direction": "north",
+          "leads_to": "research_laboratory",
+          "aliases": [
+            "door",
+            "north"
+          ]
+        }
+      ],
+      "exits": []
+    },
+    {
+      "id": "research_laboratory",
+      "name": "Research Laboratory",
+      "description": "A high tech laboratory filled with sophisticated equipment and holographic displays. Microscopes and analysis stations line the workbenches. Through the observation windows, you can see the nano swarm pulsing with an eerie silver glow. Computer terminals blink with warning messages. The sealed door to the evacuation pod bay stands at the far end.",
+      "items": [
+        {
+          "id": "main_workstation",
+          "name": "main research workstation",
+          "description": "Dr. Vasquez's primary workstation with multiple monitors and data storage",
+          "subcontainers": [
+            {
+              "id": "top_drawer",
+              "name": "top drawer",
+              "locked": false,
+              "contains": [
+                "research_log"
+              ]
+            },
+            {
+              "id": "secure_drawer",
+              "name": "secure drawer",
+              "locked": false,
+              "contains": [
+                "evacuation_protocols"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "research_log",
+          "name": "research log datapad",
+          "description": "A tablet containing Dr. Vasquez's research notes",
+          "readable": true,
+          "text": "Research Log Entry 247: The nano swarm exhibits unprecedented adaptive behavior. Our containment protocols have failed. Engineer Webb and I are implementing emergency shutdown. The swarm originated in Containment Sector Seven. Only authorized personnel may access evacuation pods."
+        },
+        {
+          "id": "evacuation_protocols",
+          "name": "evacuation protocol document",
+          "description": "Official evacuation procedures for facility emergencies",
+          "readable": true,
+          "text": "EVACUATION PROTOCOLS: In case of catastrophic containment failure, all personnel must evacuate via Pod Bay Gamma. Security verification required. Questions: Who is the chief scientist? Where did the swarm originate? Who controls facility systems?"
+        },
+        {
+          "id": "observation_window",
+          "name": "reinforced observation window",
+          "description": "A thick window overlooking the contaminated containment area",
+          "readable": true,
+          "text": "Through the window, you see Containment Sector Seven completely overrun with the silvery nano swarm. The swarm moves with disturbing intelligence, probing every surface for weaknesses."
+        },
+        {
+          "id": "computer_terminal",
+          "name": "facility computer terminal",
+          "description": "A terminal displaying facility systems and personnel records",
+          "readable": true,
+          "text": "PERSONNEL DATABASE: Dr. Elena Vasquez - Chief Scientist, Nano Technology Division. Marcus Webb - Lead Engineer, Facility Systems. Status: Emergency evacuation in progress. All personnel report to Pod Bay Gamma immediately."
+        },
+        {
+          "id": "equipment_cabinet",
+          "name": "equipment storage cabinet",
+          "description": "A tall cabinet containing research equipment and protective gear",
+          "searchable": true,
+          "contains": [
+            "hazmat_suit",
+            "containment_report"
+          ]
+        },
+        {
+          "id": "hazmat_suit",
+          "name": "protective hazmat suit",
+          "description": "A full body protective suit with nano particle filtration"
+        },
+        {
+          "id": "containment_report",
+          "name": "containment breach report",
+          "description": "A detailed report on the containment failure",
+          "readable": true,
+          "text": "BREACH ANALYSIS: Nano swarm escaped from Containment Sector Seven at 0847 hours. Swarm has compromised 87% of facility. Dr. Vasquez recommends immediate evacuation. Engineer Webb has sealed all non essential sectors. Evacuation pods are the only safe exit."
+        },
+        {
+          "id": "sealed_pod_bay_door",
+          "name": "sealed pod bay door",
+          "description": "A massive security door leading to the evacuation pod bay. A biometric panel displays three security verification questions.",
+          "locked": true,
+          "lock_type": "password",
+          "password_questions": [
+            {
+              "question": "Who is the chief scientist?",
+              "answer": "dr elena vasquez",
+              "hint": "Check the incident report and personnel database"
+            },
+            {
+              "question": "Where did the nano swarm originate?",
+              "answer": "containment sector seven",
+              "hint": "Read the research log and containment breach report"
+            },
+            {
+              "question": "Who controls the facility systems?",
+              "answer": "marcus webb",
+              "hint": "The personnel database and reports mention the lead engineer"
+            }
+          ],
+          "direction": "east",
+          "leads_to": "evacuation_pod_bay",
+          "aliases": [
+            "door",
+            "east"
+          ]
+        }
+      ],
+      "exits": []
+    },
+    {
+      "id": "evacuation_pod_bay",
+      "name": "Emergency Evacuation Pod Bay",
+      "description": "You have reached the evacuation pod bay! A sleek emergency escape pod sits in its launch cradle, its systems humming with power. Status lights glow green across the control panel. Through the launch tube viewport, you can see the sky above. The pod is ready for immediate departure. You are safe from the nano swarm here.",
+      "items": [
+        {
+          "id": "escape_pod",
+          "name": "emergency escape pod",
+          "description": "A streamlined evacuation vehicle designed for rapid facility escape"
+        },
+        {
+          "id": "launch_control_panel",
+          "name": "launch control panel",
+          "description": "The pod's control system showing all green status indicators",
+          "readable": true,
+          "text": "ESCAPE POD STATUS: All systems nominal. Launch sequence ready. Destination: Safe zone coordinates uploaded. Estimated time to safety: 3 minutes."
+        },
+        {
+          "id": "emergency_beacon",
+          "name": "emergency distress beacon",
+          "description": "A beacon that will alert rescue teams to your location"
+        }
+      ],
+      "exits": [],
+      "is_goal": true,
+      "win_message": "SUCCESS! You board the escape pod and initiate the launch sequence. The pod rockets away from the contaminated facility as the nano swarm spreads below. Through the viewport, you watch the facility shrink into the distance. You have escaped the runaway nano swarm and survived the crisis. Rescue teams are en route to your coordinates. You win!"
+    }
+  ]
+}

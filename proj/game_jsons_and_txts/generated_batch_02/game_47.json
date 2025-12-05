@@ -1,0 +1,220 @@
+{
+    "theme": "Oracle's Chamber",
+    "title": "Oracle's Chamber Adventure #47",
+    "goal": "Solve the puzzles, achieve the main objective, and escape.",
+    "starting_room": "antechamber",
+    "rooms": [
+        {
+            "id": "antechamber",
+            "name": "Oracle's Antechamber",
+            "description": "A dimly lit chamber with walls covered in ancient symbols that glow faintly with ethereal light. Incense smoke curls through the air, and the sound of distant chanting echoes from somewhere deep within. Stone benches line the walls, and a large ornate chest sits in the corner. A heavy tapestry depicting celestial bodies hangs on the eastern wall.",
+            "items": [
+                {
+                    "id": "stone_bench",
+                    "name": "carved stone bench",
+                    "description": "A bench with intricate carvings of stars and moons",
+                    "searchable": true,
+                    "contains": [
+                        "brass_key"
+                    ]
+                },
+                {
+                    "id": "brass_key",
+                    "name": "ancient brass key",
+                    "description": "A tarnished brass key with celestial symbols etched into its surface"
+                },
+                {
+                    "id": "ornate_chest",
+                    "name": "ornate wooden chest",
+                    "description": "A chest decorated with silver inlays and mystical runes. It has a brass lock.",
+                    "locked": true,
+                    "key_required": "brass_key",
+                    "contains": [
+                        "prophecy_scroll"
+                    ]
+                },
+                {
+                    "id": "prophecy_scroll",
+                    "name": "scroll of prophecy",
+                    "description": "An ancient scroll with faded writing",
+                    "readable": true,
+                    "text": "The First Prophecy: In the year 777, the Oracle Cassandra foresaw the coming of the Seeker. Three truths must be known: The Oracle's name, the place of visions, and the key to enlightenment."
+                },
+                {
+                    "id": "offering_table",
+                    "name": "stone offering table",
+                    "description": "A table with three compartments for sacred offerings",
+                    "subcontainers": [
+                        {
+                            "id": "left_compartment",
+                            "name": "left compartment",
+                            "locked": false,
+                            "contains": [
+                                "vision_journal"
+                            ]
+                        },
+                        {
+                            "id": "center_compartment",
+                            "name": "center compartment",
+                            "locked": true,
+                            "lock_type": "combination",
+                            "combination": "777",
+                            "contains": [
+                                "silver_amulet"
+                            ]
+                        },
+                        {
+                            "id": "right_compartment",
+                            "name": "right compartment",
+                            "locked": false,
+                            "contains": []
+                        }
+                    ]
+                },
+                {
+                    "id": "vision_journal",
+                    "name": "Oracle's vision journal",
+                    "description": "A leather-bound journal filled with prophetic writings",
+                    "readable": true,
+                    "text": "Journal Entry: I, Oracle Cassandra, record my visions in the Chamber of Mirrors, where truth reflects infinitely. The sacred number of my first great prophecy was 777. Only wisdom can unlock the path forward."
+                },
+                {
+                    "id": "silver_amulet",
+                    "name": "silver amulet",
+                    "description": "A mystical amulet that pulses with inner light"
+                },
+                {
+                    "id": "celestial_tapestry",
+                    "name": "celestial tapestry",
+                    "description": "A large tapestry showing the night sky with constellations",
+                    "readable": true,
+                    "text": "Woven into the tapestry: 'The stars guide those who seek. The Oracle's wisdom flows from the Chamber of Mirrors to all who are worthy.'"
+                },
+                {
+                    "id": "carved_wooden_door",
+                    "name": "carved wooden door",
+                    "description": "A door carved with images of eyes and stars, leading east",
+                    "locked": false,
+                    "direction": "east",
+                    "leads_to": "hall_of_prophecies",
+                    "aliases": [
+                        "door",
+                        "east"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "hall_of_prophecies",
+            "name": "Hall of Prophecies",
+            "description": "A long hallway lined with marble columns. The walls are covered with inscriptions of ancient prophecies, each glowing with a different colored light. Crystal orbs float near the ceiling, casting dancing shadows. At the far end, a magnificent door of polished bronze stands closed, covered in mystical questions.",
+            "items": [
+                {
+                    "id": "prophecy_wall_north",
+                    "name": "northern prophecy wall",
+                    "description": "A wall inscription glowing with blue light",
+                    "readable": true,
+                    "text": "The Second Prophecy: The seeker shall find wisdom not in books, but in reflection and meditation. The Oracle speaks truth in the Chamber of Mirrors."
+                },
+                {
+                    "id": "prophecy_wall_south",
+                    "name": "southern prophecy wall",
+                    "description": "A wall inscription glowing with golden light",
+                    "readable": true,
+                    "text": "The Third Prophecy: Three paths lead to enlightenment - Knowledge of the self, Understanding of the cosmos, and Acceptance of fate. These are the pillars of wisdom."
+                },
+                {
+                    "id": "marble_pedestal",
+                    "name": "marble pedestal",
+                    "description": "A pedestal holding a crystal sphere",
+                    "searchable": true,
+                    "contains": [
+                        "oracle_teachings"
+                    ]
+                },
+                {
+                    "id": "oracle_teachings",
+                    "name": "book of Oracle's teachings",
+                    "description": "A tome containing the Oracle's wisdom",
+                    "readable": true,
+                    "text": "The Teachings of Cassandra: To achieve enlightenment, one must embrace wisdom. Wisdom comes from understanding the three pillars: knowledge, understanding, and acceptance. Only through wisdom can one reach the inner sanctum."
+                },
+                {
+                    "id": "floating_orbs",
+                    "name": "floating crystal orbs",
+                    "description": "Mystical orbs that float and glow with inner light",
+                    "searchable": true,
+                    "contains": [
+                        "meditation_guide"
+                    ]
+                },
+                {
+                    "id": "meditation_guide",
+                    "name": "meditation scroll",
+                    "description": "A scroll describing meditation practices",
+                    "readable": true,
+                    "text": "Guide to Meditation: The Oracle Cassandra teaches that true visions come in the Chamber of Mirrors, where one sees not just the reflection of the body, but the reflection of the soul."
+                },
+                {
+                    "id": "bronze_door_to_inner_sanctum",
+                    "name": "bronze door to inner sanctum",
+                    "description": "A magnificent door inscribed with three questions that glow with mystical energy",
+                    "locked": true,
+                    "lock_type": "password",
+                    "password_questions": [
+                        {
+                            "question": "What is the Oracle's name?",
+                            "answer": "cassandra",
+                            "hint": "Check the prophecy scroll and the vision journal"
+                        },
+                        {
+                            "question": "Where does the Oracle receive visions?",
+                            "answer": "chamber of mirrors",
+                            "hint": "Multiple texts mention where the Oracle sees truth"
+                        },
+                        {
+                            "question": "What unlocks the path to enlightenment?",
+                            "answer": "wisdom",
+                            "hint": "The Oracle's teachings explain what leads to enlightenment"
+                        }
+                    ],
+                    "direction": "north",
+                    "leads_to": "inner_sanctum",
+                    "aliases": [
+                        "door",
+                        "north"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "inner_sanctum",
+            "name": "Oracle's Inner Sanctum",
+            "description": "You have entered the sacred heart of the Oracle's Chamber! The room is circular, with walls made entirely of mirrors that reflect infinite versions of yourself. In the center, a pool of crystal-clear water glows with divine light. Above, the ceiling opens to reveal the stars themselves. A sense of profound peace and enlightenment washes over you. The Oracle's presence can be felt all around, welcoming you as one who has proven worthy.",
+            "items": [
+                {
+                    "id": "sacred_pool",
+                    "name": "pool of divine water",
+                    "description": "A pool that shows visions of past, present, and future in its shimmering surface"
+                },
+                {
+                    "id": "mirror_walls",
+                    "name": "infinite mirrors",
+                    "description": "Mirrors that reflect not just your image, but your true self",
+                    "readable": true,
+                    "text": "As you gaze into the mirrors, you see yourself as you truly are - a seeker who has found wisdom through perseverance and understanding."
+                },
+                {
+                    "id": "oracle_throne",
+                    "name": "Oracle's throne",
+                    "description": "An empty throne of white marble, waiting for the next Oracle to claim it"
+                }
+            ],
+            "exits": [],
+            "is_goal": true,
+            "win_message": "You have reached the Oracle's Inner Sanctum and proven yourself worthy! The mirrors show you visions of your future, filled with wisdom and enlightenment. The Oracle's voice echoes through the chamber: 'You have passed the trials and demonstrated true understanding. You are now blessed with the gift of insight.' The chamber fills with brilliant light, and you feel transformed by the experience. You win!"
+        }
+    ]
+}

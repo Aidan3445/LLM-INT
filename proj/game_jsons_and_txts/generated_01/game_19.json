@@ -1,0 +1,266 @@
+{
+  "theme": "Gothic Astronomy Tower",
+  "title": "Gothic Astronomy Tower Adventure #19",
+  "goal": "Solve the puzzles, achieve the main objective, and escape.",
+  "starting_room": "observation_deck",
+  "rooms": [
+    {
+      "id": "observation_deck",
+      "name": "Gothic Observation Deck",
+      "description": "A circular stone chamber with tall arched windows overlooking a moonlit landscape. Ancient astronomical instruments line the walls, their brass surfaces tarnished with age. Star charts and celestial maps are pinned to wooden boards. The air is cold and still, carrying the scent of old parchment and metal. Gargoyles peer down from the vaulted ceiling.",
+      "items": [
+        {
+          "id": "wooden_desk",
+          "name": "astronomer's desk",
+          "description": "A heavy oak desk covered with papers, charts, and astronomical calculations",
+          "subcontainers": [
+            {
+              "id": "top_drawer",
+              "name": "top drawer",
+              "locked": false,
+              "contains": [
+                "tower_journal"
+              ]
+            },
+            {
+              "id": "bottom_drawer",
+              "name": "bottom drawer",
+              "locked": true,
+              "lock_type": "combination",
+              "combination": "1543",
+              "contains": [
+                "brass_key"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "tower_journal",
+          "name": "astronomer's journal",
+          "description": "A leather bound journal with detailed observations",
+          "readable": true,
+          "text": "Day 127: This tower was built in 1543 by Lord Blackwood to study the heavens. My observations continue from the Star Chamber above. The celestial sphere reveals eight planets in our solar system. Only those who understand the cosmos may access the telescope dome."
+        },
+        {
+          "id": "brass_key",
+          "name": "ornate brass key",
+          "description": "A key engraved with constellation patterns"
+        },
+        {
+          "id": "star_charts",
+          "name": "collection of star charts",
+          "description": "Ancient maps showing constellations and planetary movements",
+          "readable": true,
+          "text": "These charts map the night sky as observed from this tower. Notes indicate: 'The Star Chamber contains the most powerful instruments. Lord Blackwood's telescope in the dome above can see to the edge of the universe.'"
+        },
+        {
+          "id": "astrolabe",
+          "name": "ancient astrolabe",
+          "description": "A complex brass instrument for measuring celestial positions",
+          "searchable": true,
+          "contains": [
+            "hidden_note"
+          ]
+        },
+        {
+          "id": "hidden_note",
+          "name": "folded note",
+          "description": "A note tucked inside the astrolabe mechanism",
+          "readable": true,
+          "text": "The combination to my desk drawer is the year this magnificent tower was constructed. I have locked my most precious instruments in the iron bound chest. The key is with my personal effects. - Lord Blackwood"
+        },
+        {
+          "id": "iron_bound_chest",
+          "name": "iron bound chest",
+          "description": "A sturdy chest reinforced with iron bands and a brass lock",
+          "locked": true,
+          "key_required": "brass_key",
+          "contains": [
+            "silver_key",
+            "observation_log"
+          ]
+        },
+        {
+          "id": "silver_key",
+          "name": "silver key",
+          "description": "A delicate silver key with moon phases engraved on it"
+        },
+        {
+          "id": "observation_log",
+          "name": "observation log",
+          "description": "A detailed record of astronomical observations",
+          "readable": true,
+          "text": "Lord Blackwood's Log: From this tower, I have catalogued the movements of eight planets. The Star Chamber holds my greatest instruments. To reach the telescope dome, one must answer the three celestial questions inscribed upon the door."
+        },
+        {
+          "id": "telescope_stand",
+          "name": "small telescope on stand",
+          "description": "A brass telescope pointed toward the windows",
+          "searchable": true,
+          "contains": []
+        },
+        {
+          "id": "spiral_stone_staircase",
+          "name": "spiral stone staircase",
+          "description": "A winding staircase carved from stone, leading upward to the Star Chamber",
+          "locked": true,
+          "key_required": "silver_key",
+          "direction": "north",
+          "leads_to": "star_chamber",
+          "aliases": [
+            "stairs",
+            "staircase",
+            "up",
+            "north"
+          ]
+        }
+      ],
+      "exits": []
+    },
+    {
+      "id": "star_chamber",
+      "name": "Star Chamber",
+      "description": "A magnificent chamber with a domed ceiling painted to depict the night sky. Constellations shimmer with gold leaf against deep blue. A massive orrery dominates the center, its brass planets frozen in their orbits. Floor to ceiling bookshelves line the walls, filled with astronomical texts. Moonlight streams through a circular skylight.",
+      "items": [
+        {
+          "id": "mechanical_orrery",
+          "name": "grand mechanical orrery",
+          "description": "An intricate model of the solar system with brass planets on curved arms",
+          "readable": true,
+          "text": "The orrery shows the sun at the center with eight planets orbiting around it. A plaque reads: 'Built by Lord Blackwood, 1543. The cosmos reveals its secrets to those who observe with patience.'"
+        },
+        {
+          "id": "floor_to_ceiling_bookshelf",
+          "name": "floor to ceiling bookshelf",
+          "description": "Towering shelves packed with leather bound volumes on astronomy and mathematics",
+          "searchable": true,
+          "contains": [
+            "astronomy_treatise"
+          ]
+        },
+        {
+          "id": "astronomy_treatise",
+          "name": "treatise on celestial mechanics",
+          "description": "A thick volume with detailed astronomical knowledge",
+          "readable": true,
+          "text": "Chapter 5: The Solar System contains eight known planets orbiting our sun. The telescope dome at the tower's peak houses Lord Blackwood's masterwork - a telescope powerful enough to observe distant galaxies. Access requires knowledge of the cosmos."
+        },
+        {
+          "id": "writing_desk",
+          "name": "scholar's writing desk",
+          "description": "A desk with inkwells, quills, and stacks of calculations",
+          "subcontainers": [
+            {
+              "id": "desk_drawer",
+              "name": "locked drawer",
+              "locked": true,
+              "lock_type": "combination",
+              "combination": "8",
+              "contains": [
+                "celestial_map"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "celestial_map",
+          "name": "detailed celestial map",
+          "description": "A beautifully illustrated map of the heavens",
+          "readable": true,
+          "text": "This map charts the visible universe as seen from the tower. Annotations note: 'Eight planets circle our sun. The telescope dome provides the ultimate vantage point. Lord Blackwood spent his life studying the stars from this tower.'"
+        },
+        {
+          "id": "stone_pedestal",
+          "name": "marble pedestal",
+          "description": "A pedestal holding various astronomical instruments",
+          "searchable": true,
+          "contains": [
+            "compass",
+            "sextant"
+          ]
+        },
+        {
+          "id": "compass",
+          "name": "brass compass",
+          "description": "A navigational compass with ornate engravings"
+        },
+        {
+          "id": "sextant",
+          "name": "navigation sextant",
+          "description": "An instrument for measuring angles between celestial objects"
+        },
+        {
+          "id": "painted_dome",
+          "name": "painted dome ceiling",
+          "description": "A breathtaking fresco of the night sky with constellations",
+          "readable": true,
+          "text": "The dome depicts the cosmos in stunning detail. Constellations are labeled in Latin. At the apex, an inscription reads: 'Per aspera ad astra - Through hardships to the stars.'"
+        },
+        {
+          "id": "gothic_stone_archway",
+          "name": "gothic stone archway",
+          "description": "A pointed arch doorway leading to the telescope dome. Three questions are carved into the stone lintel.",
+          "locked": true,
+          "lock_type": "password",
+          "password_questions": [
+            {
+              "question": "How many planets orbit our sun?",
+              "answer": "eight",
+              "hint": "Check the orrery, the astronomy treatise, and the celestial map"
+            },
+            {
+              "question": "What is housed in the telescope dome?",
+              "answer": "telescope",
+              "hint": "Multiple texts mention what Lord Blackwood built at the tower's peak"
+            },
+            {
+              "question": "Who built this tower?",
+              "answer": "lord blackwood",
+              "hint": "The journal, observation log, and various inscriptions name the builder"
+            }
+          ],
+          "direction": "east",
+          "leads_to": "telescope_dome",
+          "aliases": [
+            "archway",
+            "door",
+            "east"
+          ]
+        }
+      ],
+      "exits": []
+    },
+    {
+      "id": "telescope_dome",
+      "name": "Telescope Dome",
+      "description": "You have reached the pinnacle of the Gothic Astronomy Tower! A massive telescope points toward the heavens through an open dome. Stars blaze brilliantly in the night sky above. The telescope's brass and glass construction gleams in the moonlight. A spiral staircase leads down to a hidden exit - your escape route to freedom.",
+      "items": [
+        {
+          "id": "grand_telescope",
+          "name": "Lord Blackwood's telescope",
+          "description": "A magnificent telescope of unprecedented size and craftsmanship, pointed at the cosmos"
+        },
+        {
+          "id": "observation_platform",
+          "name": "observation platform",
+          "description": "A circular platform surrounding the telescope with brass railings"
+        },
+        {
+          "id": "dome_mechanism",
+          "name": "rotating dome mechanism",
+          "description": "Gears and chains that allow the dome to rotate and open to the sky"
+        },
+        {
+          "id": "star_log",
+          "name": "final observation log",
+          "description": "Lord Blackwood's last entries, left beside the telescope",
+          "readable": true,
+          "text": "My life's work is complete. This telescope reveals wonders beyond imagination. From this tower, I have touched the infinite. May future astronomers continue the quest for knowledge. The stars await."
+        }
+      ],
+      "exits": [],
+      "is_goal": true,
+      "win_message": "You have reached the telescope dome at the tower's peak! Through Lord Blackwood's magnificent telescope, you glimpse the infinite cosmos. The mysteries of the Gothic Astronomy Tower are solved. A hidden staircase leads you safely down and out into the night. You have escaped and won!"
+    }
+  ]
+}

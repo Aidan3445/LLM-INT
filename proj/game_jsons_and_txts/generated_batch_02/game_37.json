@@ -1,0 +1,255 @@
+{
+    "theme": "Dream Archive",
+    "title": "Dream Archive Adventure #37",
+    "goal": "Solve the puzzles, achieve the main objective, and escape.",
+    "starting_room": "subconscious_library",
+    "rooms": [
+        {
+            "id": "subconscious_library",
+            "name": "Subconscious Library",
+            "description": "A vast library where books float in mid-air and shelves stretch infinitely upward. The spines of books glow with soft pastel colors. Whispered voices read passages from forgotten memories. A large desk sits in the center, and crystalline cabinets line the walls. The air smells of old paper and lavender.",
+            "items": [
+                {
+                    "id": "librarian_desk",
+                    "name": "floating librarian desk",
+                    "description": "A desk made of solidified clouds with three drawers that phase in and out of visibility",
+                    "subcontainers": [
+                        {
+                            "id": "top_drawer",
+                            "name": "top drawer",
+                            "locked": false,
+                            "contains": [
+                                "memory_catalog"
+                            ]
+                        },
+                        {
+                            "id": "middle_drawer",
+                            "name": "middle drawer",
+                            "locked": true,
+                            "lock_type": "combination",
+                            "combination": "1993",
+                            "contains": [
+                                "obsidian_key"
+                            ]
+                        },
+                        {
+                            "id": "bottom_drawer",
+                            "name": "bottom drawer",
+                            "locked": false,
+                            "contains": []
+                        }
+                    ]
+                },
+                {
+                    "id": "memory_catalog",
+                    "name": "memory catalog",
+                    "description": "A book that writes itself with glowing ink",
+                    "readable": true,
+                    "text": "Archive Catalog: Subject is Marcus Thorne, born 1993. Primary memories stored in the Echo Chamber. Subject's childhood companion was named Whiskers. Subject's greatest achievement occurred at the Summit of Aspirations."
+                },
+                {
+                    "id": "obsidian_key",
+                    "name": "key of obsidian dreams",
+                    "description": "A black crystalline key that absorbs light around it"
+                },
+                {
+                    "id": "locked_cabinet",
+                    "name": "memory storage cabinet",
+                    "description": "A tall cabinet made of translucent crystal with a dark keyhole",
+                    "locked": true,
+                    "key_required": "obsidian_key",
+                    "contains": [
+                        "echo_fragment"
+                    ]
+                },
+                {
+                    "id": "echo_fragment",
+                    "name": "Echo Fragment",
+                    "description": "A shard of crystallized sound that hums with remembered voices"
+                },
+                {
+                    "id": "floating_books",
+                    "name": "constellation of floating books",
+                    "description": "Books drifting through the air like stars in a galaxy",
+                    "searchable": true,
+                    "contains": [
+                        "identity_scroll"
+                    ]
+                },
+                {
+                    "id": "identity_scroll",
+                    "name": "scroll of identity",
+                    "description": "A scroll that reveals the dreamer's true name",
+                    "readable": true,
+                    "text": "Identity Record: You are Marcus Thorne. You entered the Dream Archive seeking answers. Your childhood pet was a cat named Whiskers. You must remember who you are to escape."
+                },
+                {
+                    "id": "reading_alcove",
+                    "name": "reading alcove",
+                    "description": "A cozy nook with cushions that shift colors based on your mood",
+                    "searchable": true,
+                    "contains": [
+                        "achievement_journal"
+                    ]
+                },
+                {
+                    "id": "achievement_journal",
+                    "name": "journal of achievements",
+                    "description": "A golden book recording life accomplishments",
+                    "readable": true,
+                    "text": "Greatest Achievement: Marcus Thorne reached the Summit of Aspirations in his career, becoming the youngest researcher to decode ancient dream patterns. This memory is stored in the Echo Chamber."
+                },
+                {
+                    "id": "archway_of_echoes",
+                    "name": "archway of echoes",
+                    "description": "A shimmering archway that ripples like water, leading to the Echo Chamber",
+                    "locked": false,
+                    "direction": "east",
+                    "leads_to": "echo_chamber",
+                    "aliases": [
+                        "archway",
+                        "east"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "echo_chamber",
+            "name": "Echo Chamber",
+            "description": "A spherical room where every sound repeats infinitely in harmonious layers. The walls are made of mirrors that reflect not your image but your memories. Ghostly projections of past moments play on loop. Three large memory crystals float in the center, each pulsing with different colored light. A door of pure light stands at the far end.",
+            "items": [
+                {
+                    "id": "memory_crystal_red",
+                    "name": "crimson memory crystal",
+                    "description": "A red crystal showing scenes of childhood",
+                    "readable": true,
+                    "text": "Memory Playback: A young Marcus playing with his beloved cat Whiskers in a sunlit garden. The cat purrs contentedly as Marcus whispers secrets to his furry friend."
+                },
+                {
+                    "id": "memory_crystal_blue",
+                    "name": "sapphire memory crystal",
+                    "description": "A blue crystal displaying professional achievements",
+                    "readable": true,
+                    "text": "Memory Playback: Marcus standing at the Summit of Aspirations, receiving recognition for his groundbreaking research. Pride and joy radiate from the scene."
+                },
+                {
+                    "id": "memory_crystal_green",
+                    "name": "emerald memory crystal",
+                    "description": "A green crystal showing the moment of entering the archive",
+                    "readable": true,
+                    "text": "Memory Playback: Marcus entering the Dream Archive voluntarily, seeking to understand the nature of consciousness and memory. His determination is palpable."
+                },
+                {
+                    "id": "reflection_pool",
+                    "name": "pool of reflections",
+                    "description": "A shallow pool of liquid silver that shows your true self",
+                    "searchable": true,
+                    "contains": [
+                        "truth_shard"
+                    ]
+                },
+                {
+                    "id": "truth_shard",
+                    "name": "Truth Shard",
+                    "description": "A transparent crystal that reveals hidden truths and dispels illusions"
+                },
+                {
+                    "id": "echo_pedestal",
+                    "name": "resonance pedestal",
+                    "description": "A pedestal that amplifies the power of dream artifacts placed upon it",
+                    "searchable": true,
+                    "contains": [
+                        "guidance_note"
+                    ]
+                },
+                {
+                    "id": "guidance_note",
+                    "name": "note from the archivist",
+                    "description": "A message left by the keeper of the Dream Archive",
+                    "readable": true,
+                    "text": "To escape the Dream Archive, you must prove you know yourself. Answer the three questions of identity at the Gateway of Awakening. Only then can you return to the waking world."
+                },
+                {
+                    "id": "gateway_of_awakening",
+                    "name": "gateway of awakening",
+                    "description": "A door made of pure light with three questions etched in glowing script",
+                    "locked": true,
+                    "lock_type": "password",
+                    "password_questions": [
+                        {
+                            "question": "What is your true name?",
+                            "answer": "marcus thorne",
+                            "hint": "Check the identity scroll and memory catalog"
+                        },
+                        {
+                            "question": "What was your childhood companion called?",
+                            "answer": "whiskers",
+                            "hint": "The memory catalog and crimson crystal both mention this"
+                        },
+                        {
+                            "question": "Where did you achieve your greatest success?",
+                            "answer": "summit of aspirations",
+                            "hint": "Look at the achievement journal and sapphire crystal"
+                        }
+                    ],
+                    "direction": "north",
+                    "leads_to": "awakening_threshold",
+                    "aliases": [
+                        "gateway",
+                        "north"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "awakening_threshold",
+            "name": "Threshold of Awakening",
+            "description": "You stand in a room of pure white light. The Dream Archive fades behind you like morning fog. Ahead, a final portal shows glimpses of reality - your bedroom, your life, your world. Two pedestals stand before the portal, waiting for the Echo Fragment and Truth Shard to activate your escape.",
+            "items": [
+                {
+                    "id": "twin_pedestals",
+                    "name": "pedestals of balance",
+                    "description": "Two crystalline stands that resonate with dream energy",
+                    "readable": true,
+                    "text": "Inscription: Place the Echo Fragment and Truth Shard to harmonize memory and reality. Only then may you awaken."
+                },
+                {
+                    "id": "portal_to_reality",
+                    "name": "portal to reality",
+                    "description": "A swirling vortex showing the waking world beyond the dreams",
+                    "locked": true,
+                    "key_required": "truth_shard",
+                    "direction": "east",
+                    "leads_to": "waking_world",
+                    "aliases": [
+                        "portal",
+                        "east"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "waking_world",
+            "name": "The Waking World",
+            "description": "Your eyes flutter open. You are lying in your own bed, sunlight streaming through familiar windows. The Dream Archive exists now only as a vivid memory. You are Marcus Thorne, you are awake, and you are home.",
+            "items": [
+                {
+                    "id": "bedroom_window",
+                    "name": "window to reality",
+                    "description": "A window showing the real world - trees swaying in the breeze, birds singing, life continuing"
+                },
+                {
+                    "id": "nightstand",
+                    "name": "bedside table",
+                    "description": "Your nightstand with a glass of water and a clock showing the current time"
+                }
+            ],
+            "exits": [],
+            "is_goal": true,
+            "win_message": "You have successfully navigated Dream Archive Adventure #37 and returned to reality! The Echo Fragment and Truth Shard merge into a single crystal that rests in your palm - proof that your journey through the subconscious was real. You are Marcus Thorne, you remember everything, and you are finally awake. You win!"
+        }
+    ]
+}

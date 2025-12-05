@@ -1,0 +1,271 @@
+{
+    "theme": "Ghostly Ballroom",
+    "title": "Ghostly Ballroom Adventure #61",
+    "goal": "Solve the puzzles, achieve the main objective, and escape.",
+    "starting_room": "grand_ballroom",
+    "rooms": [
+        {
+            "id": "grand_ballroom",
+            "name": "Grand Ballroom",
+            "description": "A magnificent ballroom frozen in time. Crystal chandeliers hang from the vaulted ceiling, their prisms catching moonlight from tall windows. The polished marble floor reflects ghostly figures waltzing to music only they can hear. Faded portraits line the walls, their subjects seeming to watch your every move. The air is cold and smells of old perfume and candle wax.",
+            "items": [
+                {
+                    "id": "grand_piano",
+                    "name": "grand piano",
+                    "description": "An elegant black piano in the corner, its keys occasionally pressing down by invisible hands",
+                    "searchable": true,
+                    "contains": [
+                        "sheet_music"
+                    ]
+                },
+                {
+                    "id": "sheet_music",
+                    "name": "yellowed sheet music",
+                    "description": "Old music sheets for a waltz composed in 1847",
+                    "readable": true,
+                    "text": "Waltz in E Minor - Composed for Lady Victoria's Grand Ball, 1847. Dedicated to Lord Edmund Ashworth, Master of Ashworth Manor. The combination to the music box is the year of this glorious event."
+                },
+                {
+                    "id": "refreshment_table",
+                    "name": "refreshment table",
+                    "description": "A long table covered with a dusty white cloth, set with crystal glasses and silver platters",
+                    "subcontainers": [
+                        {
+                            "id": "silver_box",
+                            "name": "silver music box",
+                            "locked": true,
+                            "lock_type": "combination",
+                            "combination": "1847",
+                            "contains": [
+                                "brass_key"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "brass_key",
+                    "name": "ornate brass key",
+                    "description": "A brass key with the Ashworth family crest engraved on it"
+                },
+                {
+                    "id": "velvet_chest",
+                    "name": "velvet lined chest",
+                    "description": "A decorative chest beneath the refreshment table with a brass lock",
+                    "locked": true,
+                    "key_required": "brass_key",
+                    "contains": [
+                        "invitation",
+                        "guest_list"
+                    ]
+                },
+                {
+                    "id": "invitation",
+                    "name": "ball invitation",
+                    "description": "An elegant invitation on cream-colored paper",
+                    "readable": true,
+                    "text": "You are cordially invited to Lady Victoria's Grand Ball at Ashworth Manor. Date: October 31st, 1847. Dress: Formal attire required. The evening will feature dancing in the Grand Ballroom, viewing of portraits in the Portrait Gallery, and refreshments."
+                },
+                {
+                    "id": "guest_list",
+                    "name": "guest registry",
+                    "description": "A leather-bound book listing all attendees",
+                    "readable": true,
+                    "text": "Guest Registry - Lady Victoria's Ball: Lord Edmund Ashworth (host), Lady Victoria Ashworth, Duke of Somerset, Countess of Brighton, and fifty other distinguished guests. Tragically, this was the final ball before the great fire."
+                },
+                {
+                    "id": "chandelier",
+                    "name": "crystal chandelier",
+                    "description": "A massive chandelier that sways gently despite no breeze",
+                    "readable": true,
+                    "text": "The chandelier's crystals tinkle softly, creating an eerie melody. Engraved on its base: 'Installed by Lord Edmund Ashworth, 1847'"
+                },
+                {
+                    "id": "ghostly_dancers",
+                    "name": "ghostly dancers",
+                    "description": "Translucent figures in period dress, eternally waltzing across the floor",
+                    "readable": true,
+                    "text": "The spectral dancers move in perfect synchronization, their faces frozen in expressions of joy from that fateful night. They seem unaware of your presence."
+                },
+                {
+                    "id": "double_doors_to_portrait_gallery",
+                    "name": "double doors to portrait gallery",
+                    "description": "Tall mahogany doors with brass handles, leading to the Portrait Gallery",
+                    "locked": false,
+                    "direction": "north",
+                    "leads_to": "portrait_gallery",
+                    "aliases": [
+                        "doors",
+                        "north"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "portrait_gallery",
+            "name": "Portrait Gallery",
+            "description": "A long gallery lined with oil paintings of the Ashworth family through generations. Candelabras provide flickering light that makes the portraits seem alive. Display cases contain family heirlooms and documents. At the far end, a door leads to the Master's Study. The temperature drops noticeably as you move through the room.",
+            "items": [
+                {
+                    "id": "portrait_edmund",
+                    "name": "portrait of Lord Edmund",
+                    "description": "A large portrait of a distinguished gentleman in formal attire",
+                    "readable": true,
+                    "text": "Lord Edmund Ashworth (1810-1847) - Master of Ashworth Manor. A generous host and beloved patriarch. His life was tragically cut short in the fire that consumed the manor on the night of the Grand Ball."
+                },
+                {
+                    "id": "portrait_victoria",
+                    "name": "portrait of Lady Victoria",
+                    "description": "An elegant portrait of a beautiful woman in a blue gown",
+                    "readable": true,
+                    "text": "Lady Victoria Ashworth (1815-1847) - Beloved wife of Lord Edmund. Known for her charity and grace. She perished alongside her husband in the tragic fire."
+                },
+                {
+                    "id": "display_case_1",
+                    "name": "family heirloom case",
+                    "description": "A glass case containing jewelry and personal items",
+                    "searchable": true,
+                    "contains": [
+                        "locket"
+                    ]
+                },
+                {
+                    "id": "locket",
+                    "name": "silver locket",
+                    "description": "A tarnished silver locket with initials V.A. engraved on it",
+                    "readable": true,
+                    "text": "Inside the locket is a miniature portrait of Lord Edmund and a lock of hair. An inscription reads: 'Forever yours, Victoria'"
+                },
+                {
+                    "id": "display_case_2",
+                    "name": "document display case",
+                    "description": "A case containing historical documents and letters",
+                    "searchable": true,
+                    "contains": [
+                        "manor_deed",
+                        "fire_report"
+                    ]
+                },
+                {
+                    "id": "manor_deed",
+                    "name": "manor deed",
+                    "description": "The official deed to Ashworth Manor",
+                    "readable": true,
+                    "text": "Deed of Ownership: Ashworth Manor, established 1820. Owner: Lord Edmund Ashworth. The manor features a Grand Ballroom, Portrait Gallery, Master's Study, and extensive grounds."
+                },
+                {
+                    "id": "fire_report",
+                    "name": "fire investigation report",
+                    "description": "An official report about the tragic fire",
+                    "readable": true,
+                    "text": "Investigation Report: The fire of October 31st, 1847 began in the Grand Ballroom during Lady Victoria's ball. All guests perished. The only room to survive intact was the Master's Study, which contained the manor's most valuable documents and Lord Edmund's personal safe."
+                },
+                {
+                    "id": "memorial_plaque",
+                    "name": "memorial plaque",
+                    "description": "A brass plaque mounted on the wall",
+                    "readable": true,
+                    "text": "In Memory of Those Lost in the Fire of 1847. May their spirits find peace. The Master's Study remains as Lord Edmund left it, a testament to his legacy."
+                },
+                {
+                    "id": "writing_desk",
+                    "name": "antique writing desk",
+                    "description": "A small desk with a locked drawer",
+                    "subcontainers": [
+                        {
+                            "id": "desk_drawer",
+                            "name": "locked drawer",
+                            "locked": true,
+                            "lock_type": "combination",
+                            "combination": "1820",
+                            "contains": [
+                                "study_key"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "study_key",
+                    "name": "iron study key",
+                    "description": "A heavy iron key labeled 'Master's Study'"
+                },
+                {
+                    "id": "master's_study_door",
+                    "name": "master's study door",
+                    "description": "A reinforced oak door with iron fittings. Three questions are carved into a brass plate beside the lock.",
+                    "locked": true,
+                    "lock_type": "password",
+                    "password_questions": [
+                        {
+                            "question": "Who was the master of the manor?",
+                            "answer": "lord edmund ashworth",
+                            "hint": "Check the portraits and documents in the gallery"
+                        },
+                        {
+                            "question": "Where did the fire begin?",
+                            "answer": "grand ballroom",
+                            "hint": "The fire investigation report contains this information"
+                        },
+                        {
+                            "question": "What room survived the fire?",
+                            "answer": "masters study",
+                            "hint": "Read the fire report and memorial plaque carefully"
+                        }
+                    ],
+                    "direction": "east",
+                    "leads_to": "masters_study",
+                    "aliases": [
+                        "study",
+                        "east"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "masters_study",
+            "name": "Master's Study",
+            "description": "You've reached the Master's Study! Unlike the rest of the manor, this room is untouched by fire. Leather-bound books line the walls, and a massive desk sits before a window overlooking the gardens. A hidden door behind a bookshelf stands open, revealing a passage to safety. The ghostly presence feels peaceful here, as if the spirits approve of your escape.",
+            "items": [
+                {
+                    "id": "mahogany_desk",
+                    "name": "mahogany desk",
+                    "description": "Lord Edmund's personal desk, still organized as he left it",
+                    "searchable": true,
+                    "contains": [
+                        "final_letter"
+                    ]
+                },
+                {
+                    "id": "final_letter",
+                    "name": "Lord Edmund's final letter",
+                    "description": "A letter written on the day of the ball",
+                    "readable": true,
+                    "text": "My dearest Victoria, tonight we celebrate with friends and family. Whatever may come, know that my love for you is eternal. The secret passage behind the bookshelf will always provide escape should danger arise. - Your Edmund"
+                },
+                {
+                    "id": "bookshelf",
+                    "name": "floor to ceiling bookshelf",
+                    "description": "Shelves filled with leather-bound volumes on history, philosophy, and poetry"
+                },
+                {
+                    "id": "window",
+                    "name": "study window",
+                    "description": "A large window with a view of moonlit gardens",
+                    "readable": true,
+                    "text": "Through the window, you see the overgrown gardens and, beyond them, the path to freedom. The ghostly figures in the ballroom seem to be waving farewell."
+                },
+                {
+                    "id": "wall_safe",
+                    "name": "wall safe",
+                    "description": "A safe built into the wall, now standing open and empty",
+                    "readable": true,
+                    "text": "The safe is empty except for a note: 'The true treasure was the love we shared. - E.A.'"
+                }
+            ],
+            "exits": [],
+            "is_goal": true,
+            "win_message": "You have escaped the Ghostly Ballroom! As you pass through the secret passage, you feel a gentle breeze and hear the faint sound of music and laughter fading behind you. The spirits of Lord Edmund and Lady Victoria have found peace, and you have solved the mysteries of Ashworth Manor. You emerge into the moonlit gardens, free at last. You win!"
+        }
+    ]
+}

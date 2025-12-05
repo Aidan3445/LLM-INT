@@ -1,0 +1,269 @@
+{
+  "theme": "Haunted Subway Terminal",
+  "title": "Haunted Subway Terminal Adventure #29",
+  "goal": "Solve the puzzles, achieve the main objective, and escape.",
+  "starting_room": "abandoned_platform",
+  "rooms": [
+    {
+      "id": "abandoned_platform",
+      "name": "Abandoned Subway Platform",
+      "description": "A decaying subway platform frozen in time. Flickering fluorescent lights cast eerie shadows across cracked tiles. The air is cold and damp, carrying the smell of rust and decay. Old advertisements from the 1950s peel from the walls. A rusted train car sits motionless on the tracks, and water drips steadily from the ceiling. The ticket booth stands dark and empty.",
+      "items": [
+        {
+          "id": "ticket_booth",
+          "name": "abandoned ticket booth",
+          "description": "A small booth with a dusty window and a locked cash drawer",
+          "subcontainers": [
+            {
+              "id": "cash_drawer",
+              "name": "cash drawer",
+              "locked": true,
+              "lock_type": "combination",
+              "combination": "1957",
+              "contains": [
+                "brass_key"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "brass_key",
+          "name": "tarnished brass key",
+          "description": "An old brass key with 'MAINTENANCE' engraved on it"
+        },
+        {
+          "id": "old_advertisement",
+          "name": "vintage subway poster",
+          "description": "A faded poster advertising the grand opening of the terminal",
+          "readable": true,
+          "text": "GRAND OPENING 1957! Welcome to Terminal Station - Your Gateway to the City! Station Master: Harold Graves. Remember: In case of emergency, use the tunnel exit located beyond the control room."
+        },
+        {
+          "id": "newspaper_stand",
+          "name": "collapsed newspaper stand",
+          "description": "A metal stand with yellowed newspapers scattered around it",
+          "searchable": true,
+          "contains": [
+            "old_newspaper"
+          ]
+        },
+        {
+          "id": "old_newspaper",
+          "name": "yellowed newspaper",
+          "description": "A newspaper from October 1957",
+          "readable": true,
+          "text": "MYSTERIOUS DISAPPEARANCES AT TERMINAL STATION - October 31, 1957. Station Master Harold Graves reports strange occurrences. 'The combination to the emergency systems is the year we opened,' he stated. Several passengers have vanished without a trace."
+        },
+        {
+          "id": "rusted_train_car",
+          "name": "abandoned train car",
+          "description": "A subway car covered in rust and graffiti, doors hanging open",
+          "searchable": true,
+          "contains": [
+            "conductors_log"
+          ]
+        },
+        {
+          "id": "conductors_log",
+          "name": "conductor's logbook",
+          "description": "A water-damaged logbook left on a seat",
+          "readable": true,
+          "text": "Final Entry - October 31, 1957: Something is wrong with this station. Harold Graves has locked himself in the control room. The passengers... they just disappear into the tunnels. If anyone finds this, the control room key is hidden in the maintenance locker."
+        },
+        {
+          "id": "maintenance_locker",
+          "name": "metal maintenance locker",
+          "description": "A tall locker with a brass lock and 'AUTHORIZED PERSONNEL ONLY' stenciled on it",
+          "locked": true,
+          "key_required": "brass_key",
+          "contains": [
+            "flashlight",
+            "control_room_key"
+          ]
+        },
+        {
+          "id": "flashlight",
+          "name": "heavy flashlight",
+          "description": "An old metal flashlight that still works"
+        },
+        {
+          "id": "control_room_key",
+          "name": "control room key",
+          "description": "A silver key labeled 'STATION CONTROL'"
+        },
+        {
+          "id": "vending_machine",
+          "name": "broken vending machine",
+          "description": "An ancient vending machine with a cracked glass front",
+          "searchable": true,
+          "contains": [
+            "station_map"
+          ]
+        },
+        {
+          "id": "station_map",
+          "name": "station layout map",
+          "description": "A laminated map showing the terminal layout",
+          "readable": true,
+          "text": "TERMINAL STATION MAP: Platform Level - Ticket Booth, Maintenance Areas. Upper Level - Control Room (Station Master's Office). Emergency Exit - Located in the tunnels beyond the control room. For emergencies, contact Station Master Harold Graves."
+        },
+        {
+          "id": "control_room_door",
+          "name": "control room door",
+          "description": "A heavy metal door with a keyhole, leading up stairs to the station control room. A sign reads 'AUTHORIZED PERSONNEL ONLY'",
+          "locked": true,
+          "key_required": "control_room_key",
+          "direction": "north",
+          "leads_to": "station_control_room",
+          "aliases": [
+            "door",
+            "stairs",
+            "north",
+            "up"
+          ]
+        }
+      ],
+      "exits": []
+    },
+    {
+      "id": "station_control_room",
+      "name": "Station Control Room",
+      "description": "A cramped office overlooking the platform through grimy windows. Banks of ancient switches and dials line the walls, some still blinking with faint power. The station master's desk is covered with papers and incident reports. A large map of the subway system hangs on one wall. The air is stale and oppressive. A sealed emergency door leads deeper into the tunnels.",
+      "items": [
+        {
+          "id": "station_masters_desk",
+          "name": "station master's desk",
+          "description": "A cluttered wooden desk with multiple drawers and scattered papers",
+          "subcontainers": [
+            {
+              "id": "top_desk_drawer",
+              "name": "top drawer",
+              "locked": false,
+              "contains": [
+                "incident_report"
+              ]
+            },
+            {
+              "id": "bottom_desk_drawer",
+              "name": "bottom drawer",
+              "locked": true,
+              "lock_type": "combination",
+              "combination": "1031",
+              "contains": [
+                "emergency_manual"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "incident_report",
+          "name": "incident report",
+          "description": "An official report filed by the station master",
+          "readable": true,
+          "text": "INCIDENT REPORT - Filed by Harold Graves, Station Master. Date: October 31, 1957 (10/31). Multiple passengers reported hearing voices in the tunnels. Emergency protocols activated. The tunnel exit is the only safe way out. Bottom drawer combination is today's date: 1031."
+        },
+        {
+          "id": "emergency_manual",
+          "name": "emergency procedures manual",
+          "description": "A thick binder with emergency protocols",
+          "readable": true,
+          "text": "EMERGENCY EVACUATION PROCEDURES: In case of station emergency, proceed to tunnel exit. Exit requires security verification. Questions: 1) Who is the station master? 2) Where is the emergency exit located? 3) When did this station open?"
+        },
+        {
+          "id": "control_panel",
+          "name": "main control panel",
+          "description": "A panel with switches, dials, and indicator lights",
+          "readable": true,
+          "text": "TERMINAL STATION CONTROL PANEL - Opened 1957. Station Master: Harold Graves. All emergency systems route through the tunnel exit beyond this room."
+        },
+        {
+          "id": "subway_map",
+          "name": "large subway system map",
+          "description": "A detailed map showing all subway lines and stations",
+          "readable": true,
+          "text": "The map shows Terminal Station as a major hub. A red line marks the emergency tunnel exit route. A note reads: 'Emergency exit located in the tunnels - Station Master authorization required.'"
+        },
+        {
+          "id": "filing_cabinet",
+          "name": "metal filing cabinet",
+          "description": "A dented cabinet with employee records and station documents",
+          "searchable": true,
+          "contains": [
+            "personnel_file"
+          ]
+        },
+        {
+          "id": "personnel_file",
+          "name": "personnel file",
+          "description": "Employment records for station staff",
+          "readable": true,
+          "text": "PERSONNEL RECORDS - Terminal Station, Opened 1957. Station Master: Harold Graves (Chief Officer). Conductors: Multiple. Maintenance: Various. Note: Station Master Graves has sole authority over emergency tunnel access."
+        },
+        {
+          "id": "logbook",
+          "name": "station master's logbook",
+          "description": "A leather-bound book with daily entries",
+          "readable": true,
+          "text": "Final Entry - Harold Graves, October 31, 1957: I don't know what's happening. The tunnels... something is down there. I've sealed the emergency exit with security questions. Only someone who understands this station's history can escape. God help us all."
+        },
+        {
+          "id": "emergency_tunnel_door",
+          "name": "emergency tunnel door",
+          "description": "A reinforced steel door with a security panel displaying three verification questions. Warning lights flash red around the frame.",
+          "locked": true,
+          "lock_type": "password",
+          "password_questions": [
+            {
+              "question": "Who is the station master?",
+              "answer": "harold graves",
+              "hint": "Check the incident reports, personnel files, and the opening poster"
+            },
+            {
+              "question": "Where is the emergency exit located?",
+              "answer": "tunnels",
+              "hint": "The emergency manual and station map mention this location"
+            },
+            {
+              "question": "When did this station open?",
+              "answer": "1957",
+              "hint": "The opening poster and multiple documents reference the opening year"
+            }
+          ],
+          "direction": "east",
+          "leads_to": "tunnel_exit",
+          "aliases": [
+            "door",
+            "tunnel",
+            "east"
+          ]
+        }
+      ],
+      "exits": []
+    },
+    {
+      "id": "tunnel_exit",
+      "name": "Emergency Tunnel Exit",
+      "description": "You've made it to the emergency exit! A concrete tunnel with emergency lighting leads upward to street level. Fresh air flows down from above, carrying the sounds of the city. Behind you, the haunted terminal fades into darkness. A metal ladder leads up to a manhole cover and freedom. You can see daylight filtering through the grate above.",
+      "items": [
+        {
+          "id": "emergency_ladder",
+          "name": "metal ladder",
+          "description": "A sturdy ladder leading up to the surface"
+        },
+        {
+          "id": "exit_sign",
+          "name": "illuminated exit sign",
+          "description": "A glowing green sign pointing upward to safety"
+        },
+        {
+          "id": "emergency_phone",
+          "name": "emergency telephone",
+          "description": "A red emergency phone mounted on the wall"
+        }
+      ],
+      "exits": [],
+      "is_goal": true,
+      "win_message": "You climb the ladder and push open the manhole cover, emerging onto a city street bathed in sunlight. The sounds of traffic and people fill your ears - the sounds of the living world. You've escaped the Haunted Subway Terminal! As you look back at the manhole, you swear you hear distant whispers echoing from below, but you don't look back. You're free. You win!"
+    }
+  ]
+}

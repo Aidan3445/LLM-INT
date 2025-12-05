@@ -1,0 +1,199 @@
+{
+  "theme": "Hall of Mirrors Maze",
+  "title": "Hall of Mirrors Maze Adventure #48",
+  "goal": "Solve the puzzles, achieve the main objective, and escape.",
+  "starting_room": "mirror_entrance_hall",
+  "rooms": [
+    {
+      "id": "mirror_entrance_hall",
+      "name": "Mirror Entrance Hall",
+      "description": "A grand entrance hall where every wall is covered in ornate mirrors of different shapes and sizes. The reflections seem to multiply infinitely in all directions, creating a dizzying effect. Crystal chandeliers cast dancing light across the mirrored surfaces. A velvet rope blocks a doorway to the north, and a locked cabinet stands against the east wall.",
+      "items": [
+        {
+          "id": "gilded_mirror",
+          "name": "large gilded mirror",
+          "description": "An enormous mirror with an elaborate gold frame. Looking closely, you notice something written backwards in the reflection.",
+          "readable": true,
+          "text": "When you look at the reflection carefully, you can read backwards text that says: 'The Maze Master's birth year was 1987. To unlock secrets, reverse what you see.'"
+        },
+        {
+          "id": "hand_mirror",
+          "name": "silver hand mirror",
+          "description": "A small handheld mirror lying on a side table",
+          "searchable": true,
+          "contains": []
+        },
+        {
+          "id": "ornate_cabinet",
+          "name": "mirrored cabinet",
+          "description": "A cabinet with mirrored doors and a combination lock. The lock has four digits.",
+          "subcontainers": [
+            {
+              "id": "top_shelf",
+              "name": "top shelf",
+              "locked": true,
+              "lock_type": "combination",
+              "combination": "7891",
+              "contains": [
+                "brass_key",
+                "maze_masters_journal"
+              ]
+            },
+            {
+              "id": "bottom_shelf",
+              "name": "bottom shelf",
+              "locked": false,
+              "contains": []
+            }
+          ]
+        },
+        {
+          "id": "maze_masters_journal",
+          "name": "Maze Master's journal",
+          "description": "A leather journal with notes about the mirror maze",
+          "readable": true,
+          "text": "Journal of the Maze Master: I created this hall of mirrors to challenge those who enter. My name is Silvanus Reflect. Only those who understand reflections can escape. The truth is found in the Infinite Mirror Corridor, where reality bends."
+        },
+        {
+          "id": "brass_key",
+          "name": "ornate brass key",
+          "description": "A brass key with a mirror-like polish"
+        },
+        {
+          "id": "side_table",
+          "name": "marble side table",
+          "description": "A small table with a glass top",
+          "searchable": true,
+          "contains": [
+            "reflection_note"
+          ]
+        },
+        {
+          "id": "reflection_note",
+          "name": "note about reflections",
+          "description": "A card with instructions written in elegant script",
+          "readable": true,
+          "text": "Remember: In the world of mirrors, everything is reversed. What appears as 1987 in reality becomes 7891 in reflection. The Maze Master teaches us to see beyond the obvious."
+        },
+        {
+          "id": "velvet_rope_barrier",
+          "name": "velvet rope barrier",
+          "description": "A velvet rope blocking the doorway north. A brass lock secures it in place.",
+          "locked": true,
+          "key_required": "brass_key",
+          "direction": "north",
+          "leads_to": "infinite_mirror_corridor",
+          "aliases": [
+            "barrier",
+            "rope",
+            "north"
+          ]
+        }
+      ],
+      "exits": []
+    },
+    {
+      "id": "infinite_mirror_corridor",
+      "name": "Infinite Mirror Corridor",
+      "description": "A long corridor where mirrors line both walls, creating an endless tunnel of reflections. Your image repeats infinitely in both directions, making it impossible to tell where the corridor truly ends. Strange symbols and words appear in some of the mirror reflections. At the far end, a crystalline door glows with an otherworldly light.",
+      "items": [
+        {
+          "id": "north_mirror",
+          "name": "mirror of truth",
+          "description": "A mirror with 'TRUTH' engraved on its frame",
+          "readable": true,
+          "text": "In the reflection, you see text that reads: 'The Maze Master's name is the key to freedom. He who created this place holds the answer.'"
+        },
+        {
+          "id": "south_mirror",
+          "name": "mirror of memory",
+          "description": "A mirror with 'MEMORY' engraved on its frame",
+          "readable": true,
+          "text": "The reflection shows an image of the journal you found, with the name 'Silvanus Reflect' highlighted in golden light."
+        },
+        {
+          "id": "east_mirror",
+          "name": "mirror of wisdom",
+          "description": "A mirror with 'WISDOM' engraved on its frame",
+          "readable": true,
+          "text": "In this mirror's reflection, you see text: 'Where does one find truth in a maze of illusions? In the Infinite Mirror Corridor, where all is revealed.'"
+        },
+        {
+          "id": "west_mirror",
+          "name": "mirror of illusion",
+          "description": "A mirror with 'ILLUSION' engraved on its frame",
+          "readable": true,
+          "text": "This mirror shows a reflection of yourself, but behind you in the reflection, you can see words written on the wall: 'What you seek is what you see - the answer lies in reflection.'"
+        },
+        {
+          "id": "pedestal",
+          "name": "crystal pedestal",
+          "description": "A pedestal made of crystal that reflects light in rainbow patterns",
+          "searchable": true,
+          "contains": [
+            "final_clue"
+          ]
+        },
+        {
+          "id": "final_clue",
+          "name": "final mirror clue",
+          "description": "A small card with a riddle",
+          "readable": true,
+          "text": "Final Clue: To escape the maze, answer these questions three: Who built this maze of glass and gleam? Where do you stand right now, in this endless dream? What shows you truth but is not what it seems?"
+        },
+        {
+          "id": "crystalline_exit_door",
+          "name": "crystalline exit door",
+          "description": "A magnificent door made entirely of crystal and mirrors. Three questions are etched into a silver plaque beside it.",
+          "locked": true,
+          "lock_type": "password",
+          "password_questions": [
+            {
+              "question": "Who built this maze?",
+              "answer": "silvanus reflect",
+              "hint": "Check the Maze Master's journal from the entrance hall"
+            },
+            {
+              "question": "Where do you stand right now?",
+              "answer": "infinite mirror corridor",
+              "hint": "Look at the name of this room and the mirrors around you"
+            },
+            {
+              "question": "What shows truth but is not what it seems?",
+              "answer": "reflection",
+              "hint": "Think about the theme of this entire maze"
+            }
+          ],
+          "direction": "east",
+          "leads_to": "crystal_exit_chamber",
+          "aliases": [
+            "door",
+            "exit",
+            "east"
+          ]
+        }
+      ],
+      "exits": []
+    },
+    {
+      "id": "crystal_exit_chamber",
+      "name": "Crystal Exit Chamber",
+      "description": "You have escaped the Hall of Mirrors! This chamber is filled with natural light streaming through a glass ceiling. The mirrors here show only true reflections, no illusions or tricks. A grand archway leads outside to freedom, where you can see blue sky and green grass beyond.",
+      "items": [
+        {
+          "id": "victory_mirror",
+          "name": "mirror of victory",
+          "description": "A simple, honest mirror that shows you exactly as you are - a clever puzzle solver who conquered the maze"
+        },
+        {
+          "id": "freedom_archway",
+          "name": "archway to freedom",
+          "description": "A beautiful stone archway leading to the outside world"
+        }
+      ],
+      "exits": [],
+      "is_goal": true,
+      "win_message": "Congratulations! You have successfully navigated the Hall of Mirrors Maze! By understanding the nature of reflections and seeing through illusions to find truth, you solved the Maze Master's challenges. The mirrors around you shimmer one final time in celebration as you step through the archway into freedom. You win!"
+    }
+  ]
+}

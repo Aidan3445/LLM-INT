@@ -1,0 +1,259 @@
+{
+    "theme": "Underground River Temple",
+    "title": "Underground River Temple Adventure #24",
+    "goal": "Solve the puzzles, achieve the main objective, and escape.",
+    "starting_room": "flooded_antechamber",
+    "rooms": [
+        {
+            "id": "flooded_antechamber",
+            "name": "Flooded Antechamber",
+            "description": "You stand in a partially flooded chamber where an underground river flows through ancient stone channels. The walls are covered in moss and carved with mysterious glyphs. Water drips from stalactites above, echoing in the darkness. A stone altar rises from the shallow water, and a sealed door blocks the way forward.",
+            "items": [
+                {
+                    "id": "stone_altar",
+                    "name": "carved stone altar",
+                    "description": "An ancient altar covered in water worn carvings and symbols",
+                    "readable": true,
+                    "text": "Altar inscription: 'The River Keeper guards these halls. The sacred year of founding: 842. The three priests who built this temple: Keeper Theron, Keeper Mira, Keeper Zane.'"
+                },
+                {
+                    "id": "supply_chest",
+                    "name": "waterproof chest",
+                    "description": "A sealed chest designed to protect its contents from water damage",
+                    "subcontainers": [
+                        {
+                            "id": "upper_compartment",
+                            "name": "upper compartment",
+                            "locked": false,
+                            "contains": [
+                                "temple_scroll"
+                            ]
+                        },
+                        {
+                            "id": "lower_compartment",
+                            "name": "lower compartment",
+                            "locked": true,
+                            "lock_type": "combination",
+                            "combination": "842",
+                            "contains": [
+                                "copper_key"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "temple_scroll",
+                    "name": "ancient temple scroll",
+                    "description": "A preserved scroll containing temple history",
+                    "readable": true,
+                    "text": "Temple Record: This sacred place was founded in the year 842 by three devoted keepers. Keeper Theron maintained the water channels. Keeper Mira preserved our knowledge in the sacred library. Keeper Zane protected the holy relic in the inner sanctum."
+                },
+                {
+                    "id": "copper_key",
+                    "name": "tarnished copper key",
+                    "description": "An ancient copper key with water damage and patina"
+                },
+                {
+                    "id": "stone_cabinet",
+                    "name": "stone storage cabinet",
+                    "description": "A cabinet carved directly into the temple wall",
+                    "locked": true,
+                    "key_required": "copper_key",
+                    "contains": [
+                        "ritual_dagger",
+                        "keeper_journal"
+                    ]
+                },
+                {
+                    "id": "ritual_dagger",
+                    "name": "ceremonial dagger",
+                    "description": "A bronze dagger used in ancient temple ceremonies"
+                },
+                {
+                    "id": "keeper_journal",
+                    "name": "keeper's journal",
+                    "description": "A leather bound journal protected by wax sealing",
+                    "readable": true,
+                    "text": "Journal of Keeper Theron: I am the guardian of the water channels. My duty is to maintain the flow that gives this temple life. The sacred library holds our wisdom, and the inner sanctum protects our most precious relic."
+                },
+                {
+                    "id": "moss_covered_niche",
+                    "name": "moss covered alcove",
+                    "description": "A small alcove in the wall hidden behind hanging moss",
+                    "searchable": true,
+                    "contains": [
+                        "silver_medallion"
+                    ]
+                },
+                {
+                    "id": "silver_medallion",
+                    "name": "temple medallion",
+                    "description": "A silver medallion engraved with the temple symbol"
+                },
+                {
+                    "id": "sealed_stone_door",
+                    "name": "sealed stone door",
+                    "description": "A heavy stone door blocking passage deeper into the temple. Vines have grown over the lock mechanism.",
+                    "locked": true,
+                    "key_required": "ritual_dagger",
+                    "direction": "north",
+                    "leads_to": "sacred_library",
+                    "aliases": [
+                        "door",
+                        "north"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "sacred_library",
+            "name": "Sacred Library",
+            "description": "A vast chamber with stone shelves carved into the walls, holding countless scrolls and tablets. The underground river flows through a channel in the floor, its gentle sound filling the space. Ancient knowledge surrounds you. Statues of the three founding keepers stand watch, and a massive door leads to the inner sanctum.",
+            "items": [
+                {
+                    "id": "statue_theron",
+                    "name": "statue of Keeper Theron",
+                    "description": "A stone statue depicting a robed figure holding a water vessel",
+                    "readable": true,
+                    "text": "Plaque: 'Keeper Theron - Guardian of the Water Channels. He who maintains the sacred flow that sustains all life within these halls.'"
+                },
+                {
+                    "id": "statue_mira",
+                    "name": "statue of Keeper Mira",
+                    "description": "A statue showing a figure holding an open book",
+                    "readable": true,
+                    "text": "Plaque: 'Keeper Mira - Preserver of Knowledge. She who guards the wisdom of ages in the sacred library.'"
+                },
+                {
+                    "id": "statue_zane",
+                    "name": "statue of Keeper Zane",
+                    "description": "A statue of a stern figure holding a staff",
+                    "readable": true,
+                    "text": "Plaque: 'Keeper Zane - Protector of the Relic. He who stands eternal vigil over the holy treasure in the inner sanctum.'"
+                },
+                {
+                    "id": "scroll_collection",
+                    "name": "collection of ancient scrolls",
+                    "description": "Hundreds of scrolls containing temple records and rituals",
+                    "searchable": true,
+                    "contains": [
+                        "prophecy_tablet"
+                    ]
+                },
+                {
+                    "id": "prophecy_tablet",
+                    "name": "stone prophecy tablet",
+                    "description": "A tablet with an important prophecy carved into it",
+                    "readable": true,
+                    "text": "Prophecy: 'When the River Keeper returns, they must prove their knowledge to enter the inner sanctum. Know the guardian of waters, the keeper of wisdom, and the protector of the sacred relic.'"
+                },
+                {
+                    "id": "reading_desk",
+                    "name": "stone reading desk",
+                    "description": "A desk with compartments for organizing scrolls",
+                    "subcontainers": [
+                        {
+                            "id": "desk_drawer_top",
+                            "name": "top drawer",
+                            "locked": false,
+                            "contains": [
+                                "translation_guide"
+                            ]
+                        },
+                        {
+                            "id": "desk_drawer_bottom",
+                            "name": "bottom drawer",
+                            "locked": false,
+                            "contains": []
+                        }
+                    ]
+                },
+                {
+                    "id": "translation_guide",
+                    "name": "translation guide",
+                    "description": "A guide for understanding the temple's ancient language",
+                    "readable": true,
+                    "text": "Translation Notes: The inner sanctum door asks three questions in the old tongue. They ask about the roles of the three keepers: who guards the water, who preserves knowledge, and who protects the relic."
+                },
+                {
+                    "id": "stone_basin",
+                    "name": "ceremonial stone basin",
+                    "description": "A basin filled with clear water from the underground river",
+                    "searchable": true,
+                    "contains": [
+                        "golden_key"
+                    ]
+                },
+                {
+                    "id": "golden_key",
+                    "name": "ornate golden key",
+                    "description": "A beautifully crafted key that gleams despite its age"
+                },
+                {
+                    "id": "inner_sanctum_door",
+                    "name": "inner sanctum door",
+                    "description": "A magnificent door carved with intricate patterns. Three questions are inscribed in the ancient language, with a translation plate beside them.",
+                    "locked": true,
+                    "lock_type": "password",
+                    "password_questions": [
+                        {
+                            "question": "Who guards the water channels?",
+                            "answer": "keeper theron",
+                            "hint": "Check the statues and their plaques in the library"
+                        },
+                        {
+                            "question": "Where is knowledge preserved?",
+                            "answer": "sacred library",
+                            "hint": "Read the temple scroll and keeper's journal"
+                        },
+                        {
+                            "question": "Who protects the holy relic?",
+                            "answer": "keeper zane",
+                            "hint": "The statues tell you about each keeper's role"
+                        }
+                    ],
+                    "direction": "east",
+                    "leads_to": "inner_sanctum",
+                    "aliases": [
+                        "door",
+                        "east"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "inner_sanctum",
+            "name": "Inner Sanctum",
+            "description": "You have reached the heart of the Underground River Temple! The chamber glows with an ethereal blue light emanating from a crystal formation where the river's source emerges from the rock. On a pedestal in the center rests the Sacred Aquamarine, a massive gemstone that pulses with the power of the underground waters. Ancient murals depicting the temple's glory cover the walls. A shaft of natural light from above reveals a passage to freedom.",
+            "items": [
+                {
+                    "id": "sacred_aquamarine",
+                    "name": "Sacred Aquamarine",
+                    "description": "A magnificent blue gemstone the size of a human head, radiating mystical energy and the essence of the underground river"
+                },
+                {
+                    "id": "crystal_pedestal",
+                    "name": "ornate crystal pedestal",
+                    "description": "A pedestal of pure crystal holding the sacred gemstone, surrounded by flowing water"
+                },
+                {
+                    "id": "temple_murals",
+                    "name": "ancient wall murals",
+                    "description": "Elaborate paintings showing the temple's construction and the three keepers",
+                    "readable": true,
+                    "text": "The murals depict the founding of the temple in 842, showing Keeper Theron channeling the underground river, Keeper Mira establishing the library, and Keeper Zane placing the Sacred Aquamarine in the sanctum. The final panel shows a figure ascending to the surface through a natural shaft."
+                },
+                {
+                    "id": "offering_bowl",
+                    "name": "golden offering bowl",
+                    "description": "A bowl filled with ancient coins and precious offerings"
+                }
+            ],
+            "exits": [],
+            "is_goal": true,
+            "win_message": "You have discovered the Sacred Aquamarine and reached the inner sanctum of the Underground River Temple! As you lift the ancient gemstone, the temple acknowledges you as the true River Keeper. The waters glow brightly, and a hidden passage opens above, allowing you to ascend to the surface with the sacred treasure. The temple's mysteries are yours, and you emerge victorious into the light of day. You win!"
+        }
+    ]
+}

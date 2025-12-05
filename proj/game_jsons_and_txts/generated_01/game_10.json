@@ -1,0 +1,280 @@
+{
+    "theme": "Dragon's Hoard Cavern",
+    "title": "Dragon's Hoard Cavern Adventure #10",
+    "goal": "Solve the puzzles, achieve the main objective, and escape.",
+    "starting_room": "cavern_entrance",
+    "rooms": [
+        {
+            "id": "cavern_entrance",
+            "name": "Cavern Entrance",
+            "description": "A massive cave entrance carved into the mountainside. Ancient dragon claw marks score the stone walls. The air is warm and smells of sulfur and old smoke. Piles of bones litter the floor - remnants of unfortunate adventurers. Torches flicker in iron sconces, casting dancing shadows. A heavy iron gate blocks the passage deeper into the cavern.",
+            "items": [
+                {
+                    "id": "bone_pile",
+                    "name": "pile of bones",
+                    "description": "A grim collection of bones from previous treasure seekers",
+                    "searchable": true,
+                    "contains": [
+                        "rusty_dagger"
+                    ]
+                },
+                {
+                    "id": "rusty_dagger",
+                    "name": "rusty dagger",
+                    "description": "A corroded dagger that could pry open weak locks"
+                },
+                {
+                    "id": "stone_pedestal",
+                    "name": "stone pedestal",
+                    "description": "A carved pedestal with dragon symbols and three compartments",
+                    "subcontainers": [
+                        {
+                            "id": "left_compartment",
+                            "name": "left compartment",
+                            "locked": false,
+                            "contains": [
+                                "dragon_scroll"
+                            ]
+                        },
+                        {
+                            "id": "center_compartment",
+                            "name": "center compartment",
+                            "locked": true,
+                            "lock_type": "combination",
+                            "combination": "1247",
+                            "contains": [
+                                "bronze_key"
+                            ]
+                        },
+                        {
+                            "id": "right_compartment",
+                            "name": "right compartment",
+                            "locked": false,
+                            "contains": []
+                        }
+                    ]
+                },
+                {
+                    "id": "dragon_scroll",
+                    "name": "ancient dragon scroll",
+                    "description": "A scroll written in both dragon script and common tongue",
+                    "readable": true,
+                    "text": "The Chronicle of Smaug the Terrible: In the year 1247, the great red dragon Smaug claimed this mountain as his lair. His hoard contains treasures beyond imagination. Only those who know the dragon's true nature may pass into the treasure chamber."
+                },
+                {
+                    "id": "bronze_key",
+                    "name": "bronze dragon key",
+                    "description": "A key shaped like a dragon's claw"
+                },
+                {
+                    "id": "wall_carving",
+                    "name": "carved wall inscription",
+                    "description": "Ancient text carved deep into the stone wall",
+                    "readable": true,
+                    "text": "WARNING: Smaug the Red Dragon guards his hoard jealously. His scales are crimson as blood. His breath is fire incarnate. The treasure chamber holds gold beyond measure. Only the worthy may enter the inner lair."
+                },
+                {
+                    "id": "iron_bound_chest",
+                    "name": "iron bound chest",
+                    "description": "A heavy chest reinforced with iron bands and a bronze lock",
+                    "locked": true,
+                    "key_required": "bronze_key",
+                    "contains": [
+                        "dragon_lore_book"
+                    ]
+                },
+                {
+                    "id": "dragon_lore_book",
+                    "name": "book of dragon lore",
+                    "description": "A leather tome containing knowledge about dragons",
+                    "readable": true,
+                    "text": "Dragon Lore: Red dragons are the most greedy and powerful of all dragonkind. They hoard gold and gems in vast treasure chambers deep within mountains. Smaug's treasure chamber lies beyond the iron gate. His inner lair is accessible only to those who understand his nature."
+                },
+                {
+                    "id": "torch_sconce",
+                    "name": "iron torch sconce",
+                    "description": "A wall-mounted sconce holding a burning torch",
+                    "searchable": true,
+                    "contains": [
+                        "silver_key"
+                    ]
+                },
+                {
+                    "id": "silver_key",
+                    "name": "silver key",
+                    "description": "A tarnished silver key hidden behind the torch"
+                },
+                {
+                    "id": "heavy_iron_gate",
+                    "name": "heavy iron gate",
+                    "description": "A massive gate with dragon head decorations and a silver lock",
+                    "locked": true,
+                    "key_required": "silver_key",
+                    "direction": "north",
+                    "leads_to": "treasure_chamber",
+                    "aliases": [
+                        "gate",
+                        "north"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "treasure_chamber",
+            "name": "Treasure Chamber",
+            "description": "A vast chamber filled with mountains of gold coins, jeweled crowns, and precious artifacts. The wealth of kingdoms glitters in the torchlight. Gem-encrusted weapons and armor are scattered among the treasure. The air shimmers with heat from deeper in the cavern. A sealed door carved with dragon imagery leads to the inner lair.",
+            "items": [
+                {
+                    "id": "gold_pile",
+                    "name": "mountain of gold coins",
+                    "description": "Countless gold coins piled higher than a man can reach",
+                    "searchable": true,
+                    "contains": [
+                        "ancient_coin"
+                    ]
+                },
+                {
+                    "id": "ancient_coin",
+                    "name": "ancient gold coin",
+                    "description": "A coin stamped with the year 1247 and a dragon symbol"
+                },
+                {
+                    "id": "jewel_encrusted_chest",
+                    "name": "jewel encrusted chest",
+                    "description": "An ornate chest covered in rubies and emeralds, with a combination lock showing four wheels",
+                    "locked": true,
+                    "lock_type": "combination",
+                    "combination": "1247",
+                    "contains": [
+                        "dragon_scale",
+                        "treasure_map"
+                    ]
+                },
+                {
+                    "id": "dragon_scale",
+                    "name": "crimson dragon scale",
+                    "description": "A large red scale from Smaug himself, still warm to the touch"
+                },
+                {
+                    "id": "treasure_map",
+                    "name": "treasure chamber map",
+                    "description": "A map showing the layout of the dragon's lair",
+                    "readable": true,
+                    "text": "Map of Smaug's Domain: The treasure chamber holds the bulk of the hoard. The inner lair is where Smaug rests upon his bed of gold. The escape tunnel leads to freedom beyond the mountain. Only those who know the dragon's name, color, and dwelling may enter."
+                },
+                {
+                    "id": "weapon_rack",
+                    "name": "rack of enchanted weapons",
+                    "description": "A display of magical swords and axes taken from fallen heroes",
+                    "searchable": true,
+                    "contains": [
+                        "enchanted_sword"
+                    ]
+                },
+                {
+                    "id": "enchanted_sword",
+                    "name": "glowing enchanted sword",
+                    "description": "A sword that glows with blue light in the presence of dragons"
+                },
+                {
+                    "id": "stone_tablet",
+                    "name": "stone tablet",
+                    "description": "A tablet with inscriptions about the dragon",
+                    "readable": true,
+                    "text": "Inscription: Smaug the Red Dragon has dwelt in this treasure chamber for centuries. His scales are crimson, his eyes like burning coals. He sleeps upon mountains of gold in his inner lair, dreaming of conquest and flame."
+                },
+                {
+                    "id": "armor_stand",
+                    "name": "suit of golden armor",
+                    "description": "A complete set of armor made from solid gold",
+                    "subcontainers": [
+                        {
+                            "id": "helmet_compartment",
+                            "name": "helmet compartment",
+                            "locked": false,
+                            "contains": [
+                                "warning_note"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "warning_note",
+                    "name": "adventurer's warning",
+                    "description": "A hastily scrawled note",
+                    "readable": true,
+                    "text": "If you're reading this, turn back! The inner lair door requires knowledge of the dragon. You must know: What is the dragon's name? What color are his scales? Where does he dwell? I couldn't answer and barely escaped with my life!"
+                },
+                {
+                    "id": "sealed_lair_door",
+                    "name": "sealed lair door",
+                    "description": "A massive door carved with images of dragons in flight. Three questions are etched in glowing runes across its surface.",
+                    "locked": true,
+                    "lock_type": "password",
+                    "password_questions": [
+                        {
+                            "question": "What is the dragon's name?",
+                            "answer": "smaug",
+                            "hint": "Check the dragon scroll and stone tablet for the dragon's name"
+                        },
+                        {
+                            "question": "What color are the dragon's scales?",
+                            "answer": "red",
+                            "hint": "Multiple sources describe the dragon's crimson or red scales"
+                        },
+                        {
+                            "question": "Where does the dragon dwell?",
+                            "answer": "treasure chamber",
+                            "hint": "The map and lore book mention where the dragon makes his home"
+                        }
+                    ],
+                    "direction": "east",
+                    "leads_to": "inner_lair",
+                    "aliases": [
+                        "door",
+                        "lair",
+                        "east"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "inner_lair",
+            "name": "Dragon's Inner Lair",
+            "description": "You have reached the heart of the dragon's domain! A colossal chamber with a vaulted ceiling disappearing into darkness above. In the center, an enormous bed of gold coins and gems rises like a golden hill. Fortunately, the great dragon Smaug is absent - perhaps hunting in distant lands. At the far end, a hidden escape tunnel has been revealed, leading to daylight and freedom!",
+            "items": [
+                {
+                    "id": "dragon_bed",
+                    "name": "dragon's bed of gold",
+                    "description": "A massive mound of gold and treasure where the dragon sleeps",
+                    "searchable": true,
+                    "contains": [
+                        "crown_of_kings"
+                    ]
+                },
+                {
+                    "id": "crown_of_kings",
+                    "name": "ancient crown",
+                    "description": "A magnificent crown studded with diamonds and rubies"
+                },
+                {
+                    "id": "ever_burning_torch",
+                    "name": "ever burning torch",
+                    "description": "A magical torch that burns with eternal flame"
+                },
+                {
+                    "id": "escape_tunnel",
+                    "name": "escape tunnel",
+                    "description": "A narrow passage leading upward toward fresh air and sunlight",
+                    "readable": true,
+                    "text": "The tunnel winds upward through the mountain. You can see daylight at the far end. Freedom awaits!"
+                }
+            ],
+            "exits": [],
+            "is_goal": true,
+            "win_message": "You have successfully navigated the Dragon's Hoard Cavern and discovered the escape route! With your pockets full of treasure and your life intact, you climb through the tunnel and emerge on the mountainside. Behind you, a distant roar echoes through the cavern - Smaug has returned! But you are already racing down the mountain path to safety. You have conquered the dragon's lair and escaped with your life and fortune. You win!"
+        }
+    ]
+}

@@ -1,0 +1,221 @@
+{
+    "theme": "Runaway Nano-Swarm Zone",
+    "title": "Runaway Nano-Swarm Zone Adventure #27",
+    "goal": "Solve the puzzles, achieve the main objective, and escape.",
+    "starting_room": "quarantine_lab",
+    "rooms": [
+        {
+            "id": "quarantine_lab",
+            "name": "Quarantine Laboratory",
+            "description": "A sterile white laboratory with flickering emergency lights casting red shadows. Through the reinforced glass window, you see a churning mass of silver nano-swarms consuming everything in their path. Containment has failed. Warning klaxons blare as the swarm inches closer. You must escape before the facility is completely overrun.",
+            "items": [
+                {
+                    "id": "research_terminal",
+                    "name": "research terminal",
+                    "description": "A computer terminal displaying scrolling error messages and research data",
+                    "readable": true,
+                    "text": "CRITICAL ERROR: Nano-swarm containment breach in Sector 7. Project Codename: GREY GOO. Lead Researcher: Dr Sarah Chen. Swarm replication rate exceeds safety parameters. Evacuation protocol initiated. Emergency code: 2847."
+                },
+                {
+                    "id": "lab_cabinet",
+                    "name": "laboratory storage cabinet",
+                    "description": "A tall metal cabinet with three compartments for storing research materials",
+                    "subcontainers": [
+                        {
+                            "id": "top_compartment",
+                            "name": "top compartment",
+                            "locked": false,
+                            "contains": [
+                                "incident_report"
+                            ]
+                        },
+                        {
+                            "id": "middle_compartment",
+                            "name": "middle compartment",
+                            "locked": true,
+                            "lock_type": "combination",
+                            "combination": "2847",
+                            "contains": [
+                                "security_keycard"
+                            ]
+                        },
+                        {
+                            "id": "bottom_compartment",
+                            "name": "bottom compartment",
+                            "locked": false,
+                            "contains": []
+                        }
+                    ]
+                },
+                {
+                    "id": "incident_report",
+                    "name": "incident report document",
+                    "description": "An official report detailing the containment breach",
+                    "readable": true,
+                    "text": "INCIDENT REPORT: At 0600 hours, nano-swarm designated GREY GOO achieved autonomous replication. Dr Sarah Chen attempted emergency shutdown but failed. The swarm originated in Sector 7 and is consuming all carbon-based matter. Evacuation to the emergency escape pods is mandatory."
+                },
+                {
+                    "id": "security_keycard",
+                    "name": "level 3 security keycard",
+                    "description": "A magnetic keycard with red security clearance markings"
+                },
+                {
+                    "id": "hazmat_locker",
+                    "name": "hazmat equipment locker",
+                    "description": "A locker containing protective gear and emergency supplies",
+                    "searchable": true,
+                    "contains": [
+                        "emergency_beacon"
+                    ]
+                },
+                {
+                    "id": "emergency_beacon",
+                    "name": "emergency locator beacon",
+                    "description": "A handheld device that can signal rescue teams"
+                },
+                {
+                    "id": "sealed_containment_door",
+                    "name": "sealed containment door",
+                    "description": "A heavy blast door with a card reader. Red warning lights flash around the frame.",
+                    "locked": true,
+                    "key_required": "security_keycard",
+                    "direction": "north",
+                    "leads_to": "control_center",
+                    "aliases": [
+                        "door",
+                        "north"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "control_center",
+            "name": "Facility Control Center",
+            "description": "The nerve center of the nano-research facility. Multiple monitors display the spreading nano-swarm as it consumes lab equipment and walls. A master control console dominates the room, and security stations line the walls. Through the northern viewport, you can see the escape pod bay. The swarm is getting closer.",
+            "items": [
+                {
+                    "id": "personnel_board",
+                    "name": "personnel information board",
+                    "description": "A digital board displaying staff assignments and roles",
+                    "readable": true,
+                    "text": "FACILITY PERSONNEL: Lead Researcher - Dr Sarah Chen (Nano-Technology Division). Security Chief - Commander James Rodriguez. Project Name: GREY GOO - Experimental self-replicating nano-machines. Containment Sector: Sector 7."
+                },
+                {
+                    "id": "security_log",
+                    "name": "security access log",
+                    "description": "A terminal showing recent security events",
+                    "readable": true,
+                    "text": "SECURITY LOG: Commander Rodriguez initiated lockdown at 0615 hours. All personnel ordered to emergency escape pods. Warning: Nano-swarm has breached secondary containment. Estimated time until facility consumption: 15 minutes."
+                },
+                {
+                    "id": "master_console",
+                    "name": "master control console",
+                    "description": "The main facility control system with multiple locked panels",
+                    "subcontainers": [
+                        {
+                            "id": "primary_panel",
+                            "name": "primary control panel",
+                            "locked": false,
+                            "contains": [
+                                "evacuation_protocol"
+                            ]
+                        },
+                        {
+                            "id": "emergency_panel",
+                            "name": "emergency override panel",
+                            "locked": true,
+                            "lock_type": "combination",
+                            "combination": "7",
+                            "contains": [
+                                "pod_access_key"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "evacuation_protocol",
+                    "name": "evacuation protocol manual",
+                    "description": "Emergency procedures for facility evacuation",
+                    "readable": true,
+                    "text": "EVACUATION PROTOCOL: In case of catastrophic containment failure, proceed to escape pod bay. Emergency override code is the containment sector number. Answer security verification to access pods: Lead researcher name, project codename, and security chief name required."
+                },
+                {
+                    "id": "pod_access_key",
+                    "name": "escape pod access key",
+                    "description": "A physical key required to unlock the escape pod bay"
+                },
+                {
+                    "id": "supply_crate",
+                    "name": "emergency supply crate",
+                    "description": "A crate containing survival gear and medical supplies",
+                    "searchable": true,
+                    "contains": [
+                        "medical_kit"
+                    ]
+                },
+                {
+                    "id": "medical_kit",
+                    "name": "first aid medical kit",
+                    "description": "A comprehensive medical kit for emergency treatment"
+                },
+                {
+                    "id": "escape_pod_bay_door",
+                    "name": "escape pod bay door",
+                    "description": "A reinforced door leading to the escape pod bay. A security terminal displays three verification questions.",
+                    "locked": true,
+                    "lock_type": "password",
+                    "password_questions": [
+                        {
+                            "question": "Who is the lead researcher?",
+                            "answer": "dr sarah chen",
+                            "hint": "Check the personnel board and incident reports"
+                        },
+                        {
+                            "question": "What is the project codename?",
+                            "answer": "grey goo",
+                            "hint": "Multiple documents mention the project name"
+                        },
+                        {
+                            "question": "Who is the security chief?",
+                            "answer": "commander james rodriguez",
+                            "hint": "Look at the personnel board and security logs"
+                        }
+                    ],
+                    "direction": "north",
+                    "leads_to": "escape_pod_bay",
+                    "aliases": [
+                        "door",
+                        "north"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "escape_pod_bay",
+            "name": "Emergency Escape Pod Bay",
+            "description": "You have reached the escape pod bay! A sleek emergency pod sits in its launch cradle, ready for immediate departure. Through the bay windows, you can see the nano-swarm consuming the facility behind you, a churning silver mass that devours everything. The pod door is open, and the engines are primed. Safety at last!",
+            "items": [
+                {
+                    "id": "escape_pod",
+                    "name": "emergency escape pod",
+                    "description": "A small spacecraft designed for emergency evacuation, equipped with life support and communication systems"
+                },
+                {
+                    "id": "launch_console",
+                    "name": "pod launch console",
+                    "description": "The control panel for launching the escape pod, all systems showing green"
+                },
+                {
+                    "id": "viewport",
+                    "name": "observation viewport",
+                    "description": "A reinforced window showing the facility being consumed by the nano-swarm"
+                }
+            ],
+            "exits": [],
+            "is_goal": true,
+            "win_message": "You dive into the escape pod and slam the hatch shut! The launch sequence initiates automatically, and with a roar of engines, the pod blasts away from the doomed facility. Through the rear viewport, you watch as the nano-swarm completely consumes the research station, reducing it to a cloud of grey particles. Your emergency beacon is active, and rescue ships are en route. You have survived the runaway nano-swarm and escaped with your life. You win!"
+        }
+    ]
+}

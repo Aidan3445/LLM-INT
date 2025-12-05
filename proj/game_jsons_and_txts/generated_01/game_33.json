@@ -1,0 +1,248 @@
+{
+    "theme": "Space-Farm Biodome",
+    "title": "Space-Farm Biodome Adventure #33",
+    "goal": "Solve the puzzles, achieve the main objective, and escape.",
+    "starting_room": "hydroponics_bay",
+    "rooms": [
+        {
+            "id": "hydroponics_bay",
+            "name": "Hydroponics Bay",
+            "description": "A vast chamber filled with rows of vertical growing towers bathed in purple LED light. Nutrient mist hangs in the air, and the hum of circulation pumps echoes throughout. Through the transparent dome ceiling, you see the infinite darkness of space dotted with stars. Warning lights flash amber on several control panels. The smell of fresh vegetation mixes with the metallic tang of recycled air.",
+            "items": [
+                {
+                    "id": "workstation",
+                    "name": "agricultural workstation",
+                    "description": "A desk cluttered with soil analysis reports and crop yield data",
+                    "searchable": true,
+                    "contains": [
+                        "crop_report"
+                    ]
+                },
+                {
+                    "id": "crop_report",
+                    "name": "crop yield report",
+                    "description": "A detailed report on the biodome's agricultural production",
+                    "readable": true,
+                    "text": "BIODOME-33 CROP REPORT: Established 2089. Chief Botanist: Dr. Elena Vasquez. Lead Engineer: Marcus Webb. Primary crops: Wheat (Sector A), Tomatoes (Sector B), Lettuce (Sector C). Current yield: 127% of target. Note: All emergency protocols stored in Control Center."
+                },
+                {
+                    "id": "storage_locker",
+                    "name": "equipment storage locker",
+                    "description": "A tall metal locker with three compartments for tools and supplies",
+                    "subcontainers": [
+                        {
+                            "id": "top_compartment",
+                            "name": "top compartment",
+                            "locked": false,
+                            "contains": [
+                                "maintenance_log"
+                            ]
+                        },
+                        {
+                            "id": "middle_compartment",
+                            "name": "middle compartment",
+                            "locked": true,
+                            "lock_type": "combination",
+                            "combination": "2089",
+                            "contains": [
+                                "access_card"
+                            ]
+                        },
+                        {
+                            "id": "bottom_compartment",
+                            "name": "bottom compartment",
+                            "locked": false,
+                            "contains": []
+                        }
+                    ]
+                },
+                {
+                    "id": "maintenance_log",
+                    "name": "maintenance log datapad",
+                    "description": "A digital log of facility maintenance records",
+                    "readable": true,
+                    "text": "MAINTENANCE LOG: Biodome-33 systems operational since 2089. Last inspection by Engineer Webb. The access card for the Control Center is secured in the middle compartment - combination is the year we went operational. Dr. Vasquez oversees all botanical operations from the Control Center."
+                },
+                {
+                    "id": "access_card",
+                    "name": "security access card",
+                    "description": "A magnetic keycard labeled 'CONTROL CENTER ACCESS'"
+                },
+                {
+                    "id": "growing_tower",
+                    "name": "vertical growing tower",
+                    "description": "A tall hydroponic tower with plants growing in nutrient solution",
+                    "searchable": true,
+                    "contains": [
+                        "research_notes"
+                    ]
+                },
+                {
+                    "id": "research_notes",
+                    "name": "botanist's research notes",
+                    "description": "Handwritten notes from Dr. Vasquez",
+                    "readable": true,
+                    "text": "Research Notes: The wheat in Sector A is our most critical crop for long-term sustainability. Marcus keeps reminding me that emergency evacuation requires proper authorization. Only the Chief Botanist can initiate the airlock sequence. The Control Center has all the protocols we need."
+                },
+                {
+                    "id": "nutrient_tank",
+                    "name": "nutrient solution tank",
+                    "description": "A large tank containing the hydroponic nutrient mixture",
+                    "readable": true,
+                    "text": "Tank label: NUTRIENT SOLUTION - Sectors A, B, C. Automated mixing system. Monitor levels from Control Center."
+                },
+                {
+                    "id": "reinforced_pressure_door",
+                    "name": "reinforced pressure door",
+                    "description": "A heavy door with a card reader leading to the Control Center",
+                    "locked": true,
+                    "key_required": "access_card",
+                    "direction": "north",
+                    "leads_to": "control_center",
+                    "aliases": [
+                        "door",
+                        "north"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "control_center",
+            "name": "Control Center",
+            "description": "The nerve center of Biodome-33. Multiple holographic displays show real-time data on crop health, atmospheric composition, and system status. A large window overlooks the hydroponics bay below. Emergency lighting casts a red glow across the room. The main console dominates the center, and a sealed emergency airlock door glows on the far wall.",
+            "items": [
+                {
+                    "id": "main_console",
+                    "name": "main control console",
+                    "description": "The primary control station with multiple screens and input terminals",
+                    "readable": true,
+                    "text": "SYSTEM STATUS: Biodome-33 operational. Atmospheric processors: NOMINAL. Crop sectors: A (Wheat), B (Tomatoes), C (Lettuce). Chief Botanist: Dr. Elena Vasquez. Emergency protocols: ACTIVE. Evacuation authorization required."
+                },
+                {
+                    "id": "personnel_display",
+                    "name": "personnel assignment display",
+                    "description": "A screen showing current crew assignments and photos",
+                    "readable": true,
+                    "text": "BIODOME-33 PERSONNEL: Dr. Elena Vasquez - Chief Botanist, Agricultural Operations. Marcus Webb - Lead Engineer, Systems Maintenance. Dr. Vasquez has final authority on all botanical and emergency decisions."
+                },
+                {
+                    "id": "equipment_cabinet",
+                    "name": "emergency equipment cabinet",
+                    "description": "A red cabinet with emergency supplies and documentation",
+                    "subcontainers": [
+                        {
+                            "id": "upper_shelf",
+                            "name": "upper shelf",
+                            "locked": false,
+                            "contains": [
+                                "oxygen_mask"
+                            ]
+                        },
+                        {
+                            "id": "lower_shelf",
+                            "name": "lower shelf",
+                            "locked": false,
+                            "contains": [
+                                "evacuation_manual"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "oxygen_mask",
+                    "name": "emergency oxygen mask",
+                    "description": "A portable breathing apparatus for emergencies"
+                },
+                {
+                    "id": "evacuation_manual",
+                    "name": "emergency evacuation manual",
+                    "description": "A detailed guide for emergency procedures",
+                    "readable": true,
+                    "text": "EMERGENCY EVACUATION PROTOCOL: In case of critical system failure, proceed to emergency airlock. Authorization required from Chief Botanist. Security verification questions: 1) What is the most critical crop? 2) Who authorizes evacuation? 3) Where are emergency protocols stored?"
+                },
+                {
+                    "id": "data_terminal",
+                    "name": "data analysis terminal",
+                    "description": "A terminal displaying agricultural and environmental data",
+                    "searchable": true,
+                    "contains": [
+                        "sector_analysis"
+                    ]
+                },
+                {
+                    "id": "sector_analysis",
+                    "name": "sector analysis report",
+                    "description": "A comprehensive analysis of all crop sectors",
+                    "readable": true,
+                    "text": "SECTOR ANALYSIS: Sector A (Wheat) - CRITICAL for food supply, highest priority. Sector B (Tomatoes) - Supplemental nutrition. Sector C (Lettuce) - Fresh vegetables. Wheat production is essential for long-term mission success."
+                },
+                {
+                    "id": "wall_monitor",
+                    "name": "atmospheric monitoring display",
+                    "description": "A large screen showing oxygen levels and pressure readings",
+                    "readable": true,
+                    "text": "ATMOSPHERIC DATA: O2 levels stable. Pressure nominal. All emergency protocols and procedures are stored in the Control Center database for quick access during emergencies."
+                },
+                {
+                    "id": "emergency_airlock_door",
+                    "name": "emergency airlock door",
+                    "description": "A sealed airlock with a security terminal displaying three verification questions. Red warning lights pulse around the frame.",
+                    "locked": true,
+                    "lock_type": "password",
+                    "password_questions": [
+                        {
+                            "question": "What is the most critical crop?",
+                            "answer": "wheat",
+                            "hint": "Check the sector analysis report and research notes"
+                        },
+                        {
+                            "question": "Who authorizes evacuation?",
+                            "answer": "dr elena vasquez",
+                            "hint": "Review the personnel display and evacuation manual"
+                        },
+                        {
+                            "question": "Where are emergency protocols stored?",
+                            "answer": "control center",
+                            "hint": "The crop report and atmospheric display mention this location"
+                        }
+                    ],
+                    "direction": "east",
+                    "leads_to": "emergency_airlock",
+                    "aliases": [
+                        "airlock",
+                        "east"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "emergency_airlock",
+            "name": "Emergency Airlock",
+            "description": "You've reached the emergency airlock! A small chamber with a sleek escape pod docked and ready for launch. Through the viewport, you can see a rescue shuttle approaching in the distance. Green status lights indicate all systems are go. The pod's hatch stands open, inviting you to safety.",
+            "items": [
+                {
+                    "id": "escape_pod",
+                    "name": "emergency escape pod",
+                    "description": "A compact spacecraft designed for emergency evacuation to the nearby space station"
+                },
+                {
+                    "id": "launch_controls",
+                    "name": "pod launch controls",
+                    "description": "The control panel showing all systems ready for immediate departure"
+                },
+                {
+                    "id": "viewport",
+                    "name": "airlock viewport",
+                    "description": "A reinforced window showing the rescue shuttle approaching",
+                    "readable": true,
+                    "text": "Through the viewport, you see the rescue shuttle's lights growing brighter as it approaches. Safety is just moments away."
+                }
+            ],
+            "exits": [],
+            "is_goal": true,
+            "win_message": "SUCCESS! You board the escape pod and initiate the launch sequence. The pod detaches from Biodome-33 and rockets toward the rescue shuttle. Through the viewport, you watch the biodome grow smaller against the backdrop of space. You've successfully evacuated and will be safely transported to the space station. Your quick thinking and problem-solving skills saved the day. You win!"
+        }
+    ]
+}

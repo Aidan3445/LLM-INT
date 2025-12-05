@@ -1,0 +1,262 @@
+{
+    "theme": "Underground River Temple",
+    "title": "Underground River Temple Adventure #48",
+    "goal": "Solve the puzzles, achieve the main objective, and escape.",
+    "starting_room": "temple_entrance",
+    "rooms": [
+        {
+            "id": "temple_entrance",
+            "name": "Temple Entrance Chamber",
+            "description": "A vast stone chamber carved from living rock. The sound of rushing water echoes from deeper within the temple. Ancient columns support the vaulted ceiling, covered in glowing phosphorescent moss. Stone carvings depict priests performing rituals by a sacred river. The air is cool and damp, and water drips steadily from stalactites above.",
+            "items": [
+                {
+                    "id": "stone_pedestal",
+                    "name": "carved stone pedestal",
+                    "description": "A weathered pedestal with offerings and ceremonial items",
+                    "searchable": true,
+                    "contains": [
+                        "bronze_key"
+                    ]
+                },
+                {
+                    "id": "bronze_key",
+                    "name": "ancient bronze key",
+                    "description": "A key with water symbols etched into its surface"
+                },
+                {
+                    "id": "offering_cabinet",
+                    "name": "offering cabinet",
+                    "description": "A stone cabinet with three compartments for ritual offerings",
+                    "subcontainers": [
+                        {
+                            "id": "upper_compartment",
+                            "name": "upper compartment",
+                            "locked": false,
+                            "contains": [
+                                "temple_inscription"
+                            ]
+                        },
+                        {
+                            "id": "middle_compartment",
+                            "name": "middle compartment",
+                            "locked": true,
+                            "lock_type": "combination",
+                            "combination": "1247",
+                            "contains": [
+                                "silver_key"
+                            ]
+                        },
+                        {
+                            "id": "lower_compartment",
+                            "name": "lower compartment",
+                            "locked": false,
+                            "contains": []
+                        }
+                    ]
+                },
+                {
+                    "id": "temple_inscription",
+                    "name": "temple foundation stone",
+                    "description": "A stone tablet with carved text",
+                    "readable": true,
+                    "text": "This Sacred Temple of the Underground River was consecrated in the year 1247 by High Priest Akara. The Sacred River flows eternal beneath our feet, source of all life and wisdom. Only the faithful may enter the Inner Sanctum."
+                },
+                {
+                    "id": "silver_key",
+                    "name": "ornate silver key",
+                    "description": "A silver key decorated with flowing water patterns"
+                },
+                {
+                    "id": "wall_carvings",
+                    "name": "ancient wall carvings",
+                    "description": "Detailed carvings showing the temple's history",
+                    "readable": true,
+                    "text": "The carvings depict High Priest Akara discovering the Sacred River and building this temple. Priests are shown performing purification rituals in the Ritual Chamber. The final panel shows a treasure vault protected by three sacred questions."
+                },
+                {
+                    "id": "locked_chest",
+                    "name": "ceremonial chest",
+                    "description": "A wooden chest bound with bronze fittings",
+                    "locked": true,
+                    "key_required": "bronze_key",
+                    "contains": [
+                        "priest_journal"
+                    ]
+                },
+                {
+                    "id": "priest_journal",
+                    "name": "priest's journal",
+                    "description": "A leather-bound journal belonging to a temple priest",
+                    "readable": true,
+                    "text": "Day 89: High Priest Akara has taught us the three sacred truths. First, who founded our temple. Second, what flows beneath us giving life. Third, where the purification rituals are performed. These truths unlock the path to the treasure vault."
+                },
+                {
+                    "id": "carved_stone_archway",
+                    "name": "carved stone archway",
+                    "description": "An archway decorated with water motifs, leading deeper into the temple",
+                    "locked": true,
+                    "key_required": "silver_key",
+                    "direction": "north",
+                    "leads_to": "ritual_chamber",
+                    "aliases": [
+                        "archway",
+                        "north"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "ritual_chamber",
+            "name": "Ritual Chamber",
+            "description": "A circular chamber with a shallow pool of crystal-clear water at its center. The underground river can be heard rushing through channels beneath the floor. Stone basins line the walls, and ceremonial robes hang on hooks. Torches cast flickering light on murals depicting water rituals. A sealed door to the east leads to the treasure vault.",
+            "items": [
+                {
+                    "id": "central_pool",
+                    "name": "purification pool",
+                    "description": "A sacred pool fed by the underground river",
+                    "readable": true,
+                    "text": "The pool's water is remarkably clear and cold. An inscription on the rim reads: 'Here in the Ritual Chamber, the faithful are cleansed by the Sacred River's blessing.'"
+                },
+                {
+                    "id": "stone_basin_north",
+                    "name": "northern stone basin",
+                    "description": "A basin carved with symbols of flowing water",
+                    "searchable": true,
+                    "contains": [
+                        "ritual_scroll"
+                    ]
+                },
+                {
+                    "id": "ritual_scroll",
+                    "name": "ritual instructions scroll",
+                    "description": "A scroll detailing temple ceremonies",
+                    "readable": true,
+                    "text": "PURIFICATION RITUAL: All who seek the temple's treasures must first be purified in the Ritual Chamber. High Priest Akara established these rites when he founded our order. The Sacred River provides the blessed water for our ceremonies."
+                },
+                {
+                    "id": "ceremonial_robes",
+                    "name": "priest's ceremonial robes",
+                    "description": "Elaborate robes hanging on the wall",
+                    "searchable": true,
+                    "contains": [
+                        "hidden_note"
+                    ]
+                },
+                {
+                    "id": "hidden_note",
+                    "name": "hidden note",
+                    "description": "A small note tucked in the robe's pocket",
+                    "readable": true,
+                    "text": "Reminder: The vault door requires knowledge of three truths - our founder's name, the source of our sacred water, and the location of purification. Brother Marcus always forgets these simple facts!"
+                },
+                {
+                    "id": "wall_murals",
+                    "name": "ritual murals",
+                    "description": "Colorful murals showing priests performing ceremonies",
+                    "readable": true,
+                    "text": "The murals show High Priest Akara leading rituals in this very chamber. Priests pour water from the Sacred River over initiates. The final mural depicts the treasure vault, sealed and protected by sacred knowledge."
+                },
+                {
+                    "id": "offering_table",
+                    "name": "stone offering table",
+                    "description": "A table with various ritual implements and containers",
+                    "subcontainers": [
+                        {
+                            "id": "left_container",
+                            "name": "left container",
+                            "locked": false,
+                            "contains": [
+                                "incense"
+                            ]
+                        },
+                        {
+                            "id": "right_container",
+                            "name": "right container",
+                            "locked": false,
+                            "contains": [
+                                "temple_history"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "incense",
+                    "name": "sacred incense",
+                    "description": "Fragrant incense used in temple rituals"
+                },
+                {
+                    "id": "temple_history",
+                    "name": "temple history scroll",
+                    "description": "A detailed account of the temple's founding",
+                    "readable": true,
+                    "text": "TEMPLE HISTORY: In 1247, High Priest Akara discovered the Sacred River flowing through these caverns. Recognizing its divine nature, he built this temple to honor the eternal waters. The Ritual Chamber was the first room completed, where all purification ceremonies take place."
+                },
+                {
+                    "id": "sealed_vault_door",
+                    "name": "sealed vault door",
+                    "description": "A massive stone door with three questions carved into its surface in glowing script. Water trickles down its face.",
+                    "locked": true,
+                    "lock_type": "password",
+                    "password_questions": [
+                        {
+                            "question": "Who founded this temple?",
+                            "answer": "high priest akara",
+                            "hint": "Check the temple inscription and the various scrolls about the temple's history"
+                        },
+                        {
+                            "question": "What flows beneath the temple?",
+                            "answer": "sacred river",
+                            "hint": "Multiple texts mention the source of the temple's sacred water"
+                        },
+                        {
+                            "question": "Where are purification rituals performed?",
+                            "answer": "ritual chamber",
+                            "hint": "The ritual scroll and temple history describe where ceremonies take place"
+                        }
+                    ],
+                    "direction": "east",
+                    "leads_to": "treasure_vault",
+                    "aliases": [
+                        "vault",
+                        "door",
+                        "east"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "treasure_vault",
+            "name": "Underground River Treasure Vault",
+            "description": "You've reached the treasure vault! A magnificent chamber where the underground river flows through a channel carved in the floor. Ancient treasures line the walls - golden artifacts, jeweled chalices, and sacred relics. The sound of rushing water fills the space. At the far end, a natural tunnel follows the river's course, leading to daylight and freedom.",
+            "items": [
+                {
+                    "id": "treasure_chests",
+                    "name": "chests of temple treasures",
+                    "description": "Multiple chests filled with gold, gems, and sacred artifacts accumulated over centuries"
+                },
+                {
+                    "id": "golden_chalice",
+                    "name": "ceremonial golden chalice",
+                    "description": "A magnificent chalice used in the most sacred rituals"
+                },
+                {
+                    "id": "river_channel",
+                    "name": "underground river channel",
+                    "description": "The Sacred River flows through a carved channel, its waters sparkling in the torchlight",
+                    "readable": true,
+                    "text": "The river flows swiftly through the vault and into a natural tunnel. You can see daylight in the distance - the river emerges outside the mountain, offering a path to freedom!"
+                },
+                {
+                    "id": "sacred_relics",
+                    "name": "display of sacred relics",
+                    "description": "Ancient religious artifacts and ceremonial items preserved for centuries"
+                }
+            ],
+            "exits": [],
+            "is_goal": true,
+            "win_message": "You have discovered the treasure vault and found the path to freedom! Following the underground river through the natural tunnel, you emerge into bright sunlight outside the mountain. The Sacred River flows peacefully beside you as you leave the ancient temple behind, its mysteries solved and its treasures discovered. You win!"
+        }
+    ]
+}

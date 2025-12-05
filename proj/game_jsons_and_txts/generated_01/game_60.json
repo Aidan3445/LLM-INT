@@ -1,0 +1,281 @@
+{
+  "theme": "Oracle's Chamber",
+  "title": "Oracle's Chamber Adventure #60",
+  "goal": "Solve the puzzles, achieve the main objective, and escape.",
+  "starting_room": "divination_hall",
+  "rooms": [
+    {
+      "id": "divination_hall",
+      "name": "Divination Hall",
+      "description": "A grand circular hall with polished marble floors reflecting the light of countless candles. Mystical symbols are inlaid in silver across the walls, and the ceiling depicts a star map of constellations. The air shimmers with latent magical energy. Silk curtains in deep purple hang between ornate pillars, and the scent of jasmine and myrrh fills the space.",
+      "items": [
+        {
+          "id": "ceremonial_table",
+          "name": "ceremonial table",
+          "description": "A round table made of dark wood, covered with divination tools and ritual objects",
+          "searchable": true,
+          "contains": [
+            "brass_key"
+          ]
+        },
+        {
+          "id": "brass_key",
+          "name": "ornate brass key",
+          "description": "A brass key engraved with mystical runes and star patterns"
+        },
+        {
+          "id": "offering_cabinet",
+          "name": "offering cabinet",
+          "description": "A tall cabinet with three compartments where seekers leave gifts for the Oracle",
+          "subcontainers": [
+            {
+              "id": "upper_compartment",
+              "name": "upper compartment",
+              "locked": false,
+              "contains": [
+                "seeker_scroll"
+              ]
+            },
+            {
+              "id": "middle_compartment",
+              "name": "middle compartment",
+              "locked": true,
+              "lock_type": "combination",
+              "combination": "888",
+              "contains": [
+                "silver_key"
+              ]
+            },
+            {
+              "id": "lower_compartment",
+              "name": "lower compartment",
+              "locked": false,
+              "contains": []
+            }
+          ]
+        },
+        {
+          "id": "seeker_scroll",
+          "name": "seeker's scroll",
+          "description": "A scroll left by a previous visitor to the Oracle",
+          "readable": true,
+          "text": "I have traveled far to consult the Oracle Pythia. They say she uses a Crystal Sphere to see beyond the veil of time. The sacred number is 888 - eight for infinity, repeated thrice for past, present, and future. May my questions be answered."
+        },
+        {
+          "id": "silver_key",
+          "name": "silver key",
+          "description": "A delicate silver key with a crescent moon design"
+        },
+        {
+          "id": "incense_brazier",
+          "name": "bronze incense brazier",
+          "description": "A large brazier burning fragrant incense, smoke curling upward in mystical patterns",
+          "readable": true,
+          "text": "The smoke forms fleeting images: a woman in flowing robes holding a glowing sphere, ancient scrolls being carefully stored in an archive, and a doorway opening to reveal brilliant light."
+        },
+        {
+          "id": "locked_chest",
+          "name": "ornate locked chest",
+          "description": "A chest decorated with mother-of-pearl inlays depicting prophetic visions",
+          "locked": true,
+          "key_required": "brass_key",
+          "contains": [
+            "oracle_history",
+            "crystal_shard"
+          ]
+        },
+        {
+          "id": "oracle_history",
+          "name": "history of the Oracle",
+          "description": "A leather-bound tome detailing the Oracle's lineage",
+          "readable": true,
+          "text": "The Oracle Pythia has served as the voice of prophecy for generations. She gazes into her sacred Crystal Sphere to perceive visions of what was, what is, and what may be. All prophecies are carefully recorded and preserved in the Prophecy Archive for future generations."
+        },
+        {
+          "id": "crystal_shard",
+          "name": "glowing crystal shard",
+          "description": "A fragment of crystal that pulses with inner light, warm to the touch"
+        },
+        {
+          "id": "silk_curtains",
+          "name": "purple silk curtains",
+          "description": "Luxurious curtains embroidered with golden thread forming mystical patterns",
+          "searchable": true,
+          "contains": [
+            "hidden_note"
+          ]
+        },
+        {
+          "id": "hidden_note",
+          "name": "hidden note",
+          "description": "A small note tucked behind the curtains",
+          "readable": true,
+          "text": "Reminder to acolytes: The Oracle Pythia requires absolute silence during her visions. Her Crystal Sphere must be kept polished and pure. All prophecies must be transcribed immediately and stored in the Prophecy Archive."
+        },
+        {
+          "id": "archive_door",
+          "name": "archive door",
+          "description": "A heavy wooden door carved with images of scrolls and books, leading to the Prophecy Archive",
+          "locked": true,
+          "key_required": "silver_key",
+          "direction": "north",
+          "leads_to": "prophecy_archive",
+          "aliases": [
+            "door",
+            "north"
+          ]
+        }
+      ],
+      "exits": []
+    },
+    {
+      "id": "prophecy_archive",
+      "name": "Prophecy Archive",
+      "description": "A vast library chamber with floor-to-ceiling shelves filled with scrolls, tablets, and bound volumes. Each contains recorded prophecies spanning centuries. Soft golden light emanates from enchanted lanterns floating near the ceiling. The air is dry and smells of ancient parchment and leather. A magnificent door adorned with celestial symbols stands at the far end.",
+      "items": [
+        {
+          "id": "archive_desk",
+          "name": "archivist's desk",
+          "description": "A large desk covered with open scrolls, quills, and ink bottles",
+          "searchable": true,
+          "contains": [
+            "archivist_journal"
+          ]
+        },
+        {
+          "id": "archivist_journal",
+          "name": "archivist's journal",
+          "description": "A journal kept by the keeper of the archive",
+          "readable": true,
+          "text": "Day 1,247: Another prophecy from Oracle Pythia recorded today. She gazed into her Crystal Sphere and spoke of events yet to come. I have carefully transcribed her words and placed them in the archive. Only those who understand the Oracle's methods may enter her sanctum."
+        },
+        {
+          "id": "prophecy_shelf_ancient",
+          "name": "ancient prophecy shelf",
+          "description": "A shelf containing the oldest recorded prophecies",
+          "readable": true,
+          "text": "Shelf label: 'Ancient Prophecies - Recorded by Oracle Pythia through visions seen in the Crystal Sphere. These sacred texts are preserved in the Prophecy Archive for all time.'"
+        },
+        {
+          "id": "prophecy_shelf_recent",
+          "name": "recent prophecy shelf",
+          "description": "A shelf with more recent prophecies and visions",
+          "readable": true,
+          "text": "Recent entries detail visions of travelers seeking wisdom, kingdoms rising and falling, and the eternal cycle of fate. Each vision was perceived through the Oracle's sacred Crystal Sphere."
+        },
+        {
+          "id": "stone_tablet",
+          "name": "inscribed stone tablet",
+          "description": "An ancient tablet mounted on the wall",
+          "readable": true,
+          "text": "Inscription: 'Let it be known that Oracle Pythia, blessed with the gift of sight, serves as the bridge between mortal and divine. Her visions, revealed through the Crystal Sphere, are recorded here in the Prophecy Archive, that wisdom may endure through the ages.'"
+        },
+        {
+          "id": "scroll_cabinet",
+          "name": "scroll storage cabinet",
+          "description": "A cabinet with multiple compartments for organizing prophecies",
+          "subcontainers": [
+            {
+              "id": "top_section",
+              "name": "top section",
+              "locked": false,
+              "contains": [
+                "vision_record"
+              ]
+            },
+            {
+              "id": "bottom_section",
+              "name": "bottom section",
+              "locked": false,
+              "contains": [
+                "ceremonial_cloth"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "vision_record",
+          "name": "vision record scroll",
+          "description": "A scroll documenting a particularly significant prophecy",
+          "readable": true,
+          "text": "Vision Record: Oracle Pythia held the Crystal Sphere and spoke: 'Three truths unlock the path to wisdom. Know the seer's name, know her sacred tool, know where knowledge is preserved.' This prophecy was recorded in the Prophecy Archive on the day of the triple eclipse."
+        },
+        {
+          "id": "ceremonial_cloth",
+          "name": "ceremonial silk cloth",
+          "description": "A cloth used to wrap the Oracle's sacred tools"
+        },
+        {
+          "id": "reading_lectern",
+          "name": "reading lectern",
+          "description": "A tall lectern with an open book of prophecies",
+          "readable": true,
+          "text": "The open page reads: 'The Oracle's Sanctum awaits those who prove their understanding. Speak the name of the seer, name her instrument of vision, and declare where prophecies are kept. Only then shall the way be opened.'"
+        },
+        {
+          "id": "sanctum_door",
+          "name": "sanctum door",
+          "description": "A magnificent door carved with celestial symbols and constellations. Three questions are inscribed in glowing script across its surface.",
+          "locked": true,
+          "lock_type": "password",
+          "password_questions": [
+            {
+              "question": "What is the Oracle's name?",
+              "answer": "pythia",
+              "hint": "Check the seeker's scroll, oracle history, and various records throughout the chambers"
+            },
+            {
+              "question": "What is the Oracle's sacred tool for visions?",
+              "answer": "crystal sphere",
+              "hint": "Multiple texts mention the instrument the Oracle uses to see prophecies"
+            },
+            {
+              "question": "Where are prophecies recorded and preserved?",
+              "answer": "prophecy archive",
+              "hint": "Look at the inscriptions and records describing where visions are stored"
+            }
+          ],
+          "direction": "east",
+          "leads_to": "oracle_sanctum",
+          "aliases": [
+            "door",
+            "east"
+          ]
+        }
+      ],
+      "exits": []
+    },
+    {
+      "id": "oracle_sanctum",
+      "name": "Oracle's Sanctum",
+      "description": "You have entered the Oracle's inner sanctum! A breathtaking chamber with walls of polished crystal that reflect and refract light into rainbow patterns. In the center, upon a pedestal of white marble, rests a magnificent Crystal Sphere glowing with inner radiance. The Oracle herself appears as a luminous figure, her form shimmering with otherworldly light. She gestures toward an archway filled with brilliant light - your path to freedom.",
+      "items": [
+        {
+          "id": "crystal_sphere",
+          "name": "Oracle's Crystal Sphere",
+          "description": "The legendary Crystal Sphere, pulsing with prophetic power and ancient magic"
+        },
+        {
+          "id": "marble_pedestal",
+          "name": "white marble pedestal",
+          "description": "An elegant pedestal supporting the Crystal Sphere, carved with intricate prophecies"
+        },
+        {
+          "id": "oracle_figure",
+          "name": "Oracle Pythia",
+          "description": "The ethereal form of Oracle Pythia, radiating wisdom and serenity",
+          "readable": true,
+          "text": "Oracle Pythia speaks in a voice like distant bells: 'You have proven yourself worthy by understanding the nature of prophecy and the keeper of visions. Your journey through my chambers has shown wisdom and perseverance. Go now, with my blessing, and carry the knowledge you have gained into the world.'"
+        },
+        {
+          "id": "crystal_walls",
+          "name": "crystalline walls",
+          "description": "Walls of pure crystal that seem to contain infinite reflections and possibilities"
+        }
+      ],
+      "exits": [],
+      "is_goal": true,
+      "win_message": "Oracle Pythia raises her hand in blessing as you approach the archway of light. 'You have navigated the mysteries of my chamber and proven your understanding,' she intones. 'May the wisdom you have gained serve you well.' You step through the radiant archway and emerge into the world beyond, forever changed by your encounter with the Oracle. You win!"
+    }
+  ]
+}

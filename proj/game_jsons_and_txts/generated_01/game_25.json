@@ -1,0 +1,297 @@
+{
+    "theme": "Pharaoh's Afterlife Trial",
+    "title": "Pharaoh's Afterlife Trial Adventure #25",
+    "goal": "Solve the puzzles, achieve the main objective, and escape.",
+    "starting_room": "burial_chamber",
+    "rooms": [
+        {
+            "id": "burial_chamber",
+            "name": "Royal Burial Chamber",
+            "description": "A magnificent tomb deep within a pyramid. Golden hieroglyphics cover the limestone walls, telling the story of your reign. Your sarcophagus lies open in the center, surrounded by treasures meant for the afterlife. Canopic jars guard the corners, and the air smells of natron and myrrh. Torches flicker with eternal flames, casting dancing shadows of ancient gods.",
+            "items": [
+                {
+                    "id": "golden_sarcophagus",
+                    "name": "golden sarcophagus",
+                    "description": "Your ornate burial coffin decorated with your royal cartouche and protective spells",
+                    "searchable": true,
+                    "contains": [
+                        "book_of_dead"
+                    ]
+                },
+                {
+                    "id": "book_of_dead",
+                    "name": "Book of the Dead scroll",
+                    "description": "A papyrus scroll containing spells and guidance for the afterlife journey",
+                    "readable": true,
+                    "text": "Spell 125: To pass through the Hall of Judgment, you must know the sacred truths. The 42 judges of Ma'at await. Remember: Anubis weighs the heart, Osiris rules the afterlife, and Ma'at's feather measures truth. Only the worthy reach the Field of Reeds."
+                },
+                {
+                    "id": "canopic_shrine",
+                    "name": "canopic shrine",
+                    "description": "A gilded shrine containing four canopic jars protected by the sons of Horus",
+                    "subcontainers": [
+                        {
+                            "id": "imsety_jar",
+                            "name": "jar of Imsety",
+                            "locked": false,
+                            "contains": [
+                                "pharaoh_seal"
+                            ]
+                        },
+                        {
+                            "id": "hapy_jar",
+                            "name": "jar of Hapy",
+                            "locked": true,
+                            "lock_type": "combination",
+                            "combination": "42",
+                            "contains": [
+                                "bronze_ankh_key"
+                            ]
+                        },
+                        {
+                            "id": "duamutef_jar",
+                            "name": "jar of Duamutef",
+                            "locked": false,
+                            "contains": []
+                        },
+                        {
+                            "id": "qebehsenuef_jar",
+                            "name": "jar of Qebehsenuef",
+                            "locked": false,
+                            "contains": []
+                        }
+                    ]
+                },
+                {
+                    "id": "pharaoh_seal",
+                    "name": "royal pharaoh seal",
+                    "description": "Your personal seal bearing your cartouche and royal titles"
+                },
+                {
+                    "id": "bronze_ankh_key",
+                    "name": "bronze ankh key",
+                    "description": "A key shaped like an ankh, the symbol of eternal life"
+                },
+                {
+                    "id": "hieroglyphic_wall",
+                    "name": "hieroglyphic wall inscription",
+                    "description": "The western wall covered in sacred hieroglyphics",
+                    "readable": true,
+                    "text": "Inscription: 'Pharaoh Khufu, beloved of Ra, ruler of the Two Lands. In the year of your death, you shall journey through the Duat. The 42 judges shall question you. Anubis, guardian of the scales, awaits in the Hall of Judgment.'"
+                },
+                {
+                    "id": "treasure_chest",
+                    "name": "sealed treasure chest",
+                    "description": "A cedar chest inlaid with lapis lazuli and sealed with your royal seal",
+                    "locked": true,
+                    "key_required": "pharaoh_seal",
+                    "contains": [
+                        "offering_tablet",
+                        "priests_note"
+                    ]
+                },
+                {
+                    "id": "offering_tablet",
+                    "name": "offering tablet",
+                    "description": "A stone tablet listing offerings for the gods",
+                    "readable": true,
+                    "text": "Offerings to the gods: To Anubis, guardian of the dead. To Osiris, lord of the afterlife. To Ma'at, goddess of truth and justice. May they guide you to the Field of Reeds, the eternal paradise."
+                },
+                {
+                    "id": "priests_note",
+                    "name": "high priest's papyrus",
+                    "description": "A note from your high priest placed in your tomb",
+                    "readable": true,
+                    "text": "Great Pharaoh Khufu, your ka shall journey through the Duat. The number of judges is sacred: 42. Remember this when you seek passage. Your heart must be lighter than Ma'at's feather to enter paradise."
+                },
+                {
+                    "id": "ushabti_figures",
+                    "name": "shelf of ushabti figures",
+                    "description": "Small servant statues meant to work for you in the afterlife",
+                    "searchable": true,
+                    "contains": [
+                        "hidden_scarab"
+                    ]
+                },
+                {
+                    "id": "hidden_scarab",
+                    "name": "golden scarab amulet",
+                    "description": "A protective scarab beetle amulet made of gold"
+                },
+                {
+                    "id": "sealed_stone_doorway",
+                    "name": "sealed stone doorway",
+                    "description": "A massive stone door carved with protective spells and the Eye of Horus. It requires the ankh key to open.",
+                    "locked": true,
+                    "key_required": "bronze_ankh_key",
+                    "direction": "north",
+                    "leads_to": "hall_of_judgment",
+                    "aliases": [
+                        "door",
+                        "north"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "hall_of_judgment",
+            "name": "Hall of Two Truths",
+            "description": "A vast columned hall where the judgment of the dead takes place. Forty-two divine judges sit in silent witness along the walls. In the center, a massive golden scale stands ready to weigh hearts against Ma'at's white feather of truth. Anubis, the jackal-headed god, stands guard beside the scales. The air thrums with divine power and ancient magic.",
+            "items": [
+                {
+                    "id": "golden_scales",
+                    "name": "scales of judgment",
+                    "description": "The sacred scales where hearts are weighed against Ma'at's feather",
+                    "readable": true,
+                    "text": "The scales are perfectly balanced. On one side rests a pure white feather - the feather of Ma'at, representing truth and justice. Your heart must be lighter than this feather to pass into paradise."
+                },
+                {
+                    "id": "anubis_statue",
+                    "name": "statue of Anubis",
+                    "description": "A towering statue of Anubis, the jackal-headed guardian of the dead",
+                    "readable": true,
+                    "text": "Anubis, guardian of the scales, weigher of hearts, guide of souls through the Duat. He who judges the dead and protects the path to the Field of Reeds."
+                },
+                {
+                    "id": "judges_thrones",
+                    "name": "thrones of the 42 judges",
+                    "description": "Forty-two stone thrones where the divine judges sit in eternal vigil",
+                    "readable": true,
+                    "text": "The 42 judges of Ma'at, assessors of the dead. Each judge questions the deceased about their deeds in life. Only those who answer truthfully and whose hearts are pure may proceed."
+                },
+                {
+                    "id": "offering_altar",
+                    "name": "offering altar",
+                    "description": "An altar for presenting offerings to the gods of judgment",
+                    "searchable": true,
+                    "contains": [
+                        "confession_scroll"
+                    ]
+                },
+                {
+                    "id": "confession_scroll",
+                    "name": "negative confession scroll",
+                    "description": "A scroll listing the 42 negative confessions to be recited before the judges",
+                    "readable": true,
+                    "text": "The Negative Confession: 'I have not committed sin. I have not stolen. I have not killed. I have not lied...' Forty-two declarations of innocence, one for each judge. Speak truth before Ma'at, for she sees all."
+                },
+                {
+                    "id": "papyrus_chest",
+                    "name": "papyrus storage chest",
+                    "description": "A chest containing sacred papyri and religious texts",
+                    "subcontainers": [
+                        {
+                            "id": "upper_compartment",
+                            "name": "upper compartment",
+                            "locked": false,
+                            "contains": [
+                                "osiris_hymn"
+                            ]
+                        },
+                        {
+                            "id": "lower_compartment",
+                            "name": "lower compartment",
+                            "locked": false,
+                            "contains": [
+                                "judgment_guide"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "osiris_hymn",
+                    "name": "hymn to Osiris",
+                    "description": "A papyrus containing prayers to Osiris, lord of the afterlife",
+                    "readable": true,
+                    "text": "Great Osiris, lord of the afterlife, ruler of the Duat, judge of the dead. You who died and was reborn, grant passage to the worthy. The Field of Reeds awaits those whose hearts are true."
+                },
+                {
+                    "id": "judgment_guide",
+                    "name": "guide to judgment",
+                    "description": "Instructions for passing through the Hall of Two Truths",
+                    "readable": true,
+                    "text": "To pass into the Field of Reeds, you must answer the three sacred questions: Who weighs your heart? Who rules the afterlife? What measures your truth? Only those who know these answers may enter paradise."
+                },
+                {
+                    "id": "maats_feather",
+                    "name": "feather of Ma'at",
+                    "description": "A perfect white ostrich feather representing truth and cosmic order",
+                    "readable": true,
+                    "text": "The feather of Ma'at, goddess of truth, justice, and cosmic balance. Against this feather, all hearts are measured. It is light as air yet heavy with the weight of universal law."
+                },
+                {
+                    "id": "ammit_statue",
+                    "name": "statue of Ammit",
+                    "description": "A fearsome statue of the devourer of the unworthy - part crocodile, lion, and hippopotamus",
+                    "readable": true,
+                    "text": "Ammit the Devourer waits beneath the scales. Those whose hearts are heavy with sin are consumed, denied eternal life. But the pure of heart pass safely to paradise."
+                },
+                {
+                    "id": "gateway_to_paradise",
+                    "name": "gateway to paradise",
+                    "description": "A magnificent golden doorway carved with scenes of the Field of Reeds. Three sacred questions are inscribed in hieroglyphics upon its surface.",
+                    "locked": true,
+                    "lock_type": "password",
+                    "password_questions": [
+                        {
+                            "question": "Who weighs the heart against the feather?",
+                            "answer": "anubis",
+                            "hint": "Check the Book of the Dead and the statues in the Hall of Judgment"
+                        },
+                        {
+                            "question": "Who is the lord of the afterlife?",
+                            "answer": "osiris",
+                            "hint": "The offering tablet and hymns mention the ruler of the Duat"
+                        },
+                        {
+                            "question": "What measures truth and justice?",
+                            "answer": "maats feather",
+                            "hint": "Look at what rests on the scales and read about the goddess of truth"
+                        }
+                    ],
+                    "direction": "east",
+                    "leads_to": "field_of_reeds",
+                    "aliases": [
+                        "gateway",
+                        "door",
+                        "east"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "field_of_reeds",
+            "name": "Field of Reeds",
+            "description": "You have reached the Field of Reeds - the Egyptian paradise! An endless expanse of lush green fields stretches before you under a perfect azure sky. The Nile flows with crystal-clear water, and abundant crops grow without effort. Your ancestors welcome you with open arms. The gods smile upon you. You have passed the trials of the afterlife and earned eternal peace and happiness.",
+            "items": [
+                {
+                    "id": "eternal_nile",
+                    "name": "the eternal Nile",
+                    "description": "The sacred river flowing through paradise, its waters pure and life-giving"
+                },
+                {
+                    "id": "abundant_fields",
+                    "name": "fields of plenty",
+                    "description": "Endless fields of wheat and barley that grow without toil, providing eternal sustenance"
+                },
+                {
+                    "id": "ancestors_gathering",
+                    "name": "gathering of ancestors",
+                    "description": "Your loved ones and ancestors who passed before you, reunited in eternal joy"
+                },
+                {
+                    "id": "ra_barque",
+                    "name": "barque of Ra",
+                    "description": "The sun god's golden boat sailing across the perfect sky, bringing eternal light",
+                    "readable": true,
+                    "text": "Ra's solar barque crosses the heavens, bringing perpetual warmth and light to paradise. The cycle of day and night continues in perfect harmony, and you are forever blessed."
+                }
+            ],
+            "exits": [],
+            "is_goal": true,
+            "win_message": "Congratulations, Pharaoh Khufu! Your heart has been weighed and found pure. You have answered the sacred questions and passed through the Hall of Two Truths. The gods welcome you to the Field of Reeds, where you shall dwell in eternal paradise. Your ka and ba are reunited, and you shall live forever among the blessed dead. You have completed the Pharaoh's Afterlife Trial! You win!"
+        }
+    ]
+}

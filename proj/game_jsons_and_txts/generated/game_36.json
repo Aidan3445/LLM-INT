@@ -1,0 +1,236 @@
+{
+  "theme": "Dragon's Hoard Cavern",
+  "title": "Dragon's Hoard Cavern Adventure #36",
+  "goal": "Solve the puzzles, achieve the main objective, and escape.",
+  "starting_room": "entrance_cavern",
+  "rooms": [
+    {
+      "id": "entrance_cavern",
+      "name": "Entrance Cavern",
+      "description": "A vast cavern entrance carved into the mountainside. Ancient dragon claw marks score the stone walls. Piles of old bones and rusted weapons litter the floor. The air is thick with the smell of sulfur and old smoke. Torches flicker in iron sconces, casting dancing shadows across glittering veins of gold in the rock.",
+      "items": [
+        {
+          "id": "pile_of_bones",
+          "name": "pile of old bones",
+          "description": "A heap of bones from previous adventurers and unfortunate travelers",
+          "searchable": true,
+          "contains": [
+            "tarnished_key"
+          ]
+        },
+        {
+          "id": "tarnished_key",
+          "name": "tarnished brass key",
+          "description": "A small brass key covered in soot and grime"
+        },
+        {
+          "id": "stone_pedestal",
+          "name": "carved stone pedestal",
+          "description": "A pedestal with dragon symbols carved into its surface",
+          "readable": true,
+          "text": "Ancient inscription: The Great Wyrm Scorathax was born in the year 842 of the Dragon Age. His hoard contains three sacred treasures: the Ruby of Flames, the Sapphire of Storms, and the Emerald of Earth."
+        },
+        {
+          "id": "weapon_rack",
+          "name": "broken weapon rack",
+          "description": "A splintered wooden rack that once held weapons. Two compartments remain intact.",
+          "subcontainers": [
+            {
+              "id": "top_shelf",
+              "name": "top shelf",
+              "locked": false,
+              "contains": [
+                "dragon_scroll"
+              ]
+            },
+            {
+              "id": "bottom_shelf",
+              "name": "bottom shelf",
+              "locked": true,
+              "lock_type": "combination",
+              "combination": "842",
+              "contains": [
+                "iron_key"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "dragon_scroll",
+          "name": "ancient dragon scroll",
+          "description": "A scroll written in both dragon script and common tongue",
+          "readable": true,
+          "text": "Dragon Lore: Scorathax the Red guards his treasure jealously. The year of his birth unlocks many secrets. His favorite gem is the Ruby of Flames, which he keeps in the locked coffer near his resting place."
+        },
+        {
+          "id": "iron_key",
+          "name": "heavy iron key",
+          "description": "A large iron key with a dragon head design on the handle"
+        },
+        {
+          "id": "locked_chest",
+          "name": "ironbound treasure chest",
+          "description": "A sturdy chest reinforced with iron bands and a brass lock",
+          "locked": true,
+          "key_required": "tarnished_key",
+          "contains": [
+            "explorer_journal"
+          ]
+        },
+        {
+          "id": "explorer_journal",
+          "name": "explorer's journal",
+          "description": "A leather journal belonging to a previous adventurer",
+          "readable": true,
+          "text": "Final Entry: I've made it to the dragon's lair! The passage to the treasure gallery requires answering three questions. I've learned that Scorathax is the dragon's name, his hoard is hidden in the mountain depths, and the Ruby of Flames is his most prized possession. If only I had been braver..."
+        },
+        {
+          "id": "passage_to_treasure_gallery",
+          "name": "passage to treasure gallery",
+          "description": "A narrow passage leading deeper into the mountain. Stone doors block the way, covered in dragon runes that form three questions.",
+          "locked": true,
+          "lock_type": "password",
+          "password_questions": [
+            {
+              "question": "What is the name of the dragon who dwells here?",
+              "answer": "scorathax",
+              "hint": "Check the stone pedestal inscription and the explorer's journal"
+            },
+            {
+              "question": "Where does the dragon keep his hoard?",
+              "answer": "mountain depths",
+              "hint": "The explorer's journal mentions this location"
+            },
+            {
+              "question": "What is the dragon's most prized treasure?",
+              "answer": "ruby of flames",
+              "hint": "Multiple sources mention the dragon's favorite gem"
+            }
+          ],
+          "direction": "north",
+          "leads_to": "treasure_gallery",
+          "aliases": [
+            "passage",
+            "north"
+          ]
+        }
+      ],
+      "exits": []
+    },
+    {
+      "id": "treasure_gallery",
+      "name": "Treasure Gallery",
+      "description": "A magnificent chamber filled with mountains of gold coins, jeweled crowns, and ancient artifacts. Crystal formations in the ceiling cast rainbow light across the treasure. Three ornate display cases stand against the far wall, each containing a legendary gem. The heat intensifies here, and you can hear the deep breathing of something massive beyond the eastern door.",
+      "items": [
+        {
+          "id": "gold_pile",
+          "name": "mountain of gold coins",
+          "description": "An enormous pile of gold coins from a hundred different kingdoms",
+          "searchable": true,
+          "contains": [
+            "silver_key"
+          ]
+        },
+        {
+          "id": "silver_key",
+          "name": "ornate silver key",
+          "description": "A beautifully crafted silver key with sapphire inlays"
+        },
+        {
+          "id": "ruby_case",
+          "name": "ruby display case",
+          "description": "A glass case containing a magnificent red gem that seems to flicker with inner fire",
+          "locked": true,
+          "key_required": "iron_key",
+          "contains": [
+            "ruby_of_flames"
+          ]
+        },
+        {
+          "id": "ruby_of_flames",
+          "name": "Ruby of Flames",
+          "description": "A legendary ruby that radiates warmth and glows like an ember"
+        },
+        {
+          "id": "sapphire_case",
+          "name": "sapphire display case",
+          "description": "A glass case holding a deep blue gem that crackles with electricity",
+          "locked": true,
+          "key_required": "silver_key",
+          "contains": [
+            "sapphire_of_storms"
+          ]
+        },
+        {
+          "id": "sapphire_of_storms",
+          "name": "Sapphire of Storms",
+          "description": "A legendary sapphire that sparks with lightning when touched"
+        },
+        {
+          "id": "emerald_case",
+          "name": "emerald display case",
+          "description": "A glass case showcasing a vibrant green gem that pulses with life energy",
+          "searchable": true,
+          "contains": [
+            "emerald_of_earth"
+          ]
+        },
+        {
+          "id": "emerald_of_earth",
+          "name": "Emerald of Earth",
+          "description": "A legendary emerald that hums with the power of nature"
+        },
+        {
+          "id": "treasure_map",
+          "name": "dragon's treasure map",
+          "description": "A detailed map of the cavern system drawn by the dragon himself",
+          "readable": true,
+          "text": "Map notation: The sanctum door opens only for those who prove their worth. Bring the three sacred gems: Ruby, Sapphire, and Emerald. Place them in the altar to gain entry to my inner sanctum."
+        },
+        {
+          "id": "ancient_tablet",
+          "name": "stone tablet",
+          "description": "A tablet with warnings carved in multiple languages",
+          "readable": true,
+          "text": "WARNING: The dragon Scorathax sleeps in his sanctum beyond. Only those bearing the three sacred treasures may enter safely. The Ruby of Flames, Sapphire of Storms, and Emerald of Earth must be presented together."
+        },
+        {
+          "id": "dragon_sanctum_door",
+          "name": "dragon sanctum door",
+          "description": "Massive bronze doors decorated with dragon imagery. Three gem-shaped indentations are set into the door's surface. The door requires all three legendary gems to open.",
+          "locked": true,
+          "key_required": "emerald_of_earth",
+          "direction": "east",
+          "leads_to": "dragon_sanctum",
+          "aliases": [
+            "sanctum",
+            "east"
+          ]
+        }
+      ],
+      "exits": []
+    },
+    {
+      "id": "dragon_sanctum",
+      "name": "Dragon's Inner Sanctum",
+      "description": "You have entered the heart of the dragon's lair! The chamber is vast and circular, with a ceiling that disappears into darkness. In the center, upon a massive bed of gold and jewels, rests Scorathax the Red Dragon. His scales gleam like molten metal, and smoke curls from his nostrils as he sleeps. The three sacred gems you carry begin to glow, and the dragon's eyes slowly open. He regards you with ancient wisdom rather than rage.",
+      "items": [
+        {
+          "id": "sleeping_dragon",
+          "name": "Scorathax the Red Dragon",
+          "description": "A magnificent red dragon of immense size and age, surprisingly calm in your presence",
+          "readable": true,
+          "text": "The dragon speaks in a voice like rolling thunder: 'You have proven yourself worthy by gathering my three sacred treasures. Few have the courage and wisdom to reach this place. You may take what you can carry from my hoard, and I grant you safe passage. Go now, and tell the world that Scorathax the Red still guards his mountain.'"
+        },
+        {
+          "id": "ultimate_treasure",
+          "name": "dragon's greatest treasure",
+          "description": "A chest overflowing with the finest gems, gold, and magical artifacts from the dragon's personal collection"
+        }
+      ],
+      "exits": [],
+      "is_goal": true,
+      "win_message": "You have successfully navigated the Dragon's Hoard Cavern and earned the respect of Scorathax the Red! The ancient dragon allows you to take a portion of his treasure and grants you safe passage from his lair. You emerge from the mountain wealthy beyond measure, with an incredible tale of the dragon who valued courage and wisdom over violence. You win!"
+    }
+  ]
+}

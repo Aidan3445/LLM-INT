@@ -1,0 +1,204 @@
+{
+    "theme": "Quantum Prison",
+    "title": "Quantum Prison Adventure #67",
+    "goal": "Solve the puzzles, achieve the main objective, and escape.",
+    "starting_room": "quantum_cell",
+    "rooms": [
+        {
+            "id": "quantum_cell",
+            "name": "Quantum Containment Cell",
+            "description": "A sterile white cell that seems to flicker between states of existence. The walls pulse with a faint blue energy field. Strange equations are etched into the floor, and a quantum stabilizer hums in the corner. The air feels heavy with probability.",
+            "items": [
+                {
+                    "id": "quantum_stabilizer",
+                    "name": "quantum stabilizer device",
+                    "description": "A complex machine with three compartments labeled Alpha, Beta, and Gamma",
+                    "subcontainers": [
+                        {
+                            "id": "alpha_compartment",
+                            "name": "alpha compartment",
+                            "locked": false,
+                            "contains": [
+                                "research_notes"
+                            ]
+                        },
+                        {
+                            "id": "beta_compartment",
+                            "name": "beta compartment",
+                            "locked": true,
+                            "lock_type": "combination",
+                            "combination": "137",
+                            "contains": [
+                                "security_keycard"
+                            ]
+                        },
+                        {
+                            "id": "gamma_compartment",
+                            "name": "gamma compartment",
+                            "locked": false,
+                            "contains": []
+                        }
+                    ]
+                },
+                {
+                    "id": "research_notes",
+                    "name": "quantum research notes",
+                    "description": "A datapad with scientific observations",
+                    "readable": true,
+                    "text": "Research Log: The fine structure constant is key to everything. Alpha equals 1 divided by 137. This number unlocks the beta compartment. Remember: Prisoner designation QP067, detained by Warden Schrodinger in the Heisenberg Wing."
+                },
+                {
+                    "id": "security_keycard",
+                    "name": "security access keycard",
+                    "description": "A magnetic keycard with quantum encryption patterns"
+                },
+                {
+                    "id": "wall_equations",
+                    "name": "etched wall equations",
+                    "description": "Complex quantum mechanics equations carved into the floor",
+                    "readable": true,
+                    "text": "The equations describe quantum superposition and wave function collapse. At the bottom, someone has scratched: 'The observer affects the observed. Warden Schrodinger watches from the Observation Deck.'"
+                },
+                {
+                    "id": "sleeping_platform",
+                    "name": "quantum sleeping platform",
+                    "description": "A bed that phases slightly in and out of reality",
+                    "searchable": true,
+                    "contains": [
+                        "hidden_message"
+                    ]
+                },
+                {
+                    "id": "hidden_message",
+                    "name": "concealed message chip",
+                    "description": "A small data chip hidden under the sleeping platform",
+                    "readable": true,
+                    "text": "Message from previous prisoner: To escape, you must answer the security system. Your prisoner number is QP067. The warden is Schrodinger. Freedom lies beyond the Probability Gate."
+                },
+                {
+                    "id": "reinforced_cell_door",
+                    "name": "reinforced cell door",
+                    "description": "A heavy door with a card reader glowing red",
+                    "locked": true,
+                    "key_required": "security_keycard",
+                    "direction": "north",
+                    "leads_to": "security_corridor",
+                    "aliases": [
+                        "door",
+                        "north"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "security_corridor",
+            "name": "Security Corridor",
+            "description": "A long hallway lined with flickering holographic displays showing quantum probability clouds. Security monitors display various prison wings. Three large information panels are mounted on the walls, and a maintenance terminal blinks nearby. At the far end, a massive gate blocks the exit.",
+            "items": [
+                {
+                    "id": "info_panel_warden",
+                    "name": "warden information panel",
+                    "description": "A holographic display showing the warden's profile",
+                    "readable": true,
+                    "text": "WARDEN PROFILE: Warden Schrodinger - Chief Administrator of Quantum Prison Facility. Office located in Observation Deck. Specializes in quantum containment and probability manipulation."
+                },
+                {
+                    "id": "info_panel_wings",
+                    "name": "facility wings panel",
+                    "description": "A map showing different prison sections",
+                    "readable": true,
+                    "text": "FACILITY LAYOUT: Heisenberg Wing (Uncertainty Prisoners), Planck Wing (Constant Offenders), Einstein Wing (Relativity Violators). The Probability Gate leads to the quantum tunnel exit."
+                },
+                {
+                    "id": "info_panel_prisoners",
+                    "name": "prisoner registry panel",
+                    "description": "A scrolling list of prisoner designations",
+                    "readable": true,
+                    "text": "ACTIVE PRISONERS: QP065, QP066, QP067 (YOU), QP068, QP069. Prisoner QP067 detained for unauthorized quantum manipulation. Assigned to Heisenberg Wing."
+                },
+                {
+                    "id": "maintenance_terminal",
+                    "name": "maintenance access terminal",
+                    "description": "A computer terminal with an open access panel",
+                    "searchable": true,
+                    "contains": [
+                        "override_instructions"
+                    ]
+                },
+                {
+                    "id": "override_instructions",
+                    "name": "system override instructions",
+                    "description": "A technical manual left by maintenance staff",
+                    "readable": true,
+                    "text": "GATE OVERRIDE PROTOCOL: Emergency exit requires verification. System will ask: prisoner designation, detention location, and final destination. Refer to facility records for correct answers."
+                },
+                {
+                    "id": "supply_locker",
+                    "name": "emergency supply locker",
+                    "description": "A metal locker containing emergency equipment",
+                    "searchable": true,
+                    "contains": [
+                        "quantum_torch"
+                    ]
+                },
+                {
+                    "id": "quantum_torch",
+                    "name": "quantum phase torch",
+                    "description": "A tool that can manipulate quantum states, though its purpose here is unclear"
+                },
+                {
+                    "id": "massive_probability_gate",
+                    "name": "massive probability gate",
+                    "description": "An enormous gate made of shimmering energy fields. A security terminal displays three verification questions.",
+                    "locked": true,
+                    "lock_type": "password",
+                    "password_questions": [
+                        {
+                            "question": "Enter prisoner designation:",
+                            "answer": "qp067",
+                            "hint": "Check your research notes and the prisoner registry"
+                        },
+                        {
+                            "question": "Enter detention wing location:",
+                            "answer": "heisenberg wing",
+                            "hint": "The facility wings panel and your notes mention where you are detained"
+                        },
+                        {
+                            "question": "Enter destination beyond gate:",
+                            "answer": "probability gate",
+                            "hint": "The facility layout shows what lies beyond, and the hidden message mentions it"
+                        }
+                    ],
+                    "direction": "east",
+                    "leads_to": "quantum_tunnel",
+                    "aliases": [
+                        "gate",
+                        "east"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "quantum_tunnel",
+            "name": "Quantum Tunnel Exit",
+            "description": "You have made it through! A swirling tunnel of quantum energy surrounds you, leading to the outside world. Reality stabilizes as you move forward. The prison's quantum fields fade behind you. Ahead, you see normal space and freedom. The probability of your escape has collapsed from possibility into certainty.",
+            "items": [
+                {
+                    "id": "exit_portal",
+                    "name": "stabilized exit portal",
+                    "description": "A shimmering doorway showing the world beyond the quantum prison"
+                },
+                {
+                    "id": "reality_anchor",
+                    "name": "reality stabilization anchor",
+                    "description": "A device that maintains normal physics in this transition zone"
+                }
+            ],
+            "exits": [],
+            "is_goal": true,
+            "win_message": "SUCCESS! You have escaped the Quantum Prison! The probability wave of your imprisonment has collapsed, and you emerge into normal reality. The quantum fields release their hold as you step through the exit portal into freedom. Your knowledge of quantum mechanics and careful observation has set you free. You win!"
+        }
+    ]
+}

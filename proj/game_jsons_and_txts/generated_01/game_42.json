@@ -1,0 +1,263 @@
+{
+    "theme": "Alien Zoo",
+    "title": "Alien Zoo Adventure #42",
+    "goal": "Solve the puzzles, achieve the main objective, and escape.",
+    "starting_room": "quarantine_lab",
+    "rooms": [
+        {
+            "id": "quarantine_lab",
+            "name": "Quarantine Laboratory",
+            "description": "A sterile white laboratory with containment pods lining the walls. Strange alien creatures float in glowing blue stasis fields. Warning lights blink on control panels, and the air smells of ozone and disinfectant. Through reinforced windows, you can see the main specimen halls. Emergency klaxons echo in the distance.",
+            "items": [
+                {
+                    "id": "research_station",
+                    "name": "research station",
+                    "description": "A cluttered workstation covered with datapads and specimen analysis equipment",
+                    "searchable": true,
+                    "contains": [
+                        "facility_datapad"
+                    ]
+                },
+                {
+                    "id": "facility_datapad",
+                    "name": "facility datapad",
+                    "description": "A digital tablet containing facility information",
+                    "readable": true,
+                    "text": "XENOZOOLOGICAL RESEARCH STATION ZETA - Established 2187. Director: Commander Sarah Vex. Chief Xenobiologist: Dr. Marcus Webb. Remember: All dangerous specimens are housed in the high-security containment sector. Emergency protocols require proper identification."
+                },
+                {
+                    "id": "storage_locker",
+                    "name": "equipment storage locker",
+                    "description": "A tall metal locker with three compartments for storing lab equipment",
+                    "subcontainers": [
+                        {
+                            "id": "top_compartment",
+                            "name": "top compartment",
+                            "locked": false,
+                            "contains": [
+                                "safety_manual"
+                            ]
+                        },
+                        {
+                            "id": "middle_compartment",
+                            "name": "middle compartment",
+                            "locked": true,
+                            "lock_type": "combination",
+                            "combination": "2187",
+                            "contains": [
+                                "security_keycard"
+                            ]
+                        },
+                        {
+                            "id": "bottom_compartment",
+                            "name": "bottom compartment",
+                            "locked": false,
+                            "contains": []
+                        }
+                    ]
+                },
+                {
+                    "id": "safety_manual",
+                    "name": "safety procedures manual",
+                    "description": "A thick manual outlining facility safety protocols",
+                    "readable": true,
+                    "text": "SAFETY PROTOCOLS: This facility was established in 2187 to study extraterrestrial lifeforms. All personnel must carry proper identification. Director Vex oversees all operations. Dangerous specimens are kept in high-security containment. In emergencies, evacuate to the escape pod bay."
+                },
+                {
+                    "id": "security_keycard",
+                    "name": "security access keycard",
+                    "description": "A magnetic keycard with clearance level markings"
+                },
+                {
+                    "id": "specimen_pod_alpha",
+                    "name": "specimen containment pod alpha",
+                    "description": "A cylindrical pod containing a small floating alien creature with tentacles",
+                    "readable": true,
+                    "text": "SPECIMEN ALPHA-7: Tentacled organism from Kepler-442b. Status: CONTAINED. Threat Level: LOW."
+                },
+                {
+                    "id": "medical_cabinet",
+                    "name": "locked medical cabinet",
+                    "description": "A white cabinet with a biohazard symbol and electronic lock",
+                    "locked": true,
+                    "key_required": "security_keycard",
+                    "contains": [
+                        "emergency_kit",
+                        "personnel_roster"
+                    ]
+                },
+                {
+                    "id": "emergency_kit",
+                    "name": "emergency medical kit",
+                    "description": "A first aid kit with supplies for treating injuries"
+                },
+                {
+                    "id": "personnel_roster",
+                    "name": "personnel assignment roster",
+                    "description": "A document listing all facility staff and their roles",
+                    "readable": true,
+                    "text": "STATION PERSONNEL: Commander Sarah Vex - Facility Director. Dr. Marcus Webb - Chief Xenobiologist. Lieutenant Chen - Security Chief. Technician Rodriguez - Maintenance. Note: You are assigned as Xenobiologist on this mission."
+                },
+                {
+                    "id": "containment_hall_door",
+                    "name": "containment hall door",
+                    "description": "A heavy reinforced door with a card reader, leading to the main specimen containment area",
+                    "locked": true,
+                    "key_required": "security_keycard",
+                    "direction": "north",
+                    "leads_to": "specimen_containment_hall",
+                    "aliases": [
+                        "door",
+                        "north"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "specimen_containment_hall",
+            "name": "Specimen Containment Hall",
+            "description": "A massive chamber with rows of glowing containment cells housing bizarre alien creatures. Some cells are empty with shattered glass. Claw marks score the walls. Emergency lights cast everything in red. A control station monitors all specimens. The high-security sector door stands sealed at the far end.",
+            "items": [
+                {
+                    "id": "control_station",
+                    "name": "specimen monitoring station",
+                    "description": "A bank of screens showing status readings for all containment cells",
+                    "readable": true,
+                    "text": "CONTAINMENT STATUS: Sector A - 12 specimens secure. Sector B - 8 specimens secure. High-Security Sector - 3 specimens BREACH DETECTED. Warning: Dangerous specimens have escaped containment. Evacuation recommended."
+                },
+                {
+                    "id": "specimen_cell_12",
+                    "name": "specimen cell twelve",
+                    "description": "A large cell containing a crystalline alien lifeform that pulses with inner light",
+                    "readable": true,
+                    "text": "SPECIMEN 12: Silicon-based organism from Tau Ceti. Communicates through light patterns. Status: CONTAINED. Threat Level: MINIMAL."
+                },
+                {
+                    "id": "specimen_cell_19",
+                    "name": "specimen cell nineteen",
+                    "description": "An empty cell with broken glass and scorch marks",
+                    "readable": true,
+                    "text": "SPECIMEN 19: CONTAINMENT BREACH. Predatory organism from Wolf 359. Last seen heading toward high-security sector. Threat Level: EXTREME."
+                },
+                {
+                    "id": "observation_desk",
+                    "name": "observation desk",
+                    "description": "A desk where researchers record specimen behavior and observations",
+                    "searchable": true,
+                    "contains": [
+                        "research_journal"
+                    ]
+                },
+                {
+                    "id": "research_journal",
+                    "name": "xenobiologist research journal",
+                    "description": "A digital journal with detailed specimen notes",
+                    "readable": true,
+                    "text": "Dr. Webb's Log: The specimens in high-security containment are our most dangerous acquisitions. Commander Vex has authorized extreme caution protocols. As xenobiologists, we must remember our training. The escape pods are our only way out if containment fails completely."
+                },
+                {
+                    "id": "supply_crate",
+                    "name": "emergency supply crate",
+                    "description": "A metal crate with emergency supplies and equipment",
+                    "subcontainers": [
+                        {
+                            "id": "crate_top_section",
+                            "name": "top section",
+                            "locked": false,
+                            "contains": [
+                                "plasma_cutter"
+                            ]
+                        },
+                        {
+                            "id": "crate_bottom_section",
+                            "name": "bottom section",
+                            "locked": false,
+                            "contains": [
+                                "evacuation_guide"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "plasma_cutter",
+                    "name": "handheld plasma cutter",
+                    "description": "A tool used for cutting through metal and sealed doors"
+                },
+                {
+                    "id": "evacuation_guide",
+                    "name": "emergency evacuation guide",
+                    "description": "A laminated card with evacuation procedures",
+                    "readable": true,
+                    "text": "EMERGENCY EVACUATION PROTOCOL: In case of catastrophic containment failure, proceed immediately to escape pod bay. Security verification required. You must confirm: Who commands this facility? Where are the most dangerous specimens kept? What is your role here?"
+                },
+                {
+                    "id": "wall_terminal",
+                    "name": "information terminal",
+                    "description": "A wall-mounted terminal displaying facility information",
+                    "readable": true,
+                    "text": "FACILITY DIRECTORY: Quarantine Lab - Specimen Processing. Containment Hall - General Population Housing. High-Security Sector - Dangerous Specimen Storage. Escape Pod Bay - Emergency Evacuation. Director's Office - Commander Vex."
+                },
+                {
+                    "id": "escape_pod_bay_door",
+                    "name": "escape pod bay door",
+                    "description": "A sealed emergency door leading to the escape pod bay. A security terminal displays three verification questions that must be answered correctly.",
+                    "locked": true,
+                    "lock_type": "password",
+                    "password_questions": [
+                        {
+                            "question": "Who is the facility director?",
+                            "answer": "commander sarah vex",
+                            "hint": "Check the facility datapad and personnel roster for the director's name"
+                        },
+                        {
+                            "question": "Where are dangerous specimens kept?",
+                            "answer": "high-security sector",
+                            "hint": "The safety manual and monitoring station mention where dangerous specimens are housed"
+                        },
+                        {
+                            "question": "What is your role?",
+                            "answer": "xenobiologist",
+                            "hint": "The personnel roster lists your assignment on this mission"
+                        }
+                    ],
+                    "direction": "east",
+                    "leads_to": "escape_pod_bay",
+                    "aliases": [
+                        "door",
+                        "bay",
+                        "east"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "escape_pod_bay",
+            "name": "Emergency Escape Pod Bay",
+            "description": "You have reached the escape pod bay! A sleek emergency evacuation pod sits ready in its launch cradle. Through the viewport, you can see the stars and the safety of space beyond. The pod's systems are online and ready for immediate departure. Warning lights flash as the facility's containment systems continue to fail behind you.",
+            "items": [
+                {
+                    "id": "escape_pod",
+                    "name": "emergency escape pod",
+                    "description": "A compact spacecraft designed for emergency evacuation to the nearest space station"
+                },
+                {
+                    "id": "launch_console",
+                    "name": "pod launch console",
+                    "description": "The control panel for initiating the escape pod launch sequence",
+                    "readable": true,
+                    "text": "LAUNCH SYSTEM READY. All systems green. Destination: Orbital Station Gamma. Estimated travel time: 4 hours. Press LAUNCH to evacuate."
+                },
+                {
+                    "id": "viewport",
+                    "name": "observation viewport",
+                    "description": "A reinforced window showing the vast expanse of space and distant stars"
+                }
+            ],
+            "exits": [],
+            "is_goal": true,
+            "win_message": "SUCCESS! You board the escape pod and initiate the launch sequence. The pod rockets away from the failing alien zoo facility as containment breaches spread throughout the station. Through the viewport, you watch the facility shrink into the distance as you head toward safety. You have escaped the alien zoo and survived to tell the tale. You win!"
+        }
+    ]
+}

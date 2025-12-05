@@ -1,0 +1,234 @@
+{
+    "theme": "Time-Traveler's Workshop",
+    "title": "Time-Traveler's Workshop Adventure #49",
+    "goal": "Solve the puzzles, achieve the main objective, and escape.",
+    "starting_room": "workshop_main",
+    "rooms": [
+        {
+            "id": "workshop_main",
+            "name": "Temporal Workshop",
+            "description": "A cluttered workshop filled with strange machinery and glowing temporal devices. Blueprints cover the walls, and a large chalkboard displays complex equations. The air crackles with residual temporal energy. Gears and clockwork mechanisms litter every surface.",
+            "items": [
+                {
+                    "id": "workbench",
+                    "name": "cluttered workbench",
+                    "description": "A wooden workbench covered in tools and half-assembled devices",
+                    "searchable": true,
+                    "contains": [
+                        "temporal_wrench"
+                    ]
+                },
+                {
+                    "id": "temporal_wrench",
+                    "name": "temporal adjustment wrench",
+                    "description": "A specialized wrench that glows with blue energy"
+                },
+                {
+                    "id": "filing_system",
+                    "name": "research filing cabinet",
+                    "description": "A metal cabinet with three drawers containing research documents",
+                    "subcontainers": [
+                        {
+                            "id": "top_drawer",
+                            "name": "top drawer",
+                            "locked": false,
+                            "contains": [
+                                "research_notes"
+                            ]
+                        },
+                        {
+                            "id": "middle_drawer",
+                            "name": "middle drawer",
+                            "locked": true,
+                            "lock_type": "combination",
+                            "combination": "1955",
+                            "contains": [
+                                "laboratory_keycard"
+                            ]
+                        },
+                        {
+                            "id": "bottom_drawer",
+                            "name": "bottom drawer",
+                            "locked": false,
+                            "contains": []
+                        }
+                    ]
+                },
+                {
+                    "id": "research_notes",
+                    "name": "temporal research journal",
+                    "description": "A notebook filled with observations about time travel",
+                    "readable": true,
+                    "text": "Research Log: My first successful temporal displacement occurred in 1955. The key to stable time travel lies in understanding three principles: the name of the lead researcher (Dr Chronos), the location of temporal anchors (Quantum Laboratory), and the power source (Temporal Core)."
+                },
+                {
+                    "id": "laboratory_keycard",
+                    "name": "security access card",
+                    "description": "A keycard labeled 'Laboratory Access - Level 3'"
+                },
+                {
+                    "id": "chalkboard",
+                    "name": "equation chalkboard",
+                    "description": "A large board covered in temporal mechanics equations",
+                    "readable": true,
+                    "text": "Temporal Displacement Formula: T = (E \u00d7 M) / C\u00b2. Note: All experiments conducted by Dr Chronos in the Quantum Laboratory. Power drawn from the Temporal Core generator."
+                },
+                {
+                    "id": "tool_chest",
+                    "name": "locked tool chest",
+                    "description": "A heavy chest secured with a mechanical lock",
+                    "locked": true,
+                    "key_required": "temporal_wrench",
+                    "contains": [
+                        "time_crystal",
+                        "chronometer_note"
+                    ]
+                },
+                {
+                    "id": "time_crystal",
+                    "name": "stabilized time crystal",
+                    "description": "A glowing crystal that pulses with temporal energy"
+                },
+                {
+                    "id": "chronometer_note",
+                    "name": "chronometer calibration guide",
+                    "description": "Instructions for temporal device calibration",
+                    "readable": true,
+                    "text": "Calibration Protocol: The portal requires precise temporal coordinates. Set chronometer to founding year of temporal research: 1885. Remember: Dr Chronos established the Quantum Laboratory to house the Temporal Core."
+                },
+                {
+                    "id": "sealed_laboratory_door",
+                    "name": "sealed laboratory door",
+                    "description": "A reinforced door with a card reader and security panel",
+                    "locked": true,
+                    "key_required": "laboratory_keycard",
+                    "direction": "north",
+                    "leads_to": "quantum_laboratory",
+                    "aliases": [
+                        "door",
+                        "north"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "quantum_laboratory",
+            "name": "Quantum Laboratory",
+            "description": "A pristine laboratory with humming temporal equipment. Holographic displays show timelines branching in multiple directions. A massive temporal gateway dominates the far wall, currently inactive. Control panels and monitoring stations line the walls.",
+            "items": [
+                {
+                    "id": "control_console",
+                    "name": "main control console",
+                    "description": "A complex console with multiple compartments and displays",
+                    "subcontainers": [
+                        {
+                            "id": "upper_panel",
+                            "name": "upper panel",
+                            "locked": false,
+                            "contains": [
+                                "activation_manual"
+                            ]
+                        },
+                        {
+                            "id": "lower_panel",
+                            "name": "lower panel",
+                            "locked": true,
+                            "lock_type": "combination",
+                            "combination": "1885",
+                            "contains": [
+                                "temporal_key"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "activation_manual",
+                    "name": "gateway activation manual",
+                    "description": "A technical manual for operating the temporal gateway",
+                    "readable": true,
+                    "text": "Gateway Activation Procedure: Insert temporal key into primary lock. Answer security verification questions. Questions will verify: researcher identity, facility name, and power source designation."
+                },
+                {
+                    "id": "temporal_key",
+                    "name": "crystalline temporal key",
+                    "description": "A key made of compressed temporal energy"
+                },
+                {
+                    "id": "monitoring_station",
+                    "name": "temporal monitoring station",
+                    "description": "A station displaying temporal flux readings and historical data",
+                    "readable": true,
+                    "text": "System Status: Temporal Core operating at 98% efficiency. Quantum Laboratory systems nominal. Lead Researcher: Dr Chronos. All temporal anchors stable."
+                },
+                {
+                    "id": "research_terminal",
+                    "name": "research database terminal",
+                    "description": "A computer terminal with access to research archives",
+                    "searchable": true,
+                    "contains": [
+                        "personnel_file"
+                    ]
+                },
+                {
+                    "id": "personnel_file",
+                    "name": "personnel records",
+                    "description": "Digital files containing staff information",
+                    "readable": true,
+                    "text": "Personnel Database: Dr Chronos - Lead Temporal Researcher. Facility: Quantum Laboratory. Primary Achievement: Development of the Temporal Core power system enabling stable time travel."
+                },
+                {
+                    "id": "Temporal_Gateway_entrance",
+                    "name": "Temporal Gateway entrance",
+                    "description": "A massive circular gateway surrounded by glowing conduits. A security terminal displays three verification questions.",
+                    "locked": true,
+                    "lock_type": "password",
+                    "password_questions": [
+                        {
+                            "question": "Who is the lead temporal researcher?",
+                            "answer": "dr chronos",
+                            "hint": "Check the research notes and personnel files"
+                        },
+                        {
+                            "question": "What is the name of this facility?",
+                            "answer": "quantum laboratory",
+                            "hint": "Look at the monitoring station and research documents"
+                        },
+                        {
+                            "question": "What powers the temporal gateway?",
+                            "answer": "temporal core",
+                            "hint": "The personnel file mentions the power system"
+                        }
+                    ],
+                    "direction": "east",
+                    "leads_to": "portal_chamber",
+                    "aliases": [
+                        "gateway",
+                        "east"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "portal_chamber",
+            "name": "Active Temporal Gateway",
+            "description": "You stand before the fully activated temporal gateway! Swirling energy fills the massive portal, showing glimpses of different time periods. The gateway hums with power, ready to transport you through time. Control panels display 'TEMPORAL COORDINATES LOCKED - SAFE PASSAGE CONFIRMED'.",
+            "items": [
+                {
+                    "id": "active_portal",
+                    "name": "active Temporal Gateway",
+                    "description": "A swirling vortex of temporal energy showing your destination time period"
+                },
+                {
+                    "id": "temporal_stabilizer",
+                    "name": "temporal stabilization array",
+                    "description": "A ring of devices keeping the portal stable and safe for travel"
+                }
+            ],
+            "exits": [],
+            "is_goal": true,
+            "win_message": "SUCCESS! You have activated the Temporal Gateway and solved all of Dr Chronos's puzzles. The portal swirls with stable temporal energy, ready to transport you through time. You step through the gateway and feel reality shift around you as you travel through the timestream. Your adventure through the Time-Traveler's Workshop is complete! You win!"
+        }
+    ]
+}

@@ -1,214 +1,223 @@
 {
-  "theme": "Scientific Spy",
-  "title": "Breakout from the Secret Laboratory",
-  "goal": "Retrieve the sensitive information from the computer and escape the laboratory.",
+  "theme": "Cursed Pirate Lagoon",
+  "title": "Cursed Pirate Lagoon Adventure #2",
+  "goal": "Solve the puzzles, achieve the main objective, and escape.",
+  "starting_room": "shipwreck_cabin",
   "rooms": [
     {
-      "id": "computer_hub",
-      "name": "Computer Hub",
-      "description": "A small, dark room illuminated only by the cold glow of several computer lock screens on the north wall. File cabinets stand against the east and west walls. The only exit is a doorway to the south leading into the laboratory.",
+      "id": "shipwreck_cabin",
+      "name": "Shipwreck Cabin",
+      "description": "The rotting interior of a beached pirate ship. Moonlight filters through holes in the hull. Barnacles cover the walls, and the smell of salt and decay fills the air. A skeleton sits slumped in the captain's chair, still clutching a rusted compass.",
       "items": [
         {
-          "id": "computer",
-          "name": "locked computer",
-          "description": "A high-security terminal displaying a password hint.",
-          "readable": true,
-          "text": "Password Hint: shift file info by 5",
-          "locked": true,
-          "lock_type": "password",
-          "password": "ilovecats",
-          "contains": []
-        },
-
-        {
-          "id": "left_cabinet",
-          "name": "left file cabinet",
-          "description": "A metal file cabinet with two drawers.",
+          "id": "captains_desk",
+          "name": "captain's desk",
+          "description": "A weathered oak desk covered in charts and nautical instruments. Three drawers are built into the front.",
           "subcontainers": [
             {
-              "id": "left_drawer_1",
-              "name": "top drawer (left)",
+              "id": "top_drawer",
+              "name": "top drawer",
               "locked": false,
-              "contains": ["paper_4"]
+              "contains": [
+                "captains_log"
+              ]
             },
             {
-              "id": "left_drawer_2",
-              "name": "bottom drawer (left)",
+              "id": "middle_drawer",
+              "name": "middle drawer",
+              "locked": true,
+              "lock_type": "combination",
+              "combination": "1718",
+              "contains": [
+                "iron_key"
+              ]
+            },
+            {
+              "id": "bottom_drawer",
+              "name": "bottom drawer",
               "locked": false,
-              "contains": ["paper_2"]
+              "contains": []
             }
           ]
         },
         {
-          "id": "right_cabinet",
-          "name": "right file cabinet",
-          "description": "A metal file cabinet with two drawers.",
-          "subcontainers": [
-            {
-              "id": "right_drawer_1",
-              "name": "top drawer (right)",
-              "locked": false,
-              "contains": ["paper_1"]
-            },
-            {
-              "id": "right_drawer_2",
-              "name": "bottom drawer (right)",
-              "locked": false,
-              "contains": ["paper_3", "flash_drive"]
-            }
+          "id": "captains_log",
+          "name": "captain's logbook",
+          "description": "A leather-bound journal with water-stained pages",
+          "readable": true,
+          "text": "Final entry: The year is 1718. We buried the cursed treasure in the cave beyond the lagoon. Only Captain Blackheart knows the way. The crew's names: First Mate Morgan, Gunner Flint, and Cook Bones. Beware the curse!"
+        },
+        {
+          "id": "sea_chest",
+          "name": "old sea chest",
+          "description": "A barnacle-encrusted chest with a skull-shaped lock",
+          "locked": true,
+          "key_required": "iron_key",
+          "contains": [
+            "treasure_map"
           ]
         },
-
         {
-          "id": "paper_4",
-          "name": "note labeled 4",
-          "description": "A paper with encoded text.",
+          "id": "treasure_map",
+          "name": "torn treasure map",
+          "description": "A map showing the lagoon with an X marking a cave entrance",
           "readable": true,
-          "text": "#4 fwx"
+          "text": "The map shows a cave entrance marked with an X. Scrawled at the bottom: 'The cave opens only to those who know: Who commands the ship? Where do the dead rest? What breaks the curse?'"
         },
         {
-          "id": "paper_2",
-          "name": "note labeled 2",
-          "description": "A paper with encoded text.",
-          "readable": true,
-          "text": "#2 ru"
+          "id": "iron_key",
+          "name": "rusty iron key",
+          "description": "A heavy iron key covered in rust and barnacles"
         },
         {
-          "id": "paper_1",
-          "name": "note labeled 1",
-          "description": "A paper with encoded text.",
-          "readable": true,
-          "text": "#1 nq"
-        },
-        {
-          "id": "paper_3",
-          "name": "note labeled 3",
-          "description": "A paper with encoded text.",
-          "readable": true,
-          "text": "#3 hj"
-        },
-
-        {
-          "id": "flash_drive",
-          "name": "flash drive",
-          "description": "A small USB drive used to download sensitive data once the computer is unlocked."
-        },
-
-        {
-          "id": "hub_exit_south",
-          "name": "doorway to the lab",
-          "description": "A simple opening leading to the laboratory.",
-          "direction": "south",
-          "leads_to": "lab"
-        }
-      ],
-      "exits": []
-    },
-
-    {
-      "id": "lab",
-      "name": "The Lab",
-      "description": "A pristine laboratory with white tables, shelves of equipment, and a poster about chemical safety on the wall. A massive metal door blocks the way to the south, held shut by thick wooden beams.",
-      "items": [
-        {
-          "id": "chemical_poster",
-          "name": "safety poster",
-          "description": "A poster with a warning slogan.",
-          "readable": true,
-          "text": "Beware, Chemicals Can BURN"
-        },
-        {
-          "id": "wooden_beams",
-          "name": "wooden beams",
-          "description": "Sturdy wooden beams barring the metal door. They look flammable with the right chemicals.",
-          "burnable": true
-        },
-        {
-          "id": "metal_door_lab_exit",
-          "name": "large metal door",
-          "description": "A sealed metal exit door blocked by wooden beams.",
-          "locked": true,
-          "lock_type": "puzzle",
-          "puzzle_description": "Burn the wooden beams using Boron, Uranium, and Radon.",
-          "direction": "south",
-          "leads_to": "hallway"
-        },
-
-        {
-          "id": "chemical_table",
-          "name": "table of chemicals",
-          "description": "A metal table holding several beakers labeled with chemical names.",
+          "id": "skeleton",
+          "name": "skeleton in captain's chair",
+          "description": "The remains of a pirate captain, still wearing a tattered coat",
           "searchable": true,
           "contains": [
-            "oxygen",
-            "boron",
-            "hydrogen",
-            "uranium",
-            "fluorine",
-            "radon",
-            "periodic_table"
+            "silver_coin"
           ]
         },
-
         {
-          "id": "oxygen",
-          "name": "Oxygen",
-          "description": "A chemical labeled O."
+          "id": "silver_coin",
+          "name": "cursed silver coin",
+          "description": "A Spanish silver coin that glows faintly with an eerie green light"
         },
         {
-          "id": "boron",
-          "name": "Boron",
-          "description": "A chemical labeled B."
-        },
-        {
-          "id": "hydrogen",
-          "name": "Hydrogen",
-          "description": "A chemical labeled H."
-        },
-        {
-          "id": "uranium",
-          "name": "Uranium",
-          "description": "A chemical labeled U."
-        },
-        {
-          "id": "fluorine",
-          "name": "Fluorine",
-          "description": "A chemical labeled F."
-        },
-        {
-          "id": "radon",
-          "name": "Radon",
-          "description": "A chemical labeled Rn."
-        },
-        {
-          "id": "periodic_table",
-          "name": "periodic table",
-          "description": "A standard periodic table with chemical symbols.",
-          "readable": true,
-          "text": "Oxygen = O, Boron = B, Hydrogen = H, Uranium = U, Fluorine = F, Radon = Rn"
+          "id": "cabin_door",
+          "name": "cabin door",
+          "description": "A swollen wooden door leading out to the beach",
+          "locked": false,
+          "direction": "north",
+          "leads_to": "lagoon_beach",
+          "aliases": [
+            "door",
+            "exit",
+            "north"
+          ]
         }
       ],
       "exits": []
     },
-
     {
-      "id": "hallway",
-      "name": "Hallway",
-      "description": "A long, dark hallway. A hidden speaker crackles overhead.",
+      "id": "lagoon_beach",
+      "name": "Moonlit Lagoon Beach",
+      "description": "A crescent beach of white sand under a full moon. Palm trees sway in the warm breeze. Phosphorescent waves lap at the shore. To the west, a dark cave entrance yawns in the rocky cliff face. Strange whispers seem to emanate from within.",
       "items": [
         {
-          "id": "ceiling_voice",
-          "name": "booming voice",
-          "description": "A voice from the ceiling asking a question.",
-          "question": "What was the last chemical needed to escape?",
-          "answer": "radon",
-          "success_effect": "A ceiling tile slides open and a harness drops down for extraction."
+          "id": "palm_tree",
+          "name": "hollow palm tree",
+          "description": "A dead palm tree with a hollow trunk",
+          "searchable": true,
+          "contains": [
+            "pirates_note"
+          ]
+        },
+        {
+          "id": "pirates_note",
+          "name": "waterlogged note",
+          "description": "A note written in crude handwriting",
+          "readable": true,
+          "text": "Morgan's reminder: The captain always said the treasure would rest in Davy Jones' locker. Only gold can break the curse of the silver. - First Mate Morgan"
+        },
+        {
+          "id": "driftwood_pile",
+          "name": "pile of driftwood",
+          "description": "A jumbled pile of weathered wood and debris",
+          "searchable": true,
+          "contains": []
+        },
+        {
+          "id": "dark_cave_entrance",
+          "name": "dark cave entrance",
+          "description": "A foreboding cave entrance carved with skull symbols. A stone door blocks the way, with three questions etched into its surface.",
+          "locked": true,
+          "lock_type": "password",
+          "password_questions": [
+            {
+              "question": "Who commands the ship?",
+              "answer": "captain blackheart",
+              "hint": "Check the captain's logbook for the captain's name"
+            },
+            {
+              "question": "Where do the dead rest?",
+              "answer": "davy jones locker",
+              "hint": "Look for notes left by the crew"
+            },
+            {
+              "question": "What breaks the curse?",
+              "answer": "gold",
+              "hint": "Morgan's note mentions what can break the curse"
+            }
+          ],
+          "direction": "west",
+          "leads_to": "treasure_cave",
+          "aliases": [
+            "cave",
+            "entrance",
+            "west"
+          ]
+        }
+      ],
+      "exits": []
+    },
+    {
+      "id": "treasure_cave",
+      "name": "Cursed Treasure Cave",
+      "description": "A vast cavern lit by glowing green crystals. In the center sits a stone altar holding an ornate chest overflowing with gold doubloons. The cursed silver coin in your possession begins to pulse with dark energy. Beyond the altar, a shimmering portal of light offers escape.",
+      "items": [
+        {
+          "id": "treasure_chest",
+          "name": "pirate treasure chest",
+          "description": "An overflowing chest of gold coins, jewels, and precious artifacts",
+          "searchable": true,
+          "contains": [
+            "golden_doubloon"
+          ]
+        },
+        {
+          "id": "golden_doubloon",
+          "name": "golden doubloon",
+          "description": "A heavy gold coin that radiates warmth and light"
+        },
+        {
+          "id": "stone_altar",
+          "name": "ancient stone altar",
+          "description": "A weathered altar with two circular indentations - one silver, one gold",
+          "readable": true,
+          "text": "Inscription: 'To break the curse and find freedom, place the cursed silver and blessed gold together upon this altar.'"
+        },
+        {
+          "id": "shimmering_portal",
+          "name": "shimmering portal",
+          "description": "A magical portal of swirling light that leads to freedom. It requires both the cursed silver coin and the golden doubloon to activate.",
+          "locked": true,
+          "key_required": "golden_doubloon",
+          "direction": "north",
+          "leads_to": "freedom",
+          "aliases": [
+            "portal",
+            "exit",
+            "north"
+          ]
+        }
+      ],
+      "exits": []
+    },
+    {
+      "id": "freedom",
+      "name": "Safe Harbor",
+      "description": "You emerge on a sunny beach far from the cursed lagoon. A merchant ship waits at anchor, ready to take you home. The curse is broken, and the treasure is yours!",
+      "items": [
+        {
+          "id": "merchant_ship",
+          "name": "merchant vessel",
+          "description": "A sturdy ship with friendly sailors waving from the deck"
         }
       ],
       "exits": [],
       "is_goal": true,
-      "win_message": "You made it out of the lab with the information and without being caught! You win!"
+      "win_message": "You've broken the curse of the Pirate Lagoon and escaped with the treasure! The cursed silver coin crumbles to dust as the golden doubloon glows brightly. Captain Blackheart's spirit appears briefly, nodding in gratitude before fading away. You sail toward the horizon, a wealthy adventurer with an incredible tale to tell. You win!"
     }
-  ],
-  "starting_room": "computer_hub"
+  ]
 }

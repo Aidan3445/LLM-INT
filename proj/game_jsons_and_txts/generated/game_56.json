@@ -1,0 +1,264 @@
+{
+    "theme": "Forgotten Clock Tower",
+    "title": "Forgotten Clock Tower Adventure #56",
+    "goal": "Solve the puzzles, achieve the main objective, and escape.",
+    "starting_room": "tower_base",
+    "rooms": [
+        {
+            "id": "tower_base",
+            "name": "Clock Tower Base",
+            "description": "The ground floor of an abandoned clock tower. Dust covers everything, and cobwebs hang from the rafters. A massive pendulum hangs motionless in the center. Moonlight filters through cracked windows, illuminating rusted gears scattered across the floor. The air smells of oil and decay.",
+            "items": [
+                {
+                    "id": "workbench",
+                    "name": "clockmaker's workbench",
+                    "description": "A wooden workbench covered in tools and clock parts. Three drawers are built into the front.",
+                    "subcontainers": [
+                        {
+                            "id": "top_drawer",
+                            "name": "top drawer",
+                            "locked": false,
+                            "contains": [
+                                "clockmaker_journal"
+                            ]
+                        },
+                        {
+                            "id": "middle_drawer",
+                            "name": "middle drawer",
+                            "locked": true,
+                            "lock_type": "combination",
+                            "combination": "1860",
+                            "contains": [
+                                "brass_key"
+                            ]
+                        },
+                        {
+                            "id": "bottom_drawer",
+                            "name": "bottom drawer",
+                            "locked": false,
+                            "contains": []
+                        }
+                    ]
+                },
+                {
+                    "id": "clockmaker_journal",
+                    "name": "clockmaker's journal",
+                    "description": "A leather-bound journal with yellowed pages",
+                    "readable": true,
+                    "text": "Final Entry, 1860: I have completed my life's work - this magnificent clock tower. My apprentice, Thomas Gearwright, will maintain it after I'm gone. The master gear chamber holds my greatest creation. Remember: 12 hours, 60 minutes, 60 seconds - the rhythm of time itself."
+                },
+                {
+                    "id": "brass_key",
+                    "name": "brass gear key",
+                    "description": "A key shaped like a small gear, made of polished brass"
+                },
+                {
+                    "id": "tool_cabinet",
+                    "name": "locked tool cabinet",
+                    "description": "A tall metal cabinet with a gear-shaped lock",
+                    "locked": true,
+                    "key_required": "brass_key",
+                    "contains": [
+                        "maintenance_log"
+                    ]
+                },
+                {
+                    "id": "maintenance_log",
+                    "name": "maintenance log",
+                    "description": "A record book with maintenance entries",
+                    "readable": true,
+                    "text": "Maintenance Log - Thomas Gearwright, Apprentice: The master clockmaker taught me everything. The bell tower holds the Heart of Time, a crystal that powers the entire mechanism. To access it, one must know: Who built this tower? Where does the crystal reside? What is the tower's purpose?"
+                },
+                {
+                    "id": "pendulum",
+                    "name": "massive pendulum",
+                    "description": "A huge brass pendulum suspended from above, frozen in place",
+                    "searchable": true,
+                    "contains": [
+                        "silver_key"
+                    ]
+                },
+                {
+                    "id": "silver_key",
+                    "name": "tarnished silver key",
+                    "description": "A small silver key hidden in the pendulum mechanism"
+                },
+                {
+                    "id": "spiral_staircase",
+                    "name": "spiral staircase",
+                    "description": "Iron stairs winding upward into darkness, blocked by a locked gate",
+                    "locked": true,
+                    "key_required": "silver_key",
+                    "direction": "north",
+                    "leads_to": "gear_chamber",
+                    "aliases": [
+                        "stairs",
+                        "up",
+                        "north"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "gear_chamber",
+            "name": "Master Gear Chamber",
+            "description": "A vast room filled with enormous interlocking gears and mechanisms. The walls are lined with clock faces showing different times. A massive gear assembly dominates the center, and the sound of ticking echoes from somewhere above. Brass pipes and chains run along the ceiling.",
+            "items": [
+                {
+                    "id": "clock_face_london",
+                    "name": "clock face labeled London",
+                    "description": "A clock face permanently stopped at 12:00",
+                    "readable": true,
+                    "text": "London - 12:00. Beneath the clock is engraved: 'The hour of completion.'"
+                },
+                {
+                    "id": "clock_face_paris",
+                    "name": "clock face labeled Paris",
+                    "description": "A clock face permanently stopped at a specific time",
+                    "readable": true,
+                    "text": "Paris - The minute hand points to 60. Engraved below: 'Minutes in an hour.'"
+                },
+                {
+                    "id": "clock_face_rome",
+                    "name": "clock face labeled Rome",
+                    "description": "A clock face with only a second hand visible",
+                    "readable": true,
+                    "text": "Rome - The second hand points to 60. Engraved below: 'Seconds in a minute.'"
+                },
+                {
+                    "id": "control_panel",
+                    "name": "gear control panel",
+                    "description": "A brass panel with three dials and a locked compartment",
+                    "subcontainers": [
+                        {
+                            "id": "panel_compartment",
+                            "name": "panel compartment",
+                            "locked": true,
+                            "lock_type": "combination",
+                            "combination": "126060",
+                            "contains": [
+                                "crystal_key"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "crystal_key",
+                    "name": "crystal key",
+                    "description": "A key made of clear crystal that refracts light into rainbow colors"
+                },
+                {
+                    "id": "gear_assembly",
+                    "name": "central gear assembly",
+                    "description": "A complex arrangement of gears and mechanisms",
+                    "searchable": true,
+                    "contains": [
+                        "blueprint"
+                    ]
+                },
+                {
+                    "id": "blueprint",
+                    "name": "tower blueprint",
+                    "description": "A detailed architectural drawing of the clock tower",
+                    "readable": true,
+                    "text": "Blueprint by Master Clockmaker Heinrich Zeitgeist, 1860. The Heart of Time crystal is housed in the Bell Tower chamber. Purpose: To mark the passage of time for all eternity and serve as a beacon of precision."
+                },
+                {
+                    "id": "reinforced_door_to_bell_tower",
+                    "name": "reinforced door to bell tower",
+                    "description": "A heavy oak door with brass reinforcements. Three questions are carved into a brass plaque.",
+                    "locked": true,
+                    "lock_type": "password",
+                    "password_questions": [
+                        {
+                            "question": "Who built this tower?",
+                            "answer": "heinrich zeitgeist",
+                            "hint": "Check the clockmaker's journal and the blueprint"
+                        },
+                        {
+                            "question": "Where does the crystal reside?",
+                            "answer": "bell tower",
+                            "hint": "The maintenance log and blueprint mention this"
+                        },
+                        {
+                            "question": "What is the tower's purpose?",
+                            "answer": "mark the passage of time",
+                            "hint": "Read the blueprint carefully"
+                        }
+                    ],
+                    "direction": "north",
+                    "leads_to": "bell_tower",
+                    "aliases": [
+                        "door",
+                        "north"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "bell_tower",
+            "name": "Bell Tower Summit",
+            "description": "The highest chamber of the clock tower. Massive bells hang from the ceiling, and the four clock faces are visible through openings in the walls. In the center, on a pedestal of gears, rests a glowing crystal - the Heart of Time. The crystal pulses with a soft blue light, and the air hums with temporal energy.",
+            "items": [
+                {
+                    "id": "heart_of_time",
+                    "name": "Heart of Time crystal",
+                    "description": "A magnificent crystal that glows with inner light, pulsing like a heartbeat"
+                },
+                {
+                    "id": "crystal_pedestal",
+                    "name": "gear pedestal",
+                    "description": "An intricate pedestal made of interlocking gears holding the crystal"
+                },
+                {
+                    "id": "observation_deck",
+                    "name": "observation platform",
+                    "description": "A platform offering a view of the surrounding city",
+                    "searchable": true,
+                    "contains": [
+                        "final_note"
+                    ]
+                },
+                {
+                    "id": "final_note",
+                    "name": "clockmaker's final message",
+                    "description": "A sealed letter left by the master clockmaker",
+                    "readable": true,
+                    "text": "To whoever finds this: You have proven yourself worthy by solving the tower's mysteries. The Heart of Time is yours to claim. May it guide you through the temporal gateway to freedom. - Heinrich Zeitgeist"
+                },
+                {
+                    "id": "shimmering_temporal_gateway",
+                    "name": "shimmering temporal gateway",
+                    "description": "A portal of swirling light and clockwork mechanisms that leads to escape",
+                    "locked": true,
+                    "key_required": "crystal_key",
+                    "direction": "east",
+                    "leads_to": "freedom",
+                    "aliases": [
+                        "gateway",
+                        "portal",
+                        "east"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "freedom",
+            "name": "Outside the Tower",
+            "description": "You step through the gateway and find yourself outside the clock tower at dawn. The first rays of sunlight illuminate the tower, and you hear the bells begin to chime for the first time in decades. The Heart of Time crystal in your hand glows warmly, and the tower's mechanisms spring to life behind you.",
+            "items": [
+                {
+                    "id": "tower_exterior",
+                    "name": "restored clock tower",
+                    "description": "The tower stands proud and functional once more, its clock faces showing the correct time"
+                }
+            ],
+            "exits": [],
+            "is_goal": true,
+            "win_message": "You have restored the Forgotten Clock Tower and claimed the Heart of Time! The tower's bells ring out across the city, marking time once more after years of silence. The master clockmaker's legacy lives on through your efforts. You win!"
+        }
+    ]
+}

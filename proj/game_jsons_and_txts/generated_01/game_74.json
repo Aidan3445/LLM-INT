@@ -1,0 +1,250 @@
+{
+  "theme": "Alien Zoo",
+  "title": "Alien Zoo Adventure #74",
+  "goal": "Solve the puzzles, achieve the main objective, and escape.",
+  "starting_room": "observation_deck",
+  "rooms": [
+    {
+      "id": "observation_deck",
+      "name": "Containment Observation Deck",
+      "description": "A sterile observation deck overlooking massive containment cells housing bizarre alien creatures. Holographic displays flicker with data about the specimens. Emergency lights cast an eerie red glow across the metallic walls. Through reinforced glass, you can see creatures from distant worlds pacing in their enclosures. The air smells of ozone and something distinctly alien.",
+      "items": [
+        {
+          "id": "control_console",
+          "name": "observation control console",
+          "description": "A complex console with multiple screens displaying specimen data and facility information",
+          "readable": true,
+          "text": "FACILITY STATUS: Galactic Zoo Station Alpha established 2247. Director: Dr. Xara Venn. Chief Xenobiologist: Dr. Kael Roth. Current specimens: 847. Emergency protocols: Evacuation via escape pod bay requires authorization."
+        },
+        {
+          "id": "specimen_display_1",
+          "name": "specimen data display",
+          "description": "A holographic display showing information about the contained aliens",
+          "readable": true,
+          "text": "SPECIMEN 847: Crystalline Mantis from Kepler-442b. Status: CONTAINED. Danger Level: EXTREME. Note: Most dangerous specimen in facility. Requires triple containment protocols."
+        },
+        {
+          "id": "equipment_locker",
+          "name": "equipment storage locker",
+          "description": "A metal locker containing observation equipment and supplies",
+          "searchable": true,
+          "contains": [
+            "access_card"
+          ]
+        },
+        {
+          "id": "access_card",
+          "name": "security access card",
+          "description": "A magnetic card labeled 'RESEARCH LAB ACCESS'"
+        },
+        {
+          "id": "filing_cabinet",
+          "name": "personnel filing cabinet",
+          "description": "A cabinet with three drawers containing staff records and documents",
+          "subcontainers": [
+            {
+              "id": "top_drawer",
+              "name": "top drawer",
+              "locked": false,
+              "contains": [
+                "facility_handbook"
+              ]
+            },
+            {
+              "id": "middle_drawer",
+              "name": "middle drawer",
+              "locked": true,
+              "lock_type": "combination",
+              "combination": "847",
+              "contains": [
+                "research_keycard"
+              ]
+            },
+            {
+              "id": "bottom_drawer",
+              "name": "bottom drawer",
+              "locked": false,
+              "contains": []
+            }
+          ]
+        },
+        {
+          "id": "facility_handbook",
+          "name": "facility operations handbook",
+          "description": "A manual detailing zoo operations and procedures",
+          "readable": true,
+          "text": "GALACTIC ZOO OPERATIONS: All specimens numbered sequentially. Highest number indicates most recent acquisition. Research conducted in the central research laboratory. Emergency evacuation procedures require knowledge of facility leadership and specimen data."
+        },
+        {
+          "id": "research_keycard",
+          "name": "research lab keycard",
+          "description": "A high security keycard with 'DR. ROTH - XENOBIOLOGY' printed on it"
+        },
+        {
+          "id": "observation_window",
+          "name": "reinforced observation window",
+          "description": "Thick transparent aluminum showing the alien containment cells below",
+          "readable": true,
+          "text": "Through the window you see various alien creatures: a floating gas being, a crystalline mantis with razor sharp limbs, and a bioluminescent blob. The crystalline mantis appears to be the most dangerous."
+        },
+        {
+          "id": "reinforced_laboratory_door",
+          "name": "reinforced laboratory door",
+          "description": "A heavy security door with a card reader, leading to the research laboratory",
+          "locked": true,
+          "key_required": "access_card",
+          "direction": "north",
+          "leads_to": "research_laboratory",
+          "aliases": [
+            "door",
+            "north"
+          ]
+        }
+      ],
+      "exits": []
+    },
+    {
+      "id": "research_laboratory",
+      "name": "Xenobiology Research Laboratory",
+      "description": "A high tech laboratory filled with alien specimens in stasis tubes, scientific equipment, and research stations. Holographic displays show DNA sequences and biological data. The walls are lined with specimen samples and research notes. A sealed escape pod access hatch glows on the far wall. The air is cool and sterile.",
+      "items": [
+        {
+          "id": "research_station",
+          "name": "main research station",
+          "description": "Dr. Roth's primary workstation covered with datapads and specimen analysis equipment",
+          "searchable": true,
+          "contains": [
+            "research_journal"
+          ]
+        },
+        {
+          "id": "research_journal",
+          "name": "xenobiologist research journal",
+          "description": "Dr. Roth's personal research notes",
+          "readable": true,
+          "text": "Day 156: Specimen 847 continues to be our most fascinating and dangerous subject. Director Venn has authorized additional containment measures. The creature originates from Kepler-442b, a planet in the habitable zone. My work here in the research laboratory has been the highlight of my career."
+        },
+        {
+          "id": "specimen_cabinet",
+          "name": "specimen storage cabinet",
+          "description": "A refrigerated cabinet containing preserved alien tissue samples",
+          "subcontainers": [
+            {
+              "id": "upper_compartment",
+              "name": "upper compartment",
+              "locked": false,
+              "contains": [
+                "tissue_sample"
+              ]
+            },
+            {
+              "id": "lower_compartment",
+              "name": "lower compartment",
+              "locked": true,
+              "key_required": "research_keycard",
+              "contains": [
+                "emergency_protocol"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "tissue_sample",
+          "name": "preserved tissue sample",
+          "description": "A sample from specimen 847 in a sealed container"
+        },
+        {
+          "id": "emergency_protocol",
+          "name": "emergency evacuation protocol",
+          "description": "A document outlining escape procedures",
+          "readable": true,
+          "text": "EMERGENCY EVACUATION: In case of containment breach, proceed immediately to escape pod bay. Security verification required. Questions: 1) What is the most dangerous specimen number? 2) Where does specimen 847 originate? 3) Who directs this facility?"
+        },
+        {
+          "id": "holographic_display",
+          "name": "holographic specimen display",
+          "description": "A 3D display showing rotating models of various alien species",
+          "readable": true,
+          "text": "SPECIMEN DATABASE: Displaying data for specimen 847. Origin: Kepler-442b. Classification: Crystalline Arthropod. Threat Level: MAXIMUM. This specimen represents the pinnacle of our collection and the greatest danger."
+        },
+        {
+          "id": "equipment_rack",
+          "name": "scientific equipment rack",
+          "description": "A rack holding various xenobiology tools and instruments",
+          "searchable": true,
+          "contains": [
+            "high_tech_binoculars"
+          ]
+        },
+        {
+          "id": "high_tech_binoculars",
+          "name": "high tech binoculars",
+          "description": "Advanced optical equipment for observing specimens from a safe distance"
+        },
+        {
+          "id": "director_desk",
+          "name": "director's desk",
+          "description": "A desk with administrative documents and facility reports",
+          "readable": true,
+          "text": "DIRECTOR'S LOG: Dr. Xara Venn, Station Director. This facility represents humanity's greatest achievement in xenobiology. Our research laboratory continues to produce groundbreaking discoveries. All personnel must know emergency protocols."
+        },
+        {
+          "id": "escape_pod_access_hatch",
+          "name": "escape pod access hatch",
+          "description": "A sealed hatch with a security terminal displaying three verification questions. Red warning lights flash around the frame.",
+          "locked": true,
+          "lock_type": "password",
+          "password_questions": [
+            {
+              "question": "What is the most dangerous specimen number?",
+              "answer": "847",
+              "hint": "Check the specimen displays and research journal for information about the most dangerous creature"
+            },
+            {
+              "question": "Where does specimen 847 originate?",
+              "answer": "kepler 442b",
+              "hint": "The holographic display and research journal mention the home planet"
+            },
+            {
+              "question": "Who directs this facility?",
+              "answer": "dr xara venn",
+              "hint": "Look at the control console and director's desk for leadership information"
+            }
+          ],
+          "direction": "east",
+          "leads_to": "escape_pod_bay",
+          "aliases": [
+            "hatch",
+            "east"
+          ]
+        }
+      ],
+      "exits": []
+    },
+    {
+      "id": "escape_pod_bay",
+      "name": "Emergency Escape Pod Bay",
+      "description": "You've reached the escape pod bay! A sleek emergency pod sits in its launch cradle, systems humming with power. Through the launch tube viewport, you can see the stars and the curve of the planet below. The pod's door is open and inviting. Warning lights have turned green, indicating launch readiness. Freedom is just moments away.",
+      "items": [
+        {
+          "id": "escape_pod",
+          "name": "emergency escape pod",
+          "description": "A compact spacecraft designed for emergency evacuation, capable of reaching the nearest space station"
+        },
+        {
+          "id": "launch_controls",
+          "name": "pod launch controls",
+          "description": "The control panel showing all systems green and ready for immediate departure"
+        },
+        {
+          "id": "viewport",
+          "name": "launch tube viewport",
+          "description": "A window showing the launch trajectory and the vast expanse of space beyond"
+        }
+      ],
+      "exits": [],
+      "is_goal": true,
+      "win_message": "SUCCESS! You climb into the escape pod and seal the hatch. The launch sequence initiates automatically, and within seconds you're rocketing away from the alien zoo station. Through the viewport, you watch the facility shrink into the distance as you head toward safety. You've escaped the Alien Zoo and survived to tell the tale! You win!"
+    }
+  ]
+}

@@ -1,0 +1,291 @@
+{
+  "theme": "Ancient Temple",
+  "title": "Ancient Temple Adventure #31",
+  "goal": "Solve the puzzles, achieve the main objective, and escape.",
+  "starting_room": "temple_entrance_hall",
+  "rooms": [
+    {
+      "id": "temple_entrance_hall",
+      "name": "Temple Entrance Hall",
+      "description": "A grand entrance hall with towering stone pillars covered in ancient hieroglyphs. Dust motes float in shafts of light streaming through cracks in the ceiling. Massive stone statues of guardian deities flank the entrance. The air is thick with the scent of age and mystery. Offerings and artifacts are scattered across stone pedestals.",
+      "items": [
+        {
+          "id": "stone_pedestal",
+          "name": "stone offering pedestal",
+          "description": "A weathered pedestal with carved symbols and ancient offerings",
+          "searchable": true,
+          "contains": [
+            "bronze_key"
+          ]
+        },
+        {
+          "id": "bronze_key",
+          "name": "ancient bronze key",
+          "description": "A heavy bronze key with temple symbols etched into its surface"
+        },
+        {
+          "id": "artifact_cabinet",
+          "name": "artifact storage cabinet",
+          "description": "A stone cabinet with three compartments used for storing sacred relics",
+          "subcontainers": [
+            {
+              "id": "upper_compartment",
+              "name": "upper compartment",
+              "locked": false,
+              "contains": [
+                "temple_inscription"
+              ]
+            },
+            {
+              "id": "middle_compartment",
+              "name": "middle compartment",
+              "locked": true,
+              "lock_type": "combination",
+              "combination": "1456",
+              "contains": [
+                "silver_key"
+              ]
+            },
+            {
+              "id": "lower_compartment",
+              "name": "lower compartment",
+              "locked": false,
+              "contains": []
+            }
+          ]
+        },
+        {
+          "id": "temple_inscription",
+          "name": "temple foundation inscription",
+          "description": "A stone tablet with carved text describing the temple's origins",
+          "readable": true,
+          "text": "This sacred temple was built in the year 1456 to honor Anubis, Guardian of the Underworld. High Priest Amenhotep consecrated these halls. All who seek passage must prove their worth in the Sacred Chamber before entering the Inner Sanctum."
+        },
+        {
+          "id": "silver_key",
+          "name": "ornate silver key",
+          "description": "A decorative silver key with hieroglyphic engravings"
+        },
+        {
+          "id": "guardian_statue_left",
+          "name": "left guardian statue",
+          "description": "A massive stone statue of a jackal-headed deity holding a staff",
+          "readable": true,
+          "text": "Statue inscription: 'Anubis, Guardian of the Underworld, protector of this sacred temple. He who judges the worthy and guards the path to the afterlife.'"
+        },
+        {
+          "id": "guardian_statue_right",
+          "name": "right guardian statue",
+          "description": "A towering statue of a deity with outstretched wings",
+          "readable": true,
+          "text": "Statue inscription: 'May Anubis guide all pilgrims who enter these halls. The Sacred Chamber holds the wisdom of the ancients.'"
+        },
+        {
+          "id": "offering_bowl",
+          "name": "ceremonial offering bowl",
+          "description": "A golden bowl containing dried flowers and incense",
+          "searchable": true,
+          "contains": [
+            "priest_scroll"
+          ]
+        },
+        {
+          "id": "priest_scroll",
+          "name": "high priest's scroll",
+          "description": "A papyrus scroll sealed with wax",
+          "readable": true,
+          "text": "From High Priest Amenhotep: I have sealed the sacred texts in the locked reliquary. Only those who know the year of our temple's founding may access them. Remember: pilgrims come to seek divine wisdom from Anubis."
+        },
+        {
+          "id": "stone_reliquary",
+          "name": "locked stone reliquary",
+          "description": "An ornate stone box with bronze fittings and a keyhole",
+          "locked": true,
+          "key_required": "bronze_key",
+          "contains": [
+            "sacred_papyrus"
+          ]
+        },
+        {
+          "id": "sacred_papyrus",
+          "name": "sacred papyrus",
+          "description": "An ancient papyrus with religious texts",
+          "readable": true,
+          "text": "Sacred Text: The Inner Sanctum is the holiest place in this temple, where Anubis's presence is strongest. Only pilgrims who understand the temple's purpose and honor its guardian may enter. The Sacred Chamber contains the knowledge you seek."
+        },
+        {
+          "id": "heavy_stone_door",
+          "name": "heavy stone door",
+          "description": "A massive door carved with hieroglyphs and religious scenes, leading to the Sacred Chamber",
+          "locked": true,
+          "key_required": "silver_key",
+          "direction": "north",
+          "leads_to": "sacred_chamber",
+          "aliases": [
+            "door",
+            "north"
+          ]
+        }
+      ],
+      "exits": []
+    },
+    {
+      "id": "sacred_chamber",
+      "name": "Sacred Chamber",
+      "description": "A vast chamber with walls covered in colorful hieroglyphs and religious murals. Stone altars line the walls, each dedicated to different aspects of the divine. Braziers cast flickering shadows across ancient texts carved into every surface. The ceiling depicts the journey to the afterlife. A sealed sanctum door stands at the far end.",
+      "items": [
+        {
+          "id": "main_altar",
+          "name": "central altar",
+          "description": "A large altar with offerings and sacred implements",
+          "readable": true,
+          "text": "Altar inscription: 'Here in the Sacred Chamber, pilgrims receive the wisdom of Anubis. High Priest Amenhotep performs the sacred rites. The Inner Sanctum awaits beyond.'"
+        },
+        {
+          "id": "hieroglyph_wall_east",
+          "name": "eastern hieroglyph wall",
+          "description": "A wall covered in detailed hieroglyphic text",
+          "readable": true,
+          "text": "The hieroglyphs tell the story of Anubis guiding souls through the underworld. Text reads: 'Anubis, the Guardian, weighs the hearts of the dead. He protects the sacred places and judges all who enter.'"
+        },
+        {
+          "id": "hieroglyph_wall_west",
+          "name": "western hieroglyph wall",
+          "description": "A wall with religious inscriptions and prayers",
+          "readable": true,
+          "text": "Prayer inscription: 'We are pilgrims seeking divine wisdom. We come to the Sacred Chamber to learn the mysteries. We honor Anubis, guardian of this temple.'"
+        },
+        {
+          "id": "scroll_shelf",
+          "name": "scroll storage shelf",
+          "description": "Stone shelves holding ancient papyrus scrolls",
+          "searchable": true,
+          "contains": [
+            "ritual_text"
+          ]
+        },
+        {
+          "id": "ritual_text",
+          "name": "ritual papyrus",
+          "description": "A scroll describing temple rituals and ceremonies",
+          "readable": true,
+          "text": "Ritual Instructions: All ceremonies in the Sacred Chamber are led by High Priest Amenhotep. Pilgrims must demonstrate their knowledge before entering the Inner Sanctum. Three truths must be spoken: the guardian's name, the holiest location, and the seeker's purpose."
+        },
+        {
+          "id": "offering_table",
+          "name": "offering table",
+          "description": "A table with various religious offerings and artifacts",
+          "subcontainers": [
+            {
+              "id": "left_box",
+              "name": "left offering box",
+              "locked": false,
+              "contains": [
+                "incense"
+              ]
+            },
+            {
+              "id": "right_box",
+              "name": "right offering box",
+              "locked": false,
+              "contains": [
+                "wisdom_tablet"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "incense",
+          "name": "sacred incense",
+          "description": "Fragrant incense used in temple ceremonies"
+        },
+        {
+          "id": "wisdom_tablet",
+          "name": "tablet of wisdom",
+          "description": "A clay tablet with important teachings",
+          "readable": true,
+          "text": "Teachings of the Temple: First - Know the guardian who protects this place: Anubis. Second - Know the holiest location: the Inner Sanctum. Third - Know your purpose: you are a pilgrim seeking divine wisdom."
+        },
+        {
+          "id": "mural_ceiling",
+          "name": "ceiling mural",
+          "description": "An elaborate painting depicting the afterlife journey",
+          "readable": true,
+          "text": "The mural shows Anubis leading souls to the Inner Sanctum, the most sacred part of the temple. Pilgrims journey through the Sacred Chamber to reach enlightenment."
+        },
+        {
+          "id": "priest_statue",
+          "name": "statue of High Priest Amenhotep",
+          "description": "A life-sized statue of the temple's high priest",
+          "readable": true,
+          "text": "Plaque: 'High Priest Amenhotep, servant of Anubis, keeper of the Sacred Chamber, guardian of ancient wisdom.'"
+        },
+        {
+          "id": "sealed_sanctum_door",
+          "name": "sealed sanctum door",
+          "description": "An imposing door sealed with divine magic. Three questions are carved into the stone surface in glowing hieroglyphs.",
+          "locked": true,
+          "lock_type": "password",
+          "password_questions": [
+            {
+              "question": "Who is the guardian of this temple?",
+              "answer": "anubis",
+              "hint": "Check the temple inscriptions, statues, and sacred texts throughout the temple"
+            },
+            {
+              "question": "What is the holiest location in this temple?",
+              "answer": "inner sanctum",
+              "hint": "The sacred papyrus and wisdom tablet mention the most sacred place"
+            },
+            {
+              "question": "What is your purpose here?",
+              "answer": "pilgrim",
+              "hint": "Multiple texts describe those who come to the temple seeking wisdom"
+            }
+          ],
+          "direction": "east",
+          "leads_to": "inner_sanctum",
+          "aliases": [
+            "sanctum",
+            "east"
+          ]
+        }
+      ],
+      "exits": []
+    },
+    {
+      "id": "inner_sanctum",
+      "name": "Inner Sanctum",
+      "description": "You have reached the Inner Sanctum! The holiest chamber of the ancient temple bathes in ethereal golden light. A magnificent statue of Anubis dominates the room, its eyes seeming to glow with divine power. Sacred artifacts rest on golden pedestals. Behind the statue, a hidden passage leads to daylight and freedom - the temple's secret exit to the outside world.",
+      "items": [
+        {
+          "id": "anubis_statue",
+          "name": "grand statue of Anubis",
+          "description": "A towering statue of the jackal-headed god, crafted from black stone and gold",
+          "readable": true,
+          "text": "The statue radiates an aura of ancient power. An inscription at its base reads: 'You have proven yourself worthy, pilgrim. The wisdom of Anubis is yours. Go forth with divine blessing.'"
+        },
+        {
+          "id": "golden_pedestal",
+          "name": "golden artifact pedestal",
+          "description": "Pedestals holding sacred relics and treasures of the temple"
+        },
+        {
+          "id": "sacred_flame",
+          "name": "eternal sacred flame",
+          "description": "A flame that has burned for centuries, never extinguishing"
+        },
+        {
+          "id": "hidden_passage",
+          "name": "hidden passage",
+          "description": "A secret exit behind the statue, leading to freedom",
+          "readable": true,
+          "text": "The passage winds upward through the temple structure, with daylight visible at the end. Fresh air flows through, promising escape."
+        }
+      ],
+      "exits": [],
+      "is_goal": true,
+      "win_message": "You have reached the Inner Sanctum and received the blessing of Anubis! As you stand before the magnificent statue, you feel the weight of ancient wisdom settling upon you. The hidden passage behind the statue leads you safely out of the temple into the bright sunlight. You have solved the mysteries of the Ancient Temple and escaped with divine favor. You win!"
+    }
+  ]
+}

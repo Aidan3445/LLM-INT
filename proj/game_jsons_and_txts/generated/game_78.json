@@ -1,0 +1,223 @@
+{
+    "theme": "Giant's Kitchen",
+    "title": "Giant's Kitchen Adventure #78",
+    "goal": "Solve the puzzles, achieve the main objective, and escape.",
+    "starting_room": "pantry_shelf",
+    "rooms": [
+        {
+            "id": "pantry_shelf",
+            "name": "Giant's Pantry Shelf",
+            "description": "You find yourself on a massive wooden shelf in a giant's pantry. Enormous jars of ingredients tower around you like buildings. The air smells of cinnamon and dried herbs. Far below, you can see the pantry floor. A gap between jars leads toward the main kitchen.",
+            "items": [
+                {
+                    "id": "flour_jar",
+                    "name": "giant flour jar",
+                    "description": "A massive glass jar filled with white flour. The lid is slightly ajar.",
+                    "searchable": true,
+                    "contains": [
+                        "recipe_card"
+                    ]
+                },
+                {
+                    "id": "recipe_card",
+                    "name": "giant's recipe card",
+                    "description": "A huge recipe card for 'Giant's Favorite Cookies'",
+                    "readable": true,
+                    "text": "GIANT'S FAVORITE COOKIES: Mix 3 eggs, 2 cups butter, 1 cup sugar. Bake at 350 degrees. The giant always says: 'My favorite chef is Baker Brown, who works in the village bakery.'"
+                },
+                {
+                    "id": "spice_rack",
+                    "name": "wooden spice rack",
+                    "description": "A rack holding several giant spice containers with small compartments underneath",
+                    "subcontainers": [
+                        {
+                            "id": "cinnamon_compartment",
+                            "name": "cinnamon compartment",
+                            "locked": false,
+                            "contains": [
+                                "copper_key"
+                            ]
+                        },
+                        {
+                            "id": "pepper_compartment",
+                            "name": "pepper compartment",
+                            "locked": true,
+                            "lock_type": "combination",
+                            "combination": "321",
+                            "contains": [
+                                "pantry_note"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "copper_key",
+                    "name": "small copper key",
+                    "description": "A copper key small enough for you to carry"
+                },
+                {
+                    "id": "pantry_note",
+                    "name": "note from giant",
+                    "description": "A note written in giant handwriting",
+                    "readable": true,
+                    "text": "Reminder to self: The kitchen drawer combination is the temperature I bake cookies at. Must remember to store my gold coins in the cookie jar on the counter!"
+                },
+                {
+                    "id": "sugar_tin",
+                    "name": "locked sugar tin",
+                    "description": "A decorative tin with a small lock on the clasp",
+                    "locked": true,
+                    "key_required": "copper_key",
+                    "contains": [
+                        "measuring_note"
+                    ]
+                },
+                {
+                    "id": "measuring_note",
+                    "name": "measuring guide",
+                    "description": "A card with measurement conversions",
+                    "readable": true,
+                    "text": "KITCHEN MEASUREMENTS: Remember - 3 teaspoons = 1 tablespoon. The giant stores his treasures where sweets are kept. His favorite food is cookies, which he keeps in the cookie jar."
+                },
+                {
+                    "id": "gap_between_jars",
+                    "name": "gap between jars",
+                    "description": "A space between the giant jars leading toward the kitchen counter",
+                    "locked": false,
+                    "direction": "east",
+                    "leads_to": "kitchen_counter",
+                    "aliases": [
+                        "gap",
+                        "east"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "kitchen_counter",
+            "name": "Giant's Kitchen Counter",
+            "description": "You stand on an enormous kitchen counter stretching out like a vast plaza. A huge mixing bowl sits nearby, and a massive cookie jar towers in the corner. Kitchen utensils the size of trees lean against the wall. Through a window, you can see the outside world and freedom. A drawer is built into the counter's edge.",
+            "items": [
+                {
+                    "id": "mixing_bowl",
+                    "name": "giant mixing bowl",
+                    "description": "An enormous ceramic bowl with dried batter on the sides",
+                    "searchable": true,
+                    "contains": [
+                        "wooden_spoon_note"
+                    ]
+                },
+                {
+                    "id": "wooden_spoon_note",
+                    "name": "note stuck to spoon",
+                    "description": "A small note attached to a wooden spoon",
+                    "readable": true,
+                    "text": "The giant's favorite chef works in the village bakery. His favorite food is stored in the cookie jar. The window key is hidden where he keeps his gold."
+                },
+                {
+                    "id": "kitchen_drawer",
+                    "name": "kitchen counter drawer",
+                    "description": "A large drawer built into the counter with a combination lock",
+                    "subcontainers": [
+                        {
+                            "id": "utensil_section",
+                            "name": "utensil section",
+                            "locked": true,
+                            "lock_type": "combination",
+                            "combination": "350",
+                            "contains": [
+                                "silver_key",
+                                "cookbook"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "silver_key",
+                    "name": "silver key",
+                    "description": "A silver key that might unlock something important"
+                },
+                {
+                    "id": "cookbook",
+                    "name": "giant's cookbook",
+                    "description": "A massive cookbook opened to a page about baking",
+                    "readable": true,
+                    "text": "BAKING TIPS: Always preheat oven to proper temperature. For cookies, use 350 degrees. Store finished cookies in an airtight container. The best baker in the land is Baker Brown from the village bakery."
+                },
+                {
+                    "id": "cookie_jar",
+                    "name": "giant cookie jar",
+                    "description": "An enormous ceramic jar decorated with painted cookies. The lid is sealed tight.",
+                    "locked": true,
+                    "key_required": "silver_key",
+                    "contains": [
+                        "gold_coins",
+                        "window_key"
+                    ]
+                },
+                {
+                    "id": "gold_coins",
+                    "name": "giant's gold coins",
+                    "description": "Several large gold coins, each the size of a dinner plate to you"
+                },
+                {
+                    "id": "window_key",
+                    "name": "brass window key",
+                    "description": "A brass key that looks like it fits the window latch"
+                },
+                {
+                    "id": "kitchen_window",
+                    "name": "kitchen window",
+                    "description": "A massive window showing the outside world. A latch mechanism has three security questions etched into a metal plate.",
+                    "locked": true,
+                    "lock_type": "password",
+                    "password_questions": [
+                        {
+                            "question": "Who is the giant's favorite chef?",
+                            "answer": "baker brown",
+                            "hint": "Check the recipe card and cookbook for mentions of the giant's favorite chef"
+                        },
+                        {
+                            "question": "Where does the giant's favorite chef work?",
+                            "answer": "village bakery",
+                            "hint": "The recipe card mentions where Baker Brown works"
+                        },
+                        {
+                            "question": "What is the giant's favorite food?",
+                            "answer": "cookies",
+                            "hint": "Look at the recipe card and the measuring guide"
+                        }
+                    ],
+                    "direction": "north",
+                    "leads_to": "outside_freedom",
+                    "aliases": [
+                        "window",
+                        "north"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "outside_freedom",
+            "name": "Outside the Giant's House",
+            "description": "You've made it outside! You slide down the ivy growing on the exterior wall and land safely on the ground. The giant's house looms behind you, but you are free. Birds chirp in the trees, and a path leads away toward safety and home.",
+            "items": [
+                {
+                    "id": "ivy_vine",
+                    "name": "ivy vine",
+                    "description": "Thick ivy that helped you climb down to safety"
+                },
+                {
+                    "id": "garden_path",
+                    "name": "path to safety",
+                    "description": "A winding path leading away from the giant's property toward civilization"
+                }
+            ],
+            "exits": [],
+            "is_goal": true,
+            "win_message": "You've successfully escaped the Giant's Kitchen! Using your wit and puzzle-solving skills, you navigated the enormous kitchen, unlocked the secrets hidden in the giant's pantry and counters, and made it safely outside. The giant will never know you were there. You win!"
+        }
+    ]
+}

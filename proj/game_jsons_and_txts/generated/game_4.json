@@ -1,0 +1,265 @@
+{
+    "theme": "Bioluminescent Jungle",
+    "title": "Bioluminescent Jungle Adventure #4",
+    "goal": "Solve the puzzles, achieve the main objective, and escape.",
+    "starting_room": "glowing_grove",
+    "rooms": [
+        {
+            "id": "glowing_grove",
+            "name": "Glowing Grove",
+            "description": "You stand in a jungle clearing where everything glows with ethereal light. Luminescent vines hang from towering trees, pulsing with blue and green bioluminescence. Mushrooms the size of dinner plates emit a soft purple glow. Strange insects with glowing abdomens flit through the air. The humid air is thick with the scent of exotic flowers.",
+            "items": [
+                {
+                    "id": "ancient_stone_tablet",
+                    "name": "ancient stone tablet",
+                    "description": "A moss-covered tablet with glowing inscriptions carved into its surface",
+                    "readable": true,
+                    "text": "Tablet of the Luminari: We who dwelled in this jungle discovered three sacred colors - Blue for wisdom, Green for life, Purple for spirit. The sacred numbers are 3, 5, and 7. Our leader was Chief Luminos, keeper of the Crystal of Dawn."
+                },
+                {
+                    "id": "hollow_log",
+                    "name": "hollow glowing log",
+                    "description": "A fallen tree trunk covered in bioluminescent fungi, hollow inside",
+                    "searchable": true,
+                    "contains": [
+                        "explorers_journal"
+                    ]
+                },
+                {
+                    "id": "explorers_journal",
+                    "name": "explorer's journal",
+                    "description": "A weathered journal wrapped in waterproof material",
+                    "readable": true,
+                    "text": "Day 12: I've discovered the lost Luminari civilization! Their temple lies beyond the Phosphorescent Pool. The combination to the specimen case is based on the sacred numbers: blue (3), green (5), purple (7). I must find the Crystal of Dawn to activate the escape portal."
+                },
+                {
+                    "id": "specimen_case",
+                    "name": "locked specimen case",
+                    "description": "A metal case with a three-digit combination lock, used by previous explorers",
+                    "locked": true,
+                    "lock_type": "combination",
+                    "combination": "357",
+                    "contains": [
+                        "jade_key"
+                    ]
+                },
+                {
+                    "id": "jade_key",
+                    "name": "jade key",
+                    "description": "A key carved from glowing green jade, warm to the touch"
+                },
+                {
+                    "id": "supply_crate",
+                    "name": "explorer's supply crate",
+                    "description": "A wooden crate with two compartments, partially overgrown with glowing moss",
+                    "subcontainers": [
+                        {
+                            "id": "top_compartment",
+                            "name": "top compartment",
+                            "locked": false,
+                            "contains": [
+                                "luminari_guide"
+                            ]
+                        },
+                        {
+                            "id": "bottom_compartment",
+                            "name": "bottom compartment",
+                            "locked": true,
+                            "key_required": "jade_key",
+                            "contains": [
+                                "crystal_shard"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "luminari_guide",
+                    "name": "Luminari cultural guide",
+                    "description": "A research document about the ancient jungle civilization",
+                    "readable": true,
+                    "text": "The Luminari worshipped in the Temple of Eternal Light. Their sacred pool was called the Phosphorescent Pool. Chief Luminos ruled with wisdom and kept the Crystal of Dawn in the temple sanctuary."
+                },
+                {
+                    "id": "crystal_shard",
+                    "name": "glowing crystal shard",
+                    "description": "A fragment of luminescent crystal that pulses with inner light"
+                },
+                {
+                    "id": "curtain_of_glowing_vines",
+                    "name": "curtain of glowing vines",
+                    "description": "A thick curtain of bioluminescent vines blocking a path to the north",
+                    "locked": true,
+                    "key_required": "jade_key",
+                    "direction": "north",
+                    "leads_to": "phosphorescent_pool",
+                    "aliases": [
+                        "vines",
+                        "curtain",
+                        "north"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "phosphorescent_pool",
+            "name": "Phosphorescent Pool",
+            "description": "A breathtaking underground cavern with a pool of glowing water at its center. The water shimmers with swirling patterns of blue, green, and purple light. Ancient murals cover the walls, depicting the history of the Luminari people. Glowing crystals embedded in the ceiling create a starfield effect. A massive stone door carved with symbols stands at the far end.",
+            "items": [
+                {
+                    "id": "mural_creation",
+                    "name": "creation mural",
+                    "description": "A detailed painting showing the founding of the Luminari civilization",
+                    "readable": true,
+                    "text": "The mural shows Chief Luminos discovering the jungle and founding the first settlement. Caption reads: 'Chief Luminos, first of our people, who brought light to the darkness.'"
+                },
+                {
+                    "id": "mural_temple",
+                    "name": "temple mural",
+                    "description": "A painting depicting a grand temple structure",
+                    "readable": true,
+                    "text": "The mural shows a magnificent temple with glowing spires. Caption reads: 'The Temple of Eternal Light, our most sacred place, where the Crystal of Dawn resides.'"
+                },
+                {
+                    "id": "mural_pool",
+                    "name": "pool mural",
+                    "description": "A painting showing people gathered around a glowing pool",
+                    "readable": true,
+                    "text": "The mural depicts ceremonies held at this very pool. Caption reads: 'The Phosphorescent Pool, where we commune with the spirits of the jungle.'"
+                },
+                {
+                    "id": "glowing_pool",
+                    "name": "phosphorescent pool",
+                    "description": "The sacred pool of the Luminari, its waters glowing with natural bioluminescence",
+                    "searchable": true,
+                    "contains": [
+                        "ceremonial_staff"
+                    ]
+                },
+                {
+                    "id": "ceremonial_staff",
+                    "name": "ceremonial staff",
+                    "description": "A wooden staff topped with a glowing crystal, used in Luminari rituals"
+                },
+                {
+                    "id": "stone_altar",
+                    "name": "stone altar",
+                    "description": "An altar beside the pool with carved inscriptions",
+                    "readable": true,
+                    "text": "Altar inscription: 'To enter the Temple of Eternal Light, one must prove knowledge of our ways. Answer the three questions of the ancients.'"
+                },
+                {
+                    "id": "crystal_formation",
+                    "name": "crystal formation",
+                    "description": "A cluster of large glowing crystals growing from the cavern wall",
+                    "searchable": true,
+                    "contains": [
+                        "second_crystal_shard"
+                    ]
+                },
+                {
+                    "id": "second_crystal_shard",
+                    "name": "second crystal shard",
+                    "description": "Another fragment of the Crystal of Dawn, glowing brightly"
+                },
+                {
+                    "id": "temple_entrance_door",
+                    "name": "temple entrance door",
+                    "description": "A massive stone door carved with Luminari symbols. Three questions are etched into a glowing panel beside it.",
+                    "locked": true,
+                    "lock_type": "password",
+                    "password_questions": [
+                        {
+                            "question": "Who was the first leader of the Luminari?",
+                            "answer": "chief luminos",
+                            "hint": "Check the ancient stone tablet and the creation mural"
+                        },
+                        {
+                            "question": "What is the name of this sacred pool?",
+                            "answer": "phosphorescent pool",
+                            "hint": "Read the explorer's journal and the pool mural"
+                        },
+                        {
+                            "question": "Where does the Crystal of Dawn reside?",
+                            "answer": "temple of eternal light",
+                            "hint": "The temple mural and cultural guide mention this"
+                        }
+                    ],
+                    "direction": "east",
+                    "leads_to": "temple_sanctuary",
+                    "aliases": [
+                        "door",
+                        "temple",
+                        "east"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "temple_sanctuary",
+            "name": "Temple of Eternal Light",
+            "description": "You have entered the sacred heart of the Luminari civilization! The temple sanctuary is a magnificent chamber where every surface glows with bioluminescent beauty. In the center, on a pedestal of pure crystal, rests the legendary Crystal of Dawn - a massive gem that radiates all the colors of the jungle. Behind it, a shimmering portal of light offers escape from the jungle. Ancient wisdom seems to emanate from the very walls.",
+            "items": [
+                {
+                    "id": "crystal_of_dawn",
+                    "name": "Crystal of Dawn",
+                    "description": "A magnificent crystal the size of a human head, pulsing with rainbow bioluminescence and ancient power"
+                },
+                {
+                    "id": "crystal_pedestal",
+                    "name": "crystal pedestal",
+                    "description": "A pedestal made of flawless glowing crystal, holding the legendary Crystal of Dawn"
+                },
+                {
+                    "id": "temple_inscriptions",
+                    "name": "temple wall inscriptions",
+                    "description": "Glowing text covering the sanctuary walls",
+                    "readable": true,
+                    "text": "The inscriptions tell the story of the Luminari: a peaceful people who lived in harmony with the bioluminescent jungle. The Crystal of Dawn was their greatest treasure, said to grant safe passage through any darkness. When the jungle grew too wild, they used it to create a portal to the outside world."
+                },
+                {
+                    "id": "offering_bowls",
+                    "name": "ceremonial offering bowls",
+                    "description": "Three stone bowls arranged before the crystal pedestal",
+                    "searchable": true,
+                    "contains": []
+                },
+                {
+                    "id": "shimmering_escape_portal",
+                    "name": "shimmering escape portal",
+                    "description": "A magical portal of swirling light that leads out of the jungle. It requires the complete Crystal of Dawn to activate.",
+                    "locked": true,
+                    "key_required": "second_crystal_shard",
+                    "direction": "north",
+                    "leads_to": "jungle_edge",
+                    "aliases": [
+                        "portal",
+                        "north"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "jungle_edge",
+            "name": "Edge of the Jungle",
+            "description": "You emerge from the bioluminescent jungle into the bright sunlight of the outside world. Behind you, the glowing jungle fades into normal forest. In your hand, the Crystal of Dawn has transformed into a small, gently glowing pendant - a reminder of your incredible journey through the realm of the Luminari.",
+            "items": [
+                {
+                    "id": "jungle_boundary",
+                    "name": "jungle boundary marker",
+                    "description": "An ancient stone marker showing where the bioluminescent jungle ends and the normal world begins"
+                },
+                {
+                    "id": "dawn_pendant",
+                    "name": "Crystal of Dawn pendant",
+                    "description": "The transformed crystal, now a beautiful glowing pendant you can keep"
+                }
+            ],
+            "exits": [],
+            "is_goal": true,
+            "win_message": "You have successfully navigated the Bioluminescent Jungle and discovered the secrets of the ancient Luminari civilization! The Crystal of Dawn has guided you safely out of the glowing wilderness. The jungle's mysteries will stay with you forever, and the pendant serves as proof of your incredible adventure. You win!"
+        }
+    ]
+}

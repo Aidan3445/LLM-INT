@@ -1,0 +1,214 @@
+{
+    "theme": "Arcade Hacker Hideout",
+    "title": "Arcade Hacker Hideout Adventure #62",
+    "goal": "Solve the puzzles, achieve the main objective, and escape.",
+    "starting_room": "arcade_floor",
+    "rooms": [
+        {
+            "id": "arcade_floor",
+            "name": "Abandoned Arcade Floor",
+            "description": "A dimly lit arcade filled with vintage game cabinets covered in dust and cobwebs. Neon signs flicker overhead casting colorful shadows. The air smells of old electronics and stale popcorn. Several arcade machines line the walls, and a locked door leads to the back room.",
+            "items": [
+                {
+                    "id": "pacman_cabinet",
+                    "name": "Pacman arcade cabinet",
+                    "description": "A classic yellow Pacman cabinet with a glowing screen showing the high score",
+                    "readable": true,
+                    "text": "HIGH SCORE: 1980 - Initials: TN (Toru Nakamura). A note is taped to the side: 'The year the ghosts first chased us.'"
+                },
+                {
+                    "id": "space_invaders_cabinet",
+                    "name": "Space Invaders cabinet",
+                    "description": "A black cabinet with alien graphics and a worn joystick",
+                    "readable": true,
+                    "text": "HIGH SCORE: 1978 - Initials: TN. The screen displays: 'Remember when the invasion began.'"
+                },
+                {
+                    "id": "donkey_kong_cabinet",
+                    "name": "Donkey Kong cabinet",
+                    "description": "A red cabinet showing Mario climbing ladders to save the princess",
+                    "readable": true,
+                    "text": "HIGH SCORE: 1981 - Initials: SM (Shigeru Miyamoto). A sticky note reads: 'The year the carpenter became a hero.'"
+                },
+                {
+                    "id": "prize_counter",
+                    "name": "dusty prize counter",
+                    "description": "An old counter with a locked cabinet underneath and a cash register on top",
+                    "subcontainers": [
+                        {
+                            "id": "counter_cabinet",
+                            "name": "counter cabinet",
+                            "locked": true,
+                            "lock_type": "combination",
+                            "combination": "1980",
+                            "contains": [
+                                "access_keycard"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "access_keycard",
+                    "name": "magnetic access keycard",
+                    "description": "A black keycard with a green stripe and the word ADMIN printed on it"
+                },
+                {
+                    "id": "trash_bin",
+                    "name": "overflowing trash bin",
+                    "description": "A metal bin filled with empty energy drink cans and crumpled papers",
+                    "searchable": true,
+                    "contains": [
+                        "hacker_manifest"
+                    ]
+                },
+                {
+                    "id": "hacker_manifest",
+                    "name": "crumpled hacker note",
+                    "description": "A handwritten note on lined paper",
+                    "readable": true,
+                    "text": "HACKER COLLECTIVE RULES: 1. Username is always root. 2. Password is the name of our hideout in lowercase. 3. The vault code is written under the Galaga machine. Stay 1337!"
+                },
+                {
+                    "id": "galaga_cabinet",
+                    "name": "Galaga arcade machine",
+                    "description": "A blue cabinet with spaceship graphics. Something is written underneath in marker.",
+                    "readable": true,
+                    "text": "On the underside of the cabinet, someone has scrawled in permanent marker: 'Server vault combo = 8008' with a smiley face."
+                },
+                {
+                    "id": "reinforced_back_room_door",
+                    "name": "reinforced back room door",
+                    "description": "A heavy metal door with a card reader and a sign that says AUTHORIZED PERSONNEL ONLY",
+                    "locked": true,
+                    "key_required": "access_keycard",
+                    "direction": "north",
+                    "leads_to": "hacker_workshop",
+                    "aliases": [
+                        "door",
+                        "north"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "hacker_workshop",
+            "name": "Hacker Workshop",
+            "description": "A cluttered room filled with computer equipment, tangled cables, and multiple monitors displaying scrolling code. LED strips cast a purple glow. Posters of classic arcade games and hacker manifestos cover the walls. A massive server room door dominates the east wall.",
+            "items": [
+                {
+                    "id": "workbench",
+                    "name": "electronics workbench",
+                    "description": "A bench covered with circuit boards, soldering irons, and tools",
+                    "searchable": true,
+                    "contains": [
+                        "wire_cutters"
+                    ]
+                },
+                {
+                    "id": "wire_cutters",
+                    "name": "heavy duty wire cutters",
+                    "description": "Professional wire cutters with rubber grips"
+                },
+                {
+                    "id": "computer_desk",
+                    "name": "main computer desk",
+                    "description": "A desk with three monitors and a mechanical keyboard. Sticky notes are everywhere.",
+                    "subcontainers": [
+                        {
+                            "id": "desk_drawer_top",
+                            "name": "top drawer",
+                            "locked": false,
+                            "contains": [
+                                "login_credentials"
+                            ]
+                        },
+                        {
+                            "id": "desk_drawer_bottom",
+                            "name": "bottom drawer",
+                            "locked": false,
+                            "contains": [
+                                "usb_drive"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "login_credentials",
+                    "name": "password sticky note",
+                    "description": "A yellow sticky note with login information",
+                    "readable": true,
+                    "text": "LOGIN INFO - User: root | Pass: arcade (all lowercase) | Remember: The hideout is called the ARCADE!"
+                },
+                {
+                    "id": "usb_drive",
+                    "name": "encrypted USB drive",
+                    "description": "A black USB drive with a skull sticker"
+                },
+                {
+                    "id": "poster_board",
+                    "name": "cork bulletin board",
+                    "description": "A board covered with photos, notes, and newspaper clippings",
+                    "readable": true,
+                    "text": "Various clippings about arcade history. One article is highlighted: 'The Golden Age of Arcades began in 1978 with Space Invaders, peaked in 1980 with Pacman, and continued through 1981 with Donkey Kong.'"
+                },
+                {
+                    "id": "reinforced_server_room_door",
+                    "name": "reinforced server room door",
+                    "description": "A massive steel door with a digital keypad and biometric scanner. A screen displays three security questions.",
+                    "locked": true,
+                    "lock_type": "password",
+                    "password_questions": [
+                        {
+                            "question": "Enter admin username:",
+                            "answer": "root",
+                            "hint": "Check the hacker manifest and login credentials"
+                        },
+                        {
+                            "question": "Enter password:",
+                            "answer": "arcade",
+                            "hint": "The password sticky note has this information"
+                        },
+                        {
+                            "question": "Enter vault access code:",
+                            "answer": "8008",
+                            "hint": "Look under the Galaga machine in the arcade"
+                        }
+                    ],
+                    "direction": "east",
+                    "leads_to": "data_vault",
+                    "aliases": [
+                        "vault",
+                        "east"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "data_vault",
+            "name": "Secret Data Vault",
+            "description": "You have breached the inner sanctum! A climate controlled room filled with server racks humming with power. Holographic displays float in the air showing streams of encrypted data. In the center, a terminal glows with the message DATA BREACH SUCCESSFUL. Stacks of hard drives and backup tapes line the shelves. You have found the hackers secret data cache!",
+            "items": [
+                {
+                    "id": "main_server",
+                    "name": "primary server terminal",
+                    "description": "A powerful server with multiple hard drives and blinking status lights"
+                },
+                {
+                    "id": "data_storage",
+                    "name": "encrypted data storage",
+                    "description": "Rows of hard drives containing valuable stolen data and cryptocurrency wallets"
+                },
+                {
+                    "id": "holographic_display",
+                    "name": "floating holographic screen",
+                    "description": "A display showing mission accomplished and access granted to all systems"
+                }
+            ],
+            "exits": [],
+            "is_goal": true,
+            "win_message": "SUCCESS! You have infiltrated the Arcade Hacker Hideout and gained access to the secret data vault! The encrypted files are yours, and you have proven yourself a master hacker. Time to download the data and disappear before anyone notices. You win!"
+        }
+    ]
+}

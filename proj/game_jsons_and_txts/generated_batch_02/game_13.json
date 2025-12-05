@@ -1,0 +1,263 @@
+{
+    "theme": "Eldritch Ritual Chamber",
+    "title": "Eldritch Ritual Chamber Adventure #13",
+    "goal": "Solve the puzzles, achieve the main objective, and escape.",
+    "starting_room": "ritual_chamber",
+    "rooms": [
+        {
+            "id": "ritual_chamber",
+            "name": "Ritual Chamber",
+            "description": "A circular stone chamber lit by flickering black candles. Strange symbols are carved into the walls, and the air reeks of incense and decay. In the center, a ritual circle is drawn in what appears to be dried blood. Ancient artifacts and furniture line the perimeter, and you can hear distant chanting echoing from somewhere beyond.",
+            "items": [
+                {
+                    "id": "altar",
+                    "name": "stone altar",
+                    "description": "A dark stone altar covered in ritual implements and dried blood",
+                    "searchable": true,
+                    "contains": [
+                        "obsidian_dagger"
+                    ]
+                },
+                {
+                    "id": "obsidian_dagger",
+                    "name": "obsidian ritual dagger",
+                    "description": "A ceremonial dagger made of black volcanic glass, one of the ritual artifacts"
+                },
+                {
+                    "id": "wooden_cabinet",
+                    "name": "ancient wooden cabinet",
+                    "description": "A tall cabinet with three drawers, each marked with an occult symbol",
+                    "subcontainers": [
+                        {
+                            "id": "top_drawer",
+                            "name": "top drawer",
+                            "locked": false,
+                            "contains": [
+                                "cultist_journal"
+                            ]
+                        },
+                        {
+                            "id": "middle_drawer",
+                            "name": "middle drawer",
+                            "locked": true,
+                            "lock_type": "combination",
+                            "combination": "1347",
+                            "contains": [
+                                "iron_key"
+                            ]
+                        },
+                        {
+                            "id": "bottom_drawer",
+                            "name": "bottom drawer",
+                            "locked": false,
+                            "contains": []
+                        }
+                    ]
+                },
+                {
+                    "id": "cultist_journal",
+                    "name": "cultist's journal",
+                    "description": "A leather-bound journal filled with frantic handwriting",
+                    "readable": true,
+                    "text": "The ritual must be completed on the date of the Great Convergence - the 13th day of the 47th year of our order's founding, year 1347. Only the High Priest Mordecai knows the final incantation. The Keeper of Secrets guards the way. We must gather the three artifacts: the obsidian dagger, the silver chalice, and the elder sign amulet."
+                },
+                {
+                    "id": "iron_key",
+                    "name": "tarnished iron key",
+                    "description": "An old iron key with strange engravings along its length"
+                },
+                {
+                    "id": "locked_chest",
+                    "name": "iron bound chest",
+                    "description": "A heavy chest secured with an iron lock, covered in protective runes",
+                    "locked": true,
+                    "key_required": "iron_key",
+                    "contains": [
+                        "silver_chalice",
+                        "ritual_scroll"
+                    ]
+                },
+                {
+                    "id": "silver_chalice",
+                    "name": "silver ritual chalice",
+                    "description": "An ornate chalice engraved with writhing tentacles, the second ritual artifact"
+                },
+                {
+                    "id": "ritual_scroll",
+                    "name": "ancient ritual scroll",
+                    "description": "A scroll written in an archaic language, partially translated",
+                    "readable": true,
+                    "text": "Translation Fragment: The ritual requires three artifacts placed upon the altar of the Inner Sanctum. The High Priest Mordecai must speak the words. The Keeper of Secrets dwells in the Forbidden Library. The final artifact rests in the Abyss of Whispers."
+                },
+                {
+                    "id": "bookshelf",
+                    "name": "dusty bookshelf",
+                    "description": "A shelf filled with occult tomes and forbidden texts",
+                    "searchable": true,
+                    "contains": [
+                        "tome_of_names"
+                    ]
+                },
+                {
+                    "id": "tome_of_names",
+                    "name": "tome of the order",
+                    "description": "A book listing the members of the cult",
+                    "readable": true,
+                    "text": "Members of the Order: High Priest Mordecai - Leader and ritual master. The Keeper of Secrets - Guardian of forbidden knowledge in the library. The Watcher - Observer of the ritual circle. All serve the Great Old One who dwells beyond."
+                },
+                {
+                    "id": "heavy_wooden_door",
+                    "name": "heavy wooden door",
+                    "description": "A door carved with eldritch symbols, leading to the library",
+                    "locked": false,
+                    "direction": "north",
+                    "leads_to": "forbidden_library",
+                    "aliases": [
+                        "door",
+                        "north"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "forbidden_library",
+            "name": "Forbidden Library",
+            "description": "A vast library filled with ancient tomes bound in strange leather. The shelves stretch up into darkness, and whispers seem to emanate from the books themselves. A reading desk sits in the center, covered in open manuscripts. At the far end, a sealed doorway pulses with an otherworldly green light.",
+            "items": [
+                {
+                    "id": "reading_desk",
+                    "name": "scholar's reading desk",
+                    "description": "A desk covered in open books and scattered notes",
+                    "searchable": true,
+                    "contains": [
+                        "keeper_note"
+                    ]
+                },
+                {
+                    "id": "keeper_note",
+                    "name": "keeper's note",
+                    "description": "A note written in elegant but unsettling handwriting",
+                    "readable": true,
+                    "text": "I am the Keeper of Secrets, guardian of this library. The Inner Sanctum can only be opened by those who prove their knowledge. The elder sign amulet lies hidden in the Abyss of Whispers, where the void speaks. Remember: only High Priest Mordecai may complete the ritual."
+                },
+                {
+                    "id": "necronomicon",
+                    "name": "the Necronomicon",
+                    "description": "A massive tome bound in what appears to be human skin",
+                    "readable": true,
+                    "text": "From the Necronomicon: The Abyss of Whispers is the void between worlds where the Great Old Ones whisper their secrets. It is accessed through the library's hidden passages. The elder sign protects against the darkness."
+                },
+                {
+                    "id": "hidden_alcove",
+                    "name": "hidden alcove",
+                    "description": "A dark alcove behind a sliding bookshelf, barely visible in the shadows",
+                    "searchable": true,
+                    "contains": [
+                        "elder_sign_amulet"
+                    ]
+                },
+                {
+                    "id": "elder_sign_amulet",
+                    "name": "elder sign amulet",
+                    "description": "A protective amulet bearing the elder sign, the third and final ritual artifact"
+                },
+                {
+                    "id": "manuscript_pile",
+                    "name": "pile of manuscripts",
+                    "description": "A stack of ancient manuscripts and translations",
+                    "searchable": true,
+                    "contains": [
+                        "translation_notes"
+                    ]
+                },
+                {
+                    "id": "translation_notes",
+                    "name": "translation notes",
+                    "description": "Notes translating various ritual phrases",
+                    "readable": true,
+                    "text": "Translation Notes: The Inner Sanctum requires answers to three questions. Who leads the ritual? The High Priest. Where is the final artifact hidden? In the Abyss of Whispers. What protects against darkness? The elder sign."
+                },
+                {
+                    "id": "sealed_sanctum_door",
+                    "name": "sealed sanctum door",
+                    "description": "A massive door sealed with eldritch wards. Three questions are carved into its surface, glowing with green light.",
+                    "locked": true,
+                    "lock_type": "password",
+                    "password_questions": [
+                        {
+                            "question": "Who leads the ritual?",
+                            "answer": "high priest mordecai",
+                            "hint": "Check the tome of names and the cultist's journal"
+                        },
+                        {
+                            "question": "Where is the final artifact hidden?",
+                            "answer": "abyss of whispers",
+                            "hint": "The keeper's note and the Necronomicon mention this location"
+                        },
+                        {
+                            "question": "What protects against darkness?",
+                            "answer": "elder sign",
+                            "hint": "The translation notes reveal what offers protection"
+                        }
+                    ],
+                    "direction": "east",
+                    "leads_to": "inner_sanctum",
+                    "aliases": [
+                        "sanctum door",
+                        "east"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "inner_sanctum",
+            "name": "Inner Sanctum",
+            "description": "You have entered the Inner Sanctum! A massive ritual circle dominates the floor, glowing with eldritch energy. In the center stands an altar of black stone. Above, a portal swirls with cosmic colors, showing glimpses of impossible geometries and distant stars. The three artifacts must be placed on the altar to complete the ritual and open the escape portal.",
+            "items": [
+                {
+                    "id": "black_altar",
+                    "name": "altar of the old ones",
+                    "description": "A black stone altar with three indentations for the ritual artifacts",
+                    "readable": true,
+                    "text": "Inscription: Place the obsidian dagger, silver chalice, and elder sign amulet upon this altar. Speak the words of power, and the portal shall open, granting passage beyond this cursed place."
+                },
+                {
+                    "id": "swirling_cosmic_portal",
+                    "name": "swirling cosmic portal",
+                    "description": "A portal of impossible colors and shapes, leading to freedom. It requires all three ritual artifacts to fully activate.",
+                    "locked": true,
+                    "key_required": "elder_sign_amulet",
+                    "direction": "north",
+                    "leads_to": "freedom",
+                    "aliases": [
+                        "portal",
+                        "north"
+                    ]
+                },
+                {
+                    "id": "ritual_circle",
+                    "name": "glowing ritual circle",
+                    "description": "A complex pattern of symbols and lines that pulse with otherworldly energy"
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "freedom",
+            "name": "Beyond the Veil",
+            "description": "You step through the portal and find yourself in a place between worlds. The ritual chamber fades behind you like a nightmare dissolving in morning light. You are free from the eldritch horror, though the memory of what you witnessed will haunt you forever.",
+            "items": [
+                {
+                    "id": "void",
+                    "name": "the void between",
+                    "description": "An endless expanse of stars and cosmic wonder, beautiful and terrifying in equal measure"
+                }
+            ],
+            "exits": [],
+            "is_goal": true,
+            "win_message": "You have completed the eldritch ritual and escaped the cursed chamber! The three artifacts merge into pure energy as the portal stabilizes. The whispers fade, and you find yourself transported to safety. Though you have survived, you know that some knowledge cannot be unlearned, and the memory of the ritual will stay with you always. You win!"
+        }
+    ]
+}

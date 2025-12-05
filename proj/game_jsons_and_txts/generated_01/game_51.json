@@ -1,0 +1,268 @@
+{
+    "theme": "Chronomancer's Observatory",
+    "title": "Chronomancer's Observatory Adventure #51",
+    "goal": "Solve the puzzles, achieve the main objective, and escape.",
+    "starting_room": "temporal_study",
+    "rooms": [
+        {
+            "id": "temporal_study",
+            "name": "Temporal Study",
+            "description": "A circular chamber filled with ticking clocks of all sizes, each showing different times. Hourglasses containing sand that flows upward sit on shelves. Ancient star charts and temporal equations cover the walls. The air shimmers with residual chronomantic energy. Crystalline instruments measure the flow of time itself.",
+            "items": [
+                {
+                    "id": "chronomancers_desk",
+                    "name": "chronomancer's desk",
+                    "description": "An ornate desk made of dark wood, covered with temporal calculations and astronomical charts",
+                    "subcontainers": [
+                        {
+                            "id": "top_drawer",
+                            "name": "top drawer",
+                            "locked": false,
+                            "contains": [
+                                "observatory_journal"
+                            ]
+                        },
+                        {
+                            "id": "middle_drawer",
+                            "name": "middle drawer",
+                            "locked": true,
+                            "lock_type": "combination",
+                            "combination": "1347",
+                            "contains": [
+                                "silver_key"
+                            ]
+                        },
+                        {
+                            "id": "bottom_drawer",
+                            "name": "bottom drawer",
+                            "locked": false,
+                            "contains": []
+                        }
+                    ]
+                },
+                {
+                    "id": "observatory_journal",
+                    "name": "observatory journal",
+                    "description": "A leather-bound journal with entries about temporal research",
+                    "readable": true,
+                    "text": "Day 1,247: I, Chronos the Timekeeper, established this observatory in the year 1347 to study the celestial movements and their connection to temporal magic. The great comet appears every 76 years. My research into the three temporal phases continues: Past, Present, and Future."
+                },
+                {
+                    "id": "silver_key",
+                    "name": "ornate silver key",
+                    "description": "A silver key engraved with clock faces and celestial symbols"
+                },
+                {
+                    "id": "grandfather_clock",
+                    "name": "ancient grandfather clock",
+                    "description": "A towering clock that ticks backwards, its pendulum swinging in reverse",
+                    "searchable": true,
+                    "contains": [
+                        "temporal_note"
+                    ]
+                },
+                {
+                    "id": "temporal_note",
+                    "name": "folded note",
+                    "description": "A note tucked behind the clock's face",
+                    "readable": true,
+                    "text": "Reminder: The combination to the middle drawer is the year I founded this observatory. The celestial charts in the main observatory hold the key to understanding the cosmos. Only those who comprehend the three temporal phases may access the Time Vault."
+                },
+                {
+                    "id": "hourglass_collection",
+                    "name": "collection of hourglasses",
+                    "description": "A shelf displaying hourglasses with sand flowing in impossible directions",
+                    "readable": true,
+                    "text": "Each hourglass is labeled: 'Past - What Was', 'Present - What Is', 'Future - What Will Be'. Together they represent the three temporal phases of existence."
+                },
+                {
+                    "id": "locked_cabinet",
+                    "name": "temporal artifact cabinet",
+                    "description": "A glass cabinet containing various time-related artifacts and a silver lock",
+                    "locked": true,
+                    "key_required": "silver_key",
+                    "contains": [
+                        "star_map",
+                        "research_scroll"
+                    ]
+                },
+                {
+                    "id": "star_map",
+                    "name": "ancient star map",
+                    "description": "A detailed map showing constellations and celestial bodies"
+                },
+                {
+                    "id": "research_scroll",
+                    "name": "research scroll",
+                    "description": "A scroll detailing the chronomancer's discoveries",
+                    "readable": true,
+                    "text": "My studies have revealed that the comet's 76-year cycle aligns with temporal rifts. The observatory's main telescope in the Celestial Observatory can peer through time itself. The Time Vault contains my greatest achievement - a portal through the temporal stream."
+                },
+                {
+                    "id": "reinforced_study_door",
+                    "name": "reinforced study door",
+                    "description": "A heavy door with brass fittings and temporal runes, leading to the main observatory",
+                    "locked": false,
+                    "direction": "north",
+                    "leads_to": "celestial_observatory",
+                    "aliases": [
+                        "door",
+                        "north"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "celestial_observatory",
+            "name": "Celestial Observatory",
+            "description": "A magnificent domed chamber with a retractable ceiling revealing the night sky. A massive brass telescope dominates the center, pointing toward the stars. Orreries showing planetary movements spin slowly on pedestals. Star charts and astronomical instruments fill every surface. The walls are lined with windows showing impossible views of different time periods.",
+            "items": [
+                {
+                    "id": "brass_telescope",
+                    "name": "grand brass telescope",
+                    "description": "An enormous telescope capable of viewing distant stars and, allegedly, distant times",
+                    "readable": true,
+                    "text": "Engraved on the telescope: 'Through this lens, Chronos the Timekeeper observed the heavens. The comet returns every 76 years, marking the passage of time eternal.'"
+                },
+                {
+                    "id": "planetary_orrery",
+                    "name": "mechanical orrery",
+                    "description": "A complex mechanical model showing the solar system in motion",
+                    "readable": true,
+                    "text": "The orrery displays the sun at the center with planets orbiting around it. A plaque reads: 'The Sun - center of our celestial dance, source of light and life.'"
+                },
+                {
+                    "id": "observation_desk",
+                    "name": "observation desk",
+                    "description": "A desk covered with astronomical calculations and observation logs",
+                    "searchable": true,
+                    "contains": [
+                        "comet_records"
+                    ]
+                },
+                {
+                    "id": "comet_records",
+                    "name": "comet observation records",
+                    "description": "Detailed records of comet sightings throughout history",
+                    "readable": true,
+                    "text": "Comet Observations: The great comet appears every 76 years without fail. Last sighting: 1301. Next expected: 1377. This celestial wanderer has been observed since ancient times, its periodic return a testament to the clockwork nature of the cosmos."
+                },
+                {
+                    "id": "star_chart_wall",
+                    "name": "wall of star charts",
+                    "description": "Dozens of detailed charts showing constellations and celestial coordinates",
+                    "readable": true,
+                    "text": "The charts map the entire visible sky. Notes indicate: 'The three temporal phases govern all existence: Past (what was), Present (what is), Future (what will be). Understanding these phases is key to mastering time itself.'"
+                },
+                {
+                    "id": "temporal_windows",
+                    "name": "temporal viewing windows",
+                    "description": "Windows that show scenes from different time periods",
+                    "readable": true,
+                    "text": "Through the windows you see: ancient civilizations building monuments, the present observatory in its prime, and a future where the stars have shifted. The chronomancer's power allows glimpses across all temporal phases."
+                },
+                {
+                    "id": "instrument_cabinet",
+                    "name": "astronomical instrument cabinet",
+                    "description": "A cabinet containing astrolabes, sextants, and other measuring devices",
+                    "subcontainers": [
+                        {
+                            "id": "upper_shelf",
+                            "name": "upper shelf",
+                            "locked": false,
+                            "contains": [
+                                "astrolabe"
+                            ]
+                        },
+                        {
+                            "id": "lower_shelf",
+                            "name": "lower shelf",
+                            "locked": false,
+                            "contains": [
+                                "vault_instructions"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "astrolabe",
+                    "name": "golden astrolabe",
+                    "description": "An intricate instrument for measuring the positions of celestial bodies"
+                },
+                {
+                    "id": "vault_instructions",
+                    "name": "vault access instructions",
+                    "description": "A document explaining how to access the Time Vault",
+                    "readable": true,
+                    "text": "TIME VAULT ACCESS PROTOCOL: To enter the vault, one must answer three questions proving knowledge of temporal magic and astronomy. Question 1: What is the cycle period of the great comet? Question 2: What celestial body is the center of our system? Question 3: Who is the master of this observatory?"
+                },
+                {
+                    "id": "time_vault_door",
+                    "name": "time vault door",
+                    "description": "A magnificent door made of crystalline material that seems to shift through different states. Three questions are etched into its surface in glowing script.",
+                    "locked": true,
+                    "lock_type": "password",
+                    "password_questions": [
+                        {
+                            "question": "What is the cycle period of the great comet in years?",
+                            "answer": "76",
+                            "hint": "Check the observatory journal and comet records for information about the comet's return"
+                        },
+                        {
+                            "question": "What celestial body is at the center of our system?",
+                            "answer": "sun",
+                            "hint": "The orrery shows the structure of the solar system"
+                        },
+                        {
+                            "question": "Who is the master of this observatory?",
+                            "answer": "chronos the timekeeper",
+                            "hint": "The journal and telescope engravings mention the chronomancer's name"
+                        }
+                    ],
+                    "direction": "east",
+                    "leads_to": "time_vault",
+                    "aliases": [
+                        "vault",
+                        "east"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "time_vault",
+            "name": "Time Vault",
+            "description": "You have entered the Time Vault! A breathtaking chamber where past, present, and future exist simultaneously. Temporal energy swirls in visible streams of light. In the center, a shimmering portal pulses with chronomantic power. Through it, you can see a path leading to safety and freedom. Chronos the Timekeeper's greatest achievement - a doorway through time itself - awaits you.",
+            "items": [
+                {
+                    "id": "temporal_portal",
+                    "name": "temporal portal",
+                    "description": "A swirling vortex of temporal energy that leads to safety outside the observatory"
+                },
+                {
+                    "id": "time_streams",
+                    "name": "visible time streams",
+                    "description": "Ribbons of light showing the flow of time in all directions",
+                    "readable": true,
+                    "text": "The streams flow in three directions: backward into the Past, steady through the Present, and forward into the Future. They converge at the portal, creating a stable pathway through the temporal currents."
+                },
+                {
+                    "id": "chronomancers_staff",
+                    "name": "Chronos's staff",
+                    "description": "An ornate staff topped with a crystal that contains swirling temporal energy, left behind by the chronomancer"
+                },
+                {
+                    "id": "vault_inscription",
+                    "name": "vault wall inscription",
+                    "description": "Words carved into the crystalline walls of the vault",
+                    "readable": true,
+                    "text": "Inscription: 'I, Chronos the Timekeeper, have mastered the three temporal phases. Through this portal, one may escape the constraints of linear time. May those who solve my puzzles use this gift wisely.'"
+                }
+            ],
+            "exits": [],
+            "is_goal": true,
+            "win_message": "You step through the temporal portal and feel the rush of chronomantic energy surrounding you! Time itself bends to your will as you traverse the temporal stream. You emerge safely outside the observatory, having solved all of Chronos the Timekeeper's puzzles and mastered the secrets of the three temporal phases. The mysteries of the Chronomancer's Observatory are now yours. You win!"
+        }
+    ]
+}

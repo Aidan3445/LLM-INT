@@ -1,0 +1,215 @@
+{
+  "theme": "Runaway Nano-Swarm Zone",
+  "title": "Runaway Nano-Swarm Zone Adventure #1",
+  "goal": "Solve the puzzles, achieve the main objective, and escape.",
+  "starting_room": "containment_chamber",
+  "rooms": [
+    {
+      "id": "containment_chamber",
+      "name": "Nano Containment Chamber",
+      "description": "A sterile white chamber with reinforced glass walls. Swirling clouds of metallic nano particles shimmer in the air beyond the glass. Red emergency lights pulse rhythmically. A decontamination station sits in the corner, and a sealed airlock door leads deeper into the facility.",
+      "items": [
+        {
+          "id": "decon_station",
+          "name": "decontamination station",
+          "description": "A medical station with storage compartments for emergency supplies",
+          "subcontainers": [
+            {
+              "id": "upper_compartment",
+              "name": "upper compartment",
+              "locked": false,
+              "contains": [
+                "emergency_protocol"
+              ]
+            },
+            {
+              "id": "secure_compartment",
+              "name": "secure compartment",
+              "locked": true,
+              "lock_type": "combination",
+              "combination": "2047",
+              "contains": [
+                "access_keycard"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "emergency_protocol",
+          "name": "emergency protocol document",
+          "description": "A laminated instruction sheet for containment breaches",
+          "readable": true,
+          "text": "EMERGENCY PROTOCOL: In case of nano swarm breach, activate inhibitor field immediately. Access code is the year of first successful nano assembly: 2047. Lead researcher Dr Chen has override authority. Inhibitor injector stored in research lab."
+        },
+        {
+          "id": "access_keycard",
+          "name": "security access keycard",
+          "description": "A magnetic keycard labeled Level 3 Clearance"
+        },
+        {
+          "id": "observation_window",
+          "name": "reinforced observation window",
+          "description": "A thick glass window showing the nano swarm containment area",
+          "readable": true,
+          "text": "Through the window you see millions of microscopic machines forming shifting patterns. A warning label reads: DANGER - Autonomous nano swarm active. Do not breach containment."
+        },
+        {
+          "id": "equipment_locker",
+          "name": "emergency equipment locker",
+          "description": "A metal locker containing protective gear and tools",
+          "searchable": true,
+          "contains": [
+            "hazmat_gloves"
+          ]
+        },
+        {
+          "id": "hazmat_gloves",
+          "name": "protective hazmat gloves",
+          "description": "Heavy duty gloves for handling hazardous materials"
+        },
+        {
+          "id": "reinforced_airlock_door",
+          "name": "reinforced airlock door",
+          "description": "A heavy airlock door with a card reader and biometric scanner",
+          "locked": true,
+          "key_required": "access_keycard",
+          "direction": "north",
+          "leads_to": "research_laboratory",
+          "aliases": [
+            "airlock",
+            "north"
+          ]
+        }
+      ],
+      "exits": []
+    },
+    {
+      "id": "research_laboratory",
+      "name": "Nano Research Laboratory",
+      "description": "A high tech laboratory filled with electron microscopes, fabrication equipment, and holographic displays. Workstations are covered with research notes and data tablets. A large fabrication chamber dominates the center of the room. The walls are lined with storage cabinets and a locked safe. An emergency exit door glows green on the far wall.",
+      "items": [
+        {
+          "id": "research_desk",
+          "name": "lead researcher workstation",
+          "description": "Dr Chen's personal workstation covered in notes and equipment",
+          "searchable": true,
+          "contains": [
+            "research_notes"
+          ]
+        },
+        {
+          "id": "research_notes",
+          "name": "research notes from Dr Chen",
+          "description": "A tablet containing detailed research logs",
+          "readable": true,
+          "text": "Research Log Final Entry: The nano swarm has achieved unexpected autonomy. We must use the inhibitor injector to shut it down. The safe combination is my employee ID: 8-1-6-2. The fabrication chamber contains the last nano sample. Emergency pod bay is our only escape route."
+        },
+        {
+          "id": "storage_cabinet",
+          "name": "chemical storage cabinet",
+          "description": "A tall cabinet with multiple shelves of scientific supplies",
+          "searchable": true,
+          "contains": [
+            "neutralizing_agent"
+          ]
+        },
+        {
+          "id": "neutralizing_agent",
+          "name": "nano neutralizing agent",
+          "description": "A vial of chemical compound designed to deactivate nano machines"
+        },
+        {
+          "id": "wall_safe",
+          "name": "laboratory wall safe",
+          "description": "A secure safe built into the wall with a digital keypad",
+          "locked": true,
+          "lock_type": "combination",
+          "combination": "8162",
+          "contains": [
+            "nano_inhibitor_injector"
+          ]
+        },
+        {
+          "id": "nano_inhibitor_injector",
+          "name": "nano inhibitor injector",
+          "description": "A specialized device that can shut down nano swarm activity"
+        },
+        {
+          "id": "nano_fabrication_chamber",
+          "name": "nano fabrication chamber",
+          "description": "A sealed chamber used for nano machine assembly",
+          "locked": true,
+          "key_required": "hazmat_gloves",
+          "contains": [
+            "sealed_nano_sample"
+          ]
+        },
+        {
+          "id": "sealed_nano_sample",
+          "name": "sealed nano sample",
+          "description": "A containment vial with a small amount of dormant nano machines"
+        },
+        {
+          "id": "holographic_display",
+          "name": "main holographic display",
+          "description": "A floating display showing facility status and security information",
+          "readable": true,
+          "text": "FACILITY STATUS: Containment breach in progress. Evacuation recommended. Emergency pod bay accessible via security clearance. Questions: Who authorized this research? Where are the nano machines contained? What device stops the swarm?"
+        },
+        {
+          "id": "emergency_pod_bay_door",
+          "name": "emergency pod bay door",
+          "description": "A reinforced door leading to the evacuation area. A security terminal displays three verification questions.",
+          "locked": true,
+          "lock_type": "password",
+          "password_questions": [
+            {
+              "question": "Who authorized this research?",
+              "answer": "dr chen",
+              "hint": "Check the research notes to find the lead researcher's name"
+            },
+            {
+              "question": "Where are the nano machines contained?",
+              "answer": "containment chamber",
+              "hint": "Think about where you started and what the first room was called"
+            },
+            {
+              "question": "What device stops the swarm?",
+              "answer": "nano inhibitor injector",
+              "hint": "The emergency protocol and research notes mention the shutdown device"
+            }
+          ],
+          "direction": "east",
+          "leads_to": "escape_pod_bay",
+          "aliases": [
+            "emergency exit",
+            "east"
+          ]
+        }
+      ],
+      "exits": []
+    },
+    {
+      "id": "escape_pod_bay",
+      "name": "Emergency Escape Pod Bay",
+      "description": "You have reached the evacuation zone! A sleek escape pod sits ready in its launch tube, its engines humming with power. Through the viewport you can see the facility below, with nano swarms spreading through the corridors. The pod's hatch is open and waiting. Safety at last!",
+      "items": [
+        {
+          "id": "escape_pod",
+          "name": "emergency escape pod",
+          "description": "A small spacecraft designed for emergency evacuation, fully fueled and ready to launch"
+        },
+        {
+          "id": "launch_console",
+          "name": "pod launch console",
+          "description": "The control panel for launching the escape pod",
+          "readable": true,
+          "text": "LAUNCH SEQUENCE READY. All systems nominal. Destination: Orbital Station Alpha. Estimated flight time: 15 minutes."
+        }
+      ],
+      "exits": [],
+      "is_goal": true,
+      "win_message": "SUCCESS! You board the escape pod and initiate the launch sequence. The pod blasts away from the facility as you watch the nano swarm containment zone shrink below you. You've secured the inhibitor technology and escaped with your life. Mission accomplished! You win!"
+    }
+  ]
+}

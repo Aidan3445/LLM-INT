@@ -1,0 +1,223 @@
+{
+    "theme": "Hologram Theater",
+    "title": "Hologram Theater Adventure #5",
+    "goal": "Solve the puzzles, achieve the main objective, and escape.",
+    "starting_room": "projection_booth",
+    "rooms": [
+        {
+            "id": "projection_booth",
+            "name": "Hologram Projection Booth",
+            "description": "A high-tech control room filled with holographic projectors and glowing control panels. Blue and purple light emanates from the equipment. The walls are lined with storage lockers and equipment racks. Through the window, you can see the empty theater seats below. The door locked behind you when you entered.",
+            "items": [
+                {
+                    "id": "control_panel",
+                    "name": "main control panel",
+                    "description": "A sleek touchscreen panel displaying various hologram show settings and schedules",
+                    "readable": true,
+                    "text": "SHOW SCHEDULE: Tonight's Performance - 'Stellar Dreams' by Director Nova Chen. Show ID: 2847. All systems nominal. Emergency override requires Director authorization."
+                },
+                {
+                    "id": "equipment_rack",
+                    "name": "equipment storage rack",
+                    "description": "A metal rack holding various technical equipment and tools",
+                    "searchable": true,
+                    "contains": [
+                        "access_card"
+                    ]
+                },
+                {
+                    "id": "access_card",
+                    "name": "technician access card",
+                    "description": "A magnetic card labeled 'Theater Tech - Level 2 Access'"
+                },
+                {
+                    "id": "storage_lockers",
+                    "name": "storage locker unit",
+                    "description": "A set of three lockers used by theater staff",
+                    "subcontainers": [
+                        {
+                            "id": "locker_a",
+                            "name": "locker A",
+                            "locked": false,
+                            "contains": [
+                                "staff_memo"
+                            ]
+                        },
+                        {
+                            "id": "locker_b",
+                            "name": "locker B",
+                            "locked": true,
+                            "lock_type": "combination",
+                            "combination": "2847",
+                            "contains": [
+                                "director_keycard"
+                            ]
+                        },
+                        {
+                            "id": "locker_c",
+                            "name": "locker C",
+                            "locked": false,
+                            "contains": []
+                        }
+                    ]
+                },
+                {
+                    "id": "staff_memo",
+                    "name": "staff memo",
+                    "description": "A printed memo from theater management",
+                    "readable": true,
+                    "text": "MEMO TO ALL STAFF: Remember to use show ID numbers as locker combinations for security. Director Nova Chen has final authority on all productions. The theater's founder, Marcus Hale, built this facility in the Innovation District. Always keep emergency protocols updated."
+                },
+                {
+                    "id": "director_keycard",
+                    "name": "director's keycard",
+                    "description": "A gold-trimmed access card labeled 'Director Nova Chen - Full Access'"
+                },
+                {
+                    "id": "projector_station",
+                    "name": "hologram projector station",
+                    "description": "A sophisticated holographic projection system with multiple emitters",
+                    "searchable": true,
+                    "contains": [
+                        "technical_manual"
+                    ]
+                },
+                {
+                    "id": "technical_manual",
+                    "name": "projector technical manual",
+                    "description": "A digital manual displayed on a tablet screen",
+                    "readable": true,
+                    "text": "HOLOGRAM PROJECTOR MANUAL: This theater uses quantum-matrix holography for ultra-realistic performances. System installed by founder Marcus Hale. For emergency shutdown, contact Director Nova Chen. Main theater access requires Level 2 credentials."
+                },
+                {
+                    "id": "booth_exit_door",
+                    "name": "booth exit door",
+                    "description": "A reinforced door with a card reader leading down to the main theater",
+                    "locked": true,
+                    "key_required": "access_card",
+                    "direction": "south",
+                    "leads_to": "main_theater",
+                    "aliases": [
+                        "door",
+                        "exit",
+                        "south"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "main_theater",
+            "name": "Main Theater Hall",
+            "description": "A vast auditorium with rows of plush seats facing a massive holographic stage. The air shimmers with residual holographic particles. Promotional posters line the walls, and a refreshment stand sits in the corner. The stage displays a frozen holographic scene from the last performance. An emergency exit glows at the far end.",
+            "items": [
+                {
+                    "id": "poster_stellar",
+                    "name": "poster for Stellar Dreams",
+                    "description": "A holographic poster showing stars and nebulae",
+                    "readable": true,
+                    "text": "STELLAR DREAMS - A cosmic journey through space and time. Directed by Nova Chen. 'Experience the universe like never before!' - Critics' Choice Award Winner"
+                },
+                {
+                    "id": "poster_founder",
+                    "name": "founder's dedication plaque",
+                    "description": "A commemorative plaque mounted on the wall",
+                    "readable": true,
+                    "text": "This theater was founded by Marcus Hale in 2089, bringing holographic entertainment to the Innovation District. 'Where dreams become reality through light.'"
+                },
+                {
+                    "id": "poster_nova",
+                    "name": "director profile poster",
+                    "description": "A promotional poster featuring the theater's director",
+                    "readable": true,
+                    "text": "MEET DIRECTOR NOVA CHEN - Award-winning holographic artist and theater director. 'I create experiences that transcend reality.' Resident director since 2091."
+                },
+                {
+                    "id": "refreshment_stand",
+                    "name": "automated refreshment stand",
+                    "description": "A sleek vending station with a locked maintenance panel",
+                    "locked": true,
+                    "key_required": "director_keycard",
+                    "contains": [
+                        "emergency_protocol"
+                    ]
+                },
+                {
+                    "id": "emergency_protocol",
+                    "name": "emergency protocol document",
+                    "description": "A sealed document with emergency procedures",
+                    "readable": true,
+                    "text": "EMERGENCY EXIT PROTOCOL: In case of system failure or emergency, the exit requires verification. Security questions: Who founded this theater? Where is this theater located? Who is the current director?"
+                },
+                {
+                    "id": "stage_area",
+                    "name": "holographic stage",
+                    "description": "The main performance area with frozen holographic projections of stars and galaxies",
+                    "searchable": true,
+                    "contains": [
+                        "program_guide"
+                    ]
+                },
+                {
+                    "id": "program_guide",
+                    "name": "tonight's program guide",
+                    "description": "A digital program for the evening's performance",
+                    "readable": true,
+                    "text": "TONIGHT'S PERFORMANCE: Stellar Dreams - A holographic masterpiece by Director Nova Chen. Experience the cosmos in stunning detail. Thank you for visiting our theater in the Innovation District!"
+                },
+                {
+                    "id": "emergency_exit_door",
+                    "name": "emergency exit door",
+                    "description": "A heavy door with a security terminal displaying three verification questions",
+                    "locked": true,
+                    "lock_type": "password",
+                    "password_questions": [
+                        {
+                            "question": "Who founded this theater?",
+                            "answer": "marcus hale",
+                            "hint": "Check the founder's dedication plaque on the wall"
+                        },
+                        {
+                            "question": "Where is this theater located?",
+                            "answer": "innovation district",
+                            "hint": "Multiple documents mention the theater's location"
+                        },
+                        {
+                            "question": "Who is the current director?",
+                            "answer": "nova chen",
+                            "hint": "Look at the posters and staff documents"
+                        }
+                    ],
+                    "direction": "east",
+                    "leads_to": "freedom",
+                    "aliases": [
+                        "exit",
+                        "emergency exit",
+                        "east"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "freedom",
+            "name": "Theater Lobby Exit",
+            "description": "You've made it to the main lobby! The exit doors slide open automatically, revealing the city lights outside. Fresh air rushes in as you step toward freedom. Behind you, the holographic theater systems power down for the night.",
+            "items": [
+                {
+                    "id": "exit_doors",
+                    "name": "glass exit doors",
+                    "description": "Automatic doors leading out to the city street"
+                },
+                {
+                    "id": "lobby_display",
+                    "name": "lobby information display",
+                    "description": "A holographic display showing upcoming performances and theater information"
+                }
+            ],
+            "exits": [],
+            "is_goal": true,
+            "win_message": "Success! You've solved all the puzzles and escaped the Hologram Theater. The emergency systems recognize your authorization and grant you exit. As you step outside into the cool night air, the theater's holographic marquee flickers behind you, already advertising tomorrow's show. You win!"
+        }
+    ]
+}

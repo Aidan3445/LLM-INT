@@ -1,0 +1,246 @@
+{
+    "theme": "Cyberpunk Heist",
+    "title": "Cyberpunk Heist Adventure #32",
+    "goal": "Solve the puzzles, achieve the main objective, and escape.",
+    "starting_room": "server_room",
+    "rooms": [
+        {
+            "id": "server_room",
+            "name": "Corporate Server Room",
+            "description": "A dimly lit room filled with rows of humming servers, their LED indicators blinking in rhythmic patterns. Cables snake across the floor like digital veins. The air is cool and sterile, maintained by industrial air conditioning units. Holographic displays flicker on the walls showing system diagnostics. The faint smell of ozone and electronics fills the space.",
+            "items": [
+                {
+                    "id": "server_rack_alpha",
+                    "name": "server rack alpha",
+                    "description": "A tall rack of blade servers with a maintenance panel on the side",
+                    "searchable": true,
+                    "contains": [
+                        "maintenance_tablet"
+                    ]
+                },
+                {
+                    "id": "maintenance_tablet",
+                    "name": "maintenance tablet",
+                    "description": "A digital tablet with system logs and maintenance records",
+                    "readable": true,
+                    "text": "MAINTENANCE LOG: NeoTech Corporation Server Farm - Established 2077. System Administrator: Marcus Chen. Lead Security Officer: Sarah Reeves. All critical data stored in Executive Vault on Level 3. Access requires proper authorization."
+                },
+                {
+                    "id": "workstation",
+                    "name": "technician workstation",
+                    "description": "A desk cluttered with tools, cables, and a locked drawer unit",
+                    "subcontainers": [
+                        {
+                            "id": "top_drawer",
+                            "name": "top drawer",
+                            "locked": false,
+                            "contains": [
+                                "security_memo"
+                            ]
+                        },
+                        {
+                            "id": "bottom_drawer",
+                            "name": "bottom drawer",
+                            "locked": true,
+                            "lock_type": "combination",
+                            "combination": "2077",
+                            "contains": [
+                                "blue_keycard"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "security_memo",
+                    "name": "security memorandum",
+                    "description": "An official memo from corporate security",
+                    "readable": true,
+                    "text": "SECURITY MEMO: All personnel must use proper access credentials. Blue keycards grant access to Security Control. The vault combination is the founding year - 2077. Remember: only authorized personnel may access the data vault."
+                },
+                {
+                    "id": "blue_keycard",
+                    "name": "blue security keycard",
+                    "description": "A keycard with 'SECURITY CONTROL ACCESS' printed on it"
+                },
+                {
+                    "id": "terminal_station",
+                    "name": "network terminal",
+                    "description": "A glowing terminal displaying system information",
+                    "readable": true,
+                    "text": "SYSTEM STATUS: NeoTech Corp Network Online. Administrator: Marcus Chen. All vault access controlled by Security Officer Reeves. Critical files located in Executive Vault. Backup systems operational."
+                },
+                {
+                    "id": "equipment_locker",
+                    "name": "equipment locker",
+                    "description": "A metal locker containing technical equipment",
+                    "searchable": true,
+                    "contains": [
+                        "wire_cutters"
+                    ]
+                },
+                {
+                    "id": "wire_cutters",
+                    "name": "industrial wire cutters",
+                    "description": "Heavy-duty cutters that could bypass certain locks"
+                },
+                {
+                    "id": "reinforced_security_door",
+                    "name": "reinforced security door",
+                    "description": "A heavy door with a card reader and biometric scanner, leading to Security Control",
+                    "locked": true,
+                    "key_required": "blue_keycard",
+                    "direction": "north",
+                    "leads_to": "security_control",
+                    "aliases": [
+                        "door",
+                        "north"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "security_control",
+            "name": "Security Control Center",
+            "description": "A high-tech command center with wall-to-wall monitors displaying security camera feeds from throughout the building. Holographic displays show real-time threat assessments. The main console pulses with blue light. Emergency lighting casts everything in a cool glow. A massive vault door dominates the east wall.",
+            "items": [
+                {
+                    "id": "main_console",
+                    "name": "security console",
+                    "description": "The primary control station with multiple screens and input terminals",
+                    "readable": true,
+                    "text": "SECURITY SYSTEM: NeoTech Corporation - All access logged. Current Security Officer: Sarah Reeves. System Administrator: Marcus Chen. Executive Vault contains classified corporate data. Vault access requires security clearance verification."
+                },
+                {
+                    "id": "monitor_wall",
+                    "name": "surveillance monitors",
+                    "description": "Dozens of screens showing camera feeds throughout the facility",
+                    "readable": true,
+                    "text": "Camera feeds show: Server Room (clear), Executive Offices (empty), Data Vault (secured). System timestamp: 2077 protocols active. All personnel movements tracked and logged by Security Control."
+                },
+                {
+                    "id": "security_desk",
+                    "name": "officer's desk",
+                    "description": "A desk with personnel files and a locked compartment",
+                    "subcontainers": [
+                        {
+                            "id": "file_drawer",
+                            "name": "file drawer",
+                            "locked": false,
+                            "contains": [
+                                "personnel_file"
+                            ]
+                        },
+                        {
+                            "id": "secure_compartment",
+                            "name": "secure compartment",
+                            "locked": true,
+                            "key_required": "wire_cutters",
+                            "contains": [
+                                "red_keycard"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "personnel_file",
+                    "name": "personnel records",
+                    "description": "Files containing employee information",
+                    "readable": true,
+                    "text": "PERSONNEL RECORDS: Sarah Reeves - Lead Security Officer, responsible for all vault access. Marcus Chen - System Administrator, maintains all corporate networks. Location: All classified data stored in Executive Vault on Level 3."
+                },
+                {
+                    "id": "red_keycard",
+                    "name": "red executive keycard",
+                    "description": "A high-level keycard marked 'EXECUTIVE VAULT ACCESS'"
+                },
+                {
+                    "id": "incident_log",
+                    "name": "security incident log",
+                    "description": "A digital log of security events",
+                    "readable": true,
+                    "text": "INCIDENT LOG: Multiple unauthorized access attempts detected. Security Officer Reeves has implemented additional vault protocols. Only personnel who can verify: Who controls vault access? Where is classified data stored? Who maintains the network?"
+                },
+                {
+                    "id": "equipment_rack",
+                    "name": "tactical equipment rack",
+                    "description": "A rack containing security gear and tools",
+                    "searchable": true,
+                    "contains": [
+                        "emp_device"
+                    ]
+                },
+                {
+                    "id": "emp_device",
+                    "name": "portable EMP device",
+                    "description": "A small electromagnetic pulse device for disabling electronics"
+                },
+                {
+                    "id": "executive_vault_door",
+                    "name": "executive vault door",
+                    "description": "A massive reinforced door with a biometric scanner and security verification system. Three security questions are displayed on the access panel.",
+                    "locked": true,
+                    "lock_type": "password",
+                    "password_questions": [
+                        {
+                            "question": "Who controls vault access?",
+                            "answer": "sarah reeves",
+                            "hint": "Check the personnel records and security console information"
+                        },
+                        {
+                            "question": "Where is classified data stored?",
+                            "answer": "executive vault",
+                            "hint": "Multiple documents mention the location of critical files"
+                        },
+                        {
+                            "question": "Who maintains the network?",
+                            "answer": "marcus chen",
+                            "hint": "The maintenance tablet and personnel files identify the system administrator"
+                        }
+                    ],
+                    "direction": "east",
+                    "leads_to": "executive_vault",
+                    "aliases": [
+                        "vault",
+                        "east"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "executive_vault",
+            "name": "Executive Data Vault",
+            "description": "You've breached the Executive Vault! A pristine chamber with walls lined with data storage units and quantum servers. Holographic displays show streams of encrypted data. In the center, a pedestal holds the prize - a glowing data chip containing the corporation's most valuable secrets. An emergency exit hatch in the ceiling leads to freedom.",
+            "items": [
+                {
+                    "id": "data_pedestal",
+                    "name": "secure data pedestal",
+                    "description": "A cylindrical pedestal with a data chip under a protective field",
+                    "searchable": true,
+                    "contains": [
+                        "corporate_data_chip"
+                    ]
+                },
+                {
+                    "id": "corporate_data_chip",
+                    "name": "encrypted data chip",
+                    "description": "The target of your heist - a chip containing billions in corporate secrets"
+                },
+                {
+                    "id": "quantum_servers",
+                    "name": "quantum server array",
+                    "description": "Cutting-edge servers processing encrypted corporate data"
+                },
+                {
+                    "id": "holographic_display",
+                    "name": "holographic data display",
+                    "description": "A 3D display showing real-time data streams and security status"
+                }
+            ],
+            "exits": [],
+            "is_goal": true,
+            "win_message": "SUCCESS! You've secured the data chip and completed the heist! As alarms begin to wail, you climb through the emergency hatch and escape into the neon-lit night of the city. The corporate secrets are yours, and you've pulled off the impossible. The streets below buzz with hovercars as you disappear into the urban sprawl. You win!"
+        }
+    ]
+}

@@ -1,0 +1,264 @@
+{
+    "theme": "Lost Research Station",
+    "title": "Lost Research Station Adventure #35",
+    "goal": "Solve the puzzles, achieve the main objective, and escape.",
+    "starting_room": "entrance_airlock",
+    "rooms": [
+        {
+            "id": "entrance_airlock",
+            "name": "Entrance Airlock",
+            "description": "A cold metal airlock chamber covered in frost. Emergency lights cast a red glow over scattered equipment and frozen condensation on the walls. Through the inner window, you can see the darkened corridors of the research station. The air is thin and stale.",
+            "items": [
+                {
+                    "id": "equipment_locker",
+                    "name": "emergency equipment locker",
+                    "description": "A tall metal locker with two compartments, partially frozen shut",
+                    "subcontainers": [
+                        {
+                            "id": "top_compartment",
+                            "name": "top compartment",
+                            "locked": false,
+                            "contains": [
+                                "station_log"
+                            ]
+                        },
+                        {
+                            "id": "bottom_compartment",
+                            "name": "bottom compartment",
+                            "locked": true,
+                            "lock_type": "combination",
+                            "combination": "2047",
+                            "contains": [
+                                "security_keycard"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "station_log",
+                    "name": "research station log",
+                    "description": "A digital tablet with the last entries from the station crew",
+                    "readable": true,
+                    "text": "Final Log Entry - Dr. Sarah Chen, Lead Researcher: The experiment has gone critical. We're evacuating to the escape pods. Station established 2047. If anyone finds this, the main lab is sealed. Only Dr. Marcus Webb has override access. The specimen is contained in Sector 7."
+                },
+                {
+                    "id": "supply_crate",
+                    "name": "supply crate",
+                    "description": "A sealed crate with emergency supplies",
+                    "searchable": true,
+                    "contains": [
+                        "powerful_flashlight"
+                    ]
+                },
+                {
+                    "id": "powerful_flashlight",
+                    "name": "powerful flashlight",
+                    "description": "A high intensity flashlight for dark corridors"
+                },
+                {
+                    "id": "security_keycard",
+                    "name": "security access keycard",
+                    "description": "A keycard labeled 'Security Level 2 Access'"
+                },
+                {
+                    "id": "inner_airlock_door",
+                    "name": "inner airlock door",
+                    "description": "A heavy door leading into the main station corridor. The security panel blinks red.",
+                    "locked": true,
+                    "key_required": "security_keycard",
+                    "direction": "north",
+                    "leads_to": "main_corridor",
+                    "aliases": [
+                        "door",
+                        "north"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "main_corridor",
+            "name": "Main Research Corridor",
+            "description": "A long corridor with flickering fluorescent lights. The walls are lined with photographs of the research team and informational posters about the station's work. Doors lead to various labs and offices. A large security door blocks access to the main laboratory at the far end.",
+            "items": [
+                {
+                    "id": "photograph_chen",
+                    "name": "photograph of Dr Chen",
+                    "description": "A framed photo of the lead researcher",
+                    "readable": true,
+                    "text": "Dr. Sarah Chen - Lead Researcher. Specializes in xenobiology and containment protocols."
+                },
+                {
+                    "id": "photograph_webb",
+                    "name": "photograph of Dr Webb",
+                    "description": "A framed photo of the station director",
+                    "readable": true,
+                    "text": "Dr. Marcus Webb - Station Director. Responsible for all security protocols and emergency procedures."
+                },
+                {
+                    "id": "photograph_torres",
+                    "name": "photograph of Dr Torres",
+                    "description": "A framed photo of a young scientist",
+                    "readable": true,
+                    "text": "Dr. Elena Torres - Junior Researcher. Her family lives in the Arctic Research Base. Studies specimen behavior in Sector 7."
+                },
+                {
+                    "id": "information_board",
+                    "name": "station information board",
+                    "description": "A bulletin board with various notices and memos",
+                    "readable": true,
+                    "text": "NOTICE: All personnel must memorize emergency protocols. Specimen containment is in Sector 7. In case of breach, evacuate immediately to the Arctic Research Base."
+                },
+                {
+                    "id": "desk_unit",
+                    "name": "corridor desk unit",
+                    "description": "A small desk with drawers built into the wall",
+                    "subcontainers": [
+                        {
+                            "id": "left_drawer",
+                            "name": "left drawer",
+                            "locked": false,
+                            "contains": [
+                                "maintenance_note"
+                            ]
+                        },
+                        {
+                            "id": "right_drawer",
+                            "name": "right drawer",
+                            "locked": false,
+                            "contains": []
+                        }
+                    ]
+                },
+                {
+                    "id": "maintenance_note",
+                    "name": "maintenance memo",
+                    "description": "A note about station systems",
+                    "readable": true,
+                    "text": "MAINTENANCE LOG: Lab door override code is based on Director Webb's credentials. His employee ID is written under his desk nameplate in his office."
+                },
+                {
+                    "id": "director_office_door",
+                    "name": "director office door",
+                    "description": "A door labeled 'Director Marcus Webb - Station Command'",
+                    "locked": false,
+                    "direction": "west",
+                    "leads_to": "director_office",
+                    "aliases": [
+                        "office",
+                        "west"
+                    ]
+                },
+                {
+                    "id": "reinforced_lab_door",
+                    "name": "reinforced lab door",
+                    "description": "A massive reinforced door with a biometric scanner and keypad. Three security questions are displayed on the screen.",
+                    "locked": true,
+                    "lock_type": "password",
+                    "password_questions": [
+                        {
+                            "question": "Enter Station Director name:",
+                            "answer": "marcus webb",
+                            "hint": "Check the photographs in the corridor"
+                        },
+                        {
+                            "question": "Enter specimen containment sector:",
+                            "answer": "sector 7",
+                            "hint": "Look at the station log and information board"
+                        },
+                        {
+                            "question": "Enter evacuation destination:",
+                            "answer": "arctic research base",
+                            "hint": "The information board mentions where to evacuate"
+                        }
+                    ],
+                    "direction": "north",
+                    "leads_to": "main_laboratory",
+                    "aliases": [
+                        "lab",
+                        "north"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "director_office",
+            "name": "Director's Office",
+            "description": "A small office with a desk covered in papers and research reports. A computer terminal sits dark and lifeless. Personal items and commendations line the shelves.",
+            "items": [
+                {
+                    "id": "director_desk",
+                    "name": "director desk",
+                    "description": "A cluttered desk with various documents and a nameplate",
+                    "searchable": true,
+                    "contains": [
+                        "override_code_note"
+                    ]
+                },
+                {
+                    "id": "override_code_note",
+                    "name": "hidden note under nameplate",
+                    "description": "A small note taped under the desk nameplate",
+                    "readable": true,
+                    "text": "Employee ID: MW-7734. This code can override the lab door in emergencies."
+                },
+                {
+                    "id": "filing_cabinet",
+                    "name": "filing cabinet",
+                    "description": "A cabinet with research files and personnel records",
+                    "searchable": true,
+                    "contains": [
+                        "research_report"
+                    ]
+                },
+                {
+                    "id": "research_report",
+                    "name": "classified research report",
+                    "description": "A confidential document about the station's work",
+                    "readable": true,
+                    "text": "PROJECT AURORA: Specimen exhibits unprecedented adaptive capabilities. Dr. Chen recommends extreme caution. Containment in Sector 7 holding at 99.7% integrity. Dr. Webb authorized for all override procedures."
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "main_laboratory",
+            "name": "Main Research Laboratory",
+            "description": "You've reached the heart of the research station! A vast laboratory filled with sophisticated equipment and monitoring stations. In the center, a large containment chamber stands empty, its door hanging open. Beyond it, an emergency escape hatch glows with green light, showing the way to the evacuation pods.",
+            "items": [
+                {
+                    "id": "containment_chamber",
+                    "name": "empty containment chamber",
+                    "description": "A large reinforced chamber that once held the specimen. It's now empty."
+                },
+                {
+                    "id": "monitoring_station",
+                    "name": "monitoring station",
+                    "description": "A bank of screens showing various station systems",
+                    "readable": true,
+                    "text": "SYSTEM STATUS: Containment breach detected. Specimen location: Unknown. Evacuation pods: Active. All personnel evacuated successfully."
+                },
+                {
+                    "id": "research_notes",
+                    "name": "scattered research notes",
+                    "description": "Papers and tablets scattered across the workbenches",
+                    "searchable": true,
+                    "contains": [
+                        "final_message"
+                    ]
+                },
+                {
+                    "id": "final_message",
+                    "name": "final message from Dr Chen",
+                    "description": "A handwritten note left behind",
+                    "readable": true,
+                    "text": "If you're reading this, you made it through. The specimen escaped but we contained it in the lower levels before evacuating. The station is safe now. Use the escape pods to get out. Good luck. - Dr. Sarah Chen"
+                }
+            ],
+            "exits": [],
+            "is_goal": true,
+            "win_message": "You've successfully navigated the abandoned research station and reached the main laboratory! The escape pod hatch opens before you, revealing a small spacecraft ready to take you to safety. As you climb aboard and initiate launch, you look back at the dark station one last time. Whatever happened here is over now, and you're going home. You win!"
+        }
+    ]
+}

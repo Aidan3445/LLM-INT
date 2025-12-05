@@ -1,0 +1,270 @@
+{
+    "theme": "Forbidden Forest Ritual Site",
+    "title": "Forbidden Forest Ritual Site Adventure #31",
+    "goal": "Solve the puzzles, achieve the main objective, and escape.",
+    "starting_room": "ritual_clearing",
+    "rooms": [
+        {
+            "id": "ritual_clearing",
+            "name": "Ancient Ritual Clearing",
+            "description": "A circular clearing deep in the forbidden forest, surrounded by towering ancient trees. Moonlight filters through the canopy, illuminating a ring of standing stones covered in glowing runes. The air hums with mystical energy. Moss and vines cover everything, and the scent of earth and old magic fills your lungs.",
+            "items": [
+                {
+                    "id": "standing_stones",
+                    "name": "circle of standing stones",
+                    "description": "Massive stones arranged in a perfect circle, each carved with ancient symbols",
+                    "readable": true,
+                    "text": "The runes tell a story: 'In the year 333, the Forest Keeper sealed this sacred place. Three guardians protect the way: the Owl of Wisdom, the Wolf of Strength, and the Raven of Secrets.'"
+                },
+                {
+                    "id": "stone_altar",
+                    "name": "moss covered stone altar",
+                    "description": "A flat stone altar in the center of the circle, covered in thick green moss",
+                    "searchable": true,
+                    "contains": [
+                        "ritual_dagger"
+                    ]
+                },
+                {
+                    "id": "ritual_dagger",
+                    "name": "ceremonial silver dagger",
+                    "description": "An ornate dagger with a silver blade etched with forest symbols"
+                },
+                {
+                    "id": "wooden_chest",
+                    "name": "moss covered wooden chest",
+                    "description": "An old chest bound with iron, hidden beneath layers of moss and roots",
+                    "locked": true,
+                    "key_required": "iron_key",
+                    "contains": [
+                        "forest_keeper_journal"
+                    ]
+                },
+                {
+                    "id": "forest_keeper_journal",
+                    "name": "Forest Keeper's journal",
+                    "description": "A leather bound book with pages preserved by magic",
+                    "readable": true,
+                    "text": "Journal of the Forest Keeper: I am Elara Thornwood, guardian of this sacred grove. The ritual requires three tokens: the Feather of Wisdom, the Fang of Strength, and the Eye of Secrets. Only then can one enter the Inner Sanctum and complete the ancient rite."
+                },
+                {
+                    "id": "hollow_log",
+                    "name": "hollow rotting log",
+                    "description": "A fallen tree trunk with compartments carved into its interior",
+                    "subcontainers": [
+                        {
+                            "id": "log_top_section",
+                            "name": "top section",
+                            "locked": false,
+                            "contains": [
+                                "keeper_note"
+                            ]
+                        },
+                        {
+                            "id": "log_bottom_section",
+                            "name": "bottom section",
+                            "locked": true,
+                            "lock_type": "combination",
+                            "combination": "333",
+                            "contains": [
+                                "iron_key"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "keeper_note",
+                    "name": "weathered note",
+                    "description": "A note written in faded ink on bark paper",
+                    "readable": true,
+                    "text": "Remember: The year of sealing is the key to the hidden compartment. The standing stones remember when this place was locked away from the world."
+                },
+                {
+                    "id": "iron_key",
+                    "name": "rusted iron key",
+                    "description": "A heavy iron key covered in rust and forest debris"
+                },
+                {
+                    "id": "overgrown_forest_path",
+                    "name": "overgrown forest path",
+                    "description": "A narrow path leading north, blocked by thick vines that need to be cut",
+                    "locked": true,
+                    "key_required": "ritual_dagger",
+                    "direction": "north",
+                    "leads_to": "guardian_grove",
+                    "aliases": [
+                        "path",
+                        "north"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "guardian_grove",
+            "name": "Grove of the Three Guardians",
+            "description": "A mystical grove where three ancient trees stand in a triangle formation. Each tree has a hollow at its base containing a stone statue: an owl, a wolf, and a raven. Ethereal mist swirls around the ground, and the trees seem to whisper secrets. A massive wooden door carved with intricate patterns stands at the far end.",
+            "items": [
+                {
+                    "id": "owl_statue",
+                    "name": "stone owl statue",
+                    "description": "A weathered statue of an owl with knowing eyes, positioned in the northern tree",
+                    "readable": true,
+                    "text": "Inscription beneath: 'The Owl of Wisdom guards knowledge. Seek wisdom in the Library of Leaves, where ancient texts are preserved.'"
+                },
+                {
+                    "id": "wolf_statue",
+                    "name": "stone wolf statue",
+                    "description": "A fierce statue of a wolf with bared fangs, positioned in the western tree",
+                    "readable": true,
+                    "text": "Inscription beneath: 'The Wolf of Strength guards power. Its fang rests in the Den of Shadows, where the strong survive.'"
+                },
+                {
+                    "id": "raven_statue",
+                    "name": "stone raven statue",
+                    "description": "A mysterious statue of a raven with gleaming eyes, positioned in the eastern tree",
+                    "readable": true,
+                    "text": "Inscription beneath: 'The Raven of Secrets guards mysteries. Its eye sees all from the Nest of Whispers, where secrets are kept.'"
+                },
+                {
+                    "id": "owl_tree_hollow",
+                    "name": "hollow in owl tree",
+                    "description": "A deep hollow in the base of the northern tree",
+                    "searchable": true,
+                    "contains": [
+                        "wisdom_feather"
+                    ]
+                },
+                {
+                    "id": "wisdom_feather",
+                    "name": "Feather of Wisdom",
+                    "description": "A pristine white feather that glows with soft light, one of the three ritual tokens"
+                },
+                {
+                    "id": "wolf_tree_hollow",
+                    "name": "hollow in wolf tree",
+                    "description": "A dark hollow in the base of the western tree",
+                    "searchable": true,
+                    "contains": [
+                        "strength_fang"
+                    ]
+                },
+                {
+                    "id": "strength_fang",
+                    "name": "Fang of Strength",
+                    "description": "A large wolf fang carved from bone, one of the three ritual tokens"
+                },
+                {
+                    "id": "raven_tree_hollow",
+                    "name": "hollow in raven tree",
+                    "description": "A mysterious hollow in the base of the eastern tree",
+                    "searchable": true,
+                    "contains": [
+                        "secrets_eye"
+                    ]
+                },
+                {
+                    "id": "secrets_eye",
+                    "name": "Eye of Secrets",
+                    "description": "A polished black stone shaped like an eye, one of the three ritual tokens"
+                },
+                {
+                    "id": "ritual_pedestal",
+                    "name": "three sided pedestal",
+                    "description": "A stone pedestal with three indentations, each shaped for one of the guardian tokens",
+                    "readable": true,
+                    "text": "Ancient text carved into the pedestal: 'Place the three tokens to prove your worth. Then answer the questions of the forest to enter the Inner Sanctum.'"
+                },
+                {
+                    "id": "ancient_wooden_door",
+                    "name": "ancient wooden door",
+                    "description": "A massive door carved from a single piece of ancient wood, covered in protective runes. Three questions are burned into its surface.",
+                    "locked": true,
+                    "lock_type": "password",
+                    "password_questions": [
+                        {
+                            "question": "Who was the Forest Keeper?",
+                            "answer": "elara thornwood",
+                            "hint": "Check the Forest Keeper's journal in the ritual clearing"
+                        },
+                        {
+                            "question": "Where does the Owl guard knowledge?",
+                            "answer": "library of leaves",
+                            "hint": "Read the inscription beneath the owl statue"
+                        },
+                        {
+                            "question": "Where does the Raven keep secrets?",
+                            "answer": "nest of whispers",
+                            "hint": "The raven statue's inscription reveals this location"
+                        }
+                    ],
+                    "direction": "east",
+                    "leads_to": "inner_sanctum",
+                    "aliases": [
+                        "door",
+                        "east"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "inner_sanctum",
+            "name": "Inner Sanctum of the Forest",
+            "description": "You have entered the heart of the forbidden forest! A magnificent chamber within a living tree, its walls formed by intertwined roots and branches. In the center, a pool of crystal clear water reflects the stars above, even though you are deep underground. Ancient magic pulses through the air. A shaft of pure moonlight descends from above, illuminating a portal of swirling green energy.",
+            "items": [
+                {
+                    "id": "crystal_pool",
+                    "name": "sacred crystal pool",
+                    "description": "A pool of water so clear it seems like liquid light, reflecting impossible stars"
+                },
+                {
+                    "id": "living_throne",
+                    "name": "throne of living wood",
+                    "description": "A throne grown from the tree itself, covered in flowering vines",
+                    "readable": true,
+                    "text": "Inscription on the throne: 'The ritual is complete. The forest accepts you as its guardian. May you protect this sacred place as Elara Thornwood once did.'"
+                },
+                {
+                    "id": "ritual_artifacts",
+                    "name": "display of ritual artifacts",
+                    "description": "Ancient tools and tokens from past Forest Keepers, preserved in alcoves of living wood"
+                },
+                {
+                    "id": "portal_of_moonlight",
+                    "name": "portal of moonlight",
+                    "description": "A swirling portal of green and silver energy, offering passage back to the mortal world. It requires the three guardian tokens to activate.",
+                    "locked": true,
+                    "key_required": "wisdom_feather",
+                    "direction": "north",
+                    "leads_to": "forest_edge",
+                    "aliases": [
+                        "portal",
+                        "north"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "forest_edge",
+            "name": "Edge of the Forbidden Forest",
+            "description": "You emerge at the edge of the forbidden forest as dawn breaks. The trees behind you seem to bow in farewell. The ritual is complete, and the forest has accepted you as its new guardian. The path ahead leads back to civilization, but you carry the forest's blessing with you.",
+            "items": [
+                {
+                    "id": "morning_sun",
+                    "name": "rays of morning sunlight",
+                    "description": "Warm sunlight breaking through the trees, marking the end of your journey"
+                },
+                {
+                    "id": "guardian_mark",
+                    "name": "mark of the Forest Keeper",
+                    "description": "A glowing symbol on your hand, proof of your bond with the ancient forest"
+                }
+            ],
+            "exits": [],
+            "is_goal": true,
+            "win_message": "You have completed the ancient ritual and been accepted as the new Forest Keeper! The forbidden forest recognizes you as its guardian, and the spirits of the three guardians bow to you. Elara Thornwood's legacy lives on through you. The forest's magic flows through your veins, and you emerge into the dawn as a protector of the sacred grove. You win!"
+        }
+    ]
+}

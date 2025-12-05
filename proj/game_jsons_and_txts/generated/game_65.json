@@ -1,0 +1,351 @@
+{
+    "theme": "Crystal-Powered Train Station",
+    "title": "Crystal-Powered Train Station Adventure #65",
+    "goal": "Solve the puzzles, achieve the main objective, and escape.",
+    "starting_room": "maintenance_room",
+    "rooms": [
+        {
+            "id": "maintenance_room",
+            "name": "Station Maintenance Room",
+            "description": "A dimly lit maintenance room beneath the train station. Pipes hiss with steam, and the walls are lined with tool racks and storage lockers. A faint blue glow emanates from crystal fragments scattered on a workbench. The air smells of oil and ozone.",
+            "items": [
+                {
+                    "id": "tool_rack",
+                    "name": "metal tool rack",
+                    "description": "A rack holding various maintenance tools and equipment",
+                    "searchable": true,
+                    "contains": [
+                        "wrench"
+                    ]
+                },
+                {
+                    "id": "wrench",
+                    "name": "heavy wrench",
+                    "description": "A large adjustable wrench, useful for mechanical work"
+                },
+                {
+                    "id": "storage_lockers",
+                    "name": "storage locker unit",
+                    "description": "A set of metal lockers with three compartments",
+                    "subcontainers": [
+                        {
+                            "id": "locker_a",
+                            "name": "locker A",
+                            "locked": false,
+                            "contains": [
+                                "maintenance_log"
+                            ]
+                        },
+                        {
+                            "id": "locker_b",
+                            "name": "locker B",
+                            "locked": true,
+                            "lock_type": "combination",
+                            "combination": "347",
+                            "contains": [
+                                "brass_key"
+                            ]
+                        },
+                        {
+                            "id": "locker_c",
+                            "name": "locker C",
+                            "locked": false,
+                            "contains": []
+                        }
+                    ]
+                },
+                {
+                    "id": "maintenance_log",
+                    "name": "maintenance logbook",
+                    "description": "A worn notebook with daily maintenance records",
+                    "readable": true,
+                    "text": "Station Log: Crystal resonance frequency is critical. Platform 3 uses frequency 347 Hz. Engineer Tesla oversees all crystal operations. Remember: crystals are stored in the vault, the station master is Chief Conductor Morrison, and the locomotive runs on pure crystal energy."
+                },
+                {
+                    "id": "brass_key",
+                    "name": "brass storage key",
+                    "description": "A small brass key with a tag reading 'Crystal Storage'"
+                },
+                {
+                    "id": "workbench",
+                    "name": "cluttered workbench",
+                    "description": "A workbench covered with crystal fragments and technical diagrams",
+                    "searchable": true,
+                    "contains": [
+                        "crystal_diagram"
+                    ]
+                },
+                {
+                    "id": "crystal_diagram",
+                    "name": "crystal power diagram",
+                    "description": "A technical schematic showing the crystal power system",
+                    "readable": true,
+                    "text": "CRYSTAL POWER SYSTEM: The station requires three power crystals to operate. Blue Crystal (cooling), Red Crystal (heating), Green Crystal (propulsion). All crystals must be installed in the control panel to activate the locomotive."
+                },
+                {
+                    "id": "reinforced_metal_door",
+                    "name": "reinforced metal door",
+                    "description": "A heavy door leading up to the main platform level",
+                    "locked": true,
+                    "key_required": "wrench",
+                    "direction": "north",
+                    "leads_to": "main_platform",
+                    "aliases": [
+                        "door",
+                        "up"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "main_platform",
+            "name": "Main Station Platform",
+            "description": "A grand Victorian-era train platform with vaulted glass ceilings. Crystal chandeliers cast prismatic light across marble floors. A magnificent steam locomotive sits at the platform, its boiler cold and dark. Benches line the walls, and a ticket office stands to the east. Information boards display departure times.",
+            "items": [
+                {
+                    "id": "information_board",
+                    "name": "departure information board",
+                    "description": "A large board listing train schedules and platform information",
+                    "readable": true,
+                    "text": "DEPARTURES: Express to Crystal City - Platform 3 - DELAYED. Engineer Tesla reports power crystal shortage. Contact Station Master Morrison for assistance."
+                },
+                {
+                    "id": "bench",
+                    "name": "wooden waiting bench",
+                    "description": "A polished wooden bench with ornate iron armrests",
+                    "searchable": true,
+                    "contains": [
+                        "newspaper"
+                    ]
+                },
+                {
+                    "id": "newspaper",
+                    "name": "daily newspaper",
+                    "description": "Today's edition of the Crystal City Gazette",
+                    "readable": true,
+                    "text": "HEADLINE: Crystal Vault Security Enhanced! Station Master Morrison announces new security measures. The vault now requires knowledge of station operations to access. 'Only those who know our engineer, our storage location, and our station master may enter,' Morrison stated."
+                },
+                {
+                    "id": "locomotive",
+                    "name": "steam locomotive",
+                    "description": "A beautiful brass and steel locomotive with crystal power chambers visible through glass panels. Currently inactive.",
+                    "readable": true,
+                    "text": "The locomotive's nameplate reads 'Crystal Express'. Three empty crystal chambers are visible: one blue, one red, one green. All chambers must be filled to activate the engine."
+                },
+                {
+                    "id": "crystal_storage",
+                    "name": "locked crystal storage box",
+                    "description": "A reinforced box mounted on the platform wall, labeled 'Emergency Crystal Supply'",
+                    "locked": true,
+                    "key_required": "brass_key",
+                    "contains": [
+                        "blue_crystal"
+                    ]
+                },
+                {
+                    "id": "blue_crystal",
+                    "name": "blue power crystal",
+                    "description": "A glowing blue crystal that pulses with cooling energy"
+                },
+                {
+                    "id": "ticket_office_door",
+                    "name": "ticket office door",
+                    "description": "An ornate wooden door with frosted glass panels leading to the ticket office",
+                    "locked": false,
+                    "direction": "east",
+                    "leads_to": "ticket_office",
+                    "aliases": [
+                        "office",
+                        "east"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "ticket_office",
+            "name": "Station Ticket Office",
+            "description": "A cozy office with a large wooden counter and walls covered in route maps and timetables. Filing cabinets line one wall, and a safe sits in the corner. The station master's desk is cluttered with papers and crystal samples.",
+            "items": [
+                {
+                    "id": "filing_cabinet",
+                    "name": "wooden filing cabinet",
+                    "description": "A tall cabinet with multiple drawers containing station records",
+                    "subcontainers": [
+                        {
+                            "id": "drawer_personnel",
+                            "name": "personnel drawer",
+                            "locked": false,
+                            "contains": [
+                                "personnel_file"
+                            ]
+                        },
+                        {
+                            "id": "drawer_operations",
+                            "name": "operations drawer",
+                            "locked": false,
+                            "contains": [
+                                "operations_manual"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "personnel_file",
+                    "name": "personnel records",
+                    "description": "Employee files for station staff",
+                    "readable": true,
+                    "text": "STAFF DIRECTORY: Chief Engineer - Nikola Tesla (Crystal Systems), Station Master - Chief Conductor Morrison (Operations), Assistant - Various. Tesla is responsible for all crystal maintenance and power distribution."
+                },
+                {
+                    "id": "operations_manual",
+                    "name": "station operations manual",
+                    "description": "A comprehensive guide to station procedures",
+                    "readable": true,
+                    "text": "CRYSTAL STORAGE PROTOCOLS: All power crystals are stored in the secure vault located in the control room. Access requires proper authorization. The vault contains the red and green crystals needed for locomotive operation."
+                },
+                {
+                    "id": "station_master_desk",
+                    "name": "station master desk",
+                    "description": "A large oak desk covered with schedules, manifests, and crystal samples",
+                    "searchable": true,
+                    "contains": [
+                        "vault_note"
+                    ]
+                },
+                {
+                    "id": "vault_note",
+                    "name": "handwritten note",
+                    "description": "A note in elegant handwriting",
+                    "readable": true,
+                    "text": "Reminder to self: The control room vault security questions are: Who is our chief engineer? Where are crystals stored? Who am I? - Chief Conductor Morrison"
+                },
+                {
+                    "id": "control_room_door",
+                    "name": "control room door",
+                    "description": "A heavy door with a brass plaque reading 'Station Control Room - Authorized Personnel Only'",
+                    "locked": false,
+                    "direction": "north",
+                    "leads_to": "control_room",
+                    "aliases": [
+                        "control",
+                        "north"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "control_room",
+            "name": "Station Control Room",
+            "description": "The nerve center of the train station. Banks of switches, gauges, and crystal-powered instruments line the walls. A large control panel dominates the center of the room, with three empty crystal slots. A secure vault is built into the far wall, its door covered with security questions.",
+            "items": [
+                {
+                    "id": "control_panel",
+                    "name": "main control panel",
+                    "description": "A complex panel with three crystal insertion slots labeled Blue, Red, and Green",
+                    "readable": true,
+                    "text": "CRYSTAL POWER CONTROL: Insert all three power crystals to activate the locomotive. Blue Crystal (cooling system), Red Crystal (heating system), Green Crystal (propulsion system). WARNING: All crystals must be installed before departure."
+                },
+                {
+                    "id": "gauge_array",
+                    "name": "pressure gauge array",
+                    "description": "Multiple gauges showing various system readings, all currently at zero",
+                    "readable": true,
+                    "text": "All systems offline. Crystal power required for activation."
+                },
+                {
+                    "id": "secure_vault",
+                    "name": "crystal vault",
+                    "description": "A reinforced vault with a sophisticated locking mechanism. Three security questions are displayed on a brass panel.",
+                    "locked": true,
+                    "lock_type": "password",
+                    "password_questions": [
+                        {
+                            "question": "Who is the chief engineer?",
+                            "answer": "nikola tesla",
+                            "hint": "Check the personnel records in the ticket office"
+                        },
+                        {
+                            "question": "Where are crystals stored?",
+                            "answer": "vault",
+                            "hint": "The operations manual mentions the storage location"
+                        },
+                        {
+                            "question": "Who is the station master?",
+                            "answer": "chief conductor morrison",
+                            "hint": "Look at the newspaper and personnel files"
+                        }
+                    ],
+                    "contains": [
+                        "red_crystal",
+                        "green_crystal"
+                    ]
+                },
+                {
+                    "id": "red_crystal",
+                    "name": "red power crystal",
+                    "description": "A glowing red crystal radiating warmth and heating energy"
+                },
+                {
+                    "id": "green_crystal",
+                    "name": "green power crystal",
+                    "description": "A glowing green crystal humming with propulsion energy"
+                },
+                {
+                    "id": "platform_access_door",
+                    "name": "platform access door",
+                    "description": "A door leading back to the main platform where the locomotive awaits",
+                    "locked": false,
+                    "direction": "south",
+                    "leads_to": "main_platform",
+                    "aliases": [
+                        "platform",
+                        "south"
+                    ]
+                },
+                {
+                    "id": "direct_boarding_passage",
+                    "name": "direct boarding passage",
+                    "description": "A passage leading directly to the locomotive once all crystals are installed in the control panel",
+                    "locked": true,
+                    "key_required": "green_crystal",
+                    "direction": "west",
+                    "leads_to": "locomotive_cabin",
+                    "aliases": [
+                        "passage",
+                        "west",
+                        "locomotive"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "locomotive_cabin",
+            "name": "Locomotive Engineer's Cabin",
+            "description": "You've made it! The engineer's cabin of the Crystal Express is alive with power. The three crystals glow brilliantly in their chambers - blue, red, and green light mixing to create a dazzling display. Steam hisses, gauges spin to life, and the locomotive begins to move. Through the forward window, you see the tracks stretching toward freedom and adventure.",
+            "items": [
+                {
+                    "id": "engineer_controls",
+                    "name": "locomotive controls",
+                    "description": "A beautiful array of brass levers, crystal-powered gauges, and control wheels"
+                },
+                {
+                    "id": "crystal_chambers",
+                    "name": "active crystal chambers",
+                    "description": "Three glowing chambers containing the blue, red, and green power crystals, all operating at full capacity"
+                },
+                {
+                    "id": "forward_window",
+                    "name": "cabin window",
+                    "description": "A large window showing the tracks ahead disappearing into the distance"
+                }
+            ],
+            "exits": [],
+            "is_goal": true,
+            "win_message": "SUCCESS! You've activated the Crystal Express and escaped the station! The three power crystals work in perfect harmony, propelling the locomotive forward. Steam billows, wheels turn, and the station fades behind you as you journey toward Crystal City and new adventures. The crystal-powered train carries you to victory! You win!"
+        }
+    ]
+}

@@ -1,0 +1,256 @@
+{
+    "theme": "Astral Projection Chamber",
+    "title": "Astral Projection Chamber Adventure #28",
+    "goal": "Solve the puzzles, achieve the main objective, and escape.",
+    "starting_room": "preparation_chamber",
+    "rooms": [
+        {
+            "id": "preparation_chamber",
+            "name": "Preparation Chamber",
+            "description": "A dimly lit circular chamber with walls painted in deep indigo and violet. Cushions surround a central meditation mat. Crystals of various colors are arranged in geometric patterns on stone pedestals. The air is thick with sandalwood incense, and soft chimes echo from unseen sources. Ancient tapestries depicting astral travelers float on the walls.",
+            "items": [
+                {
+                    "id": "meditation_mat",
+                    "name": "central meditation mat",
+                    "description": "A worn silk mat with mandala patterns woven into the fabric",
+                    "searchable": true,
+                    "contains": [
+                        "silver_key"
+                    ]
+                },
+                {
+                    "id": "silver_key",
+                    "name": "silver key",
+                    "description": "A small silver key with a third eye symbol engraved on it"
+                },
+                {
+                    "id": "crystal_cabinet",
+                    "name": "crystal storage cabinet",
+                    "description": "A wooden cabinet with three drawers, each labeled with a different chakra symbol",
+                    "subcontainers": [
+                        {
+                            "id": "crown_drawer",
+                            "name": "crown chakra drawer",
+                            "locked": false,
+                            "contains": [
+                                "initiation_scroll"
+                            ]
+                        },
+                        {
+                            "id": "third_eye_drawer",
+                            "name": "third eye drawer",
+                            "locked": true,
+                            "lock_type": "combination",
+                            "combination": "1975",
+                            "contains": [
+                                "bronze_key"
+                            ]
+                        },
+                        {
+                            "id": "throat_drawer",
+                            "name": "throat chakra drawer",
+                            "locked": false,
+                            "contains": []
+                        }
+                    ]
+                },
+                {
+                    "id": "initiation_scroll",
+                    "name": "initiation scroll",
+                    "description": "A parchment scroll with faded writing about the chamber's history",
+                    "readable": true,
+                    "text": "The Astral Projection Chamber was established in 1975 by Master Kiran, the First Traveler. To journey beyond the physical realm, one must understand the three sacred truths: Who guides the journey? What realm lies beyond? What is the key to transcendence?"
+                },
+                {
+                    "id": "bronze_key",
+                    "name": "bronze key",
+                    "description": "An ornate bronze key with astral symbols etched along its length"
+                },
+                {
+                    "id": "incense_altar",
+                    "name": "incense altar",
+                    "description": "A stone altar with burning incense and ritual objects",
+                    "searchable": true,
+                    "contains": [
+                        "ritual_bell"
+                    ]
+                },
+                {
+                    "id": "ritual_bell",
+                    "name": "silver ritual bell",
+                    "description": "A small bell that produces a clear, resonant tone"
+                },
+                {
+                    "id": "locked_chest",
+                    "name": "ornate wooden chest",
+                    "description": "A chest carved with images of astral travelers floating among stars",
+                    "locked": true,
+                    "key_required": "silver_key",
+                    "contains": [
+                        "masters_journal"
+                    ]
+                },
+                {
+                    "id": "masters_journal",
+                    "name": "Master Kiran's journal",
+                    "description": "A leather-bound journal filled with detailed entries",
+                    "readable": true,
+                    "text": "Day 1000: I have perfected the technique. The Astral Plane Gateway leads to the Higher Consciousness Realm, where true enlightenment awaits. Only those who understand that meditation is the key to transcendence may proceed. The combination to the third eye drawer is the year I founded this sacred space: 1975."
+                },
+                {
+                    "id": "tapestry_left",
+                    "name": "tapestry of the astral journey",
+                    "description": "A beautiful tapestry showing figures leaving their bodies and ascending",
+                    "readable": true,
+                    "text": "The tapestry depicts Master Kiran, the First Traveler, teaching students the art of astral projection. Below the image is written: 'Through meditation, we transcend the physical and enter the Higher Consciousness Realm.'"
+                },
+                {
+                    "id": "gateway_door",
+                    "name": "gateway door",
+                    "description": "A heavy door painted with celestial symbols, leading to the astral plane gateway",
+                    "locked": true,
+                    "key_required": "bronze_key",
+                    "direction": "north",
+                    "leads_to": "astral_gateway",
+                    "aliases": [
+                        "door",
+                        "north"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "astral_gateway",
+            "name": "Astral Plane Gateway",
+            "description": "A mystical chamber where reality seems to shimmer and bend. The walls are covered in mirrors that reflect not your physical form, but glowing outlines of energy. Floating crystals emit soft light, and the floor is painted with an intricate mandala. A sense of weightlessness pervades the space. The air hums with spiritual energy.",
+            "items": [
+                {
+                    "id": "energy_mirrors",
+                    "name": "astral mirrors",
+                    "description": "Mirrors that show your energy body rather than your physical form",
+                    "readable": true,
+                    "text": "As you gaze into the mirrors, you see your aura pulsing with light. A inscription reads: 'The Higher Consciousness Realm awaits those who have mastered the art of leaving the body behind.'"
+                },
+                {
+                    "id": "floating_crystals",
+                    "name": "levitating crystals",
+                    "description": "Seven crystals floating in a circle, each glowing with a different chakra color",
+                    "searchable": true,
+                    "contains": [
+                        "crystal_key"
+                    ]
+                },
+                {
+                    "id": "crystal_key",
+                    "name": "crystal key",
+                    "description": "A translucent key that seems to be made of solidified light"
+                },
+                {
+                    "id": "mandala_floor",
+                    "name": "painted mandala",
+                    "description": "An enormous mandala covering the entire floor with sacred geometry",
+                    "readable": true,
+                    "text": "The mandala's center contains text: 'Master Kiran, the First Traveler, opened this gateway. Through his teachings, many have reached the Higher Consciousness Realm. Meditation is the bridge between worlds.'"
+                },
+                {
+                    "id": "meditation_pedestal",
+                    "name": "meditation pedestal",
+                    "description": "A raised platform with cushions and a locked compartment beneath",
+                    "subcontainers": [
+                        {
+                            "id": "pedestal_compartment",
+                            "name": "pedestal compartment",
+                            "locked": true,
+                            "key_required": "crystal_key",
+                            "contains": [
+                                "traveler_guide"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "traveler_guide",
+                    "name": "astral traveler's guide",
+                    "description": "A comprehensive manual for astral projection",
+                    "readable": true,
+                    "text": "THE ASTRAL TRAVELER'S GUIDE: Master Kiran teaches that the First Traveler must guide all who seek to journey beyond. The destination is always the Higher Consciousness Realm. The method is always meditation - the key to transcendence. Remember these truths to pass through the final gateway."
+                },
+                {
+                    "id": "offering_bowl",
+                    "name": "offering bowl",
+                    "description": "A silver bowl containing crystals and written prayers",
+                    "searchable": true,
+                    "contains": [
+                        "prayer_note"
+                    ]
+                },
+                {
+                    "id": "prayer_note",
+                    "name": "traveler's prayer",
+                    "description": "A note written by a previous astral traveler",
+                    "readable": true,
+                    "text": "Prayer for safe journey: May Master Kiran, the First Traveler, guide me to the Higher Consciousness Realm. May meditation unlock the door to transcendence. May I return safely from my astral journey."
+                },
+                {
+                    "id": "portal_to_higher_consciousness",
+                    "name": "portal to higher consciousness",
+                    "description": "A shimmering doorway that seems to exist between dimensions. Three questions are inscribed in glowing script around its frame.",
+                    "locked": true,
+                    "lock_type": "password",
+                    "password_questions": [
+                        {
+                            "question": "Who is the First Traveler?",
+                            "answer": "master kiran",
+                            "hint": "Check the initiation scroll and the traveler's guide"
+                        },
+                        {
+                            "question": "What realm lies beyond the gateway?",
+                            "answer": "higher consciousness realm",
+                            "hint": "Multiple texts mention the destination of astral travelers"
+                        },
+                        {
+                            "question": "What is the key to transcendence?",
+                            "answer": "meditation",
+                            "hint": "The journal and guide both emphasize this practice"
+                        }
+                    ],
+                    "direction": "east",
+                    "leads_to": "consciousness_realm",
+                    "aliases": [
+                        "portal",
+                        "east"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "consciousness_realm",
+            "name": "Higher Consciousness Realm",
+            "description": "You have transcended! You float in a space of pure light and infinite possibility. Colors that don't exist in the physical world swirl around you. You feel connected to everything and everyone across all time and space. A sense of profound peace and understanding fills your being. Before you, a pathway of golden light leads back to your body and freedom.",
+            "items": [
+                {
+                    "id": "light_pathway",
+                    "name": "golden light pathway",
+                    "description": "A shimmering path of pure golden light leading to freedom"
+                },
+                {
+                    "id": "consciousness_sphere",
+                    "name": "sphere of infinite consciousness",
+                    "description": "A pulsing sphere of light at the center of this realm",
+                    "readable": true,
+                    "text": "Within the sphere, you perceive all knowledge, all wisdom, all truth. You understand that you have successfully completed the astral journey."
+                },
+                {
+                    "id": "astral_flowers",
+                    "name": "ethereal flowers",
+                    "description": "Flowers made of pure energy that bloom in impossible colors"
+                }
+            ],
+            "exits": [],
+            "is_goal": true,
+            "win_message": "You have successfully achieved astral projection and reached the Higher Consciousness Realm! Your consciousness expands beyond all boundaries as you experience true transcendence. With newfound wisdom and peace, you follow the golden pathway back to your physical body. You awaken in the preparation chamber, forever changed by your journey. You win!"
+        }
+    ]
+}

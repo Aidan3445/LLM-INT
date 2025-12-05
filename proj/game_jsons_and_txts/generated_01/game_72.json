@@ -1,0 +1,260 @@
+{
+    "theme": "Frozen Research Vault",
+    "title": "Frozen Research Vault Adventure #72",
+    "goal": "Solve the puzzles, achieve the main objective, and escape.",
+    "starting_room": "cryogenic_storage",
+    "rooms": [
+        {
+            "id": "cryogenic_storage",
+            "name": "Cryogenic Storage Bay",
+            "description": "A frigid chamber lined with frosted cryogenic pods, their status lights blinking amber in the dim emergency lighting. Ice crystals coat every surface, and your breath forms clouds in the sub-zero air. Condensation drips from overhead pipes. Warning klaxons echo distantly through the facility. The vault was clearly evacuated in a hurry.",
+            "items": [
+                {
+                    "id": "control_terminal",
+                    "name": "environmental control terminal",
+                    "description": "A wall-mounted terminal displaying temperature readings and system diagnostics",
+                    "readable": true,
+                    "text": "SYSTEM STATUS: Arctic Research Vault Omega - Established 2047. Temperature: -40\u00b0C. Emergency protocols active. Chief Scientist: Dr. Elena Frost. Lead Engineer: Marcus Webb. Biological containment: CRITICAL."
+                },
+                {
+                    "id": "supply_locker",
+                    "name": "emergency supply locker",
+                    "description": "A metal locker containing emergency equipment and supplies",
+                    "searchable": true,
+                    "contains": [
+                        "thermal_gloves"
+                    ]
+                },
+                {
+                    "id": "thermal_gloves",
+                    "name": "insulated thermal gloves",
+                    "description": "Heavy-duty gloves designed for handling frozen equipment"
+                },
+                {
+                    "id": "storage_cabinet",
+                    "name": "specimen storage cabinet",
+                    "description": "A reinforced cabinet with three compartments, each marked with biohazard symbols",
+                    "subcontainers": [
+                        {
+                            "id": "top_compartment",
+                            "name": "top compartment",
+                            "locked": false,
+                            "contains": [
+                                "research_log"
+                            ]
+                        },
+                        {
+                            "id": "middle_compartment",
+                            "name": "middle compartment",
+                            "locked": true,
+                            "lock_type": "combination",
+                            "combination": "2047",
+                            "contains": [
+                                "security_keycard"
+                            ]
+                        },
+                        {
+                            "id": "bottom_compartment",
+                            "name": "bottom compartment",
+                            "locked": false,
+                            "contains": []
+                        }
+                    ]
+                },
+                {
+                    "id": "research_log",
+                    "name": "research log datapad",
+                    "description": "A frozen datapad with Dr. Frost's research notes",
+                    "readable": true,
+                    "text": "Dr. Frost's Log: The specimens are becoming unstable. We established this vault in 2047 to contain them. If you're reading this, evacuate immediately through the control center to the escape tunnel. The middle compartment code is our founding year."
+                },
+                {
+                    "id": "security_keycard",
+                    "name": "security access keycard",
+                    "description": "A keycard labeled 'AUTHORIZED PERSONNEL - CONTROL CENTER ACCESS'"
+                },
+                {
+                    "id": "cryo_pod_17",
+                    "name": "cryogenic pod 17",
+                    "description": "A large pod with a viewing window, frost obscuring what's inside",
+                    "readable": true,
+                    "text": "Pod Status: SPECIMEN 17 - CONTAINMENT BREACH IMMINENT. Warning: Do not open. Evacuate to control center immediately."
+                },
+                {
+                    "id": "workbench",
+                    "name": "maintenance workbench",
+                    "description": "A cluttered workbench with tools and equipment manuals",
+                    "searchable": true,
+                    "contains": [
+                        "facility_manual"
+                    ]
+                },
+                {
+                    "id": "facility_manual",
+                    "name": "facility operations manual",
+                    "description": "A thick manual with emergency procedures",
+                    "readable": true,
+                    "text": "ARCTIC RESEARCH VAULT OMEGA: All biological research conducted in the laboratory wing. Chief Scientist Dr. Elena Frost oversees all operations. Emergency escape tunnel accessible from control center. Specimens stored in cryogenic storage."
+                },
+                {
+                    "id": "reinforced_security_door",
+                    "name": "reinforced security door",
+                    "description": "A heavy door with a card reader, leading to the control center. Frost has formed around the edges.",
+                    "locked": true,
+                    "key_required": "security_keycard",
+                    "direction": "north",
+                    "leads_to": "control_center",
+                    "aliases": [
+                        "door",
+                        "north"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "control_center",
+            "name": "Central Control Center",
+            "description": "The facility's command hub, filled with banks of monitors displaying critical system alerts. Red emergency lights pulse across control panels. A large window overlooks the frozen wasteland outside. The temperature is slightly warmer here, but still freezing. A sealed escape tunnel door dominates the far wall.",
+            "items": [
+                {
+                    "id": "main_console",
+                    "name": "main control console",
+                    "description": "The primary control station with multiple screens showing facility status",
+                    "readable": true,
+                    "text": "FACILITY STATUS: Containment breach in progress. All personnel evacuated. Chief Scientist: Dr. Elena Frost. Specimens stored in cryogenic storage. Emergency tunnel requires authorization."
+                },
+                {
+                    "id": "personnel_board",
+                    "name": "personnel assignment board",
+                    "description": "A digital display showing staff assignments and photos",
+                    "readable": true,
+                    "text": "STAFF ROSTER: Dr. Elena Frost - Chief Scientist, Biological Research. Marcus Webb - Lead Engineer, Systems Maintenance. Dr. Sarah Chen - Research Assistant, Laboratory Wing."
+                },
+                {
+                    "id": "desk_drawer_unit",
+                    "name": "chief scientist's desk",
+                    "description": "Dr. Frost's desk with locked drawers and scattered papers",
+                    "subcontainers": [
+                        {
+                            "id": "left_drawer",
+                            "name": "left drawer",
+                            "locked": false,
+                            "contains": [
+                                "personal_note"
+                            ]
+                        },
+                        {
+                            "id": "right_drawer",
+                            "name": "right drawer",
+                            "locked": false,
+                            "contains": [
+                                "evacuation_protocol"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "personal_note",
+                    "name": "handwritten note",
+                    "description": "A note in Dr. Frost's handwriting",
+                    "readable": true,
+                    "text": "Personal reminder: I am the Chief Scientist responsible for this facility. If containment fails, the specimens in cryogenic storage must not escape. The escape tunnel is our only way out. - Elena"
+                },
+                {
+                    "id": "evacuation_protocol",
+                    "name": "evacuation procedures document",
+                    "description": "Official emergency evacuation instructions",
+                    "readable": true,
+                    "text": "EMERGENCY EVACUATION: In case of containment breach, proceed to escape tunnel. Security verification required. Questions: Who is the Chief Scientist? Where are specimens stored? What is your role?"
+                },
+                {
+                    "id": "equipment_locker",
+                    "name": "emergency equipment locker",
+                    "description": "A locker containing survival gear",
+                    "searchable": true,
+                    "contains": [
+                        "thermal_coat",
+                        "facility_badge"
+                    ]
+                },
+                {
+                    "id": "thermal_coat",
+                    "name": "insulated thermal coat",
+                    "description": "A heavy coat designed for arctic conditions"
+                },
+                {
+                    "id": "facility_badge",
+                    "name": "facility identification badge",
+                    "description": "A badge identifying you as a researcher",
+                    "readable": true,
+                    "text": "ARCTIC RESEARCH VAULT OMEGA - Researcher - You are authorized personnel conducting vital research."
+                },
+                {
+                    "id": "monitor_wall",
+                    "name": "security monitor wall",
+                    "description": "Multiple screens showing different areas of the facility",
+                    "readable": true,
+                    "text": "Camera feeds show: Cryogenic storage - multiple pods with amber warnings. Laboratory wing - empty and dark. Escape tunnel - clear and accessible. Outside - blizzard conditions."
+                },
+                {
+                    "id": "escape_tunnel_door",
+                    "name": "escape tunnel door",
+                    "description": "A sealed emergency exit with a security terminal. Three verification questions are displayed on the screen.",
+                    "locked": true,
+                    "lock_type": "password",
+                    "password_questions": [
+                        {
+                            "question": "Who is the Chief Scientist?",
+                            "answer": "dr elena frost",
+                            "hint": "Check the control console, personnel board, and personal notes"
+                        },
+                        {
+                            "question": "Where are the specimens stored?",
+                            "answer": "cryogenic storage",
+                            "hint": "Multiple documents mention where specimens are kept"
+                        },
+                        {
+                            "question": "What is your role?",
+                            "answer": "researcher",
+                            "hint": "Your facility badge identifies your position"
+                        }
+                    ],
+                    "direction": "east",
+                    "leads_to": "escape_tunnel",
+                    "aliases": [
+                        "tunnel",
+                        "exit",
+                        "east"
+                    ]
+                }
+            ],
+            "exits": []
+        },
+        {
+            "id": "escape_tunnel",
+            "name": "Emergency Escape Tunnel",
+            "description": "You've made it to the escape tunnel! A long corridor carved through ice and rock, lit by emergency strips along the walls. At the far end, you can see daylight and the outline of an emergency shelter. The howling wind from outside brings the promise of rescue. Behind you, the vault's alarms continue to blare, but you're safe now.",
+            "items": [
+                {
+                    "id": "emergency_sled",
+                    "name": "emergency evacuation sled",
+                    "description": "A sled equipped with supplies for arctic survival"
+                },
+                {
+                    "id": "radio_beacon",
+                    "name": "emergency radio beacon",
+                    "description": "An activated beacon transmitting your location to rescue teams"
+                },
+                {
+                    "id": "tunnel_exit",
+                    "name": "tunnel exit",
+                    "description": "The opening leading to the emergency shelter and safety"
+                }
+            ],
+            "exits": [],
+            "is_goal": true,
+            "win_message": "SUCCESS! You've escaped the Frozen Research Vault through the emergency tunnel. As you emerge into the arctic wind, you see the emergency shelter ahead and rescue helicopters approaching in the distance. The specimens remain contained in the vault behind you. You've survived the crisis and solved all the puzzles. You win!"
+        }
+    ]
+}
